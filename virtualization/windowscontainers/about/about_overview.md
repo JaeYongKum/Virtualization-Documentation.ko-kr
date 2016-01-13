@@ -64,7 +64,7 @@ IT 전문가들은 컨테이너를 사용하여 개발, QA, 프러덕션 팀에 
 ## 비디오 개요
 
 <iframe 
-src="https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-and-Docker/player#ccLang=ko" width="800" height="450" allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
+src="https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-and-Docker/player" width="800" height="450" allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
 
 
 ## Windows Server 컨테이너 사용해 보기
