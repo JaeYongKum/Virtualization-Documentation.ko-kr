@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "fd01d85031748c73615a0fafeec80238f11b5cd6",
-  "LastTranslatedCommit": "c79d15e864e69860cf6a7241162d0ab2be937b0c",
+  "LastTranslatedCommit": "ea66f621bccb696c1a1da0d1c6055caf7c6bed50",
   "Items": {
     "5090f6d60b5cbdce0990242d795d9e4e3736e791": {
       "FileHash": "5090f6d60b5cbdce0990242d795d9e4e3736e791",
@@ -3496,14 +3496,14 @@
       "HandoffDateTime": "2016-01-04T22:19:06.4760896Z",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "678eb6cd0fa6b6e6a031981e8213e79ddc170a49",
+      "TargetFileCommit": "ea66f621bccb696c1a1da0d1c6055caf7c6bed50",
       "TargetFilePath": "virtualization\\hyperv_on_windows\\windows_welcome.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\windows_welcome.5cc1a907523a3cc51d983b8dc14732d35513e54e.ko-kr.xlf",
-      "HandbackFileCommit": "0e0fe79ad9da8e4d2607c7fd9a21889e29a7ef3d",
-      "HandbackDateTime": "2016-01-05T22:06:21.5548274Z",
+      "HandbackFileCommit": "ab5ede5789c5e68046a5298b9b31c2ba047a12db",
+      "HandbackDateTime": "2016-01-14T21:51:20.7840384Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-01-05T22:06:21.5548274Z"
+      "UpdatedDateTime": "2016-01-14T21:51:20.7840384Z"
     },
     "02a74d5f1ff50a45b6cac5cf935d1b321d1f7331": {
       "FileHash": "02a74d5f1ff50a45b6cac5cf935d1b321d1f7331",
@@ -3519,14 +3519,14 @@
       "HandoffDateTime": "2016-01-04T22:19:06.4760896Z",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "678eb6cd0fa6b6e6a031981e8213e79ddc170a49",
+      "TargetFileCommit": "ea66f621bccb696c1a1da0d1c6055caf7c6bed50",
       "TargetFilePath": "virtualization\\hyperv_on_windows\\user_guide\\vmsession.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf",
-      "HandbackFileCommit": "0e0fe79ad9da8e4d2607c7fd9a21889e29a7ef3d",
-      "HandbackDateTime": "2016-01-05T22:06:21.5538274Z",
+      "HandbackFileCommit": "ab5ede5789c5e68046a5298b9b31c2ba047a12db",
+      "HandbackDateTime": "2016-01-14T21:51:20.7840384Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-01-05T22:06:21.5538274Z"
+      "UpdatedDateTime": "2016-01-14T21:51:20.7840384Z"
     },
     "5547f0f37b1d84d2930f4b54c156f06cd29f407e": {
       "FileHash": "5547f0f37b1d84d2930f4b54c156f06cd29f407e",
@@ -3638,14 +3638,14 @@
       "HandoffDateTime": "2016-01-04T22:19:06.4770878Z",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "678eb6cd0fa6b6e6a031981e8213e79ddc170a49",
+      "TargetFileCommit": "ea66f621bccb696c1a1da0d1c6055caf7c6bed50",
       "TargetFilePath": "virtualization\\windowscontainers\\quick_start\\manage_docker.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_docker.d8787c7831358fa02dcde847d887fa29a1767ee5.ko-kr.xlf",
-      "HandbackFileCommit": "0e0fe79ad9da8e4d2607c7fd9a21889e29a7ef3d",
-      "HandbackDateTime": "2016-01-05T22:06:21.5538274Z",
+      "HandbackFileCommit": "ab5ede5789c5e68046a5298b9b31c2ba047a12db",
+      "HandbackDateTime": "2016-01-14T21:51:20.7840384Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-01-05T22:06:21.5538274Z"
+      "UpdatedDateTime": "2016-01-14T21:51:20.7840384Z"
     },
     "7c1a1ddd6a66a967a0b99bcc0b48ff6f26cddbf8": {
       "FileHash": "7c1a1ddd6a66a967a0b99bcc0b48ff6f26cddbf8",
@@ -3661,14 +3661,14 @@
       "HandoffDateTime": "2016-01-04T22:19:06.4770878Z",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "678eb6cd0fa6b6e6a031981e8213e79ddc170a49",
+      "TargetFileCommit": "ea66f621bccb696c1a1da0d1c6055caf7c6bed50",
       "TargetFilePath": "virtualization\\windowscontainers\\quick_start\\manage_powershell.md",
       "HandbackFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_powershell.fccfd13be3f4bd16afbe4f31a5ca5ed4e93806b7.ko-kr.xlf",
-      "HandbackFileCommit": "0e0fe79ad9da8e4d2607c7fd9a21889e29a7ef3d",
-      "HandbackDateTime": "2016-01-05T22:06:21.5538274Z",
+      "HandbackFileCommit": "ab5ede5789c5e68046a5298b9b31c2ba047a12db",
+      "HandbackDateTime": "2016-01-14T21:51:20.7840384Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-01-05T22:06:21.5538274Z"
+      "UpdatedDateTime": "2016-01-14T21:51:20.7840384Z"
     },
     "bb2a0b7a8e0680fea128ceccdff87abf4281d402": {
       "FileHash": "bb2a0b7a8e0680fea128ceccdff87abf4281d402",
