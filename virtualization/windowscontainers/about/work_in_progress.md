@@ -78,8 +78,8 @@ PS C:\> Set-ContainerProcessor -ContainerName test2 -Maximum 3
 PS C:\> Start-Container test2
 ```
 
-** 해결 방법:**  
-컨테이너에 사용할 수 있는 프로세서를 늘립니다. 컨테이너에 사용할 수 있는 프로세서를 명시적으로 지정하거나 VM에 사용할 수 있는 프로세서를 줄이지 마십시오.
+**해결 방법:**  
+컨테이너에 사용할 수 있는 프로세서를 늘립니다. 컨테이너에 사용할 수 있는 프로세서를 명시적으로 지정하거나 VM에 사용할 수 있는 프로세서를 줄이지 마세요.
 
 --------------------------
 
@@ -108,6 +108,9 @@ PowerShell을 사용하여 수행할 수 있습니다
 ```
 Get-VMNetworkAdapter -VMName "[YourVMNameHere]"  | Set-VMNetworkAdapter -MacAddressSpoofing On
 ```
+### HTTPS 및 TLS는 지원되지 않습니다.
+
+Windows Server 컨테이너 및 Hyper-V 컨테이너는 HTTPS 또는 TLS를 지원하지 않습니다. 향후 제공할 수 있도록 준비하는 중입니다.
 
 --------------------------
 
@@ -162,9 +165,8 @@ No Instance(s) Available.
 
 ### 모든 Docker 명령이 작동하지 않습니다.
 
-Docker exec가 Hyper-V 컨테이너에서 작동하지 않습니다.
-
-DockerHub와 관련된 명령은 아직 지원되지 않습니다.
+* Docker exec가 Hyper-V 컨테이너에서 작동하지 않습니다.
+* DockerHub와 관련된 명령은 아직 지원되지 않습니다.
 
 이 실패 목록에 있지 않은 경우(또는 명령이 예상과 다르게 실패하는 경우) [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)을 통해 알려 주세요.
 
@@ -187,6 +189,11 @@ net use S: \\your\sources\here /User:shareuser [yourpassword]
 ```
 
 
+--------------------------
+
+
+
+
 ## 원격 데스크톱
 
 TP4에서 RDP 세션을 통해 Windows 컨테이너를 관리/상호 작용할 수 없습니다.
@@ -200,8 +207,36 @@ TP4에서 RDP 세션을 통해 Windows 컨테이너를 관리/상호 작용할 �
 
 맞습니다. 향후에 전체 cimsession을 지원할 계획입니다.
 
+### Nano Server 컨테이너 호스트에서 컨테이너 종료를 "exit"로 실행할 수 없음
+
+Nano Server 컨테이너 호스트에 있는 컨테이너를 종료할 때 "exit"를 사용하면 Nano Server 컨테이너 호스트와 연결이 끊어지고 컨테이너가 종료되지 않습니다.
+
+**해결 방법:**
+대신 Exit-PSSession을 사용하여 컨테이너를 종료합니다.
+
 [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에서 기능을 요청하세요.
 
 
+--------------------------
 
 
+
+## 사용자 및 도메인
+
+### 로컬 사용자
+
+로컬 사용자 계정을 만들어 컨테이너에서 Windows 서비스 및 응용 프로그램을 실행하는 데 사용할 수 있습니다.
+
+
+### 도메인 멤버 자격
+
+컨테이너는 Active Directory 도메인에 가입할 수 없으며 도메인 사용자, 서비스 계정 또는 컴퓨터 계정으로 서비스 또는 응용 프로그램을 실행할 수 없습니다.
+
+컨테이너는 대체로 환경과 관계 없는 알려진 일관된 상태로 신속하게 시작하도록 설계되었습니다. 도메인에 가입하고 도메인에서 그룹 정책 설정을 적용하면 컨테이너를 시작하는 데 걸리는 시간이 늘고, 시간에 따라 컨테이너 작동 방식이 변경되고, 개발자 간과 배포 사이에 이미지를 이동하거나 공유하는 기능이 제한됩니다.
+
+Microsoft에서는 서비스 및 응용 프로그램이 Active Directory를 사용하는 방식에 대한 피드백과 컨테이너에서 이들 배포의 공통 영역을 신중히 고려하고 있습니다. 가장 효율적인 구성에 대한 세부 정보가 있는 경우 [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에서 공유해 주세요. 이러한 유형의 시나리오를 지원하는 솔루션을 적극적으로 찾고 있습니다.
+
+
+
+
+<!--HONumber=Jan16_HO3-->

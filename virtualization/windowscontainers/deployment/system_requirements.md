@@ -9,11 +9,14 @@
 Windows Server 기술 미리 보기 4는 두 개의 컨테이너 OS 이미지, Windows Server Core 및 Nano Server를 통해 제공됩니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
 
 <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
+<thead>
 <tr valign="top">
-<td><center>**호스트 운영 체제**</center></td>
-<td><center>**Windows Server 컨테이너**</center></td>
-<td><center>**Hyper-V 컨테이너**</center></td>
+<th><center>호스트 운영 체제</center></th>
+<th><center>Windows Server 컨테이너</center></th>
+<th><center>Hyper-V 컨테이너</center></th>
 </tr>
+</thead>
+<tbody>
 <tr valign="top">
 <td><center>Windows Server 2016 전체 UI</center></td>
 <td><center>Core OS 이미지</center></td>
@@ -29,6 +32,7 @@ Windows Server 기술 미리 보기 4는 두 개의 컨테이너 OS 이미지, W
 <td><center> Nano OS 이미지</center></td>
 <td><center>Nano OS 이미지</center></td>
 </tr>
+</tbody>
 </table>
 
 ## Hyper-V 컨테이너 요구 사항
@@ -44,3 +48,4 @@ Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되며 Hy
 
 
 
+<!--HONumber=Jan16_HO1-->

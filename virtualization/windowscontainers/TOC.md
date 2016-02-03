@@ -4,7 +4,7 @@
 
 ## [Windows 컨테이너 정보](about/about_overview.md)
 
-## [진행 중인 작업](about/work_in_progress.md)
+## [작업 진행 중](about/work_in_progress.md)
 
 ## [FAQ](about/faq.md)
 
@@ -12,9 +12,9 @@
 
 ## [Azure의 컨테이너](quick_start/azure_setup.md)
 
-## [새 Hyper-V 가상 컴퓨터의 컨테이너](quick_start/container_setup.md)
+## [새 Hyper-V VM의 컨테이너](quick_start/container_setup.md)
 
-## [기존 가상 또는 실제 시스템의 컨테이너](quick_start/inplace_setup.md)
+## [기존 시스템의 컨테이너](quick_start/inplace_setup.md)
 
 ## [PowerShell 빠른 시작](quick_start/manage_powershell.md)
 
@@ -38,7 +38,7 @@
 
 ## [컨테이너 네트워킹](management/container_networking.md)
 
-## [컨테이너 데이터](management/manage_data.md)
+## [컨테이너 공유 폴더](management/manage_data.md)
 
 ## [컨테이너 리소스 컨트롤](management/manage_resources.md)
 
@@ -60,6 +60,9 @@
 
 ## [응용 프로그램 호환성](reference/app_compat.md)
 
-# [EULA](EULA.md)
+# [Windows Server EULA](EULA.md)
+
+# [Nano Server EULA](Nano_EULA.md)
 
 
+<!--HONumber=Jan16_HO1-->

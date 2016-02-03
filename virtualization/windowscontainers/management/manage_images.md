@@ -43,7 +43,7 @@ NanoServer           10.0.10586.0            Container OS Image of Windows Serve
 WindowsServerCore    10.0.10586.0            Container OS Image of Windows Server 2016 Techn...
 ```
 
-Nano Server 기본 OS 이미지를 다운로드하여 설치하려면 다음을 실행합니다.
+Nano Server 기본 OS 이미지를 다운로드하여 설치하려면 다음을 실행합니다. `–version` 매개 변수는 선택 사항입니다. 기본 OS 이미지 버전을 지정하지 않으면 최신 버전이 설치됩니다.
 
 ```powershell
 PS C:\> Install-ContainerImage -Name NanoServer -Version 10.0.10586.0
@@ -51,9 +51,9 @@ PS C:\> Install-ContainerImage -Name NanoServer -Version 10.0.10586.0
 Downloaded in 0 hours, 0 minutes, 10 seconds.
 ```
 
-마찬가지로 이 명령은 Windows Server Core 기본 OS 이미지를 다운로드하여 설치합니다.
+마찬가지로 이 명령은 Windows Server Core 기본 OS 이미지를 다운로드하여 설치합니다. `–version` 매개 변수는 선택 사항입니다. 기본 OS 이미지 버전을 지정하지 않으면 최신 버전이 설치됩니다.
 
-> **문제** Save-ContainerImage 및 Install-ContainerImage cmdlet이 PowerShell 원격 세션의 WindowsServerCore 컨테이너 이미지에서 작동하지 않습니다. **해결 방법:** 원격 데스크톱을 사용하여 컴퓨터에 로그온하고 Save-ContainerImage cmdlet을 직접 저장합니다.
+>**문제** Save-ContainerImage 및 Install-ContainerImage cmdlet이 PowerShell 원격 세션의 WindowsServerCore 컨테이너 이미지에서 작동하지 않습니다. **해결 방법:** 원격 데스크톱을 사용하여 컴퓨터에 로그온하고 Save-ContainerImage cmdlet을 직접 저장합니다.
 
 ```powershell
 PS C:\> Install-ContainerImage -Name WindowsServerCore -Version 10.0.10586.0
@@ -91,7 +91,7 @@ PS C:\> Get-ContainerImage -Name newimage | Remove-ContainerImage -Force
 
 ### 이미지 종속성
 
-새 이미지를 만들면 생성의 근거가 된 이미지에 종속됩니다. 이러한 종속성은 `get-containerimage` 명령을 사용하여 확인할 수 있습니다. 부모 이미지가 목록에 없으면 해당 이미지가 기본 OS 이미지임을 나타냅니다.
+새 이미지를 만들면 생성의 근거가 된 이미지에 종속됩니다. 이 종속성은 `get-containerimage` 명령을 사용하여 확인할 수 있습니다. 부모 이미지가 목록에 없으면 해당 이미지가 기본 OS 이미지임을 나타냅니다.
 
 ```powershell
 PS C:\> Get-ContainerImage | select Name, ParentImage
@@ -165,7 +165,7 @@ microsoft/ruby          Ruby installed in a Windows Server Core ba...   1       
 microsoft/sqlite        SQLite installed in a Windows Server Core ...   1                    [OK]
 ```
 
-Docker 허브에서 이미지를 다운로드 하려면 `docker pull`을 사용합니다.
+Docker 허브에서 이미지를 다운로드하려면 `docker pull`을 사용합니다.
 
 ```powershell
 C:\> docker pull microsoft/aspnet
@@ -177,7 +177,7 @@ f9e8a4cc8f6c: Pull complete
 b71a5b8be5a2: Download complete
 ```
 
-`docker images`를 실행하면 이미지가 표시됩니다.
+이제 `docker images`를 실행하면 이미지가 표시됩니다.
 
 ```powershell
 C:\> docker images
@@ -190,7 +190,7 @@ windowsservercore   latest              6801d964fda5        2 weeks ago         
 
 ### 이미지 종속성
 
-Docker를 통한 이미지 종속성을 확인하려면 `docker history` 명령을 사용할 수 있습니다.
+Docker를 통한 이미지 종속성을 확인하려면 `docker history` 명령을 사용하면 됩니다.
 
 ```powershell
 C:\> docker history windowsservercoreiis
@@ -202,3 +202,4 @@ IMAGE               CREATED             CREATED BY          SIZE                
 
 
 
+<!--HONumber=Jan16_HO1-->

@@ -2,7 +2,7 @@
 
 Windows 컨테이너는 단일 컴퓨터 시스템에서 격리된 여러 응용 프로그램을 신속하게 배포하는 데 사용할 수 있습니다. 이 연습에서는 Docker를 사용한 Windows 컨테이너 만들기 및 관리를 보여 줍니다. 마치고 나면 Docker가 Windows 컨테이너에 통합되는 방식에 대한 기본 내용을 이해하고, 기술과 관련한 실질적인 경험을 얻게 됩니다.
 
-이 연습에서는 Windows Server 컨테이너와 Hyper-V 컨테이너를 모두 자세히 설명합니다. 각 컨테이너 형식에는 자체 기본 요구 사항이 있습니다. 컨테이너 호스트를 신속하게 배포하는 절차는 Windows 컨테이너 설명서에 포함되어 있습니다. 이것이 Windows 컨테이너를 신속하게 시작하는 가장 쉬운 방법입니다. 컨테이너 호스트가 아직 없는 경우 [컨테이너 호스트 배포 빠른 시작](./container_setup.md)을 참조하세요.
+이 연습에서는 Windows Server 컨테이너와 Hyper-V 컨테이너를 모두 자세히 설명합니다. 각 컨테이너 형식에는 자체 기본 요구 사항이 있습니다. 컨테이너 호스트를 빨리 배포하는 절차는 Windows 컨테이너 설명서에 나와 있습니다. 이 방법이 Windows 컨테이너를 빨리 시작하는 가장 쉬운 방법입니다. 컨테이너 호스트가 아직 없는 경우 [컨테이너 호스트 배포 빠른 시작](./container_setup.md)을 참조하세요.
 
 각 연습마다 다음 항목이 필요합니다.
 
@@ -35,7 +35,7 @@ nanoserver          10.0.10586.0        8572198a60f1        2 weeks ago         
 nanoserver          latest              8572198a60f1        2 weeks ago         0 B
 ```
 
-이 예에서는 Windows Server Core 이미지를 사용하여 컨테이너를 만듭니다. 이 작업은 `docker run 명령`으로 수행합니다. `docker run`에 대한 자세한 내용은 [docker.com의 Docker Run 참조](https://docs.docker.com/engine/reference/run/)를 참조하세요.
+이 예에서는 Windows Server Core 이미지를 사용하여 컨테이너를 만듭니다. 이 작업은 `docker run 명령`으로 수행합니다. `docker run`에 대한 자세한 내용은 [Docker Run reference on docker.com(docker.com의 Docker Run 참조)](https://docs.docker.com/engine/reference/run/)을 참조하세요.
 
 이 예제에서는 이름이 `iisbase`인 컨테이너를 만들고 이 컨테이너를 사용하여 대화형 세션을 시작합니다.
 
@@ -96,7 +96,7 @@ if (!(Get-NetFirewallRule | where {$_.Name -eq "TCP80"})) {
 
 이제 IIS를 지원하는 운영 환경을 배포하는 데 사용할 수 있는 IIS가 들어 있는 컨테이너 이미지가 준비되었습니다.
 
-새 이미지에서 컨테이너를 만들려면 `docker run` 명령을 사용하고 이번에는 IIS 이미지의 이름을 지정합니다. 이 샘플에서는 `-p 80:80` 매개 변수를 지정했습니다. 컨테이너가 NAT(Network Address Translation)를 통해 IP 주소를 공급하는 가상 스위치에 연결되어 있으므로, 컨테이너 호스트의 포트를 컨테이너 NAT IP 주소의 포트에 매핑해야 합니다. `-p`에 대한 자세한 내용은 [docker.com의 Docker Run 참조](https://docs.docker.com/engine/reference/run/)를 참조하세요.
+새 이미지에서 컨테이너를 만들려면 `docker run` 명령을 사용하고 이번에는 IIS 이미지의 이름을 지정합니다. 이 샘플에서는 `-p 80:80` 매개 변수를 지정했습니다. 컨테이너가 NAT(Network Address Translation)를 통해 IP 주소를 공급하는 가상 스위치에 연결되어 있으므로, 컨테이너 호스트의 포트를 컨테이너 NAT IP 주소의 포트에 매핑해야 합니다. `-p`에 대한 자세한 내용은 [Docker Run reference on docker.com(docker.com의 Docker Run 참조)](https://docs.docker.com/engine/reference/run/)을 참조하세요.
 
 ```powershell
 C:\> docker run --name iisdemo -it -p 80:80 windowsservercoreiis cmd
@@ -159,7 +159,7 @@ C:\> powershell new-item c:\build\dockerfile -Force
 C:\> notepad c:\build\dockerfile
 ```
 
-dockerfile에 다음 텍스트를 복사하 고 파일을 저장합니다. 이 명령은 Docker가 `windosservercore`를 기초로 새 이미지를 만들고 `실행`을 통해 지정한 수정 내용을 포함하도록 지시합니다. Dockerfile에 대한 자세한 내용은 [docker.com의 Dockerfile 참조](http://docs.docker.com/engine/reference/builder/)를 참조하세요.
+dockerfile에 다음 텍스트를 복사하 고 파일을 저장합니다. 이 명령은 Docker가 `windowsservercore`를 기초로 새 이미지를 만들고 `RUN`을 통해 지정한 수정 내용을 포함하도록 지시합니다. Dockerfile에 대한 자세한 내용은 [Dockerfile reference at docker.com(docker.com의 Dockerfile 참조)](http://docs.docker.com/engine/reference/builder/)을 참조하세요.
 
 ```powershell
 FROM windowsservercore
@@ -167,7 +167,7 @@ RUN dism /online /enable-feature /all /featurename:iis-webserver /NoRestart
 RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 ```
 
-이 명령은 자동화된 이미지 빌드 프로세스를 시작합니다.  `-t` 매개 변수는 프로세스가 새 이미지의 이름을 `iis`로 지정하도록 지시합니다.
+이 명령은 자동화된 이미지 빌드 프로세스를 시작합니다. `-t` 매개 변수는 프로세스가 새 이미지의 이름을 `iis`로 지정하도록 지시합니다.
 
 ```powershell
 C:\> docker build -t iis c:\Build
@@ -225,7 +225,7 @@ Hyper-V 컨테이너는 Windows Server 컨테이너에 대한 추가 수준의 �
 
 컨테이너는 Nano Server OS 이미지를 실행하기 때문에 IIS를 설치하려면 Nano Server IIS 패키지가 필요합니다. 이는 `NanoServer\Packages` 디렉터리의 Windows Server 2016 TP4 설치 미디어에서 찾을 수 있습니다.
 
-이 예제에서는 `docker 실행`의 `-v`의 매개 변수를 사용하여 실행 중인 컨테이너가 컨테이너 호스트의 디렉터리를 사용할 수 있게 됩니다. 그 전에 원본 디렉터리 구성해야 합니다.
+이 예제에서는 `docker run`의 `-v`의 매개 변수를 사용하여 실행 중인 컨테이너가 컨테이너 호스트의 디렉터리를 사용할 수 있게 됩니다. 그 전에 원본 디렉터리 구성해야 합니다.
 
 컨테이너와 공유할 컨테이너 호스트에 디렉터리를 만듭니다. 이미 PowerShell 연습을 마쳤으면 이 디렉터리와 필요한 파일이 있을 수도 있습니다.
 

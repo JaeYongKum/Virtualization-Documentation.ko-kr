@@ -1,8 +1,8 @@
 # Windows 컨테이너 빠른 시작 - PowerShell
 
-Windows 컨테이너는 단일 컴퓨터 시스템에서 격리된 여러 응용 프로그램을 신속하게 배포하는 데 사용할 수 있습니다. 이 빠른 시작은 PowerShell을 사용한 Windows 서버와 Hyper-V 컨테이너의 배포 및 관리를 보여 줍니다. 이 연습에서 Windows Server와 Hyper- V 컨테이너에서 실행 중인 매우 간단한 'hello world' 응용 프로그램을 기초부터 만들 수 있습니다. 이 과정에서 컨테이너 공유 폴더와 함께 사용할 컨테이너 이미지를 만들고 컨테이너 수명 주기를 관리합니다. 완료되면 Widows 컨테이너 배포 및 관리에 대한 기본적인 이해를 하게 됩니다.
+Windows 컨테이너는 단일 컴퓨터 시스템에서 격리된 여러 응용 프로그램을 신속하게 배포하는 데 사용할 수 있습니다. 이 빠른 시작은 PowerShell을 사용한 Windows 서버와 Hyper-V 컨테이너의 배포 및 관리를 보여 줍니다. 이 연습에서 Windows Server와 Hyper- V 컨테이너에서 실행 중인 매우 간단한 'hello world' 응용 프로그램을 기초부터 만들 수 있습니다. 이 과정에서 컨테이너 공유 폴더와 함께 사용할 컨테이너 이미지를 만들고 컨테이너 수명 주기를 관리합니다. 완료되면 Windows 컨테이너 배포 및 관리에 대한 기본적인 이해를 하게 됩니다.
 
-이 연습에서는 Windows Server 컨테이너와 Hyper-V 컨테이너를 자세히 설명합니다. 컨테이너의 각 형식에는 자체 기본 요구 사항이 있습니다. 컨테이너 호스트를 신속하게 배포하는 절차는 Windows 컨테이너 설명서에 포함되어 있습니다. 이것이 Windows 컨테이너를 신속하게 시작하는 가장 쉬운 방법입니다. 컨테이너 호스트가 아직 없는 경우 [컨테이너 호스트 배포 빠른 시작](./container_setup.md)을 참조하세요.
+이 연습에서는 Windows Server 컨테이너와 Hyper-V 컨테이너를 자세히 설명합니다. 컨테이너의 각 형식에는 자체 기본 요구 사항이 있습니다. 컨테이너 호스트를 빨리 배포하는 절차는 Windows 컨테이너 설명서에 나와 있습니다. 이 방법이 Windows 컨테이너를 빨리 시작하는 가장 쉬운 방법입니다. 컨테이너 호스트가 아직 없는 경우 [컨테이너 호스트 배포 빠른 시작](./container_setup.md)을 참조하세요.
 
 다음 항목은 각 연습에 필요합니다.
 
@@ -19,7 +19,7 @@ Windows 컨테이너는 단일 컴퓨터 시스템에서 격리된 여러 응용
 
 ## Windows Server 컨테이너
 
-Windows Server 컨테이너는 실행 중인 응용 프로그램 및 호스팅 프로세스에 대한 격리된 휴대용, 리소스 제어된 운영 환경을 제공합니다. Windows Server 컨테이너는 프로세스와 네임스페이스 격리를 통해 컨테이너와 호스트 간, 호스트에서 실행하는 컨테이너 간의 격리를 제공합니다.
+Windows Server 컨테이너는 실행 중인 응용 프로그램 및 호스팅 프로세스에 대해 리소스로 제어된 휴대용의 격리된 운영 환경을 제공합니다. Windows Server 컨테이너는 프로세스와 네임스페이스 격리를 통해 컨테이너와 호스트 간 및 호스트에서 실행하는 컨테이너 간의 격리를 제공합니다.
 
 ### 컨테이너 만들기
 
@@ -46,7 +46,7 @@ NanoServer        CN=Microsoft 10.0.10586.0 True
 WindowsServerCore CN=Microsoft 10.0.10586.0 True
 ```
 
-Windows Server 컨테이너를 만들려면 `New-Container` 명령을 사용합니다. 아래 예제에서는 `WindowsServerCore` OS 이미지에서 `TP4Demo`라는 컨테이너를 만들고 `가상 스위치`라는 VM 스위치에 컨테이너를 연결합니다. 출력인 컨테이너를 나타내는 개체는 변수 `$con`에 저장됩니다. 이 변수는 후속 명령에 사용됩니다.
+Windows Server 컨테이너를 만들려면 `New-Container` 명령을 사용합니다. 아래 예제에서는 `WindowsServerCore` OS 이미지에서 `TP4Demo`라는 컨테이너를 만들고 `Virtual Switch`라는 VM 스위치에 컨테이너를 연결합니다.
 
 ```powershell
 PS C:\> New-Container -Name TP4Demo -ContainerImageName WindowsServerCore -SwitchName "Virtual Switch"
@@ -56,7 +56,7 @@ Name    State Uptime   ParentImageName
 TP4Demo Off   00:00:00 WindowsServerCore
 ```
 
-기존 컨테이너를 시각화하려면`Get-Container` 명령을 사용합니다.
+기존 컨테이너를 시각화하려면 `Get-Container` 명령을 사용합니다.
 
 ```powershell
 PS C:\> Get-Container
@@ -72,7 +72,7 @@ TP4Demo Off   00:00:00 WindowsServerCore
 PS C:\> Start-Container -Name TP4Demo
 ```
 
-`Enter-PSSession` 명령을 사용하여 컨테이너에 연결합니다. PowerShell 세션이 컨테이너로 만들어진 경우 PowerShell 프롬프트는 컨테이너 이름에 맞게 변경합니다.
+`Enter-PSSession` 명령을 사용하여 컨테이너에 연결합니다. PowerShell 세션이 컨테이너로 만들어진 경우 PowerShell 프롬프트는 컨테이너 이름에 맞게 변경됩니다.
 
 ```powershell
 PS C:\> Enter-PSSession -ContainerName TP4Demo -RunAsAdministrator
@@ -94,7 +94,7 @@ Success Restart Needed Exit Code      Feature Result
 True    No             Success        {Common HTTP Features, Default Document, D...
 ```
 
-IIS 설치가 완료되면 `exit`을 입력하여 컨테이너를 종료합니다. PowerShell 세션이 컨테이너 호스트의 세션으로 반환됩니다.
+IIS 설치가 완료되면 `exit`를 입력하여 컨테이너를 종료합니다. PowerShell 세션이 컨테이너 호스트의 세션으로 반환됩니다.
 
 ```powershell
 [TP4Demo]: PS C:\> exit
@@ -109,7 +109,7 @@ PS C:\> Stop-Container -Name TP4Demo
 
 이 컨테이너의 상태는 이제 새 컨테이너 이미지로 캡처될 수 있습니다. `New-ContainerImage` 명령을 사용합니다.
 
-이 예제에서는 `데모`의 게시자와 버전 `1.0`으로 `WindowsServerCoreIIS`라는 새 컨테이너 이미지를 만듭니다.
+이 예제에서는 `Demo`의 게시자와 버전 `1.0`으로 `WindowsServerCoreIIS`라는 새 컨테이너 이미지를 만듭니다.
 
 ```powershell
 PS C:\> New-ContainerImage -ContainerName TP4Demo -Name WindowsServerCoreIIS -Publisher Demo -Version 1.0
@@ -145,7 +145,7 @@ PS C:\> Start-Container -Name IIS
 
 ### 네트워킹 구성
 
-Windows 컨테이너 빠른 시작에 대한 기본 네트워크 구성은 NAT(Network Address Translation)로 구성된 가상 스위치에 연결하는 컨테이너를 갖는 것입니다. 이 때문에 컨테이너 내부, 컨테이너 호스트의 포트에서 실행 중인 응용 프로그램에 연결하기 위해 컨테이너의 포트에 매핑되어야 합니다.
+Windows 컨테이너 빠른 시작에 대한 기본 네트워크 구성은 NAT(Network Address Translation)로 구성된 가상 스위치에 연결하는 컨테이너를 갖는 것입니다. 이 때문에 컨테이너 내부 즉, 컨테이너 호스트의 포트에서 실행 중인 응용 프로그램에 연결하기 위해 컨테이너의 포트에 매핑되어야 합니다. 컨테이너 네트워킹에 대한 자세한 내용은 [컨테이너 네트워킹](../management/container_networking.md)을 참조하세요.
 
 이 연습에서 웹 사이트는 컨테이너 내부에서 실행 중인 IIS에서 호스팅됩니다. 포트 80에서 웹 사이트에 액세스하려면 컨테이너 호스트 IP 주소의 포트 80을 컨테이너 IP 주소의 포트 80에 매핑합니다.
 
@@ -182,7 +182,7 @@ if (!(Get-NetFirewallRule | where {$_.Name -eq "TCP80"})) {
 }
 ```
 
-Azure에서 작업하고 네트워크 보안 그룹을 아직 만들지 않은 경우 지금 새로 만들어야 합니다. 네트워크 보안 그룹에 대한 자세한 내용은 [네트워크 보안 그룹이란](https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-nsg/) 문서를 참조하세요.
+Azure에서 작업하고 네트워크 보안 그룹을 아직 만들지 않은 경우 지금 새로 만들어야 합니다. 네트워크 보안 그룹에 대한 자세한 내용은 [네트워크 보안 그룹이란?](https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-nsg/) 문서를 참조하세요.
 
 ### 응용 프로그램 만들기
 
@@ -268,11 +268,11 @@ Name State Uptime   ParentImageName
 HYPV Off   00:00:00 NanoServer
 ```
 
-컨테이너가 만들어지면 **시작하지 마십시오**.
+컨테이너가 만들어지면 **시작하지 마세요**.
 
 ### 공유 폴더 만들기
 
-공유 폴더는 컨테이너 호스트에서 컨테이너로 디렉터리를 노출합니다. 공유 폴더가 만들어지면 공유 폴더에 있는 모든 파일을 컨테이너에 사용할 수 있습니다. 공유 폴더는 컨테이너로 Nano Server IIS 패키지를 복사하도록 이 예제에 사용됩니다. 그런 다음 해당 패키지는 IIS를 설치하는 데 사용됩니다. 공유 폴더에 대한 자세한 내용은 [컨테이너 데이터 관리](../management/manage_data.md)를 참조하세요.
+공유 폴더는 컨테이너 호스트에서 컨테이너로 디렉터리를 노출합니다. 공유 폴더가 만들어지면 공유 폴더에 있는 모든 파일을 컨테이너에 사용할 수 있습니다. 공유 폴더는 컨테이너로 Nano Server IIS 패키지를 복사하도록 이 예제에 사용됩니다. 그런 다음 해당 패키지는 IIS를 설치하는 데 사용됩니다. 공유 폴더에 대한 자세한 내용은 [컨테이너 공유 폴더](../management/manage_data.md)를 참조하세요.
 
 컨테이너 호스트에 `c:\share\en-us`라는 디렉터리를 만듭니다.
 
@@ -414,7 +414,7 @@ PS C:\> Stop-Container -Name HYPV
 
 이 컨테이너의 상태는 이제 새 컨테이너 이미지로 캡처될 수 있습니다.
 
-이 예제에서는 `데모`의 게시자와 버전 `1.0`으로 `NanoServerIIS`라는 새 컨테이너 이미지를 만듭니다.
+이 예제에서는 `Demo`의 게시자와 버전 `1.0`으로 `NanoServerIIS`라는 새 컨테이너 이미지를 만듭니다.
 
 ```powershell
 PS C:\> New-ContainerImage -ContainerName HYPV -Name NanoServerIIS -Publisher Demo -Version 1.0
@@ -444,7 +444,7 @@ PS C:\> Start-Container -Name IISApp
 
 ### 네트워킹 구성
 
-Windows 컨테이너 빠른 시작에 대한 기본 네트워크 구성은 NAT(Network Address Translation)로 구성된 가상 스위치에 연결하는 컨테이너를 갖는 것입니다. 이 때문에 컨테이너 내부, 컨테이너 호스트의 포트에서 실행 중인 응용 프로그램에 연결하기 위해 컨테이너의 포트에 매핑되어야 합니다.
+Windows 컨테이너 빠른 시작에 대한 기본 네트워크 구성은 NAT(Network Address Translation)로 구성된 가상 스위치에 연결하는 컨테이너를 갖는 것입니다. 이 때문에 컨테이너 내부 즉, 컨테이너 호스트의 포트에서 실행 중인 응용 프로그램에 연결하기 위해 컨테이너의 포트에 매핑되어야 합니다.
 
 이 연습에서 웹 사이트는 컨테이너 내부에서 실행 중인 IIS에서 호스팅됩니다. 포트 80에서 웹 사이트에 액세스하려면 컨테이너 호스트 IP 주소의 포트 80을 컨테이너 IP 주소의 포트 80에 매핑합니다.
 

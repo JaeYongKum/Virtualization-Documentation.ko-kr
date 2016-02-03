@@ -4,16 +4,16 @@
 
 기존 가상 또는 물리적 시스템에 대한 Windows 컨테이너 호스트의 스크립트화된 배포 단계는 [현재 Windows 컨테이너 호스트 배포](./inplace_setup.md)를 참조하세요.
 
-**컨테이너 OS 이미지를 설치하기 전에 반드시 읽으십시오.** Microsoft Windows Server 시험판 소프트웨어("사용 조건")의 사용 조건은 Microsoft Windows 컨테이너 OS 이미지 추가(“추가 소프트웨어) 사용에 적용됩니다. 추가 구성 소프트웨어를 다운로드하여 사용하면 이 사용 조건에 동의하는 것이며 사용 조건에 동의하지 않으면 해당 항목을 사용해서는 안 됩니다.  Windows Server 시험판 소프트웨어와 보조 소프트웨어 모두 Microsoft Corporation에서 사용을 허가합니다.
+**컨테이너 OS 이미지를 설치하기 전에 반드시 읽으시기 바랍니다.** Microsoft Windows Server 시험판 소프트웨어의 사용 조건("사용 조건")은 Microsoft Windows 컨테이너 OS 이미지 추가(“추가 소프트웨어”) 사용에 적용됩니다. 추가 구성 소프트웨어를 다운로드하여 사용하면 이 사용 조건에 동의하는 것이며 사용 조건에 동의하지 않으면 해당 항목을 사용해서는 안 됩니다.  Windows Server 시험판 소프트웨어와 보조 소프트웨어 모두 Microsoft Corporation에서 사용을 허가합니다.
 
 이 빠른 시작에서 **Windows Server**와 **Hyper-V 컨테이너** 연습을 모두 완료하려면 다음이 필요합니다.
 
-* Windows 10 빌드 1056 이상을 실행하는 시스템/Windows Server Technical Preview 4 이상
-* Hyper-V 역할 활성화([지침 참조](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_install#UsingPowerShell))
+* Windows 10 빌드 10586 이상/Windows Server Technical Preview 4 이상을 실행하는 시스템입니다.
+* Hyper-V 역할 사용([지침 참조](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_install#UsingPowerShell)))
 * 컨테이너 호스트 이미지, OS 기본 이미지 및 설치 스크립트를 위해 사용 가능한 20GB 저장 공간
 * Hyper-V 호스트에 대한 관리자 권한
 
-> Hyper-V 컨테이너를 실행하는 가상화된 호스트에는 중첩된 가상화가 필요합니다. 물리적 호스트와 가상 호스트 모두 중첩된 가상화를 지원하는 OS를 실행 중이어야 합니다. 자세한 내용은 [Windows Server 2016 기술 미리 보기](https://technet.microsoft.com/library/dn765471.aspx#BKMK_nested)의 새로운 Hyper-V 기능을 참조하세요.
+> Hyper-V 컨테이너를 실행하는 가상화된 호스트에는 중첩된 가상화가 필요합니다. 물리적 호스트와 가상 호스트 모두 중첩된 가상화를 지원하는 OS를 실행 중이어야 합니다. 자세한 내용은 [Windows Server 2016 Technical Preview](https://technet.microsoft.com/library/dn765471.aspx#BKMK_nested)의 새로운 Hyper-V 기능을 참조하세요.
 
 ## 새 가상 컴퓨터에 새 컨테이너 호스트 설치
 
@@ -39,7 +39,7 @@ PS C:\> Get-VMSwitch | where {$_.SwitchType –eq “External”}
 PS C:\> wget -uri https://aka.ms/tp4/New-ContainerHost -OutFile c:\New-ContainerHost.ps1
 ```
 
-다음 명령을 실행하여 컨테이너 호스트를 만들고 구성합니다. 여기서 `<containerhost>`는 가상 컴퓨터 이름이 됩니다.
+다음 명령을 실행하여 컨테이너 호스트를 만들고 구성합니다. 여기서 `&lt;containerhost&gt;`는 가상 컴퓨터 이름이 됩니다.
 
 ``` powershell
 PS C:\> c:\New-ContainerHost.ps1 –VmName <containerhost> -WindowsImage ServerDatacenterCore -Hyperv
@@ -71,3 +71,5 @@ license terms. Please confirm you have accepted and agree to the license terms.
 
 
 
+
+<!--HONumber=Jan16_HO2-->

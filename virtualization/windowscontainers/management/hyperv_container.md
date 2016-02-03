@@ -4,7 +4,7 @@
 
 Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이너 등, 두 가지 다른 유형의 컨테이너를 포함합니다. 두 컨테이너 유형 모두 생성, 관리, 작동은 동일합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 모든 다른 컨테이너 간에 만들어지는 격리의 수준입니다.
 
-**Windows Server 컨테이너** – 네임스페이스와 프로세스 격리 기술을 통해 제공되는 격리를 통해 호스트에서 여러 컨테이너가 실행됩니다.
+**Windows Server 컨테이너** – 네임스페이스와 프로세스 격리 기술을 통해 제공되는 격리를 사용해 호스트에서 여러 컨테이너가 실행됩니다.
 
 **Hyper-V 컨테이너** – 여러 컨테이너가 한 호스트에서 실행되지만 각 컨테이너는 유틸리티 가상 컴퓨터 안에서 실행됩니다. 이로 인해 Hyper-V 컨테이너, 컨테이너 호스트, 기타 컨테이너 호스트에서 실행되는 컨테이너 간에 커널 수준의 격리가 가능합니다.
 
@@ -24,7 +24,7 @@ PS C:\> $con = New-Container -Name HYPVCON -ContainerImageName NanoServer -Switc
 
 빌드 시점에 컨테이너를 Hyper-V 컨테이너로 만드는 것 외에도, PowerShell을 통해 만든 Windows Server 컨테이너를 Hyper-V 컨테이너로 변환할 수도 있습니다.
 
-> 현재 컨테이너 런타임 변환을 지원하는 유일한 운영 체제는 Nano Server입니다.
+>현재 컨테이너 런타임 변환을 지원하는 유일한 운영 체제는 Nano Server입니다.
 
 기본 런타임으로 새 컨테이너를 만듭니다.
 
@@ -61,7 +61,7 @@ DEMO               HyperV
 
 ### 컨테이너 만들기
 
-Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `–issolation=hyperv` 매개 변수를 사용합니다.
+Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `–-isolation=hyperv` 매개 변수를 사용합니다.
 
 ```powershell
 docker run -it --isolation=hyperv 646d6317b02f cmd
@@ -214,3 +214,4 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
 
 
 
+<!--HONumber=Jan16_HO1-->
