@@ -1,110 +1,110 @@
-# Nano Server installation option of Windows Server Technical Preview 4 for Developers
+# Windows Server Technical Preview 4 for Developers의 Nano Server 설치 옵션
 
-PLEASE READ PRIOR TO DOWNLOAD: By downloading and using the VHD at the link below, you agree to the License Terms, and you may not use it if you have not accepted the License Terms.
+다운로드하기 전에 읽어 보십시오. 아래의 링크에서 VHD를 다운로드하여 사용함으로써 사용권 계약에 동의하게 되며, 사용권 계약에 동의하지 않으면 사용할 수 없습니다.
 
-Download VHD:  [Nano Server installation option of Windows Server Technical Preview 4 for Developers](http://aka.ms/nanoevalvhd)
+VHD 다운로드:  [Windows Server Technical Preview 4 for Developers의 Nano Server 설치 옵션](http://aka.ms/nanoevalvhd)
 
-# End User License Agreement
+# 최종 사용자 사용권 계약(EULA)
 
-MICROSOFT LICENSE TERMS FOR A VIRTUAL HARD DISK IMAGE OF THE FOLLOWING SOFTWARE:
+다음 소프트웨어의 가상 하드디스크 이미지에 대한 MICROSOFT 사용권 계약:
 MICROSOFT WINDOWS SERVER
 
 ---------------------
 
 
-These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software product identified above and any documentation, which includes the media on which you received it (collectively referred to as the "software" or "VHD"). The terms also apply to any Microsoft Internet-based services for this software.
+본 사용권 계약은 Microsoft Corporation(또는 거주 지역에 따라 계열사 중 하나)과 귀하 간에 체결되는 계약입니다. 본 사용권 계약을 읽어 주시기 바랍니다. 본 사용권 계약은 위에 명시된 소프트웨어 제품과 소프트웨어를 수령하는 매체를 포함하는 모든 문서에 적용됩니다("소프트웨어" 또는 "VHD"로 통칭). 본 계약은 본 소프트웨어의 Microsoft 인터넷 기반 서비스에도 적용됩니다.
 
-**BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT USE THE SOFTWARE.
-AS DESCRIBED BELOW, USING SOME FEATURES ALSO OPERATES AS YOUR CONSENT TO THE TRANSMISSION OF CERTAIN STANDARD COMPUTER INFORMATION FOR INTERNET-BASED SERVICES.
-YOUR RIGHT TO USE THE SOFTWARE IS LIMITED TO A SPECIFIED PERIOD OF TIME. PLEASE REFER TO SECTION 3 FOR DETAILS.**
+**소프트웨어를 사용함으로써 귀하는 본 사용권 계약에 동의하게 됩니다. 동의하지 않을 경우에는 소프트웨어를 사용하지 마십시오.
+아래에서 기술된 바와 같이 이 소프트웨어의 일부 기능을 사용함으로써 귀하는 인터넷 기반 서비스를 위한 특정 표준 컴퓨터 정보의 전송에 동의하게 됩니다.
+귀하의 소프트웨어 사용권은 명시된 기간으로 제한됩니다. 자세한 내용은 섹션 3을 참조하십시오.**
 
 ---------------------
 
 
-If you comply with these license terms, you have the rights below.
+본 사용권 계약을 준수하는 경우 아래와 같은 권한을 행사할 수 있습니다.
 
-1.  **INSTALLATION AND USE RIGHTS.**
-*  Supersede other terms.
-The terms of this license supersede the terms of any Microsoft software license term agreement that requires “acceptance” of a separate license term agreement during installation.
-* Installation.
-You may install and use the software on your device of which you are running any virtualization software able to run Virtual Hard Disk (VHD) formats, including Microsoft Virtual Server.
-*  Limited use rights.
-You may use the software in the virtual hard disk image only to internally demonstrate and evaluate it. You may not use the software in a live operating environment.
-*  No separation.
-The Microsoft software in the virtual hard disk image is licensed as a single piece of software. The software may include tools and components to support new features of the operating system. You may not separate, use, or redistribute these tools or components for any purpose other than for use by those new features that are distributed as part of the operating system. For example, Service Fabric is a software component that may be used by the Network Controller of the operation system only.
-*  Third party programs
-The software may contain third party software programs that are licensed under proprietary terms that are presented to you. The software may also contain third party open source programs that Microsoft, not the third party, licenses to you under Microsoft’s license terms. Notices, if any, for the third party open source programs are included for your information only.
+1.  **설치 및 사용권.**
+*  다른 계약을 대체합니다.
+본 사용권의 조건은 설치 과정 중에 별도의 사용권 계약에 대한 "동의"가 필요한 모든 Microsoft 소프트웨어 사용권 계약의 조건을 대체합니다.
+* 설치.
+Microsoft Virtual Server를 포함해 VHD(Virtual Hard Disk) 포맷을 실행할 수 있는 가상화 소프트웨어를 실행하는 장치에서 소프트웨어를 설치 및 사용할 수 있습니다.
+*  사용권 제한.
+내부 검증 및 평가 목적에 한해 가상 하드 디스크 이미지에서 소프트웨어를 사용할 수 있습니다. 실제 운영 환경에서는 소프트웨어를 사용할 수 없습니다.
+*  분리 금지.
+가상 하드 디스크 이미지의 Microsoft 소프트웨어는 하나의 소프트웨어로 라이선스가 허여됩니다. 이 소프트웨어에는 운영 체제의 새 기능을 지원하는 도구와 구성 요소가 포함될 수 있습니다. 운영 체제의 일부로 배포된 새로운 기능으로 사용하는 용도 이외의 다른 용도로 이 도구나 구성 요소를 분리, 사용 또는 재배포할 수 없습니다. 예를 들어 Service Fabric은 운영 체제의 Network Controller를 통해서만 사용할 수 있는 소프트웨어 구성 요소입니다.
+*  제3자 프로그램
+소프트웨어에는 귀하에게 제공된 독점 계약에 따라 사용권이 허용되는 제3자 소프트웨어 프로그램이 포함될 수 있습니다. 제3자가 아닌 Microsoft가 Microsoft의 사용권 계약에 따라 귀하에 사용권을 허여하는 제3자 오픈 소스 프로그램이 소프트웨어에 포함되어 있을 수 있습니다. 제3자 오픈 소스 프로그램은 정보용으로만 포함됩니다.
 
-2.  **INTERNET-BASED SERVICES.**
-Microsoft may provide Internet-based services with the software. It may change or cancel them at any time. Should the Virtual Hard Drive Image be configured to transmit over the Internet the following terms apply:
-Consent for Internet-Based Services. Because this software is a pre-release version, we have turned on some internet-based features by default to obtain feedback about them. The software features described below and in the Windows Privacy Statement connect to Microsoft or service provider computer systems over the Internet. In some cases, you will not receive a separate notice when they connect. In some cases, you may switch off these features or not use them. For more information about these features, see go.microsoft.com/fwlink/?LinkId=506737. By using these features, you consent to the transmission of this information to any country Microsoft operates in. The list below may not be fully-inclusive.
-Computer Information. Some software features use Internet protocols, which send to Microsoft (or its suppliers or service providers) computer information, such as your Internet protocol address, the type of operating system, browser and name and version of the software you are using, and the language code of the device where you installed the software. Microsoft uses this information to make the Internet-based services available to you, in accordance with the Privacy Statement at go.microsoft.com/fwlink/?LinkId=506737.
+2.  **인터넷 기반 서비스.**
+Microsoft는 소프트웨어로 인터넷 기반 서비스를 제공할 수 있습니다. Microsoft는 이러한 서비스를 언제라도 변경 또는 중단할 수 있습니다. 인터넷을 통해 가상 하드 드라이브 이미지를 구성하거나 전송해야 하는 경우에는 다음의 조건이 적용됩니다.
+인터넷 기반 서비스에 대한 동의. 본 소프트웨어는 시험판 버전이므로 피드백을 얻기 위해 일부 인터넷 기반 기능이 기본적으로 설정되어 있습니다. 아래 설명 및 Windows 개인정보취급방침에 명시된 소프트웨어 기능은 인터넷을 통해 Microsoft 또는 서비스 공급자 컴퓨터 시스템에 연결됩니다. 어떤 경우에는 연결될 때 별도의 통지를 받지 못할 수도 있습니다. 어떤 경우에는 이 기능을 해제하거나 사용하지 않을 수도 있습니다. 이 기능에 대한 자세한 내용은 go.microsoft.com/fwlink/?LinkId=506737를 참조하십시오. 이 기능을 사용함으로써 이 정보를 Microsoft가 사업을 운영하는 국가로 전송하는 것에 동의하게 됩니다. 아래 목록은 모두 포함되지 않을 수 있습니다.
+컴퓨터 정보. 일부 소프트웨어 기능은 인터넷 프로토콜을 사용하여 귀하가 사용하고 있는 인터넷 프로토콜 주소, 운영 체제 종류, 브라우저 및 소프트웨어의 이름과 버전, 소프트웨어를 설치한 장치의 언어 코드 등의 컴퓨터 정보를 Microsoft(또는 해당 공급자/서비스 공급자)에 전송합니다. Microsoft는 go.microsoft.com/fwlink/?LinkId=506737의 개인 정보 보호 취급 방침에 따라 이 정보를 사용하여 귀하가 인터넷 기반 서비스를 이용할 수 있도록 합니다.
 
-3.  **TIME-SENSITIVE SOFTWARE.**
-The software will stop running on a predetermined date. You will not receive any other notice. You may not be able to access data used with the software when it stops running. Please see go.microsoft.com/fwlink/?LinkId=624232 for specific information about the end date for the software..
+3.  **시간 제한적 소프트웨어.**
+사전 정의된 날짜에 소프트웨어의 작동이 중단됩니다. 별도의 통지는 제공되지 않습니다. 소프트웨어 작동이 중단되면 소프트웨어에 사용되는 데이터에 액세스할 수 없습니다. 소프트웨어의 종료일에 대한 특정 정보는 go.microsoft.com/fwlink/?LinkId=624232를 참조하십시오.
 
-4.  **NO ACTIVATION.**
-To prevent its unlicensed use, the software may contain activation enforcement technology. Because this is an evaluation-only license, you are not licensed to activate the software for any purpose even if it prompts you to do so.
+4.  **정품 인증 없음.**
+소프트웨어에는 무단 사용을 방지하기 위해 정품 인증 적용 기술이 포함될 수 있습니다. 이 사용권은 평가 전용 사용권이므로 메시지가 표시되는 경우에도 어떤 목적으로도 소프트웨어의 정품을 인증하도록 라이선스가 허여되지 않습니다.
 
-5.  **PRE-RELEASE SOFTWARE.**
-This software is a pre-release version. It may not work the way a final version of the software will. We may change it for the final, commercial version. We also may not release a commercial version.
+5.  **시험판 소프트웨어.**
+본 소프트웨어는 시험판 버전입니다. 따라서 소프트웨어의 최종 버전과 다르게 작동할 수 있습니다. Microsoft는 최종 상업용 버전을 변경할 수 있습니다. Microsoft는 또한 상업용 버전을 출시하지 않을 수도 있습니다.
 
-6.  **FEEDBACK.**
-If you give feedback about the software to Microsoft, you give to Microsoft, without charge, the right to use, share and commercialize your feedback in any way and for any purpose. You also give to third parties, without charge, any patent rights needed for their products, technologies and services to use or interface with any specific parts of a Microsoft software or service that includes the feedback. You will not give feedback that is subject to a license that requires Microsoft to license its software or documentation to third parties because Microsoft includes your feedback in them. These rights survive this agreement.
+6.  **피드백.**
+귀하가 Microsoft에 소프트웨어에 대한 피드백을 제공할 경우 귀하는 피드백을 어떤 목적이나 방법으로든 무상으로 사용, 공유 및 상용화할 수 있는 권한을 Microsoft에 제공하는 것입니다. 또한 귀하는 피드백이 포함되는 Microsoft 소프트웨어 또는 서비스의 특정 부분과 함께 사용하거나 공유하기 위해 제3자에게 제3자의 제품, 기술, 및 서비스에 대한 특허권을 무상으로 허여하게 됩니다. Microsoft가 귀하의 피드백을 소프트웨어에 포함하므로 귀하는 Microsoft가 제3자에게 소프트웨어 또는 문서의 라이선스를 허여하도록 요구하는 라이선스에 적용되는 피드백을 제공하지 않습니다. 이러한 권한은 본 계약 기간 동안 유효합니다.
 
-7.  **.NET FRAMEWORK SOFTWARE.**
-The software includes one or more components of the .NET Framework, which you may use only as described at go.microsoft.com/fwlink/?linkid=66406, if you use the .NET Framework components to conduct internal benchmark testing.
+7.  **.NET FRAMEWORK 소프트웨어.**
+소프트웨어에는 하나 이상의 .NET Framework 구성 요소가 포함되어 있으며, 귀하는 .NET Framework 구성 요소를 사용해 내부 벤치마킹 테스트를 실행하는 경우에 go.microsoft.com/fwlink/?linkid=66406에 명시된 용도로만 사용할 수 있습니다.
 
-8.  **H.264/AVC AND MPEG-4 VISUAL STANDARDS AND VC-1 AND MPEG-2 VIDEO STANDARDS**
-This software may include H.264/AVC, VC-1, and MPEG-4 Part 2, and MPEG-2 visual compression technology. MPEG LA, L.L.C. requires this notice:
+8.  **H.264/AVC 및 MPEG-4 VISUAL 표준 및 VC-1 및 MPEG-2 비디오 표준**
+이 소프트웨어에는 H.264/AVC, VC-1, MPEG-4 Part 2 및 MPEG-2 Visual 압축 기술이 포함되어 있을 수 있습니다. MPEG LA, L.L.C.에서는 다음과 같은 통지 사항을 표시하도록 요구합니다.
 
-THIS PRODUCT IS LICENSED UNDER THE AVC, THE VC-1, THE MPEG-4 PART 2 VISUAL, AND THE MPEG-2 VIDEO PATENT PORTFOLIO LICENSES FOR THE PERSONAL AND NON-COMMERCIAL USE OF A CONSUMER TO (i) ENCODE VIDEO IN COMPLIANCE WITH THE ABOVE STANDARDS (“VIDEO STANDARDS”) AND/OR (ii) DECODE AVC, VC-1, MPEG-4 PART 2 AND MPEG-2 VIDEO THAT WAS ENCODED BY A CONSUMER ENGAGED IN A PERSONAL AND NON-COMMERCIAL ACTIVITY AND/OR WAS OBTAINED FROM A VIDEO PROVIDER LICENSED TO PROVIDE SUCH VIDEO. NO LICENSE IS GRANTED OR SHALL BE IMPLIED FOR ANY OTHER USE. ADDITIONAL INFORMATION MAY BE OBTAINED FROM MPEG LA, L.L.C SEE WWW.MPEGLA.COM.
+이 제품에는 AVC, VC-1, MPEG-4 PART 2 VISUAL 및 MPEG-2 비디오 특허 포트폴리오 사용권에 의거하여 소비자의 개인적 및 비상업적 사용에 대해 (i) 위에 명시된 표준("비디오 표준")에 따른 비디오 인코딩 및/또는 (ii) 개인적 및 비상업적 활동에 관여하는 소비자가 인코딩했거나 그러한 비디오를 제공할 수 있는 사용권이 허여된 비디오 공급자로부터 취득한 AVC, VC-1, MPEG-4 PART 2 및 MPEG-2 비디오 디코딩을 할 수 있는 사용권이 허여됩니다. 기타 다른 용도로는 사용권이 허여되지 않으며 묵시적으로도 허용되지 않습니다. 추가 정보는 MPEG LA, L.L.C에서 얻을 수 있습니다. WWW.MPEGLA.COM을 참조하십시오.
 
 9.  **ADOBE FLASH PLAYER**
-The software may include a version of Adobe Flash Player. You agree that your use of the Adobe Flash Player is governed by the license terms for Adobe Systems Incorporated, at go.microsoft.com/fwlink/?LinkID=248532. Adobe and Flash are either registered trademarks or trademarks of Adobe Systems Incorporated in the United States and/or other countries.
-10. **SCOPE OF LICENSE.**
-The software is licensed, not sold. This agreement only gives you some rights     to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights   despite this limitation, you may use the software only as expressly permitted in this agreement. In     doing so, you must comply with any technical limitations in the software that only allow you to use it  in certain ways. You may not
-*  Disclose the results of any benchmark tests of the software, other than the Microsoft .NET Framework (see separate term above), to any third party without Microsoft’s prior written approval;
-*  work around any technical limitations in the software;
-*  reverse engineer, decompile, or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
-*  make more copies of the software than specified in this agreement or allowed by applicable law, despite this limitation;
-*  publish the software for others to copy;
-*  rent, lease, or lend the software;
-*  transfer the software or this agreement to any third party; or
-*  use the software for commercial software hosting services.
+이 소프트웨어에는 Adobe Flash Player 버전이 포함될 수 있습니다.  귀하는 Adobe Flash Player를 사용하려면 go.microsoft.com/fwlink/?LinkID=248532에 있는 Adobe Systems Incorporated의 사용권 계약을 따라야 한다는 것에 동의합니다. Adobe 및 Flash는 미국 및/또는 기타 국가에서 Adobe Systems Incorporated의 등록 상표 또는 상표입니다.
+10. **사용권의 범위.**
+본 소프트웨어는 판매되는 것이 아니라 그 사용이 허여되는 것입니다. 본 계약은 귀하에게 소프트웨어를 사용할 수 있는 권리만 부여합니다. 기타 모든 권한은 Microsoft가 보유합니다. 이러한 제한과 관계없이 관련 법률에서 귀하에게 더 많은 권한을 부여하지 않는 한, 귀하는 본 계약에서 명시적으로 허용되는 조건에 한해서만 소프트웨어를 사용할 수 있습니다. 귀하는 소프트웨어를 사용하는 동안 특정 방식으로만 사용할 수 있는 소프트웨어의 모든 기술적 제한 사항을 따라야 합니다. 다음과 같은 행위는 허용되지 않습니다.
+*  Microsoft의 사전 서면 승인 없이 소프트웨어에 대한 벤치마크 테스트 결과를 제3자에게 공개하는 행위(Microsoft .NET Framework는 제외, 상기 별도 조항 참조)
+*  소프트웨어의 기술적 제한 사항을 위반하는 행위
+*  이러한 제한에도 불구하고 관련 법률에서 명시적으로 허용하는 경우를 제외한 소프트웨어의 리버스 엔지니어링, 디컴파일 또는 디스어셈블 작업을 수행하는 행위
+*  이러한 제한에도 불구하고 본 계약서에 명시된 것보다 또는 관련 법률에서 허용하는 것보다 더 많은 수의 소프트웨어 사본을 만드는 행위
+*  다른 사람이 복사할 수 있도록 소프트웨어를 게시하는 행위
+*  소프트웨어를 대여 또는 임대하는 행위
+*  소프트웨어나 본 계약서를 제3자에게 양도하는 행위, 또는
+*  상업용 소프트웨어 호스팅 서비스에 소프트웨어를 사용하는 행위
 
-You also may not remove, minimize, block or modify any logos, trademarks, copyright, digital watermarks, or other notices of Microsoft or its suppliers that are included in the software, including any content made available to you through the software.
+또한 귀하가 소프트웨어를 통해 사용할 수 있는 콘텐츠를 포함해 소프트웨어 포함되어 있는 Microsoft 또는 그 공급자의 로고, 상표, 판권, 디지털 워터마크 또는 기타 고지를 제거, 최소화, 차단 또는 수정할 수 없습니다.
 
-Rights to access the software on any device do not give you any right to implement Microsoft patents or other Microsoft intellectual property in software or devices that access that device.
+모든 장치에 설치된 소프트웨어 액세스 권한이 있다고 해서 해당 장치에 액세스하는 소프트웨어나 장치와 관련된 Microsoft의 특허권 또는 Microsoft의 기타 지적 재산권을 구현할 수 있는 권한이 허여되는 것은 아닙니다.
 
-11. **EXPORT RESTRICTIONS.**
-The software is subject to United States export laws and  regulations. You must comply with all domestic and international export laws and regulations that   apply to the software. These laws include restrictions on destinations, end users and end use. For  additional information, see www.microsoft.com/exporting.
+11. **수출 제한.**
+소프트웨어는 미국 수출법과 규정의 적용 대상입니다. 귀하는 소프트웨어에 적용되는 모든 국내 및 국제 수출법 및 규정을 준수해야 합니다. 이러한 법률에는 목적지, 최종 사용자 및 최종 용도에 대한 제한이 포함됩니다. 자세한 내용은 www.microsoft.com/exporting을 참조하십시오.
 
-12. **SUPPORT SERVICES.**
-Because this software is “as is,” Microsoft may not provide support services  for it.
+12. **지원 서비스.**
+이 소프트웨어는 "있는 그대로" 제공되므로 Microsoft가 소프트웨어에 대한 지원을 제공하지 않을 수 없습니다.
 
-13. **ENTIRE AGREEMENT.**
-This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+13. **전면 합의.**
+본 계약 및 귀하가 이용하는 추가 구성 요소, 업데이트, 인터넷 기반 서비스 및 지원 서비스에 대한 조항은 소프트웨어 및 지원 서비스에 대한 완전 합의입니다.
 
-14. **APPLICABLE LAW.**
-a. United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
-b. Outside the United States. If you acquired the software in any other country, the laws of that country apply.
+14. **관련 법률.**
+a. 미국. 소프트웨어를 미국에서 구입한 경우, 국제사법 원칙에 관계없이 본 계약의 해석은 워싱턴 주법을 따르며 계약 위반에 대한 청구 발생 시에도 워싱턴 주법이 적용됩니다. 소비자 보호법, 불공정거래법 및 기타 불법 행위 관련 법규의 적용을 받는 청구가 발생한 경우 귀하가 거주하고 있는 주의 주법이 적용됩니다.
+b. 미국 외 지역. 본 사용권 계약에는 대한민국 법이 적용됩니다.
 
-15. **LEGAL EFFECT.**
-This agreement describes certain legal rights. You may have other rights under    the laws of your country. You may also have rights with respect to the party from whom you  acquired the software. This agreement does not change your rights under the laws of your country if     the laws of your country do not permit it to do so.
+15. **법적 효력.**
+본 계약은 특정 법적 권리에 대해 기술하고 있습니다. 귀하는 귀하가 거주하는 국가의 법률에 따라 다른 권리를 보유할 수 있습니다. 귀하는 또한 소프트웨어를 구입한 당사자와 관련된 권리를 보유할 수도 있습니다. 본 계약은 귀하가 거주하는 국가의 법률에서 허용하지 않는 경우 귀하가 거주하는 국가의 법률에 따른 권리를 변경할 수 없습니다.
 
-16. **DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS OR STATUTORY GUARANTEES UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
-FOR AUSTRALIA – YOU HAVE STATUTORY GUARANTEES UNDER THE AUSTRALIAN CONSUMER LAW AND NOTHING IN THESE TERMS IS INTENDED TO AFFECT THOSE RIGHTS.**
+16. **보증의 부인. 소프트웨어는 "있는 그대로" 라이선스가 허여됩니다. 소프트웨어의 사용으로 발생하는 위험은 귀하의 책임입니다. MICROSOFT는 어떠한 명시적 보증, 보장 또는 조건도 제시하지 않습니다. 귀하는 귀하가 거주하는 지역의 법규에 따른 추가적인 소비자 권리 또는 법적 권리를 보유할 수 있으며, 이 권리는 본 계약을 통해 변경되지 않습니다. 귀하가 거주하는 지역의 법규가 허용하는 범위 내에서 Microsoft는 상업성, 특정 목적에의 적합성 및 비침해성과 관련된 묵시적 보증을 배제합니다.
+오스트레일리아에 해당 – 귀하는 오스트레일리아 소비자 보호법에 따라 법적 권리를 보유하며 이 계약서의 어떠한 내용도 그러한 권리에 영향을 미쳐서는 안 됩니다.
 
-17. **LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.**
+17. **구제 조치 및 손해의 제한 및 배제. 귀하는 직접적인 손해에 한해 MICROSOFT와 그 공급자로부터 최대 미화 $5.00까지 보상받을 수 있습니다. 결과적 손해, 이익 손실, 특별, 간접 또는 부수적 손해를 포함한 기타 모든 손해에 대해서는 보상을 받을 수 없습니다.
 
-This limitation applies to
-*  anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and
-*  claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+이 제한 사항은 다음에 적용됩니다.
+*  제3자 인터넷 사이트상의 소프트웨어, 서비스, 콘텐츠(코드 포함) 또는 제3자 프로그램과 관련하여 발생하는 모든 문제
+*  계약 위반, 보증, 보장 또는 조건의 불이행, 무과실 책임, 과실 또는 관련 법률에서 허용하는 범위 내의 기타 불법 행위 등으로 인한 청구
 
-It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages. If your local law allows you to recover other damages from Microsoft even though we do not, you cannot recover more than $5.00 USD, or the amount you paid for the software, whichever is higher.
+Microsoft가 그러한 손해의 가능성에 대해 사전에 알고 있었거나 알아야만 했던 경우에도 적용됩니다. 귀하가 거주하고 있는 국가에서 부수적, 결과적 또는 기타 손해의 배제나 제한을 허용하지 않는 경우에는 위의 제한이나 배제가 적용되지 않을 수 있습니다. 본 계약의 조항에도 불구하고 해당 지역 법규에서 기타 손해에 대한 Microsoft의 보상을 허용하는 경우 귀하는 최대 미화 5.00달러 또는 소프트웨어에 지불한 금액 중 더 큰 금액을 초과하여 보상을 받을 수 없습니다.
 
-**Please note: As this software is distributed in Quebec, Canada, some of the clauses in this agreement are provided below in French.**
+**참고: 이 소프트웨어는 캐나다 Quebec 지역에 배포되므로 본 계약서의 일부 조항은 아래에서 프랑스어로 제공됩니다.**
 
 **Remarque : Ce logiciel étant distribué au Québec, Canada, certaines des clauses dans ce contrat sont fournies ci-dessous en français.**
 
