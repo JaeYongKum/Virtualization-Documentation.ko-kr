@@ -234,9 +234,10 @@ Nano Server 컨테이너 호스트에 있는 컨테이너를 종료할 때 "exit
 
 컨테이너는 대체로 환경과 관계 없는 알려진 일관된 상태로 신속하게 시작하도록 설계되었습니다. 도메인에 가입하고 도메인에서 그룹 정책 설정을 적용하면 컨테이너를 시작하는 데 걸리는 시간이 늘고, 시간에 따라 컨테이너 작동 방식이 변경되고, 개발자 간과 배포 사이에 이미지를 이동하거나 공유하는 기능이 제한됩니다.
 
-Microsoft에서는 서비스 및 응용 프로그램이 Active Directory를 사용하는 방식에 대한 피드백과 컨테이너에서 이들 배포의 공통 영역을 신중히 고려하고 있습니다. 가장 효율적인 구성에 대한 세부 정보가 있는 경우 [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에서 공유해 주세요. 이러한 유형의 시나리오를 지원하는 솔루션을 적극적으로 찾고 있습니다.
+Microsoft에서는 서비스 및 응용 프로그램이 Active Directory를 사용하는 방식에 대한 피드백과 컨테이너에서 이들 배포의 공통 영역을 신중히 고려하고 있습니다. 가장 효율적인 구성에 대한 세부 정보가 있는 경우 [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에서 공유해 주세요.
+
+이러한 유형의 시나리오를 지원하는 솔루션을 적극적으로 찾고 있습니다.
 
 
 
-
-<!--HONumber=Jan16_HO3-->
+<!--HONumber=Feb16_HO1-->

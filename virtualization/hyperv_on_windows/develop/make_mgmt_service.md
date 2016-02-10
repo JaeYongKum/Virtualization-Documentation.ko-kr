@@ -1,6 +1,6 @@
-# 새 관리 서비스 만들기
+# 고유한 통합 서비스 만들기
 
-Windows 10부터는 Hyper-V에서, Hyper-V 게스트와 호스트 간에 네트워크 연결을 사용하지 않은 등록된 소켓 연결이 가능합니다. Hyper-V 소켓을 사용하면 서비스가 네트워킹 스택과는 독립적으로 실행될 수 있고 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다.
+Windows 10부터, 누구나 Hyper-V 호스트와 Hyper-V 호스트에서 실행 중인 가상 컴퓨터 간에 새 소켓 기반 통신을 사용하여 기본 제공 Hyper-V 통합 서비스와 아주 유사한 서비스를 만들 수 있습니다. 이러한 Hyper-V 소켓을 사용하면 서비스가 네트워킹 스택과는 독립적으로 실행될 수 있고 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다.
 
 이 문서에서는 Hyper-V 소켓에 구축된 간단한 응용 프로그램을 만들어 사용하는 방법을 안내합니다.
 
@@ -31,7 +31,7 @@ Windows 10부터는 Hyper-V에서, Hyper-V 게스트와 호스트 간에 네트�
 간단한 응용 프로그램을 작성하기 위해 다음이 필요합니다.
 * C 컴파일러. 없으면 [Visual Studio 코드](https://aka.ms/vs)를 확인하세요.
 * Hyper-V를 실행하는 컴퓨터와 가상 컴퓨터.
-    * 호스트 및 게스트(VM) 운영 체제는 Windows 10, Windows Server Technical Preview 3 이상이어야 합니다.
+  * 호스트 및 게스트(VM) 운영 체제는 Windows 10, Windows Server Technical Preview 3 이상이어야 합니다.
 * Windows SDK - `hvsocket.h`가 포함된 [Win10 SDK](https://dev.windows.com/en-us/downloads/windows-10-sdk) 링크입니다.
 
 ## 새 응용 프로그램 등록
@@ -149,7 +149,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
   ```PowerShell
   (Get-VM -Name $VMName).Id
   ```
-* 서비스 ID – [위에서 설명한 ](#RegisterANewApplication) GUID로, Hyper-V 호스트에 응용 프로그램과 함께 등록되어 있습니다.
+* 서비스 ID – [위에서 설명한 ](#RegisterANewApplication) GUID로, Hyper-V 호스트 레지스트리에 응용 프로그램과 함께 등록되어 있습니다.
 
 특정 가상 컴퓨터에 대한 연결이 아닌 경우 VMID 와일드 카드 집합도 사용할 수 있습니다.
 
@@ -191,3 +191,5 @@ Accept()
 
 
 
+
+<!--HONumber=Feb16_HO1-->

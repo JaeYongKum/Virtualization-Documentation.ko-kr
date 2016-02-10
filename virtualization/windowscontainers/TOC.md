@@ -24,9 +24,11 @@
 
 ## [시스템 요구 사항](deployment/system_requirements.md)
 
-## [컨테이너 호스트 배포](deployment/deployment.md)
+## [Windows Server의 컨테이너](deployment/deployment.md)
 
-## [Windows에서 Docker 배포](deployment/docker_windows.md)
+## [Nano Server의 컨테이너](deployment/deployment_nano.md)
+
+## [Windows의 Docker](deployment/docker_windows.md)
 
 # Windows 컨테이너 관리
 
@@ -65,4 +67,4 @@
 # [Nano Server EULA](Nano_EULA.md)
 
 
-<!--HONumber=Jan16_HO1-->
+<!--HONumber=Feb16_HO1-->

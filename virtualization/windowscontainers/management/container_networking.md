@@ -70,7 +70,7 @@ Add-NetNatStaticMapping -NatName "Nat" -Protocol TCP -ExternalIPAddress 0.0.0.0 
 ```powershell
 Add-NetNatStaticMapping -NatName "Nat" -Protocol TCP -ExternalIPAddress 0.0.0.0 -InternalIPAddress 172.16.0.3 -InternalPort 80 -ExternalPort 82
 ```
->각 외부 포트에 해당하는 방화벽 규칙이 필요합니다. 규칙은 `New-NetFirewallRule`을 사용하여 만들 수 있습니다. 자세한 내용은 [New-NetFirewallRule 참조](https://technet.microsoft.com/en-us/library/jj554908.aspx)를 참조하세요.
+> 각 외부 포트에 해당하는 방화벽 규칙이 필요합니다. 규칙은 `New-NetFirewallRule`을 사용하여 만들 수 있습니다. 자세한 내용은 [New-NetFirewallRule 참조](https://technet.microsoft.com/en-us/library/jj554908.aspx)를 참조하세요.
 
 포트 매핑을 만든 후에는 컨테이너 호스트(물리적 또는 가상)의 IP 주소 및 노출된 외부 포트를 통해 컨테이너 응용 프로그램에 액세스할 수 있습니다. 예를 들어 아래 다이어그램은 컨테이너 호스트의 외부 포트 **82**를 대상으로 하는 요청을 포함하는 NAT 구성을 나타냅니다. 포트 매핑을 기반으로, 이 요청은 컨테이너 2에 호스트 중인 응용 프로그램을 반환합니다.
 
@@ -117,7 +117,7 @@ Docker daemon –D –b “Virtual Switch” -H 0.0.0.0:2375
 Stop-Service docker
 ```
 
-구성 파일은 `c:\programdata\docker\runDockerDaemon.cmd’에서 찾을 수 있습니다. 다음 줄을 편집하고 `Virtual Switch`를 Docker 서비스에 사용될 가상 스위치의 이름으로 바꿉니다.
+구성 파일은 `c:\programdata\docker\runDockerDaemon.cmd`에서 찾을 수 있습니다. 다음 줄을 편집하고 `Virtual Switch`를 Docker 서비스에 사용될 가상 스위치의 이름으로 바꿉니다.
 
 ```powershell
 docker daemon -D -b “New Switch Name"
@@ -142,11 +142,11 @@ Start-Service docker
 컨테이너 네트워크 어댑터와 가상 스위치 간의 연결을 관리합니다.
 
 - Connect-ContainerNetworkAdapter - 컨테이너를 가상 스위치에 연결합니다.
-- Disconect-ContainerNetworkAdapter – 컨테이너 연결을 가상 스위치에서 분리합니다.
+- Disconnect-ContainerNetworkAdapter – 컨테이너 연결을 가상 스위치에서 분리합니다.
 
 각 명령에 대한 자세한 내용은 [컨테이너 PowerShell 참조](https://technet.microsoft.com/en-us/library/mt433069.aspx)를 참조하세요.
 
 
 
 
-<!--HONumber=Jan16_HO1-->
+<!--HONumber=Feb16_HO1-->

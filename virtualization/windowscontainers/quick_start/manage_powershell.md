@@ -15,7 +15,7 @@ Windows 컨테이너는 단일 컴퓨터 시스템에서 격리된 여러 응용
 - 중첩된 가상화를 사용하는 Windows 컨테이너 호스트입니다.
 - Windows Server 2016 미디어 - [다운로드](https://aka.ms/tp4/serveriso)
 
->Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
+> Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
 
 ## Windows Server 컨테이너
 
@@ -243,7 +243,7 @@ PS C:\> Remove-ContainerImage -Name WindowsServerCoreIIS -Force
 
 Hyper-V 컨테이너는 Windows Server 컨테이너에 대한 추가 수준의 격리를 제공합니다. 각 Hyper-V 컨테이너는 고도로 최적화된 가상 컴퓨터 내에서 만들어집니다. Windows Server 컨테이너가 컨테이너 호스트의 커널 및 해당 호스트에서 실행되는 다른 모든 Windows Server 컨테이너를 공유하는 곳에서 Hyper-V 컨테이너가 다른 컨테이너에서 완전히 격리됩니다. Hyper-V 컨테이너는 Windows Server 컨테이너와 동일하게 만들어지고 관리됩니다. Hyper-V 컨테이너에 대한 자세한 내용은 [Hyper-V 컨테이너 관리](../management/hyperv_container.md)를 참조하세요.
 
->Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 컨테이너 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
+> Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 컨테이너 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
 
 ### 컨테이너 만들기
 
@@ -288,7 +288,7 @@ d-----       11/18/2015   5:27 PM                en-us
 
 `Add-ContainerSharedFolder` 명령을 사용하여 새 컨테이너에 새 공유 폴더를 만듭니다.
 
->컨테이너는 공유 폴더를 만들 때 중지 상태에 있어야 합니다.
+> 컨테이너는 공유 폴더를 만들 때 중지 상태에 있어야 합니다.
 
 ```powershell
 PS C:\> Add-ContainerSharedFolder -ContainerName HYPV -SourcePath c:\share -DestinationPath c:\iisinstall
@@ -517,4 +517,4 @@ exit
 
 
 
-<!--HONumber=Jan16_HO1-->
+<!--HONumber=Feb16_HO1-->

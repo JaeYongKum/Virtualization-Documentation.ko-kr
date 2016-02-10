@@ -1,6 +1,6 @@
 # Windows의 Hyper-V 정보
 
-## [Windows의 Hyper-v](./windows_welcome.md)
+## [Windows의 Hyper-V](./windows_welcome.md)
 
 ## [Hyper-V 소개](./about/hyperv_on_windows.md)
 
@@ -14,7 +14,7 @@
 
 ## [시스템 요구 사항](quick_start/walkthrough_compatibility.md)
 
-## [Hyper-v 설치](quick_start/walkthrough_install.md)
+## [Hyper-V 설치](quick_start/walkthrough_install.md)
 
 ## [가상 스위치 만들기](quick_start/walkthrough_virtual_switch.md)
 
@@ -46,14 +46,15 @@
 
 ## [PowerShell 샘플](develop/powershell_snippets.md)
 
-## [관리 서비스](develop/make_mgmt_service.md)
+## [통합 서비스 빌드](develop/make_mgmt_service.md)
 
 ## [Hyper-V WMI 공급자(V2)](https://msdn.microsoft.com/library/hh850319.aspx)
 
-## [Hyper-V Architecture](https://msdn.microsoft.com/en-us/library/cc768520(v=bts.10).aspx)
+## [Hyper-V 아키텍처](https://msdn.microsoft.com/en-us/library/cc768520(v=bts.10).aspx)
 
 # 커뮤니티 및 지원에 연결
 
 ## [Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)
 
 
+<!--HONumber=Feb16_HO1-->

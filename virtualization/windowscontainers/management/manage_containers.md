@@ -10,7 +10,7 @@ Docker를 통한 Windows 컨테이너 관리에 대한 설명은 [컨테이너 �
 
 ### 컨테이너 만들기
 
-새 컨테이너를 만들 때는 컨테이너의 기반 역할을 할 컨테이너 이미지의 이름이 필요합니다. `Get-ContainerImageName` 명령으로 찾을 수 있습니다.
+새 컨테이너를 만들 때는 컨테이너의 기반 역할을 할 컨테이너 이미지의 이름이 필요합니다. `Get-ContainerImage` 명령으로 찾을 수 있습니다.
 
 ```powershell
 PS C:\> Get-ContainerImage
@@ -48,7 +48,7 @@ DHCP External   Microsoft Hyper-V Network Adapter
 NAT  NAT
 ```
 
-`Connect-ContainerNetowkrAdapter`를 사용하여 네트워크 어댑터를 가상 스위치에 연결합니다. 참고 - SwitchName 매개 변수를 사용하여 컨테이너를 만든 경우에도 이렇게 할 수 있습니다.
+`Connect-ContainerNetworkAdapter`를 사용하여 네트워크 어댑터를 가상 스위치에 연결합니다. 참고 - SwitchName 매개 변수를 사용하여 컨테이너를 만든 경우에도 이렇게 할 수 있습니다.
 
 ```powershell
 PS C:\> Connect-ContainerNetworkAdapter -ContainerName TST -SwitchName NAT
@@ -76,7 +76,7 @@ PS C:\> Get-Container | Start-Container
 
 ### 컨테이너에 연결
 
-PowerShell direct를 직접 사용하여 컨테이너에 연결할 수 있습니다. 소프트웨어 설치, 프로세스 시작 또는 컨테이너 문제 해결 등과 같은 작업을 수동으로 수행해야 할 경우 이렇게 하는 것이 유용할 수 있습니다. PowerShell direct를 사용하는 중에는 네트워크 구성에 관계없이 컨테이너에서 PowerShell 세션을 만들 수 있습니다. PowerShell direct에 대한 자세한 내용은 [PowerShell direct 블로그](http://blogs.technet.com/b/virtualization/archive/2015/05/14/powershell-direct-running-powershell-inside-a-virtual-machine-from-the-hyper-v-host.aspx)를 참조하세요.
+PowerShell direct를 직접 사용하여 컨테이너에 연결할 수 있습니다. 소프트웨어 설치, 프로세스 시작 또는 컨테이너 문제 해결 등과 같은 작업을 수동으로 수행해야 할 경우 이렇게 하는 것이 유용할 수 있습니다. PowerShell direct를 사용하는 중에는 네트워크 구성에 관계없이 컨테이너에서 PowerShell 세션을 만들 수 있습니다. PowerShell Direct에 대한 자세한 내용은 [PowerShell Direct 블로그](http://blogs.technet.com/b/virtualization/archive/2015/05/14/powershell-direct-running-powershell-inside-a-virtual-machine-from-the-hyper-v-host.aspx)를 참조하세요.
 
 컨테이너와의 대화형 세션을 만들려면 `Enter-PSSession` 명령을 사용합니다.
 
@@ -198,3 +198,4 @@ Docker rm 명령에 대한 자세한 내용은 [Docker rm 참조](https://docs.d
 
 
 
+<!--HONumber=Feb16_HO1-->
