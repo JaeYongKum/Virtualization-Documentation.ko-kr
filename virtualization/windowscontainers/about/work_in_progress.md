@@ -93,6 +93,57 @@ PS C:\> Start-Container test2
 **해결 방법: **  
 여러 끝점을 컨테이너로 노출해야 하는 경우 NAT 포트 매핑을 사용합니다.
 
+
+### 정적 NAT 매핑이 Docker를 통해 포트 매핑과 충돌할 수 있음
+
+Windows PowerShell을 사용하여 컨테이너를 만들고 정적 NAT 매핑을 추가하는 경우 `docker -p &lt;src&gt;:&lt;dst&gt;`를 사용하여 컨테이너를 시작하기 전에 이러한 매핑을 제거하지 않으면 충돌이 발생할 수 있습니다.
+
+다음은 포트 80에서 정적 매핑과 충돌하는 예입니다.
+```
+PS C:\IISDemo> Add-NetNatStaticMapping -NatName "ContainerNat" -Protocol TCP -ExternalIPAddress 0.0.0.0 -InternalIPAddress
+ 172.16.0.2 -InternalPort 80 -ExternalPort 80
+
+
+StaticMappingID               : 1
+NatName                       : ContainerNat
+Protocol                      : TCP
+RemoteExternalIPAddressPrefix : 0.0.0.0/0
+ExternalIPAddress             : 0.0.0.0
+ExternalPort                  : 80
+InternalIPAddress             : 172.16.0.2
+InternalPort                  : 80
+InternalRoutingDomainId       : {00000000-0000-0000-0000-000000000000}
+Active                        : True
+
+
+
+PS C:\IISDemo> docker run -it -p 80:80 microsoft/iis cmd
+docker: Error response from daemon: Cannot start container 30b17cbe85539f08282340cc01f2797b42517924a70c8133f9d8db83707a2c66: 
+HCSShim::CreateComputeSystem - Win32 API call returned error r1=2147942452 err=You were not connected because a 
+duplicate name exists on the network. If joining a domain, go to System in Control Panel to change the computer name
+ and try again. If joining a workgroup, choose another workgroup name. 
+ id=30b17cbe85539f08282340cc01f2797b42517924a70c8133f9d8db83707a2c66 configuration= {"SystemType":"Container",
+ "Name":"30b17cbe85539f08282340cc01f2797b42517924a70c8133f9d8db83707a2c66","Owner":"docker","IsDummy":false,
+ "VolumePath":"\\\\?\\Volume{4b239270-c94f-11e5-a4c6-00155d016f0a}","Devices":[{"DeviceType":"Network","Connection":
+ {"NetworkName":"Virtual Switch","EnableNat":false,"Nat":{"Name":"ContainerNAT","PortBindings":[{"Protocol":"TCP",
+ InternalPort":80,"ExternalPort":80}]}},"Settings":null}],"IgnoreFlushesDuringBoot":true,
+ "LayerFolderPath":"C:\\ProgramData\\docker\\windowsfilter\\30b17cbe85539f08282340cc01f2797b42517924a70c8133f9d8db83707a2c66",
+ "Layers":[{"ID":"4b91d267-ecbc-53fa-8392-62ac73812c7b","Path":"C:\\ProgramData\\docker\\windowsfilter\\39b8f98ccaf1ed6ae267fa3e98edcfe5e8e0d5414c306f6c6bb1740816e536fb"},
+ {"ID":"ff42c322-58f2-5dbe-86a0-8104fcb55c2a",
+"Path":"C:\\ProgramData\\docker\\windowsfilter\\6a182c7eba7e87f917f4806f53b2a7827d2ff0c8a22d200706cd279025f830f5"},
+{"ID":"84ea5d62-64ed-574d-a0b6-2d19ec831a27",
+"Path":"C:\\ProgramData\\Microsoft\\Windows\\Images\\CN=Microsoft_WindowsServerCore_10.0.10586.0"}],
+"HostName":"30b17cbe8553","MappedDirectories":[],"SandboxPath":"","HvPartition":false}.
+```
+
+
+***해결 방법***
+PowerShell을 사용하여 포트 매핑을 제거하면 문제를 해결할 수 있습니다. 이 경우 위의 예제에서 발생한 포트 80 충돌이 제거됩니다.
+```powershell
+Get-NetNatStaticMapping | ? ExternalPort -eq 80 | Remove-NetNatStaticMapping
+```
+
+
 ### Windows 컨테이너가 IP를 가져오지 않습니다.
 
 DHCP VM 스위치로 Windows 컨테이너에 연결하는 경우 컨테이너가 하지 않는 동안 컨테이너 호스트는 IP를 수신할 수 있습니다.
@@ -237,6 +288,7 @@ Nano Server 컨테이너 호스트에 있는 컨테이너를 종료할 때 "exit
 Microsoft에서는 서비스 및 응용 프로그램이 Active Directory를 사용하는 방식에 대한 피드백과 컨테이너에서 이들 배포의 공통 영역을 신중히 고려하고 있습니다. 가장 효율적인 구성에 대한 세부 정보가 있는 경우 [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에서 공유해 주세요.
 
 이러한 유형의 시나리오를 지원하는 솔루션을 적극적으로 찾고 있습니다.
+
 
 
 

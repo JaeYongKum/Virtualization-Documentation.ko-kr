@@ -2,11 +2,11 @@
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
 
-Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이너 등, 두 가지 다른 유형의 컨테이너를 포함합니다. 두 컨테이너 유형 모두 생성, 관리, 작동은 동일합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 모든 다른 컨테이너 간에 만들어지는 격리의 수준입니다.
+Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이너 등, 두 가지 다른 유형의 컨테이너를 포함합니다. 두 컨테이너 유형 모두 생성, 관리, 작동은 동일합니다. 또한, 동일한 컨테이너 이미지를 생성하고 사용합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 모든 다른 컨테이너 간에 만들어지는 격리의 수준입니다.
 
-**Windows Server 컨테이너** – 네임스페이스와 프로세스 격리 기술을 통해 제공되는 격리를 사용해 호스트에서 여러 컨테이너가 실행됩니다.
+**Windows Server 컨테이너** – 네임스페이스, 리소스 제어 및 프로세스 격리 기술을 통해 제공되는 격리를 통해 하나의 호스트에서 여러 컨테이너 인스턴스가 동시에 실행될 수 있습니다. Windows Server 컨테이너는 호스트와 동일할 뿐만 아니라 서로와도 동일한 커널을 공유합니다.
 
-**Hyper-V 컨테이너** – 여러 컨테이너가 한 호스트에서 실행되지만 각 컨테이너는 유틸리티 가상 컴퓨터 안에서 실행됩니다. 이로 인해 Hyper-V 컨테이너, 컨테이너 호스트, 기타 컨테이너 호스트에서 실행되는 컨테이너 간에 커널 수준의 격리가 가능합니다.
+**Hyper-V 컨테이너** – 여러 컨테이너 인스턴스가 하나의 호스트에서 동시에 실행될 수 있지만, 각 컨테이너는 특별한 가상 컴퓨터 내부에서 실행됩니다. 이는 각 Hyper-V 컨테이너 및 컨테이너 호스트 간의 커널 수준 격리를 제공합니다.
 
 ## Hyper-V 컨테이너 PowerShell
 
@@ -24,7 +24,7 @@ PS C:\> $con = New-Container -Name HYPVCON -ContainerImageName NanoServer -Switc
 
 빌드 시점에 컨테이너를 Hyper-V 컨테이너로 만드는 것 외에도, PowerShell을 통해 만든 Windows Server 컨테이너를 Hyper-V 컨테이너로 변환할 수도 있습니다.
 
->현재 컨테이너 런타임 변환을 지원하는 유일한 운영 체제는 Nano Server입니다.
+> 현재 컨테이너 런타임 변환을 지원하는 유일한 운영 체제는 Nano Server입니다.
 
 기본 런타임으로 새 컨테이너를 만듭니다.
 
@@ -61,7 +61,7 @@ DEMO               HyperV
 
 ### 컨테이너 만들기
 
-Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `–-isolation=hyperv` 매개 변수를 사용합니다.
+Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `–-isolation=hyperv` 매개 변수가 사용됩니다.
 
 ```powershell
 docker run -it --isolation=hyperv 646d6317b02f cmd
@@ -87,7 +87,7 @@ TST2      HyperV ccdf6a6e-3358-4419-8dda-ffe87f1de184
 
 ![](media/process.png)
 
-이 관계는 `Get-ComputeProcess` 명령으로도 확인할 수 있습니다.
+이 관계는 `Get-ComputeProcess` 명령을 사용해서도 확인할 수 있습니다.
 
 ```powershell
 PS C:\> Get-ComputeProcess
@@ -99,7 +99,7 @@ B8D7B55A-6B27-4832-88D8-4774DF98F208 TST  VMMS  Container
 CCDF6A6E-3358-4419-8DDA-FFE87F1DE184 TST2 VMMS  Container
 ```
 
-`Get-ComputeProcess` 명령에 대한 자세한 내용은 [관리 상호 운용성](./hcs_powershell.md)에서 확인하세요.
+`Get-ComputeProcess` 명령에 대한 자세한 내용은 [관리 상호 운용성](./hcs_powershell.md)을 참조하세요.
 
 ## 격리 데모
 
@@ -211,7 +211,11 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
     243      13     1732       5512 ...18     4.23   3484   2 csrss
 ```
 
+## 비디오 연습
+
+<iframe src="https://channel9.msdn.com/Blogs/containers/Container-Fundamentals--Part-5-Hyper-V-Containers/player#ccLang=ko" width="800" height="450"  allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
 
 
 
-<!--HONumber=Jan16_HO1-->
+
+<!--HONumber=Feb16_HO2-->

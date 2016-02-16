@@ -21,14 +21,14 @@ NanoServer        CN=Microsoft 10.0.10584.1000 True
 WindowsServerCore CN=Microsoft 10.0.10584.1000 True
 ```
 
-`New-Container` 명령을 사용하여 새 컨테이너를 만듭니다.
+`New-Container` 명령을 사용하여 새 컨테이너를 만듭니다. `-ContainerComputerName` 매개 변수를 사용하여 컨테이너에 NetBIOS 이름을 지정할 수도 있습니다.
 
 ```powershell
-PS C:\> New-Container -Name TST -ContainerImageName WindowsServerCore
+PS C:\> New-Container -ContainerImageName WindowsServerCore -Name demo -ContainerComputerName demo
 
 Name State Uptime   ParentImageName
 ---- ----- ------   ---------------
-TST  Off   00:00:00 WindowsServerCore
+demo  Off   00:00:00 WindowsServerCore
 ```
 
 컨테이너를 만든 후에는 네트워크 어댑터를 컨테이너에 추가합니다.
@@ -48,7 +48,7 @@ DHCP External   Microsoft Hyper-V Network Adapter
 NAT  NAT
 ```
 
-`Connect-ContainerNetworkAdapter`를 사용하여 네트워크 어댑터를 가상 스위치에 연결합니다. 참고 - SwitchName 매개 변수를 사용하여 컨테이너를 만든 경우에도 이렇게 할 수 있습니다.
+`Connect-ContainerNetworkAdapter`를 사용하여 네트워크 어댑터를 가상 스위치에 연결합니다. **참고** - SwitchName 매개 변수를 사용하여 컨테이너를 만든 경우에도 이를 수행할 수 있습니다.
 
 ```powershell
 PS C:\> Connect-ContainerNetworkAdapter -ContainerName TST -SwitchName NAT
@@ -162,6 +162,7 @@ Docker run 명령에 대한 자세한 내용은 [Docker run 참조}( https://doc
 
 ```powershell
 PS C:\> docker stop tender_panini
+
 tender_panini
 ```
 

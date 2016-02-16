@@ -42,7 +42,7 @@ PS C:\> wget -uri https://aka.ms/tp4/New-ContainerHost -OutFile c:\New-Container
 다음 명령을 실행하여 컨테이너 호스트를 만들고 구성합니다. 여기서 `&lt;containerhost&gt;`는 가상 컴퓨터 이름이 됩니다.
 
 ``` powershell
-PS C:\> c:\New-ContainerHost.ps1 –VmName <containerhost> -WindowsImage ServerDatacenterCore -Hyperv
+PS C:\> powershell.exe -NoProfile c:\New-ContainerHost.ps1 –VmName testcont -WindowsImage ServerDatacenterCore -Hyperv
 ```
 
 스크립트가 시작되면 암호를 입력하라는 메시지가 표시됩니다. 관리자 계정에 할당된 암호를 말합니다.
@@ -72,4 +72,4 @@ license terms. Please confirm you have accepted and agree to the license terms.
 
 
 
-<!--HONumber=Jan16_HO2-->
+<!--HONumber=Feb16_HO2-->

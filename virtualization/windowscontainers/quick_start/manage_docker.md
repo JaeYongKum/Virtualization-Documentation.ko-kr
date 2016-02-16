@@ -15,7 +15,7 @@ Windows 컨테이너는 단일 컴퓨터 시스템에서 격리된 여러 응용
 - 중첩된 가상화를 사용하는 Windows 컨테이너 호스트입니다.
 - Windows Server 2016 미디어 - [다운로드](https://aka.ms/tp4/serveriso)
 
->Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 컨테이너 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
+> Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 컨테이너 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
 
 ## Windows Server 컨테이너
 
@@ -35,7 +35,7 @@ nanoserver          10.0.10586.0        8572198a60f1        2 weeks ago         
 nanoserver          latest              8572198a60f1        2 weeks ago         0 B
 ```
 
-이 예에서는 Windows Server Core 이미지를 사용하여 컨테이너를 만듭니다. 이 작업은 `docker run 명령`으로 수행합니다. `docker run`에 대한 자세한 내용은 [Docker Run reference on docker.com(docker.com의 Docker Run 참조)](https://docs.docker.com/engine/reference/run/)을 참조하세요.
+이 예에서는 Windows Server Core 이미지를 사용하여 컨테이너를 만듭니다. 이 작업은 `docker run 명령`으로 수행됩니다. `docker run`에 대한 자세한 내용은 [docker.com의 Docker Run](https://docs.docker.com/engine/reference/run/)을 참조하세요.
 
 이 예제에서는 이름이 `iisbase`인 컨테이너를 만들고 이 컨테이너를 사용하여 대화형 세션을 시작합니다.
 
@@ -82,7 +82,7 @@ nanoserver             latest              8572198a60f1        2 weeks ago      
 
 ### 네트워크 구성
 
-Docker를 통해 컨테이너를 만들기 전에 컨테이너에 대한 네트워크 연결을 허용하는 Windows 방화벽 규칙을 만들어야 합니다. 다음을 실행하여 포트 80에 대한 규칙을 만듭니다.
+Docker를 통해 컨테이너를 만들기 전에 컨테이너에 대한 네트워크 연결을 허용하는 Windows 방화벽 규칙을 만들어야 합니다. 다음 PowerShell 스크립트를 실행하여 포트 80에 대한 규칙을 만듭니다. 참고 - 이 스크립트는 PowerShell 세션에서 실행되어야 합니다.
 
 ```powershell
 if (!(Get-NetFirewallRule | where {$_.Name -eq "TCP80"})) {
@@ -96,7 +96,7 @@ if (!(Get-NetFirewallRule | where {$_.Name -eq "TCP80"})) {
 
 이제 IIS를 지원하는 운영 환경을 배포하는 데 사용할 수 있는 IIS가 들어 있는 컨테이너 이미지가 준비되었습니다.
 
-새 이미지에서 컨테이너를 만들려면 `docker run` 명령을 사용하고 이번에는 IIS 이미지의 이름을 지정합니다. 이 샘플에서는 `-p 80:80` 매개 변수를 지정했습니다. 컨테이너가 NAT(Network Address Translation)를 통해 IP 주소를 공급하는 가상 스위치에 연결되어 있으므로, 컨테이너 호스트의 포트를 컨테이너 NAT IP 주소의 포트에 매핑해야 합니다. `-p`에 대한 자세한 내용은 [Docker Run reference on docker.com(docker.com의 Docker Run 참조)](https://docs.docker.com/engine/reference/run/)을 참조하세요.
+새 이미지에서 컨테이너를 만들려면 `docker run` 명령을 사용하고 이번에는 IIS 이미지의 이름을 지정합니다. 이 샘플에서는 `-p 80:80` 매개 변수를 지정했습니다. 컨테이너가 NAT(Network Address Translation)를 통해 IP 주소를 공급하는 가상 스위치에 연결되어 있으므로, 컨테이너 호스트의 포트를 컨테이너 NAT IP 주소의 포트에 매핑해야 합니다. `-p`에 대한 자세한 내용은 [docker.com의 Docker Run](https://docs.docker.com/engine/reference/run/)을 참조하세요.
 
 ```powershell
 C:\> docker run --name iisdemo -it -p 80:80 windowsservercoreiis cmd
@@ -159,7 +159,7 @@ C:\> powershell new-item c:\build\dockerfile -Force
 C:\> notepad c:\build\dockerfile
 ```
 
-dockerfile에 다음 텍스트를 복사하 고 파일을 저장합니다. 이 명령은 Docker가 `windowsservercore`를 기초로 새 이미지를 만들고 `RUN`을 통해 지정한 수정 내용을 포함하도록 지시합니다. Dockerfile에 대한 자세한 내용은 [Dockerfile reference at docker.com(docker.com의 Dockerfile 참조)](http://docs.docker.com/engine/reference/builder/)을 참조하세요.
+dockerfile에 다음 텍스트를 복사하 고 파일을 저장합니다. 이 명령은 Docker가 `windowsservercore`를 기초로 사용하여 새 이미지를 만들고 `RUN`을 통해 지정한 수정 내용을 포함하도록 지시합니다. Dockerfile에 대한 자세한 내용은 [docker.com의 Dockerfile 참조](http://docs.docker.com/engine/reference/builder/)를 참조하세요.
 
 ```powershell
 FROM windowsservercore
@@ -219,13 +219,13 @@ C:\> docker rmi iis
 
 Hyper-V 컨테이너는 Windows Server 컨테이너에 대한 추가 수준의 격리를 제공합니다. 각 Hyper-V 컨테이너는 고도로 최적화된 가상 컴퓨터 내에서 만들어집니다. Windows Server 컨테이너가 컨테이너 호스트와 커널을 공유하는 것과 달리 Hyper-V 컨테이너는 완전히 격리됩니다. Hyper-V 컨테이너는 Windows Server 컨테이너와 동일하게 만들어지고 관리됩니다. Hyper-V 컨테이너에 대한 자세한 내용은 [Hyper-V 컨테이너 관리](../management/hyperv_container.md)를 참조하세요.
 
->Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
+> Microsoft Azure는 Hyper-V 컨테이너를 지원하지 않습니다. Hyper-V 연습을 완료하려면 온-프레미스 컨테이너 호스트가 필요합니다.
 
 ### 컨테이너 만들기
 
 컨테이너는 Nano Server OS 이미지를 실행하기 때문에 IIS를 설치하려면 Nano Server IIS 패키지가 필요합니다. 이는 `NanoServer\Packages` 디렉터리의 Windows Server 2016 TP4 설치 미디어에서 찾을 수 있습니다.
 
-이 예제에서는 `docker run`의 `-v`의 매개 변수를 사용하여 실행 중인 컨테이너가 컨테이너 호스트의 디렉터리를 사용할 수 있게 됩니다. 그 전에 원본 디렉터리 구성해야 합니다.
+이 예제에서는 `docker run`의 `-v` 매개 변수를 사용하여 실행 중인 컨테이너에서 컨테이너 호스트의 디렉터리를 사용할 수 있게 됩니다. 그 전에 원본 디렉터리 구성해야 합니다.
 
 컨테이너와 공유할 컨테이너 호스트에 디렉터리를 만듭니다. 이미 PowerShell 연습을 마쳤으면 이 디렉터리와 필요한 파일이 있을 수도 있습니다.
 
@@ -266,7 +266,7 @@ c:\share
 |-- unattend.xml
 ```
 
-docker를 사용하여 Hyper-V 컨테이너를 만들려면 `--isolation=hyperv` 매개 변수를 지정합니다. 이 예제에서는 호스트의 `c:\share` 디렉터리를 컨테이너의 `c:\iisinstall` 디렉터리에 마운트한 다음 컨테이너를 사용하여 대화형 셸 세션을 만듭니다.
+docker를 사용하여 Hyper-V 컨테이너를 만들려면 `--isolation=hyperv` 매개 변수를 지정합니다. 이 예제에서는 호스트의 `c:\share` 디렉터리를 컨테이너의 `c:\iisinstall` 디렉터리에 탑재한 다음 컨테이너를 사용하여 대화형 셸 세션을 만듭니다.
 
 ```powershell
 C:\> docker run --name iisnanobase -it -v c:\share:c:\iisinstall --isolation=hyperv nanoserver cmd
@@ -348,4 +348,4 @@ C:\> exit
 
 
 
-<!--HONumber=Jan16_HO1-->
+<!--HONumber=Feb16_HO2-->

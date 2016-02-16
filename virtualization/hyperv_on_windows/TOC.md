@@ -10,7 +10,7 @@
 
 ## [Hyper-V의 Linux 및 FreeBSD](https://technet.microsoft.com/library/dn531030.aspx)
 
-# Hyper-V 시작
+# Windows에서 Hyper-V 빠른 시작
 
 ## [시스템 요구 사항](quick_start/walkthrough_compatibility.md)
 
@@ -22,7 +22,7 @@
 
 ## [Hyper-V 및 PowerShell](quick_start/walkthrough_powershell.md)
 
-# 사용자 가이드
+# Windows에서 Hyper-V 관리
 
 ## [가상 컴퓨터 마이그레이션 및 업그레이드](user_guide/migrating_vms.md)
 
@@ -40,7 +40,11 @@
 
 ## [문제 해결](user_guide/troubleshooting.md)
 
-# 개발
+# 커뮤니티 및 지원
+
+## [Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)
+
+# 참조
 
 ## [Hyper-V PowerShell](https://technet.microsoft.com/library/hh848559.aspx)
 
@@ -52,9 +56,5 @@
 
 ## [Hyper-V 아키텍처](https://msdn.microsoft.com/en-us/library/cc768520(v=bts.10).aspx)
 
-# 커뮤니티 및 지원에 연결
 
-## [Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)
-
-
-<!--HONumber=Feb16_HO1-->
+<!--HONumber=Feb16_HO2-->

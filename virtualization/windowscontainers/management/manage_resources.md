@@ -21,7 +21,7 @@ PS C:\> Set-ContainerMemory -ContainerName TestContainer -MaximumBytes 256mb
 
 ### 네트워크 대역폭
 
-기존 컨테이너에 네트워크 대역폭 제한을 설정할 수 있습니다. 이렇게 하려면 컨테이너가 `Get-ContainerNetworkAdapter` 명령을 사용하여 네트워크 어댑터를 갖도록 합니다. 네트워크 어댑터가 없는 경우 `Add-ContainerNetworkAdapter` 명령을 사용하여 만듭니다. 마지막으로 `Set-ContainerNetworkAdapter` 명령을 사용하여 컨테이너의 최대 송신 네트워크 대역폭을 제한합니다.
+기존 컨테이너에 네트워크 대역폭 제한을 설정할 수 있습니다. 이렇게 하려면 컨테이너가 `Get-ContainerNetworkAdapter` 명령을 사용하여 네트워크 어댑터를 갖도록 해야 합니다. 네트워크 어댑터가 없는 경우 `Add-ContainerNetworkAdapter` 명령을 사용하여 하나를 만듭니다. 마지막으로 `Set-ContainerNetworkAdapter` 명령을 사용하여 컨테이너의 최대 송신 네트워크 대역폭을 제한합니다.
 
 아래 샘플은 최대 대역폭을 100Mbps로 설정합니다.
 
@@ -62,7 +62,7 @@ Docker를 통해 컨테이너 리소스의 하위 집합을 관리하는 기능�
 
 ### CPU
 
-컨테이너 간의 CPU 공유는 --cpu 공유 플래그를 통해 런타임 시 관리할 수 있습니다. 기본적으로 모든 컨테이너는 CPU 시간과 동일한 비율로 이용할 수 있습니다. 컨테이너가 사용하는 CPU의 상대 공유를 변경하려면 1-10000의 값으로 --cpu 공유 플래그를 실행합니다. 기본적으로 모든 컨테이너는 5000의 가중치를 받습니다. CPU 공유 제약 조건에 대한 자세한 내용은 [Docker Run Reference(Docker Run 참조)](https://docs.docker.com/engine/reference/run/#cpu-share-constraint)를 참조하세요.
+컨테이너 간의 CPU 공유는 --cpu 공유 플래그를 통해 런타임 시 관리할 수 있습니다. 기본적으로 모든 컨테이너는 CPU 시간과 동일한 비율로 이용할 수 있습니다. 컨테이너가 사용하는 CPU의 상대 공유를 변경하려면 1-10000의 값으로 --cpu 공유 플래그를 실행합니다. 기본적으로 모든 컨테이너는 5000의 가중치를 받습니다. CPU 공유 제약 조건에 대한 자세한 내용은 [Docker Run 참조](https://docs.docker.com/engine/reference/run/#cpu-share-constraint)를 참조하세요.
 
 ```powershell 
 C:\> docker run –it --cpu-shares 2 --name dockerdemo windowsservercore cmd
@@ -73,8 +73,12 @@ C:\> docker run –it --cpu-shares 2 --name dockerdemo windowsservercore cmd
 - CPU 및 IO 리소스 컨트롤은 현재 Hyper-V 컨테이너로 지원되지 않습니다.
 - IO 리소스 컨트롤은 현재 컨테이너 공유 폴더로 지원되지 않습니다.
 
+## 비디오 연습
+
+<iframe src="https://channel9.msdn.com/Blogs/containers/Container-Fundamentals--Part-4-Resource-Management/player#ccLang=ko" width="800" height="450"  allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
 
 
 
 
-<!--HONumber=Jan16_HO1-->
+
+<!--HONumber=Feb16_HO1-->

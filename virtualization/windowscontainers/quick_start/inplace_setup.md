@@ -34,14 +34,14 @@ PS C:\> start-process powershell -Verb runas
 PS C:\> wget -uri https://aka.ms/tp4/Install-ContainerHost -OutFile C:\Install-ContainerHost.ps1
 ```
 
-다운로드가 완료된 후 스크립트를 실행합니다.
+ 다운로드가 완료된 후 스크립트를 실행합니다.
 ``` PowerShell
-PS C:\> C:\Install-ContainerHost.ps1 -HyperV
+PS C:\> powershell.exe -NoProfile C:\Install-ContainerHost.ps1 -HyperV
 ```
 
 그러면 이 스크립트가 Windows 컨테이너 구성 요소를 다운로드하여 구성하기 시작합니다. 이 프로세스는 다운로드 크기가 크기 때문에 다소 시간이 걸릴 수 있습니다. 프로세스 도중 컴퓨터가 재부팅될 수 있습니다. 완료되면 이제 컴퓨터에서 PowerShell과 Docker를 모두 사용하여 Windows 컨테이너와 Windows 컨테이너 이미지를 만들어 관리할 준비가 된 것입니다.
 
-이러한 항목이 완료되면 시스템에서 Windows 컨테이너에 대한 준비가 끝났습니다.
+ 이러한 항목이 완료되면 시스템에서 Windows 컨테이너에 대한 준비가 끝났습니다.
 
 ## 다음 단계: 컨테이너 사용 시작
 
@@ -54,4 +54,4 @@ PS C:\> C:\Install-ContainerHost.ps1 -HyperV
 
 
 
-<!--HONumber=Jan16_HO1-->
+<!--HONumber=Feb16_HO2-->
