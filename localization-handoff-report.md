@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [virtualization\hyperv_on_windows\user_guide\vmsession.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/70474e54cab125985d569846eea3abd5cbf04d17/virtualization/hyperv_on_windows/user_guide/vmsession.md) | OutofSyncHandedBackSuccess | [Details](#2a7ab3c78851e8448bcc194ffe4f11d9887e08bb195)
- [virtualization\windowscontainers\deployment\media\nssm1.png](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/70474e54cab125985d569846eea3abd5cbf04d17/virtualization/windowscontainers/deployment/media/nssm1.png) | OutofSyncHandedBackSuccess | [Details](#22320b32fb8af15c2e7125ec4f50c2b19643b9bf215)
+ [virtualization\hyperv_on_windows\user_guide\vmsession.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/15511c52f04190aa859959e50e2e95160dfc0c91/virtualization/hyperv_on_windows/user_guide/vmsession.md) | OutofSyncHandedBackSuccess | [Details](#d3997f4f512580be5e28fbafa51f1bbd6a0a4b44195)
+ [virtualization\windowscontainers\deployment\media\nssm1.png](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/15511c52f04190aa859959e50e2e95160dfc0c91/virtualization/windowscontainers/deployment/media/nssm1.png) | OutofSyncHandedBackSuccess | [Details](#22320b32fb8af15c2e7125ec4f50c2b19643b9bf215)
 
 ## Item Details
-##### <a name='2a7ab3c78851e8448bcc194ffe4f11d9887e08bb195'></a> Source: [virtualization\hyperv_on_windows\user_guide\vmsession.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/70474e54cab125985d569846eea3abd5cbf04d17/virtualization/hyperv_on_windows/user_guide/vmsession.md)
+##### <a name='d3997f4f512580be5e28fbafa51f1bbd6a0a4b44195'></a> Source: [virtualization\hyperv_on_windows\user_guide\vmsession.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/15511c52f04190aa859959e50e2e95160dfc0c91/virtualization/hyperv_on_windows/user_guide/vmsession.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/c92f5f10919296f36c2367f3beb4eb46eda62666/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
-* Handoff Datetime: 2016-03-02 23:54:33
+* Handoff File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/1ad8a716a507be042eb34678d341d9e0afcb7c5f/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
+* Handoff Datetime: 2016-03-03 00:04:23
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -25,11 +25,11 @@
 * Current Handback Datetime: 2016-02-03 21:59:58
 * [Back to Top](#report-top)
 
-##### <a name='22320b32fb8af15c2e7125ec4f50c2b19643b9bf215'></a> Source: [virtualization\windowscontainers\deployment\media\nssm1.png](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/70474e54cab125985d569846eea3abd5cbf04d17/virtualization/windowscontainers/deployment/media/nssm1.png)
+##### <a name='22320b32fb8af15c2e7125ec4f50c2b19643b9bf215'></a> Source: [virtualization\windowscontainers\deployment\media\nssm1.png](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/15511c52f04190aa859959e50e2e95160dfc0c91/virtualization/windowscontainers/deployment/media/nssm1.png)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [22320b32fb8af15c2e7125ec4f50c2b19643b9bf.png](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/c92f5f10919296f36c2367f3beb4eb46eda62666/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/22320b32fb8af15c2e7125ec4f50c2b19643b9bf.png)
-* Handoff Datetime: 2016-03-02 23:54:33
+* Handoff File: [22320b32fb8af15c2e7125ec4f50c2b19643b9bf.png](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/1ad8a716a507be042eb34678d341d9e0afcb7c5f/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/22320b32fb8af15c2e7125ec4f50c2b19643b9bf.png)
+* Handoff Datetime: 2016-03-03 00:04:23
 * Handoff Reason: IsDependency
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
