@@ -1486,8 +1486,8 @@
 * Handoff File: [make_mgmt_service.f08a72226cda804bf52172777630838cf58daa2b.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/19d3e9c03b9e7de2b3ced6b468cfd73a80bbf059/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/make_mgmt_service.f08a72226cda804bf52172777630838cf58daa2b.ko-kr.xlf)
 * Handoff Datetime: 2016-03-01 22:30:19
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [make_mgmt_service.f08a72226cda804bf52172777630838cf58daa2b.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/cd4a2e62cf805178ccebb594048ad24f5c661c9c/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/archive/make_mgmt_service.f08a72226cda804bf52172777630838cf58daa2b.ko-kr.xlf)
+* Archive Datetime: 2016-03-03 08:12:03
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [virtualization\hyperv_on_windows\develop\make_mgmt_service.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/d5092d802f7ca1117af7e7b666acdc1b7033a20b/virtualization/hyperv_on_windows/develop/make_mgmt_service.md)
@@ -2855,8 +2855,8 @@
 * Handoff File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/1ad8a716a507be042eb34678d341d9e0afcb7c5f/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
 * Handoff Datetime: 2016-03-03 00:04:23
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/cd4a2e62cf805178ccebb594048ad24f5c661c9c/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/archive/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
+* Archive Datetime: 2016-03-03 08:12:03
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [virtualization\hyperv_on_windows\user_guide\vmsession.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/0bddc92a1faa1514fd94bec10df552c1eb7edaf7/virtualization/hyperv_on_windows/user_guide/vmsession.md)
@@ -3265,8 +3265,8 @@
 * Handoff File: [manage_containers.c2c3307892a740ec0efc895be0c78ac01e92a328.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/19c4ebcb3b594b390e74a776a529b446a7adbdbd/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/manage_containers.c2c3307892a740ec0efc895be0c78ac01e92a328.ko-kr.xlf)
 * Handoff Datetime: 2016-03-02 23:34:49
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [manage_containers.c2c3307892a740ec0efc895be0c78ac01e92a328.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/cd4a2e62cf805178ccebb594048ad24f5c661c9c/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/archive/manage_containers.c2c3307892a740ec0efc895be0c78ac01e92a328.ko-kr.xlf)
+* Archive Datetime: 2016-03-03 08:12:03
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [virtualization\windowscontainers\management\manage_containers.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/4d5d8a264e38b2bbeb15be79712843b2b923f6ed/virtualization/windowscontainers/management/manage_containers.md)
@@ -4071,8 +4071,8 @@
 * Handoff File: [ps_docker_comparison.ebee670390084537f2252c760f11eefb8de5efa5.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/1e8f9dc2776aa8cb6954ffaa2e61ab52e490e883/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/ps_docker_comparison.ebee670390084537f2252c760f11eefb8de5efa5.ko-kr.xlf)
 * Handoff Datetime: 2016-03-01 00:10:13
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [ps_docker_comparison.ebee670390084537f2252c760f11eefb8de5efa5.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/cd4a2e62cf805178ccebb594048ad24f5c661c9c/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/archive/ps_docker_comparison.ebee670390084537f2252c760f11eefb8de5efa5.ko-kr.xlf)
+* Archive Datetime: 2016-03-03 08:12:03
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [virtualization\windowscontainers\reference\ps_docker_comparison.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/6309896f66f59accb07ee6492f0aed80b6350f17/virtualization/windowscontainers/reference/ps_docker_comparison.md)
