@@ -1,3 +1,7 @@
+
+
+
+
 # 기존 가상 또는 실제 시스템에 Windows 컨테이너 호스트 배포
 
 이 문서에서는 PowerShell 스크립트를 사용하여 기존 물리적 또는 가상 호스트에서 Windows 컨테이너 역할을 배포 및 구성하는 단계를 안내합니다.
@@ -54,4 +58,4 @@ PS C:\> powershell.exe -NoProfile C:\Install-ContainerHost.ps1 -HyperV
 
 
 
-<!--HONumber=Feb16_HO2-->
+<!--HONumber=Feb16_HO3-->

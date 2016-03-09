@@ -1,3 +1,7 @@
+
+
+
+
 # 컨테이너 공유 폴더
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
@@ -8,7 +12,7 @@
 
 ### 공유 폴더 만들기
 
-공유 폴더를 만들려면 `Add-ContainerSharedFolder` 명령을 사용합니다. 아래의 예제에서는 `c:\shared_data` 컨테이너에 디렉터리를 만듭니다. 이 디렉터리는 호스트 `c:\data_source`의 디렉터리에 매핑됩니다.
+공유 폴더를 만들려면 `Add-ContainerSharedFolder` 명령을 사용합니다. 아래 예제에서는 `c:\shared_data` 컨테이너에 디렉터리를 만들고 이 디렉터리는 호스트의 `c:\data_source` 디렉터리에 매핑됩니다.
 
 > 컨테이너는 공유 폴더를 추가할 때 중지 상태에 있어야 합니다.
 
@@ -75,8 +79,8 @@ Docker를 통한 컨테이너의 데이터 관리에 대한 자세한 내용은 
 
 ## 비디오 연습
 
-<iframe src="https://channel9.msdn.com/Blogs/containers/Container-Fundamentals--Part-3-Shared-Folders/player#ccLang=ko" width="800" height="450"  allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
+<iframe src="https://channel9.msdn.com/Blogs/containers/Container-Fundamentals--Part-3-Shared-Folders/player" width="800" height="450"  allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
 
 
 
-<!--HONumber=Feb16_HO1-->
+<!--HONumber=Feb16_HO3-->

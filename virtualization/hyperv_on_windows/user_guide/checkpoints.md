@@ -6,12 +6,12 @@ Windows 10 Hyper-V는 두 가지 유형의 검사점을 포함합니다.
 
 * **표준 검사점** -- 검사점이 시작된 시간에 가상 컴퓨터 및 가상 컴퓨터 메모리 상태의 스냅숏을 캡처합니다. 스냅숏은 전체 백업이 아니며 Active Directory와 같은 다른 노드 간에 데이터를 복제하는 시스템과 데이터 일관성 문제를 야기할 수 있습니다. Hyper-V는 Windows 10 이전에 표준 검사점(이전의 스냅숏)만을 제공했습니다.
 
-* **프로덕션 검사점** –- Linux 가상 컴퓨터에서 볼륨 섀도 복사본 서비스 또는 파일 시스템 고정을 사용하여 가상 컴퓨터의 데이터 일관성 백업을 만듭니다.
+* **프로덕션 검사점** -- Linux 가상 컴퓨터에서 볼륨 섀도 복사본 서비스 또는 파일 시스템 고정을 사용하여 가상 컴퓨터의 데이터 일관성 백업을 만듭니다.
 
 프로덕션 검사점은 기본으로 선택되지만 Hyper-V 관리자 또는 PowerShell을 사용하여 변경할 수 있습니다.
 
 > **참고:** Hyper-V PowerShell 모듈에는 검사점 및 스냅숏이 교대로 사용될 수 있도록 여러 가지 별칭이 있습니다.  
->   이 문서에서는 검사점을 사용하지만 용어 스냅숏을 사용하여 비슷한 명령을 볼 수도 있습니다.
+>  이 문서에서는 검사점을 사용하지만 용어 스냅숏을 사용하여 비슷한 명령을 볼 수도 있습니다.
 
 ## 검사점 유형 변경
 
@@ -60,7 +60,7 @@ Set-VM -Name <vmname> -CheckpointType ProductionOnly
 **CheckPoint-VM** 명령을 사용하여 검사점을 만듭니다.
 
 ```powershell
-Checkpoint-VM –Name <VMName>
+Checkpoint-VM -Name <VMName>
 ```
 
 검사점 프로세스가 완료되면 보려면 **Get-VMCheckpoint** 명령을 사용하여 가상 컴퓨터에 대한 검사점 목록을 봅니다.
@@ -78,11 +78,11 @@ Get-VMCheckpoint -VMName <VMName>
 1.  **Hyper-V 관리자**의 **가상 컴퓨터**에서 가상 컴퓨터를 선택합니다.
 2.  검사점 섹션에서 사용할 검사점을 마우스 오른쪽 단추로 클릭하고 **적용**을 클릭합니다.
 3.  다음 옵션이 있는 대화 상자가 표시됩니다.
-    * **검사점을 만든 후 적용**: 이전 검사점을 적용하기 전에 가상 컴퓨터의 새로운 검사점을 만듭니다.
-    * **적용**: 선택한 검사점만 적용합니다. 이 작업은 취소할 수 없습니다.
-    * **취소**: 작업을 수행하지 않고 대화 상자를 닫습니다.
+  * **검사점을 만든 후 적용**: 이전 검사점을 적용하기 전에 가상 컴퓨터의 새로운 검사점을 만듭니다.
+  * **적용**: 선택한 검사점만 적용합니다. 이 작업은 취소할 수 없습니다.
+  * **취소**: 작업을 수행하지 않고 대화 상자를 닫습니다.
 
-    검사점을 만들어 적용하려면 적용 옵션 중 하나를 선택합니다.
+  검사점을 만들어 적용하려면 적용 옵션 중 하나를 선택합니다.
 
 **PowerShell 사용**
 
@@ -104,7 +104,7 @@ Get-VMCheckpoint -VMName <VMName>
 기본적으로, 검사점의 이름은 검사점을 만든 날짜 및 시간과 연결된 가상 컴퓨터의 이름입니다. 표준 형식은 다음과 같습니다.
 
 ```
-virtual_machine_name (MM/DD/YYY –hh:mm:ss AM\PM)
+virtual_machine_name (MM/DD/YYY -hh:mm:ss AM\PM)
 ```
 
 이름은 100자 미만이어야 하며 비워둘 수 없습니다.
@@ -119,7 +119,7 @@ virtual_machine_name (MM/DD/YYY –hh:mm:ss AM\PM)
 **PowerShell 사용**
 
 ``` powershell
-Rename-VMCheckpoint –VMName <virtual machine name> –Name <checkpoint name> --NewName <new checkpoint name>
+Rename-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> --NewName <new checkpoint name>
 ```
 
 ## 검사점 삭제
@@ -140,7 +140,7 @@ Rename-VMCheckpoint –VMName <virtual machine name> –Name <checkpoint name> -
 
 **PowerShell 사용**
 ```powershell
-Remove-VMCheckpoint –VMName <virtual machine name> –Name <checkpoint name>
+Remove-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name>
 ```
 
 ## 검사점 내보내기
@@ -149,7 +149,7 @@ Remove-VMCheckpoint –VMName <virtual machine name> –Name <checkpoint name>
 
 **PowerShell 사용**
 ``` powershell
-Export-VMCheckpoint –VMName <virtual machine name>  –Name <checkpoint name> -Path <path for export>
+Export-VMCheckpoint -VMName <virtual machine name>  -Name <checkpoint name> -Path <path for export>
 ```
 
 ## 검사점 사용 또는 사용 안 함
@@ -157,7 +157,7 @@ Export-VMCheckpoint –VMName <virtual machine name>  –Name <checkpoint name> 
 1.  **Hyper-V 관리자**에서 가상 컴퓨터의 이름을 마우스 오른쪽 단추로 클릭하고 **설정**을 클릭합니다.
 2.  **관리** 섹션에서 **검사점**을 선택합니다.
 3.  이 가상 컴퓨터에서 검사점을 지정하려면 검사점 사용을 선택해야 합니다(기본 동작).  
-    검사점을 사용하지 않으려면 **검사점 사용** 확인란의 선택을 취소합니다.
+검사점을 사용하지 않으려면 **검사점 사용** 확인란의 선택을 취소합니다.
 4.  변경을 적용하려면 **적용**을 클릭합니다. 완료된 후 **확인**을 클릭하여 대화 상자를 닫습니다.
 
 ## 검사점 위치 구성
@@ -182,7 +182,7 @@ Export-VMCheckpoint –VMName <virtual machine name>  –Name <checkpoint name> 
 
 1. 가상 컴퓨터에 로그인하고 바탕 화면에 텍스트 파일을 만듭니다.
 2. 메모장으로 파일을 열고 텍스트 '이것이 표준 검사점입니다.'를 입력합니다. **파일을 저장하거나 메모장을 닫지 마십시오**.
-3. 검사점을 표준으로 변경합니다. -- 지침은[여기](checkpoints.md#changing-the-checkpoint-type-using-hyper-V-manager)에 있습니다.
+3. 검사점을 표준으로 변경합니다. -- 지침은 [여기](checkpoints.md#changing-the-checkpoint-type-using-hyper-V-manager)에 있습니다.
 4. 새 검사점을 만듭니다.
 
 <br />
@@ -230,3 +230,4 @@ Export-VMCheckpoint –VMName <virtual machine name>  –Name <checkpoint name> 
 
 
 
+<!--HONumber=Feb16_HO4-->

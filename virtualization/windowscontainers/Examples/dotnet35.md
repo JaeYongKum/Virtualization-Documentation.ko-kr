@@ -1,3 +1,7 @@
+
+
+
+
 # .NET 3.5 Server Core 컨테이너 이미지 만들기
 
 이 가이드는 .NET 3.5 Framework를 포함하는 Windows Server Core 컨테이너를 만드는 방법을 자세히 설명합니다. 이 연습을 시작하기 전에 Windows Server 2016 .iso 파일 또는 Windows Server 2016 미디어에 액세스할 수 있어야 합니다.
@@ -47,7 +51,7 @@ New-Container -Name dotnet35 -ContainerImageName windowsservercore -SwitchName �
 새 컨테이너로 공유 폴더를 만듭니다. 이것은 새 컨테이너의 내부에서 액세스할 수 있는 .NET 3.5 cab 파일을 만드는 데 사용됩니다. 다음 명령을 실행하는 경우에는 컨테이너를 중지해야 합니다.
 
 ```powershell
-Add-ContainerShareFolder -ContainerName dotnet35 -SourcePath C:\dotnet3.5\source -DestinationPath c:\sxs
+Add-ContainerSharedFolder -ContainerName dotnet35 -SourcePath C:\dotnet3.5\source -DestinationPath c:\sxs
 ```
 
 컨테이너를 시작하고 다음 명령을 실행하여 .NET 3.5를 설치합니다.
@@ -109,3 +113,4 @@ docker images
 
 
 
+<!--HONumber=Feb16_HO4-->

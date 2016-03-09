@@ -1,3 +1,7 @@
+
+
+
+
 # Azure 빠른 시작
 
 Azure에서 Windows Server 컨테이너를 만들어 관리하려면 먼저 Windows Server 컨테이너 기능이 미리 구성되어 있는 Windows Server 2016 Technical Preview 이미지를 배포해야 합니다. 이 가이드에서는 이 과정을 안내합니다.
@@ -6,11 +10,11 @@ Azure에서 Windows Server 컨테이너를 만들어 관리하려면 먼저 Wind
 
 ## Azure 포털 사용 시작
 
-Azure 계정이 있으면 [컨테이너 호스트 VM 만들기](#CreateacontainerhostVM)로 건너뜁니다.
+Azure 계정이 있으면 [컨테이너 호스트 VM 만들기](#CreateacontainerhostVM)로 건너뛰세요.
 
-1. [azure.com](https://azure.com)으로 이동하고 [Azure 무료 평가판](https://azure.microsoft.com/en-us/pricing/free-trial/)에 해당하는 단계에 따릅니다.
+1. [azure.com](https://azure.com)에서 [Azure 무료 평가판](https://azure.microsoft.com/en-us/pricing/free-trial/)에 해당하는 절차를 따르세요.
 2. Microsoft 계정으로 로그인합니다.
-3. 계정이 준비되면 [Azure 관리 포털](https://portal.azure.com)에 로그인합니다.
+3. 계정의 준비가 되면 [Azure 관리 포털](https://portal.azure.com)에 로그인합니다.
 
 ## 컨테이너 호스트 VM 만들기
 
@@ -56,4 +60,4 @@ VM 만들기 마법사를 통해 지정한 사용자 이름과 암호를 사용�
 
 
 
-<!--HONumber=Feb16_HO1-->
+<!--HONumber=Feb16_HO3-->
