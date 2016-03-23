@@ -45,7 +45,7 @@ Windows Server 컨테이너에서 다음과 같은 응용 프로그램의 실행
 | Ruby| 2.2.2| 예| 예| x64 및 x86 모두|
 | Ruby on Rails| 4.2.3| 예| 예| |
 | SQLite| 3.8.11.1| 예| 아니요| |
-| SQL Server Express| 2014 LocalDB| 아니요| 아니요| |
+| SQL Server Express| 2014| 예| Unknown| SQL Express 2014를 설치하는 [커뮤니티 제공 Dockerfile](https://github.com/brogersyh/Dockerfiles-for-windows/tree/master/sqlexpress)을 빌드하여 빠르게 시작할 수 있습니다.|
 | Sysinternals 도구| *| 예| 예| GUI를 필요로 하지 않는 항목만 테스트했습니다.현재 설계에서는 PsExec가 작동하지 않습니다.|
 
 ## Hyper-V 컨테이너
