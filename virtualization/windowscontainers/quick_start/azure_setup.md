@@ -1,6 +1,6 @@
-
-
-
+---
+author: neilpeterson
+---
 
 # Azure 빠른 시작
 
@@ -46,6 +46,16 @@ VM 만들기 마법사를 통해 지정한 사용자 이름과 암호를 사용�
 
 ![](media/newazure7.png)
 
+## Docker 엔진 업데이트
+
+Azure Windows Container Technical Preview 이미지에서 `docker pull`을 사용하려면 Docker 엔진을 업데이트해야 합니다. 이 업데이트를 완료하려면 Azure 가상 컴퓨터에서 다음 PowerShell 명령을 실행합니다.
+
+```powershell
+PS C:\> wget https://raw.githubusercontent.com/Microsoft/Virtualization-Documentation/live/windows-server-container-tools/Update-ContainerHost/Update-ContainerHost.ps1 -OutFile Update-ContainerHost.ps1
+
+PS C:\> ./Update-ContainerHost.ps1
+```
+
 ## 비디오 연습
 
 <iframe src="https://channel9.msdn.com/Blogs/containers/Quick-Start-Configure-Windows-Server-Containers-in-Microsoft-Azure/player#ccLang=ko" width="800" height="450"  allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
@@ -60,4 +70,4 @@ VM 만들기 마법사를 통해 지정한 사용자 이름과 암호를 사용�
 
 
 
-<!--HONumber=Feb16_HO3-->
+<!--HONumber=Mar16_HO3-->

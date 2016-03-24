@@ -56,7 +56,7 @@
 
 ## [Hyper-V 아키텍처](https://msdn.microsoft.com/en-us/library/cc768520(v=bts.10).aspx)
 
-## [하이퍼바이저 TLFS](develop/tlfs.md)
+## [하이퍼바이저 사양](develop/tlfs.md)
 
 
-<!--HONumber=Feb16_HO3-->
+<!--HONumber=Mar16_HO2-->
