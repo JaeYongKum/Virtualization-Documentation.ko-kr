@@ -140,6 +140,9 @@
   "8f425f8ff5e6bbba952f5b0fad4e2eff8b6960bb": [
     "virtualization\\hyperv_on_windows\\user_guide\\export_import.md"
   ],
+  "90a37f43e8dd1949ae72fff34644be0038138355": [
+    "virtualization\\hyperv_on_windows\\user_guide\\managing_ics.md"
+  ],
   "f19bc39fe842791aa28841232a88ea463c142036": [
     "virtualization\\hyperv_on_windows\\user_guide\\managing_ics.md"
   ],
