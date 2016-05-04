@@ -1,6 +1,6 @@
-
-
-
+---
+author: neilpeterson
+---
 
 # Windows 컨테이너 빠른 시작 - PowerShell
 
@@ -281,7 +281,7 @@ HYPV Off   00:00:00 NanoServer
 컨테이너 호스트에 `c:\share\en-us`라는 디렉터리를 만듭니다.
 
 ```powershell
-S C:\> New-Item -Type Directory c:\share\en-us
+PS C:\> New-Item -Type Directory c:\share\en-us
 
     Directory: C:\share
 
@@ -500,7 +500,7 @@ PS C:\> Enter-PSSession -ContainerName IISApp -RunAsAdministrator
 다음 명령을 실행하여 IIS 시작 화면을 제거합니다.
 
 ```powershell
-[IIS]: PS C:\> del C:\inetpub\wwwroot\iisstart.htm
+[IISApp]: PS C:\> del C:\inetpub\wwwroot\iisstart.htm
 ```
 다음 명령을 실행하여 기본 IIS 사이트를 새 정적 사이트로 바꿉니다.
 
@@ -523,6 +523,6 @@ exit
 
 
 
-<!--HONumber=Feb16_HO3-->
+<!--HONumber=Mar16_HO1-->
 
 

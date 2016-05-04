@@ -1,12 +1,27 @@
-
-
-
+---
+author: neilpeterson
+---
 
 # Windows의 컨테이너 요구 사항
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
 
 이 가이드는 Windows 컨테이너 호스트에 대한 요구 사항을 나열합니다.
+
+## 실제 시스템에서의 Windows 컨테이너
+
+- Windows 컨테이너 역할은 Windows Server 2016 TP4(Full 및 Core)와 Nano Server에서 사용할 수만 있습니다.
+- Hyper-V 컨테이너가 실행되면 Hyper-V 역할이 설치되어야 합니다.
+
+## 가상 시스템에서의 Windows 컨테이너
+
+Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되며 Hyper-V 호스트 컨테이너를 호스팅할 경우 중첩된 가상화를 사용해야 합니다 중첩된 가상화에는 다음과 같은 요구 사항이 있습니다.
+
+- 가상화된 Hyper-V 호스트에 사용할 수 있는 4GB 이상의 RAM.
+- Windows Server 2016 Technical Preview 4 또는 호스트 시스템의 Windows 10 빌드 10565 및 Windows Server Technical Preview 4(Full, Core) 또는 가상 컴퓨터의 Nano Server
+- Intel VT-x가 포함된 프로세서.(이 기능은 현재 Intel 프로세서에 대해서만 사용할 수 있습니다)
+- 또한 컨테이너 호스트 VM에는 적어도 2개의 가상 프로세서가 필요합니다.
+
 
 ## 지원되는 OS 이미지
 
@@ -39,21 +54,11 @@ Windows Server 기술 미리 보기 4는 두 개의 컨테이너 OS 이미지, W
 </tbody>
 </table>
 
-## Hyper-V 컨테이너 요구 사항
-
-Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되며 Hyper-V 호스트 컨테이너를 호스팅할 경우 중첩된 가상화를 사용해야 합니다 중첩된 가상화에는 다음과 같은 요구 사항이 있습니다.
-
-- 가상화된 Hyper-V 호스트에 사용할 수 있는 4GB 이상의 RAM.
-- 실제 및 가상화된 호스트 모두에 Windows Server 2016 기술 미리 보기 4 또는 Windows 10 빌드 10565.
-- Intel VT-x가 포함된 프로세서.(이 기능은 현재 Intel 프로세서에 대해서만 사용할 수 있습니다)
-- 또한 컨테이너 호스트 VM에는 적어도 2개의 가상 프로세서가 필요합니다.
 
 
 
 
 
-
-
-<!--HONumber=Feb16_HO3-->
+<!--HONumber=Mar16_HO1-->
 
 
