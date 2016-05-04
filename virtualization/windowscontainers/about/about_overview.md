@@ -1,6 +1,6 @@
-
-
-
+---
+author: neilpeterson
+---
 
 # Windows 컨테이너
 
@@ -16,7 +16,7 @@
 
 컨테이너 안에 있다면 방금 설치한 물리적 컴퓨터나 가상 컴퓨터 안에 있는 것과 매우 유사할 것입니다. 또한 Windows Server 컨테이너인 [Docker](https://www.docker.com/)를 다른 컨테이너와 같은 방식으로 관리할 수 있습니다.
 
-## Windows 컨테이너
+## Windows 컨테이너 형식
 
 Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런타임을 포함합니다.
 
@@ -81,6 +81,6 @@ src="https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-an
 
 
 
-<!--HONumber=Feb16_HO3-->
+<!--HONumber=Mar16_HO2-->
 
 

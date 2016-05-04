@@ -1,6 +1,6 @@
-
-
-
+---
+author: neilpeterson
+---
 
 
 # 컨테이너 호스트 배포 - Nano 서버
@@ -182,6 +182,11 @@ NanoServer        CN=Microsoft 10.0.10586.0 True
 
 Docker 데몬 및 명령줄 인터페이스는 Windows와 함께 제공되지 않으며 Windows 컨테이너 기능과 함께 설치되지 않습니다. Docker는 Windows 컨테이너를 사용 하기 위한 요구 사항이 아닙니다. Docker를 설치하려면 [Docker 및 Windows](./docker_windows.md) 문서의 지침을 따릅니다.
 
+Hyper-V 관리 호스트에서 `Enter-PSSession` 명령을 사용하여 컨테이너 호스트에 연결할 수 있습니다.
+
+```powershell
+PS C:\> Enter-PSSession -VMName <VM Name>
+```
 
 ## Hyper-V 컨테이너 호스트
 
@@ -232,6 +237,6 @@ PS C:\> Get-VMNetworkAdapter -VMName <VM Name> | Set-VMNetworkAdapter -MacAddres
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO3-->
 
 

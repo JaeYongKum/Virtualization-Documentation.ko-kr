@@ -1,6 +1,6 @@
-
-
-
+---
+author: neilpeterson
+---
 
 # 새 Hyper-V 가상 컴퓨터에 Windows 컨테이너 호스트 배포
 
@@ -70,6 +70,12 @@ license terms. Please confirm you have accepted and agree to the license terms.
 
 이제 Windows 컨테이너 기능을 실행하는 Windows Server 2016 시스템이 준비되었으므로 다음 가이드로 이동하여 Windows Server와 Hyper-V 컨테이너 작업을 시작합니다.
 
+Hyper-V 관리 호스트에서 `Enter-PSSession` 명령을 사용하여 컨테이너 호스트에 연결할 수 있습니다.
+
+```powershell
+PS C:\> Enter-PSSession -VMName <VM Name>
+```
+
 [빠른 시작: Windows 컨테이너 및 PowerShell](./manage_powershell.md)  
 [빠른 시작: Windows 컨테이너 및 Docker](./manage_docker.md)
 
@@ -78,6 +84,6 @@ license terms. Please confirm you have accepted and agree to the license terms.
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO3-->
 
 
