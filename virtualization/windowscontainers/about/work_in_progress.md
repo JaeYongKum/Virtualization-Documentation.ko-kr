@@ -1,3 +1,7 @@
+
+
+
+
 # 작업 진행 중
 
 여기서 해결되지 않은 문제가 있거나 질문이 있는 경우 [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에 게시하세요.
@@ -16,15 +20,6 @@ Windows 컨테이너 호스트 OS에 대해 업데이트를 설치하는 경우 
 
 **해결 방법:**   
 컨테이너 호스트의 OS 버전 및 패치 수준과 일치하는 컨테이너 기반 이미지를 다운로드하고 설치합니다.
-
-### C:/ 드라이브 이외의 모든 드라이브는 컨테이너에 표시됩니다.
-
-컨테이너 호스트에 사용 가능한 C:/ 드라이브 이외의 모든 드라이브는 실행 중인 새로운 Windows 컨테이너에 자동으로 매핑됩니다.
-
-이 시점에서 중간 해결 작업 드라이브가 자동으로 매핑되므로 컨테이너에 폴더를 선택적으로 매핑할 수 있는 방법이 없습니다.
-
-**해결 방법: **  
-최선을 다하고 있습니다. 향후에 폴더 공유가 있을 예정입니다.
 
 ### 기본 방화벽 동작
 
@@ -94,9 +89,9 @@ PS C:\> Start-Container test2
 여러 끝점을 컨테이너로 노출해야 하는 경우 NAT 포트 매핑을 사용합니다.
 
 
-### 정적 NAT 매핑이 Docker를 통해 포트 매핑과 충돌할 수 있음
+### 정적 NAT 매핑이 Docker를 통한 포트 매핑과 충돌 가능
 
-Windows PowerShell을 사용하여 컨테이너를 만들고 정적 NAT 매핑을 추가하는 경우 `docker -p &lt;src&gt;:&lt;dst&gt;`를 사용하여 컨테이너를 시작하기 전에 이러한 매핑을 제거하지 않으면 충돌이 발생할 수 있습니다.
+Windows PowerShell을 사용하여 컨테이너를 만들고 정적 NAT 매핑을 추가하는 경우 `docker -p &lt;src&gt;:&lt;dst&gt;`를 사용하여 컨테이너를 시작하기 전에 이를 제거하지 않으면 충돌이 발생할 수 있습니다.
 
 다음은 포트 80에서 정적 매핑과 충돌하는 예입니다.
 ```
@@ -138,7 +133,7 @@ duplicate name exists on the network. If joining a domain, go to System in Contr
 
 
 ***해결 방법***
-PowerShell을 사용하여 포트 매핑을 제거하면 문제를 해결할 수 있습니다. 이 경우 위의 예제에서 발생한 포트 80 충돌이 제거됩니다.
+PowerShell을 사용한 포트 매핑을 제거하여 해결할 수 있습니다. 그러면 위의 예에서 발생한 포트 80이 제거됩니다.
 ```powershell
 Get-NetNatStaticMapping | ? ExternalPort -eq 80 | Remove-NetNatStaticMapping
 ```
@@ -292,4 +287,8 @@ Microsoft에서는 서비스 및 응용 프로그램이 Active Directory를 사�
 
 
 
-<!--HONumber=Feb16_HO1-->
+
+
+<!--HONumber=Feb16_HO4-->
+
+

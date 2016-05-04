@@ -1,3 +1,7 @@
+
+
+
+
 # 새 Hyper-V 가상 컴퓨터에 Windows 컨테이너 호스트 배포
 
 이 문서에서는 PowerShell 스크립트를 사용하여 새 Hyper-V 가상 컴퓨터를 배포한 다음 Windows 컨테이너 호스트로 사용하는 절차를 안내합니다.
@@ -30,7 +34,7 @@ PS C:\> start-process powershell -Verb runAs
 다음을 실행하여 외부 가상 스위치의 목록을 반환합니다. 반환되는 것이 없으며 새 외부 가상 스위치를 만들고 이 가이드의 다음 단계를 진행합니다.
 
 ```powershell
-PS C:\> Get-VMSwitch | where {$_.SwitchType –eq “External”}
+PS C:\> Get-VMSwitch | where {$_.SwitchType -eq “External”}
 ```
 
 다음 명령을 사용하여 구성 스크립트를 다운로드합니다. 이 스크립트는 [구성 스크립트](https://aka.ms/tp4/New-ContainerHost) 위치에서 수동으로 다운로드할 수도 있습니다.
@@ -42,7 +46,7 @@ PS C:\> wget -uri https://aka.ms/tp4/New-ContainerHost -OutFile c:\New-Container
 다음 명령을 실행하여 컨테이너 호스트를 만들고 구성합니다. 여기서 `&lt;containerhost&gt;`는 가상 컴퓨터 이름이 됩니다.
 
 ``` powershell
-PS C:\> powershell.exe -NoProfile c:\New-ContainerHost.ps1 –VmName testcont -WindowsImage ServerDatacenterCore -Hyperv
+PS C:\> powershell.exe -NoProfile c:\New-ContainerHost.ps1 -VMName testcont -WindowsImage ServerDatacenterCore -Hyperv
 ```
 
 스크립트가 시작되면 암호를 입력하라는 메시지가 표시됩니다. 관리자 계정에 할당된 암호를 말합니다.
@@ -72,4 +76,8 @@ license terms. Please confirm you have accepted and agree to the license terms.
 
 
 
-<!--HONumber=Feb16_HO2-->
+
+
+<!--HONumber=Feb16_HO4-->
+
+

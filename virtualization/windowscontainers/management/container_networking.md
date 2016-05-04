@@ -1,3 +1,7 @@
+
+
+
+
 # 컨테이너 네트워킹
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
@@ -106,7 +110,7 @@ Get-VMNetworkAdapter -VMName DemoVM | Set-VMNetworkAdapter -MacAddressSpoofing O
 Docker 디먼을 시작할 때 네트워크 브리지를 선택할 수 있습니다. Windows에서 Docker를 실행하는 경우, 이것은 외부 또는 NAT 가상 스위치입니다. 다음 예제에서는 이름이 `Virtual Switch`인 가상 스위치를 지정하는 Docker 디먼을 시작합니다.
 
 ```powershell
-Docker daemon –D –b “Virtual Switch” -H 0.0.0.0:2375
+Docker daemon -D -b “Virtual Switch” -H 0.0.0.0:2375
 ```
 
 컨테이너 호스트를 배포했고, 스크립트를 사용하는 Docker가 Windows 컨테이너 빠른 시작에 제공된 경우에는 내부 가상 스위치가 NAT 유형으로 만들어지고 Docker 서비스가 생성되어 이 스위치를 사용하도록 사전 구성됩니다. Docker 서비스가 사용하는 가상 스위치를 변경하려면, Docker 서비스를 중지하고, 구성 파일을 수정하고, 서비스를 다시 시작해야 합니다.
@@ -149,4 +153,8 @@ Start-Service docker
 
 
 
-<!--HONumber=Feb16_HO1-->
+
+
+<!--HONumber=Feb16_HO4-->
+
+

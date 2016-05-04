@@ -25,7 +25,7 @@ Windows 10에서 가상 컴퓨터를 만들려면 먼저 Hyper-V 역할을 활�
 2. 다음 명령을 실행합니다.
 
 ```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V –All
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 설치가 완료되면 컴퓨터를 다시 부팅해야 합니다.
 
@@ -49,5 +49,11 @@ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 
 [가상 스위치 만들기](walkthrough_virtual_switch.md)
 
+
+
+
+
+
+<!--HONumber=Feb16_HO4-->
 
 

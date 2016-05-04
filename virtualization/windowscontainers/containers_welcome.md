@@ -1,3 +1,7 @@
+
+
+
+
 # Windows 컨테이너 설명서
 
 Windows 컨테이너는 여러 개의 격리된 응용 프로그램을 단일 시스템에서 실행할 수 있는 운영 체제 수준 가상화를 제공합니다. 두 가지 형식의 컨테이너 런타임이 각각 다른 응용 프로그램 격리 수준을 가진 기능과 함께 포함됩니다. Windows Server 컨테이너는 네임스페이스 및 프로세스 격리를 통해 격리됩니다. Hyper-V 컨테이너는 간단한 가상 컴퓨터에서 각 컨테이너를 캡슐화합니다. 두 개의 런타임 외에도 컨테이너는 모두 Docker 또는 PowerShell을 사용하여 관리될 수 있습니다. 이 문서 집합은 관리 작업에서 빠른 시작 가이드, 배포 가이드 및 기술 세부 정보를 제공합니다.
@@ -44,8 +48,8 @@ Windows Server 2016 및 Nano Server에서 Windows 컨테이너를 관리하는 �
 </tr>
 <tr>
 <td><center>![](media/video.png)</center></td>
-<td>**시청**<br /><br />
-Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으세요?<br /><br />
+<td>**보기**<br /><br />
+Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으십니까?<br /><br />
 <ul>
 <li>[컨테이너 채널](https://channel9.msdn.com/Blogs/containers)</li>
 </ul>
@@ -68,4 +72,8 @@ Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으세요?<br /
 
 
 
-<!--HONumber=Feb16_HO1-->
+
+
+<!--HONumber=Feb16_HO3-->
+
+

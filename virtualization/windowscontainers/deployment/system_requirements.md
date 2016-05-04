@@ -1,3 +1,7 @@
+
+
+
+
 # Windows의 컨테이너 요구 사항
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
@@ -48,4 +52,8 @@ Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되며 Hy
 
 
 
-<!--HONumber=Jan16_HO1-->
+
+
+<!--HONumber=Feb16_HO3-->
+
+

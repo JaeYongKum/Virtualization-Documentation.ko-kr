@@ -1,3 +1,7 @@
+
+
+
+
 # Windows 컨테이너 관리를 위한 PowerShell과 Docker 비교
 
 기본 Windows 도구(PowerShell,이 미리 보기 내)와 Docker와 같은 오픈 소스 관리 도구를 사용하여 Windows 컨테이너를 관리하는 방법은 여러 가지가 있습니다.  
@@ -24,8 +28,8 @@ Hyper-V PowerShell을 사용한 경우 cmdlet의 디자인은 친숙해야 합�
 | `docker rm`| `Remove-Container`|
 | `docker rmi`| `Remove-ContainerImage`|
 | `docker create`| `New-Container`|
-| `docker commit <container ID>`| `New-ContainerImage -Container <container>`|
-| `docker load <tarball>`| `Import-ContainerImage <AppX package>`|
+| `docker commit <container ID>`| `New-ContainerImage -Container &lt;container&gt;`|
+| `docker load &lt;tarball&gt;`| `Import-ContainerImage <AppX package>`|
 | `docker save`| `Export-ContainerImage`|
 | `docker start`| `Start-Container`|
 | `docker stop`| `Stop-Container`|
@@ -40,10 +44,10 @@ PowerShell을 이미 알고 있는 사용자에 대해 조금 더 친숙한 상�
 
 1.  PowerShell 모델의 컨테이너의 수명 주기는 약간 다릅니다. 컨테이너 PowerShell 모듈에서 `New-Container`(중지된 새 컨테이너를 만듦) 및 `Start-Container`의 더욱 세밀한 작업을 공개했습니다.
 
-    컨테이너를 만들고 시작하는 사이에서 TP3에 대한 컨테이너의 설정을 구성할 수도 있으며 공개하려고 계획 중인 다른 구성은 컨테이너에 대한 네트워크 연결을 설정하는 기능입니다. (Add/Remove/Connect/Disconnect/Get/Set)-ContainerNetworkAdapter cmdlet 사용.
+  컨테이너를 만들고 시작하는 사이에서 TP3에 대한 컨테이너의 설정을 구성할 수도 있으며 공개하려고 계획 중인 다른 구성은 컨테이너에 대한 네트워크 연결을 설정하는 기능입니다. (Add/Remove/Connect/Disconnect/Get/Set)-ContainerNetworkAdapter cmdlet 사용.
 
 2.  현재 시작 시 컨테이너 내에서 실행되도록 명령을 전달할 수 없습니다. 그러나 `Enter-PSSession -ContainerId <ID of a running container>`를 사용하여 실행 중인 컨테이너에 대화형 PowerShell 세션을 가져올 수 있으며 `Invoke-Command -ContainerId <container id> -ScriptBlock { code to run inside the container }` 또는 `Invoke-Command -ContainerId <container id> -FilePath <path to script>`를 사용하여 실행 중인 컨테이너 내에서 명령을 실행할 수 있습니다.  
-    이 두 명령은 모두 높은 권한 작업에 대해 선택적 `-RunAsAdministrator` 플래그를 허용합니다.
+이 두 명령은 모두 높은 권한 작업에 대해 선택적 `-RunAsAdministrator` 플래그를 허용합니다.
 
 
 ## 제한 사항 및 알려진 문제
@@ -185,5 +189,10 @@ Docker에서 사용 가능한 API 문서를 복제하지 않기 위해 해당 �
 
 진행 중인 작업 문서에서 Docker API에서 해야 할 작업과 하지 말아야 할 작업에 대해 추적하고 있습니다.
 
+
+
+
+
+<!--HONumber=Feb16_HO3-->
 
 

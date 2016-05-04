@@ -1,14 +1,19 @@
-# 컨테이너 호스트 배포 - Nano Server
+
+
+
+
+
+# 컨테이너 호스트 배포 - Nano 서버
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
 
-Windows 컨테이너 호스트 배포 단계는 운영 체제와 호스트 시스템 유형(물리적 또는 가상)에 따라 다릅니다. 이 문서의 단계는 물리적 또는 가상 시스템에서 Nano Server에 Windows 컨테이너 호스트를 배포하는 데 사용됩니다. Windows 컨테이너 호스트를 Windows Server에 설치하려면 [컨테이너 호스트 배포 - Windows Server](./deployment.md)를 참조하세요.
+Windows 컨테이너 호스트 배포 단계는 운영 체제와 호스트 시스템 유형(물리적 또는 가상)에 따라 다릅니다. 이 문서의 단계는 물리적 시스템이나 가상 시스템에서 Windows 컨테이너 호스트를 Nano Server에 배포하는 데 사용됩니다. Windows 컨테이너 호스트를 Windows Server에 설치하려면 [컨테이너 호스트 배포 - Windows Server](./deployment.md)를 참조하세요.
 
 시스템 요구 사항에 대한 자세한 내용은 [Windows 컨테이너 호스트 시스템 요구 사항](./system_requirements.md)을 참조하세요.
 
 PowerShell 스크립트를 사용하여 Windows 컨테이너 호스트의 배포를 자동화할 수 있습니다.
-- [새 Hyper-V 가상 컴퓨터에 컨테이너 호스트 배포](../quick_start/container_setup.md)
-- [기존 시스템에 컨테이너 호스트 배포](../quick_start/inplace_setup.md)
+- [새 Hyper-V 가상 컴퓨터에 컨테이너 호스트를 배포합니다](../quick_start/container_setup.md).
+- [기존 시스템에 컨테이너 호스트를 배포합니다](../quick_start/inplace_setup.md).
 
 
 # Nano Server 호스트
@@ -42,7 +47,7 @@ PowerShell 스크립트를 사용하여 Windows 컨테이너 호스트의 배포
 </tr>
 </table>
 
-Hyper-V 컨테이너를 사용할 경우 이 단계를 수행해야 합니다. * 표시가 있는 단계는 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우에만 필요합니다.
+Hyper-V 컨테이너를 사용할 경우에는 다음 단계를 수행해야 합니다. * 표시가 있는 단계는 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우에만 필요합니다.
 
 <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:100%" cellpadding="5" cellspacing="5">
 <tr valign="top">
@@ -54,19 +59,19 @@ Hyper-V 컨테이너를 사용할 경우 이 단계를 수행해야 합니다. *
 <td>Hyper-V는 Hyper-V 컨테이너를 배포할 때만 필요합니다.</td>
 </tr>
 <tr>
-<td>[중첩된 가상화 사용 *](#nest)</td>
+<td>[중첩된 가상화 사용*](#nest)</td>
 <td>컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 중첩된 가상화를 사용해야 합니다.</td>
 </tr>
 <tr>
-<td>[가상 프로세서 구성 *](#proc)</td>
+<td>[가상 프로세서 구성*](#proc)</td>
 <td>컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 둘 이상의 가상 프로세서를 구성해야 합니다.</td>
 </tr>
 <tr>
-<td>[동적 메모리 사용 안 함 *](#dyn)</td>
+<td>[동적 메모리 사용 안 함*](#dyn)</td>
 <td>컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 동적 메모리를 사용하지 않도록 설정해야 합니다.</td>
 </tr>
 <tr>
-<td>[MAC 주소 스푸핑 구성 *](#mac)</td>
+<td>[MAC 주소 스푸핑 구성*](#mac)</td>
 <td>컨테이너 호스트가 가상화된 경우 MAC 스푸핑을 사용해야 합니다.</td>
 </tr>
 </table>
@@ -83,7 +88,7 @@ Nano 서버 배포에는 준비된 가상 하드 드라이브 만들기가 필�
 PS C:\> New-Item -ItemType Directory c:\nano
 ```
 
-Windows Server 미디어의 Nano Server 폴더에서 `NanoServerImageGenerator.psm1` 및 `Convert-WindowsImage.ps1` 파일을 찾습니다. 이 두 파일을 `c:\nano`에 복사합니다.
+Windows Server 미디어의 Nano Server 폴더에서 `NanoServerImageGenerator.psm1` 및 `Convert-WindowsImage.ps1` 파일을 찾습니다. `c:\nano`에 복사합니다.
 
 ```powershell
 #Set path to Windows Server 2016 Media
@@ -93,18 +98,18 @@ PS C:\> Copy-Item $WindowsMedia\NanoServer\Convert-WindowsImage.ps1 c:\nano
 
 PS C:\> Copy-Item $WindowsMedia\NanoServer\NanoServerImageGenerator.psm1 c:\nano
 ```
-다음을 실행하여 Nano Server 가상 하드 드라이브를 만듭니다. `–Containers` 매개 변수는 컨테이너 패키지가 설치되었음을 나타내고, `–Compute` 매개 변수는 Hyper-V 패키지를 관리합니다. Hyper-V는 Hyper-V 컨테이너를 사용하는 경우에만 필요합니다.
+다음을 실행하여 Nano Server 가상 하드 드라이브를 만듭니다. `–Containers` 매개 변수는 컨테이너 패키지가 설치되었음을 나타내고, `–Compute` 매개 변수는 Hyper-V 패키지를 관리합니다. Hyper-V는 Hyper-V 컨테이너를 사용할 때만 필요합니다.
 
 ```powershell
 PS C:\> Import-Module C:\nano\NanoServerImageGenerator.psm1
 
 PS C:\> New-NanoServerImage -MediaPath $WindowsMedia -BasePath c:\nano -TargetPath C:\nano\NanoContainer.vhdx -MaxSize 10GB -GuestDrivers -ReverseForwarders -Compute -Containers
 ```
-완료되면 `NanoContainer.vhdx` 파일에서 가상 컴퓨터를 만듭니다. 이 가상 컴퓨터는 Nano Server OS와 선택적 패키지를 실행합니다.
+완료되면 `NanoContainer.vhdx` 파일에서 가상 컴퓨터를 만듭니다. 이 가상 컴퓨터는 Nano Server OS 및 선택적 패키지를 실행합니다.
 
 ### <a name=vswitch></a>가상 스위치 만들기
 
-각 컨테이너는 네트워크를 통해 통신을 하기 위해 가상 스위치에 연결되어야 합니다. 가상 스위치는 `New-VMSwitch` 명령으로 만들어집니다. 컨테이너는 형식이 `외부` 또는 `NAT`인 가상 스위치를 지원합니다. Windows 컨테이너 네트워킹에 대한 자세한 내용은 [컨테이너 네트워킹](../management/container_networking.md)을 참조하세요.
+각 컨테이너는 네트워크를 통해 통신을 하기 위해 가상 스위치에 연결되어야 합니다. 가상 스위치는 `New-VMSwitch` 명령으로 만듭니다. 컨테이너는 형식이 `외부` 또는 `NAT`인 가상 스위치를 지원합니다. Windows 컨테이너 네트워킹에 대한 자세한 내용은 [컨테이너 네트워킹](../management/container_networking.md)을 참조하세요.
 
 이 예제에서는 이름이 “Virtual Switch”이고 NAT 유형이며 NAT 서브넷이 172.16.0.0/12인 가상 스위치를 만듭니다.
 
@@ -114,7 +119,7 @@ PS C:\> New-VMSwitch -Name "Virtual Switch" -SwitchType NAT -NATSubnetAddress "1
 
 ### <a name=nat></a>NAT 구성
 
-스위치 형식이 NAT인 경우 가상 스위치를 만드는 것 외에도 NAT 개체를 만들어야 합니다. 이 작업은 `New-NetNat` 명령을 통해 완료됩니다. 이 예에서는 이름이 `ContainerNat`이며, 컨테이너 스위치에 할당된 NAT 서브넷과 일치하는 주소 접두사를 갖는 NAT 개체를 만듭니다.
+스위치 형식이 NAT인 경우 가상 스위치를 만드는 것 외에도 NAT 개체를 만들어야 합니다. 이 작업은 `New-NetNat` 명령을 통해 수행합니다. 이 예에서는 이름이 `ContainerNat`이며, 컨테이너 스위치에 할당된 NAT 서브넷에 부합하는 주소 접두사를 갖는 NAT 개체를 만듭니다.
 
 ```powershell
 PS C:\> New-NetNat -Name ContainerNat -InternalIPInterfaceAddressPrefix "172.16.0.0/12"
@@ -153,7 +158,7 @@ Name                 Version                 Description
 NanoServer           10.0.10586.0            Container OS Image of Windows Server 2016 Techn...
 WindowsServerCore    10.0.10586.0            Container OS Image of Windows Server 2016 Techn...
 ```
-**참고** - 이때 Nano Server OS 이미지는 Nano Server 컨테이너 호스트와 호환됩니다. Nano Server 기본 OS 이미지를 다운로드하여 설치하려면 다음을 실행합니다.
+**참고** - 이 시점에서는 Nano Server OS 이미지만 Nano Server 컨테이너 호스트와 호환됩니다. Nano Server 기본 OS 이미지를 다운로드하여 설치하려면 다음을 실행합니다.
 
 ```powershell
 PS C:\> Install-ContainerImage -Name NanoServer -Version 10.0.10586.0
@@ -182,13 +187,13 @@ Docker 데몬 및 명령줄 인터페이스는 Windows와 함께 제공되지 �
 
 ### <a name=hypv></a>Hyper-V 역할 사용
 
-Nano Server에서 Nano Server 이미지를 만들 때 이를 완료할 수 있습니다. 이러한 지침은 [컨테이너에 사용할 Nano Server 준비](#nano)를 참조하세요.
+Nano Server에서 Nano Server 이미지를 만들 때 이 작업을 완료할 수 있습니다. 그 지침에 대해서는 [컨테이너에 사용할 Nano Server 준비](#nano)를 참조하세요.
 
-### <a name=nest></a>중첩된 가상화 구성
+### <a name=nest></a>중첩된 가상화
 
 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터에서 실행되며 Hyper-V 호스트 컨테이너를 호스팅할 경우, 중첩된 가상화를 사용해야 합니다 다음 PowerShell 명령을 사용하여 이를 수행할 수 있습니다.
 
-**참고** - 이 명령을 실행할 때는 가상 컴퓨터가 꺼져 있어야 합니다.
+**참고** - 이 명령을 실행할 때는 가상 컴퓨터를 꺼야 합니다.
 
 ```powershell
 PS C:\> Set-VMProcessor -VMName <VM Name> -ExposeVirtualizationExtensions $true
@@ -196,25 +201,25 @@ PS C:\> Set-VMProcessor -VMName <VM Name> -ExposeVirtualizationExtensions $true
 
 ### <a name=proc></a>가상 프로세서 구성
 
-컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터에서 실행되며 Hyper-V 호스트 컨테이너를 호스팅할 경우, 가상 컴퓨터에 둘 이상의 프로세서가 필요합니다. 가상 컴퓨터의 설정을 통해 또는 다음 명령을 사용하여 이를 구성할 수 있습니다.
+컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터에서 실행되며 Hyper-V 호스트 컨테이너를 호스팅할 경우, 가상 컴퓨터에 둘 이상의 프로세서가 필요합니다. 다음 명령 또는 가상 컴퓨터의 설정을 통해 이를 구성할 수 있습니다.
 
-**참고** - 이 명령을 실행할 때는 가상 컴퓨터가 꺼져 있어야 합니다.
+**참고** - 이 명령을 실행할 때는 가상 컴퓨터를 꺼야 합니다.
 
 ```poweshell
-PS C:\> Set-VMProcessor –VMName <VM Name> -Count 2
+PS C:\> Set-VMProcessor -VMName <VM Name> -Count 2
 ```
 
 ### <a name=dyn></a>동적 메모리 사용 안 함
 
-컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 컨테이너 호스트 가상 컴퓨터에서 동적 메모리를 사용하지 않도록 설정해야 합니다. 가상 컴퓨터의 설정을 통해 또는 다음 명령을 사용하여 이를 구성할 수 있습니다.
+컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 컨테이너 호스트 가상 컴퓨터에서 동적 메모리를 사용하지 않도록 설정해야 합니다. 다음 명령 또는 가상 컴퓨터의 설정을 통해 이를 구성할 수 있습니다.
 
-**참고** - 이 명령을 실행할 때는 가상 컴퓨터가 꺼져 있어야 합니다.
+**참고** - 이 명령을 실행할 때는 가상 컴퓨터를 꺼야 합니다.
 
 ```poweshell
 PS C:\> Set-VMMemory <VM Name> -DynamicMemoryEnabled $false
 ```
 
-### <a name=mac></a>MAC 주소 스푸핑 구성
+### <a name=mac></a>MAC 주소 스푸핑
 
 마지막으로 컨테이너 호스트가 Hyper-V 가상 컴퓨터 안에서 실행 중인 경우 MAC 스푸핑을 사용하도록 설정해야 합니다. 이렇게 하면 각 컨테이너가 IP 주소를 받을 수 있습니다. MAC 주소 스푸핑을 사용하려면 Hyper-V 호스트에서 다음 명령을 실행합니다. VMName 속성은 컨테이너 호스트의 이름이 됩니다.
 
@@ -225,4 +230,8 @@ PS C:\> Get-VMNetworkAdapter -VMName <VM Name> | Set-VMNetworkAdapter -MacAddres
 
 
 
-<!--HONumber=Feb16_HO1-->
+
+
+<!--HONumber=Feb16_HO4-->
+
+

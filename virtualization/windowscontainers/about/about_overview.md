@@ -1,8 +1,12 @@
+
+
+
+
 # Windows 컨테이너
 
 응용 프로그램은 클라우드 및 모바일 시대의 혁신을 추진하는 동력이 됩니다. 컨테이너와, 그와 관련한 개발 생태계는 소프트웨어 개발자들이 차세대 응용 프로그램 환경을 조성할 수 있는 힘을 제공합니다.
 
-[Windows 기반 컨테이너: 엔터프라이즈급 컨트롤이 있는 최신 웹 개발](https://youtu.be/Ryx3o0rD5lY)에 대한 간략한 개요를 확인합니다.
+[Windows 기반 컨테이너: 엔터프라이즈급 컨트롤이 있는 최신 웹 개발](https://youtu.be/Ryx3o0rD5lY)에 대한 간략한 개요를 확인하세요.
 
 ## 컨테이너란?
 
@@ -73,5 +77,10 @@ src="https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-an
 [로컬로 Windows 컨테이너 시작](../quick_start/container_setup.md)
 
 
+
+
+
+
+<!--HONumber=Feb16_HO3-->
 
 

@@ -8,7 +8,7 @@ Hyper-V 배포, 가상 컴퓨터 만들기 및 이러한 가상 컴퓨터 관리
 2.  다음 명령을 실행하여 Hyper-V PowerShell 모듈과 함께 사용할 수 있는 검색 가능한 PowerShell 명령 목록을 표시합니다.
 
  ```powershell
-get-command –module hyper-v | out-gridview
+get-command -module hyper-v | out-gridview
  ```
   다음과 같이 표시됩니다.
 
@@ -40,12 +40,12 @@ get-vm
 2. 전원이 켜진 가상 컴퓨터의 목록을 반환하려면 `get-vm` 명령에 필터를 추가합니다. where-object 명령을 사용하여 필터를 추가할 수 있습니다. 필터링에 대한 자세한 내용은 [Where-object 사용](https://technet.microsoft.com/en-us/library/ee177028.aspx) 설명서를 참조하세요.
 
  ```powershell
- get-vm | where {$_.State –eq ‘Running’}
+ get-vm | where {$_.State -eq ‘Running’}
  ```
 3.  꺼져 있는 상태의 모든 가상 컴퓨터를 나열하려면 다음 명령을 실행합니다. 이 명령은 'Running'에서 'Off'로 변경된 필터를 사용한 2단계의 명령 복사본입니다.
 
  ```powershell
- get-vm | where {$_.State –eq ‘Off’}
+ get-vm | where {$_.State -eq ‘Off’}
  ```
 
 ### 가상 컴퓨터 시작 및 종료
@@ -53,18 +53,18 @@ get-vm
 1. 특정 가상 컴퓨터를 시작하려면 가상 컴퓨터의 이름으로 다음 명령을 실행합니다.
 
  ```powershell
- Start-vm –Name <virtual machine name>
+ Start-vm -Name <virtual machine name>
  ```
 
 2. 현재 전원이 꺼진 모든 가상 컴퓨터를 시작하려면 해당 컴퓨터의 목록을 가져오고 'start-vm' 명령에 목록을 파이프합니다.
 
   ```powershell
- get-vm | where {$_.State –eq ‘Off’} | start-vm
+ get-vm | where {$_.State -eq ‘Off’} | start-vm
   ```
 3. 실행 중인 모든 가상 컴퓨터를 종료하려면 다음을 실행합니다.
 
   ```powershell
- get-vm | where {$_.State –eq ‘Running’} | stop-vm
+ get-vm | where {$_.State -eq ‘Running’} | stop-vm
   ```
 
 ### VM 검사점 만들기
@@ -103,5 +103,10 @@ PowerShell을 사용하여 검사점을 만들려면 `get-vm` 명령을 사용�
 이 문서는 몇 가지 샘플 시나리오 뿐 아니라 Hyper-V PowerShell 모듈을 살펴보는 몇 가지 간단한 단계를 보여 주었습니다. Hyper-V PowerShell 모듈에 대한 자세한 내용은 [Windows PowerShell 참조의 Hyper-V Cmdlet](https://technet.microsoft.com/%5Clibrary/Hh848559.aspx)을 참조하세요.
 
 
+
+
+
+
+<!--HONumber=Feb16_HO4-->
 
 

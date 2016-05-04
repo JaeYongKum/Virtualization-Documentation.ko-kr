@@ -1,3 +1,7 @@
+
+
+
+
 # Docker 및 Windows
 
 **이 예비 콘텐츠는 변경될 수 있습니다.**
@@ -26,7 +30,7 @@ PS C:\> wget https://aka.ms/tp4/docker -OutFile $env:SystemRoot\system32\docker.
 PS C:\> New-Item -ItemType File -Path C:\ProgramData\Docker\runDockerDaemon.cmd -Force
 ```
 
-다음 텍스트를 `runDockerDaemon.cmd` 파일에 복사합니다. 이 배치 파일은 `docker daemon –D –b “Virtual Switch”` 명령으로 Docker 디먼을 시작합니다. 참고: 이 파일에서 가상 스위치의 이름은 네트워크 연결에 컨테이너를 사용할 가상 스위치의 이름과 일치해야 합니다.
+다음 텍스트를 `runDockerDaemon.cmd` 파일에 복사합니다. 이 배치 파일은 `docker daemon -D -b “Virtual Switch”` 명령으로 Docker 디먼을 시작합니다. 참고: 이 파일에서 가상 스위치의 이름은 네트워크 연결에 컨테이너를 사용할 가상 스위치의 이름과 일치해야 합니다.
 
 ```powershell
 @echo off
@@ -70,7 +74,7 @@ NSSM 서비스 설치 관리자의 해당 필드에 다음 데이터를 입력�
 
 - **시작 디렉터리:** C:\Windows\System32
 
-- **인수:** /s /c C:\ProgramData\docker\runDockerDaemon.cmd
+- **인수:** /s /c C:\ProgramData\docker\runDockerDaemon.cmd < nul
 
 - **서비스 이름** - Docker
 
@@ -174,4 +178,8 @@ docker daemon -D -H <ip address of Nano Server>:2375
 
 
 
-<!--HONumber=Jan16_HO3-->
+
+
+<!--HONumber=Feb16_HO4-->
+
+
