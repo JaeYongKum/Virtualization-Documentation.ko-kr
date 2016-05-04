@@ -3555,9 +3555,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [virtualization\windowscontainers\deployment\system_requirements.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/6a8cf6b74fd9c658fff8d1c32f4d8713fe7937a1/virtualization/windowscontainers/deployment/system_requirements.md)
-* Current Handback File: [system_requirements.579a5475e3bd1d3d3fd9d5b53488ab4ae55a4423.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/75a03c0436a31f1fc8626aa11ef2b8940f4814c6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/system_requirements.579a5475e3bd1d3d3fd9d5b53488ab4ae55a4423.ko-kr.xlf)
-* Current Handback Datetime: 2016-05-04 02:32:21
+* Current Target File: [virtualization\windowscontainers\deployment\system_requirements.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/272ce7e837176451d1e4c568d58b47adb2ad36c2/virtualization/windowscontainers/deployment/system_requirements.md)
+* Current Handback File: [system_requirements.579a5475e3bd1d3d3fd9d5b53488ab4ae55a4423.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/bd3c4f2996d42c7fef29c5b03b3becc9e48ba096/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/system_requirements.579a5475e3bd1d3d3fd9d5b53488ab4ae55a4423.ko-kr.xlf)
+* Current Handback Datetime: 2016-05-04 02:38:45
 * [Back to Top](#report-top)
 
 ##### <a name='d03873cb289bc97d547e1edcf34861ce8a48ff9e243'></a> Source: [virtualization\windowscontainers\docfx.json](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/1b5bed6708c414f32715438b5596a85071997178/virtualization/windowscontainers/docfx.json)
@@ -3962,9 +3962,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [virtualization\windowscontainers\quick_start\manage_powershell.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/6a8cf6b74fd9c658fff8d1c32f4d8713fe7937a1/virtualization/windowscontainers/quick_start/manage_powershell.md)
-* Current Handback File: [manage_powershell.fccfd13be3f4bd16afbe4f31a5ca5ed4e93806b7.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/75a03c0436a31f1fc8626aa11ef2b8940f4814c6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/manage_powershell.fccfd13be3f4bd16afbe4f31a5ca5ed4e93806b7.ko-kr.xlf)
-* Current Handback Datetime: 2016-05-04 02:32:21
+* Current Target File: [virtualization\windowscontainers\quick_start\manage_powershell.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/272ce7e837176451d1e4c568d58b47adb2ad36c2/virtualization/windowscontainers/quick_start/manage_powershell.md)
+* Current Handback File: [manage_powershell.fccfd13be3f4bd16afbe4f31a5ca5ed4e93806b7.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/bd3c4f2996d42c7fef29c5b03b3becc9e48ba096/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/manage_powershell.fccfd13be3f4bd16afbe4f31a5ca5ed4e93806b7.ko-kr.xlf)
+* Current Handback Datetime: 2016-05-04 02:38:45
 * [Back to Top](#report-top)
 
 ##### <a name='62712c1c810e5e6fd902a4a81b1b55400408aa3f273'></a> Source: [virtualization\windowscontainers\quick_start\media\App-in-Container-Green.png](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/1b5bed6708c414f32715438b5596a85071997178/virtualization/windowscontainers/quick_start/media/App-in-Container-Green.png)
