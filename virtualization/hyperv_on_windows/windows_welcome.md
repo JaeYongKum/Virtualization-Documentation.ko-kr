@@ -38,7 +38,7 @@
             <p>추가 기술 지원 및 커뮤니티 리소스입니다.</p>
             <ul>
                 <li class="unordered">[Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)<br /><br /></li>
-                <li class="unordered">[Hyper-V 및 Windows 컨테이너에 대한 커뮤니티 리소스](/virtualization/community/community_overview.md)<br /><br /></li>
+                <li class="unordered">[Hyper-V 및 Windows 컨테이너에 대한 커뮤니티 리소스](/virtualization/community/community_overview)<br /><br /></li>
             </ul>   
         </td>
     </tr>
@@ -47,4 +47,8 @@
 
 
 
-<!--HONumber=Jan16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

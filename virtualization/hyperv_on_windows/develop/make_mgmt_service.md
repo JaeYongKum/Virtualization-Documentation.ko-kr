@@ -7,14 +7,15 @@ Windows 10부터, 누구나 Hyper-V 호스트와 Hyper-V 호스트에서 실행 
 [PowerShell Direct](../user_guide/vmsession.md)는 Hyper-V 소켓을 사용하여 통신하는 응용 프로그램 예제(이 경우 기본 제공 Windows 서비스)입니다.
 
 **지원되는 호스트 OS**
-* Windows 10
-* Windows Server Technical Preview 3
+* Windows 10 빌드 14290 이상
+* Windows Server Technical Preview 4 이상
 * 앞으로의 릴리스(서버 2016 +)
 
 **지원되는 게스트 OS**
 * Windows 10
-* Windows Server Technical Preview 3
+* Windows Server Technical Preview 4 이상
 * 앞으로의 릴리스(서버 2016 +)
+* Linux 통합 서비스를 포함하는 Linux 게스트([Supported Linux and FreeBSD virtual machines for Hyper-V on Windows(Windows의 Hyper-V에 대해 지원되는 Linux 및 FreeBSD 가상 컴퓨터)](https://technet.microsoft.com/library/dn531030(ws.12).aspx)) 참조
 
 **기능 및 제한 사항**
 * 커널 모드 또는 사용자 모드 동작 지원
@@ -30,9 +31,24 @@ Windows 10부터, 누구나 Hyper-V 호스트와 Hyper-V 호스트에서 실행 
 
 간단한 응용 프로그램을 작성하기 위해 다음이 필요합니다.
 * C 컴파일러. 없으면 [Visual Studio 코드](https://aka.ms/vs)를 확인하세요.
-* Hyper-V를 실행하는 컴퓨터와 가상 컴퓨터.
+* Hyper-V를 실행하는 컴퓨터와 가상 컴퓨터
   * 호스트 및 게스트(VM) 운영 체제는 Windows 10, Windows Server Technical Preview 3 이상이어야 합니다.
-* Windows SDK - `hvsocket.h`가 포함된 [Win10 SDK](https://dev.windows.com/en-us/downloads/windows-10-sdk) 링크입니다.
+* Hyper-V 호스트에 설치된 [Windows 10 SDK](http://aka.ms/flightingSDK)
+
+**Windows SDK 정보**
+
+Windows SDK 링크:
+* [참가자용 Windows 10 SDK Preview](http://aka.ms/flightingSDK)
+* [Windows 10 SDK](https://dev.windows.com/en-us/downloads/windows-10-sdk)
+
+Windows 10 빌드 14290에서는 Hyper-V 소켓용 API를 사용할 수 있게 되었습니다. 플라이팅 다운로드는 최신 참가자 Fast Track 플라이팅 빌드와 일치합니다.  
+이상한 동작이 발생하는 경우 [TechNet 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home "TechNet 포럼")에서 알려주세요. 게시물에 다음 내용을 포함하세요.
+* 예기치 않은 동작
+* 호스트, 게스트 및 SDK의 OS 및 빌드 번호
+
+  SDK 빌드 번호는 SDK 설치 관리자의 제목에 표시됩니다.  
+  ![](./media/flightingSDK.png)
+
 
 ## 새 응용 프로그램 등록
 
@@ -49,7 +65,7 @@ $friendlyName = "HV Socket Demo"
 
 # Create a new random GUID and add it to the services list then add the name as a value
 
-$service = New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices" -Name ([System.Guid]::NewGuid().ToString())
+$service = New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices" -Name ((New-Guid).Guid)
 
 $service.SetValue("ElementName", $friendlyName)
 
@@ -83,7 +99,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 
 > ** 팁: **  PowerShell에서 GUID를 생성하고 클립보드에 복사하려면 다음을 실행합니다.
 ``` PowerShell
-[System.Guid]::NewGuid().ToString() | clip.exe
+(New-Guid).Guid | clip.exe
 ```
 
 ## Hyper-V 소켓 만들기
@@ -104,7 +120,7 @@ SOCKET WSAAPI socket(
 
 Hyper-V 소켓의 경우:
 * 주소 집합 - `AF_HYPERV`
-* 형식 - `SOCK_STREAM`, `SOCK_DGRAM` 또는 `SOCK_RAW`
+* 유형 - `SOCK_STREAM`
 * 프로토콜 - `HV_PROTOCOL_RAW`
 
 
@@ -192,4 +208,8 @@ Accept()
 
 
 
-<!--HONumber=Feb16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+
