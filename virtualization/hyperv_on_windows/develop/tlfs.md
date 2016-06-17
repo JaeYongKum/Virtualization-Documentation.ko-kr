@@ -1,3 +1,16 @@
+---
+title: &256153815 하이퍼바이저 사양
+description: 하이퍼바이저 사양
+keywords: windows 10, hyper-v
+author: scooley
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: &213356222 windows-10-hyperv
+ms.service: windows-10-hyperv
+ms.assetid: aee64ad0-752f-4075-a115-2d6b983b4f49
+---
+
 # 하이퍼바이저 사양
 
 ## 하이퍼바이저 최상위 기능 사양
@@ -25,4 +38,8 @@ Windows 운영 체제를 게스트 가상 컴퓨터("HV#1" 인터페이스라고
 
 
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=May16_HO1-->
+
+

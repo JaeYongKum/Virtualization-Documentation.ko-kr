@@ -1,3 +1,7 @@
+---
+redirect_url: http://aka.ms/upgradevmconfig
+---
+
 # 가상 컴퓨터 마이그레이션 및 업그레이드
 
 Windows 8.1 이하에서 Hyper-V로 만들어진 Windows 10 호스트에 가상 컴퓨터를 이동하는 경우 가상 컴퓨터 구성 버전을 수동으로 업데이트할 때까지 새 가상 컴퓨터 기능을 사용할 수 없습니다.
@@ -106,5 +110,10 @@ Windows 10에서 Hyper-V를 실행하는 호스트에서 Windows 8.1을 실행�
 
 
 
+
+
+
+
+<!--HONumber=May16_HO1-->
 
 

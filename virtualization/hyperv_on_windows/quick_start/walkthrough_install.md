@@ -1,3 +1,16 @@
+---
+title: &1026681743 Windows 10에 Hyper-V 설치
+description: Windows 10에 Hyper-V 설치
+keywords: windows 10, hyper-v
+author: neilpeterson
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: &138481143 windows-10-hyperv
+ms.service: windows-10-hyperv
+ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
+---
+
 # Windows 10에 Hyper-V 설치
 
 Windows 10에서 가상 컴퓨터를 만들려면 먼저 Hyper-V 역할을 활성화해야 합니다. Windows 10 제어판, PowerShell 또는 배포 이미지 서비스 및 관리 도구(DISM)를 사용하여 실행할 수 있습니다. 이 문서는 이러한 단계를 살펴 봅니다.
@@ -54,6 +67,6 @@ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO1-->
 
 

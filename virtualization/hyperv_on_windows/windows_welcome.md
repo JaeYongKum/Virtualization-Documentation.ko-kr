@@ -1,3 +1,16 @@
+---
+title: &1026681743 Windows 10의 Hyper-V
+description: Windows 10의 Hyper-V
+keywords: windows 10, hyper-v
+author: neilpeterson
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: &213356222 windows-10-hyperv
+ms.service: windows-10-hyperv
+ms.assetid: 05269ce0-a54f-4ad8-af75-2ecf5142b866
+---
+
 # Windows 10의 Hyper-V
 
 여러 버전의 Windows 10에는 Hyper-V 가상화 기술이 포함되어 있습니다. Hyper-V는 실제 호스트를 기반으로 실행 중인 가상화된 컴퓨터 시스템을 활성화합니다. 이러한 가상화된 시스템을 물리적 컴퓨터 시스템인 것처럼 사용 및 관리할 수 있지만 가상화된 격리된 환경에 존재합니다. 하이퍼바이저라는 특별한 소프트웨어는 가상 시스템과 실제 하드웨어 리소스 간의 액세스를 관리합니다. 가상화를 통해 컴퓨터 시스템, 이전에 알려진 양호한 상태로 신속하게 시스템을 복원하는 방법 및 물리적 호스트 간에 마이그레이션하는 기능을 빠르게 배포할 수 있습니다.
@@ -12,7 +25,6 @@
             <p>다음 문서는 Windows의 Hyper-V에 대한 소개 및 정보를 제공합니다.</p>
             <ul>
                 <li class="unordered">[Hyper-V 소개](./about/hyperv_on_windows.md)<br /><br /></li>
-                <li class="unordered">[Windows Server 10용 Hyper-V의 새로운 기능](./about/whats_new.md)<br /><br /></li>
                 <li class="unordered">[지원되는 게스트 운영 체제](about\supported_guest_os.md)<br /><br /></li>
             </ul>   
         </td>
@@ -49,6 +61,6 @@
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO1-->
 
 
