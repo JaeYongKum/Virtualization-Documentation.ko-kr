@@ -40,6 +40,10 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 설치가 완료되면 컴퓨터를 다시 부팅합니다.
 
+```none
+Restart-Computer -Force
+```
+
 ## 2. Docker 설치
 
 Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다. 이렇게 하려면 다음 명령을 실행합니다. 
@@ -116,13 +120,13 @@ Restart-Service docker
 docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-nanoserver          10.0.14300.1010     cb48429c84fa        8 weeks ago         817.1 MB
+nanoserver          10.0.14300.1016     3f5112ddd185        3 weeks ago         810.2 MB
 ```
 
 계속하려면 먼저 이 이미지에 ‘최신’ 버전으로 태그를 지정해야 합니다. 이렇게 하려면 다음 명령을 실행합니다.
 
 ```none
-docker tag nanoserver:10.0.14300.1010 nanoserver:latest
+docker tag nanoserver:10.0.14300.1016 nanoserver:latest
 ```
 
 Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이미지 관리](../management/manage_images.md)를 참조하세요.
@@ -143,9 +147,9 @@ docker pull microsoft/sample-dotnet
 docker images
 
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
-microsoft/sample-dotnet   latest              289f9cdaf773        32 minutes ago      929.9 MB
-nanoserver               10.0.14300.1010     cb48429c84fa        8 weeks ago         817.1 MB
-nanoserver               latest              cb48429c84fa        8 weeks ago         817.1 MB
+microsoft/sample-dotnet  latest              28da49c3bff4        41 hours ago        918.3 MB
+nanoserver               10.0.14300.1016     3f5112ddd185        3 weeks ago         810.2 MB
+nanoserver               latest              3f5112ddd185        3 weeks ago         810.2 MB
 ```
 
 `docker run` 명령으로 컨테이너를 실행합니다. 다음 예제에서는 `--rm` 매개 변수를 지정합니다. 이 매개 변수는 Docker 엔진이 더 이상 실행되는 않는 컨테이너를 삭제하도록 지시합니다. 
@@ -165,6 +169,6 @@ docker run --isolation=hyperv --rm microsoft/sample-dotnet
 
 
 
-<!--HONumber=May16_HO5-->
+<!--HONumber=Jun16_HO2-->
 
 

@@ -28,7 +28,7 @@ Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이�
 Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너 관리와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `--isolation=hyperv` 매개 변수를 사용합니다.
 
 ```none
-docker run -it --isolation=hyperv windowsservercore cmd
+docker run -it --isolation=hyperv nanoserver cmd
 ```
 
 ### 격리 설명
@@ -97,6 +97,6 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
 ```
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO2-->
 
 
