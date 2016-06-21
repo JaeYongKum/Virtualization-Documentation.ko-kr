@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [virtualization\hyperv_on_windows\index.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/3491d21a31a92f0a97de572afafc29ae8e661c12/virtualization/hyperv_on_windows/index.md) | InSyncHandedBackSuccess | [Details](#92b9258423db0c3f6f947197f011e52abde897dd98)
 
 ## Item Details
-##### <a name='92b9258423db0c3f6f947197f011e52abde897dd98'></a> Source: [virtualization\hyperv_on_windows\index.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/3491d21a31a92f0a97de572afafc29ae8e661c12/virtualization/hyperv_on_windows/index.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [virtualization\hyperv_on_windows\index.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/69ec089cf67b5fcf26eabf632ca34e25f8e4a669/virtualization/hyperv_on_windows/index.md)
-* Handoff File: [index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/86258d58fbab9f16f30b6bca58c9c8cefcd2256d/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf)
-* Handoff Datetime: 2016-06-09 16:00:57
-* Handoff Reason: Include
-* Archive File: [index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/85b540554d9b5b5c140be99f9e4471d49467c9de/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/archive/index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf)
-* Archive Datetime: 2016-06-16 07:18:18
-* Handback File: [index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/436ead5218c64fbd6329b3b9803a2c604b1356c3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf)
-* Handback Datetime: 2016-06-21 15:02:49
-* Bilingual File: [index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/436ead5218c64fbd6329b3b9803a2c604b1356c3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/index.ed20041a86dfe858d5ca1a68bb48f4bd5b024074.ko-kr.xlf)
-* Bilingual Datetime: 2016-06-21 15:04:11
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
