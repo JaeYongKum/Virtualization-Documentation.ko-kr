@@ -1,221 +1,102 @@
+---
+title: Hyper-V 컨테이너
+description: Hyper-V 컨테이너를 배포합니다.
+keywords: docker, containers
+author: neilpeterson
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: windows-containers
+ms.service: windows-containers
+ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
+---
+
 # Hyper-V 컨테이너
 
-**이 예비 콘텐츠는 변경될 수 있습니다.**
+**이 예비 콘텐츠는 변경될 수 있습니다.** 
 
-Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이너 등, 두 가지 다른 유형의 컨테이너를 포함합니다. 두 컨테이너 유형 모두 생성, 관리, 작동은 동일합니다. 또한, 동일한 컨테이너 이미지를 생성하고 사용합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 모든 다른 컨테이너 간에 만들어지는 격리의 수준입니다.
+Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이너 등 두 가지 다른 유형의 컨테이너를 포함합니다. 두 컨테이너 유형 모두 생성, 관리, 작동은 동일합니다. 또한 동일한 컨테이너 이미지를 만들고 사용합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 모든 다른 컨테이너 간에 만들어지는 격리의 수준입니다.
 
-**Windows Server 컨테이너** – 네임스페이스, 리소스 제어 및 프로세스 격리 기술을 통해 제공되는 격리를 통해 하나의 호스트에서 여러 컨테이너 인스턴스가 동시에 실행될 수 있습니다. Windows Server 컨테이너는 호스트와 동일할 뿐만 아니라 서로와도 동일한 커널을 공유합니다.
+**Windows Server 컨테이너** – 네임스페이스, 리소스 제어 및 프로세스 격리 기술을 통해 제공되는 격리를 통해 호스트에서 여러 컨테이너 인스턴스를 동시에 실행할 수 있습니다.  Windows Server 컨테이너는 동일한 커널을 서로 공유하고 호스트와도 공유합니다.
 
-**Hyper-V 컨테이너** – 여러 컨테이너 인스턴스가 하나의 호스트에서 동시에 실행될 수 있지만, 각 컨테이너는 특별한 가상 컴퓨터 내부에서 실행됩니다. 이는 각 Hyper-V 컨테이너 및 컨테이너 호스트 간의 커널 수준 격리를 제공합니다.
+**Hyper-V 컨테이너** – 호스트에서 여러 컨테이너 인스턴스를 동시에 실행할 수 있지만 각 컨테이너는 특별한 가상 컴퓨터 안에서 실행됩니다. 이를 통해 각 Hyper-V 컨테이너와 컨테이너 호스트 사이에 커널 수준 격리가 제공됩니다.
 
-## Hyper-V 컨테이너 PowerShell
-
-### 컨테이너 만들기
-
-Hyper-V 컨테이너는 Hyper-V 컨테이너임을 나타내는 런타임 매개 변수를 제외하고는 Windows Server 컨테이너와 동일하게 만들어집니다.
-
-PowerShell을 통한 Hyper-V 컨테이너 만들기 예제
-
-```powershell
-PS C:\> $con = New-Container -Name HYPVCON -ContainerImageName NanoServer -SwitchName "Virtual Switch" -RuntimeType HyperV
-```
-
-### 컨테이너 변환
-
-빌드 시점에 컨테이너를 Hyper-V 컨테이너로 만드는 것 외에도, PowerShell을 통해 만든 Windows Server 컨테이너를 Hyper-V 컨테이너로 변환할 수도 있습니다.
-
-> 현재 컨테이너 런타임 변환을 지원하는 유일한 운영 체제는 Nano Server입니다.
-
-기본 런타임으로 새 컨테이너를 만듭니다.
-
-```powershell
-PS C:\> New-Container -Name DEMO -ContainerImageName nanoserver -SwitchName NAT
-```
-컨테이너에서 런타임 속성을 반환합니다. 런타임이 기본값으로 설정되었는지 확인합니다.
-
-```powershell
-PS C:\> Get-Container | Select ContainerName, RuntimeType
-
-ContainerName RuntimeType
-------------- -----------
-DEMO              Default
-```
-
-`set-container` 명령을 사용하여 컨테이너 런타임을 변경합니다.
-
-```powershell
-PS C:\> Set-Container $con -RuntimeType HyperV
-```
-
-마지막으로 런타임 속성을 다시 반환하여 변경을 확인합니다.
-
-```powershell
-PS C:\> Get-Container | select ContainerName, RuntimeType
-
-ContainerName RuntimeType
-------------- -----------
-DEMO               HyperV
-```
-
-## Hyper-V 컨테이너 Docker
+## Hyper-V 컨테이너
 
 ### 컨테이너 만들기
 
-Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `–-isolation=hyperv` 매개 변수가 사용됩니다.
+Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너 관리와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `--isolation=hyperv` 매개 변수를 사용합니다.
 
-```powershell
-docker run -it --isolation=hyperv 646d6317b02f cmd
+```none
+docker run -it --isolation=hyperv windowsservercore cmd
 ```
 
-## 내부 구조
+### 격리 설명
 
-### VM 작업자 프로세스
+이 예제에서는 Windows Server 및 Hyper-V 컨테이너 간의 격리 기능을 구별합니다. 
 
-만들어진 각 Hyper-V 컨테이너에 대해 해당하는 가상 컴퓨터 작업자 프로세스가 생성됩니다.
+여기에서는 Windows Server 컨테이너를 배포하고 장기 실행 ping 프로세스를 호스트합니다.
 
-```powershell
-PS C:\> Get-Container | Select Name, RuntimeType, ContainerID | Where {$_.RuntimeType -eq 'Hyperv'}
-
-Name RuntimeType ContainerId
----- ----------- -----------
-TST3      HyperV 239def76-d29a-405e-ab64-765fb4de9176
-TST       HyperV b8d7b55a-6b27-4832-88d8-4774df98f208
-TST2      HyperV ccdf6a6e-3358-4419-8dda-ffe87f1de184
+```none
+docker run -d windowsservercore ping localhost -t
 ```
 
-컨테이너 ID와 프로세스 사용자 이름을 통해 컨테이너를 프로세스와 일치시킬 수 있습니다.
+`docker top` 명령을 사용하여 컨테이너 내부에 표시된 대로 ping 프로세스를 반환합니다. 이 예제의 프로세스에서는 ID 3964를 사용합니다.
 
-![](media/process.png)
+```none
+docker top 1f8bf89026c8f66921a55e773bac1c60174bb6bab52ef427c6c8dbc8698f9d7a
 
-이 관계는 `Get-ComputeProcess` 명령을 사용해서도 확인할 수 있습니다.
-
-```powershell
-PS C:\> Get-ComputeProcess
-
-Id                                   Name Owner      Type
---                                   ---- -----      ----
-239DEF76-D29A-405E-AB64-765FB4DE9176 TST3 VMMS  Container
-B8D7B55A-6B27-4832-88D8-4774DF98F208 TST  VMMS  Container
-CCDF6A6E-3358-4419-8DDA-FFE87F1DE184 TST2 VMMS  Container
+3964 ping
 ```
 
-`Get-ComputeProcess` 명령에 대한 자세한 내용은 [관리 상호 운용성](./hcs_powershell.md)을 참조하세요.
+컨테이너 호스트에서는 `get-process` 명령을 사용하여 호스트에서 실행 중인 ping 프로세스를 반환할 수 있습니다. 다음 예제에는 하나가 있으며 프로세스 ID가 컨테이너와 일치합니다. 컨테이너와 호스트에서 모두 표시되는 동일한 프로세스입니다.
 
-## 격리 데모
-
-### Windows Server 컨테이너
-
-다음 연습은 Hyper-V 컨테이너의 격리를 보여주기 위해 사용할 수 있습니다. 이 연습에서는 Windows Server와 Hyper-V 컨테이너를 모두 만듭니다. 컨테이너 호스트에서 실행 중인 프로세스를 살펴봄으로써 Windows Server 컨테이너 프로세스를 컨테이너 호스트에서 공유하는 방식을 확인할 수 있지만 Hyper-V 컨테이너 프로세스는 아닙니다.
-
-```powershell
-PS C:\> get-process | where {$_.ProcessName -eq 'csrss'}
+```none
+get-process -Name ping
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
 -------  ------    -----      ----- -----   ------     --  -- -----------
-    255      12     1820       4000 ...98     0.53    532   0 csrss
-    116      11     1284       3700 ...94     0.25    608   1 csrss
-    246      13     1844       5504 ...17     3.45   3484   2 csrss
+     67       5      820       3836 ...71     0.03   3964   3 PING
 ```
 
-새 Windows Server 컨테이너 만들기
+반대로 이 예제에서는 ping 프로세스로 Hyper-V 컨테이너를 시작합니다. 
 
-```powershell
-PS C:\> New-Container -Name WINCONT -ContainerImageName WindowsServerCore -SwitchName "Virtual Switch"
+```none
+docker run -d --isolation=hyperv nanoserver ping -t localhost
 ```
 
-컨테이너를 시작합니다.
+마찬가지로 `docker top`을 사용하여 컨테이너에서 실행 중인 프로세스를 반환할 수 있습니다.
 
-```powershell
-PS C:\> Start-Container $con
+```none
+docker top 5d5611e38b31a41879d37a94468a1e11dc1086dcd009e2640d36023aa1663e62
+
+1732 ping
 ```
 
-컨테이너와 원격 PS 세션을 만듭니다.
+그러나 컨테이너 호스트에서 프로세스를 검색하면 ping 프로세스가 검색되지 않고 오류가 throw됩니다.
 
-```powershell
-PS C:\> Enter-PSSession -ContainerId $con.ContainerId –RunAsAdministrator
+```none
+get-process -Name ping
+
+get-process : Cannot find a process with the name "ping". Verify the process name and call the cmdlet again.
+At line:1 char:1
++ get-process -Name ping
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ping:String) [Get-Process], ProcessCommandException
+    + FullyQualifiedErrorId : NoProcessFoundForGivenName,Microsoft.PowerShell.Commands.GetProcessCommand
 ```
 
-원격 컨테이너 세션에서 프로세스 이름이 csrss인 모든 프로세스를 반환합니다. 실행 중인 csrss 프로세스에 대한 프로세스 ID를 기록해 둡니다(아래 예에서는 1228).
+마지막으로 호스트에서 `vmwp` 프로세스가 표시되는데, 이는 실행 중인 컨테이너를 캡슐화하고 호스트 운영 체제에서 실행 중인 프로세스를 보호하는 실행 중인 가상 컴퓨터입니다.
 
-```powershell
-[WINCONT]: PS C:\> get-process | where {$_.ProcessName -eq 'csrss'}
+```none
+get-process -Name vmwp
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
 -------  ------    -----      ----- -----   ------     --  -- -----------
-    167       9     1276       3720 ...97     0.20   1228   3 csrss
+   1737      15    39452      19620 ...61     5.55   2376   0 vmwp
 ```
 
-이제 컨테이너 호스트로부터 csrss 프로세스 목록을 반환합니다. 동일한 csrss 프로세스가 컨테이너 호스트에서도 반환됩니다.
 
-```powershell
-PS C:\> get-process | where {$_.ProcessName -eq 'csrss'}
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
--------  ------    -----      ----- -----   ------     --  -- -----------
-    252      11     1712       3968 ...98     0.53    532   0 csrss
-    113      11     1176       3676 ...93     0.25    608   1 csrss
-    175       9     1260       3708 ...97     0.20   1228   3 csrss
-    243      13     1736       5512 ...17     3.77   3484   2 csrss
-```
-### Hyper-V 컨테이너
-
-컨테이너 호스트에서 csrss 프로세스 목록을 반환합니다.
-
-```powershell
-PS C:\> get-process | where {$_.ProcessName -eq 'csrss'}
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
--------  ------    -----      ----- -----   ------     --  -- -----------
-    261      12     1820       4004 ...98     0.53    532   0 csrss
-    116      11     1284       3704 ...94     0.25    608   1 csrss
-    246      13     1844       5536 ...17     3.83   3484   2 csrss
-```
-
-이제 Hyper-V 컨테이너를 만듭니다.
-
-```powershell
-PS C:\> $con = New-Container -Name HYPVCON -ContainerImageName NanoServer -SwitchName "Virtual Switch" -RuntimeType HyperV
-```
-
-Hyper-V 컨테이너 시작
-
-```powershell
-PS C:\> Start-Container $con
-```
-
-Hyper-V 컨테이너와의 원격 PS 세션을 만듭니다.
-
-```powershell
-PS C:\> Enter-PSSession -ContainerId $con.ContainerId –RunAsAdministrator
-```
-
-Hyper-v 컨테이너 내에서 실행되는 csrss 프로세스의 목록을 반환합니다. csrss 프로세스의 프로세스 ID를 기록해 둡니다(아래 예에서는 956).
-
-```powershell
-[HYPVCON]: PS C:\> get-process | where {$_.ProcessName -eq 'csrss'}
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
--------  ------    -----      ----- -----   ------     --  -- -----------
-              4      452       1520 ...63     0.06    956   1 csrss
-```
-
-이제 컨테이너 호스트에서 csrss 프로세스 목록을 반환합니다. csrss 프로세스를 컨테이너 내부와 컨테이너 호스트 모두에서 볼 수 있었던 Windows Server 컨테이너와는 달리, Hyper-V 컨테이너 프로세스는 컨테이너 자체 안에서만 볼 수 있습니다. Hyper-V 컨테이너는 유틸리티 가상 컴퓨터에서 캡슐화되며 프로세스는 해당 가상 컴퓨터에 대해서만 격리되기 때문입니다.
-
-```powershell
-PS C:\> get-process | where {$_.ProcessName -eq 'csrss'}
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
--------  ------    -----      ----- -----   ------     --  -- -----------
-    255      12     1716       3972 ...98     0.56    532   0 csrss
-    113      11     1176       3676 ...93     0.25    608   1 csrss
-    243      13     1732       5512 ...18     4.23   3484   2 csrss
-```
-
-## 비디오 연습
-
-<iframe src="https://channel9.msdn.com/Blogs/containers/Container-Fundamentals--Part-5-Hyper-V-Containers/player#ccLang=ko" width="800" height="450"  allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
+<!--HONumber=May16_HO3-->
 
 
-
-
-<!--HONumber=Feb16_HO2-->

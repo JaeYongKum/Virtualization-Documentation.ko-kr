@@ -1,6 +1,15 @@
-
-
-
+---
+title: Windows 컨테이너 FAQ
+description: Windows 컨테이너 FAQ
+keywords: docker, containers
+author: scooley
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: windows-containers
+ms.service: windows-containers
+ms.assetid: 25de368c-5a10-40a4-b4aa-ac8c9a9ca022
+---
 
 # 질문과 대답
 
@@ -8,7 +17,7 @@
 
 **Windows Server 컨테이너란?**
 
-Windows Server 컨테이너는 응용 프로그램 또는 서비스를, 동일한 컨테이너 호스트에서 실행되는 다른 서비스와 구분하는 데 사용되는 가벼운 운영 체제 가상화 방법입니다. 이 방법을 사용하려면 각 컨테이너에 운영 체제, 프로세스, 파일 시스템, 레지스트리 및 IP 주소에 대한 자체 뷰가 있어야 합니다.
+Windows Server 컨테이너는 응용 프로그램 또는 서비스를, 동일한 컨테이너 호스트에서 실행되는 다른 서비스와 구분하는 데 사용되는 가벼운 운영 체제 가상화 방법입니다. 이 방법을 사용하려면 각 컨테이너에 운영 체제, 프로세스, 파일 시스템, 레지스트리 및 IP 주소에 대한 자체 뷰가 있어야 합니다.  
 
 **Hyper-V 컨테이너란?**
 
@@ -23,7 +32,7 @@ Linux와 Windows Server 컨테이너는 유사하며 커널과 코어 운영 체
 
 **개발자가 각 컨테이너 유형마다 앱을 다시 작성해야 하나요?**
 
-아니요. Windows 컨테이너 이미지는 Windows Server 컨테이너와 Hyper-V 컨테이너 간에 공통입니다. 컨테이너를 시작할 때 컨테이너 유형을 선택합니다. 개발자의 관점에서 Windows Server 컨테이너와 Hyper-V 컨테이너는 같은 물건의 두 버전이라고 할 수 있습니다. 개발, 프로그래밍, 관리 환경이 동일하고, 개방형 및 확장 가능하며, Docker를 통해 동일한 수준의 통합과 지원을 포함합니다.
+아니요. Windows 컨테이너 이미지는 Windows Server 컨테이너와 Hyper-V 컨테이너 간에 공통입니다. 컨테이너를 시작할 때 컨테이너 유형을 선택합니다. 개발자의 관점에서 Windows Server 컨테이너와 Hyper-V 컨테이너는 같은 물건의 두 버전이라고 할 수 있습니다.  개발, 프로그래밍, 관리 환경이 동일하고, 개방형 및 확장 가능하며, Docker를 통해 동일한 수준의 통합과 지원을 포함합니다. 
 
 개발자는 적합한 런타임 플래그를 지정하는 것 말고는 별다른 변경 없이도 Windows Server 컨테이너를 사용하여 컨테이너 이미지를 만들고 Hyper-V 컨테이너로 배포하거나 혹은 반대의 경우로 할 수 있습니다.
 
@@ -31,11 +40,11 @@ Windows Server 컨테이너는 속도가 중요한 상황에서 더 높은 밀�
 
 **Hyper-V/Windows Server 컨테이너가 추가 기능인가요 아니면 Windows Server 안에 통합되나요?**
 
-컨테이너 기능은 Windows Server 2016에 통합될 것입니다. 일반 가용성에 대한 자세한 내용이 곧 제공될 것입니다.
+컨테이너 기능은 Windows Server 2016에 통합될 것입니다. 일반 가용성에 대한 자세한 내용이 곧 제공될 것입니다.  
 
 **Windows Server 컨테이너와 Drawbridge는 서로 어떤 관계인가요?**
 
-Drawbridge는 컨테이너에 대한 중요한 정보를 얻는 데 도움을 준 여러 연구 프로젝트 중 하나였습니다. Windows Server 2016의 컨테이너 기술 중 대다수는 Drawbridge와의 경험에서 탄생했으며 Windows Server 2016에 세계적 수준의 컨테이너 기술을 담아 고객에게 제공할 수 있게 되어 기쁘게 생각합니다.
+Drawbridge는 컨테이너에 대한 중요한 정보를 얻는 데 도움을 준 여러 연구 프로젝트 중 하나였습니다.  Windows Server 2016의 컨테이너 기술 중 대다수는 Drawbridge와의 경험에서 탄생했으며 Windows Server 2016에 세계적 수준의 컨테이너 기술을 담아 고객에게 제공할 수 있게 되어 기쁘게 생각합니다.
 
 **Windows Server 컨테이너와 Hyper-V 컨테이너의 필수 구성 요소는 무엇인가요?**
 
@@ -46,24 +55,13 @@ Windows Server 컨테이너와 Hyper-V 컨테이너 모두 Windows Server 2016�
 
 **Hyper-V 컨테이너 Docker 생태계에서 사용 가능한가요?**
 
-예. Hyper-V 컨테이너도 Docker를 통해 Windows Server와 동일한 수준의 통합과 관리를 제공할 것입니다. 목표는 개방 및 일관된 플랫폼 간 환경을 구현하는 것입니다.  
+예. Hyper-V 컨테이너도 Docker를 통해 Windows Server와 동일한 수준의 통합과 관리를 제공할 것입니다.  목표는 개방 및 일관된 플랫폼 간 환경을 구현하는 것입니다.   
 Docker 플랫폼도 컨테이너 옵션 전체에서의 작업 환경을 크게 간소화 및 개선합니다. Windows Server 컨테이너를 사용하여 개발된 응용 프로그램은 변경 없이 Hyper-V 컨테이너 형태로 배포할 수 있습니다.
 
-**Windows Server 컨테이너 관리에 Docker 또는 PowerShell을 선택하는 이유는 무엇인가요?**
-
-이는 의도한 바가 아니었으며 장기적 계획도 아닙니다. 앞으로 PowerShell 컨테이너 관리 도구 및 Docker 컨테이너 관리 도구는 함께 작동할 것입니다.
-
-앞서 말한 것처럼 여러 관리 인터페이스를 사용하여 동일한 컨테이너를 관리하는 것은 어려울 수 있습니다.
-
-PowerShell로 컨테이너를 만들고 대문자를 포함한 이름을 지정한 경우를 예로 들어 보겠습니다. Docker는 대문자를 지원하지 않고 PowerShell은 지원합니다.  
-이러한 특정 예제는 관리가 매우 쉽지만 상태 변경(경합 조건 및 서로 다른 기대 수준), 기능 집합 차이, 버전 등의 경우에는 훨씬 까다로워집니다.
-
-단기적으로는 관리 인터페이스(이 경우 Docker 및 PowerShell)는 자신이 만든 컨테이너만 볼 수 있습니다. 즉 Docker로 만든 컨테이너는 PowerShell에서 볼 수 없으며 PowerShell에서 만든 컨테이너는 Docker가 볼 수 없습니다.
 
 **Windows 컨테이너를 ESXi나 다른 비 Hyper-V 하이퍼바이저에서 실행할 수 있나요?**
 
-예. Windows 컨테이너는 모든 TP3 서버 코어 설치에서 실행됩니다. [컨테이너 기능을 바로 사용하도록 설정](../quick_start/inplace_setup.md)하는 지침을 따르세요.
-
+예. Windows 컨테이너는 모든 TP3 서버 코어 설치에서 실행됩니다.  [컨테이너 기능을 바로 사용하도록 설정](../quick_start/inplace_setup.md)하는 지침을 따르세요.
 
 ## Microsoft의 오픈 에코 시스템
 
@@ -74,13 +72,13 @@ PowerShell로 컨테이너를 만들고 대문자를 포함한 이름을 지정�
 **Microsoft가 실제 Docker와 협력하나요?**
 
 예.  
-개발자들이 동일한 Docker 도구를 사용하여 Windows Server 및 Linux 컨테이너를 모두 만들고 관리하며 배포할 수 있도록 Docker와 협력하고 있습니다. Windows Server를 목표로 하는 개발자들은 더 이상 광범위한 Windows Server 기술을 사용하는 것과 컨테이너화된 응용 프로그램의 구축 사이에서 선택을 고민할 필요가 없습니다.
+개발자들이 동일한 Docker 도구를 사용하여 Windows Server 및 Linux 컨테이너를 모두 만들고 관리하며 배포할 수 있도록 Docker와 협력하고 있습니다. Windows Server를 목표로 하는 개발자들은 더 이상 광범위한 Windows Server 기술을 사용하는 것과 컨테이너화된 응용 프로그램의 구축 사이에서 선택을 고민할 필요가 없습니다.  
 
-Docker는 프로젝트의 오픈 소스 그룹인 동시에 회사를 나타냅니다. 이 파트너 관계는 둘 모두에 해당하는 것으로 간주합니다. Docker 컨테이너 기술을 바탕으로 구축된 생동감 넘치는 생태계를 보유한 Docker는 부분적으로 성공을 거두었습니다.  Microsoft은 Windows Server 컨테이너와 Hyper-V 컨테이너에 대한 지원을 구현하는 Docker 프로젝트에 기여하고 있습니다.
+Docker는 프로젝트의 오픈 소스 그룹인 동시에 회사를 나타냅니다. 이 파트너 관계는 둘 모두에 해당하는 것으로 간주합니다. Docker 컨테이너 기술을 바탕으로 구축된 생동감 넘치는 생태계를 보유한 Docker는 부분적으로 성공을 거두었습니다.  Microsoft은 Windows Server 컨테이너와 Hyper-V 컨테이너에 대한 지원을 구현하는 Docker 프로젝트에 기여하고 있습니다.  
 
-자세한 내용은 [새 Windows Server 컨테이너 및 Docke에 대한 Azure 지원](http://azure.microsoft.com/blog/2014/10/15/new-windows-server-containers-and-azure-support-for-docker/?WT.mc_id=Blog_ServerCloud_Announce_TTD) 블로그 게시물을 참조하세요.
-
-
+자세한 내용은 [New Windows Server containers and Azure support for Docker(새 Windows Server 컨테이너 및 Docker에 대한 Azure 지원)](http://azure.microsoft.com/blog/2014/10/15/new-windows-server-containers-and-azure-support-for-docker/?WT.mc_id=Blog_ServerCloud_Announce_TTD) 블로그 게시물을 참조하세요.
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO3-->
+
+
