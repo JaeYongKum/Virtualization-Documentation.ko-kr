@@ -1,3 +1,16 @@
+---
+title: 지원되는 Windows 게스트
+description: 지원되는 Windows 게스트입니다.
+keywords: windows 10, hyper-v
+author: scooley
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: &1352327220 windows-10-hyperv
+ms.service: windows-10-hyperv
+ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
+---
+
 # 지원되는 Windows 게스트
 
 이 문서는 Windows의 Hyper-V에서 지원되는 운영 체제 조합을 나열합니다. 지원되는 통합 서비스 및 기타 요인에 대해서도 소개합니다.
@@ -9,7 +22,7 @@
 Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지원을 제공합니다.
 * Microsoft 운영 체제 및 통합 서비스에서 발견된 문제는 Microsoft 지원에서 지원됩니다.
 * Hyper-V에서 실행할 운영 체제 공급업체의 인증을 받은 다른 운영 체제에서 발견된 문제는 해당 공급업체가 지원 서비스를 제공합니다.
-* 기타 운영 체제에서 발견된 문제에 대해 Microsoft는 다중 공급업체 지원 커뮤니티인 [TSANet](http://www.tsanet.org/)에 제출합니다.
+* 기타 운영 체제에서 발견된 문제에 대해 Microsoft는 다중 공급업체 지원 커뮤니티인 <g id="2CapsExtId1" ctype="x-link"><g id="2CapsExtId2" ctype="x-linkText">TSANet</g><g id="2CapsExtId3" ctype="x-title"></g></g>에 제출합니다.
 
 지원을 받으려면 Hyper-V 호스트 및 게스트는 Windows Update를 통해 사용할 수 있는 모든 중요 업데이트로 업데이트되어야 합니다.
 
@@ -39,15 +52,20 @@ Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지
 
 | 게스트 운영 체제| |
 |:-----|:------|
-| [CentOS and Red Hat Enterprise Linux ](https://technet.microsoft.com/library/dn531026.aspx)| |
-| [Hyper-V의 Debian 가상 컴퓨터 ](https://technet.microsoft.com/library/dn614985.aspx)| |
-| [SUSE](https://technet.microsoft.com/en-us/library/dn531027.aspx)| |
-| [Oracle Linux](https://technet.microsoft.com/en-us/library/dn609828.aspx)| |
-| [Ubuntu](https://technet.microsoft.com/en-us/library/dn531029.aspx)| |
-| [FreeBSD](https://technet.microsoft.com/library/dn848318.aspx)| |
+| <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">CentOS 및 Red Hat Enterprise Linux </g><g id="1CapsExtId3" ctype="x-title"></g></g>| |
+| <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V의 Debian 가상 컴퓨터</g><g id="1CapsExtId3" ctype="x-title"></g></g>| |
+| <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">SUSE</g><g id="1CapsExtId3" ctype="x-title"></g></g>| |
+| <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Oracle Linux</g><g id="1CapsExtId3" ctype="x-title"></g></g>| |
+| <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Ubuntu</g><g id="1CapsExtId3" ctype="x-title"></g></g>| |
+| <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">FreeBSD</g><g id="1CapsExtId3" ctype="x-title"></g></g>| |
 
-이전 버전의 Hyper-V에 대한 지원 정보를 포함한 자세한 내용은 [Hyper-V의 Linux 및 FreeBSD 가상 컴퓨터](https://technet.microsoft.com/library/dn531030.aspx)를 참조하세요.
+이전 버전의 Hyper-V에 대한 지원 정보를 포함한 자세한 내용은 <g id="2CapsExtId1" ctype="x-link"><g id="2CapsExtId2" ctype="x-linkText">Hyper-V의 Linux 및 FreeBSD 가상 컴퓨터</g><g id="2CapsExtId3" ctype="x-title"></g></g>를 참조하세요.
 
 
+
+
+
+
+<!--HONumber=May16_HO1-->
 
 

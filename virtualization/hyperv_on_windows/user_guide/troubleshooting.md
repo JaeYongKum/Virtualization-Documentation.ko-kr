@@ -1,10 +1,23 @@
+---
+title: &1493496636 Windows 10에서 Hyper-V 문제 해결
+description: Windows 10에서 Hyper-V 문제 해결
+keywords: windows 10, hyper-v
+author: scooley
+manager: timlt
+ms.date: 05/02/2016
+ms.topic: article
+ms.prod: &407718909 windows-10-hyperv
+ms.service: windows-10-hyperv
+ms.assetid: f0ec8eb4-ffc4-4bf1-9a19-7a8c3975b359
+---
+
 # Windows 10에서 Hyper-V 문제 해결
 
 ## Windows 10으로 업데이트했고 지금 내 하위 수준(Windows 8.1 또는 Server 2012 R2) 호스트에 연결할 수 없습니다.
 
 Windows 10에서 Hyper-V 관리자는 원격 관리를 위해 WinRM으로 이동했습니다. 이는 이제 Hyper-V 관리자를 사용하여 관리하려면 원격 호스트에서 원격 관리를 활성화해야 함을 의미합니다.
 
-자세한 내용은 [원격 Hyper-V 호스트 관리](remote_host_management.md)를 참조하세요.
+자세한 내용은 <g id="2CapsExtId1" ctype="x-link"><g id="2CapsExtId2" ctype="x-linkText">원격 Hyper-V 호스트 관리</g><g id="2CapsExtId3" ctype="x-title"></g></g>를 참조하세요.
 
 ## 검사점 유형을 변경했지만 여전히 잘못된 유형의 검사점을 적용합니다.
 
@@ -23,8 +36,13 @@ NTFS 포맷 드라이브를 사용하세요.
 
 Hyper-V는 가상 컴퓨터를 실행하기 위해 SLAT가 필요합니다. 컴퓨터가 SLAT를 지원하지 않는 경우 가상 컴퓨터에 대한 호스트가 될 수 없습니다.
 
-관리 도구만을 설치하려는 경우 **Windows 기능 설정 또는 해제**에서 **프로그램 및 기능**의 **Hyper-V 플랫폼**을 선택 취소합니다.
+관리 도구만을 설치하려는 경우 <g id="6" ctype="x-strong">Windows 기능 설정 또는 해제</g>에서 <g id="4" ctype="x-strong">프로그램 및 기능</g>의 <g id="2" ctype="x-strong">Hyper-V 플랫폼</g>을 선택 취소합니다.
 
 
+
+
+
+
+<!--HONumber=May16_HO1-->
 
 

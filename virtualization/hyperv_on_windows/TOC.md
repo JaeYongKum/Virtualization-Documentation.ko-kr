@@ -1,62 +1,66 @@
-# Windows의 Hyper-V 정보
+# Hyper-V 정보
 
-## [Windows의 Hyper-V](./windows_welcome.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Windows의 Hyper-V</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [Hyper-V 소개](./about/hyperv_on_windows.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V 소개</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [Windows 10의 새로운 기능](./about/whats_new.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">지원되는 게스트 OS</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [지원되는 게스트 OS](about/supported_guest_os.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V의 Linux 및 FreeBSD</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [Hyper-V의 Linux 및 FreeBSD](https://technet.microsoft.com/library/dn531030.aspx)
+# Hyper-V 빠른 시작
 
-# Windows의 Hyper-V 빠른 시작
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">시스템 요구 사항</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [시스템 요구 사항](quick_start/walkthrough_compatibility.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V 설치</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [Hyper-V 설치](quick_start/walkthrough_install.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">가상 스위치 만들기</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [가상 스위치 만들기](quick_start/walkthrough_virtual_switch.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">가상 컴퓨터 만들기</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [가상 컴퓨터 만들기](quick_start/walkthrough_create_vm.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V 및 PowerShell</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [Hyper-V 및 PowerShell](quick_start/walkthrough_powershell.md)
+# Hyper-V가 설치된 가상 컴퓨터 관리
 
-# Windows의 Hyper-V 관리
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">가상 컴퓨터 마이그레이션 및 업그레이드</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [가상 컴퓨터 마이그레이션 및 업그레이드](user_guide/migrating_vms.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">통합 서비스 관리</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [통합 서비스 관리](user_guide/managing_ics.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">검사점 사용</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [검사점 사용](user_guide/checkpoints.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">가상 컴퓨터 내보내기 및 가져오기</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [내보내기 및 가져오기](user_guide/export_import.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">PowerShell Direct를 사용하여 연결</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [PowerShell Direct](user_guide/vmsession.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">시험판 VM 만들기</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [원격 관리](user_guide/remote_host_management.md)
+# Hyper-V 호스트 관리
 
-## [중첩된 가상화](user_guide/nesting.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">원격 Hyper-V 호스트 관리</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [문제 해결](user_guide/troubleshooting.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">중첩된 가상화 사용</g><g id="1CapsExtId3" ctype="x-title"></g></g>
+
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">NAT 네트워크 설정</g><g id="1CapsExtId3" ctype="x-title"></g></g>
+
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">통합 서비스 빌드</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
 # 커뮤니티 및 지원
 
-## [Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V 포럼</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
 # 참조
 
-## [Hyper-V PowerShell](https://technet.microsoft.com/library/hh848559.aspx)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V PowerShell</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [PowerShell 샘플](develop/powershell_snippets.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V WMI 공급자(V2)</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [통합 서비스 빌드](develop/make_mgmt_service.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V 아키텍처</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
-## [Hyper-V WMI 공급자(V2)](https://msdn.microsoft.com/library/hh850319.aspx)
-
-## [Hyper-V 아키텍처](https://msdn.microsoft.com/en-us/library/cc768520(v=bts.10).aspx)
-
-## [하이퍼바이저 사양](develop/tlfs.md)
+## <g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">하이퍼바이저 사양</g><g id="1CapsExtId3" ctype="x-title"></g></g>
 
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=May16_HO1-->
+
+
