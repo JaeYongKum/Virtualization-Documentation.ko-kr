@@ -52,7 +52,7 @@ Stop-Service docker
 구성 파일은 `c:\programdata\docker\runDockerDaemon.cmd`에 있습니다. 다음 줄을 편집하고 다음 명령을 추가합니다. `-b "none"`
 
 ```none
-dockerd -b "none"
+dockerd <options> -b “none”
 ```
 
 서비스를 다시 시작합니다.
@@ -102,24 +102,47 @@ IsDeleted          : False
 
 ### NAT 네트워킹
 
-**Network Address Translation** – 이 네트워킹 모드는 컨테이너에 개인 IP 주소를 신속하게 할당하는 데 유용합니다. 컨테이너에 대한 외부 액세스는 외부 IP 주소와 포트(컨테이너 호스트) 간 및 내부 IP 주소와 컨테이너의 포트 간 포트 매핑을 통해 제공됩니다. 외부 IP 주소/포트 콤보에서 수신되는 모든 네트워크 트래픽은 WinNAT 포트 매핑 테이블과 비교되어 올바른 컨테이너 IP 주소 및 포트로 전달됩니다. 또한 NAT를 사용하면 여러 컨테이너에서 동일한(내부) 통신 포트가 필요할 수 있는 응용 프로그램을 고유한 외부 포트에 매핑하여 호스트할 수 있습니다. TP5에서는 NAT 네트워크가 하나만 있을 수 있습니다.
+**Network Address Translation** – 이 네트워킹 모드는 컨테이너에 개인 IP 주소를 신속하게 할당하는 데 유용합니다. 컨테이너에 대한 외부 액세스는 외부 IP 주소와 포트(컨테이너 호스트) 간 및 내부 IP 주소와 컨테이너의 포트 간 포트 매핑을 통해 제공됩니다. 외부 IP 주소/포트 콤보에서 수신되는 모든 네트워크 트래픽은 WinNAT 포트 매핑 테이블과 비교되어 올바른 컨테이너 IP 주소 및 포트로 전달됩니다. 또한 NAT를 사용하면 여러 컨테이너에서 동일한(내부) 통신 포트가 필요할 수 있는 응용 프로그램을 고유한 외부 포트에 매핑하여 호스트할 수 있습니다. Windows에서는 호스트당 하나의 NAT 네트워크 내부 접두사만 있을 수 있습니다. 자세한 내용은 블로그 게시물 [WinNAT 기능 및 제한 사항](https://blogs.technet.microsoft.com/virtualization/2016/05/25/windows-nat-winnat-capabilities-and-limitations/)을 읽어보세요. 
 
-> TP5에서는 모든 NAT 정적 포트 매핑을 위해 방화벽 규칙이 자동으로 만들어집니다. 이 방화벽 규칙은 컨테이너 호스트 전체에 적용되며 특정 컨테이너 끝점이나 네트워크 어댑터로 지역화되지 않습니다.
+> TP5부터는 모든 NAT 정적 포트 매핑에 대해 방화벽 규칙이 자동으로 만들어집니다. 이 방화벽 규칙은 컨테이너 호스트 전체에 적용되며 특정 컨테이너 끝점이나 네트워크 어댑터로 지역화되지 않습니다.
 
 #### 호스트 구성 <!--1-->
 
-NAT 네트워킹 모드를 사용하려면 드라이버 이름 'nat'를 사용하여 컨테이너 네트워크를 만듭니다.
+NAT 네트워킹 모드를 사용하려면 드라이버 이름 'nat'를 사용하여 컨테이너 네트워크를 만듭니다. 
+
+> 호스트당 하나의 _nat_ 기본 네트워크만 만들 수 있으므로 다른 모든 네트워크가 제거된 경우에만 새 NAT 네트워크를 만들어야 하며 '-b "none"' 옵션을 사용하여 Docker 디먼을 실행해야 합니다. 또는 간단히 NAT에서 사용되는 내부 IP 네트워크를 제어하려는 경우 _--fixed-cidr=<NAT internal prefix / mask>_ 옵션을 C:\ProgramData\docker\runDockerDaemon.cmd의 고정된 명령에 추가할 수 있습니다.
 
 ```none
-docker network create -d nat MyNatNetwork
+docker network create -d nat MyNatNetwork [--subnet=<string[]>] [--gateway=<string[]>]
 ```
-
-게이트웨이 IP 주소(--gateway=<string[]>) 및 서브넷 접두사(--subnet=<string[]>)와 같은 추가 매개 변수는 Docker 네트워크 만들기 명령에 추가할 수 있습니다. 자세한 내용은 아래를 참조하세요.
 
 PowerShell을 사용하여 NAT 네트워크를 만들려면 다음 구문을 사용합니다. DNSServers 및 DNSSuffix를 비롯한 추가 매개 변수는 PowerShell을 사용하여 지정할 수 있습니다. 지정하지 않을 경우 이러한 설정은 컨테이너 호스트에서 상속됩니다.
 
 ```none
 New-ContainerNetwork -Name MyNatNetwork -Mode NAT -SubnetPrefix "172.16.0.0/12" [-GatewayAddress <address>] [-DNSServers <address>] [-DNSSuffix <string>]
+```
+
+> Windows Server 2016 Technical Preview 5 및 최신 WIP(Windows Insider Preview) "플라이트" 빌드에는 새 빌드로 업그레이드할 때 중복된(예: "누수") 컨테이너 네트워크 및 vSwitch가 생성되는 알려진 버그가 있습니다. 이 문제를 해결하려면 다음 스크립트를 실행하세요.
+```none
+PS> $KeyPath = "HKLM:\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\SwitchList"
+PS> $keys = get-childitem $KeyPath
+PS> foreach($key in $keys)
+PS> {
+PS>    if ($key.GetValue("FriendlyName") -eq 'nat')
+PS>    {
+PS>       $newKeyPath = $KeyPath+"\"+$key.PSChildName
+PS>       Remove-Item -Path $newKeyPath -Recurse
+PS>    }
+PS> }
+PS> remove-netnat -Confirm:$false
+PS> Get-ContainerNetwork | Remove-ContainerNetwork
+PS> Get-VmSwitch -Name nat | Remove-VmSwitch (_failure is expected_)
+PS> Stop-Service docker
+PS> Set-Service docker -StartupType Disabled
+Reboot Host
+PS> Get-NetNat | Remove-NetNat
+PS> Set-Service docker -StartupType automaticac
+PS> Start-Service docker 
 ```
 
 ### 투명 네트워킹
@@ -140,18 +163,14 @@ docker network create -d transparent MyTransparentNetwork
 docker network create -d transparent --gateway=10.50.34.1 "MyTransparentNet"
 ```
 
-PowerShell 명령은 다음과 유사합니다.
-
-```none
-New-ContainerNetwork -Name MyTransparentNet -Mode Transparent -NetworkAdapterName "Ethernet"
-```
-
 컨테이너 호스트가 가상화되는 경우 IP 할당에 DHCP를 사용하려면 가상 컴퓨터 네트워크 어댑터에서 MACAddressSpoofing을 사용하도록 설정해야 합니다.
 
 ```none
 Get-VMNetworkAdapter -VMName ContainerHostVM | Set-VMNetworkAdapter -MacAddressSpoofing On
 ```
 
+> 둘 이상의 투명(또는 l2bridge) 네트워크를 만들려는 경우 외부 Hyper-V 가상 스위치(자동으로 생성)가 바인딩되어야 하는 (가상) 네트워크 어댑터를 지정해야 합니다.
+ 
 ### L2 브리지 네트워킹
 
 **L2 브리지 네트워킹** - 이 구성에서는 컨테이너 호스트의 VFP(가상 필터링 플랫폼) vSwitch 확장이 브리지 역할을 하고 필요에 따라 계층 2 주소 변환(MAC 주소 다시 작성)을 수행합니다. 계층 3 IP 주소 및 계층 4 포트는 변경되지 않습니다. IP 주소는 실제 네트워크의 IP 서브넷 접두사와 대응하여 정적으로 할당하거나, Microsoft 사설 클라우드 배포를 사용하는 경우 가상 네트워크 서브넷 접두사의 IP와 대응하여 할당할 수 있습니다.
@@ -164,12 +183,6 @@ L2 브리지 네트워킹 모드를 사용하려면 드라이버 이름 'l2bridg
 docker network create -d l2bridge --subnet=192.168.1.0/24 --gateway=192.168.1.1 MyBridgeNetwork
 ```
 
-PowerShell 명령은 다음과 유사합니다.
-
-```none
-New-ContainerNetwork -Name MyBridgeNetwork -Mode L2Bridge -NetworkAdapterName "Ethernet"
-```
-
 ## 네트워크 제거
 
 `docker network rm`을 사용하여 컨테이너 네트워크를 삭제합니다.
@@ -179,16 +192,11 @@ docker network rm "<network name>"
 ```
 또는 PowerShell에서 `Remove-ContainerNetwork`를 사용합니다.
 
-PowerShell 사용
-```
-Remove-ContainerNetwork -Name <network name>
-```
-
 컨테이너 네트워크에서 사용한 Hyper-V 가상 스위치를 정리하고 nat 컨테이너 네트워크에 대해 만들어진 모든 Network Address Translation 개체도 정리합니다.
 
 ## 네트워크 옵션
 
-컨테이너 네트워크를 만들거나 컨테이너 자체를 만들 때 다양한 Docker 네트워킹 옵션을 지정할 수 있습니다. 네트워킹 모드를 지정하는 -d (--driver=<network mode>) 옵션 외에 --gateway, --subnet 및 -o 옵션도 컨테이너 네트워크를 만들 때 지원됩니다.
+컨테이너 네트워크를 만들거나 컨테이너 자체를 만들 때 다양한 Docker 네트워킹 옵션을 지정할 수 있습니다. 네트워킹 모드를 지정하기 위한 -d (--driver=<network mode>) 옵션 외에 --gateway, --subnet 및 -o 옵션도 컨테이너 네트워크를 만들 때 지원됩니다.
 
 ### 추가 옵션
 
@@ -217,7 +225,6 @@ docker network create -d transparent -o com.docker.network.windowsshim.interface
 여러 컨테이너 네트워크를 단일 컨테이너 호스트에서 만들 수 있으며, 다음 사항에 주의해야 합니다.
 * 컨테이너 호스트당 하나의 NAT 네트워크만 만들 수 있습니다.
 * 연결에 외부 vSwitch를 사용하는 여러 네트워크(예: 투명, L2 브리지, L2 투명)는 각각 고유한 네트워크 어댑터를 사용해야 합니다.
-* 네트워크에 따라 다른 vSwitch를 사용해야 합니다.
 
 ### 네트워크 선택
 
@@ -231,7 +238,7 @@ docker run -it --net=MyTransparentNet windowsservercore cmd
 
 ### 고정 IP 주소입니다.
 
-고정 IP 주소는 컨테이너 네트워크 어댑터에서 설정되며, NAT, 투명 및 L2Bridge 네트워킹 모드에서만 지원됩니다. 또한 고정 IP 할당은 Docker를 통해 기본 "nat" 네트워크에서 지원되지 않습니다.
+고정 IP 주소는 컨테이너 네트워크 어댑터에서 설정되며, NAT, 투명([PR](https://github.com/docker/docker/pull/22208) 보류 중) 및 L2Bridge 네트워킹 모드에서만 지원됩니다. 또한 고정 IP 할당은 Docker를 통해 기본 "nat" 네트워크에서 지원되지 않습니다.
 
 ```none
 docker run -it --net=MyTransparentNet --ip=10.80.123.32 windowsservercore cmd
@@ -303,7 +310,6 @@ bbf72109b1fc        windowsservercore   "cmd"               6 seconds ago       
 
 ![](./media/PortMapping.png)
 
-
 ## 주의 사항 및 문제
 
 ### 방화벽
@@ -327,6 +333,6 @@ bbf72109b1fc        windowsservercore   "cmd"               6 seconds ago       
  * --internal
  * --ip-range
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
