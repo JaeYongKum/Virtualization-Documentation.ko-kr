@@ -13,9 +13,9 @@ ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 
 # Windows Server의 Windows 컨테이너
 
-**이 예비 콘텐츠는 변경될 수 있습니다.** 
+**이 예비 콘텐츠는 변경될 수 있습니다.**
 
-이 연습에서는 Windows Server에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 완료 후에는 컨테이너 역할이 설치되고 간단한 Windows Server 컨테이너가 배포됩니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./quick_start.md)에서 확인할 수 있습니다. 
+이 연습에서는 Windows Server에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 완료 후에는 컨테이너 역할이 설치되고 간단한 Windows Server 컨테이너가 배포됩니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./quick_start.md)에서 확인할 수 있습니다.
 
 이 빠른 시작은 Windows Server 2016의 Windows Server 컨테이너와 관련이 있습니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
@@ -25,7 +25,7 @@ ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 
 ## 1. 컨테이너 기능 설치
 
-Windows 컨테이너를 사용하려면 먼저 컨테이너 기능을 사용하도록 설정해야 합니다. 이렇게 하려면 관리자 권한 PowerShell 세션에서 다음 명령을 실행합니다. 
+Windows 컨테이너를 사용하려면 먼저 컨테이너 기능을 사용하도록 설정해야 합니다. 이렇게 하려면 관리자 권한 PowerShell 세션에서 다음 명령을 실행합니다.
 
 ```none
 Install-WindowsFeature containers
@@ -33,11 +33,15 @@ Install-WindowsFeature containers
 
 기능 설치가 완료되면 컴퓨터를 다시 부팅합니다.
 
+```none
+Restart-Computer -Force
+```
+
 ## 2. Docker 설치
 
 Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다.
 
-Docker 실행 파일에 대한 폴더를 만듭니다.
+Docker 실행 파일을 저장할 폴더를 만듭니다.
 
 ```none
 New-Item -Type Directory -Path 'C:\Program Files\docker\'
@@ -70,13 +74,13 @@ dockerd --register-service
 설치되면 서비스를 시작할 수 있습니다.
 
 ```none
-Start-Service Docker
+Start-Service docker
 ```
 
 ## 3. 기본 컨테이너 이미지 설치
 
-Windows 컨테이너는 템플릿이나 이미지에서 배포됩니다. 컨테이너를 배포하려면 먼저 기본 OS 이미지를 다운로드해야 합니다. 다음 명령은 Windows Server Core 기본 이미지를 다운로드합니다. 
-    
+Windows 컨테이너는 템플릿이나 이미지에서 배포됩니다. 컨테이너를 배포하려면 먼저 기본 OS 이미지를 다운로드해야 합니다. 다음 명령은 Windows Server Core 기본 이미지를 다운로드합니다.
+
 먼저 컨테이너 이미지 패키지 공급자를 설치합니다.
 
 ```none
@@ -85,7 +89,7 @@ Install-PackageProvider ContainerImage -Force
 
 그런 다음 Windows Server Core 이미지를 설치합니다. 이 프로세스에는 다소 시간이 걸릴 수 있으므로 중단하고 다운로드가 완료되면 백업을 선택합니다.
 
-```none 
+```none
 Install-ContainerImage -Name WindowsServerCore    
 ```
 
@@ -175,6 +179,8 @@ CONTAINER ID    IMAGE                             COMMAND               CREATED 
 
 다른 컴퓨터에서 웹 브라우저를 열고 컨테이너 호스트의 IP 주소를 입력합니다. 모든 항목이 올바르게 구성된 경우 IIS 시작 화면이 표시됩니다. 이 화면은 Windows 컨테이너에서 호스트되는 IIS 인스턴스에서 제공됩니다.
 
+**참고:** Azure에서 작업하는 경우 포트 80을 통한 트래픽을 허용하는 네트워크 보안 그룹 규칙이 있어야 합니다. 자세한 내용은 [네트워크 보안 그룹에서 규칙 만들기]( https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-create-nsg-arm-pportal/#create-rules-in-an-existing-nsg)를 참조하세요.
+
 ![](media/iis1.png)
 
 다시 컨테이너 호스트에서 `docker rm` 명령을 사용하여 컨테이너를 제거합니다. 참고 - 이 예제에 있는 컨테이너의 이름을 실제 컨테이너 이름으로 바꿉니다.
@@ -189,6 +195,6 @@ docker rm -f grave_jang
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
 
-<!--HONumber=May16_HO4-->
+<!--HONumber=Jun16_HO3-->
 
 

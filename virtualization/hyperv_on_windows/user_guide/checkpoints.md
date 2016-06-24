@@ -52,7 +52,7 @@ Set-VM -Name <vmname> -CheckpointType Standard
 Set-VM -Name <vmname> -CheckpointType Production
 ```
 
-프로덕션 검사점으로 설정하고, 프로덕션 검사점이 실패하면 표준 검사점이 만들어지지 않도록 합니다. 
+프로덕션 검사점으로 설정하고, 프로덕션 검사점이 실패하면 표준 검사점이 만들어지지 않습니다. 
 ```powershell
 Set-VM -Name <vmname> -CheckpointType ProductionOnly
 ```
@@ -162,7 +162,7 @@ Remove-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name>
 
 **PowerShell 사용**
 ``` powershell
-Export-VMCheckpoint -VMName <virtual machine name>  -Name <checkpoint name> -Path <path for export>
+Export-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -Path <path for export>
 ```
 
 ## 검사점 사용 또는 사용 안 함
@@ -245,6 +245,6 @@ This folder will contain the .VMRS file with the runtime and saved state data an
 2. 텍스트 파일이 복원된 것을 확인합니다. 하지만 표준 검사점과 달리 메모장은 열려 있지 않습니다.   
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 

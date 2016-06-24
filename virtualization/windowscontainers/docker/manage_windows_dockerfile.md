@@ -101,14 +101,14 @@ RUN ["<executable", "<param 1>", "<param 2>"
 RUN <command>
 ```
 
-exec와 shell 형식의 차이는 `RUN` 명령이 실행되는 방법에 있습니다. exec 메서드를 사용하면 지정된 프로그램이 명시적으로 실행됩니다. 
+exec 및 shell 형식 간의 차이는 `RUN` 명령이 실행되는 방법에 있습니다. exec 형식을 사용하면 지정된 프로그램이 명시적으로 실행됩니다. 
 
-다음 예제에서는 exec 형식을 사용합니다.
+다음 예제에서는 exec 형식이 사용되었습니다.
 
 ```none
 FROM windowsservercore
 
-RUN ["powershell","New-Item","c:/test"]
+RUN ["powershell", "New-Item", "c:/test"]
 ```
 
 결과 이미지를 검사하면 실행된 명령은 `powershell new-item c:/test`입니다.
@@ -142,7 +142,7 @@ IMAGE               CREATED             CREATED BY                              
 Windows에서 exec 형식으로 `RUN` 명령을 사용하는 경우 백슬래시를 이스케이프해야 합니다.
 
 ```none
-RUN ["powershell","New-Item","c:\\test"]
+RUN ["powershell", "New-Item", "c:\\test"]
 ```
 
 **예**
@@ -179,7 +179,7 @@ COPY ["<source>" "<destination>"]
 
 **Windows 고려 사항**
  
-Windows에서는 대상 형식이 슬래시를 사용해야 합니다. 예를 들어 다음은 유효한 `ADD` 명령입니다.
+Windows에서는 대상 형식이 슬래시를 사용해야 합니다. 예를 들어 다음은 유효한 `COPY` 명령입니다.
 
 ```none
 COPY test1.txt /temp/
@@ -203,6 +203,8 @@ COPY source /sqlite/
 ```none
 COPY config* c:/temp/
 ```
+
+`COPY` 명령에 대한 자세한 내용은 [Docker.com의 COPY 참조]( https://docs.docker.com/engine/reference/builder/#copy)를 참조하세요.
 
 ### 추가
 
@@ -297,7 +299,7 @@ WORKDIR c:\\Apache24\\bin
 ```none
 # exec form
 
-CMD ["<executable";"<param>"]
+CMD ["<executable", "<param>"]
 
 # shell form
 
@@ -311,7 +313,7 @@ Windows에서는 `CMD` 명령에 지정된 파일 경로에서 슬래시나 이�
 ```none
 # exec form
 
-CMD ["c:\\Apache24\\bin\\httpd.exe","-w"]
+CMD ["c:\\Apache24\\bin\\httpd.exe", "-w"]
 
 # shell form
 
@@ -381,7 +383,7 @@ RUN powershell.exe -executionpolicy bypass c:\windows\temp\script.ps1
 
 ## Docker 빌드 
 
-Dockerfile을 만들고 디스크에 저장한 다음에는 `docker build`를 실행하여 새 이미지를 만들 수 있습니다. `docker build` 명령은 여러 가지 옵션 매개 변수와 Dockerfile의 경로를 사용합니다. 모든 빌드 옵션 목록을 포함하여 Docker Build에 대한 전체 설명서는 [Docker.com의 Build(빌드)](https://docs.docker.com/engine/reference/commandline/build/#build-with)를 참조하세요.
+Dockerfile을 만들고 디스크에 저장한 다음에는 `docker build`를 실행하여 새 이미지를 만들 수 있습니다. `docker build` 명령은 여러 가지 옵션 매개 변수와 Dockerfile의 경로를 사용합니다. 모든 빌드 옵션 목록을 포함하여 Docker Build에 대한 전체 설명서는 [Docker.com의 빌드 참조](https://docs.docker.com/engine/reference/commandline/build/#build)를 참조하세요.
 
 ```none
 Docker build [OPTIONS] PATH
@@ -440,6 +442,6 @@ windowsservercore   latest              6801d964fda5        4 months ago        
 [Docker.com의 Dockerfile 참조](https://docs.docker.com/engine/reference/builder/)
 
 
-<!--HONumber=May16_HO4-->
+<!--HONumber=Jun16_HO3-->
 
 

@@ -48,6 +48,8 @@ echo "Hello World From a Windows Server Container" > C:\inetpub\wwwroot\index.ht
 
 다른 시스템에서 컨테이너 호스트의 IP 주소를 찾습니다. 이제 ‘Hello World’ 응용 프로그램이 표시됩니다.
 
+**참고:** Azure에서 작업하는 경우 포트 80을 통한 트래픽을 허용하는 네트워크 보안 그룹 규칙이 있어야 합니다. 자세한 내용은 [네트워크 보안 그룹에서 규칙 만들기]( https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-create-nsg-arm-pportal/#create-rules-in-an-existing-nsg)를 참조하세요.
+
 ![](media/hello.png)
 
 다시 컨테이너에서 대화형 컨테이너 세션을 종료합니다.
@@ -159,6 +161,6 @@ docker rm -f cranky_brown
 
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
-<!--HONumber=May16_HO4-->
+<!--HONumber=Jun16_HO2-->
 
 
