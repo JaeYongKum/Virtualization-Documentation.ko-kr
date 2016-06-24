@@ -19375,9 +19375,9 @@
       "ArchiveFileCommit": "df351b8f2d5a5f2dbe5798162aaafd9e918ddadf",
       "ArchiveFileDateTime": "2016-06-09T07:19:15.4706874Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\setup_nat_network.910a966b84616e203e5739d5dde1b65115f14a37.ko-kr.xlf",
+      "BilingualFileCommit": "d4a14f60573f85e3793a1a3d3601a53bf1275c85",
+      "BilingualDateTime": "2016-06-24T09:34:38.8999735Z",
       "BilingualException": null
     },
     "161aaeed6c625d92b45be59dde4357836934956b": {
@@ -19409,9 +19409,9 @@
       "ArchiveFileCommit": "df351b8f2d5a5f2dbe5798162aaafd9e918ddadf",
       "ArchiveFileDateTime": "2016-06-09T07:19:15.4706874Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf",
+      "BilingualFileCommit": "d4a14f60573f85e3793a1a3d3601a53bf1275c85",
+      "BilingualDateTime": "2016-06-24T09:34:38.8999735Z",
       "BilingualException": null
     },
     "f95628d0947096b697f50857b2a33bd41e90407c": {
