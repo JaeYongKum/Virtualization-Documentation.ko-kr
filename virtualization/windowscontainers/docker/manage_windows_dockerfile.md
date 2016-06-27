@@ -1,6 +1,6 @@
 ---
-title: Dockerfile 및 Windows 컨테이너
-description: Windows 컨테이너용 Dockerfile을 만듭니다.
+title: "Dockerfile 및 Windows 컨테이너"
+description: "Windows 컨테이너용 Dockerfile을 만듭니다."
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,6 +9,9 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
+ms.sourcegitcommit: 960b40e8c1eda9c19ebff0972df2c87e70c7e8f6
+ms.openlocfilehash: 71e0fb430498f8a5ae4ac5b297cf5e4a2c904098
+
 ---
 
 # Windows의 Dockerfile
@@ -327,6 +330,40 @@ CMD c:\Apache24\bin\httpd.exe -w
 
 `CMD` 명령에 대한 자세한 내용은 [Docker.com의 CMD Reference(CMD 참조)]( https://docs.docker.com/engine/reference/builder/#cmd)를 참조하세요. 
 
+## 이스케이프 문자
+
+Dockerfile 명령이 여러 줄에 걸쳐 계속되어야 하는 경우가 많습니다. 이 경우 이스케이프 문자를 사용합니다. 기본 Dockerfile 이스케이프 문자는 백슬래시 `\`입니다. 백슬래시는 Windows에서 파일 경로 구분 기호이기도 하므로 문제가 될 수 있습니다. 기본 이스케이프 문자를 변경하려면 파서 지시문을 사용할 수 있습니다. 파서 지시문에 대한 자세한 내용은 [Parser Directives on Docker.com(Docker.com의 파서 지시문)]( https://docs.docker.com/engine/reference/builder/#parser-directives)을 참조하세요.
+
+다음 예제에서는 기본 이스케이프 문자를 사용 하여 여러 줄에서 계속되는 단일 RUN 명령을 보여 줍니다.
+
+```none
+FROM windowsservercore
+
+RUN powershell.exe -Command \
+    $ErrorActionPreference = 'Stop'; \
+    wget https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe -OutFile c:\python-3.5.1.exe ; \
+    Start-Process c:\python-3.5.1.exe -ArgumentList '/quiet InstallAllUsers=1 PrependPath=1' -Wait ; \
+    Remove-Item c:\python-3.5.1.exe -Force
+```
+
+이스케이프 문자를 수정하려면 Dockerfile의 첫 번째 줄에 이스케이프 파서 지시문을 놓습니다. 이 내용은 아래 예제에서 확인할 수 없습니다.
+
+> 이스케이프 문자로 `\` 및 `` ` ``의 두 가지 값만 사용할 수 있습니다.
+
+```none
+# escape=`
+
+FROM windowsservercore
+
+RUN powershell.exe -Command `
+    $ErrorActionPreference = 'Stop'; `
+    wget https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe -OutFile c:\python-3.5.1.exe ; `
+    Start-Process c:\python-3.5.1.exe -ArgumentList '/quiet InstallAllUsers=1 PrependPath=1' -Wait ; `
+    Remove-Item c:\python-3.5.1.exe -Force
+```
+
+이스케이프 파서 지시문에 대한 자세한 내용은 [Escape Parser Directive on Docker.com(Docker.com의 이스케이프 파서 지시문)]( https://docs.docker.com/engine/reference/builder/#escape)을 참조하세요.
+
 ## Dockerfile의 PowerShell
 
 ### PowerShell 명령
@@ -442,6 +479,7 @@ windowsservercore   latest              6801d964fda5        4 months ago        
 [Docker.com의 Dockerfile 참조](https://docs.docker.com/engine/reference/builder/)
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
