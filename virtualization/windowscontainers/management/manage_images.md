@@ -1,6 +1,6 @@
 ---
-title: Windows 컨테이너 이미지
-description: Windows 컨테이너를 사용하여 컨테이너 이미지를 만들고 관리합니다.
+title: "Windows 컨테이너 이미지"
+description: "Windows 컨테이너를 사용하여 컨테이너 이미지를 만들고 관리합니다."
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,6 +9,9 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: d8163185-9860-4ee4-9e96-17b40fb508bc
+ms.sourcegitcommit: 3db43b433e7b1a9484d530cf209ea80ef269a307
+ms.openlocfilehash: 505cc64fa19fb9fc8c2d5c109830f460f09332dd
+
 ---
 
 # Windows 컨테이너 이미지
@@ -197,7 +200,6 @@ Docker 허브에서 사용 가능한 이미지 목록을 확인하려면 `docker
 
 이러한 이미지 대부분에는 Windows Server Core 및 Nano Server 버전이 있습니다. 특정 버전을 가져오려면 ":windowsservercore" 또는 ":nanoserver" 태그를 추가하면 됩니다. Nano Server 버전만 사용할 수 있는 경우가 아니라면 "최신" 태그는 기본적으로 Windows Server Core 버전을 반환합니다.
 
-> "nano-"로 시작하는 이미지는 Nano Server 기본 OS 이미지에 대한 종속성이 있습니다.
 
 ```none
 docker search *
@@ -219,7 +221,9 @@ microsoft/sample-ruby    Ruby installed in a Windows Server Core ba...   1      
 microsoft/sample-sqlite  SQLite installed in a Windows Server Core ...   1                    [OK]
 ```
 
-Docker 허브에서 이미지를 다운로드하려면 `docker pull`을 사용합니다.
+### Docker Pull
+
+Docker 허브에서 이미지를 다운로드하려면 `docker pull`을 사용합니다. 자세한 내용은 [Docker Pull on Docker.com(Docker.com의 Docker Pull)](https://docs.docker.com/engine/reference/commandline/pull/)을 참조하세요.
 
 ```none
 docker pull microsoft/aspnet
@@ -242,8 +246,50 @@ windowsservercore   10.0.14300.1000     6801d964fda5        2 weeks ago         
 windowsservercore   latest              6801d964fda5        2 weeks ago         0 B
 ```
 
+> Docker Pull이 실패하면 최신 누적 업데이트를 Docker 컨테이너 호스트에 적용했는지 확인합니다. TP5 업데이트는 [KB3157663]( https://support.microsoft.com/en-us/kb/3157663)에 있습니다.
+
+### Docker Push
+
+Docker 허브 또는 Docker Trusted Registry로 컨테이너 이미지를 업로드할 수도 있습니다. 업로드한 후 다른 Windows 컨테이너 환경에서 이러한 이미지를 다운로드하여 다시 사용할 수 있습니다.
+
+컨테이너 이미지를 Docker 허브로 업로드하려면 먼저 레지스트리에 로그인합니다. 자세한 내용은 [Docker Login on Docker.com(Docker.com의 Docker Login)]( https://docs.docker.com/engine/reference/commandline/login/)을 참조하세요.
+
+```none
+docker login
+
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: username
+Password:
+
+Login Succeeded
+```
+
+Docker 허브 또는 Docker Trusted Registry에 로그인한 후 `docker push`를 사용하여 컨테이너 이미지를 업로드합니다. 컨테이너 이미지는 이름 또는 ID로 참조할 수 있습니다. 자세한 내용은 [Docker Push on Docker.com(Docker.com의 Docker Push)]( https://docs.docker.com/engine/reference/commandline/push/)을 참조하세요.
+
+```none
+docker push username/containername
+
+The push refers to a repository [docker.io/username/containername]
+b567cea5d325: Pushed
+00f57025c723: Pushed
+2e05e94480e9: Pushed
+63f3aa135163: Pushed
+469f4bf35316: Pushed
+2946c9dcfc7d: Pushed
+7bfd967a5e43: Pushed
+f64ea92aaebc: Pushed
+4341be770beb: Pushed
+fed398573696: Pushed
+latest: digest: sha256:ae3a2971628c04d5df32c3bbbfc87c477bb814d5e73e2787900da13228676c4f size: 2410
+```
+
+이제 컨테이너 이미지를 사용할 수 있고 `docker pull`로 액세스할 수 있습니다.
 
 
-<!--HONumber=May16_HO4-->
+
+
+
+
+<!--HONumber=Jun16_HO3-->
 
 
