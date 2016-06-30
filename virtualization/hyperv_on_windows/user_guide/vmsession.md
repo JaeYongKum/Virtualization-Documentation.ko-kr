@@ -1,6 +1,6 @@
 ---
-title: PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리
-description: PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리
+title: "PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리"
+description: "PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리"
 keywords: windows 10, hyper-v
 author: scooley
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
+translationtype: Human Translation
+ms.sourcegitcommit: 6eb26eda92217917a3abe7d9dd4c77c48283c8dc
+ms.openlocfilehash: 91927b751021efa9ba2cf696516ba50af28c6e05
+
 ---
 
 # PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리
@@ -276,6 +280,7 @@ PowerShell Direct는 JEA(Just Enough Administration)를 지원합니다.  사용
 사용자 환경에서 PowerShell Direct를 사용하는 방법에 대한 다양한 예제와 PowerShell로 Hyper-V 스크립트를 작성하는 팁과 트릭은 [PowerShell Direct 조각](../develop/powershell_snippets.md)을 참조하세요.
 
 
-<!--HONumber=May16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

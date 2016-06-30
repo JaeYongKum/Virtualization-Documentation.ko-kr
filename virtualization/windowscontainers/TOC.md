@@ -1,6 +1,5 @@
 # Windows 컨테이너 정보
 ## [Windows 컨테이너 개요](about/about_overview.md)
-## [작업 진행 중](about/work_in_progress.md)
 ## [FAQ](about/faq.md)
 
 # 컨테이너 빠른 시작
@@ -42,6 +41,6 @@
 
 
 
-<!--HONumber=Jun16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

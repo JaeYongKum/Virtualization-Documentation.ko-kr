@@ -1,6 +1,6 @@
 ---
-title: Hyper-V의 시험판 기능 체험
-description: Hyper-V의 시험판 기능 체험
+title: "Hyper-V의 시험판 기능 체험"
+description: "Hyper-V의 시험판 기능 체험"
 keywords: windows 10, hyper-v
 author: scooley
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 426c87cc-fa50-4b8d-934e-0b653d7dea7d
+translationtype: Human Translation
+ms.sourcegitcommit: 7d97a2177a14f455ed5b54b0773e3003969303e2
+ms.openlocfilehash: 7dee9e53f0e95b0c3b0ec0afc5b9d510c1962dbc
+
 ---
 
 # Hyper-V의 시험판 기능 체험
@@ -48,6 +52,7 @@ New-VM -Name <VM Name> -Prerelease
 - [Supported virtual machine configuration versions(지원되는 가상 컴퓨터 구성 버전)](https://technet.microsoft.com/library/mt695898.aspx#BKMK_SupportedConfigVersions) - 가상 컴퓨터 구성 버전을 확인하는 방법 및 Microsoft에서 지원하는 버전에 대해 알아봅니다.
 
 
-<!--HONumber=May16_HO5-->
+
+<!--HONumber=Jun16_HO4-->
 
 
