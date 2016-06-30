@@ -1,6 +1,6 @@
 ---
-title: Windows 컨테이너에서의 응용 프로그램 호환성
-description: Windows 컨테이너에서의 응용 프로그램 호환성입니다.
+title: "Windows 컨테이너에서의 응용 프로그램 호환성"
+description: "Windows 컨테이너에서의 응용 프로그램 호환성입니다."
 keywords: docker, containers
 author: scooley
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 3e524458-bd03-400e-913f-210335add8dc
+translationtype: Human Translation
+ms.sourcegitcommit: cfa3c14e932f8b86edf6667200ac028ea0a16b67
+ms.openlocfilehash: 2830dc81317311dd54dfcca45251b668f3d2cc29
+
 ---
 
 # Windows 컨테이너에서의 응용 프로그램 호환성
@@ -85,6 +89,7 @@ Hyper-V 컨테이너에서 다음과 같은 응용 프로그램의 실행을 테
 이 목록에 없는 항목이 있다면  [포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)을 통해 해당 환경에서의 실패 및 성공 경험을 알려 주세요.
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

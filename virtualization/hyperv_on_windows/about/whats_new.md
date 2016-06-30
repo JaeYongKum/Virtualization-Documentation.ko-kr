@@ -1,5 +1,9 @@
 ---
 redirect_url: ../windows_welcome
+translationtype: Human Translation
+ms.sourcegitcommit: 3491d21a31a92f0a97de572afafc29ae8e661c12
+ms.openlocfilehash: 54b496f535b94f0b9aa83cce3ae5504830faee65
+
 ---
 
 ## 네트워크 어댑터 및 메모리에 대한 핫 추가 및 제거
@@ -84,6 +88,7 @@ Update-VmConfigurationVersion <VMObject>
 
 > **중요:** .VMCX 파일은 이진 형식입니다. .VMCX 또는 .VMRS 파일을 직접 편집하는 기능은 지원되지 않습니다.
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: 컨테이너 리소스 관리
-description: Windows 컨테이너를 사용하여 컨테이너 리소스를 관리합니다.
+title: "컨테이너 리소스 관리"
+description: "Windows 컨테이너를 사용하여 컨테이너 리소스를 관리합니다."
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b2192e64-9d74-474e-8af0-2d8b3ad1deee
+translationtype: Human Translation
+ms.sourcegitcommit: cfa3c14e932f8b86edf6667200ac028ea0a16b67
+ms.openlocfilehash: 82cc37e4bcf001e938dcff7308be16978fa955e2
+
 ---
 
 # 컨테이너 리소스 관리
@@ -34,6 +38,7 @@ docker run -it --cpu-shares 2 --name dockerdemo windowsservercore cmd
 - CPU 및 IO 리소스 컨트롤은 현재 Hyper-V 컨테이너에서 지원되지 않습니다.
 - IO 리소스 컨트롤은 현재 컨테이너 데이터 볼륨에서 지원되지 않습니다.
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

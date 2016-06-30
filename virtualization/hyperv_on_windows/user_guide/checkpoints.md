@@ -1,6 +1,6 @@
 ---
-title: 검사점 사용
-description: 검사점 사용
+title: "검사점 사용"
+description: "검사점 사용"
 keywords: windows 10, hyper-v
 author: scooley
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9c398c4-ee72-45c6-9ce8-4f06569dae6c
+translationtype: Human Translation
+ms.sourcegitcommit: 4cdf81cace246c5de041d378391dca9b9d318dd5
+ms.openlocfilehash: bd0ee06f4e5eab4f33bb7e7c6dd71119dddde5c9
+
 ---
 
 # 검사점을 사용하여 가상 컴퓨터를 이정 상태로 되돌리기
@@ -245,6 +249,7 @@ This folder will contain the .VMRS file with the runtime and saved state data an
 2. 텍스트 파일이 복원된 것을 확인합니다. 하지만 표준 검사점과 달리 메모장은 열려 있지 않습니다.   
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

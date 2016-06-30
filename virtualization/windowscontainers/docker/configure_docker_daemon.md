@@ -1,6 +1,6 @@
 ---
-title: Windows에서 Docker 구성
-description: Windows에서 Docker 구성
+title: "Windows에서 Docker 구성"
+description: "Windows에서 Docker 구성"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,13 +9,18 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
+ms.sourcegitcommit: 7113f1dc1e9a0a18d4eb25e6d604e89f96f826c4
+ms.openlocfilehash: 1fddaff6fc260c0cf91c8626a60d768a06995e53
+
 ---
 
-Docker 엔진은 Windows에 포함되지 않으며 별도로 설치 및 구성해야 합니다. 또한 Docker 디먼에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서에서는 docker 디먼을 설치 및 구성하는 방법을 자세히 설명하고 일반적으로 사용하는 구성의 몇 가지 예도 제공합니다.
+# Windows에서 Docker 디먼
+
+Docker 엔진은 Windows에 포함되어 있지 않으므로 개별적으로 설치하고 구성해야 합니다. 또한 Docker 디먼에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서에서는 docker 디먼을 설치 및 구성하는 방법을 자세히 설명하고 일반적으로 사용하는 구성의 몇 가지 예도 제공합니다.
 
 ## Docker 설치
 
-Windows 컨테이너로 작업하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다.
+Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다.
 
 Docker 실행 파일을 저장할 폴더를 만듭니다.
 
@@ -151,6 +156,7 @@ Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 �
 ```
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
