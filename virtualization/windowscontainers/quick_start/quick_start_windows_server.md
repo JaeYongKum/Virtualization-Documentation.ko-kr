@@ -1,6 +1,6 @@
 ---
-title: Windows Server의 Windows 컨테이너
-description: 컨테이너 배포 빠른 시작
+title: "Windows Server의 Windows 컨테이너"
+description: "컨테이너 배포 빠른 시작"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
+translationtype: Human Translation
+ms.sourcegitcommit: eae45c2c81c7edc94d963da69dcdee2b6f08f37d
+ms.openlocfilehash: 40b55028820472aadc5d70d338de417616c653d3
+
 ---
 
 # Windows Server의 Windows 컨테이너
@@ -21,7 +25,13 @@ ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 
 **필수 구성 요소:**
 
-- [Windows Server 2016 Technical Preview 5](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-technical-preview)가 실행되는 컴퓨터 시스템(물리적 또는 가상) 1대.
+[Windows Server 2016 Technical Preview 5](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-technical-preview)가 실행되는 컴퓨터 시스템(물리적 또는 가상) 1대.
+
+완전히 구성된 Windows Server 이미지를 Azure에서 사용할 수 있습니다. 이 이미지를 사용하려면 아래 단추를 클릭하여 가상 컴퓨터를 배포하세요. 배포에는 약 10분 정도 걸립니다. 완료되면 Azure 가상 컴퓨터에 로그인하고 이 자습서의 4단계로 건너뜁니다. 
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FVirtualization-Documentation%2Fmaster%2Fwindows-server-container-tools%2Fcontainers-azure-template%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
 
 ## 1. 컨테이너 기능 설치
 
@@ -50,13 +60,13 @@ New-Item -Type Directory -Path 'C:\Program Files\docker\'
 Docker 디먼을 다운로드합니다.
 
 ```none
-Invoke-WebRequest https://aka.ms/tp5/b/dockerd -OutFile $env:ProgramFiles\docker\dockerd.exe
+Invoke-WebRequest https://aka.ms/tp5/b/dockerd -OutFile $env:ProgramFiles\docker\dockerd.exe -UseBasicParsing
 ```
 
 Docker 클라이언트를 다운로드합니다.
 
 ```none
-Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile $env:ProgramFiles\docker\docker.exe
+Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile $env:ProgramFiles\docker\docker.exe -UseBasicParsing
 ```
 
 시스템 경로에 Docker 디렉터리를 추가합니다. 완료되면 수정된 경로를 인식할 수 있도록 PowerShell 세션을 다시 시작합니다.
@@ -179,7 +189,7 @@ CONTAINER ID    IMAGE                             COMMAND               CREATED 
 
 다른 컴퓨터에서 웹 브라우저를 열고 컨테이너 호스트의 IP 주소를 입력합니다. 모든 항목이 올바르게 구성된 경우 IIS 시작 화면이 표시됩니다. 이 화면은 Windows 컨테이너에서 호스트되는 IIS 인스턴스에서 제공됩니다.
 
-**참고:** Azure에서 작업하는 경우 포트 80을 통한 트래픽을 허용하는 네트워크 보안 그룹 규칙이 있어야 합니다. 자세한 내용은 [네트워크 보안 그룹에서 규칙 만들기]( https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-create-nsg-arm-pportal/#create-rules-in-an-existing-nsg)를 참조하세요.
+**참고:** Azure에서 작업하는 경우 가상 컴퓨터의 외부 IP 주소 및 구성된 네트워크 보안이 필요합니다. 자세한 내용은 [네트워크 보안 그룹에서 규칙 만들기]( https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-create-nsg-arm-pportal/#create-rules-in-an-existing-nsg)를 참조하세요.
 
 ![](media/iis1.png)
 
@@ -195,6 +205,7 @@ docker rm -f grave_jang
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO5-->
 
 

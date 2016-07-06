@@ -1,14 +1,18 @@
 ---
-title: Windows 10의 Windows 컨테이너
-description: 컨테이너 배포 빠른 시작
+title: "Windows 10의 Windows 컨테이너"
+description: "컨테이너 배포 빠른 시작"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
-ms.date: 05/26/2016
+ms.date: 06/28/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
+translationtype: Human Translation
+ms.sourcegitcommit: 3fc388632dee4d714ab5a7869fa852c079c11910
+ms.openlocfilehash: e2d86c6f1aba07c7c40d1f932b3884c99bfd8f0a
+
 ---
 
 # Windows 10의 Windows 컨테이너
@@ -160,7 +164,13 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 docker run --isolation=hyperv --rm microsoft/sample-dotnet
 ```
 
-이 명령의 결과로 sample-dotnet 이미지에서 Hyper-V 컨테이너를 만들고 샘플 응용 프로그램을 실행(출력은 셸에 에코됨)한 다음 컨테이너를 중지하고 제거했습니다. 이후 Windows 10 및 컨테이너 빠른 시작에서는 Windows 10의 컨테이너에서 응용 프로그램을 만들고 배포하는 과정을 자세히 살펴봅니다.
+**참고** - 시간 제한 이벤트가 나타나면서 오류가 발생하는 경우 다음 PowerShell 스크립트를 실행하고 작업을 다시 시도하세요.
+
+```none
+Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 1 -Force
+```
+
+`docker run` 명령의 결과로 sample-dotnet 이미지에서 Hyper-V 컨테이너를 만들고 샘플 응용 프로그램을 실행(출력은 셸에 에코됨)한 다음 컨테이너를 중지하고 제거했습니다. 이후 Windows 10 및 컨테이너 빠른 시작에서는 Windows 10의 컨테이너에서 응용 프로그램을 만들고 배포하는 과정을 자세히 살펴봅니다.
 
 ## 다음 단계
 
@@ -169,6 +179,7 @@ docker run --isolation=hyperv --rm microsoft/sample-dotnet
 
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

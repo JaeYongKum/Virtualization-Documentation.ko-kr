@@ -1,14 +1,18 @@
 ---
-title: &1912652673 Windows 10 Hyper-V 시스템 요구 사항
-description: Windows 10 Hyper-V 시스템 요구 사항
+title: "Windows 10 Hyper-V 시스템 요구 사항"
+description: "Windows 10 Hyper-V 시스템 요구 사항"
 keywords: windows 10, hyper-v
 author: scooley
 manager: timlt
 ms.date: 05/02/2016
 ms.topic: article
-ms.prod: &1822196224 windows-10-hyperv
+ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6e5e6b01-7a9d-4123-8cc7-f986e10cd372
+translationtype: Human Translation
+ms.sourcegitcommit: e14ede0a2b13de08cea0a955b37a21a150fb88cf
+ms.openlocfilehash: 6364ecd2df13f5abc96fc22da03c9bca65d353b2
+
 ---
 
 # Windows 10 Hyper-V 시스템 요구 사항
@@ -23,18 +27,18 @@ Windows 10의 Hyper-V는 특정 집합의 운영 체제 및 하드웨어 구성�
 - Windows 10 Professional
 - Windows 10 Education
 
-다음 버전에는 Hyper-V 역할을 설치할 수 <g id="2" ctype="x-strong">없습니다</g>.
+다음 버전에는 Hyper-V 역할을 설치할 수 **없습니다**.
 
 - Windows 10 Home
 - Windows 10 Mobile
 - Windows 10 Mobile Enterprise
 
->Windows 10 Home edition은 Windows 10 Professional로 업그레이드할 수 있습니다. <g id="2" ctype="x-strong">설정</g> > <g id="4" ctype="x-strong">업데이트 및 보안</g> > <g id="6" ctype="x-strong">활성화</g>를 엽니다. 여기에서 스토어를 방문하고 업그레이드를 구입할 수 있습니다.
+>Windows 10 Home edition은 Windows 10 Professional로 업그레이드할 수 있습니다. 그러려면 **설정** > **업데이트 및 보안** > **활성화**를 엽니다. 여기에서 스토어를 방문하고 업그레이드를 구입할 수 있습니다.
 
 ## 하드웨어 요구 사항
 
 이 문서에서는 Hyper-V와 호환되는 하드웨어의 전체 목록을 제공하지 않지만 다음 항목은 필요합니다.
-
+    
 - 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
 - VM 모니터 모드 확장(Intel CPU의 VT-c)을 지원하는 CPU.
 - 최소 4GB의 메모리. 가상 컴퓨터는 Hyper-V 호스트와 메모리를 공유하지만 예상된 가상 워크로드를 처리하려면 충분한 메모리를 제공해야 합니다.
@@ -45,25 +49,21 @@ Windows 10의 Hyper-V는 특정 집합의 운영 체제 및 하드웨어 구성�
 
 ## 하드웨어 호환성 확인
 
-호환성을 확인하려면 PowerShell 또는 명령 프롬프트(cmd.exe)를 열고 <g id="2" ctype="x-strong">systeminfo.exe</g>를 입력합니다. 나열된 모든 Hyper-V 요구 사항이 <g id="2" ctype="x-strong">예</g>의 값을 가지는 경우 시스템은 Hyper-V 역할을 실행할 수 있습니다. 항목이 <g id="2" ctype="x-strong">아니요</g>를 반환하는 경우 이 문서에 나열된 요구 사항을 확인하고 가능한 경우 조정합니다.
+호환성을 확인하려면 PowerShell 또는 명령 프롬프트(cmd.exe)를 열고 **systeminfo.exe**를 입력합니다. 나열된 모든 Hyper-V 요구 사항이 **예**의 값을 가지는 경우 시스템은 Hyper-V 역할을 실행할 수 있습니다. 항목이 **아니요**를 반환하는 경우 이 문서에 나열된 요구 사항을 확인하고 가능한 경우 조정합니다.
 
-<g id="1" ctype="x-linkText"></g>
+![](media/SystemInfo_upd.png)
 
-기존 Hyper-V 호스트에서 <g id="2" ctype="x-strong">systeminfo.exe</g>를 실행하는 경우 Hyper-V 요구 사항 섹션을 읽습니다.
+기존 Hyper-V 호스트에서 **systeminfo.exe**를 실행하는 경우 Hyper-V 요구 사항 섹션을 읽습니다.
 
 ```
 Hyper-V Requirements: A hypervisor has been detected. Features required for Hyper-V are not be displayed.
 ```
 
 ## 다음 단계 - Hyper-V 설치
-
-<g id="1CapsExtId1" ctype="x-link"><g id="1CapsExtId2" ctype="x-linkText">Hyper-V 설치</g><g id="1CapsExtId3" ctype="x-title"></g></g>
-
+[Hyper-V 설치](walkthrough_install.md)
 
 
 
-
-
-<!--HONumber=May16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 

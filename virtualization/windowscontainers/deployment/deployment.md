@@ -1,6 +1,6 @@
 ---
-title: Windows Server에 Windows 컨테이너 배포
-description: Windows Server에 Windows 컨테이너 배포
+title: "Windows Server에 Windows 컨테이너 배포"
+description: "Windows Server에 Windows 컨테이너 배포"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,6 +9,10 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
+translationtype: Human Translation
+ms.sourcegitcommit: eae45c2c81c7edc94d963da69dcdee2b6f08f37d
+ms.openlocfilehash: cbbff2bf4a68ee348bcc33979ef4469daf54a8a7
+
 ---
 
 # 컨테이너 호스트 배포 - Windows Server
@@ -16,6 +20,14 @@ ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
 **이 예비 콘텐츠는 변경될 수 있습니다.**
 
 Windows 컨테이너 호스트 배포 단계는 운영 체제와 호스트 시스템 유형(물리적 또는 가상)에 따라 다릅니다. 이 문서에서는 물리적 시스템이나 가상 시스템에서 Windows Server 2016 또는 Windows Server Core 2016에 Windows 컨테이너 호스트를 배포하는 방법에 대해 자세히 설명합니다.
+
+## Azure 이미지 
+
+완전히 구성된 Windows Server 이미지를 Azure에서 사용할 수 있습니다. 이 이미지를 사용하려면 아래 단추를 클릭하여 가상 컴퓨터를 배포하세요. 이 템플릿을 사용하여 Windows 컨테이너 시스템을 Azure에 배포하는 경우 이 문서의 나머지 부분을 건너뛸 수 있습니다.
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FVirtualization-Documentation%2Fmaster%2Fwindows-server-container-tools%2Fcontainers-azure-template%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
 
 ## 컨테이너 기능 설치
 
@@ -132,6 +144,7 @@ Install-WindowsFeature hyper-v
 ```
 
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Jun16_HO5-->
 
 

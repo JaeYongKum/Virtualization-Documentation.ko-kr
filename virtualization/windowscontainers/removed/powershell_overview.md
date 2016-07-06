@@ -1,6 +1,10 @@
+---
+author: scooley
+translationtype: Human Translation
+ms.sourcegitcommit: af065ec180f1b5de9e40ef269e7278a16b0c3b7f
+ms.openlocfilehash: 5463412d44bd7c657401c55558bb817df4cc1eb2
 
-
-
+---
 
 # 컨테이너에 대한 PowerShell
 
@@ -9,11 +13,11 @@
 **이름**      
 Install-ContainerOSImage
 
-**개요**  
+**요약**  
 Windows Server 또는 Hyper-V 컨테이너와 함께 사용할 컨테이너 OS 이미지로 주어진 WIM을 설치합니다.
 
 
-**구문**
+**SYNTAX**  
 ``` PowerShell  
 Install-ContainerOSImage [-WimPath] <String> [-Force] [< CommonParameters >]
 ```
@@ -21,7 +25,7 @@ Install-ContainerOSImage [-WimPath] <String> [-Force] [< CommonParameters >]
 **설명**  
 Windows Server 및 Hyper-V 컨테이너 기능에 대해 WIM 파일에서 공유 중앙 이미지 저장소에 기본 이미지를 설치합니다.
 
-**매개 변수**
+**PARAMETERS**
 ``` PowerShell
     -WimPath <String>
         A path to the WIM file that will be installed.
@@ -67,17 +71,17 @@ PS C:\>Install-ContainerOSImage c:\baseimage.wim
 **이름**  
 Uninstall-ContainerOSImage
 
-**개요**  
+**요약**  
 이전에 설치된 컨테이너 OS 이미지 제거
 
-**구문**
+**SYNTAX**   
 ```PowerShell
 Uninstall-ContainerOSImage [-ImageName] <string> [-Force]  [< CommonParameters >]
 
 Uninstall-ContainerOSImage [-ContainerImage] <Object> [-Force]  [< CommonParameters >]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -ContainerImage <Object>
 
@@ -123,15 +127,15 @@ System.Object
 **별칭**  
 없음
 
-## Add-ContainerNetworkAdapter
+## Add-ContainerNetworkAdapter ##
 
 **이름**  
 Add-ContainerNetworkAdapter
 
-**개요**  
+**요약**  
 기존 컨테이너에 새 네트워크 어댑터 추가
 
-**구문**
+**SYNTAX** 
 ``` PowerShell  
 Add-ContainerNetworkAdapter [-ContainerName] <string[]> [-CimSession <CimSession[]>] [-ComputerName <string[]>]
     [-Credential <pscredential[]>] [-SwitchName <string>] [-Name <string>] [-DynamicMacAddress] [-StaticMacAddress
@@ -141,7 +145,7 @@ Add-ContainerNetworkAdapter [-ContainerName] <string[]> [-CimSession <CimSession
     [-DynamicMacAddress] [-StaticMacAddress <string>] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -276,10 +280,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter
 **이름**  
 Connect-ContainerNetworkAdapter
 
-**개요**  
+**요약**  
 컨테이너 네트워크 어댑터를 가상 스위치에 연결
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Connect-ContainerNetworkAdapter [-ContainerName] <string[]> [[-Name] <string[]>] [-SwitchName] <string>
     [-Passthru] [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential <pscredential[]>] [-WhatIf]
@@ -289,7 +293,7 @@ Connect-ContainerNetworkAdapter
     [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -404,10 +408,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter
 **이름**  
 Disconnect-ContainerNetworkAdapter
 
-**개요**  
+**요약**  
 가상 스위치에서 컨테이너 네트워크 어댑터 분리
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Disconnect-ContainerNetworkAdapter [-ContainerName] <string[]> [[-Name] <string[]>] [-CimSession <CimSession[]>]
     [-ComputerName <string[]>] [-Credential <pscredential[]>] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
@@ -416,7 +420,7 @@ Disconnect-ContainerNetworkAdapter
     [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -522,10 +526,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter
 **이름**  
 Export-ContainerImage
 
-**개요**  
+**요약**  
 로컬 저장소에서 컨테이너 이미지 복사
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Export-ContainerImage [[-Name] <string>] [-Path] <string> [[-Version] <version>] [-CimSession <CimSession[]>]
     [-ComputerName <string[]>] [-Credential <pscredential[]>] [-AsJob] [-Passthru] [-WhatIf] [-Confirm]
@@ -535,7 +539,7 @@ Export-ContainerImage
     [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**
 ``` PowerShell
     -AsJob
 
@@ -668,10 +672,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerImage
 **이름**  
 Get-Container
 
-**개요**  
+**요약**  
 현재 시스템에 컨테이너 열거
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Get-Container [[-Name] <string[]>] [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential
     <pscredential[]>]  [<CommonParameters>]
@@ -680,7 +684,7 @@ Get-Container
     <pscredential[]>]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -751,17 +755,17 @@ Microsoft.Containers.PowerShell.Objects.Container
 **이름**  
 Get-ContainerHost
 
-**개요**  
+**요약**  
 컨테이너 호스트에 대한 호스트 개체 가져오기
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Get-ContainerHost [[-ComputerName] <string[]>] [[-Credential] <pscredential[]>]  [<CommonParameters>]
 
     Get-ContainerHost [-CimSession] <CimSession[]>  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -815,16 +819,16 @@ Microsoft.Containers.PowerShell.Objects.ContainerHost
 **이름**  
 Get-ContainerImage
 
-**개요**  
+**요약**  
 컨테이너 호스트에 컨테이너 이미지 열거
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
 Get-ContainerImage [[-Name] <string>] [[-Publisher] <string>] [[-Version] <version>] [-ChildOf <ContainerImage>]
 [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential <pscredential[]>]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -ChildOf <ContainerImage>
 
@@ -912,10 +916,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerImage
 **이름**  
 Get-ContainerNetworkAdapter
 
-**개요**  
+**요약**  
 컨테이너와 연결된 네트워크 어댑터 열거
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Get-ContainerNetworkAdapter [-ContainerName] <string[]> [[-Name] <string>] [-CimSession <CimSession[]>]
     [-ComputerName <string[]>] [-Credential <pscredential[]>]  [<CommonParameters>]
@@ -923,7 +927,7 @@ Get-ContainerNetworkAdapter
     Get-ContainerNetworkAdapter [-Container] <Container[]> [[-Name] <string>]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -988,31 +992,31 @@ Get-ContainerNetworkAdapter
 
 **입력**  
 Microsoft.Containers.PowerShell.Objects.Container\[\]  
-System.String\[\]
+System.String\[\]  
 
 
 **출력**  
-Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter
+Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter  
 
 
 **별칭**  
-없음
+없음  
 
 ## Import-ContainerImage
 
 **이름**  
 Import-ContainerImage
 
-**개요**  
+**요약**  
 다른 컴퓨터에서 내보낸 컨테이너 이미지 가져오기
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Import-ContainerImage [-Path] <string> [-AsJob] [-CimSession <CimSession[]>] [-ComputerName <string[]>]
     [-Credential <pscredential[]>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -1100,16 +1104,16 @@ Microsoft.Containers.PowerShell.Objects.ContainerImage
 **이름**  
 Move-ContainerImageRepository
 
-**개요**  
-컨테이너 이미지가 저장된 위치를 변경합니다. 로컬 디스크에 있는 위치여야 합니다. 시스템에 이미지가 없는 경우에만 변경할 수 있습니다.
+**요약**  
+컨테이너 이미지가 저장된 위치를 변경합니다.  로컬 디스크에 있는 위치여야 합니다.  시스템에 이미지가 없는 경우에만 변경할 수 있습니다.
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Move-ContainerImageRepository [-Path] <string> [-AsJob] [-Passthru] [-CimSession <CimSession[]>] [-ComputerName
     <string[]>] [-Credential <pscredential[]>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -1198,18 +1202,17 @@ Move-ContainerImageRepository
 Microsoft.HyperV.PowerShell.VMHost
 
 
-**별칭**
-없음
+**별칭** 없음
 
 ## New-Container
 
 **이름**  
 New-Container
 
-**개요**  
+**요약**  
 새 컨테이너 만들기
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     New-Container [[-Name] <string>] -ContainerImageName <string> [-ContainerImagePublisher <string>]
     [-ContainerImageVersion <version>] [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential
@@ -1220,7 +1223,7 @@ New-Container
     <string>] [-Path <string>] [-AsJob] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -1371,10 +1374,10 @@ Microsoft.Containers.PowerShell.Objects.Container
 **이름**  
 New-ContainerImage
 
-**개요**  
+**요약**  
 기존 컨테이너에서 새 컨테이너 이미지 만들기
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     New-ContainerImage [-ContainerName] <string> [-Name] <string> [-Publisher] <string> [-Version] <version>
     [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential <pscredential[]>] [-WhatIf] [-Confirm]
@@ -1388,7 +1391,7 @@ New-ContainerImage
     [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -1512,10 +1515,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerImage
 **이름**  
 Remove-Container
 
-**개요**  
+**요약**  
 시스템에서 기존 컨테이너 제거
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Remove-Container [-Name] <string[]> [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential
     <pscredential[]>] [-Force] [-AsJob] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
@@ -1524,7 +1527,7 @@ Remove-Container
     [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -1640,10 +1643,10 @@ Microsoft.Containers.PowerShell.Objects.Container
 **이름**  
 Remove-ContainerImage
 
-**개요**  
+**요약**  
 컨테이너 호스트에서 컨테이너 이미지 제거
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Remove-ContainerImage [[-Name] <string>] [[-Publisher] <string>] [[-Version] <version>] [-CimSession
     <CimSession[]>] [-ComputerName <string[]>] [-Credential <pscredential[]>] [-Force] [-WhatIf] [-Confirm]
@@ -1652,7 +1655,7 @@ Remove-ContainerImage
     Remove-ContainerImage [-Image] <ContainerImage> [-Force] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -1766,10 +1769,10 @@ System.Object
 **이름**  
 Remove-ContainerNetworkAdapter
 
-**개요**  
+**요약**  
 컨테이너에서 네트워크 어댑터 제거
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Remove-ContainerNetworkAdapter [-ContainerName] <string[]> [-CimSession <CimSession[]>] [-ComputerName <string[]>]
     [-Credential <pscredential[]>] [-Name <string>] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
@@ -1781,7 +1784,7 @@ Remove-ContainerNetworkAdapter
     [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -1898,10 +1901,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter
 **이름**  
 Set-ContainerNetworkAdapter
 
-**개요**  
+**요약**  
 컨테이너의 네트워크 어댑터에서 MAC 주소 설정
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Set-ContainerNetworkAdapter [-ContainerName] <string> [-CimSession <CimSession[]>] [-ComputerName <string[]>]
     [-Credential <pscredential[]>] [-Name <string>] [-DynamicMacAddress] [-StaticMacAddress <string>] [-Passthru]
@@ -1914,7 +1917,7 @@ Set-ContainerNetworkAdapter
     <string>] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -CimSession <CimSession[]>
 
@@ -2049,10 +2052,10 @@ Microsoft.Containers.PowerShell.Objects.ContainerNetworkAdapter
 **이름**  
 Start-Container
 
-**개요**  
+**요약**  
 컨테이너 시작
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Start-Container [-Name] <string[]> [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential
     <pscredential[]>] [-AsJob] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
@@ -2060,7 +2063,7 @@ Start-Container
     Start-Container [-Container] <Container[]> [-AsJob] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -2167,10 +2170,10 @@ Microsoft.Containers.PowerShell.Objects.Container
 **이름**  
 Stop-Container
 
-**개요**  
+**요약**  
 컨테이너 중지
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Stop-Container [-Name] <string[]> [-CimSession <CimSession[]>] [-ComputerName <string[]>] [-Credential
     <pscredential[]>] [-TurnOff] [-AsJob] [-Passthru] [-WhatIf] [-Confirm]  [<CommonParameters>]
@@ -2179,7 +2182,7 @@ Stop-Container
     [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -2295,10 +2298,10 @@ Microsoft.Containers.PowerShell.Objects.Container
 **이름**  
 Test-ContainerImage
 
-**개요**  
+**요약**  
 컨테이너 호스트 시스템에서 컨테이너 이미지 유효성 검사
 
-**구문**
+**SYNTAX**  
 ``` PowerShell
     Test-ContainerImage [[-Name] <string>] [[-Publisher] <string>] [[-Version] <version>] [-CimSession <CimSession[]>]
     [-ComputerName <string[]>] [-Credential <pscredential[]>] [-AsJob] [-WhatIf] [-Confirm]  [<CommonParameters>]
@@ -2306,7 +2309,7 @@ Test-ContainerImage
     Test-ContainerImage [-Image] <ContainerImage> [-AsJob] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-**매개 변수**
+**PARAMETERS**  
 ``` PowerShell
     -AsJob
 
@@ -2417,9 +2420,6 @@ Microsoft.Containers.PowerShell.Objects.ContainerImageReport
 없음
 
 
-
-
-
-<!--HONumber=Feb16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

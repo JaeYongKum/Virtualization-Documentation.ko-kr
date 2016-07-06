@@ -1,6 +1,6 @@
 ---
-title: 컨테이너 배포 빠른 시작 - 이미지
-description: 컨테이너 배포 빠른 시작
+title: "컨테이너 배포 빠른 시작 - 이미지"
+description: "컨테이너 배포 빠른 시작"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
@@ -9,13 +9,17 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
+translationtype: Human Translation
+ms.sourcegitcommit: eae45c2c81c7edc94d963da69dcdee2b6f08f37d
+ms.openlocfilehash: ac9596d210e72b9fd576f728e8e6bbdc293597d7
+
 ---
 
 # Windows Server의 컨테이너 이미지
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
-이전 Windows Server 빠른 시작에서는 기존 컨테이너 이미지에서 Windows 컨테이너를 만들었습니다. 이 연습에서는 고유한 컨테이너 이미지를 수동으로 만들고 Dockerfile을 사용하여 이미지를 만드는 방법에 대해 자세히 설명합니다.
+이전 Windows Server 빠른 시작에서는 기존 컨테이너 이미지에서 Windows 컨테이너를 만들었습니다. 이 연습에서는 사용자 지정 컨테이너 이미지를 수동으로 만들고 Dockerfile을 사용하는 방법에 대해 자세히 설명합니다.
 
 이 빠른 시작은 Windows Server 2016의 Windows Server 컨테이너와 관련이 있습니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다. 
 
@@ -161,6 +165,7 @@ docker rm -f cranky_brown
 
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
-<!--HONumber=Jun16_HO2-->
+
+<!--HONumber=Jun16_HO5-->
 
 
