@@ -9,14 +9,14 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
-ms.sourcegitcommit: ef18b63c454b3c12a7067d3604ba142d55403226
-ms.openlocfilehash: 2d1679ffe4876ddd4eefe1b457098e8797899492
+ms.sourcegitcommit: 26a8adb426a7cf859e1a9813da2033e145ead965
+ms.openlocfilehash: d17413fc572e59ec21ff513ef5de994c6716aa08
 
 ---
 
 # 가상 컴퓨터에서 중첩된 가상화를 사용하여 Hyper-V 실행
 
-중첩된 가상화는 Hyper-V 가상 컴퓨터 내에서 Hyper-V를 실행할 수 있는 기능입니다. 즉, 중첩된 가상화를 통해 Hyper-V 호스트 자체를 가상화할 수 있습니다. 중첩된 가상화의 몇 가지 사용 사례로 가상화된 컨테이너 호스트에서 Hyper-V 컨테이너 실행, 가상화된 환경에서 Hyper-V 랩 실행, 개별 하드웨어 없이 다중 컴퓨터 시나리오 테스트 등을 들 수 있습니다. 이 문서에서는 소프트웨어 및 하드웨어 필수 조건 및 구성 단계를 자세히 설명하고 문제 해결 정보를 제공합니다.
+중첩된 가상화는 Hyper-V 가상 컴퓨터 내에서 Hyper-V를 실행할 수 있는 기능입니다. 즉, 중첩된 가상화를 통해 Hyper-V 호스트 자체를 가상화할 수 있습니다. 중첩된 가상화의 몇 가지 사용 사례로 가상화된 컨테이너 호스트에서 Hyper-V 컨테이너 실행, 가상화된 환경에서 Hyper-V 랩 실행, 개별 하드웨어 없이 다중 컴퓨터 시나리오 테스트 등을 들 수 있습니다. 이 문서에서는 소프트웨어 및 하드웨어 필수 조건 및 구성 단계를 자세히 설명하고 문제 해결 정보를 제공합니다. Windows 참가자 미리 보기 빌드 14361 이상에서 Hyper-V를 실행하는 경우 [Nested Virtualization Preview for Windows Insiders: Builds 14361+(Windows 참가자에 대해 중첩된 가상화 미리 보기: 빌드 14361+)](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting#nested-virtualization-preview-for-windows-insiders-builds-14361-)을 참조하세요.
 
 ## 필수 구성 요소
 
@@ -89,8 +89,51 @@ Netsh interface ip add dnsserver “Ethernet” address=<my DNS server>
 
 Windows 피드백 앱, [가상화 포럼](https://social.technet.microsoft.com/Forums/windowsserver/En-us/home?forum=winserverhyperv) 또는 [GitHub](https://github.com/Microsoft/Virtualization-Documentation)를 통해 추가 문제를 보고하세요.
 
+##Windows 참가자에 대해 중첩된 가상화 미리 보기: 빌드 14361+
+몇 달 전에 빌드 10565와 함께 Hyper-V 중첩된 가상화의 초기 미리 보기를 발표했습니다. 이 기능의 뛰어난 성능을 보며 흥분했었고, 이제 Windows 참가자와 업데이트를 공유되어 기쁩니다.
+
+###중첩된 가상화에 대해 새 VM 버전 필요
+빌드 14361부터 버전 8.0에서는 VM에 중첩된 가상화를 사용해야 합니다. 이전 호스트에서 만든 중첩된 가상화를 사용하는 VM에 대한 버전 업데이트가 필요합니다. 
+
+####VM 버전 업데이트
+중첩된 가상화를 계속 사용하면 VM 버전을 8.0으로 업데이트해야 합니다. 즉 저장된 상태를 제거하고 VM을 종료해야 합니다. 다음 PowerShell cmdlet은 VM 버전을 업데이트합니다.
+```none
+Update-VMVersion -Name <VMName>
+```
+####중첩된 가상화 사용 안 함
+VM을 업데이트하고 싶지 않은 경우, VM에서 부팅할 수 있도록 중첩된 가상화를 사용하지 않도록 설정할 수 있습니다.
+```none
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $false
+```
+
+###VM 버전 8.0의 새로운 동작 
+이 미리 보기에는 중첩이 설정된 VM이 작동하는 방법에 대한 몇 가지 변경 사항이 있습니다.
+-   검사점 생성 및 적용이 이제 중첩된 가상화를 사용하는 VM에 대해 작동합니다.
+-   이제 중첩이 설정된 VM을 저장 및 시작할 수 있습니다.
+-   중첩된 가상화를 사용하는 VM을 이제 가상화 기반 보안(Device Guard 및 Credential Guard 포함)을 사용하는 호스트에서 실행할 수 있습니다.
+-   기존 제한 사항에 대한 오류 메시지가 향상되었습니다.
+
+###기능 제한 사항
+-   중첩된 가상화는 Hyper-V 가상 컴퓨터 내에서 Hyper-V를 실행하도록 설계되었습니다. 타사 가상화 응용 프로그램은 지원되지 않으며 Hyper-V VM에서 실패할 확률이 높습니다.
+-   동적 메모리는 중첩된 가상화와 호환되지 않습니다. VM 내에서 Hyper-V를 실행하면 VM에서 런타임 시 메모리를 변경할 수 없습니다. 
+-   런타임 메모리 크기 조정은 중첩된 가상화와 호환되지 않습니다. Hyper-V가 내부에서 실행되는 동안 VM 메모리 크기 조정은 실패합니다. 
+-   중첩된 가상화는 Intel 시스템에서만 지원됩니다.
+
+###알려진 문제
+빌드 14361에서 다음과 같은 오류와 함께 2세대 VM이 부팅되지 않는 알려진 문제가 있습니다.
+```none
+“Cannot modify property without enabling VirtualizationBasedSecurityOptOut”
+```
+이 문제는 중첩된 가상화를 사용하지 않도록 설정하거나 가상화 기반 보안을 옵트아웃(opt out)하여 일시적으로 해결할 수 있습니다.
+```none
+Set-VMSecurity -VMName <vmname> -VirtualizationBasedSecurityOptOut $true
+```
+
+###피드백 환영
+언제나처럼 Windows 피드백 앱을 통해 계속 피드백을 보내주세요. 질문이 있는 경우 문서 [GitHub](https://github.com/Microsoft/Virtualization-Documentation) 페이지에서 문제를 제출하세요. 
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
