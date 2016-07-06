@@ -17144,8 +17144,8 @@
       "ArchiveFileDateTime": "2016-06-30T07:22:44.4892882Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\walkthrough_virtual_switch.27dde78ebf41bbbdb946f00af1eb221b79cbb05a.ko-kr.xlf",
-      "BilingualFileCommit": "87f9218715c0a72f668f1d38789fc8ee90baca45",
-      "BilingualDateTime": "2016-06-21T14:29:19.2475959Z",
+      "BilingualFileCommit": "f15c6baf4d71898d82e605f0762d3f07be26a42b",
+      "BilingualDateTime": "2016-07-06T10:49:30.373282Z",
       "BilingualException": null
     },
     "aa93034488349311b5fdd5b96c3b503542b97630": {
@@ -21066,9 +21066,9 @@
       "ArchiveFileCommit": "cb8f4d1dcfeebf196cd70238c3475f711c17efdf",
       "ArchiveFileDateTime": "2016-06-30T07:22:44.4892882Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\nesting.ece03f90d41cea4ab592ff16c6288e2349863da7.ko-kr.xlf",
+      "BilingualFileCommit": "f15c6baf4d71898d82e605f0762d3f07be26a42b",
+      "BilingualDateTime": "2016-07-06T10:49:30.373282Z",
       "BilingualException": null
     },
     "085bb8c0158aedf4270cf2423114ec1901af1ebd": {
