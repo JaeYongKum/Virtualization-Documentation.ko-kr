@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: 3fc388632dee4d714ab5a7869fa852c079c11910
-ms.openlocfilehash: e2d86c6f1aba07c7c40d1f932b3884c99bfd8f0a
+ms.sourcegitcommit: 5980babe886024de93f6d6c5f04eaed47407209d
+ms.openlocfilehash: 188c85a9e6f5d1c334e51853efd8fa3ca461837c
 
 ---
 
@@ -55,7 +55,7 @@ Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Doc
 Docker 실행 파일에 대한 폴더를 만듭니다.
 
 ```none
-New-Item -Type Directory -Path 'C:\Program Files\docker\'
+New-Item -Type Directory -Path $env:ProgramFiles\docker\
 ```
 
 Docker 디먼을 다운로드합니다.
@@ -73,7 +73,7 @@ Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile $env:ProgramFiles\docker\
 시스템 경로에 Docker 디렉터리를 추가합니다.
 
 ```none
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";$env:ProgramFiles\docker\\Docker", [EnvironmentVariableTarget]::Machine)
 ```
 
 수정된 경로를 인식할 수 있도록 PowerShell 세션을 다시 시작합니다.
@@ -180,6 +180,6 @@ Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtua
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
