@@ -1,7 +1,7 @@
 ---
 title: "Hyper-V 통합 서비스 관리"
 description: "Hyper-V 통합 서비스 관리"
-keywords: windows 10, hyper-v
+keywords: windows 10, hyper-v, integration services, integration components
 author: scooley
 manager: timlt
 ms.date: 05/02/2016
@@ -10,16 +10,18 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
 translationtype: Human Translation
-ms.sourcegitcommit: ef9ce04b2532fd314a21920b9cc5c28459c9a438
-ms.openlocfilehash: d2fbf3b714ac70e096ba80aadd9533c62cf0c34e
+ms.sourcegitcommit: 852f7fafe7192d85b0e9840ea3767a1206a1c285
+ms.openlocfilehash: e7abf05c899e2acca07312813b7808a5db00a9f7
 
 ---
 
 # Hyper-V 통합 서비스 관리
 
-통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며(예: 게스트 파일 복사) 나머지 서비스는 게스트 운영 체제의 기능이 제대로 작동하는 데 매우 중요할 수 있습니다(시간 동기화).
+통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며(예: 게스트 파일 복사) 나머지 서비스는 가상 컴퓨터의 기능이 제대로 작동하는 데 매우 중요할 수 있습니다(시간 동기화).
 
-이 문서에서는 Windows 10에서 Hyper-V 관리자 및 PowerShell을 사용하여 통합 서비스를 관리하는 방법을 자세히 설명합니다. 각 개별 통합 서비스에 대한 자세한 내용은 [Integration Services(통합 서비스)]( https://technet.microsoft.com/en-us/library/dn798297.aspx)를 참조하세요.
+이 문서에서는 Windows 10에서 Hyper-V 관리자 및 PowerShell을 사용하여 통합 서비스를 관리하는 방법을 자세히 설명합니다.  
+
+각 개별 통합 서비스에 대한 자세한 내용은 [통합 서비스](../reference/ic_info.md)를 참조하세요.
 
 ## Hyper-V 관리자를 사용하여 통합 서비스 활성화 또는 비활성화
 
@@ -41,33 +43,33 @@ PowerShell에서 [`Enable-VMIntegrationService`](https://technet.microsoft.com/e
 1. 실행 중인 통합 서비스 보기
   
   ``` PowerShell
-  Get-VMIntegrationService -VMName "demovm"
+  Get-VMIntegrationService -VMName "DemoVM"
   ```
 
   출력은 다음과 같이 표시됩니다.  
   ``` PowerShell
   VMName      Name                    Enabled PrimaryStatusDescription SecondaryStatusDescription
   ------      ----                    ------- ------------------------ --------------------------
-  demovm      Guest Service Interface False   OK
-  demovm      Heartbeat               True    OK                       OK
-  demovm      Key-Value Pair Exchange True    OK
-  demovm      Shutdown                True    OK
-  demovm      Time Synchronization    True    OK
-  demovm      VSS                     True    OK
+  DemoVM      Guest Service Interface False   OK
+  DemoVM      Heartbeat               True    OK                       OK
+  DemoVM      Key-Value Pair Exchange True    OK
+  DemoVM      Shutdown                True    OK
+  DemoVM      Time Synchronization    True    OK
+  DemoVM      VSS                     True    OK
   ```
 
 2. `Guest Service Interface` 통합 서비스 활성화
 
    ``` PowerShell
-   Enable-VMIntegrationService -VMName "demovm" -Name "Guest Service Interface"
+   Enable-VMIntegrationService -VMName "DemoVM" -Name "Guest Service Interface"
    ```
    
-   `Get-VMIntegrationService -VMName "demovm"`을 실행하는 경우 게스트 서비스 인터페이스 통합 서비스가 활성화되어 표시됩니다.
+   `Get-VMIntegrationService -VMName "DemoVM"`을 실행하는 경우 게스트 서비스 인터페이스 통합 서비스가 활성화되어 표시됩니다.
  
 3. `Guest Service Interface` 통합 서비스 비활성화
 
    ``` PowerShell
-   Disable-VMIntegrationService -VMName "demovm" -Name "Guest Service Interface"
+   Disable-VMIntegrationService -VMName "DemoVM" -Name "Guest Service Interface"
    ```
    
 통합 서비스는 호스트와 게스트 모두에서 작동하기 위해 활성화하도록 설계되었습니다.  모든 통합 서비스는 Windows 게스트 운영 체제에서 기본적으로 활성화되지만 비활성화할 수 있습니다.  다음 섹션에서 방법을 살펴봅니다.
@@ -193,7 +195,9 @@ sudo hv_kvp_daemon
 
 ## 통합 서비스 유지 관리
 
-최상의 가상 컴퓨터 성능 및 기능을 받으려면 통합 서비스를 최신 상태로 유지합니다.
+가상 컴퓨터가 Windows Update에서 중요 업데이트를 받을 수 있는 경우 Windows 10에서 통합 서비스 유지 관리는 기본적으로 이루어집니다.  
+
+통합 서비스를 최신 상태로 유지하면 최상의 가상 컴퓨터 성능 및 기능을 받을 수 있습니다.
 
 **Windows 10 호스트에서 실행되는 가상 컴퓨터:**
 
@@ -226,19 +230,19 @@ sudo hv_kvp_daemon
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 통합 서비스 디스크 | |
-| Windows 7 | 통합 서비스 디스크 | |
-| Windows Vista(SP 2) | 통합 서비스 디스크 | |
-| Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | |
+| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows 7 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Vista(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | - | | |
 | Windows Server 2012 R2 | Windows Update | |
-| Windows Server 2012 | 통합 서비스 디스크 | |
-| Windows Server 2008 R2 | 통합 서비스 디스크 | |
-| Windows Server 2008(SP 2) | 통합 서비스 디스크 | |
-| Windows Home Server 2011 | 통합 서비스 디스크 | |
-| Windows Small Business Server 2011 | 통합 서비스 디스크 | |
-| Windows Server 2003 R2(SP 2) | 통합 서비스 디스크 | |
-| Windows Server 2003(SP 2) | 통합 서비스 디스크 | |
+| Windows Server 2012 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2008 R2 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2008(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Home Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Small Business Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2003 R2(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2003(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | - | | |
 | Linux 게스트 | 패키지 관리자 | Linux용 통합 구성 요소는 배포판에 포함되지만 선택적 업데이트가 제공될 수 있습니다. ** |
 
@@ -248,29 +252,26 @@ sudo hv_kvp_daemon
 | 게스트 OS | 업데이트 메커니즘 | 참고 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 통합 서비스 디스크 | |
-| Windows 7 | 통합 서비스 디스크 | |
-| Windows Vista(SP 2) | 통합 서비스 디스크 | |
-| Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | |
+| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows 7 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Vista(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | - | | |
 | Windows Server 2012 R2 | Windows Update | |
-| Windows Server 2012 | 통합 서비스 디스크 | |
-| Windows Server 2008 R2 | 통합 서비스 디스크 | |
-| Windows Server 2008(SP 2) | 통합 서비스 디스크 | |
-| Windows Home Server 2011 | 통합 서비스 디스크 | |
-| Windows Small Business Server 2011 | 통합 서비스 디스크 | |
-| Windows Server 2003 R2(SP 2) | 통합 서비스 디스크 | |
-| Windows Server 2003(SP 2) | 통합 서비스 디스크 | |
+| Windows Server 2012 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2008 R2 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다.|
+| Windows Server 2008(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Home Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Small Business Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2003 R2(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Server 2003(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | - | | |
 | Linux 게스트 | 패키지 관리자 | Linux용 통합 구성 요소는 배포판에 포함되지만 선택적 업데이트가 제공될 수 있습니다. ** |
-
-
-Windows 8 및 Windows 8.1용 통합 서비스 디스크를 통한 업데이트에 대한 지침은[여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에서 사용할 수 있습니다.
 
  > ** Linux 게스트에 대한 더 많은 정보는 [여기](https://technet.microsoft.com/en-us/library/dn531030.aspx)에서 찾아보세요. 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

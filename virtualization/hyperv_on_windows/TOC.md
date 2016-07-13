@@ -26,10 +26,11 @@
 # 참조
 ## [Hyper-V PowerShell](https://technet.microsoft.com/library/hh848559.aspx)
 ## [Hyper-V WMI 공급자(V2)](https://msdn.microsoft.com/library/hh850319.aspx)
+## [Hyper-V 통합 서비스](reference/ic_info.md)
 ## [Hyper-V 아키텍처](https://msdn.microsoft.com/en-us/library/cc768520(v=bts.10).aspx)
-## [하이퍼바이저 사양](develop/tlfs.md)
+## [하이퍼바이저 사양](reference/tlfs.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

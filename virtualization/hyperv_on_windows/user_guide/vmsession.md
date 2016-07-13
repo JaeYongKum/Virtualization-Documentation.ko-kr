@@ -1,7 +1,7 @@
 ---
 title: "PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리"
 description: "PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리"
-keywords: windows 10, hyper-v
+keywords: windows 10, hyper-v, powershell, integration services, integration components, automation, powershell direct
 author: scooley
 manager: timlt
 ms.date: 05/02/2016
@@ -10,14 +10,14 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
 translationtype: Human Translation
-ms.sourcegitcommit: 6eb26eda92217917a3abe7d9dd4c77c48283c8dc
-ms.openlocfilehash: 91927b751021efa9ba2cf696516ba50af28c6e05
+ms.sourcegitcommit: 87f8fb2ae8958c9c6177f6eda90678708054fce7
+ms.openlocfilehash: 75186d48346efbaaac264b00f0f92fe82fcfe424
 
 ---
 
-# PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리
+# PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
  
-PowerShell Direct를 사용하여 Windows 10 또는 Windows Server 기술 미리 보기 Hyper-V 호스트에서 원격으로 Windows 10 또는 Windows Server 기술 미리 보기 가상 컴퓨터를 관리할 수 있습니다. PowerShell Direct는 Hyper-V 호스트 또는 가상 컴퓨터에서 네트워크 구성 또는 원격 관리 설정에 관계없이 가상 컴퓨터 내에서 PowerShell 관리를 허용합니다. 이를 통해 Hyper-V 관리자는 관리 및 구성 작업을 더욱 쉽게 자동화하고 스크립트할 수 있습니다.
+PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설정에 상관없이 Hyper-V 호스트의 Windows 10 또는 Windows Server Technical Preview 가상 컴퓨터에서 임의의 PowerShell을 실행할 수 있습니다.
 
 **PowerShell Direct 실행 방법:**  
 * 대화형 세션 -- Enter-PSSession을 사용하여 대화형 PowerShell 세션을 만들고 종료하려면 [여기를 클릭](vmsession.md#create-and-exit-an-interactive-powershell-session)하세요.
@@ -281,6 +281,6 @@ PowerShell Direct는 JEA(Just Enough Administration)를 지원합니다.  사용
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

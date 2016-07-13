@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
 translationtype: Human Translation
-ms.sourcegitcommit: 960b40e8c1eda9c19ebff0972df2c87e70c7e8f6
-ms.openlocfilehash: 71e0fb430498f8a5ae4ac5b297cf5e4a2c904098
+ms.sourcegitcommit: daf82c943f9e19ec68e37207bba69fb0bf46f46f
+ms.openlocfilehash: ace5fd12856cdcff3a380eb35e4982c4c1ce4c5a
 
 ---
 
@@ -98,7 +98,7 @@ RUN 명령은 다음과 같은 형식을 사용합니다.
 ```none
 # exec form
 
-RUN ["<executable", "<param 1>", "<param 2>"
+RUN ["<executable", "<param 1>", "<param 2>"]
 
 # shell form
 
@@ -149,6 +149,8 @@ Windows에서 exec 형식으로 `RUN` 명령을 사용하는 경우 백슬래시
 RUN ["powershell", "New-Item", "c:\\test"]
 ```
 
+대상 프로그램이 Windows Installer이면 실제 (자동) 설치 절차를 시작하기 전에 추가 단계(`/x:<directory>` 플래그를 통해 설치 파일 추출)가 필요합니다. 이 외에도 종료 명령을 대기해야 합니다. 그렇지 않으면 아무것도 설치하지 않고 프로세스가 중지됩니다. 자세한 내용은 아래 예제를 참조하세요.
+
 **예**
 
 다음 예제에서는 DISM을 사용하여 컨테이너 이미지에 IIS를 설치합니다.
@@ -160,6 +162,13 @@ RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
 ```none
 RUN powershell.exe -Command c:\vcredist_x86.exe /quiet
 ``` 
+
+이 예제에서는 먼저 .NET Framework 4.5.2 개발자 팩을 추출하고 실제 설치 프로그램을 실행하여 .NET Framework 4.5.2 개발자 팩을 설치합니다. 
+```none
+RUN start /wait C:\temp\NDP452-KB2901951-x86-x64-DevPack.exe /q /x:C:\temp\NDP452DevPackSetupDir && \
+    start /wait C:\temp\NDP452DevPackSetupDir\Setup.exe /norestart /q /log %TEMP%\ndp452_install_log.txt && \
+    rmdir /s /q C:\temp\NDP452DevPackSetupDir
+```
 
 RUN 명령에 대한 자세한 내용은 [Docker.com의 RUN Reference(RUN 참조)]( https://docs.docker.com/engine/reference/builder/#run)를 참조하세요. 
 
@@ -481,6 +490,6 @@ windowsservercore   latest              6801d964fda5        4 months ago        
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

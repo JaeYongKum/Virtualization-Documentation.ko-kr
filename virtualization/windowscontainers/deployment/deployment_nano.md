@@ -4,14 +4,14 @@ description: "Nano Server에 Windows 컨테이너 배포"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
-ms.date: 06/17/2016
+ms.date: 07/06/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: 1ba6af300d0a3eba3fc6d27598044f983a4c9168
-ms.openlocfilehash: f2790186aa641378b1981a1f946665ca46fdbd73
+ms.sourcegitcommit: e035a45e22eee04263861d935b338089d8009e92
+ms.openlocfilehash: 876ffb4f4da32495fb77b735391203c33c78cff3
 
 ---
 
@@ -19,13 +19,40 @@ ms.openlocfilehash: f2790186aa641378b1981a1f946665ca46fdbd73
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
-Nano Server에서 Windows 컨테이너의 구성을 시작하려면 Nano Server가 실행되는 시스템이 필요하며 이 시스템과 PowerShell의 원격 연결도 있어야 합니다. Nano Server 배포 및 연결에 대한 자세한 내용은 [Getting Started with Nano Server(Nano Server 시작)]( https://technet.microsoft.com/en-us/library/mt126167.aspx)를 참조하세요.
+이 문서에서는 Windows 컨테이너 기능을 사용하여 기본적인 Nano Server를 배포하는 방법에 대해 단계별로 설명합니다. 고급 항목이므로 Windows 및 Windows에 컨테이너에 대한 기본적인 지식이 있다고 가정합니다. Windows 컨테이너에 대한 소개는 [Windows 컨테이너 빠른 시작](../quick_start/quick_start.md)을 참조하세요.
 
-Nano Server의 평가본은 [여기](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/nano_eula)에 있습니다.
+## Nano Server 준비
+
+다음 섹션에서는 기본적인 Nano Server 구성 배포에 대해 자세히 설명합니다. Nano Server 배포 및 구성 옵션에 대한 자세한 내용은 [Getting Started with Nano Server(Nano Server 시작)](https://technet.microsoft.com/en-us/library/mt126167.aspx)를 참조하세요.
+
+### Nano Server VM 만들기
+
+먼저 [이 위치](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/nano_eula)에서 Nano Server 평가판 VHD를 다운로드합니다. 이 VHD에서 가상 컴퓨터를 만들고 가상 컴퓨터를 시작한 다음 Hyper-V 연결 옵션 또는 사용하는 가상화 플랫폼에 따라 해당 옵션을 사용하여 연결합니다.
+
+다음으로, 관리자 암호를 설정해야 합니다. 암호를 설정하려면 Nano Server 복구 콘솔에서 `F11` 키를 누릅니다. 그러면 암호 변경 대화 상자가 표시됩니다.
+
+### 원격 PowerShell 세션 만들기
+
+Nano Server에는 대화형 로그온 기능이 없기 때문에 모든 관리는 원격 PowerShell 세션에서 완료됩니다. 원격 세션을 만들려면 Nano Server 복구 콘솔의 네트워킹 섹션을 사용하여 시스템의 IP 주소를 가져온 후 원격 호스트에서 다음 명령을 실행합니다. IPADDRESS를 Nano Server 시스템의 실제 IP 주소로 바꿉니다.
+
+신뢰할 수 있는 호스트에 Nano Server 시스템을 추가합니다.
+
+```none
+set-item WSMan:\localhost\Client\TrustedHosts IPADDRESS -Force
+```
+
+원격 PowerShell 세션을 만듭니다.
+
+```none
+Enter-PSSession -ComputerName IPADDRESS -Credential ~\Administrator
+```
+
+이러한 단계를 완료하면 Nano Server 시스템과 함께 원격 PowerShell 세션을 사용하게 됩니다. 달리 언급되지 않는 한, 이 문서의 나머지 부분은 원격 세션에서 이루어집니다.
+
 
 ## 컨테이너 기능 설치
 
-Nano Server 패키지 관리 공급자를 설치합니다.
+Nano Server 패키지 관리 공급자는 Nano Server에 역할 및 기능을 설치하도록 허용합니다. 이 명령을 사용하여 공급자를 설치합니다.
 
 ```none
 Install-PackageProvider NanoServerPackage
@@ -37,11 +64,13 @@ Install-PackageProvider NanoServerPackage
 Install-NanoServerPackage -Name Microsoft-NanoServer-Containers-Package
 ```
 
-컨테이너 기능을 설치한 후에는 Nano Server 호스트를 다시 부팅해야 합니다.
+컨테이너 기능을 설치한 후에는 Nano Server 호스트를 다시 부팅해야 합니다. 
 
 ```none
 Restart-Computer
 ```
+
+백업 후 원격 PowerShell 연결을 다시 설정합니다.
 
 ## Docker 설치
 
@@ -50,12 +79,12 @@ Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Doc
 Nano Server 호스트에 Docker 실행 파일을 저장할 폴더를 만듭니다.
 
 ```none
-New-Item -Type Directory -Path 'C:\Program Files\docker\'
+New-Item -Type Directory -Path $env:ProgramFiles'\docker\'
 ```
 
 Docker 디먼 및 클라이언트를 다운로드하고 컨테이너 호스트의 'C:\Program Files\docker\'에 복사합니다. 
 
-**참고** - Nano Server는 현재 `Invoke-WebRequest`를 지원하지 않으며 원격 시스템에서 다운로드를 완료해야 합니다.
+**참고** - Nano Server는 현재 `Invoke-WebRequest`를 지원하지 않으며 원격 시스템에서 다운로드를 완료한 후 Nano Server 호스트에 복사해야 합니다.
 
 ```none
 Invoke-WebRequest https://aka.ms/tp5/b/dockerd -OutFile .\dockerd.exe
@@ -67,10 +96,18 @@ Docker 클라이언트를 다운로드합니다.
 Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile .\docker.exe
 ```
 
-Docker 디먼 및 클라이언트를 다운로드하고 Nano Server 컨테이너 호스트에 복사했으면 호스트에서 이 명령을 실행하여 Docker를 Windows 서비스로 설치합니다.
+Docker 디먼 및 클라이언트를 다운로드한 후 Nano Server 컨테이너 호스트의 'C:\Program Files\docker\' 폴더에 복사합니다. 들어오는 SMB 연결을 허용하도록 Nano Server 방화벽을 구성해야 합니다. 이 작업은 PowerShell 또는 Nano Server에 복구 콘솔을 사용하여 완료할 수 있습니다. 
 
 ```none
-& 'C:\Program Files\docker\dockerd.exe' --register-service
+Set-NetFirewallRule -Name FPS-SMB-In-TCP -Enabled True
+```
+
+이제 표준 SMB 파일 복사 방법을 사용하여 파일을 복사할 수 있습니다.
+
+dockerd.exe 파일을 호스트에 복사하고 이 명령을 실행하여 Docker를 Windows 서비스로 설치합니다.
+
+```none
+& $env:ProgramFiles'\docker\dockerd.exe' --register-service
 ```
 
 Docker 서비스를 시작합니다.
@@ -106,14 +143,14 @@ Restart-Service Docker
 Nano Server 기본 이미지에 최신으로 태그 지정합니다.
 
 ```none
-& 'C:\Program Files\docker\docker.exe' tag nanoserver:10.0.14300.1016 nanoserver:latest
+& $env:ProgramFiles'\docker\docker.exe' tag nanoserver:10.0.14300.1016 nanoserver:latest
 ```
 
 ## Nano Server에서 Docker 관리
 
 최상의 환경을 위해 원격 시스템에서 Nano Server의 Docker를 관리하는 것이 좋습니다. 이렇게 하려면 다음 항목을 완료해야 합니다.
 
-**Docker 디먼 준비:**
+### 컨테이너 호스트 준비
 
 컨테이너 호스트에서 Docker 연결을 위한 방화벽 규칙을 만듭니다. 보안되지 않은 연결에는 포트 `2375`를 사용하고 보안 연결에는 포트 `2376`을 사용합니다.
 
@@ -123,30 +160,16 @@ netsh advfirewall firewall add rule name="Docker daemon " dir=in action=allow pr
 
 TCP를 통해 들어오는 연결을 허용하도록 Docker 디먼을 구성합니다.
 
-먼저 `c:\ProgramData\docker\config\daemon.json`에서 `daemon.json` 파일을 만듭니다.
+먼저 Nano Server 호스트의 `c:\ProgramData\docker\config\daemon.json`에 `daemon.json` 파일을 만듭니다.
 
 ```none
 new-item -Type File c:\ProgramData\docker\config\daemon.json
 ```
 
-그런 다음 이 JSON을 구성 파일에 복사합니다. 그러면 TCP 포트 2375를 통해 들어오는 연결을 허용하도록 Docker 디먼이 구성됩니다. 이는 보안되지 않은 연결로 권장되지 않지만 격리된 테스트에 사용할 수 있습니다.
+그런 후 다음 명령을 실행하여 `daemon.json` 파일에 연결 구성을 추가합니다. 그러면 TCP 포트 2375를 통해 들어오는 연결을 허용하도록 Docker 디먼이 구성됩니다. 이는 보안되지 않은 연결로 권장되지 않지만 격리된 테스트에 사용할 수 있습니다. 이 연결을 보호하는 방법에 대한 자세한 내용은 [Protect the Docker Daemon on Docker.com(Docker.com의 Docker 디몬 보호)](https://docs.docker.com/engine/security/https/)을 참조하세요.
 
 ```none
-{
-    "hosts": ["tcp://0.0.0.0:2375", "npipe://"]
-}
-```
-
-다음 예제에서는 보안된 원격 연결을 구성합니다. TLS 인증서를 만들고 적절한 위치에 복사해야 합니다. 자세한 내용은 [Windows의 Docker 디먼](./docker_windows.md)을 참조하세요.
-
-```none
-{
-    "hosts": ["tcp://0.0.0.0:2376", "npipe://"],
-    "tlsverify": true,
-    "tlscacert": "C:\\ProgramData\\docker\\certs.d\\ca.pem",
-    "tlscert": "C:\\ProgramData\\docker\\certs.d\\server-cert.pem",
-    "tlskey": "C:\\ProgramData\\docker\\certs.d\\server-key.pem",
-}
+Add-Content 'c:\programdata\docker\config\daemon.json' '{ "hosts": ["tcp://0.0.0.0:2375", "npipe://"] }'
 ```
 
 Docker 서비스를 다시 시작합니다.
@@ -155,24 +178,24 @@ Docker 서비스를 다시 시작합니다.
 Restart-Service docker
 ```
 
-**Docker 클라이언트 준비:**
+### 원격 클라이언트 준비
 
-Docker 클라이언트를 저장할 디렉터리를 만듭니다.
+작업하려는 원격 시스템에서 Docker 클라이언트를 포함할 디렉터리를 만듭니다.
 
 ```none
 New-Item -Type Directory -Path 'C:\Program Files\docker\'
 ```
 
-원격 관리 시스템에 Docker 클라이언트를 다운로드합니다.
+이 디렉터리에 Docker 클라이언트를 다운로드합니다.
 
 ```none
-Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile "C:\Program Files\docker\docker.exe"
+Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile "$env:ProgramFiles\docker\docker.exe"
 ```
 
 시스템 경로에 Docker 디렉터리를 추가합니다.
 
 ```none
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
+$env:Path += ";$env:ProgramFiles\Docker"
 ```
 
 수정된 경로를 인식할 수 있도록 PowerShell 또는 명령 세션을 다시 시작합니다.
@@ -180,13 +203,13 @@ Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile "C:\Program Files\docker\
 완료되면 `docker -H` 매개 변수를 사용하여 Docker 호스트에 액세스할 수 있습니다.
 
 ```none
-docker -H tcp://10.0.0.5:2375 run -it nanoserver cmd
+docker -H tcp://<IPADDRESS>:2375 run -it nanoserver cmd
 ```
 
 환경 변수 `DOCKER_HOST`를 만들어 `-H` 매개 변수 요구 사항을 제거할 수 있습니다. 이 작업에는 다음 PowerShell 명령을 사용할 수 있습니다.
 
 ```none
-$env:DOCKER_HOST = "tcp://<ipaddress of server:2375"
+$env:DOCKER_HOST = "tcp://<ipaddress of server>:2375"
 ```
 
 이 변수를 설정하면 명령이 다음과 같이 표시됩니다.
@@ -197,12 +220,12 @@ docker run -it nanoserver cmd
 
 ## Hyper-V 컨테이너 호스트
 
-Hyper-V 컨테이너를 배포하려면 Hyper-V 역할이 필요합니다. Hyper-V 컨테이너에 대한 자세한 내용은 [Hyper-V 컨테이너](../management/hyperv_container.md)를 참조하세요.
+Hyper-V 컨테이너를 배포하려면 컨테이너 호스트에 Hyper-V 역할이 필요합니다. Hyper-V 컨테이너에 대한 자세한 내용은 [Hyper-V 컨테이너](../management/hyperv_container.md)를 참조하세요.
 
 Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우에는 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting)를 참조하세요.
 
 
-Hyper-V 역할 설치:
+Nano Server 컨테이너 호스트에 Hyper-V 역할을 설치합니다.
 
 ```none
 Install-NanoServerPackage Microsoft-NanoServer-Compute-Package
@@ -215,10 +238,6 @@ Restart-Computer
 ```
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
