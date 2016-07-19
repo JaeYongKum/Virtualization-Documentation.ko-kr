@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6e5e6b01-7a9d-4123-8cc7-f986e10cd372
 translationtype: Human Translation
-ms.sourcegitcommit: e14ede0a2b13de08cea0a955b37a21a150fb88cf
-ms.openlocfilehash: 6364ecd2df13f5abc96fc22da03c9bca65d353b2
+ms.sourcegitcommit: 532f7459a939a6858d28cca59992c9e6531bc272
+ms.openlocfilehash: 8edc64d2e3851d81d2d844ebf3465e76579f82c7
 
 ---
 
@@ -43,7 +43,7 @@ Windows 10의 Hyper-V는 특정 집합의 운영 체제 및 하드웨어 구성�
 - VM 모니터 모드 확장(Intel CPU의 VT-c)을 지원하는 CPU.
 - 최소 4GB의 메모리. 가상 컴퓨터는 Hyper-V 호스트와 메모리를 공유하지만 예상된 가상 워크로드를 처리하려면 충분한 메모리를 제공해야 합니다.
 
-다음 항목을 시스템 bios에서 활성화해야 합니다.
+다음 항목을 시스템 BIOS에서 사용하도록 설정해야 합니다.
 - 가상화 기술 - 마더보드 제조업체에 따라 다른 레이블이 있을 수 있습니다.
 - 하드웨어 적용 데이터 실행 방지.
 
@@ -64,6 +64,6 @@ Hyper-V Requirements: A hypervisor has been detected. Features required for Hype
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

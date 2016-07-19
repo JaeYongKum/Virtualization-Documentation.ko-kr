@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
 translationtype: Human Translation
-ms.sourcegitcommit: eae8f504039a1b3732ecfb31b8068667aab104f9
-ms.openlocfilehash: 633a6b2f3fe737a6e7515fd3f923335e39cf9d17
+ms.sourcegitcommit: 94e00095a41163c5f635685af01c215f4b4efce5
+ms.openlocfilehash: e1c0404ee45ad8e775dc2319359cd16c6487ef12
 
 ---
 
@@ -20,6 +20,13 @@ ms.openlocfilehash: 633a6b2f3fe737a6e7515fd3f923335e39cf9d17
 통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며 나머지 서비스는 가상 컴퓨터의 기능이 제대로 작동하도록 하는 데 매우 중요할 수 있습니다.
 
 이 문서는 Windows에서 사용할 수 있는 각 통합 서비스에 대한 참조입니다.  또한 특정 통합 서비스 또는 통합 서비스 기록과 관련된 정보에 대한 시작 지점으로 사용할 수 있습니다.
+
+**사용자 가이드:**  
+* [Hyper-V 호스트의 통합 서비스 사용/사용 안 함](../user_guide/managing_ics.md#enable-or-disable-integration-services-using-powershell)
+* 가상 컴퓨터 내에서 통합 서비스를 사용하거나 사용하지 않도록 설정합니다.
+  * [Windows](../user_guide/managing_ics.md#manage-integration-services-from-guest-os-windows)
+  * [Linux](../user_guide/managing_ics.md#manage-integration-services-from-guest-os-linux)
+* [통합 서비스 업데이트 및 유지 관리](../user_guide/managing_ics.md#integration-service-maintenance)
 
 
 ## 빠른 참조
@@ -89,7 +96,7 @@ DemoVM  Running  Operating normally
 **Linux 디먼 이름:** hv_kvp_daemon  
 **설명:** 가상 컴퓨터와 호스트 간에 기본 메타데이터를 교환하는 방법을 제공합니다.  
 **추가됨:** Windows Server 2012, Windows 8  
-**영향:** 사용하지 않도록 설정하면 Windows 8 또는 Windows Server 2012 이전 버전을 실행하는 가상 컴퓨터에서 Hyper-V 통합 서비스에 대 한 업데이트를 받지 않습니다.  데이터 교환을 사용하지 않도록 설정하면 일부 유형의 모니터링 및 호스트 쪽 진단에 영향을 미칠 수도 있습니다.
+**영향:** 사용하지 않도록 설정하면 Windows 8 또는 Windows Server 2012 이전 버전을 실행하는 가상 컴퓨터에서 Hyper-V 통합 서비스에 대한 업데이트를 받지 않습니다.  데이터 교환을 사용하지 않도록 설정하면 일부 유형의 모니터링 및 호스트 쪽 진단에 영향을 미칠 수도 있습니다.
 
 데이터 교환 서비스(때때로 KVP라고 함)는 Windows 레지스트리를 통해 키-값 쌍(KVP)을 사용하여 가상 컴퓨터와 Hyper-V 호스트 간에 소량의 컴퓨터 정보를 공유합니다.  또한 가상 컴퓨터와 호스트 간에 사용자 지정된 데이터를 공유하는 데에도 동일한 메커니즘이 사용될 수 있습니다.
 
@@ -149,16 +156,7 @@ PowerShell Direct는 Hyper-V 호스트 또는 가상 컴퓨터에서 네트워�
 * [가상 컴퓨터에 파일 복사 및 가상 컴퓨터의 파일 복사](../user_guide/vmsession.md#copy-files-with-new-pssession-and-copy-item)
 
 
-## 추가 리소스
 
-**사용자 가이드:**  
-* [Hyper-V 호스트의 통합 서비스 사용/사용 안 함](../user_guide/managing_ics.md#enable-or-disable-integration-services-using-powershell)
-* 가상 컴퓨터의 통합 서비스를 사용하거나 사용하지 않습니다.
-** [Windows](../user_guide/managing_ics.md#manage-integration-services-from-guest-os-windows)
-** [Linux](../user_guide/managing_ics.md#manage-integration-services-from-guest-os-linux)
-* [통합 서비스 업데이트 및 유지 관리](../user_guide/managing_ics.md#integration-service-maintenance)
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO2-->
 
 
