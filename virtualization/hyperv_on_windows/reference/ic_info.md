@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
 translationtype: Human Translation
-ms.sourcegitcommit: 94e00095a41163c5f635685af01c215f4b4efce5
-ms.openlocfilehash: e1c0404ee45ad8e775dc2319359cd16c6487ef12
+ms.sourcegitcommit: 03c3ede85ff8b2fe4783581c717c1c97810b3bdd
+ms.openlocfilehash: a2fc8845bdc3e5f977d50b99ca9687b3dafd0cb6
 
 ---
 
@@ -76,9 +76,9 @@ DemoVM  Running  Operating normally
 
 **Windows 서비스 이름:** vmicshutdown  
 **Linux 디먼 이름:** hv_utils  
-**설명:** Hyper-V 호스트에서 가상 컴퓨터 종료를 요청할 수 있도록 허용합니다.  호스트는 언제나 가상 컴퓨터를 강제로 끌 수 있지만, 이는 종료를 선택하는 것이 아니라 전원 스위치를 누르는 것과 같습니다.
+**설명:** Hyper-V 호스트에서 가상 컴퓨터 종료를 요청할 수 있도록 허용합니다.  호스트는 언제나 가상 컴퓨터를 강제로 끌 수 있지만, 이는 종료를 선택하는 것이 아니라 전원 스위치를 누르는 것과 같습니다.  
 **추가됨:** Windows Server 2012, Windows 8  
-**영향:** **강력한 영향**  사용하지 않도록 설정하면 호스트는 가상 컴퓨터 내에서 종료를 트리거할 수 없습니다.  모든 종료는 데이터 손실이나 데이터 손상을 일으킬 수 있는 하드 전원 끄기가 됩니다.
+**영향:** **강력한 영향**  사용하지 않도록 설정하면 호스트는 가상 컴퓨터 내에서 종료를 트리거할 수 없습니다.  모든 종료는 데이터 손실이나 데이터 손상을 일으킬 수 있는 하드 전원 끄기가 됩니다.  
 
 
 ## Hyper-V 시간 동기화 서비스
@@ -96,7 +96,7 @@ DemoVM  Running  Operating normally
 **Linux 디먼 이름:** hv_kvp_daemon  
 **설명:** 가상 컴퓨터와 호스트 간에 기본 메타데이터를 교환하는 방법을 제공합니다.  
 **추가됨:** Windows Server 2012, Windows 8  
-**영향:** 사용하지 않도록 설정하면 Windows 8 또는 Windows Server 2012 이전 버전을 실행하는 가상 컴퓨터에서 Hyper-V 통합 서비스에 대한 업데이트를 받지 않습니다.  데이터 교환을 사용하지 않도록 설정하면 일부 유형의 모니터링 및 호스트 쪽 진단에 영향을 미칠 수도 있습니다.
+**영향:** 사용하지 않도록 설정하면 Windows 8 또는 Windows Server 2012 이전 버전을 실행하는 가상 컴퓨터에서 Hyper-V 통합 서비스에 대한 업데이트를 받지 않습니다.  데이터 교환을 사용하지 않도록 설정하면 일부 유형의 모니터링 및 호스트 쪽 진단에 영향을 미칠 수도 있습니다.  
 
 데이터 교환 서비스(때때로 KVP라고 함)는 Windows 레지스트리를 통해 키-값 쌍(KVP)을 사용하여 가상 컴퓨터와 Hyper-V 호스트 간에 소량의 컴퓨터 정보를 공유합니다.  또한 가상 컴퓨터와 호스트 간에 사용자 지정된 데이터를 공유하는 데에도 동일한 메커니즘이 사용될 수 있습니다.
 
@@ -106,7 +106,7 @@ DemoVM  Running  Operating normally
 
 
 **사용자 가이드:**  
-* [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://technet.microsoft.com/en-us/library/dn798287.aspx).
+* [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://technet.microsoft.com/en-us/library/dn798287.aspx).  
 
 
 ## Hyper-V 볼륨 섀도 복사본 요청자
