@@ -2727,8 +2727,8 @@
 * Archive Datetime: 2016-07-21 07:10:14
 * Handback File: [ic_info.98dd018260e2c766210a8b9aa82efa377f584781.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/61abb7f4340af14ebba1e4ed27f57c182d17f9b6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/ic_info.98dd018260e2c766210a8b9aa82efa377f584781.ko-kr.xlf)
 * Handback Datetime: 2016-07-21 08:41:32
-* Bilingual File: [ic_info.98dd018260e2c766210a8b9aa82efa377f584781.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c0022779aa525dd7fa62749ffb29aee4d1a58d49/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/ic_info.98dd018260e2c766210a8b9aa82efa377f584781.ko-kr.xlf)
-* Bilingual Datetime: 2016-07-19 17:07:25
+* Bilingual File: [ic_info.98dd018260e2c766210a8b9aa82efa377f584781.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/61abb7f4340af14ebba1e4ed27f57c182d17f9b6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/ic_info.98dd018260e2c766210a8b9aa82efa377f584781.ko-kr.xlf)
+* Bilingual Datetime: 2016-07-21 08:42:55
 * [Back to Top](#report-top)
 
 ##### <a name='49fd4f7f5a035c68975e3c38b2daabeed8e7dd5f180'></a> Source: [virtualization\hyperv_on_windows\reference\tlfs.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/e62373c30c6e233ab1db94720c5b2a1512dfb936/virtualization/hyperv_on_windows/reference/tlfs.md)
