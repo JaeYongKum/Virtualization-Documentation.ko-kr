@@ -4,14 +4,14 @@ description: "Windows에서 Docker 구성"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
-ms.date: 06/02/2016
+ms.date: 07/15/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: 2d6f2c24624883457302c925c2bb47e6c867b730
-ms.openlocfilehash: 533f3a3277e3d9654f0d425c9c0f442c93e2d24a
+ms.sourcegitcommit: 475240afdf97af117519cfaa287f1e4fec8837a5
+ms.openlocfilehash: 5b86442643fb5937b62a67d144ae0d1c98373b41
 
 ---
 
@@ -121,8 +121,6 @@ Windows에서 Docker 디먼을 구성하는 기본 방법은 구성 파일을 �
 }
 ```
 
-
-
 ## 서비스 제어 관리자
 
 또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 디먼을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 디먼 플래그를 설정합니다.
@@ -156,6 +154,21 @@ Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 �
 }
 ```
 
+## 프록시 구성
+
+`docker search` 및 `docker pull`에 대한 프록시 정보를 설정하려면 `HTTP_PROXY` 또는 `HTTPS_PROXY` 이름과 프록시 정보 값을 사용하여 Windows 환경 변수를 만듭니다. 이 작업은 PowerShell에서 다음과 유사한 명령을 사용하여 수행할 수 있습니다.
+
+```none
+[Environment]::SetEnvironmentVariable("HTTP_PROXY”, “http://username:password@proxy:port/”, [EnvironmentVariableTarget]::Machine)
+```
+
+변수를 설정한 후에는 Docker 서비스를 다시 시작합니다.
+
+```none
+restart-service docker
+```
+
+자세한 내용은 [Daemon Socket Options on Docker.com](https://docs.docker.com/v1.10/engine/reference/commandline/daemon/#daemon-socket-option)(Docker.com의 디먼 소켓 옵션)을 참조하세요.
 
 ## 로그 수집
 Docker 디먼은 파일 대신 Windows '응용 프로그램' 이벤트 로그에 기록합니다. 이러한 로그는 Windows PowerShell을 사용하여 쉽게 읽고 정렬하고 필터링할 수 있습니다.
@@ -171,6 +184,6 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-3
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 
