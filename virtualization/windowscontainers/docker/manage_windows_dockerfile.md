@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
 translationtype: Human Translation
-ms.sourcegitcommit: daf82c943f9e19ec68e37207bba69fb0bf46f46f
-ms.openlocfilehash: ace5fd12856cdcff3a380eb35e4982c4c1ce4c5a
+ms.sourcegitcommit: 97a7d5fdd25f755d73e05bfc5f3c4a80a7b6b8c5
+ms.openlocfilehash: 84baad10511eb070e654f1ee7d71eb547d3f2ee7
 
 ---
 
@@ -158,17 +158,11 @@ RUN ["powershell", "New-Item", "c:\\test"]
 RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
 ```
 
-다음 예제에서는 Visual Studio의 재배포 가능 패키지를 설치합니다.
-```none
-RUN powershell.exe -Command c:\vcredist_x86.exe /quiet
-``` 
+다음 예제에서는 Visual Studio의 재배포 가능 패키지를 설치합니다. 설치 관리자를 실행할 때 `start-process` 및 `-wait` 매개 변수를 사용합니다. 그래야만 설치가 완료된 다음에 Dockerfile의 다음 단계로 이동합니다.
 
-이 예제에서는 먼저 .NET Framework 4.5.2 개발자 팩을 추출하고 실제 설치 프로그램을 실행하여 .NET Framework 4.5.2 개발자 팩을 설치합니다. 
 ```none
-RUN start /wait C:\temp\NDP452-KB2901951-x86-x64-DevPack.exe /q /x:C:\temp\NDP452DevPackSetupDir && \
-    start /wait C:\temp\NDP452DevPackSetupDir\Setup.exe /norestart /q /log %TEMP%\ndp452_install_log.txt && \
-    rmdir /s /q C:\temp\NDP452DevPackSetupDir
-```
+RUN start-Process c:\vcredist_x86.exe -ArgumentList '/quiet' -Wait
+``` 
 
 RUN 명령에 대한 자세한 내용은 [Docker.com의 RUN Reference(RUN 참조)]( https://docs.docker.com/engine/reference/builder/#run)를 참조하세요. 
 
@@ -490,6 +484,6 @@ windowsservercore   latest              6801d964fda5        4 months ago        
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 

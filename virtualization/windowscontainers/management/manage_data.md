@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: f5998534-917b-453c-b873-2953e58535b1
 translationtype: Human Translation
-ms.sourcegitcommit: 111a4ca9f5d693cd1159f7597110409d670f0f5c
-ms.openlocfilehash: b8eca51e347f17e787095b7e4349337cc3ae69a7
+ms.sourcegitcommit: 493b669bc47fc589486a82cfea73a0bb1e88cf79
+ms.openlocfilehash: 26c010e79a4913b2e138f6d1d78f9406dbacbc6b
 
 ---
 
@@ -73,6 +73,20 @@ c:\container-share>dir
 
 단일 파일 탑재에 대한 자세한 내용은 [docker.com의 Manage data in containers(컨테이너에서 데이터 관리)](https://docs.docker.com/engine/userguide/containers/dockervolumes/#mount-a-host-directory-as-a-data-volume)를 참조하세요.
 
+### 전체 드라이브 탑재
+
+다음과 유사한 명령을 사용하여 전체 드라이브를 탑재할 수 있습니다. 백슬래시를 포함하지 마세요.
+
+```none
+docker run -it -v d: windowsservercore cmd
+```
+
+현재 두 번째 드라이브의 일부를 탑재할 수는 없습니다. 예를 들어 다음은 가능하지 않습니다.
+
+```none
+docker run -it -v d:\source:d:\destination windowsservercore cmd
+```
+
 ### 데이터 볼륨 컨테이너
 
 데이터 볼륨은 `docker run` 명령의 `--volumes-from` 매개 변수를 사용하여 실행 중인 다른 컨테이너에서 상속할 수 있습니다. 이 상속을 사용하면 컨테이너화된 응용 프로그램의 데이터 볼륨을 호스트하려는 명시적인 용도로 컨테이너를 만들 수 있습니다. 
@@ -111,6 +125,6 @@ docker inspect backstabbing_kowalevski
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO3-->
 
 

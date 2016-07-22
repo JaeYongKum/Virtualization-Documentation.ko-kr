@@ -4,14 +4,14 @@ description: "컨테이너 배포 빠른 시작"
 keywords: docker, containers
 author: neilpeterson
 manager: timlt
-ms.date: 07/07/2016
+ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: 5f42cae373b1f8f0484ffac82f5ebc761c37d050
-ms.openlocfilehash: 9ef41ff031e8b7bc463e71f39ee6a3b8e4fd846e
+ms.sourcegitcommit: edf2c2597e57909a553eb5e6fcc75cdb820fce68
+ms.openlocfilehash: b37d402f2e6c950db061f5de0c86f0e9aace62b4
 
 ---
 
@@ -46,6 +46,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 ```none
 Restart-Computer -Force
+```
+
+다시 부팅되면 다음 명령을 실행하여 Windows 컨테이너 Technical Preview의 알려진 문제를 수정합니다.  
+
+ ```none
+Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 1 -Force
 ```
 
 ## 2. Docker 설치
@@ -127,40 +133,51 @@ Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이�
 
 ## 4. 첫 번째 컨테이너 배포
 
-이 간단한 예제에서는 .NET Core 이미지를 미리 만들었습니다. `docker pull` 명령을 사용하여 이 이미지를 다운로드합니다.
+이 간단한 예제에서는 'Hello World' 컨테이너 이미지를 만들고 배포합니다. 최상의 환경을 유지하려면 관리자 권한 Windows CMD 셸에서 이 명령을 실행합니다.
 
-실행하면 컨테이너가 시작되고 간단한 .NET Core 응용 프로그램이 실행된 다음 컨테이너는 종료됩니다. 
-
-```none
-docker pull microsoft/sample-dotnet
-```
-
-이는 `docker images` 명령으로 확인할 수 있습니다.
+먼저 `nanoserver` 이미지에서 대화형 세션을 사용하여 컨테이너를 시작합니다. 컨테이너가 시작되면 컨테이너 내에서 명령 셸이 표시됩니다.  
 
 ```none
-docker 
-
-REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
-microsoft/sample-dotnet  latest              28da49c3bff4        41 hours ago        918.3 MB
-nanoserver               10.0.14300.1030     3f5112ddd185        3 weeks ago         810.2 MB
-nanoserver               latest              3f5112ddd185        3 weeks ago         810.2 MB
+docker run -it nanoserver cmd
 ```
 
-`docker run` 명령으로 컨테이너를 실행합니다. 다음 예제에서는 `--rm` 매개 변수를 지정합니다. 이 매개 변수는 Docker 엔진이 더 이상 실행되는 않는 컨테이너를 삭제하도록 지시합니다. 
-
-Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Reference(Docker Run 참조)]( https://docs.docker.com/engine/reference/run/)를 참조하세요.
+컨테이너 내에서 간단한 'Hello World' 스크립트를 만듭니다.
 
 ```none
-docker run --isolation=hyperv --rm microsoft/sample-dotnet
-```
+powershell.exe Add-Content C:\helloworld.ps1 'Write-Host "Hello World"'
+```   
 
-**참고** - 시간 제한 이벤트가 나타나면서 오류가 발생하는 경우 다음 PowerShell 스크립트를 실행하고 작업을 다시 시도하세요.
+만들었으면 컨테이너를 종료합니다.
 
 ```none
-Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 1 -Force
+exit
 ```
 
-`docker run` 명령의 결과로 sample-dotnet 이미지에서 Hyper-V 컨테이너를 만들고 샘플 응용 프로그램을 실행(출력은 셸에 에코됨)한 다음 컨테이너를 중지하고 제거했습니다. 이후 Windows 10 및 컨테이너 빠른 시작에서는 Windows 10의 컨테이너에서 응용 프로그램을 만들고 배포하는 과정을 자세히 살펴봅니다.
+이제 수정된 컨테이너에서 새 컨테이너 이미지를 만듭니다. 컨테이너 목록을 보려면 다음을 실행하고 컨테이너 ID를 적어둡니다.
+
+```none
+docker ps -a
+```
+
+다음 명령을 실행하여 새 ‘HelloWorld’ 이미지를 만듭니다. <containerid>를 컨테이너 ID로 바꿉니다.
+
+```none
+docker commit <containerid> helloworld
+```
+
+완료되면 hello world 스크립트가 포함된 사용자 지정 이미지가 생깁니다. 이 이미지를 확인하려면 다음 명령을 사용합니다.
+
+```none
+docker images
+```
+
+마지막으로 컨테이너를 실행하려면 `docker run` 명령을 사용입니다.
+
+```none
+docker run --rm helloworld powershell c:\helloworld.ps1
+```
+
+`docker run` 명령의 결과로 'HelloWorld' 이미지에서 Hyper-V 컨테이너를 만들고 샘플 'Hello World' 스크립트를 실행(출력은 셸에 에코됨)한 다음 컨테이너를 중지하고 제거했습니다. 이후 Windows 10 및 컨테이너 빠른 시작에서는 Windows 10의 컨테이너에서 응용 프로그램을 만들고 배포하는 과정을 자세히 살펴봅니다.
 
 ## 다음 단계
 
