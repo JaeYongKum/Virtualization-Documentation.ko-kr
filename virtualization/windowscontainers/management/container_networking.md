@@ -1,7 +1,7 @@
 ---
 title: "Windows 컨테이너 네트워킹"
 description: "Windows 컨테이너에 대한 네트워킹을 구성합니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: jmesser81
 manager: timlt
 ms.date: 05/02/2016
@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
 translationtype: Human Translation
-ms.sourcegitcommit: cd344ef02f03149129171b99bfdd92338ffdf24f
-ms.openlocfilehash: 161aaeed6c625d92b45be59dde4357836934956b
+ms.sourcegitcommit: 5cb7dca9469a687add1348753d89d04dc4a633b7
+ms.openlocfilehash: 406966a2bc80cdfc6fbe7461bf478fab317ed7e5
 
 ---
 
@@ -145,7 +145,7 @@ PS> Stop-Service docker
 PS> Set-Service docker -StartupType Disabled
 Reboot Host
 PS> Get-NetNat | Remove-NetNat
-PS> Set-Service docker -StartupType automaticac
+PS> Set-Service docker -StartupType automatic
 PS> Start-Service docker 
 ```
 
@@ -220,6 +220,11 @@ docker network create -d nat --subnet=192.168.0.0/24 "MyCustomNatNetwork"
 컨테이너 호스트에서 투명, L2Bridge 또는 L2 터널 네트워크에 사용할 네트워크 어댑터를 지정하려면 *com.docker.network.windowsshim.interface* 옵션을 지정합니다. 
 ```none
 docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 2" "TransparentNetTwo"
+```
+
+*com.docker.network.windowsshim.interface*의 값은 다음에서 어댑터의 *이름*입니다. 
+```none
+Get-NetAdapter
 ```
 
 > PowerShell을 통해 만드는 컨테이너 네트워크는 Docker 디먼이 다시 시작된 다음에야 Docker에서 사용할 수 있습니다. PowerShell 통해 컨테이너 네트워크를 변경하는 경우에도 Docker 디먼을 다시 시작해야 합니다.
@@ -338,6 +343,6 @@ bbf72109b1fc        windowsservercore   "cmd"               6 seconds ago       
  * --ip-range
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO5-->
 
 
