@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: 6c7ce9f1767c6c6391cc6d33a553216bd815ff72
-ms.openlocfilehash: bd93f5a73268b552710304d7da568e1497239679
+ms.sourcegitcommit: 9aa443b24e5c8a004b08203f67e578dd2d104746
+ms.openlocfilehash: 0ee1231b923e25975a4dfddb70c16366a86c9565
 
 ---
 
@@ -54,6 +54,8 @@ Restart-Computer -Force
 Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 1 -Force
 ```
 
+> 현재 릴리스에서 Hyper-v 컨테이너를 안전하게 사용하려면 OpLock을 사용하지 않도록 설정해야 합니다. Oplock을 다시 활성화하려면 다음 명령을 사용합니다.  `Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 0 -Force`
+
 ## 2. Docker 설치
 
 Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다. 이렇게 하려면 다음 명령을 실행합니다. 
@@ -93,34 +95,20 @@ Start-Service Docker
 ## 3. 기본 컨테이너 이미지 설치
 
 Windows 컨테이너는 템플릿이나 이미지에서 배포됩니다. 컨테이너를 배포하려면 먼저 기본 OS 이미지를 다운로드해야 합니다. 다음 명령은 Nano Server 기본 이미지를 다운로드합니다.
-    
-> 이 절차는 Windows 참가자 빌드 14372 이상에 적용되며 'docker pull'이 작동할 때까지 임시로 사용됩니다.
 
-Nano Server 서버 기본 이미지를 다운로드합니다. 
+Nano Server 서버 기본 이미지를 끌어옵니다. 
 
 ```none
-Start-BitsTransfer https://aka.ms/tp5/6b/docker/nanoserver -Destination nanoserver.tar.gz
+docker pull microsoft/nanoserver
 ```
 
-기본 이미지를 설치합니다.
-
-```none  
-docker load -i nanoserver.tar.gz
-```
-
-이 단계에서 `docker images`를 실행하면 설치된 이미지(이 경우 Nano Server 이미지) 목록이 반환됩니다.
+이미지를 끌어온 후 `docker images`를 실행하면 설치된 이미지(이 경우 Nano Server 이미지) 목록이 반환됩니다.
 
 ```none
 docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-nanoserver          10.0.14300.1030     3f5112ddd185        3 weeks ago         810.2 MB
-```
-
-계속하려면 먼저 이 이미지에 ‘최신’ 버전으로 태그를 지정해야 합니다. 이렇게 하려면 다음 명령을 실행합니다.
-
-```none
-docker tag microsoft/nanoserver:10.0.14300.1030 nanoserver:latest
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+microsoft/nanoserver   latest              3a703c6e97a2        7 weeks ago         969.8 MB
 ```
 
 Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이미지 관리](../management/manage_images.md)를 참조하세요.

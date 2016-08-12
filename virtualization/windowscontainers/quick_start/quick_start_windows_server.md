@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: 6c7ce9f1767c6c6391cc6d33a553216bd815ff72
-ms.openlocfilehash: 4e7123dcff2564bd264c91f228941e86a0723674
+ms.sourcegitcommit: b3f273d230344cff28d4eab7cebf96bac14f68c2
+ms.openlocfilehash: 808436ba179daa09fbc45ee7f7708a505bd1b4c8
 
 ---
 
@@ -85,37 +85,19 @@ Start-Service docker
 
 Windows 컨테이너는 템플릿이나 이미지에서 배포됩니다. 컨테이너를 배포하려면 먼저 기본 OS 이미지를 다운로드해야 합니다. 다음 명령은 Windows Server Core 기본 이미지를 다운로드합니다.
 
-먼저 컨테이너 이미지 패키지 공급자를 설치합니다.
-
 ```none
-Install-PackageProvider ContainerImage -Force
+docker pull microsoft/windowsservercore
 ```
 
-그런 다음 Windows Server Core 이미지를 설치합니다. 이 프로세스에는 다소 시간이 걸릴 수 있으므로 중단하고 다운로드가 완료되면 백업을 선택합니다.
+이 프로세스에는 다소 시간이 걸릴 수 있으므로 중단하고 끌어오기가 완료되면 백업을 선택합니다.
 
-```none
-Install-ContainerImage -Name WindowsServerCore    
-```
-
-기본 이미지를 설치한 후에는 Docker 서비스를 다시 시작해야 합니다.
-
-```none
-Restart-Service docker
-```
-
-이 단계에서 `docker images`를 실행하면 설치된 이미지(이 경우 Windows Server Core 이미지) 목록이 반환됩니다.
+이미지를 끌어온 후 `docker images`를 실행하면 설치된 이미지(이 경우 Windows Server Core 이미지) 목록이 반환됩니다.
 
 ```none
 docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-windowsservercore   10.0.14300.1000     dbfee88ee9fd        7 weeks ago         9.344 GB
-```
-
-계속하려면 먼저 이 이미지에 ‘최신’ 버전으로 태그를 지정해야 합니다. 이렇게 하려면 다음 명령을 실행합니다.
-
-```none
-docker tag windowsservercore:10.0.14300.1000 windowsservercore:latest
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+microsoft/windowsservercore   latest              02cb7f65d61b        7 weeks ago         7.764 GB
 ```
 
 Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이미지 관리](../management/manage_images.md)를 참조하세요.

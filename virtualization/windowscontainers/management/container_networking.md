@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
 translationtype: Human Translation
-ms.sourcegitcommit: 5cb7dca9469a687add1348753d89d04dc4a633b7
-ms.openlocfilehash: 406966a2bc80cdfc6fbe7461bf478fab317ed7e5
+ms.sourcegitcommit: fa636f08858353664a3b2ff9fe0d4471d965db54
+ms.openlocfilehash: e680dac160c5da92a2329babefb397faa8654c91
 
 ---
 
@@ -128,25 +128,27 @@ New-ContainerNetwork -Name MyNatNetwork -Mode NAT -SubnetPrefix "172.16.0.0/12" 
 
 > Windows Server 2016 Technical Preview 5 및 최신 WIP(Windows Insider Preview) "플라이트" 빌드에는 새 빌드로 업그레이드할 때 중복된(예: "누수") 컨테이너 네트워크 및 vSwitch가 생성되는 알려진 버그가 있습니다. 이 문제를 해결하려면 다음 스크립트를 실행하세요.
 ```none
-PS> $KeyPath = "HKLM:\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\SwitchList"
-PS> $keys = get-childitem $KeyPath
-PS> foreach($key in $keys)
-PS> {
-PS>    if ($key.GetValue("FriendlyName") -eq 'nat')
-PS>    {
-PS>       $newKeyPath = $KeyPath+"\"+$key.PSChildName
-PS>       Remove-Item -Path $newKeyPath -Recurse
-PS>    }
-PS> }
-PS> remove-netnat -Confirm:$false
-PS> Get-ContainerNetwork | Remove-ContainerNetwork
-PS> Get-VmSwitch -Name nat | Remove-VmSwitch (_failure is expected_)
-PS> Stop-Service docker
-PS> Set-Service docker -StartupType Disabled
-Reboot Host
-PS> Get-NetNat | Remove-NetNat
-PS> Set-Service docker -StartupType automatic
-PS> Start-Service docker 
+$KeyPath = "HKLM:\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\SwitchList"
+$keys = get-childitem $KeyPath
+foreach($key in $keys)
+{
+   if ($key.GetValue("FriendlyName") -eq 'nat')
+   {
+      $newKeyPath = $KeyPath+"\"+$key.PSChildName
+      Remove-Item -Path $newKeyPath -Recurse
+   }
+}
+remove-netnat -Confirm:$false
+Get-ContainerNetwork | Remove-ContainerNetwork
+Get-VmSwitch -Name nat | Remove-VmSwitch # Note: failure is expected
+Stop-Service docker
+Set-Service docker -StartupType Disabled
+```
+> 호스트를 다시 부팅 후 나머지 단계를 실행합니다.
+```none
+Get-NetNat | Remove-NetNat -Confirm $false
+Set-Service docker -StartupType automatic
+Start-Service docker 
 ```
 
 ### 투명 네트워킹
@@ -343,6 +345,7 @@ bbf72109b1fc        windowsservercore   "cmd"               6 seconds ago       
  * --ip-range
 
 
-<!--HONumber=Jul16_HO5-->
+
+<!--HONumber=Aug16_HO2-->
 
 
