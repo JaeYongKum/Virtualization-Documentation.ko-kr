@@ -14,7 +14,7 @@
 ## [컨테이너 호스트 - Nano Server](deployment/deployment_nano.md)
 
 # Windows의 Docker
-## [Windows에서 Docker 디먼](docker/configure_docker_daemon.md)
+## [Windows의 Docker 엔진](docker/configure_docker_daemon.md)
 ## [Windows의 Dockerfile](docker/manage_windows_dockerfile.md)
 ## [Dockerfile 최적화](docker/optimize_windows_dockerfile.md)
 
@@ -41,6 +41,6 @@
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 
