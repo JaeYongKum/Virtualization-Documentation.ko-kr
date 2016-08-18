@@ -4629,8 +4629,8 @@
 * Archive Datetime: 2016-08-18 07:17:08
 * Handback File: [TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/6a102ab92dea4e694a2b02da02856473fa082549/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf)
 * Handback Datetime: 2016-08-18 12:50:04
-* Bilingual File: [TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/5eb0e0a412f6e9771f06c16756ca113bf3a68fdf/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf)
-* Bilingual Datetime: 2016-07-07 08:17:39
+* Bilingual File: [TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/6a102ab92dea4e694a2b02da02856473fa082549/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf)
+* Bilingual Datetime: 2016-08-18 12:52:24
 * [Back to Top](#report-top)
 
 ##### <a name='600fd94bf56ee1f241fc7c06f31e2a49c744b394325'></a> Source: [windows-container-samples\nanoserver\golang\Dockerfile](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/fac57150de3ffd6c7d957dd628b937d5c41c1b35/windows-container-samples/nanoserver/golang/Dockerfile)
