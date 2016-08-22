@@ -1,7 +1,7 @@
 ---
 title: "Nano Server에 Windows 컨테이너 배포"
 description: "Nano Server에 Windows 컨테이너 배포"
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 07/06/2016
@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: e035a45e22eee04263861d935b338089d8009e92
-ms.openlocfilehash: 876ffb4f4da32495fb77b735391203c33c78cff3
+ms.sourcegitcommit: fac57150de3ffd6c7d957dd628b937d5c41c1b35
+ms.openlocfilehash: d2f19e96f06ba18ab7e23e62652f569265c6f43f
 
 ---
 
@@ -74,7 +74,7 @@ Restart-Computer
 
 ## Docker 설치
 
-Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 다음 단계를 사용하여 Docker 디먼 및 클라이언트를 설치합니다.
+Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 다음 단계를 사용하여 Docker 엔진 및 클라이언트를 설치합니다.
 
 Nano Server 호스트에 Docker 실행 파일을 저장할 폴더를 만듭니다.
 
@@ -82,7 +82,7 @@ Nano Server 호스트에 Docker 실행 파일을 저장할 폴더를 만듭니�
 New-Item -Type Directory -Path $env:ProgramFiles'\docker\'
 ```
 
-Docker 디먼 및 클라이언트를 다운로드하고 컨테이너 호스트의 'C:\Program Files\docker\'에 복사합니다. 
+Docker 엔진 및 클라이언트를 다운로드하고 컨테이너 호스트의 'C:\Program Files\docker\'에 복사합니다. 
 
 **참고** - Nano Server는 현재 `Invoke-WebRequest`를 지원하지 않으며 원격 시스템에서 다운로드를 완료한 후 Nano Server 호스트에 복사해야 합니다.
 
@@ -96,7 +96,7 @@ Docker 클라이언트를 다운로드합니다.
 Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile .\docker.exe
 ```
 
-Docker 디먼 및 클라이언트를 다운로드한 후 Nano Server 컨테이너 호스트의 'C:\Program Files\docker\' 폴더에 복사합니다. 들어오는 SMB 연결을 허용하도록 Nano Server 방화벽을 구성해야 합니다. 이 작업은 PowerShell 또는 Nano Server에 복구 콘솔을 사용하여 완료할 수 있습니다. 
+Docker 엔진 및 클라이언트를 다운로드한 후 Nano Server 컨테이너 호스트의 'C:\Program Files\docker\' 폴더에 복사합니다. 들어오는 SMB 연결을 허용하도록 Nano Server 방화벽을 구성해야 합니다. 이 작업은 PowerShell 또는 Nano Server에 복구 콘솔을 사용하여 완료할 수 있습니다. 
 
 ```none
 Set-NetFirewallRule -Name FPS-SMB-In-TCP -Enabled True
@@ -158,7 +158,7 @@ Nano Server 기본 이미지에 최신으로 태그 지정합니다.
 netsh advfirewall firewall add rule name="Docker daemon " dir=in action=allow protocol=TCP localport=2376
 ```
 
-TCP를 통해 들어오는 연결을 허용하도록 Docker 디먼을 구성합니다.
+TCP를 통해 들어오는 연결을 허용하도록 Docker 엔진을 구성합니다.
 
 먼저 Nano Server 호스트의 `c:\ProgramData\docker\config\daemon.json`에 `daemon.json` 파일을 만듭니다.
 
@@ -166,7 +166,7 @@ TCP를 통해 들어오는 연결을 허용하도록 Docker 디먼을 구성합�
 new-item -Type File c:\ProgramData\docker\config\daemon.json
 ```
 
-그런 후 다음 명령을 실행하여 `daemon.json` 파일에 연결 구성을 추가합니다. 그러면 TCP 포트 2375를 통해 들어오는 연결을 허용하도록 Docker 디먼이 구성됩니다. 이는 보안되지 않은 연결로 권장되지 않지만 격리된 테스트에 사용할 수 있습니다. 이 연결을 보호하는 방법에 대한 자세한 내용은 [Protect the Docker Daemon on Docker.com(Docker.com의 Docker 디몬 보호)](https://docs.docker.com/engine/security/https/)을 참조하세요.
+그런 후 다음 명령을 실행하여 `daemon.json` 파일에 연결 구성을 추가합니다. 그러면 TCP 포트 2375를 통해 들어오는 연결을 허용하도록 Docker 엔진이 구성됩니다. 이는 보안되지 않은 연결로 권장되지 않지만 격리된 테스트에 사용할 수 있습니다. 이 연결을 보호하는 방법에 대한 자세한 내용은 [Protect the Docker Daemon on Docker.com(Docker.com의 Docker 디몬 보호)](https://docs.docker.com/engine/security/https/)을 참조하세요.
 
 ```none
 Add-Content 'c:\programdata\docker\config\daemon.json' '{ "hosts": ["tcp://0.0.0.0:2375", "npipe://"] }'
@@ -238,6 +238,6 @@ Restart-Computer
 ```
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

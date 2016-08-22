@@ -1,23 +1,23 @@
 ---
 title: "Windows에서 Docker 구성"
 description: "Windows에서 Docker 구성"
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 07/15/2016
+ms.date: 08/17/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: 475240afdf97af117519cfaa287f1e4fec8837a5
-ms.openlocfilehash: 5b86442643fb5937b62a67d144ae0d1c98373b41
+ms.sourcegitcommit: fac57150de3ffd6c7d957dd628b937d5c41c1b35
+ms.openlocfilehash: 7ba03dbcedbe42d54c955ff321e9f3f180a5a674
 
 ---
 
-# Windows에서 Docker 디먼
+# Windows의 Docker 엔진
 
-Docker 엔진은 Windows에 포함되어 있지 않으므로 개별적으로 설치하고 구성해야 합니다. 또한 Docker 디먼에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서에서는 docker 디먼을 설치 및 구성하는 방법을 자세히 설명하고 일반적으로 사용하는 구성의 몇 가지 예도 제공합니다.
+Docker 엔진 및 클라이언트는 Windows에 포함되어 있지 않으므로 개별적으로 설치하고 구성해야 합니다. 또한 Docker 엔진에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서에서는 Docker 엔진을 설치 및 구성하는 방법을 자세히 설명하고 일반적으로 사용하는 구성의 몇 가지 예도 제공합니다.
 
 ## Docker 설치
 
@@ -29,7 +29,7 @@ Docker 실행 파일을 저장할 폴더를 만듭니다.
 New-Item -Type Directory -Path 'C:\Program Files\docker\'
 ```
 
-Docker 디먼을 다운로드합니다.
+Docker 엔진을 다운로드합니다.
 
 ```none
 Invoke-WebRequest https://aka.ms/tp5/b/dockerd -OutFile $env:ProgramFiles\docker\dockerd.exe
@@ -63,9 +63,9 @@ Docker를 사용하려면 먼저 컨테이너 이미지를 설치해야 합니�
 
 ## Docker 구성 파일
 
-Windows에서 Docker 디먼을 구성하는 기본 방법은 구성 파일을 사용하는 것입니다. 구성 파일은 'c:\ProgramData\docker\config\daemon.json'에서 찾을 수 있습니다. 이 파일이 없는 경우 만들 수 있습니다.
+Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 사용하는 것입니다. 구성 파일은 'c:\ProgramData\docker\config\daemon.json'에서 찾을 수 있습니다. 이 파일이 없는 경우 만들 수 있습니다.
 
-참고: 사용 가능한 Docker 구성 옵션 중에 Windows의 Docker에 적용할 수 없는 옵션도 있습니다. 아래 예제에서는 그러한 옵션을 보여 줍니다. Linux용을 포함하여 Docker 디먼 구성에 대한 전체 설명서는 [Docker Daemon(Docker 디먼)]( https://docs.docker.com/v1.10/engine/reference/commandline/daemon/)을 참조하세요.
+참고: 사용 가능한 Docker 구성 옵션 중에 Windows의 Docker에 적용할 수 없는 옵션도 있습니다. 아래 예제에서는 그러한 옵션을 보여 줍니다. Linux용을 포함하여 Docker 엔진 구성에 대한 전체 설명서는 [Docker Daemon]( https://docs.docker.com/v1.10/engine/reference/commandline/daemon/)(Docker 디먼)을 참조하세요.
 
 ```none
 {
@@ -101,7 +101,7 @@ Windows에서 Docker 디먼을 구성하는 기본 방법은 구성 파일을 �
 }
 ```
 
-구성 파일에 필요한 구성 변경 내용만 추가해야 합니다. 예를 들어 이 샘플에서는 포트 2375를 통해 들어오는 요청을 허용하도록 Docker 디먼을 구성합니다. 다른 모든 구성 옵션은 기본값을 사용합니다.
+구성 파일에 필요한 구성 변경 내용만 추가해야 합니다. 예를 들어 이 샘플에서는 포트 2375를 통해 들어오는 요청을 허용하도록 Docker 엔진을 구성합니다. 다른 모든 구성 옵션은 기본값을 사용합니다.
 
 ```none
 {
@@ -123,7 +123,7 @@ Windows에서 Docker 디먼을 구성하는 기본 방법은 구성 파일을 �
 
 ## 서비스 제어 관리자
 
-또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 디먼을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 디먼 플래그를 설정합니다.
+또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 엔진을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 엔진 플래그를 설정합니다.
 
 
 ```none
@@ -136,7 +136,7 @@ sc config docker binpath= "\"C:\Program Files\docker\dockerd.exe\" --run-service
 
 ### 기본 네트워크 만들기 
 
-기본 NAT 네트워크를 만들지 않도록 Docker 디먼을 구성하려면 다음을 사용합니다. 자세한 내용은 [Docker 네트워크 관리](../management/container_networking.md)를 참조하세요.
+기본 NAT 네트워크를 만들지 않도록 Docker 엔진을 구성하려면 다음을 사용합니다. 자세한 내용은 [Docker 네트워크 관리](../management/container_networking.md)를 참조하세요.
 
 ```none
 {
@@ -146,7 +146,7 @@ sc config docker binpath= "\"C:\Program Files\docker\dockerd.exe\" --run-service
 
 ### Docker 보안 그룹 설정
 
-Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 이러한 명령은 명명된 파이프를 통해 실행됩니다. 기본적으로 Administrators 그룹의 구성원만 명명된 파이프를 통해 Docker 디먼에 액세스할수 있습니다. 이 액세스 권한이 있는 보안 그룹을 지정하려면 `group` 플래그를 사용합니다.
+Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 이러한 명령은 명명된 파이프를 통해 실행됩니다. 기본적으로 Administrators 그룹의 구성원만 명명된 파이프를 통해 Docker 엔진에 액세스할수 있습니다. 이 액세스 권한이 있는 보안 그룹을 지정하려면 `group` 플래그를 사용합니다.
 
 ```none
 {
@@ -171,9 +171,9 @@ restart-service docker
 자세한 내용은 [Daemon Socket Options on Docker.com](https://docs.docker.com/v1.10/engine/reference/commandline/daemon/#daemon-socket-option)(Docker.com의 디먼 소켓 옵션)을 참조하세요.
 
 ## 로그 수집
-Docker 디먼은 파일 대신 Windows '응용 프로그램' 이벤트 로그에 기록합니다. 이러한 로그는 Windows PowerShell을 사용하여 쉽게 읽고 정렬하고 필터링할 수 있습니다.
+Docker 엔진은 파일 대신 Windows '응용 프로그램' 이벤트 로그에 기록합니다. 이러한 로그는 Windows PowerShell을 사용하여 쉽게 읽고 정렬하고 필터링할 수 있습니다.
 
-예를 들어 가장 오래된 순서부터 시작하여 최근 5분의 Docker 디몬 로그가 표시됩니다.
+예를 들어 가장 오래된 순서부터 시작하여 최근 5분의 Docker 엔진 로그가 표시됩니다.
 ```
 Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5) | Sort-Object Time 
 ```
@@ -184,6 +184,6 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-3
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

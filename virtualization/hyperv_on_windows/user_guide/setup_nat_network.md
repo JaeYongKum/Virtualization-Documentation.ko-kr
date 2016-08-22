@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1f8a691c-ca75-42da-8ad8-a35611ad70ec
 translationtype: Human Translation
-ms.sourcegitcommit: b22150198f199f9b2be38a9c08e0e08972781f6e
-ms.openlocfilehash: d98445932ccbe77b6a4e798c3c2edb9c63bd351b
+ms.sourcegitcommit: 03a72e6608c08d6adcf32fc5665533831904a032
+ms.openlocfilehash: 5a1cb0964034db491481e2d6db84221730264fa0
 
 ---
 
@@ -129,6 +129,7 @@ WinNAT 자체는 끝점(예: VM)에 IP 주소를 할당하지 않으므로 VM �
 
 
 ## 구성 예제: NAT 네트워크에 VM 및 컨테이너 연결
+
 _단일 NAT에 여러 VM 및 컨테이너를 연결해야 하는 경우 NAT 내부 서브넷 접두사가 다른 응용 프로그램 또는 서비스(예: Windows용 Docker 및 Windows 컨테이너 – HNS)에 의해 할당되는 IP 범위를 포괄할만큼 충분히 큰지 확인해야 합니다. 이를 위해서는 응용 프로그램 수준의 IP 할당 및 네트워크 구성이 필요하며 관리자가 이러한 구성을 수동으로 진행하고 기존 IP 할당이 동일한 호스트에서 다시 사용되지 않도록 보장되어야 합니다._
 
 ### Windows용 Docker(Linux VM) 및 Windows 컨테이너
@@ -163,84 +164,6 @@ Docker/HNS에서는 <container prefix>에서 Windows 컨테이너에 IP를 할�
 
 결과적으로 두 개의 내부 VM 스위치와 이러한 스위치 간에 공유되는 하나의 NetNat이 필요합니다.
 
-## 문제 해결
-NAT가 하나만 있는지 확인합니다.
-```none
-Get-NetNat
-```
-NAT가 이미 있으면 삭제합니다.
-```none
-Get-NetNat | Remove-NetNat
-```
-응용 프로그램 또는 기능(예: Windows 컨테이너)에 대한 "내부" vmSwitch가 하나만 있는지 확인합니다. vSwitch의 이름을 기록합니다.
-```none
-Get-VMSwitch
-```
-오래된 NAT의 개인 IP 주소(예: NAT 기본 게이트웨이 IP 주소 - 일반적으로 *.1)가 어댑터에 계속 할당되어 있는지 확인합니다.
-```none
-Get-NetIPAddress -InterfaceAlias "vEthernet(<name of vSwitch>)"
-```
-오래된 개인 IP 주소가 사용 중인 경우 삭제합니다.
-```none
-Remove-NetIPAddress -InterfaceAlias "vEthernet(<name of vSwitch>)" -IPAddress <IPAddress>
-```
-여러 NAT 제거-잘못 만들어진 여러 NAT 네트워크에 대한 보고서를 확인했습니다. 이러한 문제는 최근 빌드(Windows Server 2016 Technical Preview 5 및 Windows 10 Insider Preview 빌드 포함)의 버그 때문입니다. 여러 NAT 네트워크가 있는 경우 Docker 네트워크 ls 또는 Get-ContainerNetwork를 실행한 후 관리자 권한의 PowerShell에서 다음을 수행하세요.
-
-```none
-PS> $KeyPath = "HKLM:\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\SwitchList"
-PS> $keys = get-childitem $KeyPath
-PS> foreach($key in $keys)
-PS> {
-PS>    if ($key.GetValue("FriendlyName") -eq 'nat')
-PS>    {
-PS>       $newKeyPath = $KeyPath+"\"+$key.PSChildName
-PS>       Remove-Item -Path $newKeyPath -Recurse
-PS>    }
-PS> }
-PS> remove-netnat -Confirm:$false
-PS> Get-ContainerNetwork | Remove-ContainerNetwork
-PS> Get-VmSwitch -Name nat | Remove-VmSwitch (_failure is expected_)
-PS> Stop-Service docker
-PS> Set-Service docker -StartupType Disabled
-Reboot Host
-PS> Get-NetNat | Remove-NetNat
-PS> Set-Service docker -StartupType automaticac
-PS> Start-Service docker 
-```
-
-## 문제 해결
-
-이 워크플로에서는 호스트에 다른 NAT가 없다고 가정합니다. 그러나 경우에 따라 여러 응용 프로그램이나 서비스에서 NAT를 사용합니다. Windows(WinNAT)는 내부 NAT 서브넷 접두사를 하나만 지원하므로 여러 NAT를 만들려고 하면 시스템이 알 수 없는 상태로 전환됩니다.
-
-### 문제 해결 단계
-1. NAT가 하나만 있는지 확인합니다.
-
-  ``` PowerShell
-  Get-NetNat
-  ```
-2. NAT가 이미 있으면 삭제합니다.
-
-  ``` PowerShell
-  Get-NetNat | Remove-NetNat
-  ```
-
-3. NAT에 대해 하나의 "내부" vmSwitch만 있는지 확인합니다. 4단계를 위해 vSwitch의 이름을 기록합니다.
-
-  ``` PowerShell
-  Get-VMSwitch
-  ```
-
-4. 오래된 NAT의 개인 IP 주소(예: NAT 기본 게이트웨이 IP 주소 - 일반적으로 *.1)가 어댑터에 계속 할당되어 있는지 확인합니다.
-
-  ``` PowerShell
-  Get-NetIPAddress -InterfaceAlias "vEthernet(<name of vSwitch>)"
-  ```
-
-5. 오래된 개인 IP 주소가 사용 중인 경우 삭제합니다.  
-   ``` PowerShell
-  Remove-NetIPAddress -InterfaceAlias "vEthernet(<name of vSwitch>)" -IPAddress <IPAddress>
-  ```
-
 ## 여러 응용 프로그램에서 동일한 NAT 사용
 
 일부 시나리오에서는 여러 응용 프로그램이나 서비스에서 동일한 NAT를 사용해야 합니다. 이 경우 여러 응용 프로그램/서비스에서 더 큰 NAT 내부 서브넷 접두사를 사용할 수 있도록 다음 워크플로를 따라야 합니다.
@@ -272,11 +195,67 @@ PS> Start-Service docker
 결과적으로 DockerNAT와 nat라는 두 개의 내부 vSwitch가 만들어집니다. Get-NetNat를 실행하여 확인한 NAT 네트워크(10.0.0.0/17) 하나만 있어야 합니다. Windows 컨테이너의 IP 주소는 Windows HNS(호스트 네트워크 서비스)가 10.0.76.0/24 서브넷에서 할당합니다. 기존 MobyLinux.ps1 스크립트에 따라 Docker 4 Windows의 IP 주소는 10.0.75.0/24 서브넷에서 할당됩니다.
 
 
+## 문제 해결
+
+### 여러 개의 NAT 네트워크가 지원되지 않음  
+이 가이드에서는 호스트에 다른 NAT가 없다고 가정합니다. 그러나 응용 프로그램이나 서비스에서는 NAT를 사용해야 하므로 설정 과정에서 NAT를 만들 수 있습니다. Windows(WinNAT)는 내부 NAT 서브넷 접두사를 하나만 지원하므로 여러 NAT를 만들려고 하면 시스템이 알 수 없는 상태로 전환됩니다.
+
+이로 인해 문제가 발생할 수 있는지 확인하려면 NAT가 하나뿐인지 확인합니다.
+``` PowerShell
+Get-NetNat
+```
+
+NAT가 이미 있으면 삭제합니다.
+``` PowerShell
+Get-NetNat | Remove-NetNat
+```
+응용 프로그램 또는 기능(예: Windows 컨테이너)에 대한 "내부" vmSwitch가 하나만 있는지 확인합니다. vSwitch의 이름을 기록합니다.
+``` PowerShell
+Get-VMSwitch
+```
+
+오래된 NAT의 개인 IP 주소(예: NAT 기본 게이트웨이 IP 주소 - 일반적으로 *.1)가 어댑터에 계속 할당되어 있는지 확인합니다.
+``` PowerShell
+Get-NetIPAddress -InterfaceAlias "vEthernet(<name of vSwitch>)"
+```
+
+오래된 개인 IP 주소가 사용 중인 경우 삭제합니다.
+``` PowerShell
+Remove-NetIPAddress -InterfaceAlias "vEthernet(<name of vSwitch>)" -IPAddress <IPAddress>
+```
+
+**여러 NAT 제거**  
+잘못 만들어진 여러 NAT 네트워크에 대한 보고서를 확인했습니다. 이러한 문제는 최근 빌드(Windows Server 2016 Technical Preview 5 및 Windows 10 Insider Preview 빌드 포함)의 버그 때문입니다. 여러 NAT 네트워크가 있는 경우 Docker 네트워크 ls 또는 Get-ContainerNetwork를 실행한 후 관리자 권한의 PowerShell에서 다음을 수행하세요.
+
+```none
+PS> $KeyPath = "HKLM:\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\SwitchList"
+PS> $keys = get-childitem $KeyPath
+PS> foreach($key in $keys)
+PS> {
+PS>    if ($key.GetValue("FriendlyName") -eq 'nat')
+PS>    {
+PS>       $newKeyPath = $KeyPath+"\"+$key.PSChildName
+PS>       Remove-Item -Path $newKeyPath -Recurse
+PS>    }
+PS> }
+PS> remove-netnat -Confirm:$false
+PS> Get-ContainerNetwork | Remove-ContainerNetwork
+PS> Get-VmSwitch -Name nat | Remove-VmSwitch (_failure is expected_)
+PS> Stop-Service docker
+PS> Set-Service docker -StartupType Disabled
+Reboot Host
+PS> Get-NetNat | Remove-NetNat
+PS> Set-Service docker -StartupType automaticac
+PS> Start-Service docker 
+```
+
+이 [여러 응용 프로그램에서 동일한 NAT 사용에 대한 설정 가이드](setup_nat_network.md#multiple-applications-using-the-same-nat)를 참조하여 필요한 경우 NAT 환경을 다시 빌드하세요. 
+
 ## 참조
 [NAT 네트워크](https://en.wikipedia.org/wiki/Network_address_translation)에 대해 자세히 알아보세요.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO2-->
 
 

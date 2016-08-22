@@ -4,14 +4,14 @@ description: "컨테이너 배포 빠른 시작"
 keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 07/13/2016
+ms.date: 08/17/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: 9aa443b24e5c8a004b08203f67e578dd2d104746
-ms.openlocfilehash: 0ee1231b923e25975a4dfddb70c16366a86c9565
+ms.sourcegitcommit: fac57150de3ffd6c7d957dd628b937d5c41c1b35
+ms.openlocfilehash: 57d35f9e871bdd3bd0798833bcbaf6a7948a65f2
 
 ---
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: 0ee1231b923e25975a4dfddb70c16366a86c9565
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
-이 연습에서는 Windows 10(참가자 빌드 14372 이상)에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 완료 후에는 컨테이너 역할이 설치되고 간단한 Hyper-V 컨테이너가 배포됩니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./quick_start.md)에서 확인할 수 있습니다. 
+이 연습에서는 Windows 10 Professional 또는 Enterprise(Anniversary Edition)에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 완료 후에는 컨테이너 역할이 설치되고 간단한 Hyper-V 컨테이너가 배포됩니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./quick_start.md)에서 확인할 수 있습니다. 
 
 이 빠른 시작은 Windows 10의 Hyper-V 컨테이너와 관련이 있습니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
@@ -169,6 +169,6 @@ docker run --rm helloworld powershell c:\helloworld.ps1
 
 
 
-<!--HONumber=Aug16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

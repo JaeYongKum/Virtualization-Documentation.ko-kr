@@ -4,14 +4,14 @@ description: "Windows의 컨테이너 요구 사항입니다."
 keywords: "메타데이터, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 05/26/2016
+ms.date: 08/17/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
 translationtype: Human Translation
-ms.sourcegitcommit: 6f1d9c09774adde047508835caf9dcf54deab9d2
-ms.openlocfilehash: 9d015a570a0b1a9d7304e601daa7ace73df4e827
+ms.sourcegitcommit: fac57150de3ffd6c7d957dd628b937d5c41c1b35
+ms.openlocfilehash: f76dc45e6035c72fd7b07f25d4b4c55f2a95aafb
 
 ---
 
@@ -23,7 +23,7 @@ ms.openlocfilehash: 9d015a570a0b1a9d7304e601daa7ace73df4e827
 
 ## OS 요구 사항
 
-- Windows 컨테이너 기능은 Windows Server 2016(코어 및 데스크톱 경험 포함), Nano Server, Windows 10 Professional 및 Enterprise(참가자 빌드 14352 이상)에서만 사용할 수 있습니다.
+- Windows 컨테이너 기능은 Windows Server 2016(코어 및 데스크톱 경험 포함), Nano Server, Windows 10 Professional 및 Enterprise(Anniversary Edition)에서만 사용할 수 있습니다.
 - Hyper-V 컨테이너가 실행되면 Hyper-V 역할이 설치되어야 합니다.
 - Windows Server 컨테이너 호스트에서는 Windows가 c:\\에 설치되어 있어야 합니다. Hyper-V 컨테이너만 배포할 경우 이 제한이 적용되지 않습니다.
 
@@ -65,7 +65,7 @@ Windows Server Technical Preview 5는 두 개의 컨테이너 OS 이미지, Wind
 <td><center>Nano Server 이미지</center></td>
 </tr>
 <tr valign="top">
-<td><center>Windows 10 Insider 릴리스</center></td>
+<td><center>Windows 10 Anniversary Edition</center></td>
 <td><center>사용할 수 없음</center></td>
 <td><center>Nano Server 이미지</center></td>
 </tr>
@@ -74,6 +74,6 @@ Windows Server Technical Preview 5는 두 개의 컨테이너 OS 이미지, Wind
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 
