@@ -1,7 +1,7 @@
 ---
 title: "컨테이너 배포 빠른 시작 - 이미지"
 description: "컨테이너 배포 빠른 시작"
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 05/26/2016
@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
 translationtype: Human Translation
-ms.sourcegitcommit: eae45c2c81c7edc94d963da69dcdee2b6f08f37d
-ms.openlocfilehash: ac9596d210e72b9fd576f728e8e6bbdc293597d7
+ms.sourcegitcommit: f2a3eec656acf5a3cd48a2be71169b76ce25400b
+ms.openlocfilehash: a9bc0b1511e161ef9b648bfafd4d0456966d8f9f
 
 ---
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: ac9596d210e72b9fd576f728e8e6bbdc293597d7
 수동으로 컨테이너 이미지를 만드는 첫 번째 단계는 컨테이너를 배포하는 것입니다. 이 예제에서는 미리 만들어진 IIS 이미지에서 IIS 컨테이너를 배포합니다. 컨테이너가 배포된 다음에는 컨테이너 내의 셸 세션에서 작업합니다. 대화형 세션은 `-it` 플래그로 시작됩니다. Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Reference(Docker Run 참조)]( https://docs.docker.com/engine/reference/run/)를 참조하세요. 
 
 ```none
-docker run -it -p 80:80 microsoft/iis:windowsservercore cmd
+docker run -it -p 80:80 microsoft/iis cmd
 ```
 
 다음으로 컨테이너를 수정합니다. 다음 명령을 실행하여 IIS 시작 화면을 제거합니다.
@@ -68,7 +68,7 @@ exit
 docker ps -a
 
 CONTAINER ID     IMAGE                             COMMAND   CREATED             STATUS   PORTS   NAMES
-489b0b447949     microsoft/iis:windowsservercore   "cmd"     About an hour ago   Exited           pedantic_lichterman
+489b0b447949     microsoft/iis   "cmd"     About an hour ago   Exited           pedantic_lichterman
 ```
 
 새 컨테이너 이미지를 만들려면 `docker commit` 명령을 사용합니다. Docker 커밋은 “docker commit container-name new-image-name” 형식을 사용합니다. 참고 - 이 예제에 있는 컨테이너의 이름을 실제 컨테이너 이름으로 바꿉니다.
@@ -112,7 +112,7 @@ Dockerfile에 다음 텍스트를 복사하고 파일을 저장합니다. 이러
 Dockerfile에 대한 자세한 내용은 [Windows의 Dockerfile](../docker/manage_windows_dockerfile.md)을 참조하세요.
 
 ```none
-FROM microsoft/iis:windowsservercore
+FROM microsoft/iis
 RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 ```
 
@@ -166,6 +166,7 @@ docker rm -f cranky_brown
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,17 +1,17 @@
 ---
 title: "Windows 컨테이너 이미지"
 description: "Windows 컨테이너를 사용하여 컨테이너 이미지를 만들고 관리합니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 05/02/2016
+ms.date: 08/22/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: d8163185-9860-4ee4-9e96-17b40fb508bc
 translationtype: Human Translation
-ms.sourcegitcommit: 3db43b433e7b1a9484d530cf209ea80ef269a307
-ms.openlocfilehash: 505cc64fa19fb9fc8c2d5c109830f460f09332dd
+ms.sourcegitcommit: 7b5cf299109a967b7e6aac839476d95c625479cd
+ms.openlocfilehash: 8b9ec6370d1f9f9187fbb6d74168e9e88391b657
 
 ---
 
@@ -19,148 +19,34 @@ ms.openlocfilehash: 505cc64fa19fb9fc8c2d5c109830f460f09332dd
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
-컨테이너 이미지는 컨테이너를 배포하는 데 사용됩니다. 이러한 이미지는 운영 체제, 응용 프로그램 및 모든 응용 프로그램 종속성을 포함할 수 있습니다. 예를 들어 Nano Server, IIS 및 IIS를 실행 중인 응용 프로그램으로 사전 구성한 컨테이너 이미지를 개발할 수 있습니다. 그런 다음 이 컨테이너 이미지를 나중에 사용할 수 있도록 컨테이너 레지스트리에 저장하고, 모든 Windows 컨테이너 호스트(온-프레미스, 클라우드 또는 컨테이너 서비스)에 배포하며, 새 컨테이너 이미지를 위한 기반으로 사용할 수도 있습니다.
+>Windows 컨테이너는 Docker를 통해 관리됩니다. Windows 컨테이너 설명서는 [docker.com](https://www.docker.com/)에서 있는 설명서를 보충합니다.
 
-컨테이너 이미지에는 다음과 같은 두 가지 유형이 있습니다.
-
-**기본 OS 이미지** - Microsoft에서 제공하고 핵심 OS 구성 요소를 포함합니다. 
-
-**컨테이너 이미지** - 기본 OS 이미지에서 파생된 사용자 지정 컨테이너 이미지입니다.
-
-## 기본 OS 이미지
+컨테이너 이미지는 컨테이너를 배포하는 데 사용됩니다. 이러한 이미지는 응용 프로그램 및 모든 응용 프로그램 종속성을 포함할 수 있습니다. 예를 들어 Nano Server, IIS 및 IIS를 실행 중인 응용 프로그램으로 사전 구성한 컨테이너 이미지를 개발할 수 있습니다. 그런 다음 이 컨테이너 이미지를 나중에 사용할 수 있도록 컨테이너 레지스트리에 저장하고, 모든 Windows 컨테이너 호스트(온-프레미스, 클라우드 또는 컨테이너 서비스)에 배포하며, 새 컨테이너 이미지를 위한 기반으로 사용할 수도 있습니다.
 
 ### 이미지 설치
 
-컨테이너 OS 이미지는 ContainerImag PowerShell 모듈을 사용하여 확인하고 설치할 수 있습니다. 이 모듈을 사용하기 전에 먼저 모듈을 설치해야 합니다. 다음 명령을 사용하여 모듈을 설치할 수 있습니다. 컨테이너 이미지 OneGet PowerShell 모듈 사용에 대한 자세한 내용은 [컨테이너 이미지 공급자](https://github.com/PowerShell/ContainerProvider)를 참조하세요. 
+Windows 컨테이너를 사용하기 전에 기본 이미지를 설치해야 합니다. 기본 이미지는 기본 운영 체제로 Windows Server Core 또는 Nano Server에서 사용할 수 있습니다. 지원되는 구성에 대한 자세한 내용은 [Windows 컨테이너 시스템 요구 사항](../deployment/system_requirements.md)을 참조하세요.
+
+Windows Server Core 기본 이미지를 설치하려면 다음을 실행합니다.
 
 ```none
-Install-PackageProvider ContainerImage -Force
+docker pull microsoft/windowsservercore
 ```
 
-설치되면 `Find-ContainerImage`를 사용하여 기본 OS 이미지 목록을 반환할 수 있습니다.
+Nano Server 기본 이미지를 설치하려면 다음을 실행합니다.
 
 ```none
-Find-ContainerImage
-
-Name                 Version          Source           Summary
-----                 -------          ------           -------
-NanoServer           10.0.14300.1010  ContainerImag... Container OS Image of Windows Server 2016 Technical...
-WindowsServerCore    10.0.14300.1000  ContainerImag... Container OS Image of Windows Server 2016 Technical...
+docker pull microsoft/nanoserver
 ```
-
-Nano Server 기본 OS 이미지를 다운로드하여 설치하려면 다음을 실행합니다. `-version` 매개 변수는 선택 사항이며, 기본 OS 이미지 버전을 지정하지 않으면 최신 버전이 설치됩니다.
-
-```none
-Install-ContainerImage -Name NanoServer -Version 10.0.14300.1010
-```
-
-마찬가지로 이 명령은 Windows Server Core 기본 OS 이미지를 다운로드하여 설치합니다. `-version` 매개 변수는 선택 사항이며, 기본 OS 이미지 버전을 지정하지 않으면 최신 버전이 설치됩니다.
-
-```none
-Install-ContainerImage -Name WindowsServerCore -Version 10.0.14300.1000
-```
-
-`docker images` 명령을 사용하여 이미지가 설치되었는지 확인합니다. 
-
-```none
-docker images
-
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-nanoserver          10.0.14300.1010     40356b90dc80        2 weeks ago         793.3 MB
-windowsservercore   10.0.14304.1000     7837d9445187        2 weeks ago         9.176 GB
-```  
-
-설치되면 '최신' 태그를 사용하여 이미지에 태그를 지정할 수도 있습니다. 이러한 지침은 아래의 태그 섹션에서 자세히 설명합니다.
-
-> 기본 OS 이미지가 다운로드되었지만 `docker images`를 실행할 때 표시되지 않으면 서비스 제어판 애플릿을 사용하거나, 'sc stop docker' 명령을 사용한 다음 'sc start docker' 명령을 사용하여 Docker 서비스를 다시 시작합니다.
-
-### 이미지 태그 지정
-
-컨테이너 이미지를 이름으로 참조할 경우 Docker 엔진은 이미지의 최신 버전을 검색합니다. 최신 버전을 확인할 수 없는 경우 다음과 같은 오류가 발생합니다.
-
-```none
-docker run -it windowsservercore cmd
-
-Unable to find image 'windowsservercore:latest' locally
-Pulling repository docker.io/library/windowsservercore
-C:\Windows\system32\docker.exe: Error: image library/windowsservercore not found.
-```
-
-Windows Server Core 또는 Nano Server 기본 OS 이미지를 설치한 후 이러한 이미지에 'latest' 버전이라는 태그가 지정되어야 합니다. 이렇게 하려면 `docker tag` 명령을 사용합니다. 
-
-`docker tag`에 대한 자세한 내용은 [docker.com의 Tag, push, and pull you images(이미지 태그 지정, 푸시 및 끌어오기)](https://docs.docker.com/mac/step_six/)를 참조하세요. 
-
-```none
-docker tag <image id> windowsservercore:latest
-```
-
-태그를 지정하면 `docker images`의 출력에 두 가지 버전의 동일한 이미지가 표시되는데, 하나는 이미지 버전의 태그가 지정되고 다른 하나는 ‘최신’ 태그가 지정되어 있습니다. 이제 이름으로 이미지를 참조할 수 있습니다.
-
-```none
-docker images
-
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-nanoserver          10.0.14300.1010     df03a4b28c50        2 days ago          783.2 MB
-windowsservercore   10.0.14300.1000     290ab6758cec        2 days ago          9.148 GB
-windowsservercore   latest              290ab6758cec        2 days ago          9.148 GB
-```
-
-### 오프라인 설치
-
-인터넷 연결 없이 기본 OS 이미지를 설치할 수도 있습니다. 이렇게 하려면 인터넷에 연결된 컴퓨터에 이미지를 다운로드하고 대상 시스템에 복사한 다음 `Install-ContainerOSImages` 명령을 사용하여 이미지를 가져옵니다.
-
-기본 OS 이미지를 다운로드하기 전에 다음 명령을 실행하여 컨테이너 이미지 공급자로 **인터넷에 연결된** 시스템을 준비합니다.
-
-```none
-Install-PackageProvider ContainerImage -Force
-```
-
-PowerShell OneGet 패키지 관리자로부터 이미지 목록을 반환합니다.
-
-```none
-Find-ContainerImage
-```
-
-출력:
-
-```none
-Name                 Version                 Description
-----                 -------                 -----------
-NanoServer           10.0.14300.1010         Container OS Image of Windows Server 2016 Techn...
-WindowsServerCore    10.0.14300.1000         Container OS Image of Windows Server 2016 Techn...
-```
-
-이미지를 다운로드하려면 `Save-ContainerImage` 명령을 사용합니다.
-
-```none
-Save-ContainerImage -Name NanoServer -Path c:\container-image
-```
-
-이제 다운로드한 컨테이너 이미지를 **오프라인 컨테이너 호스트**에 복사하고 `Install-ContainerOSImage` 명령을 사용하여 설치할 수 있습니다.
-
-```none
-Install-ContainerOSImage -WimPath C:\container-image\NanoServer.wim -Force
-```
-
-### OS 이미지 제거
-
-기본 OS 이미지는 `Uninstall-ContainerOSImage` 명령을 사용하여 제거할 수 있습니다. 다음 예제에서는 NanoServer 기본 OS 이미지를 제거합니다.
-
-```none
-Uninstall-ContainerOSImage -FullName CN=Microsoft_NanoServer_10.0.14304.1003
-```
-
-## 컨테이너 이미지
 
 ### 이미지 나열
 
 ```none
 docker images
 
-REPOSITORY             TAG                 IMAGE ID            CREATED              VIRTUAL SIZE
-windowsservercoreiis   latest              ca40b33453f8        About a minute ago   44.88 MB
-windowsservercore      10.0.14300.1000     6801d964fda5        2 weeks ago          0 B
-nanoserver             10.0.14300.1010     8572198a60f1        2 weeks ago          0 B
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+microsoft/windowsservercore   latest              02cb7f65d61b        9 weeks ago         7.764 GB
+microsoft/nanoserver          latest              3a703c6e97a2        9 weeks ago         969.8 MB
 ```
 
 ### 새 이미지 만들기
@@ -291,6 +177,6 @@ latest: digest: sha256:ae3a2971628c04d5df32c3bbbfc87c477bb814d5e73e2787900da1322
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

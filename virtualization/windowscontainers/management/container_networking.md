@@ -4,14 +4,14 @@ description: "Windows 컨테이너에 대한 네트워킹을 구성합니다."
 keywords: "Docker, 컨테이너"
 author: jmesser81
 manager: timlt
-ms.date: 05/02/2016
+ms.date: 08/22/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
 translationtype: Human Translation
-ms.sourcegitcommit: c412171773e9c66569eab2252b5adfc187eedafd
-ms.openlocfilehash: eb7d2c25d929cb51abfad17c26a89105f6574a48
+ms.sourcegitcommit: 7b5cf299109a967b7e6aac839476d95c625479cd
+ms.openlocfilehash: 2e26177f3e653e9102dc91070b987e28ef713bed
 
 ---
 
@@ -37,7 +37,7 @@ Docker 엔진은 docker 서비스가 처음으로 실행될 때 기본적으로 
 
 - **L2 터널** - 이 모드는 Microsoft 클라우드 스택에서만 사용되어야 합니다.
 
-> Microsoft SDN 스택을 사용하여 컨테이너 끝점을 오버레이 가상 네트워크에 연결하는 방법을 알아보려면 [가상 네트워크에 컨테이너 연결](location) 항목을 참조하세요.
+> Microsoft SDN 스택을 사용하여 컨테이너 끝점을 오버레이 가상 네트워크에 연결하는 방법을 알아보려면 [가상 네트워크에 컨테이너 연결](https://technet.microsoft.com/en-us/windows-server-docs/networking/sdn/manage/connect-container-endpoints-to-a-tenant-virtual-network) 항목을 참조하세요.
 
 ## 단일 노드
 
@@ -182,7 +182,7 @@ C:\> docker network create -d l2bridge --subnet=192.168.1.0/24 --gateway=192.168
 
 l2bridge 네트워크에서는 고정 IP 할당만 지원됩니다. 
 
-> SDN 패브릭에서 l2bridge 네트워크를 사용할 경우에는 동적 IP 할당만 지원됩니다. 자세한 내용은 [가상 네트워크에 컨테이너 연결](location) 항목을 참조하세요.
+> SDN 패브릭에서 l2bridge 네트워크를 사용할 경우에는 동적 IP 할당만 지원됩니다. 자세한 내용은 [가상 네트워크에 컨테이너 연결](https://technet.microsoft.com/en-us/windows-server-docs/networking/sdn/manage/connect-container-endpoints-to-a-tenant-virtual-network) 항목을 참조하세요.
 
 ## 기타 작업 및 구성
 
@@ -291,6 +291,6 @@ Start-Service docker
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

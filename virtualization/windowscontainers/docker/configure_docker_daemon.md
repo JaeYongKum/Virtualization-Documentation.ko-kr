@@ -4,14 +4,14 @@ description: "Windows에서 Docker 구성"
 keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 08/17/2016
+ms.date: 08/23/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: fac57150de3ffd6c7d957dd628b937d5c41c1b35
-ms.openlocfilehash: 7ba03dbcedbe42d54c955ff321e9f3f180a5a674
+ms.sourcegitcommit: 4dded90462c5438a6836ec32a165a9cc1019d6ec
+ms.openlocfilehash: 6ae49d82a89b2f30198de05aa4915726853172f5
 
 ---
 
@@ -23,22 +23,16 @@ Docker 엔진 및 클라이언트는 Windows에 포함되어 있지 않으므로
 
 Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다.
 
-Docker 실행 파일을 저장할 폴더를 만듭니다.
-
-```none
-New-Item -Type Directory -Path 'C:\Program Files\docker\'
-```
-
 Docker 엔진을 다운로드합니다.
 
 ```none
-Invoke-WebRequest https://aka.ms/tp5/b/dockerd -OutFile $env:ProgramFiles\docker\dockerd.exe
+Invoke-WebRequest "https://get.docker.com/builds/Windows/x86_64/docker-1.12.0.zip" -OutFile "$env:TEMP\docker-1.12.0.zip" -UseBasicParsing
 ```
 
-Docker 클라이언트를 다운로드합니다.
+zip 보관 파일을 프로그램 파일로 확장합니다.
 
-```none
-Invoke-WebRequest https://aka.ms/tp5/b/docker -OutFile $env:ProgramFiles\docker\docker.exe
+```
+Expand-Archive -Path "$env:TEMP\docker-1.12.0.zip" -DestinationPath $env:ProgramFiles
 ```
 
 시스템 경로에 Docker 디렉터리를 추가합니다. 완료되면 수정된 경로를 인식할 수 있도록 PowerShell 세션을 다시 시작합니다.
@@ -184,6 +178,6 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-3
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

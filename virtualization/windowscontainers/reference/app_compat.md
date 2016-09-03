@@ -1,17 +1,18 @@
 ---
 title: "Windows 컨테이너에서의 응용 프로그램 호환성"
 description: "Windows 컨테이너에서의 응용 프로그램 호환성입니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: scooley
 manager: timlt
-ms.date: 05/02/2016
+ms.date: 08/19/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 3e524458-bd03-400e-913f-210335add8dc
+redirect_url: ../containers_welcome
 translationtype: Human Translation
-ms.sourcegitcommit: cfa3c14e932f8b86edf6667200ac028ea0a16b67
-ms.openlocfilehash: 2830dc81317311dd54dfcca45251b668f3d2cc29
+ms.sourcegitcommit: 3a65fd7630ca1399d7bfd9e0a8b10f0cbd4febcc
+ms.openlocfilehash: 48d455079f0668d95ac31d36c644dabb8d716eda
 
 ---
 
@@ -31,15 +32,15 @@ Windows Server 컨테이너에서 다음과 같은 응용 프로그램의 실행
 
 | **Name** | **Version** | **Windows Server Core 기본 이미지** | **Nano Server 기본 이미지** | **설명** |
 |:-----|:-----|:-----|:-----|:-----|
-| .NET | 3.5 | 예 | Unknown |  | 
-| .NET | 4.6 | 예 | Unknown |  | 
+| .NET | 3.5 | 예 | 알 수 없음 |  | 
+| .NET | 4.6 | 예 | 알 수 없음 |  | 
 | .NET CLR | 5 beta 6 | 예 | 예| x64 및 x86 모두 | 
 | Active Python | 3.4.1 | 예 | 예 | |
 | Apache Cassandra || 예 | Unkown | 
 | Apache CouchDB | 1.6.1 | 아니요 | 아니요 | |
 | Apache Hadoop | | 예 | 아니요 | |
 | Apache HTTPD | 2.4 | 예 | 예 | 중복 제거 필터를 로드하면 VC++ 런타임이 설치되지 않습니다. 다음 명령을 사용하여 중복 제거를 언로드합니다. `fltmc unload dedup` |
-| Apache Tomcat | 8.0.24 x64 | 예 | Unknown | |
+| Apache Tomcat | 8.0.24 x64 | 예 | 알 수 없음 | |
 | ASP.NET | 4.6 | 예 | Unkown | |
 | ASP.NET | 5 beta 6 | 예 | 예 | x64 및 x86 모두 |
 | Django | |예|예| |
@@ -90,6 +91,6 @@ Hyper-V 컨테이너에서 다음과 같은 응용 프로그램의 실행을 테
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

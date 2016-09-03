@@ -12,6 +12,7 @@
 ## [시스템 요구 사항](deployment/system_requirements.md)
 ## [컨테이너 호스트 - Windows Server](deployment/deployment.md)
 ## [컨테이너 호스트 - Nano Server](deployment/deployment_nano.md)
+## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
 # Windows의 Docker
 ## [Windows의 Docker 엔진](docker/configure_docker_daemon.md)
@@ -32,15 +33,11 @@
 # 커뮤니티 및 지원
 ## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)
 
-# 참조
-## [컨테이너 이미지 공급자](https://github.com/PowerShell/ContainerProvider)
-## [응용 프로그램 호환성](reference/app_compat.md)
-## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 # [Windows Server EULA](EULA.md)
 # [Nano Server EULA](Nano_EULA.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 
