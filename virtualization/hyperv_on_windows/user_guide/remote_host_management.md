@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 translationtype: Human Translation
-ms.sourcegitcommit: eb6c8e904b9cd2c5d1ed25583ffbcdbdf0b9139c
-ms.openlocfilehash: fee2b24469b45efae982f4dfca4afb9f737b5bdf
+ms.sourcegitcommit: 07a07c790484c05ea49229a770ef75c80fad3cfa
+ms.openlocfilehash: 8a84da80199479907c3bf4cf0c7b1cfb1b44bf9d
 
 ---
 
@@ -36,7 +36,7 @@ Windows 10에서 Hyper-V 관리자를 사용하여 다음과 같은 Hyper-V 호�
 
 Windows 8.1 및 Windows Server 2012 R2에서 Hyper-V 관리자를 통해 관리할 수 있습니다.
 * Windows 8.1
-* Windows 8
+* Windows 8
 * Windows Server 2012 R2 + Windows Server Core, Datacenter 및 Hyper-V Server
 * Windows 2012 + Windows Server Core, Datacenter 및 Hyper-V Server
 
@@ -117,12 +117,12 @@ IP 주소를 사용하여 연결하려면 **다른 컴퓨터** 텍스트 필드�
 2. [Enable-WSManCredSSP](https://technet.microsoft.com/en-us/library/hh849872.aspx) -Role client -DelegateComputer "fqdn-of-hyper-v-host"
   * 또는 다음을 통해 관리하기 위해 모든 호스트를 신뢰할 수 있도록 허용할 수 있습니다.
   * [Enable-WSManCredSSP](https://technet.microsoft.com/en-us/library/hh849872.aspx) -역할 클라이언트 -DelegateComputer *
-3. 또한 다음 그룹 정책을 구성해야 합니다. ** 컴퓨터 구성 | 관리 템플릿 | 시스템 | 자격 증명 위임 | 서버 인증이 NTLM 전용일 경우 새로운 자격 증명 허용 **
+3. 또한 다음 그룹 정책을 구성해야 합니다. ** 컴퓨터 구성 | 관리 템플릿 | 시스템 | 자격 증명 위임 | 서버 인증이 NTLM 전용일 경우 새로운 자격 증명 위임을 허용 **
     * **사용**을 클릭하고 *wsman/fqdn-of-hyper-v-host*를 추가합니다.
     * 또는 _wsman/*_을 추가하여 관리하기 위해 모든 호스트를 신뢰할 수 있도록 허용할 수 있습니다.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

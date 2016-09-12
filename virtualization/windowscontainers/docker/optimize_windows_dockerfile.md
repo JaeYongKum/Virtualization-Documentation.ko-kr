@@ -1,7 +1,7 @@
 ---
 title: "Windows Dockerfile 최적화"
 description: "Windows 컨테이너용 Dockerfile을 최적화합니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 05/26/2016
@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
 translationtype: Human Translation
-ms.sourcegitcommit: cc216f56acd5e547d05a48beea57450ba5fcb28b
-ms.openlocfilehash: 4822ff2f0248b2d7752299ea55b08e3499e2e2f7
+ms.sourcegitcommit: 7ebd83d5d3a098fc8760f5dfba7e350c3f167232
+ms.openlocfilehash: 19a363aa013b51e0c80d56572de77e94f27e546f
 
 ---
 # Windows Dockerfile 최적화
@@ -65,7 +65,7 @@ Dockerfile 모범 사례에 대한 자세한 내용은 [Docker.com의 Best pract
 
 다음 두 예제에서는 동일한 기능의 컨테이너 이미지를 만드는 동일한 작업을 보여 주지만 두 Dockerfile은 다르게 생성되었습니다. 결과 이미지도 비교합니다.  
 
-첫 번째 예제에서는 Visual Studio의 재배포 가능 패키지를 다운로드, 추출 및 정리합니다. 이러한 각 작업은 고유한 `RUN` 명령으로 실행됩니다.
+이 첫 번째 예제에서는 Windows용 Python을 다운로드, 설치한 후 다운로드한 설치 파일을 제거하여 정리합니다. 이러한 각 작업은 고유한 `RUN` 명령으로 실행됩니다.
 
 ```none
 FROM windowsservercore
@@ -305,6 +305,6 @@ RUN powershell -Command \
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 
