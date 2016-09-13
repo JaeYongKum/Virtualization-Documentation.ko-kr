@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: deaed93924d4c8bff55e1f95342381bf4621076e
-ms.openlocfilehash: 4e71c39c98a61365b3b4f9c0ac55ace9c47cf10c
+ms.sourcegitcommit: 939a1b69f159504b998792adb95ccabc326db333
+ms.openlocfilehash: 538fb27d6170f0a8dab5c189b90040e40c546e14
 
 ---
 
@@ -195,7 +195,7 @@ $env:path += ";c:\program files\docker"
 완료되면 `docker -H` 매개 변수를 사용하여 Docker 호스트에 액세스할 수 있습니다.
 
 ```none
-docker -H tcp://<IPADDRESS>:2375 run -it nanoserver cmd
+docker -H tcp://<IPADDRESS>:2375 run -it microsoft/nanoserver cmd
 ```
 
 환경 변수 `DOCKER_HOST`를 만들어 `-H` 매개 변수 요구 사항을 제거할 수 있습니다. 이 작업에는 다음 PowerShell 명령을 사용할 수 있습니다.
@@ -207,7 +207,7 @@ $env:DOCKER_HOST = "tcp://<ipaddress of server>:2375"
 이 변수를 설정하면 명령이 다음과 같이 표시됩니다.
 
 ```none
-docker run -it nanoserver cmd
+docker run -it microsoft/nanoserver cmd
 ```
 
 ## Hyper-V 컨테이너 호스트
@@ -230,6 +230,7 @@ Restart-Computer
 ```
 
 
-<!--HONumber=Aug16_HO4-->
+
+<!--HONumber=Sep16_HO2-->
 
 
