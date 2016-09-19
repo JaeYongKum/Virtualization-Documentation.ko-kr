@@ -1,7 +1,7 @@
 ---
 title: "컨테이너 데이터 볼륨"
 description: "Windows 컨테이너로 데이터 볼륨을 만들고 관리합니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 05/02/2016
@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: f5998534-917b-453c-b873-2953e58535b1
 translationtype: Human Translation
-ms.sourcegitcommit: 493b669bc47fc589486a82cfea73a0bb1e88cf79
-ms.openlocfilehash: 26c010e79a4913b2e138f6d1d78f9406dbacbc6b
+ms.sourcegitcommit: 08f893b646046d18def65602eb926bc0ea211804
+ms.openlocfilehash: a175091c943cf596b2a810245b1b73b8baddb0c6
 
 ---
 
@@ -49,29 +49,17 @@ docker run -it -v c:\source:c:\destination windowsservercore cmd
 
 ### 단일 파일 탑재
 
-단일 파일은 파일 이름을 명시적으로 지정하여 컨테이너에 탑재할 수 있습니다. 다음 예제에서는 공유할 디렉터리에 많은 파일이 포함되어 있지만 'config.ini' 파일만 컨테이너 내부에서 사용할 수 있습니다. 
+Windows 컨테이너에 단일 파일을 탑재할 수 없습니다. 다음 명령을 실행하면 실패하지 않지만 결과 컨테이너 파일이 포함되지 않습니다. 
 
 ```none
-docker run -it -v c:\container-share\config.ini windowsservercore cmd
+docker run -it -v c:\config\config.ini microsoft/windowsservercore cmd
 ```
 
-실행 중인 컨테이너 내부에서 config.ini 파일만 표시됩니다.
+이 문제를 해결하려면 컨테이너에 탑재된 모든 파일을 디렉터리에서 탑재해야 합니다.
 
 ```none
-c:\container-share>dir
- Volume in drive C has no label.
- Volume Serial Number is 7CD5-AC14
-
- Directory of c:\container-share
-
-04/04/2016  12:53 PM    <DIR>          .
-04/04/2016  12:53 PM    <DIR>          ..
-04/04/2016  12:53 PM    <SYMLINKD>     config.ini
-               0 File(s)              0 bytes
-               3 Dir(s)  21,184,208,896 bytes free
+docker run -it -v c:\config:c:\config microsoft/windowsservercore cmd
 ```
-
-단일 파일 탑재에 대한 자세한 내용은 [docker.com의 Manage data in containers(컨테이너에서 데이터 관리)](https://docs.docker.com/engine/userguide/containers/dockervolumes/#mount-a-host-directory-as-a-data-volume)를 참조하세요.
 
 ### 전체 드라이브 탑재
 
@@ -125,6 +113,6 @@ docker inspect backstabbing_kowalevski
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO1-->
 
 

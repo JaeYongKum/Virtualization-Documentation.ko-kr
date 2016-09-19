@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: d8163185-9860-4ee4-9e96-17b40fb508bc
 translationtype: Human Translation
-ms.sourcegitcommit: 7b5cf299109a967b7e6aac839476d95c625479cd
-ms.openlocfilehash: 8b9ec6370d1f9f9187fbb6d74168e9e88391b657
+ms.sourcegitcommit: eccce83d7e376be592694162f54ccb67be9d3c12
+ms.openlocfilehash: bb99d0c15d6d1dd9e126fde05207431153b4f94a
 
 ---
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: 8b9ec6370d1f9f9187fbb6d74168e9e88391b657
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
->Windows 컨테이너는 Docker를 통해 관리됩니다. Windows 컨테이너 설명서는 [docker.com](https://www.docker.com/)에서 있는 설명서를 보충합니다.
+>Windows 컨테이너는 Docker를 통해 관리됩니다. Windows 컨테이너 설명서는 [docs.docker.com](https://docs.docker.com/)설명서를 보완합니다.
 
 컨테이너 이미지는 컨테이너를 배포하는 데 사용됩니다. 이러한 이미지는 응용 프로그램 및 모든 응용 프로그램 종속성을 포함할 수 있습니다. 예를 들어 Nano Server, IIS 및 IIS를 실행 중인 응용 프로그램으로 사전 구성한 컨테이너 이미지를 개발할 수 있습니다. 그런 다음 이 컨테이너 이미지를 나중에 사용할 수 있도록 컨테이너 레지스트리에 저장하고, 모든 Windows 컨테이너 호스트(온-프레미스, 클라우드 또는 컨테이너 서비스)에 배포하며, 새 컨테이너 이미지를 위한 기반으로 사용할 수도 있습니다.
 
@@ -177,6 +177,6 @@ latest: digest: sha256:ae3a2971628c04d5df32c3bbbfc87c477bb814d5e73e2787900da1322
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO1-->
 
 
