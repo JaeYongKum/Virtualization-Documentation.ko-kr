@@ -1,7 +1,7 @@
 ---
 title: "Windows 컨테이너 설명서"
 description: "Windows 컨테이너 설명서"
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 05/02/2016
@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
 translationtype: Human Translation
-ms.sourcegitcommit: 9070126c8cc944f9db0f8bacee8dbf135a3a23db
-ms.openlocfilehash: b50c27e723fb8db13adec37d6b969e93d607243e
+ms.sourcegitcommit: 59626096d428072dec098c7817e2d6b39c10e9cf
+ms.openlocfilehash: 2c9821ef7ac414640790b3cfdb7fd457710a67f4
 
 ---
 
@@ -40,24 +40,25 @@ Windows Server 2016 및 Nano Server에서 Windows 컨테이너를 배포하는 �
 <li>[시스템 요구 사항](deployment/system_requirements.md)<br /><br /></li>
 <li>[컨테이너 호스트 배포 - Windows Server](deployment/deployment.md)<br /><br /></li>
 <li>[컨테이너 호스트 배포 - Nano Server](deployment/deployment_nano.md)<br /><br /></li>
-
+<li>[바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)<br /><br /></li>
 </ul>
 </td>
 </tr>
 
 <tr>
 <td ><center>![](media/explore.png)</center></td>
-<td>**Management**<br /><br />
-Windows Server 2016 및 Nano Server에서 Windows 컨테이너를 관리하는 방법을 알아봅니다.<br /><br />
+<td>**Windows의 Docker**<br /><br />
+Windows에서 Docker를 관리하는 방법을 알아보세요.<br /><br />
 <ul>
-<li>[이미지 관리](management/manage_images.md)<br /><br /></li>
-<li>[네트워킹 관리](management/container_networking.md)<br /><br /></li>
+<li>[Windows의 Docker 엔진](docker/configure_docker_daemon.md)<br /><br /></li>
+<li>[Windows의 Dockerfile](docker/manage_windows_dockerfile.md)<br /><br /></li>
 <li>[컨테이너 데이터 관리](management/manage_data.md)<br /><br /></li>
-<li>[Hyper-V 컨테이너 관리](management/hyperv_container.md)<br /><br /></li>
-<li>[컨테이너 리소스 관리](management/manage_resources.md)<br /><br /></li>
+<li>[Dockerfile 최적화](docker/optimize_windows_dockerfile.md)<br /><br /></li>
+<li>[컨테이너 네트워킹](management/container_networking.md)<br /><br /></li>
 </ul>
 </td>
 </tr>
+
 <tr>
 <td ><center>![](media/video.png)</center></td>
 <td>**보기**<br /><br />
@@ -68,6 +69,7 @@ Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으십니까?<b
 <br />
 </td>
 </tr>
+
 <tr>
 <td ><center>![](media/question.png)</center></td>
 <td>**커뮤니티**<br /><br />
@@ -82,6 +84,6 @@ Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으십니까?<b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

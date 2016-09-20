@@ -14,17 +14,11 @@
 ## [컨테이너 호스트 - Nano Server](deployment/deployment_nano.md)
 ## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
-# Windows의 Docker
+# Windows에서 Docker 관리
 ## [Windows의 Docker 엔진](docker/configure_docker_daemon.md)
 ## [Windows의 Dockerfile](docker/manage_windows_dockerfile.md)
 ## [Dockerfile 최적화](docker/optimize_windows_dockerfile.md)
-
-# Windows 컨테이너 관리
-## [Hyper-V 컨테이너](management/hyperv_container.md)
-## [컨테이너 이미지](management/manage_images.md)
 ## [컨테이너 네트워킹](management/container_networking.md)
-## [컨테이너 데이터 볼륨](management/manage_data.md)
-## [컨테이너 리소스 컨트롤](management/manage_resources.md)
 
 # 컨테이너 샘플
 ## [Dockerfile – Windows Server Core](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/windowsservercore)
@@ -38,6 +32,6 @@
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 
