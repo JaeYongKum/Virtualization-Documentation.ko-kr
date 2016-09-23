@@ -1,7 +1,7 @@
 ---
 title: "Hyper-V 통합 서비스 관리"
 description: "Hyper-V 통합 서비스 관리"
-keywords: windows 10, hyper-v, integration services, integration components
+keywords: "windows 10, hyper-v, 통합 서비스, 통합 구성 요소"
 author: scooley
 manager: timlt
 ms.date: 05/02/2016
@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
 translationtype: Human Translation
-ms.sourcegitcommit: 852f7fafe7192d85b0e9840ea3767a1206a1c285
-ms.openlocfilehash: e7abf05c899e2acca07312813b7808a5db00a9f7
+ms.sourcegitcommit: 22d29dbde56319a2a9d7fbc8afd041d1dc224101
+ms.openlocfilehash: 0779ef5b3f83bcf99f5681c13d445bcd33720dc6
 
 ---
 
@@ -32,7 +32,9 @@ ms.openlocfilehash: e7abf05c899e2acca07312813b7808a5db00a9f7
   
   ![](./media/HyperVManager-IntegrationServices.png)
   
-  여기에서 Hyper-V 호스트에서 사용할 수 있는 모든 통합 서비스를 볼 수 있습니다.  게스트 운영 체제는 나열된 모든 통합 시스템을 지원하거나 지원하지 않을 수 있습니다.
+  여기에서 Hyper-V 호스트에서 사용할 수 있는 모든 통합 서비스를 볼 수 있습니다.  게스트 운영 체제는 나열된 모든 통합 시스템을 지원하거나 지원하지 않을 수 있습니다. 게스트 운영 체제에 대한 버전 정보를 확인하려면 게스트 운영 체제에 로그온하고 명령 프롬프트에서 다음 명령을 실행합니다.
+
+REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 
 ## PowerShell을 사용하여 통합 서비스 활성화 또는 비활성화
 
@@ -207,7 +209,7 @@ sudo hv_kvp_daemon
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
+| Windows 8 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | Windows 7 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | Windows Vista(SP 2) | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | - | | |
@@ -230,7 +232,7 @@ sudo hv_kvp_daemon
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows 7 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Vista(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
@@ -252,7 +254,7 @@ sudo hv_kvp_daemon
 | 게스트 OS | 업데이트 메커니즘 | 참고 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows 7 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Vista(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
@@ -272,6 +274,6 @@ sudo hv_kvp_daemon
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

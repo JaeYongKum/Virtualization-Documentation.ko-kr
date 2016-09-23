@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 translationtype: Human Translation
-ms.sourcegitcommit: 07a07c790484c05ea49229a770ef75c80fad3cfa
-ms.openlocfilehash: 8a84da80199479907c3bf4cf0c7b1cfb1b44bf9d
+ms.sourcegitcommit: c73e1fa48b21a4daf2821ba3aae756d9a46e9f94
+ms.openlocfilehash: 3fbcdb7b93941a0ccc1cdbe659e70f3881b9d0cd
 
 ---
 
@@ -30,26 +30,30 @@ Windows 10에서 Hyper-V 관리자를 사용하여 다음과 같은 Hyper-V 호�
 * Windows 10
 * Windows 8.1
 * Windows 8
-* Windows Server 2016 + Windows Server Core, Nano Server 및 Hyper-V Server
-* Windows Server 2012 R2 + Windows Server Core, Datacenter 및 Hyper-V Server
-* Windows 2012 + Windows Server Core, Datacenter 및 Hyper-V Server
+* Windows Server 2016(모든 버전 및 설치 옵션)과 Nano 서버 및 해당하는 버전의 Hyper-V 서버
+* Windows Server 2012 R2(모든 버전 및 설치 옵션)와 해당하는 버전의 Hyper-V 서버
+* Windows Server 2012(모든 버전 및 설치 옵션)과 해당하는 버전의 Hyper-V 서버
 
-Windows 8.1 및 Windows Server 2012 R2에서 Hyper-V 관리자를 통해 관리할 수 있습니다.
+Windows 8.1 및 Windows Server 2012 R2에서 Hyper-V 관리자를 통해 다음 호스트를 관리할 수 있습니다.
 * Windows 8.1
 * Windows 8
-* Windows Server 2012 R2 + Windows Server Core, Datacenter 및 Hyper-V Server
-* Windows 2012 + Windows Server Core, Datacenter 및 Hyper-V Server
+* Windows Server 2012 R2(모든 버전 및 설치 옵션)와 해당하는 버전의 Hyper-V 서버
+* Windows Server 2012(모든 버전 및 설치 옵션)과 해당하는 버전의 Hyper-V 서버
 
-Windows 8 및 Windows Server 2012에서 Hyper-V 관리자를 통해 관리할 수 있습니다.
-* Windows 8
-* Windows 2012 + Windows Server Core, Datacenter 및 Hyper-V Server
+Windows 8 및 Windows Server 2012에서 Hyper-V 관리자를 통해 다음 호스트를 관리할 수 있습니다.
+* Windows 8
+* Windows Server 2012(모든 버전 및 설치 옵션)과 해당하는 버전의 Hyper-V 서버
 
-Hyper-V는 Windows 8의 Windows에서 사용할 수 있게 되었습니다.  Windows 8.1/Server 2012 이전에서 Hyper-V 관리자는 일치하는 버전의 Hyper-V만 관리합니다.
+Windows 7 및 Windows Server 2008 R2에서 Hyper-V 관리자를 통해 다음 호스트를 관리할 수 있습니다.
+* Windows Server 2008 R2(모든 버전 및 설치 옵션)와 해당하는 버전의 Hyper-V 서버
 
-> **참고:** Hyper-V 관리자 기능은 관리 중인 버전에 대해 사용 가능한 기능과 일치합니다.  즉, Server 2012R2에서 원격 서버 2012 호스트를 관리하는 경우 2012R2에서 새 Hyper-V 관리자 도구를 사용할 수 없습니다.
+Windows Vista 및 Windows Server 2008에서 Hyper-V 관리자를 통해 다음 호스트를 관리할 수 있습니다.
+* Windows Server 2008(모든 버전 및 설치 옵션)과 해당하는 버전의 Hyper-V 서버
 
-## localhost 관리 ##
-localhost를 Hyper-V 호스트로 Hyper-V 관리자에 추가하려면 **컴퓨터 선택** 대화 상자에서 **로컬 컴퓨터**를 선택합니다.
+> **참고:** Hyper-V 관리자 기능은 관리 중인 버전에 대해 사용 가능한 기능과 일치합니다. 즉, Windows Server 2012 R2에서 원격 Windows Server 2012 호스트를 관리하는 경우 Windows Server 2012 R2에서 새 Hyper-V 관리자 기능을 사용할 수 없습니다.
+
+## 로컬 호스트 관리 ##
+로컬 호스트를 Hyper-V 호스트로 Hyper-V 관리자에 추가하려면 **컴퓨터 선택** 대화 상자에서 **로컬 컴퓨터**를 선택합니다.
 
 ![](media/HyperVManager-ConnectToLocalHost.png)
 
@@ -70,7 +74,7 @@ Hyper-V 관리자에 원격 Hyper-V 호스트를 추가하려면 **컴퓨터 선
 `System Properties -> Remote Management Settings`을 통해 이 작업을 수행하거나 관리자 권한으로 다음 PowerShell 명령을 실행하여 수행할 수 있습니다.  
 
 ``` PowerShell
-winrm quickconfig
+Enable-PSRemoting
 ```
 
 현재 사용자 계정이 원격 호스트에서 Hyper-V Administrator 계정과 일치하는 경우 계속 진행하여 **확인**을 눌러 연결합니다.  
@@ -83,7 +87,7 @@ Windows 10에서는 원격 연결 유형의 가능한 조합을 크게 확장했
 
 
 ### 다른 사용자로 원격 호스트에 연결합니다.
-> Windows 10 또는 Server 2016 기술 미리 보기 3 이상 원격 호스트에 연결하는 경우에만 사용 가능합니다.
+> Windows 10 또는 Windows Server 2016 Technical Preview 3 이상 원격 호스트에 연결하는 경우에만 사용 가능합니다.
 
 Windows 10에서 원격 호스트에 대해 올바른 사용자 계정으로 실행하지 않는 경우 대체 자격 증명을 사용하여 다른 사용자로 연결할 수 있습니다.
 
@@ -93,15 +97,15 @@ Windows 10에서 원격 호스트에 대해 올바른 사용자 계정으로 실
 
 
 ### IP 주소를 사용하여 원격 호스트에 연결
-> Windows 10 또는 Server 2016 기술 미리 보기 3 이상 원격 호스트에 연결하는 경우에만 사용 가능합니다.
+> Windows 10 또는 Windows Server 2016 Technical Preview 3 이상 원격 호스트에 연결하는 경우에만 사용 가능합니다.
 
-경우에 따라 호스트 이름이 아닌 IP 주소를 사용하여 보다 쉽게 연결할 수 있습니다.  Windows 10을 사용하면 그렇게 할 수 있습니다.
+경우에 따라 호스트 이름이 아닌 IP 주소를 사용하여 보다 쉽게 연결할 수 있습니다. Windows 10을 사용하면 그렇게 할 수 있습니다.
 
 IP 주소를 사용하여 연결하려면 **다른 컴퓨터** 텍스트 필드에 IP 주소를 입력합니다.
 
 
 ## 도메인 외부에서(또는 도메인 없이) Hyper-V 호스트 관리 ##
-> Windows 10 또는 Server 2016 기술 미리 보기 3 이상 원격 호스트에 연결하는 경우에만 사용 가능합니다.
+> Windows 10 또는 Windows Server 2016 Technical Preview 3 이상 원격 호스트에 연결하는 경우에만 사용 가능합니다.
 
 관리할 Hyper-V 호스트에서 관리자 권한으로 다음을 실행합니다.
 
@@ -123,6 +127,6 @@ IP 주소를 사용하여 연결하려면 **다른 컴퓨터** 텍스트 필드�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 
