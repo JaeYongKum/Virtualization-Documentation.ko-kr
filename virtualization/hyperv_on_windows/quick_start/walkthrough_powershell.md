@@ -10,8 +10,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6d1ae036-0841-4ba5-b7e0-733aad31e9a7
 translationtype: Human Translation
-ms.sourcegitcommit: e14ede0a2b13de08cea0a955b37a21a150fb88cf
-ms.openlocfilehash: a8e567b6447aa73f14825b7054d977d2b003a726
+ms.sourcegitcommit: cb573c6ecb658fc8f314d66d70a62558b183209d
+ms.openlocfilehash: 8b688e666c7189888af3a7f182002f06fa2e2c0b
 
 ---
 
@@ -25,16 +25,16 @@ Hyper-V 배포, 가상 컴퓨터 만들기 및 이러한 가상 컴퓨터 관리
 2.  다음 명령을 실행하여 Hyper-V PowerShell 모듈과 함께 사용할 수 있는 검색 가능한 PowerShell 명령 목록을 표시합니다.
 
  ```powershell
-get-command -module hyper-v | out-gridview
+Get-Command -Module hyper-v | Out-GridView
 ```
   다음과 같이 표시됩니다.
 
   ![](media\command_grid.png)
 
-3. 특정 PowerShell 명령에 대한 자세한 내용은 `get-help`를 참조하세요. 예를 들어 다음 명령을 실행하면 `get-vm` Hyper-V 명령에 대한 정보를 반환합니다.
+3. 특정 PowerShell 명령에 대한 자세한 내용을 보려면 `Get-Help`를 사용하세요. 예를 들어 다음 명령을 실행하면 `Get-VM` Hyper-V 명령에 대한 정보가 반환됩니다.
 
   ```powershell
-get-help get-vm
+Get-Help Get-VM
 ```
  결과는 명령을 구성하는 방법, 필수 및 선택적 매개 변수가 무엇인지 및 사용할 수 있는 별칭을 보여 줍니다.
 
@@ -43,26 +43,26 @@ get-help get-vm
 
 ### 가상 컴퓨터 목록 반환
 
-`get-vm` 명령을 사용하여 가상 컴퓨터의 목록을 반환합니다.
+`Get-VM` 명령을 사용하여 가상 컴퓨터 목록을 반환합니다.
 
 1. PowerShell에서 다음 명령을 실행합니다.
  
  ```powershell
-get-vm
+Get-VM
 ```
  다음과 같이 표시됩니다.
 
  ![](media\get_vm.png)
 
-2. 전원이 켜진 가상 컴퓨터의 목록을 반환하려면 `get-vm` 명령에 필터를 추가합니다. where-object 명령을 사용하여 필터를 추가할 수 있습니다. 필터링에 대한 자세한 내용은 [Using the Where-Object(Where-Object 사용)](https://technet.microsoft.com/en-us/library/ee177028.aspx) 설명서를 참조하세요.   
+2. 전원이 켜진 가상 컴퓨터 목록만 반환하려면 `Get-VM` 명령에 필터를 추가합니다. 필터는 `Where-Object` 명령을 사용하여 추가할 수 있습니다. 필터링에 대한 자세한 내용은 [Using the Where-Object(Where-Object 사용)](https://technet.microsoft.com/en-us/library/ee177028.aspx) 설명서를 참조하세요.   
 
  ```powershell
- get-vm | where {$_.State -eq ‘Running’}
+ Get-VM | where {$_.State -eq 'Running'}
  ```
 3.  꺼져 있는 상태의 모든 가상 컴퓨터를 나열하려면 다음 명령을 실행합니다. 이 명령은 'Running'에서 'Off'로 변경된 필터를 사용한 2단계의 명령 복사본입니다.
 
  ```powershell
- get-vm | where {$_.State -eq ‘Off’}
+ Get-VM | where {$_.State -eq 'Off'}
  ```
 
 ### 가상 컴퓨터 시작 및 종료
@@ -70,33 +70,33 @@ get-vm
 1. 특정 가상 컴퓨터를 시작하려면 가상 컴퓨터의 이름으로 다음 명령을 실행합니다.
 
  ```powershell
- Start-vm -Name <virtual machine name>
+ Start-VM -Name <virtual machine name>
  ```
 
-2. 현재 전원이 꺼진 모든 가상 컴퓨터를 시작하려면 해당 컴퓨터의 목록을 가져오고 'start-vm' 명령에 목록을 파이프합니다.
+2. 현재 전원이 꺼진 모든 가상 컴퓨터를 시작하려면 해당 컴퓨터 목록을 가져오고 `Start-VM` 명령에 목록을 파이프합니다.
 
   ```powershell
- get-vm | where {$_.State -eq ‘Off’} | start-vm
+ Get-VM | where {$_.State -eq 'Off'} | Start-VM
  ```
 3. 실행 중인 모든 가상 컴퓨터를 종료하려면 다음을 실행합니다.
  
   ```powershell
- get-vm | where {$_.State -eq ‘Running’} | stop-vm
+ Get-VM | where {$_.State -eq 'Running'} | Stop-VM
  ```
 
 ### VM 검사점 만들기
 
-PowerShell을 사용하여 검사점을 만들려면 `get-vm` 명령을 사용하여 가상 컴퓨터를 선택하고 이를 `checkpoint-vm` 명령에 파이프합니다. 마지막으로 `-snapshotname`을 사용하여 검사점에 이름을 지정합니다. 전체 명령은 다음과 같습니다.
+PowerShell을 사용하여 검사점을 만들려면 `Get-VM` 명령을 사용하여 가상 컴퓨터를 선택하고 이를 `Checkpoint-VM` 명령에 파이프합니다. 마지막으로 `-SnapshotName`을 사용하여 검사점에 이름을 지정합니다. 전체 명령은 다음과 같습니다.
 
  ```powershell
- get-vm -Name <VM Name> | checkpoint-vm -snapshotname <name for snapshot>
+ Get-VM -Name <VM Name> | Checkpoint-VM -SnapshotName <name for snapshot>
  ```
 ### 새 가상 컴퓨터 만들기
 
 다음 예제는 PowerShell ISE(통합 스크립팅 환경)에서 새 가상 컴퓨터를 만드는 방법을 보여 줍니다. 이는 간단한 예이며 추가 PowerShell 기능 및 고급 VM 배포를 포함하도록 확장할 수 있습니다.
 
 1. 시작 시에 PowerShell ISE를 열려면 **PowerShell ISE**를 입력합니다.
-2. 다음 코드를 실행하여 가상 컴퓨터를 만듭니다. New-VM 명령에 대한 자세한 내용은 [New-VM](https://technet.microsoft.com/en-us/library/hh848537.aspx) 설명서를 참조하세요.
+2. 다음 코드를 실행하여 가상 컴퓨터를 만듭니다. `New-VM` 명령에 대한 자세한 내용은 [New-VM](https://technet.microsoft.com/en-us/library/hh848537.aspx) 설명서를 참조하세요.
 
   ```powershell
  $VMName = "VMNAME"
@@ -108,8 +108,8 @@ PowerShell을 사용하여 검사점을 만들려면 `get-vm` 명령을 사용�
      NewVHDPath = "C:\Virtual Machines\$VMName\$VMName.vhdx"
      NewVHDSizeBytes = 53687091200
      BootDevice = "VHD"
-     Path = "C:\Virtual Machines\$VMName "
-     SwitchName = (get-vmswitch).Name[0]
+     Path = "C:\Virtual Machines\$VMName"
+     SwitchName = (Get-VMSwitch).Name[0]
  }
 
  New-VM @VM
@@ -121,6 +121,7 @@ PowerShell을 사용하여 검사점을 만들려면 `get-vm` 명령을 사용�
  
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO3-->
 
 
