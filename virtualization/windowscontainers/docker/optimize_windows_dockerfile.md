@@ -10,13 +10,11 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
 translationtype: Human Translation
-ms.sourcegitcommit: 7ebd83d5d3a098fc8760f5dfba7e350c3f167232
-ms.openlocfilehash: 19a363aa013b51e0c80d56572de77e94f27e546f
+ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
+ms.openlocfilehash: 59f096ce914e0f1cbee5678b7db980297ca89364
 
 ---
 # Windows Dockerfile 최적화
-
-**이 예비 콘텐츠는 변경될 수 있습니다.** 
 
 여러 가지 방법을 사용하여 Docker 빌드 프로세스와 결과 Docker 이미지를 모두 최적화할 수 있습니다. 이 문서에서는 Docker 빌드 프로세스의 작동 방식에 대해 자세히 설명하고 Windows 컨테이너에서 최적의 이미지 만들기에 사용할 수 있는 여러 가지 방법을 보여 줍니다.
 
@@ -305,6 +303,6 @@ RUN powershell -Command \
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Sep16_HO4-->
 
 

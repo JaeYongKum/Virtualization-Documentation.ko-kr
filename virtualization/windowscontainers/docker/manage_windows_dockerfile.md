@@ -1,7 +1,7 @@
 ---
 title: "Dockerfile 및 Windows 컨테이너"
 description: "Windows 컨테이너용 Dockerfile을 만듭니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 05/26/2016
@@ -10,14 +10,12 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
 translationtype: Human Translation
-ms.sourcegitcommit: 97a7d5fdd25f755d73e05bfc5f3c4a80a7b6b8c5
-ms.openlocfilehash: 84baad10511eb070e654f1ee7d71eb547d3f2ee7
+ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
+ms.openlocfilehash: ea84ac6c688fa258c9b72f50565ec6e21e8051db
 
 ---
 
 # Windows의 Dockerfile
-
-**이 예비 콘텐츠는 변경될 수 있습니다.** 
 
 Docker 엔진에는 컨테이너 이미지 만들기를 자동화하는 도구가 포함되어 있습니다. 컨테이너 이미지는 `docker commit` 명령을 사용하여 수동으로 만들 수 있지만 자동화된 이미지 만들기 프로세스를 채택하면 다음을 비롯한 많은 혜택이 있습니다.
 
@@ -79,7 +77,7 @@ FROM 명령은 다음과 같은 형식을 사용합니다.
 FROM <image>
 ```
 
-**예제**
+**예**
 
 ```
 FROM windowsservercore
@@ -484,6 +482,6 @@ windowsservercore   latest              6801d964fda5        4 months ago        
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

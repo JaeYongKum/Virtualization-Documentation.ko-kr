@@ -1,7 +1,7 @@
 ---
 title: "Windows 컨테이너 빠른 시작"
 description: "Windows 컨테이너 빠른 시작입니다."
-keywords: docker, containers
+keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
 ms.date: 05/26/2016
@@ -10,14 +10,12 @@ ms.prod: windows-contianers
 ms.service: windows-containers
 ms.assetid: 4878f5d2-014f-4f3c-9933-97f03348a147
 translationtype: Human Translation
-ms.sourcegitcommit: 4ea609a6e4636e53cc8632bb700e37ba58f3cc72
-ms.openlocfilehash: c0176d4f5445263a5fd522a80ce2a9dca7ac90e6
+ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
+ms.openlocfilehash: f795cfde1174a62b85aefd58c6bd07e81e196718
 
 ---
 
 # Windows 컨테이너 빠른 시작
-
-**이 예비 콘텐츠는 변경될 수 있습니다.** 
 
 Windows 컨테이너 빠른 시작에서는 제품 및 컨테이너 용어를 소개하고, 간단한 컨테이너 배포 예제를 단계별로 실행하며, 고급 항목에 대한 참조도 제공합니다. 컨테이너 또는 Windows 컨테이너를 처음 사용하는 경우 이 빠른 시작의 각 단계를 따라하면 기술을 직접 경험할 수 있습니다.
 
@@ -60,6 +58,6 @@ Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO4-->
 
 
