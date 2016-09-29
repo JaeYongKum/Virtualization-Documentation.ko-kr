@@ -58,7 +58,7 @@
       "ArchivedDateTime": "2016-09-21T00:08:09.6590157Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\852800b19fb39737f0d7104eb2d50521b6cca982.d8c9be0e9ad459acb5e8b2870dd6e08c440dc5c7.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\remote_host_management.40d5636e508c5b95bb2917be75ca6b5aa426a915.ko-kr.xlf",
-      "LocXliffCommit": "301e98f655e41aabc7357bfa8870d30846f62b21"
+      "LocXliffCommit": "6553648dc3321facb6aa70114b755009813ec61d"
     },
     "virtualization\\windowscontainers\\quick_start\\quick_start_windows_server.md.f603a9c1b44b60eadc0e84d092bbcd9f95ce6947.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\quick_start\\quick_start_windows_server.md",
