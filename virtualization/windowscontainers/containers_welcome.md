@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
 translationtype: Human Translation
-ms.sourcegitcommit: 59626096d428072dec098c7817e2d6b39c10e9cf
-ms.openlocfilehash: 2c9821ef7ac414640790b3cfdb7fd457710a67f4
+ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
+ms.openlocfilehash: 1ee40d330234f8800ba73d0c4abe36859cfa2989
 
 ---
 
@@ -23,12 +23,16 @@ Windows 컨테이너는 여러 개의 격리된 응용 프로그램을 단일 �
 <tr>
 <td ><center>![](media/try.png)</center></td>
 <td>**빠른 시작**<br /><br />
-다음 빠른 시작 가이드를 사용하여 Windows Server 및 Hyper-V 컨테이너를 사용해 봅니다.<br /><br />
+Windows Server 빠른 시작<br /><br />
 <ul>
-<li>[1 - 개념 및 용어](quick_start/quick_start.md)<br /><br /></li>
-<li>[2 - Windows Server의 컨테이너](quick_start/quick_start_windows_server.md)<br /><br /></li>
-<li>[3 - Windows Server의 컨테이너 이미지](quick_start/quick_start_images.md)<br /><br /></li>
-<li>[4 - Windows 10의 컨테이너](quick_start/quick_start_windows_10.md)<br /><br /></li>
+<li>[1단계 – 개념 및 용어](quick_start/quick_start.md)<br /><br /></li>
+<li>[2단계 – Windows Server 및 첫 번째 컨테이너 구성](quick_start/quick_start_windows_server.md)<br /><br /></li>
+<li>[3단계 – 컨테이너 이미지 만들기 및 푸시](quick_start/quick_start_images.md)<br /><br /></li>
+</ul>
+Windows 10 빠른 시작<br /><br />
+<ul>
+<li>[1단계 – 개념 및 용어](quick_start/quick_start.md)<br /><br /></li>
+<li>[2단계 – Windows 10 및 첫 번째 컨테이너 구성](quick_start/quick_start_windows_10.md)<br /><br /></li>
 </ul>
 </td>
 </tr>
@@ -84,6 +88,6 @@ Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으십니까?<b
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Sep16_HO4-->
 
 

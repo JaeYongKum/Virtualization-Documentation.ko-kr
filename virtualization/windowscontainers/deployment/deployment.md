@@ -4,30 +4,20 @@ description: "Windows Server에 Windows 컨테이너 배포"
 keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 08/22/2016
+ms.date: 09/26/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
 translationtype: Human Translation
-ms.sourcegitcommit: 39e480b8bf3f90cfe9b7d4d17141b9dbec5f93e5
-ms.openlocfilehash: cc662d0c688eadeef8011a2b97e212ec6399060a
+ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
+ms.openlocfilehash: 4d7e8fb1fcbb7e9680b7d5bd143ef6d59e45035e
 
 ---
 
 # 컨테이너 호스트 배포 - Windows Server
 
-**이 예비 콘텐츠는 변경될 수 있습니다.**
-
 Windows 컨테이너 호스트 배포 단계는 운영 체제와 호스트 시스템 유형(물리적 또는 가상)에 따라 다릅니다. 이 문서에서는 물리적 시스템이나 가상 시스템에서 Windows Server 2016 또는 Windows Server Core 2016에 Windows 컨테이너 호스트를 배포하는 방법에 대해 자세히 설명합니다.
-
-## Azure 이미지 
-
-완전히 구성된 Windows Server 이미지를 Azure에서 사용할 수 있습니다. 이 이미지를 사용하려면 아래 단추를 클릭하여 가상 컴퓨터를 배포하세요. 이 템플릿을 사용하여 Windows 컨테이너 시스템을 Azure에 배포하는 경우 이 문서의 나머지 부분을 건너뛸 수 있습니다.
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FVirtualization-Documentation%2Fmaster%2Fwindows-server-container-tools%2Fcontainers-azure-template%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
 
 ## 컨테이너 기능 설치
 
@@ -50,13 +40,13 @@ Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Doc
 Docker 엔진과 클라이언트를 Zip 보관 파일로 다운로드합니다.
 
 ```none
-Invoke-WebRequest "https://get.docker.com/builds/Windows/x86_64/docker-1.12.0.zip" -OutFile "$env:TEMP\docker-1.12.0.zip" -UseBasicParsing
+Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
 ```
 
 Zip 보관 파일을 프로그램 파일로 확장, 보관 파일 콘텐츠는 이미 Docker 디렉터리에 있습니다.
 
 ```none
-Expand-Archive -Path "$env:TEMP\docker-1.12.0.zip" -DestinationPath $env:ProgramFiles
+Expand-Archive -Path "$env:TEMP\docker.zip" -DestinationPath $env:ProgramFiles
 ```
 
 다음 두 명령을 실행하여 시스템 경로에 Docker 디렉터리를 추가합니다.
@@ -68,8 +58,6 @@ $env:path += ";c:\program files\docker"
 # For persistent use, will apply even after a reboot. 
 [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
 ```
-
-수정된 경로를 인식할 수 있도록 PowerShell 세션을 다시 시작합니다.
 
 Docker를 Windows 서비스로 설치하려면 다음을 실행합니다.
 
@@ -85,7 +73,7 @@ Start-Service Docker
 
 ## 기본 컨테이너 이미지 설치
 
-Windows 컨테이너를 사용하기 전에 먼저 기본 이미지를 설치해야 합니다. 기본 이미지는 기본 운영 체제로 Windows Server Core 또는 Nano Server에서 사용할 수 있습니다. Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이미지 관리](../management/manage_images.md)를 참조하세요.
+Windows 컨테이너를 사용하기 전에 먼저 기본 이미지를 설치해야 합니다. 기본 이미지는 기본 운영 체제로 Windows Server Core 또는 Nano Server에서 사용할 수 있습니다. Docker 컨테이너 이미지에 대한 자세한 내용은 [Build your own images on docker.com](https://docs.docker.com/engine/tutorials/dockerimages/)(docker.com에서 고유한 이미지 만들기)을 참조하세요.
 
 Windows Server Core 기본 이미지를 설치하려면 다음을 실행합니다.
 
@@ -98,6 +86,8 @@ Nano Server 기본 이미지를 설치하려면 다음을 실행합니다.
 ```none
 docker pull microsoft/nanoserver
 ```
+
+> [EULA](../Images_EULA.md)에서 Windows 컨테이너 OS 이미지 EULA를 읽어보세요.
 
 ## Hyper-V 컨테이너 호스트
 
@@ -131,6 +121,6 @@ Install-WindowsFeature hyper-v
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO4-->
 
 

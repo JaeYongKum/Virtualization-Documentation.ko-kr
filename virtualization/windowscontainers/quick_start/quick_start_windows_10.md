@@ -4,20 +4,18 @@ description: "컨테이너 배포 빠른 시작"
 keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 08/17/2016
+ms.date: 09/26/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: 16630b534367791114a4844c3c1f582f13d09d6d
-ms.openlocfilehash: 02b4e01e404fe5ab3a6fadbb3481c741cb4aa563
+ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
+ms.openlocfilehash: 1bc3d9c5094eb5b30f2845c83b9842079edc22c4
 
 ---
 
 # Windows 10의 Windows 컨테이너
-
-**이 예비 콘텐츠는 변경될 수 있습니다.**
 
 이 연습에서는 Windows 10 Professional 또는 Enterprise(Anniversary Edition)에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 완료 후에는 컨테이너 역할이 설치되고 간단한 Hyper-V 컨테이너가 배포됩니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./quick_start.md)에서 확인할 수 있습니다.
 
@@ -48,13 +46,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Restart-Computer -Force
 ```
 
-다시 부팅되면 다음 명령을 실행하여 Windows 10의 Windows 컨테이너 관련 알려진 문제를 수정합니다.  
-
- ```none
-Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 1 -Force
-```
-
-> 현재 릴리스에서 Hyper-v 컨테이너를 안전하게 사용하려면 OpLock을 사용하지 않도록 설정해야 합니다. Oplock을 다시 활성화하려면 다음 명령을 사용합니다.  `Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 0 -Force`
+> 이전에 Technical Preview 5 컨테이너 기본 이미지와 함께 Windows 10에서 Hyper-V 컨테이너를 사용한 경우, OpLocks를 다시 사용하도록 설정하세요. 다음 명령을 실행하세요.  `Set-ItemProperty -Path 'HKLM:SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers' -Name VSmbDisableOplocks -Type DWord -Value 0 -Force`
 
 ## 2. Docker 설치
 
@@ -81,8 +73,6 @@ $env:path += ";c:\program files\docker"
 # For persistent use, will apply even after a reboot.
 [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
 ```
-
-수정된 경로를 인식할 수 있도록 PowerShell 세션을 다시 시작합니다.
 
 Docker를 Windows 서비스로 설치하려면 다음을 실행합니다.
 
@@ -112,10 +102,12 @@ docker pull microsoft/nanoserver
 docker images
 
 REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
-microsoft/nanoserver   latest              3a703c6e97a2        7 weeks ago         969.8 MB
+microsoft/nanoserver   latest              105d76d0f40e        4 days ago          652 MB
 ```
 
 Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이미지 관리](../management/manage_images.md)를 참조하세요.
+
+> [EULA](../Images_EULA.md)에서 Windows 컨테이너 OS 이미지 EULA를 읽어보세요.
 
 ## 4. 첫 번째 컨테이너 배포
 
@@ -172,6 +164,6 @@ docker run --rm helloworld powershell c:\helloworld.ps1
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 

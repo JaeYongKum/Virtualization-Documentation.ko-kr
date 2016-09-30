@@ -1,12 +1,14 @@
 # Windows 컨테이너 정보
 ## [Windows 컨테이너 개요](about/about_overview.md)
-## [FAQ](about/faq.md)
 
-# 컨테이너 빠른 시작
-## [1 – 개념 및 용어](quick_start/quick_start.md)
-## [2 - Windows Server 빠른 시작](quick_start/quick_start_windows_server.md)
-## [3 – Windows Server 이미지](quick_start/quick_start_images.md)
-## [4 - Windows 10 빠른 시작](quick_start/quick_start_windows_10.md)
+# Windows Server 빠른 시작
+## [1단계 – 개념](quick_start/quick_start.md)
+## [2단계 - 첫 번째 컨테이너](quick_start/quick_start_windows_server.md)
+## [3단계 - 컨테이너 이미지](quick_start/quick_start_images.md)
+
+# Windows 10 빠른 시작
+## [1단계 – 개념](quick_start/quick_start.md)
+## [2단계 - 첫 번째 컨테이너](quick_start/quick_start_windows_10.md)
 
 # Windows 컨테이너 배포
 ## [시스템 요구 사항](deployment/system_requirements.md)
@@ -27,11 +29,9 @@
 # 커뮤니티 및 지원
 ## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)
 
-# [Windows Server EULA](EULA.md)
-# [Nano Server EULA](Nano_EULA.md)
+# [컨테이너 OS 이미지 EULA](Images_EULA.md)
 
 
-
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Sep16_HO4-->
 
 
