@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: 891c9e9805bf2089fd11f86420de5ed251916c3f
-ms.openlocfilehash: 77dca1499abf406b1d599c28afdb19dd823b8401
+ms.sourcegitcommit: 0fae34a5a85678a25c47b0312650e67aa6cd7efd
+ms.openlocfilehash: 4d02d6423cc910c2bd2fe0691cbb62bddcabb117
 
 ---
 
@@ -24,6 +24,8 @@ ms.openlocfilehash: 77dca1499abf406b1d599c28afdb19dd823b8401
 **필수 조건:**
 
 Windows Server 2016이 실행되는 컴퓨터 시스템(물리적 또는 가상) 1대. Windows Server 2016 TP5를 사용하는 경우 [Window Server 2016 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016 )으로 업데이트하세요. 
+
+> 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
 ## 1. 컨테이너 기능 설치
 
@@ -139,6 +141,6 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Sep16_HO5-->
 
 

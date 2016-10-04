@@ -10,8 +10,8 @@ ms.prod: windows-contianers
 ms.service: windows-containers
 ms.assetid: 4878f5d2-014f-4f3c-9933-97f03348a147
 translationtype: Human Translation
-ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
-ms.openlocfilehash: f795cfde1174a62b85aefd58c6bd07e81e196718
+ms.sourcegitcommit: b5e52d567bcfafbdd412d4fcf24a14481f51c080
+ms.openlocfilehash: b11167ae429d4529a6bec679a4cd6b0ad6538e39
 
 ---
 
@@ -33,7 +33,7 @@ Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런�
 
 **Windows Server 컨테이너** – 프로세스 및 네임스페이스 격리 기술을 통해 응용 프로그램 격리 기능을 제공합니다. Windows Server 컨테이너는 컨테이너 호스트와 호스트에서 실행되는 모든 컨테이너와 커널을 공유합니다.
 
-**Hyper-V 컨테이너** – 고도로 최적화된 가상 컴퓨터에서 각 컨테이너를 실행하여 Windows Server 컨테이너에서 제공하는 격리를 확장합니다. 이 구성에서 컨테이너 호스트의 커널은 Hyper-V 컨테이너와 공유되지 않습니다.
+**Hyper-V 컨테이너** – 고도로 최적화된 가상 컴퓨터에서 각 컨테이너를 실행하여 Windows Server 컨테이너에서 제공하는 격리를 확장합니다. 이 구성에서 컨테이너 호스트의 커널은 다른 Hyper-V 컨테이너와 공유되지 않습니다.
 
 ## 3. 컨테이너의 기본 사항
 
@@ -58,6 +58,6 @@ Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런�
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

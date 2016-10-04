@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
-ms.openlocfilehash: f3eceaa84de7dfb4e6783835939a498a3e798e91
+ms.sourcegitcommit: d30136e66bf15dc015629e359422c9b8346b8426
+ms.openlocfilehash: 3ee39f57890248951b69887edc87c9fedb13c285
 
 ---
 
@@ -117,12 +117,14 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
 
 ## Docker 서비스에서 Docker 구성
 
-또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 엔진을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 엔진 플래그를 설정합니다.
+또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 엔진을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 엔진 플래그를 설정합니다. 명령 프롬프트(cmd.exe는 Powershell이 아님)에서 다음 명령을 실행합니다.
 
 
 ```none
 sc config docker binpath= "\"C:\Program Files\docker\dockerd.exe\" --run-service -H tcp://0.0.0.0:2375"
 ```
+
+참고: daemon.json 파일에 이미 `"hosts": ["tcp://0.0.0.0:2375"]`가 포함되어 있으면 이 명령을 실행할 필요가 없습니다.
 
 ## 공통 구성
 
@@ -140,7 +142,7 @@ sc config docker binpath= "\"C:\Program Files\docker\dockerd.exe\" --run-service
 
 ### Docker 보안 그룹 설정
 
-Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 이러한 명령은 명명된 파이프를 통해 실행됩니다. 기본적으로 Administrators 그룹의 구성원만 명명된 파이프를 통해 Docker 엔진에 액세스할수 있습니다. 이 액세스 권한이 있는 보안 그룹을 지정하려면 `group` 플래그를 사용합니다.
+Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 이러한 명령은 명명된 파이프를 통해 실행됩니다. 기본적으로 Administrators 그룹의 구성원만 명명된 파이프를 통해 Docker 엔진에 액세스할 수 있습니다. 이 액세스 권한이 있는 보안 그룹을 지정하려면 `group` 플래그를 사용합니다.
 
 ```none
 {
@@ -181,6 +183,6 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-3
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
