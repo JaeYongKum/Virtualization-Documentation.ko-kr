@@ -4,20 +4,18 @@ description: "Nano Server에 Windows 컨테이너 배포"
 keywords: "Docker, 컨테이너"
 author: neilpeterson
 manager: timlt
-ms.date: 09/26/2016
+ms.date: 09/28/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: 185c83b69972765a72af2dbbf5d0c7d2551212ce
-ms.openlocfilehash: 6ada7de02bbdfab8986fdfeeda60b6373a6e2d96
+ms.sourcegitcommit: df9723e3a9d9ada778d01d43dcb36c99813dea8f
+ms.openlocfilehash: 9af33e6bce21aa339109f060100b2c7ab3c1eb91
 
 ---
 
 # 컨테이너 호스트 배포 - Nano Server
-
-**이 예비 콘텐츠는 변경될 수 있습니다.** 
 
 이 문서에서는 Windows 컨테이너 기능을 사용하여 기본적인 Nano Server를 배포하는 방법에 대해 단계별로 설명합니다. 고급 항목이므로 Windows 및 Windows에 컨테이너에 대한 기본적인 지식이 있다고 가정합니다. Windows 컨테이너에 대한 소개는 [Windows 컨테이너 빠른 시작](../quick_start/quick_start.md)을 참조하세요.
 
@@ -27,7 +25,7 @@ ms.openlocfilehash: 6ada7de02bbdfab8986fdfeeda60b6373a6e2d96
 
 ### Nano Server VM 만들기
 
-먼저 [이 위치](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/nano_eula)에서 Nano Server 평가판 VHD를 다운로드합니다. 이 VHD에서 가상 컴퓨터를 만들고 가상 컴퓨터를 시작한 다음 Hyper-V 연결 옵션 또는 사용하는 가상화 플랫폼에 따라 해당 옵션을 사용하여 연결합니다.
+먼저 [이 위치](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)에서 Nano Server 평가판 VHD를 다운로드합니다. 이 VHD에서 가상 컴퓨터를 만들고 가상 컴퓨터를 시작한 다음 Hyper-V 연결 옵션 또는 사용하는 가상화 플랫폼에 따라 해당 옵션을 사용하여 연결합니다.
 
 ### 원격 PowerShell 세션 만들기
 
@@ -47,6 +45,22 @@ Enter-PSSession -ComputerName 192.168.1.50 -Credential ~\Administrator
 
 이러한 단계를 완료하면 Nano Server 시스템과 함께 원격 PowerShell 세션을 사용하게 됩니다. 달리 언급되지 않는 한, 이 문서의 나머지 부분은 원격 세션에서 이루어집니다.
 
+### Windows 업데이트 설치
+
+중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 업데이트를 설치하려면 다음 명령을 실행합니다.
+
+```none
+$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
+Invoke-CimMethod -InputObject $sess -MethodName ApplyApplicableUpdates
+```
+
+업데이트가 적용되고 나면 시스템을 다시 부팅합니다.
+
+```none
+Restart-Computer
+```
+
+백업 후 원격 PowerShell 연결을 다시 설정합니다.
 
 ## 컨테이너 기능 설치
 
@@ -74,35 +88,19 @@ Restart-Computer
 
 Windows 컨테이너를 사용하려면 Docker 엔진이 필요합니다. 다음 단계를 사용하여 Docker 엔진을 설치합니다.
 
-먼저, SMB에 대한 Nano Server 방화벽을 구성했는지 확인합니다. 이는 Nano Server 호스트에서 이 명령을 실행하여 완료할 수 있습니다.
+Docker 엔진과 클라이언트를 Zip 보관 파일로 다운로드합니다.
 
 ```none
-Set-NetFirewallRule -Name FPS-SMB-In-TCP -Enabled True
+Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
 ```
 
-Nano Server 호스트에 Docker 실행 파일을 저장할 폴더를 만듭니다.
+Zip 보관 파일을 프로그램 파일로 확장, 보관 파일 콘텐츠는 이미 Docker 디렉터리에 있습니다.
 
 ```none
-New-Item -Type Directory -Path $env:ProgramFiles'\docker\'
-```
-
-Docker 엔진 및 클라이언트를 다운로드하고 컨테이너 호스트의 'C:\Program Files\docker\'에 복사합니다. 
-
-> Nano Server는 현재 `Invoke-WebRequest`를 지원하지 않습니다. 원격 시스템에서 다운로드를 완료해야 하며 파일은 Nano Server 호스트에 복사해야 합니다.
-
-```none
-Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile .\docker.zip -UseBasicParsing
-```
-
-다운로드한 패키지를 추출합니다. 작업이 완료되면 **dockerd.exe** 및 **docker.exe**를 모두 포함하는 디렉터리를 갖게 됩니다. 두 특성 모두를 Nano Server 컨테이너 호스트에 있는 **C:\Program Files\docker\** 폴더에 복사합니다. 
-
-```none
-Expand-Archive .\docker.zip
+Expand-Archive -Path "$env:TEMP\docker.zip" -DestinationPath $env:ProgramFiles
 ```
 
 Docker 디렉터리를 Nano Server의 시스템 경로에 추가합니다.
-
-> 원격 Nano Server 세션으로 다시 전환해야 합니다.
 
 ```none
 # For quick use, does not require shell to be restarted.
@@ -235,6 +233,6 @@ Restart-Computer
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Sep16_HO5-->
 
 
