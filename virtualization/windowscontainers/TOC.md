@@ -21,6 +21,7 @@
 ## [Windows의 Dockerfile](docker/manage_windows_dockerfile.md)
 ## [Dockerfile 최적화](docker/optimize_windows_dockerfile.md)
 ## [컨테이너 네트워킹](management/container_networking.md)
+## [PowerShell로 Docker 관리](https://github.com/Microsoft/Docker-PowerShell)
 
 # 컨테이너 샘플
 ## [Dockerfile – Windows Server Core](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/windowsservercore)
@@ -32,6 +33,6 @@
 # [컨테이너 OS 이미지 EULA](Images_EULA.md)
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
