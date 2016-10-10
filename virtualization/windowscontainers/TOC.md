@@ -24,8 +24,13 @@
 ## [PowerShell로 Docker 관리](https://github.com/Microsoft/Docker-PowerShell)
 
 # 컨테이너 샘플
-## [Dockerfile – Windows Server Core](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/windowsservercore)
-## [Dockerfile – Nano Server](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/nanoserver)
+## [응용 프로그램 프레임워크](samples.md#Application-Frameworks)
+## [프로그래밍 언어](samples.md#Programing-Languages)
+## [데이터베이스](samples.md#Databases)
+## [인프라와 CI 도구](samples.md#Infrastructure-and-CI-Tools)
+## [재미를 위한 내용](samples.md#Just-for-Fun)
+## [기타](samples.md#Other)
+
 
 # 커뮤니티 및 지원
 ## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)
