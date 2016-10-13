@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: 0fae34a5a85678a25c47b0312650e67aa6cd7efd
-ms.openlocfilehash: 4d02d6423cc910c2bd2fe0691cbb62bddcabb117
+ms.sourcegitcommit: ac962391cd3b82be2dd18b145ee5e6d7a483a91a
+ms.openlocfilehash: 334f19fa645ad50eb59ad61890842f0b6a43dce2
 
 ---
 
@@ -48,7 +48,7 @@ Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Doc
 상업적으로 지원되는 Docker 엔진 및 클라이언트의 릴리스 후보를 zip 보관 파일로 다운로드합니다.
 
 ```none
-Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
+Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker-1.12.2.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
 ```
 
 zip 보관 파일을 프로그램 파일로 확장합니다.
@@ -141,6 +141,7 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 [Windows 10의 Windows 컨테이너](./quick_start_windows_10.md)
 
 
-<!--HONumber=Sep16_HO5-->
+
+<!--HONumber=Oct16_HO2-->
 
 
