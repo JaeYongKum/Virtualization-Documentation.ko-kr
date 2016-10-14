@@ -198,7 +198,7 @@
       "ArchivedDateTime": "2016-10-14T00:08:19.2562883Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\4fdd93badef908d694c5fbcd335645f565454091.1d569eaeea16bd9d9361cf13ba98aefe12841538.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_windows_dockerfile.cf56579c9136245b4cbef41fabc5df7a6ab9832a.ko-kr.xlf",
-      "LocXliffCommit": "dba16962761b8e56872ed84d44a67afb67d15090"
+      "LocXliffCommit": "575c6d0d70b49d2897219e1171a8637aba8cbf5b"
     },
     "virtualization\\windowscontainers\\deployment\\deployment.md.7a541f0d6d50943c1fc0c3d8e95c1847a22f65f1.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\deployment\\deployment.md",
@@ -378,7 +378,7 @@
       "ArchivedDateTime": "2016-10-14T00:08:19.2562883Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\7b4276dd8e961bf278bee2baea2449e04eef7a2f.27f257eaeccf55ce82f15b1e944b4cc6e82e8d76.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf",
-      "LocXliffCommit": "21508e8a516b95baa57941dac762557563a92308"
+      "LocXliffCommit": "575c6d0d70b49d2897219e1171a8637aba8cbf5b"
     },
     "virtualization\\windowscontainers\\deployment\\system_requirements.md.b152c27ca36d44c56b66af957fa7b50788f93b64.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\deployment\\system_requirements.md",

@@ -263,9 +263,6 @@
   "4fdd93badef908d694c5fbcd335645f565454091": [
     "virtualization\\windowscontainers\\docker\\manage_windows_dockerfile.md"
   ],
-  "ea84ac6c688fa258c9b72f50565ec6e21e8051db": [
-    "virtualization\\windowscontainers\\docker\\manage_windows_dockerfile.md"
-  ],
   "59f096ce914e0f1cbee5678b7db980297ca89364": [
     "virtualization\\windowscontainers\\docker\\optimize_windows_dockerfile.md"
   ],
@@ -288,9 +285,6 @@
     "virtualization\\windowscontainers\\quick_start\\quick_start_windows_server.md"
   ],
   "7b4276dd8e961bf278bee2baea2449e04eef7a2f": [
-    "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md"
-  ],
-  "11bc16813153beb5b819c80284a30f9f188709d0": [
     "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md"
   ],
   "a2fc8845bdc3e5f977d50b99ca9687b3dafd0cb6": [
