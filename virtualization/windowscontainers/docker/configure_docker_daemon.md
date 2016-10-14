@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: d30136e66bf15dc015629e359422c9b8346b8426
-ms.openlocfilehash: 3ee39f57890248951b69887edc87c9fedb13c285
+ms.sourcegitcommit: ac962391cd3b82be2dd18b145ee5e6d7a483a91a
+ms.openlocfilehash: 11bc16813153beb5b819c80284a30f9f188709d0
 
 ---
 
@@ -19,11 +19,22 @@ ms.openlocfilehash: 3ee39f57890248951b69887edc87c9fedb13c285
 
 Docker 엔진 및 클라이언트는 Windows에 포함되어 있지 않으므로 개별적으로 설치하고 구성해야 합니다. 또한 Docker 엔진에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서에서는 Docker 엔진을 설치 및 구성하는 방법을 자세히 설명하고 일반적으로 사용하는 구성의 몇 가지 예도 제공합니다.
 
+
 ## Docker 설치
+Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진(dockerd.exe) 및 Docker 클라이언트(docker.exe)로 구성됩니다. 모든 것을 가장 쉽게 설치하는 방법은 빠른 시작 가이드에 있습니다. 가이드는 모두 설정하고 첫 번째 컨테이너를 실행하는 데 도움을 줍니다. 
 
-Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다.
+* [Windows Server 2016의 Windows 컨테이너](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start_windows_server)
+* [Windows 10의 Windows 컨테이너](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start_windows_10)
 
-Docker 엔진을 다운로드합니다.
+
+### 수동 설치
+Docker 엔진 및 클라이언트의 내부 개발 버전을 대신 사용하려는 경우 다음 단계를 따를 수 있습니다. 이는 Docker 엔진과 클라이언트 모두 설치합니다. 그렇지 않은 경우 다음 단계를 건너뛰세요.
+
+> Windows용 Docker를 설치한 경우에 이러한 수동 설치 단계를 수행하기 전에 반드시 제거해야 합니다. 
+
+Docker 엔진 다운로드
+
+https://master.dockerproject.org에서 항상 최신 버전을 찾을 수 있습니다. 이 샘플은 v1.13 개발 분기에서 가장 최신 버전을 사용합니다. 
 
 ```none
 Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
@@ -183,6 +194,6 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-3
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO2-->
 
 
