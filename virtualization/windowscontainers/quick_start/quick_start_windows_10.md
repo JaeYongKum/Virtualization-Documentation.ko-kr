@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: 0fae34a5a85678a25c47b0312650e67aa6cd7efd
-ms.openlocfilehash: 74686f222e8eec1daacd45a9e388d94abf6381f4
+ms.sourcegitcommit: c1c16d94bade83e8623ad89aae0abb356a829e1e
+ms.openlocfilehash: 4322b650b511a8b2a8e926c1fca69971528dc07c
 
 ---
 
@@ -26,7 +26,9 @@ ms.openlocfilehash: 74686f222e8eec1daacd45a9e388d94abf6381f4
 - Windows 10 Anniversary Edition을 실행하는 하나의 물리적 컴퓨터 시스템 (Professional 또는 Enterprise).   
 - 이 빠른 시작은 Windows 10 가상 컴퓨터에서 실행할 수 있지만 중첩된 가상화를 사용하도록 설정해야 합니다. 자세한 정보는 [중첩된 가상화 가이드](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting)에서 확인할 수 있습니다.
 
-> 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
+> 작업하기 위해 Windows 컨테이너에 대한 중요 업데이트를 설치해야 합니다. 
+> 실행 중인 OS 버전을 확인하려면 `winver.exe`, 를 실행한 후, [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history) 
+> 계속하기 전에 14393.222 이상인지 확인합니다.
 
 ## 1. 컨테이너 기능 설치
 
@@ -166,6 +168,6 @@ docker run --rm helloworld powershell c:\helloworld.ps1
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Oct16_HO2-->
 
 
