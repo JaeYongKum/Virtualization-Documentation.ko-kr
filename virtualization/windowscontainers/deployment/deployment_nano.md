@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: df9723e3a9d9ada778d01d43dcb36c99813dea8f
-ms.openlocfilehash: 9af33e6bce21aa339109f060100b2c7ab3c1eb91
+ms.sourcegitcommit: a2c78d3945f1d5b0ebe2a4af480802f8c0c656c2
+ms.openlocfilehash: a9d398de94cb0d6c54c2e82f4a024bb65de9806d
 
 ---
 
@@ -62,64 +62,28 @@ Restart-Computer
 
 백업 후 원격 PowerShell 연결을 다시 설정합니다.
 
-## 컨테이너 기능 설치
-
-Nano Server 패키지 관리 공급자는 Nano Server에 역할 및 기능을 설치하도록 허용합니다. 이 명령을 사용하여 공급자를 설치합니다.
-
-```none
-Install-PackageProvider NanoServerPackage
-```
-
-패키지 공급자를 설치한 후 컨테이너 기능을 설치합니다.
-
-```none
-Install-NanoServerPackage -Name Microsoft-NanoServer-Containers-Package
-```
-
-컨테이너 기능을 설치한 후에는 Nano Server 호스트를 다시 부팅해야 합니다. 
-
-```none
-Restart-Computer
-```
-
-백업 후 원격 PowerShell 연결을 다시 설정합니다.
-
 ## Docker 설치
 
-Windows 컨테이너를 사용하려면 Docker 엔진이 필요합니다. 다음 단계를 사용하여 Docker 엔진을 설치합니다.
+Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker를 설치하기 위해 [OneGet provider PowerShell module](https://github.com/oneget/oneget)(OneGet 공급자 PowerShell 모듈)을 사용합니다. 공급자는 컴퓨터에서 컨테이너 기능을 사용하도록 설정하고 Docker를 설치합니다. 그러면 컴퓨터를 다시 부팅해야 합니다. 
 
-Docker 엔진과 클라이언트를 Zip 보관 파일로 다운로드합니다.
+원격 PowerShell 세션에서 다음 명령을 실행합니다.
+
+먼저 OneGet PowerShell 모듈을 설치합니다.
 
 ```none
-Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 ```
 
-Zip 보관 파일을 프로그램 파일로 확장, 보관 파일 콘텐츠는 이미 Docker 디렉터리에 있습니다.
+그런 다음 OneGet을 사용하여 최신 버전의 Docker를 설치합니다.
 
 ```none
-Expand-Archive -Path "$env:TEMP\docker.zip" -DestinationPath $env:ProgramFiles
+Install-Package -Name docker -ProviderName DockerMsftProvider
 ```
 
-Docker 디렉터리를 Nano Server의 시스템 경로에 추가합니다.
+설치가 완료되면 컴퓨터를 다시 부팅합니다.
 
 ```none
-# For quick use, does not require shell to be restarted.
-$env:path += “;C:\program files\docker”
-
-# For persistent use, will apply even after a reboot.
-setx PATH $env:path /M
-```
-
-Docker를 Windows 서비스로 설치합니다.
-
-```none
-dockerd --register-service
-```
-
-Docker 서비스를 시작합니다.
-
-```none
-Start-Service Docker
+Restart-Computer -Force
 ```
 
 ## 기본 컨테이너 이미지 설치
@@ -233,6 +197,6 @@ Restart-Computer
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Oct16_HO2-->
 
 
