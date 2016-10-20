@@ -407,8 +407,8 @@
       "IsArchived": true,
       "ArchivedDateTime": "2016-10-15T00:09:28.0760397Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\a9d398de94cb0d6c54c2e82f4a024bb65de9806d.e39182c35c7e9309cc8405c9ec9ba1a92b587725.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf",
+      "LocXliffCommit": "7c7a45509f08fd819e5f147033ae6e198aa2ada6"
     },
     "virtualization\\windowscontainers\\deployment\\deployment.md.3819261c7d81a9a9d6b849aa05d5135c4939b1fe.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\deployment\\deployment.md",
@@ -437,8 +437,8 @@
       "IsArchived": true,
       "ArchivedDateTime": "2016-10-15T00:09:28.0760397Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\008eff4731a8835b0b3f664edc9955f85c12a629.37d18b51a1b18c30efb54ce1c0425757450368e8.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\system_requirements.579a5475e3bd1d3d3fd9d5b53488ab4ae55a4423.ko-kr.xlf",
+      "LocXliffCommit": "7c7a45509f08fd819e5f147033ae6e198aa2ada6"
     },
     "virtualization\\windowscontainers\\TOC.md.6cae79283e18e6c00341a39065269f41d19ffa96.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\TOC.md",
