@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: ac962391cd3b82be2dd18b145ee5e6d7a483a91a
-ms.openlocfilehash: 334f19fa645ad50eb59ad61890842f0b6a43dce2
+ms.sourcegitcommit: af648c1235ab9af181a88a65901401bfbd40656e
+ms.openlocfilehash: 791de65ac6e4222c4cae77fe9dd24f4e07e5a936
 
 ---
 
@@ -27,59 +27,30 @@ Windows Server 2016이 실행되는 컴퓨터 시스템(물리적 또는 가상)
 
 > 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
-## 1. 컨테이너 기능 설치
+## 1. Docker 설치
 
-Windows 컨테이너를 사용하려면 먼저 컨테이너 기능을 사용하도록 설정해야 합니다. 이렇게 하려면 관리자 권한 PowerShell 세션에서 다음 명령을 실행합니다.
+Docker를 설치하기 위해 [OneGet 공급자 PowerShell 모듈](https://github.com/oneget/oneget)을 사용합니다. 공급자는 컴퓨터에서 컨테이너 기능을 사용하도록 설정하고 Docker를 설치합니다. 그러면 컴퓨터를 다시 부팅해야 합니다. Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다.
+
+관리자 권한 PowerShell 세션을 열고 다음 명령을 실행합니다.
+
+먼저 OneGet PowerShell 모듈을 설치합니다.
 
 ```none
-Install-WindowsFeature containers
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 ```
 
-기능 설치가 완료되면 컴퓨터를 다시 부팅합니다.
+그런 다음 OneGet을 사용하여 최신 버전의 Docker를 설치합니다.
+```none
+Install-Package -Name docker -ProviderName DockerMsftProvider
+```
+
+PowerShell에서 'DockerDefault' 패키지 소스를 신뢰할 수 있는지 물으면 A를 입력하여 설치를 계속합니다. 설치가 완료되면 컴퓨터를 다시 부팅합니다.
 
 ```none
 Restart-Computer -Force
 ```
 
-## 2. Docker 설치
-
-Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 이 연습에서는 둘 다 설치됩니다.
-
-상업적으로 지원되는 Docker 엔진 및 클라이언트의 릴리스 후보를 zip 보관 파일로 다운로드합니다.
-
-```none
-Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker-1.12.2.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
-```
-
-zip 보관 파일을 프로그램 파일로 확장합니다.
-
-```none
-Expand-Archive -Path "$env:TEMP\docker.zip" -DestinationPath $env:ProgramFiles
-```
-
-시스템 경로에 Docker 디렉터리를 추가합니다.
-
-```none
-# For quick use, does not require shell to be restarted.
-$env:path += ";c:\program files\docker"
-
-# For persistent use, will apply even after a reboot. 
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
-```
-
-Docker를 Windows 서비스로 설치하려면 다음을 실행합니다.
-
-```none
-dockerd.exe --register-service
-```
-
-설치되면 서비스를 시작할 수 있습니다.
-
-```none
-Start-Service docker
-```
-
-## 3. 첫 번째 컨테이너 배포
+## 2. 첫 번째 컨테이너 배포
 
 이 연습에서는 미리 만든 .NET 샘플 이미지를 Docker 허브 레지스트리에서 다운로드하고 .Net Hello World 응용 프로그램을 실행하는 간단한 컨테이너를 배포합니다.  
 
