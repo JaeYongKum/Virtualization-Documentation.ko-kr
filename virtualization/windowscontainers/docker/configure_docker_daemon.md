@@ -10,8 +10,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: 38d9f06af87cf1d69529d28e30cab60f16e0982b
-ms.openlocfilehash: 185831094b63a1b7fb1931db7fb82a6c59c2b060
+ms.sourcegitcommit: ea86e2dd88413569e4329ab27a8b6a4d3a7afca9
+ms.openlocfilehash: d2fe856b9d00c5f7ac33d683f1c2204dc06d4a11
 
 ---
 
@@ -166,7 +166,7 @@ Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 �
 `docker search` 및 `docker pull`에 대한 프록시 정보를 설정하려면 `HTTP_PROXY` 또는 `HTTPS_PROXY` 이름과 프록시 정보 값을 사용하여 Windows 환경 변수를 만듭니다. 이 작업은 PowerShell에서 다음과 유사한 명령을 사용하여 수행할 수 있습니다.
 
 ```none
-[Environment]::SetEnvironmentVariable("HTTP_PROXY”, “http://username:password@proxy:port/”, [EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("HTTP_PROXY", "http://username:password@proxy:port/", [EnvironmentVariableTarget]::Machine)
 ```
 
 변수를 설정한 후에는 Docker 서비스를 다시 시작합니다.
@@ -175,7 +175,8 @@ Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 �
 restart-service docker
 ```
 
-자세한 내용은 [Daemon Socket Options on Docker.com](https://docs.docker.com/v1.10/engine/reference/commandline/daemon/#daemon-socket-option)(Docker.com의 디먼 소켓 옵션)을 참조하세요.
+자세한 내용은 [Docker.com의 Windows 구성 파일](https://docs.docker.com/engine/reference/commandline/dockerd/#/windows-configuration-file)을 참조하세요.
+
 
 
 
