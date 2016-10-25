@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "cdf4eb0a7ddaad1c522b3448e51412df2543365b",
+  "LastProcessedCommit": "6ee4ce3d24d06bd6527996e24f843352531304c7",
   "LastTranslatedCommit": "cf388123ad4ae24291caaf48e37bc81a198d3b8f",
   "Items": {
     "5090f6d60b5cbdce0990242d795d9e4e3736e791": {
@@ -26661,6 +26661,41 @@
       "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf",
       "BilingualFileCommit": "961e48db84e353c2b32a96feeaeebcfe06523019",
       "BilingualDateTime": "2016-10-24T10:40:19.8448568Z",
+      "BilingualException": null
+    },
+    "ef5b189a56502ce8b76c094ecbd0c6174bb1bc4f": {
+      "FileHash": "ef5b189a56502ce8b76c094ecbd0c6174bb1bc4f",
+      "SourceFileCommit": "fa073b0347ee6c580f0a658b3cbdb471f0bbf909",
+      "SourceFilePath": "virtualization\\windowscontainers\\deployment\\deployment_nano.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "virtualization\\windowscontainers\\deployment\\deployment_nano.md"
+      ],
+      "HasMetadata": true,
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf",
+      "HandoffFileCommit": "cb5b09824e963a8f12c7aa3bc244477127b20499",
+      "HandoffDateTime": "2016-10-25T18:34:50.3686004Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
       "BilingualException": null
     }
   }
