@@ -3,15 +3,14 @@ title: "Hyper-V 관리자로 원격 Hyper-V 호스트 관리"
 description: "Hyper-V 관리자로 원격 Hyper-V 호스트 관리"
 keywords: windows 10, hyper-v
 author: scooley
-manager: timlt
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 translationtype: Human Translation
-ms.sourcegitcommit: e0d957ebb953f1e5b3e56de9764c7c3e560024c1
-ms.openlocfilehash: 852800b19fb39737f0d7104eb2d50521b6cca982
+ms.sourcegitcommit: 906eba05c921757b9655505c3f419fcf003d5160
+ms.openlocfilehash: 9ae09f49af4a0d7a3dd91b739ec30d4989615799
 
 ---
 
@@ -71,7 +70,7 @@ Hyper-V 관리자에 원격 Hyper-V 호스트를 추가하려면 **컴퓨터 선
 
 원격 Hyper-V 호스트를 관리하려면 로컬 컴퓨터와 원격 호스트에서 원격 관리를 활성화해야 합니다.
 
-`System Properties -> Remote Management Settings`을 통해 이 작업을 수행하거나 관리자 권한으로 다음 PowerShell 명령을 실행하여 수행할 수 있습니다.  
+`Server Manager -> Remote management`을 통해 이 작업을 수행하거나 관리자 권한으로 다음 PowerShell 명령을 실행하여 수행할 수 있습니다. 
 
 ``` PowerShell
 Enable-PSRemoting
@@ -122,6 +121,6 @@ IP 주소를 사용하여 연결하려면 **다른 컴퓨터** 텍스트 필드�
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 
