@@ -2,16 +2,15 @@
 title: "Windows Server의 Windows 컨테이너"
 description: "컨테이너 배포 빠른 시작"
 keywords: "Docker, 컨테이너"
-author: neilpeterson
-manager: timlt
+author: enderb-ms
 ms.date: 09/26/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: af648c1235ab9af181a88a65901401bfbd40656e
-ms.openlocfilehash: 791de65ac6e4222c4cae77fe9dd24f4e07e5a936
+ms.sourcegitcommit: 6c85bb2ac3922dac4b09939d3ea71d7fbb5e16ad
+ms.openlocfilehash: d06f38ddc9abf40a2842089203462c26765be672
 
 ---
 
@@ -50,7 +49,35 @@ PowerShell에서 'DockerDefault' 패키지 소스를 신뢰할 수 있는지 물
 Restart-Computer -Force
 ```
 
-## 2. 첫 번째 컨테이너 배포
+## 2. Windows 업데이트 설치
+
+Windows Server system 최신 상태로 유지하려면, 다음을 실행하여 Widows 업데이트를 설치해야 합니다.
+
+```none
+sconfig
+```
+
+텍스트 기반 구성 메뉴에서 표시되는데, 여기서 업데이트 다운로드 및 설치에 대한 옵션 6을 선택할 수 있습니다.
+
+```none
+===============================================================================
+                         Server Configuration
+===============================================================================
+
+1) Domain/Workgroup:                    Workgroup:  WORKGROUP
+2) Computer Name:                       WIN-HEFDK4V68M5
+3) Add Local Administrator
+4) Configure Remote Management          Enabled
+
+5) Windows Update Settings:             DownloadOnly
+6) Download and Install Updates
+7) Remote Desktop:                      Disabled
+...
+```
+
+메시지가 표시되면 모든 업데이트를 다운로드할 수 있는 옵션 A를 선택합니다.
+
+## 3. 첫 번째 컨테이너 배포
 
 이 연습에서는 미리 만든 .NET 샘플 이미지를 Docker 허브 레지스트리에서 다운로드하고 .Net Hello World 응용 프로그램을 실행하는 간단한 컨테이너를 배포합니다.  
 
@@ -113,6 +140,6 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Oct16_HO4-->
 
 

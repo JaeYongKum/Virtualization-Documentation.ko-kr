@@ -2,16 +2,15 @@
 title: "Nano Server에 Windows 컨테이너 배포"
 description: "Nano Server에 Windows 컨테이너 배포"
 keywords: "Docker, 컨테이너"
-author: neilpeterson
-manager: timlt
+author: enderb-ms
 ms.date: 09/28/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: a2c78d3945f1d5b0ebe2a4af480802f8c0c656c2
-ms.openlocfilehash: a9d398de94cb0d6c54c2e82f4a024bb65de9806d
+ms.sourcegitcommit: fa073b0347ee6c580f0a658b3cbdb471f0bbf909
+ms.openlocfilehash: ef5b189a56502ce8b76c094ecbd0c6174bb1bc4f
 
 ---
 
@@ -90,11 +89,13 @@ Restart-Computer -Force
 
 기본 OS 이미지는 모든 Windows Server나 Hyper-V 컨테이너의 기반으로 사용됩니다. 기본 OS 이미지는 Windows Server Core와 Nano Server 둘 다에서 기본 운영 체제로 사용할 수 있으며 `docker pull`를 사용하여 설치할 수 있습니다. Docker 컨테이너 이미지에 대한 자세한 내용은 [Build your own images on docker.com](https://docs.docker.com/engine/tutorials/dockerimages/)(docker.com에서 고유한 이미지 만들기)을 참조하세요.
 
-Windows Server 및 Nano Server 기본 이미지를 다운로드하고 설치하려면 다음 명령을 실행합니다.
+Windows Nano Server 기본 이미지를 다운로드하고 설치하려면 다음 명령을 실행합니다.
 
 ```none
 docker pull microsoft/nanoserver
 ```
+
+Nano 서버 호스트에 Hyper-V 컨테이너를 사용하고 Hyper-V 하이퍼바이저를 설치하려는 경우에는 Server Core 이미지도 가져올 수 있습니다. Azure Gallery Server 2016 Nano를 실행하는 경우 Hyper-V가 설치되어 있지 않도록 하세요.
 
 ```none
 docker pull microsoft/windowsservercore
@@ -197,6 +198,6 @@ Restart-Computer
 
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Oct16_HO4-->
 
 
