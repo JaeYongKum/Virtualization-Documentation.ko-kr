@@ -497,7 +497,7 @@
  [windows-server-container-tools\containers-azure-template\azuredeploy.parameters.json](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/containers-azure-template/azuredeploy.parameters.json) | Ignored | [Details](#2ef2560391d1e2075eb96e55f7751a452bb7680a460)
  [windows-server-container-tools\containers-azure-template\metadata.json](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/containers-azure-template/metadata.json) | Ignored | [Details](#eab16f99b51f55e0fa28b64c7bdc7dbb19db8c25461)
  [windows-server-container-tools\containers-azure-template\README.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/containers-azure-template/README.md) | Ignored | [Details](#e61c5e782871f2efe5fc34311c9dab3655025c0e462)
- [windows-server-container-tools\Debug-ContainerHost\Debug-ContainerHost.ps1](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/Debug-ContainerHost/Debug-ContainerHost.ps1) | Ignored | [Details](#0223c035d446063c9c208a71cb5c2126b514209c463)
+ [windows-server-container-tools\Debug-ContainerHost\Debug-ContainerHost.ps1](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/Debug-ContainerHost/Debug-ContainerHost.ps1) | Ignored | [Details](#75321547b20b786917b39b20cf4ada175cc5d6ad463)
  [windows-server-container-tools\Debug-ContainerHost\README.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/Debug-ContainerHost/README.md) | Ignored | [Details](#92cbd7f4d209da2ae0f81001f20fff079c46c693464)
  [windows-server-container-tools\DockerTLS\CreateAndUpdateDockerCertsInVMs.ps1](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/DockerTLS/CreateAndUpdateDockerCertsInVMs.ps1) | Ignored | [Details](#fa1f9c2c56f933fc2b513c67ff7a80ad1f3e6e3d465)
  [windows-server-container-tools\DockerTLS\DockerCertificateTools.ps1](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/DockerTLS/DockerCertificateTools.ps1) | Ignored | [Details](#16af24c07f2eba523da2379a6759f6bb34d5a41c466)
@@ -3525,9 +3525,9 @@
 * Archive Datetime: 2016-10-29 00:07:49
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [virtualization\windowscontainers\deployment\deployment_nano.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/3d6e9f3fcaec2708d310b1e248736672a86026ee/virtualization/windowscontainers/deployment/deployment_nano.md)
-* Current Handback File: [deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/7c7a45509f08fd819e5f147033ae6e198aa2ada6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf)
-* Current Handback Datetime: 2016-10-20 09:35:38
+* Current Target File: [virtualization\windowscontainers\deployment\deployment_nano.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/73e8d08ebb3d877373d16c6f1a7fb2a45cf72d64/virtualization/windowscontainers/deployment/deployment_nano.md)
+* Current Handback File: [deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/5f89685d91ea01d8cfdb3b9f9f5977c60372b34d/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf)
+* Current Handback Datetime: 2016-10-31 21:36:03
 * Bilingual File: [deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/7c7a45509f08fd819e5f147033ae6e198aa2ada6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf)
 * Bilingual Datetime: 2016-10-20 09:36:13
 * [Back to Top](#report-top)
@@ -4670,9 +4670,9 @@
 * Archive Datetime: 2016-10-29 00:07:49
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [virtualization\windowscontainers\quick_start\quick_start_windows_server.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/b8f1aceaa28e2f735038dedfcb887dff33ddc21c/virtualization/windowscontainers/quick_start/quick_start_windows_server.md)
-* Current Handback File: [quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/3302bb428cb2002c238124824d8d1640dae3097d/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf)
-* Current Handback Datetime: 2016-10-20 09:16:38
+* Current Target File: [virtualization\windowscontainers\quick_start\quick_start_windows_server.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/73e8d08ebb3d877373d16c6f1a7fb2a45cf72d64/virtualization/windowscontainers/quick_start/quick_start_windows_server.md)
+* Current Handback File: [quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/5f89685d91ea01d8cfdb3b9f9f5977c60372b34d/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf)
+* Current Handback Datetime: 2016-10-31 21:36:03
 * Bilingual File: [quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/3302bb428cb2002c238124824d8d1640dae3097d/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf)
 * Bilingual Datetime: 2016-10-20 09:17:14
 * [Back to Top](#report-top)
@@ -6387,7 +6387,7 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='0223c035d446063c9c208a71cb5c2126b514209c463'></a> Source: [windows-server-container-tools\Debug-ContainerHost\Debug-ContainerHost.ps1](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/Debug-ContainerHost/Debug-ContainerHost.ps1)
+##### <a name='75321547b20b786917b39b20cf4ada175cc5d6ad463'></a> Source: [windows-server-container-tools\Debug-ContainerHost\Debug-ContainerHost.ps1](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/71f0f20ff82c970435fbdba4816398729d1b9ba1/windows-server-container-tools/Debug-ContainerHost/Debug-ContainerHost.ps1)
 * Status: Ignored
 * Target File: 
 * Handoff File: 
