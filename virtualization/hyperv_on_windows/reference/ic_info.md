@@ -1,17 +1,16 @@
 ---
 title: "Hyper-V 통합 서비스"
 description: "Hyper-V 통합 서비스 참조"
-keywords: windows 10, hyper-v, integration services, integration components
+keywords: "windows 10, hyper-v, 통합 서비스, 통합 구성 요소"
 author: scooley
-manager: timlt
 ms.date: 05/25/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
 translationtype: Human Translation
-ms.sourcegitcommit: 03c3ede85ff8b2fe4783581c717c1c97810b3bdd
-ms.openlocfilehash: a2fc8845bdc3e5f977d50b99ca9687b3dafd0cb6
+ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
+ms.openlocfilehash: 71ec8f80e721a0c66dc8709473a427792df1cf24
 
 ---
 
@@ -31,7 +30,7 @@ ms.openlocfilehash: a2fc8845bdc3e5f977d50b99ca9687b3dafd0cb6
 
 ## 빠른 참조
 
-| 이름 | Windows 서비스 이름 | Linux 디먼 이름 |  설명 | 사용하지 않을 때 VM에 미치는 영향 |
+| Name | Windows 서비스 이름 | Linux 디먼 이름 |  설명 | 사용하지 않을 때 VM에 미치는 영향 |
 |:---------|:---------|:---------|:---------|:---------|
 | [Hyper-V 하트비트 서비스](#hyper-v-heartbeat-service) |  vmicheartbeat | hv_utils | 가상 컴퓨터가 제대로 실행되고 있는지 보고합니다. | 상황에 따라 다름 |
 | [Hyper-V 게스트 종료 서비스](#hyper-v-guest-shutdown-service) | vmicshutdown | hv_utils |  호스트에서 가상 컴퓨터 종료를 트리거하도록 허용합니다. | **높은** |
@@ -157,6 +156,6 @@ PowerShell Direct는 Hyper-V 호스트 또는 가상 컴퓨터에서 네트워�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Oct16_HO4-->
 
 

@@ -2,16 +2,15 @@
 title: "Windows 컨테이너 설명서"
 description: "Windows 컨테이너 설명서"
 keywords: "Docker, 컨테이너"
-author: neilpeterson
-manager: timlt
+author: enderb-ms
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
 translationtype: Human Translation
-ms.sourcegitcommit: f721639b1b10ad97cc469df413d457dbf8d13bbe
-ms.openlocfilehash: 1ee40d330234f8800ba73d0c4abe36859cfa2989
+ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
+ms.openlocfilehash: 144532bf835f8f8a67d378ec03e707b9517d5653
 
 ---
 
@@ -88,6 +87,6 @@ Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으십니까?<b
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO4-->
 
 

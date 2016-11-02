@@ -3,15 +3,14 @@ title: "지원되는 Windows 게스트"
 description: "지원되는 Windows 게스트입니다."
 keywords: windows 10, hyper-v
 author: scooley
-manager: timlt
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
 translationtype: Human Translation
-ms.sourcegitcommit: 645b15f32e731b6d4044e8f66d8ab2374870904c
-ms.openlocfilehash: 19ecce49df066c5816741f375c4610b79d7ad802
+ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
+ms.openlocfilehash: f772a26f2ad52c8ed28d40ca35c91ed6f3eab872
 
 ---
 
@@ -66,6 +65,6 @@ Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Oct16_HO4-->
 
 

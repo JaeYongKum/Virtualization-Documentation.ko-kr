@@ -2,16 +2,15 @@
 title: "Windows의 컨테이너 요구 사항"
 description: "Windows의 컨테이너 요구 사항입니다."
 keywords: "메타데이터, 컨테이너"
-author: neilpeterson
-manager: timlt
+author: enderb-ms
 ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
 translationtype: Human Translation
-ms.sourcegitcommit: d4c453e800d4057b3ad0be06c28e7f23b81443f0
-ms.openlocfilehash: 008eff4731a8835b0b3f664edc9955f85c12a629
+ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
+ms.openlocfilehash: af8d8a05fc953dcc93672a0f936caca5e37f0de3
 
 ---
 
@@ -89,6 +88,6 @@ PS C:\Users\Administrator> (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows N
 컨테이너와 호스트 간에 커널을 공유하는 Windows Server 컨테이너와 달리, 각 Hyper-V 컨테이너는 고유한 Windows 커널 인스턴스를 사용합니다.  이로 인해 컨테이너 호스트와 컨테이너 이미지 버전을 일치시키지 못할 수 있습니다.  빌드 번호가 Windows Server 2016 GA(10.0.14393.206)와 같거나 이보다 큰 빌드는 수정 번호와 상관없이 지원되는 구성에서 Windows Server Core 또는 Nano Server의 Windows Server 2016 GA 이미지를 실행할 수 있습니다.  향후 고객 의견에 따라 빌드 번호가 얼마나 멀리 떨어질 수 있는지에 대한 특정 지침을 제공할 예정입니다.  Windows 업데이트에서 제공하는 모든 기능, 안정성 및 보안 보증을 받으려면 모든 시스템에서 최신 버전을 유지해야 합니다.  
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Oct16_HO4-->
 
 
