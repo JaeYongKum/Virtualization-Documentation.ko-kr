@@ -48,7 +48,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3983002Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\520ef410eddad61c40d31655e6bf7ede7846d4b2.66715676ecf7c8f13663a41b3664cfc94da8a339.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\walkthrough_powershell.f20d7c387d05f1e6da38e694c8255c1b0044b10b.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\user_guide\\remote_host_management.md.3a175dbaede45dcc7bdb4d30df1b614254770549.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\user_guide\\remote_host_management.md",
@@ -108,7 +108,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3670292Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\73c445a896e76d54e002184ae1235c4c5c38ad9d.a5eb5e00b5cd86a93fdf05eb5b1c2c8418466a68.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\optimize_windows_dockerfile.8acb58c9a0cb3119d370c90c749222ed5b757368.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md.66652a066da37f798f2c9a02c858556a0a48ccbf.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md",
@@ -128,7 +128,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3826563Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\90e32caabde1afafbd8170db77c6e84696395870.bcf99b7af07348c43fd36c014fd5274a436983c1.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\faq.9230ef72e03dd569ad85af3ef02d21277aad0e46.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\deployment\\system_requirements.md.ef666f6d753ea3086775751729f382a0e3743341.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\deployment\\system_requirements.md",
@@ -188,7 +188,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3983002Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\43046eaf639f72d029d3d033297e4ff155c9558d.f1e9cf7289975f2537631b146eab5cdeb35d8241.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_images.6d8d709cbc19bb63cc7d4553991616c57920cdfd.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\docker\\manage_windows_dockerfile.md.76321000b18d715b5bc237fe5905031c70d88014.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\docker\\manage_windows_dockerfile.md",
@@ -238,7 +238,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3528893Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\2d35461b5fe70e4a13fee794acb9ca508b9a1fb9.8eae5a0a1ebff42b96ef3183b0680d12c34058ed.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_resources.839340b4309893f4c3f5446b5e6a628843d99eb2.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\quick_start\\quick_start_images.md.c678a012dbadd70458a3098a1e5fbcfd3fb1c0f2.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\quick_start\\quick_start_images.md",
@@ -358,7 +358,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3231233Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\ed4a2cb6fb3cd4006a5085e4ce8e058a3f201e41.282206e0653729432d76bd3a7fa66936f6faa724.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\checkpoints.fb864e32f956b43d9a6ce0ccc72ba67b60ea8362.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\quick_start\\quick_start_windows_10.md.0ae9d25c4097cbd814750b7840f9c670f1a3fab2.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\quick_start\\quick_start_windows_10.md",
@@ -368,7 +368,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3528893Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\34ab361ea415ab2d8d5133927beafc7911f1aaf1.25ed74588b2e3c5911a18fb762a1d33f07dcfa8a.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\quick_start_windows_10.5f887ea7d45d865c81fe971abab095fb8e272cc8.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md.74ea9d0b6da39d7b6724d53246037449608db970.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md",
@@ -488,7 +488,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3826563Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\ccd1e0fc96b96349a04e6f3f33b97e5dc28582cd.467ee83c9eaf6d8871aead4648c16e63c473a9ca.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\deployment_nano.b4ad903b48200665d4d0c8e4d0956bddc0d52f79.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\user_guide\\remote_host_management.md.485c0a07021ef6850f37d249ee264ab66a65849b.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\user_guide\\remote_host_management.md",
@@ -508,7 +508,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3670292Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\80a2efcb9fff58d357dc1630a335665fc91147cb.a07848677886e3b434df80b06e92bf4ecb8336f1.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\quick_start_windows_server.08fee0ad7baa994cf3e7a42d3d35aeda89c5e556.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md.a813dafb797873052ed4912b8cd4b620027a653c.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\docker\\configure_docker_daemon.md",
@@ -538,7 +538,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3983002Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\710391e72f42dbc43e9d3f093987277d3cd45429.30a84a18bde4f75cb75f95e18b9b16436d848711.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\hyperv_container.081f9802174235940087cf2891a3f48eaec73707.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\about\\about_overview.md.16b6ee2a252b003b3085492f65a79e438ab863b0.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\about\\about_overview.md",
@@ -578,7 +578,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3528893Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\a4cc2907c88894d1eb02fdbf3a1d39459269925c.2e3ea13ed5f295d6c2ab4eebf3b45a279ca3e8b1.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\walkthrough_compatibility.b81630a3813897e1115f050cb3fb67a3db007cf8.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\about\\work_in_progress.md.da39a3ee5e6b4b0d3255bfef95601890afd80709.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\about\\work_in_progress.md",
@@ -588,7 +588,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3983002Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\38dc2f5257196adfdf3be04e77f0ea74a77bfcff.048a2d5c34d3302bfbe42d63ba26a31856700a85.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\work_in_progress.4d0e298514e64fd94d18eb197e270fbbf7e07fd8.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\reference\\ic_info.md.913d7972dbc37dde328dc3a7f3eb67e8941a7809.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\reference\\ic_info.md",
@@ -688,7 +688,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3983002Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\a92ba96f26ae2881d2c6013e8b8dcf7bafe69a47.e57dff04c3b2caefecc0dbb2b1d499cd94b800be.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\tlfs.dcdda4ab93a4524cae3e7de93cf82726d2099b87.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\user_guide\\vmsession.md.38963f1747205b627377f41616ce178c826bb237.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\user_guide\\vmsession.md",
@@ -708,7 +708,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3670292Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\02e6869b2f242df29aed13fcc8a69ed641958727.4add36c4b94019176928c6c83cea2b8a03d80ae2.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\container_ecosystem.20bda9dd63d8896f8bdb5b77d8a94217b9f975d1.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\about\\supported_guest_os.md.7ab237027ad42680d5af2c7a79dbb447de4bb6a0.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\about\\supported_guest_os.md",
@@ -728,7 +728,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3670292Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\5747543dde2a24c52178adbdec5b4d7f0b71037f.4e4aa4d4047b434288a62ecbdb30db3d8f972d9c.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\walkthrough_virtual_switch.27dde78ebf41bbbdb946f00af1eb221b79cbb05a.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\quick_start\\walkthrough_export_import.md.da39a3ee5e6b4b0d3255bfef95601890afd80709.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\quick_start\\walkthrough_export_import.md",
@@ -738,7 +738,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3983002Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\5f9bd47898d4249346449681fbb74d65101d4dc7.cf9e98f4e901dbe85f2199774032df217b435414.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\walkthrough_export_import.357da837e16b81b7e63ec02325c79b3b0eb2e511.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\hyperv_on_windows\\quick_start\\walkthrough_create_vm.md.ef54e2f35e394468b37aab49dd8052440f6090a6.HT": {
       "SourceFilename": "virtualization\\hyperv_on_windows\\quick_start\\walkthrough_create_vm.md",
@@ -748,7 +748,7 @@
       "ArchivedDateTime": "2016-10-29T00:07:49.3528893Z",
       "SkeletonFile": "ol-xliffcache\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\2b644f56829d6f92822875e77ba53e5b68d2f1ef.77c87d79a2501f88ff7a70ca3b56d1d30d9b2c17.xml",
       "LocXliff": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\walkthrough_create_vm.698a46fb78fa92b3f275f4115d4b77072fff0ed6.ko-kr.xlf",
-      "LocXliffCommit": "a91df0e2230ec0c2efad8eb9a09180f606790403"
+      "LocXliffCommit": "688e9578ad782f58601ebf2069aee0d035ecd39a"
     },
     "virtualization\\windowscontainers\\containers_welcome.md.da027cc71649cc4bccfde1c1870b446248c1bacc.HT": {
       "SourceFilename": "virtualization\\windowscontainers\\containers_welcome.md",
