@@ -9,8 +9,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 7d7aee3d87237b93887ac7303c70cf6c9a02285d
+ms.sourcegitcommit: 8f08c85921b9d41f10f3b8cff5e4bafe945bd4af
+ms.openlocfilehash: c562e1a1370e9286680afa1b498d625195edebb2
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 7d7aee3d87237b93887ac7303c70cf6c9a02285d
 
 Hyper-V 관리자는 로컬 Hyper-V 호스트 및 적은 수의 원격 호스트를 진단 및 관리하기 위한 기본 도구입니다.  이 문서는 지원되는 모든 구성에서 Hyper-V 관리자를 사용하여 Hyper-V 호스트에 연결하기 위한 구성 단계를 설명합니다.
 
-> Hyper-V 관리자는 [Hyper-V가 설치된 모든 Windows OS](../quick_start/walkthrough_compatibility.md#OperatingSystemRequirements)에서 **Hyper-V 관리 도구**로써 **프로그램 및 기능**을 통해 사용할 수 있습니다.  원격 호스트를 관리하기 위해 Hyper-V 플랫폼을 사용할 필요는 없습니다.
+> Hyper-V 관리자는 [Hyper-V가 설치된 모든 Windows OS](../quick_start/walkthrough_compatibility.md#operating-system-requirements)에서 **Hyper-V 관리 도구**로써 **프로그램 및 기능**을 통해 사용할 수 있습니다.  원격 호스트를 관리하기 위해 Hyper-V 플랫폼을 사용할 필요는 없습니다.
 
 Hyper-V 관리자에서 Hyper-V 호스트에 연결하려면 **Hyper-V 관리자**가 왼쪽 창에서 선택되었는지 확인한 다음 오른쪽 창에서 **서버에 연결...**을 선택합니다.
 
@@ -121,6 +121,6 @@ IP 주소를 사용하여 연결하려면 **다른 컴퓨터** 텍스트 필드�
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

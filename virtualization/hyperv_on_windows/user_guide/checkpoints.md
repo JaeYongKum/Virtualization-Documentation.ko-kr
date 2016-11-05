@@ -9,8 +9,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9c398c4-ee72-45c6-9ce8-4f06569dae6c
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: ed4a2cb6fb3cd4006a5085e4ce8e058a3f201e41
+ms.sourcegitcommit: 8f08c85921b9d41f10f3b8cff5e4bafe945bd4af
+ms.openlocfilehash: 4e887dc8c284dd189dc59a71aa9d22d6c8a231ea
 
 ---
 
@@ -62,7 +62,7 @@ Set-VM -Name <vmname> -CheckpointType ProductionOnly
 
 ## 검사점 만들기
 
-가상 컴퓨터에 대해 구성된 유형의 검사점을 만듭니다. 이 유형을 변경하는 방법에 대한 지침은 이 문서의 앞부분에서 [검사점 유형 구성](checkpoints.md#changing-the-checkpoint-type-for-a-VM) 섹션을 참조하세요.
+가상 컴퓨터에 대해 구성된 유형의 검사점을 만듭니다. 이 유형을 변경하는 방법에 대한 지침은 이 문서의 앞부분에서 [검사점 유형 구성](checkpoints.md#changing-the-checkpoint-type) 섹션을 참조하세요.
 
 **Hyper-V 관리자 사용**
 
@@ -201,7 +201,7 @@ This folder will contain the .VMRS file with the runtime and saved state data an
 
 1. 가상 컴퓨터에 로그인하고 바탕 화면에 텍스트 파일을 만듭니다.
 2. 메모장으로 파일을 열고 텍스트 '이것이 표준 검사점입니다.'를 입력합니다. **파일을 저장하거나 메모장을 닫지 마세요**.  
-3. 검사점을 표준으로 변경합니다. 지침은 [여기](checkpoints.md#changing-the-checkpoint-type-using-hyper-V-manager)를 참조하세요.
+3. 검사점을 표준으로 변경합니다. 지침은 [여기](checkpoints.md#changing-the-checkpoint-type)를 참조하세요.
 4. 새 검사점을 만듭니다.
 
 <br />
@@ -249,6 +249,6 @@ This folder will contain the .VMRS file with the runtime and saved state data an
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
