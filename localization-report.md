@@ -1540,8 +1540,8 @@
 * Archive Datetime: 2016-10-29 00:07:49
 * Handback File: [contribute_to_docs.d73574c30ea237d679cf11495f670244e941fb1d.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/contribute_to_docs.d73574c30ea237d679cf11495f670244e941fb1d.ko-kr.xlf)
 * Handback Datetime: 2016-11-07 19:02:39
-* Bilingual File: [contribute_to_docs.d73574c30ea237d679cf11495f670244e941fb1d.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/42a66c42c8d87bfc60570e69e9a4c3c9e6028eb8/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/contribute_to_docs.d73574c30ea237d679cf11495f670244e941fb1d.ko-kr.xlf)
-* Bilingual Datetime: 2016-07-06 10:34:36
+* Bilingual File: [contribute_to_docs.d73574c30ea237d679cf11495f670244e941fb1d.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/contribute_to_docs.d73574c30ea237d679cf11495f670244e941fb1d.ko-kr.xlf)
+* Bilingual Datetime: 2016-11-07 19:04:12
 * [Back to Top](#report-top)
 
 ##### <a name='63821ccd19e5a21742458bf42a0a1eea46969adf85'></a> Source: [virtualization\community\docfx.json](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/31515396358c124212b53540af8a0dcdad3580e4/virtualization/community/docfx.json)
@@ -3238,8 +3238,8 @@
 * Current Target File: [virtualization\hyperv_on_windows\user_guide\vmsession.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/53c05d0fe3f4ed3f9bd74ce178efad335cb0ddee/virtualization/hyperv_on_windows/user_guide/vmsession.md)
 * Current Handback File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
 * Current Handback Datetime: 2016-11-07 19:02:39
-* Bilingual File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/62166a91771845be612174f6f3afc470a24273d3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
-* Bilingual Datetime: 2016-07-13 05:06:50
+* Bilingual File: [vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/vmsession.5b8e9c3583d826412e0ae8e2f58f1deca9901582.ko-kr.xlf)
+* Bilingual Datetime: 2016-11-07 19:04:12
 * [Back to Top](#report-top)
 
 ##### <a name='d9d43bb2b3e7f8955d374905cc3050a37a585fe1218'></a> Source: [virtualization\hyperv_on_windows\windows_welcome.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/ffdf89b0ae346197b9ae631ee5260e0565261c55/virtualization/hyperv_on_windows/windows_welcome.md)
@@ -3719,8 +3719,8 @@
 * Archive Datetime: 2016-10-29 00:07:49
 * Handback File: [configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf)
 * Handback Datetime: 2016-11-07 19:02:39
-* Bilingual File: [configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/961e48db84e353c2b32a96feeaeebcfe06523019/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf)
-* Bilingual Datetime: 2016-10-24 10:40:19
+* Bilingual File: [configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/configure_docker_daemon.593d065aaeaa40359a3e774b03d152311eb6570c.ko-kr.xlf)
+* Bilingual Datetime: 2016-11-07 19:04:12
 * [Back to Top](#report-top)
 
 ##### <a name='20dcc6d263488673bf0a025058c3dee8d30168a2255'></a> Source: [virtualization\windowscontainers\docker\manage_windows_dockerfile.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/31515396358c124212b53540af8a0dcdad3580e4/virtualization/windowscontainers/docker/manage_windows_dockerfile.md)
@@ -3792,8 +3792,8 @@
 * Archive Datetime: 2016-10-29 00:07:49
 * Handback File: [container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf)
 * Handback Datetime: 2016-11-07 19:02:39
-* Bilingual File: [container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/75f016620d357a72a572e29fd73e31b87c935a83/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf)
-* Bilingual Datetime: 2016-09-03 03:38:47
+* Bilingual File: [container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/49d5c372945ac0c3e90afcc7bcce9a19276a7249/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/container_networking.7cf72391b3aa727681997232feeeb0a32d363edc.ko-kr.xlf)
+* Bilingual Datetime: 2016-11-07 19:04:12
 * [Back to Top](#report-top)
 
 ##### <a name='03ceaa83723db0870623cbc579d81b8d4ee6e813260'></a> Source: [virtualization\windowscontainers\management\docker-powershell.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/9d9bd347e20cdd57bf107b9d859ac0fe096e359e/virtualization/windowscontainers/management/docker-powershell.md)
