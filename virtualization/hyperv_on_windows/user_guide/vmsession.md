@@ -1,17 +1,16 @@
 ---
 title: "PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리"
 description: "PowerShell Direct를 사용하여 Windows 가상 컴퓨터 관리"
-keywords: windows 10, hyper-v, powershell, integration services, integration components, automation, powershell direct
+keywords: "windows 10, hyper-v, powershell, 통합 서비스, 통합 구성 요소, 자동화, powershell direct"
 author: scooley
-manager: timlt
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
 translationtype: Human Translation
-ms.sourcegitcommit: 87f8fb2ae8958c9c6177f6eda90678708054fce7
-ms.openlocfilehash: 75186d48346efbaaac264b00f0f92fe82fcfe424
+ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
+ms.openlocfilehash: 16624e181bec81d90c960df30e89f25eab23f7ea
 
 ---
 
@@ -281,6 +280,6 @@ PowerShell Direct는 JEA(Just Enough Administration)를 지원합니다.  사용
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Oct16_HO4-->
 
 

@@ -2,16 +2,15 @@
 title: "Windows에서 Docker 구성"
 description: "Windows에서 Docker 구성"
 keywords: "Docker, 컨테이너"
-author: neilpeterson
-manager: timlt
+author: PatrickLang
 ms.date: 08/23/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: ea86e2dd88413569e4329ab27a8b6a4d3a7afca9
-ms.openlocfilehash: d2fe856b9d00c5f7ac33d683f1c2204dc06d4a11
+ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
+ms.openlocfilehash: 569b8861ca01ee8a0b794e01b0acb1a1c501fa55
 
 ---
 
@@ -114,6 +113,14 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
 }
 ```
 
+마찬가지로 이 샘플에서는 대체 경로에 이미지 및 컨테이너를 유지하도록 Docker 디먼을 구성합니다. 지정하지 않은 경우 기본값은 c:\programdata\docker입니다.
+
+```none
+{    
+    "graph": "d:\\docker"
+}
+```
+
 마찬가지로 이 샘플에서는 포트 2376을 통한 보안 연결만 허용하도록 Docker 디먼을 구성합니다.
 
 ```none
@@ -180,6 +187,6 @@ restart-service docker
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 
