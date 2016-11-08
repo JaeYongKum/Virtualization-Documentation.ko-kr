@@ -34,11 +34,13 @@
 
 # 커뮤니티 및 지원
 ## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)
+## [커뮤니티 비디오 및 블로그](communitylinks.md)
 ## [문제 해결](troubleshooting.md)
+
 
 # [컨테이너 OS 이미지 EULA](Images_EULA.md)
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
