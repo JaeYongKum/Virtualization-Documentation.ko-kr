@@ -29142,9 +29142,9 @@
       "ArchiveFileCommit": "357deb3f911ab609d3d02c9a2d878dc1970d1d12",
       "ArchiveFileDateTime": "2016-11-03T07:06:03.5099002Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\communitylinks.2bb7ea2ddbb713bc85f6355770d609c04778fa4e.ko-kr.xlf",
+      "BilingualFileCommit": "8bf004ef07b8d56c57d63651c6b0fd7cb694bb52",
+      "BilingualDateTime": "2016-11-08T11:02:01.5474668Z",
       "BilingualException": null
     },
     "a1b876d01b8076ee9feb275bd09247775bfcef69": {
@@ -29178,9 +29178,9 @@
       "ArchiveFileCommit": "357deb3f911ab609d3d02c9a2d878dc1970d1d12",
       "ArchiveFileDateTime": "2016-11-03T07:06:03.5099002Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\containers_welcome.2c85b1345b8dfcc523a3848ed7661e25d5ffbb17.ko-kr.xlf",
+      "BilingualFileCommit": "8bf004ef07b8d56c57d63651c6b0fd7cb694bb52",
+      "BilingualDateTime": "2016-11-08T11:02:01.5474668Z",
       "BilingualException": null
     },
     "e280dc10558e1b69327a253170acd27056cb0e07": {
@@ -29214,9 +29214,9 @@
       "ArchiveFileCommit": "357deb3f911ab609d3d02c9a2d878dc1970d1d12",
       "ArchiveFileDateTime": "2016-11-03T07:06:03.5099002Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf",
+      "BilingualFileCommit": "8bf004ef07b8d56c57d63651c6b0fd7cb694bb52",
+      "BilingualDateTime": "2016-11-08T11:02:01.5474668Z",
       "BilingualException": null
     },
     "4e887dc8c284dd189dc59a71aa9d22d6c8a231ea": {
