@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 80a2efcb9fff58d357dc1630a335665fc91147cb
+ms.sourcegitcommit: 13a33a6003cfa77d81a6e8e2afdf1da8d017ee30
+ms.openlocfilehash: a5537a4cb56127e51e0a550220995cd5f6b93722
 
 ---
 
@@ -81,7 +81,7 @@ sconfig
 
 이 연습에서는 미리 만든 .NET 샘플 이미지를 Docker 허브 레지스트리에서 다운로드하고 .Net Hello World 응용 프로그램을 실행하는 간단한 컨테이너를 배포합니다.  
 
-`docker run`을 사용하여 .NET 컨테이너를 배포합니다. 그러면 컨테이너 이미지도 다운로드되며, 다운로드는 몇 분 정도 걸릴 수 있습니다.
+`docker run`을 사용하여 .Net 컨테이너를 배포합니다. 그러면 컨테이너 이미지도 다운로드되며, 다운로드는 몇 분 정도 걸릴 수 있습니다.
 
 ```none
 docker run microsoft/sample-dotnet
@@ -140,6 +140,6 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

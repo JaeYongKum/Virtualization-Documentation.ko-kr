@@ -9,8 +9,8 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 16624e181bec81d90c960df30e89f25eab23f7ea
+ms.sourcegitcommit: 8f08c85921b9d41f10f3b8cff5e4bafe945bd4af
+ms.openlocfilehash: 807043a744c4735158720371ec3afb22ebe7fc24
 
 ---
 
@@ -21,7 +21,7 @@ PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설�
 **PowerShell Direct 실행 방법:**  
 * 대화형 세션 -- Enter-PSSession을 사용하여 대화형 PowerShell 세션을 만들고 종료하려면 [여기를 클릭](vmsession.md#create-and-exit-an-interactive-powershell-session)하세요.
 * 단일 명령이나 스크립트를 실행하는 일회용 세션 -- Invoke-Command를 사용하여 스크립트나 명령을 실행하려면 [여기를 클릭](vmsession.md#run-a-script-or-command-with-invoke-command)하세요.
-* 영구 세션(빌드 14280 이상) -- New-PSSession을 사용하여 영구 세션을 만들려면 [여기를 클릭](vmsession.md#copy-files-with-New-PSSession-and-Copy-Item)하세요.  
+* 영구 세션(빌드 14280 이상) -- New-PSSession을 사용하여 영구 세션을 만들려면 [여기를 클릭](vmsession.md#copy-files-with-new-pssession-and-copy-item)하세요.  
 Copy-Item을 사용하여 가상 컴퓨터 간에 계속 파일을 복사한 다음 Remove-PSSession을 사용하여 연결을 끊습니다.
 
 ## 요구 사항
@@ -280,6 +280,6 @@ PowerShell Direct는 JEA(Just Enough Administration)를 지원합니다.  사용
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
