@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 6603289599e7ca51558d54f35ab809528f53bcd7
+ms.sourcegitcommit: 31515396358c124212b53540af8a0dcdad3580e4
+ms.openlocfilehash: 20dcc6d263488673bf0a025058c3dee8d30168a2
 
 ---
 
@@ -43,7 +43,7 @@ Dockerfile을 전체적으로 살펴보려면 [docker.com의 Dockerfile referenc
 # Sample Dockerfile
 
 # Indicates that the windowsservercore image will be used as the base image.
-FROM windowsservercore
+FROM microsoft/windowsservercore
 
 # Metadata indicating an image maintainer.
 MAINTAINER jshelton@contoso.com
@@ -51,7 +51,7 @@ MAINTAINER jshelton@contoso.com
 # Uses dism.exe to install the IIS role.
 RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
 
-# Creates an html file and adds content to this file.
+# Creates an HTML file and adds content to this file.
 RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 
 # Sets a command or process that will run each time a container is run from the new image.
@@ -112,7 +112,7 @@ FROM windowsservercore
 RUN ["powershell", "New-Item", "c:/test"]
 ```
 
-결과 이미지를 검사하면 실행된 명령은 `powershell new-item c:/test`입니다.
+결과 이미지를 검사하면 실행된 명령은 `powershell New-Item c:/test`입니다.
 
 ```none
 docker history doc-exe-method
@@ -126,16 +126,16 @@ b3452b13e472        2 minutes ago       powershell New-Item c:/test   30.76 MB
 ```none
 FROM windowsservercore
 
-RUN powershell new-item c:\test
+RUN powershell New-Item c:\test
 ```
 
-따라서 `cmd /S /C powershell new-item c:\test`의 run 명령이 생성됩니다. 
+따라서 `cmd /S /C powershell New-Item c:\test`의 run 명령이 생성됩니다. 
 
 ```none
 docker history doc-shell-method
 
 IMAGE               CREATED             CREATED BY                              SIZE                COMMENT
-062a543374fc        19 seconds ago      cmd /S /C powershell new-item c:\test   30.76 MB
+062a543374fc        19 seconds ago      cmd /S /C powershell New-Item c:\test   30.76 MB
 ```
 
 **Windows 고려 사항**
@@ -155,10 +155,10 @@ RUN ["powershell", "New-Item", "c:\\test"]
 RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
 ```
 
-다음 예제에서는 Visual Studio의 재배포 가능 패키지를 설치합니다. 설치 관리자를 실행할 때 `start-process` 및 `-wait` 매개 변수를 사용합니다. 그래야만 설치가 완료된 다음에 Dockerfile의 다음 단계로 이동합니다.
+다음 예제에서는 Visual Studio의 재배포 가능 패키지를 설치합니다. 설치 관리자를 실행할 때 `Start-Process` 및 `-Wait` 매개 변수를 사용합니다. 그래야만 설치가 완료된 다음에 Dockerfile의 다음 단계로 이동합니다.
 
 ```none
-RUN start-Process c:\vcredist_x86.exe -ArgumentList '/quiet' -Wait
+RUN Start-Process c:\vcredist_x86.exe -ArgumentList '/quiet' -Wait
 ``` 
 
 RUN 명령에 대한 자세한 내용은 [Docker.com의 RUN Reference(RUN 참조)]( https://docs.docker.com/engine/reference/builder/#run)를 참조하세요. 
@@ -393,7 +393,7 @@ RUN powershell.exe -Command \
 
 > Invoke-WebRequest는 현재 Nano Server에서 지원되지 않습니다.
 
-이미지 만들기 프로세스 중 PowerShell을 사용하여 파일을 다운로드하는 또 다른 옵션은 .Net WebClient 라이브러리를 사용하는 것입니다. 이렇게 하면 다운로드 성능이 향상될 수 있습니다. 다음 예제에서는 WebClient 라이브러리를 사용하여 Python 소프트웨어를 다운로드합니다.
+이미지 만들기 프로세스 중 PowerShell을 사용하여 파일을 다운로드하는 또 다른 옵션은 .NET WebClient 라이브러리를 사용하는 것입니다. 이렇게 하면 다운로드 성능이 향상될 수 있습니다. 다음 예제에서는 WebClient 라이브러리를 사용하여 Python 소프트웨어를 다운로드합니다.
 
 ```none
 FROM windowsservercore
@@ -481,6 +481,6 @@ windowsservercore   latest              6801d964fda5        4 months ago        
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

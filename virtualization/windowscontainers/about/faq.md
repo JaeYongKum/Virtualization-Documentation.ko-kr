@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 25de368c-5a10-40a4-b4aa-ac8c9a9ca022
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 90e32caabde1afafbd8170db77c6e84696395870
+ms.sourcegitcommit: 2ab9a4b09a2db72e5e2be71ced5d5400761a5ad8
+ms.openlocfilehash: b084bf179d9360e4a72e8e88b4fec80eafb2906c
 
 ---
 
@@ -26,7 +26,7 @@ Windows Server 컨테이너는 응용 프로그램 또는 서비스를, 동일�
 
 Hyper-V 컨테이너를 Hyper-V 파티션 내부에서 실행 중인 Windows Server 컨테이너로 간주할 수 있습니다.
 
-Hyper-V 컨테이너는 매우 효율적인 고밀도 Windows Server 컨테이너와, 격리 수준이 높은 하드웨어 가상화 Hyper-V 가상 컴퓨터 간에 추가적인 배포 옵션을 제공합니다. 서로 다른 신뢰 경계의 응용 프로그램이 동일한 호스트에 있는 환경에서는 추가적인 격리가 필요할 수 있습니다. Hyper-V 컨테이너는 최적화된 가상화 및 Windows Server 운영 체제를 통해, 컨테이너와 호스트 운영 체제가 분리되고 컨테이너 간에도 분리되는 더 높은 수준의 격리를 제공합니다. 두 컨테이너 배포 옵션 모두 배포 시점에서 동일한 관리 API, 도구 및 이미지 형식을 사용하며 고객은 요구 사항에 가장 부합하는 배포 모드를 선택하기만 하면 됩니다.
+Hyper-V 컨테이너는 매우 효율적인 고밀도 Windows Server 컨테이너와, 격리 수준이 높은 하드웨어 가상화 Hyper-V 가상 컴퓨터 간에 추가적인 배포 옵션을 제공합니다. 서로 다른 신뢰 경계의 응용 프로그램이 동일한 호스트에서 실행되는 환경에서는 추가적인 격리가 필요할 수 있습니다. Hyper-V 컨테이너는 최적화된 가상화 및 Windows Server 운영 체제를 통해, 컨테이너와 호스트 운영 체제가 분리되고 컨테이너 간에도 분리되는 더 높은 수준의 격리를 제공합니다. 두 컨테이너 배포 옵션은 동일한 관리 API, ehrn 및 이미지 형식을 사용합니다. 배포 시 고객은 요구 사항에 가장 부합하는 배포 모드를 선택하기만 하면 됩니다.
 
 **Linux와 Windows Server 컨테이너 간의 차이는 무엇입니까?**
 
@@ -35,7 +35,7 @@ Linux와 Windows Server 컨테이너는 유사하며 커널과 코어 운영 체
 
 **개발자가 각 컨테이너 유형마다 앱을 다시 작성해야 하나요?**
 
-아니요. Windows 컨테이너 이미지는 Windows Server 컨테이너와 Hyper-V 컨테이너 간에 공통입니다. 컨테이너를 시작할 때 컨테이너 유형을 선택합니다. 개발자의 관점에서 Windows Server 컨테이너와 Hyper-V 컨테이너는 같은 물건의 두 버전이라고 할 수 있습니다.  개발, 프로그래밍, 관리 환경이 동일하고, 개방형 및 확장 가능하며, Docker를 통해 동일한 수준의 통합과 지원을 포함합니다. 
+아니요. Windows 컨테이너 이미지는 Windows Server 컨테이너와 Hyper-V 컨테이너 간에 공통입니다. 컨테이너를 시작할 때 컨테이너 유형을 선택합니다. 개발자의 관점에서 Windows Server 컨테이너와 Hyper-V 컨테이너는 같은 물건의 두 버전이라고 할 수 있습니다. 개발, 프로그래밍, 관리 환경이 동일하고, 개방형 및 확장 가능하며, Docker를 통해 동일한 수준의 통합과 지원을 포함합니다. 
 
 개발자는 적합한 런타임 플래그를 지정하는 것 말고는 별다른 변경 없이도 Windows Server 컨테이너를 사용하여 컨테이너 이미지를 만들고 Hyper-V 컨테이너로 배포하거나 혹은 반대의 경우로 할 수 있습니다.
 
@@ -43,7 +43,7 @@ Windows Server 컨테이너는 속도가 중요한 상황에서 더 높은 밀�
 
 **Hyper-V/Windows Server 컨테이너가 추가 기능인가요 아니면 Windows Server 안에 통합되나요?**
 
-컨테이너 기능은 Windows Server 2016에 통합될 것입니다. 일반 가용성에 대한 자세한 내용이 곧 제공될 것입니다.  
+컨테이너 기능은 Windows Server 2016에 통합됩니다.  
 
 **Windows Server 컨테이너와 Drawbridge는 서로 어떤 관계인가요?**
 
@@ -79,6 +79,6 @@ Docker는 프로젝트의 오픈 소스 그룹인 동시에 회사를 나타냅�
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
