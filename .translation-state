@@ -29430,9 +29430,9 @@
       "ArchiveFileCommit": "bff4ca43fe5e13ac07e856793517467c8dcc0356",
       "ArchiveFileDateTime": "2016-11-05T00:08:32.5754813Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_serviceaccounts.54bcfc8aa29ac0c07540225468870ddb0ba3481f.ko-kr.xlf",
+      "BilingualFileCommit": "add50ee36d88939e3f5da752380570b5170fe481",
+      "BilingualDateTime": "2016-11-10T07:29:50.1634336Z",
       "BilingualException": null
     },
     "80a945647722718ba676f98512c9ad7875e7a414": {
@@ -29576,9 +29576,9 @@
       "ArchiveFileCommit": "d0d064f44a20477fdc26dd33ecb6709c0fcf684e",
       "ArchiveFileDateTime": "2016-11-07T01:08:44.1645071Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\faq.9230ef72e03dd569ad85af3ef02d21277aad0e46.ko-kr.xlf",
+      "BilingualFileCommit": "add50ee36d88939e3f5da752380570b5170fe481",
+      "BilingualDateTime": "2016-11-10T07:29:50.1634336Z",
       "BilingualException": null
     },
     "20dcc6d263488673bf0a025058c3dee8d30168a2": {
@@ -29612,9 +29612,9 @@
       "ArchiveFileCommit": "d0d064f44a20477fdc26dd33ecb6709c0fcf684e",
       "ArchiveFileDateTime": "2016-11-07T01:08:44.1645071Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\manage_windows_dockerfile.cf56579c9136245b4cbef41fabc5df7a6ab9832a.ko-kr.xlf",
+      "BilingualFileCommit": "add50ee36d88939e3f5da752380570b5170fe481",
+      "BilingualDateTime": "2016-11-10T07:29:50.1634336Z",
       "BilingualException": null
     },
     "bb61ccfb9756b341be2e989cb7c5bbe571072aab": {
