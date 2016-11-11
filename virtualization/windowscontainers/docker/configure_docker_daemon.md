@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 569b8861ca01ee8a0b794e01b0acb1a1c501fa55
+ms.sourcegitcommit: 16220e5afd42ecbbef648c469822c68570f8577c
+ms.openlocfilehash: dee119983c9dca1cd9ce5caff1c4f87d4accab2a
 
 ---
 
@@ -35,19 +35,19 @@ Docker 엔진 다운로드
 
 https://master.dockerproject.org에서 항상 최신 버전을 찾을 수 있습니다. 이 샘플은 v1.13 개발 분기에서 가장 최신 버전을 사용합니다. 
 
-```none
+```powershell
 Invoke-WebRequest "https://download.docker.com/components/engine/windows-server/cs-1.12/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
 ```
 
 zip 보관 파일을 프로그램 파일로 확장합니다.
 
-```
+```powershell
 Expand-Archive -Path "$env:TEMP\docker.zip" -DestinationPath $env:ProgramFiles
 ```
 
 시스템 경로에 Docker 디렉터리를 추가합니다. 완료되면 수정된 경로를 인식할 수 있도록 PowerShell 세션을 다시 시작합니다.
 
-```none
+```powershell
 [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
 ```
 
@@ -59,7 +59,7 @@ dockerd --register-service
 
 설치되면 서비스를 시작할 수 있습니다.
 
-```none
+```powershell
 Start-Service Docker
 ```
 
@@ -135,7 +135,7 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
 
 ## Docker 서비스에서 Docker 구성
 
-또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 엔진을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 엔진 플래그를 설정합니다. 명령 프롬프트(cmd.exe는 Powershell이 아님)에서 다음 명령을 실행합니다.
+또한 `sc config`를 사용하여 Docker 서비스를 수정하는 방법으로 Docker 엔진을 구성할 수도 있습니다. 이 방법을 사용하면 Docker 서비스에서 직접 Docker 엔진 플래그를 설정합니다. 명령 프롬프트(cmd.exe는 PowerShell이 아님)에서 다음 명령을 실행합니다.
 
 
 ```none
@@ -172,14 +172,14 @@ Docker 호스트에 로그인하고 Docker 명령으로 로컬로 실행하면 �
 
 `docker search` 및 `docker pull`에 대한 프록시 정보를 설정하려면 `HTTP_PROXY` 또는 `HTTPS_PROXY` 이름과 프록시 정보 값을 사용하여 Windows 환경 변수를 만듭니다. 이 작업은 PowerShell에서 다음과 유사한 명령을 사용하여 수행할 수 있습니다.
 
-```none
+```powershell
 [Environment]::SetEnvironmentVariable("HTTP_PROXY", "http://username:password@proxy:port/", [EnvironmentVariableTarget]::Machine)
 ```
 
 변수를 설정한 후에는 Docker 서비스를 다시 시작합니다.
 
-```none
-restart-service docker
+```powershell
+Restart-Service docker
 ```
 
 자세한 내용은 [Docker.com의 Windows 구성 파일](https://docs.docker.com/engine/reference/commandline/dockerd/#/windows-configuration-file)을 참조하세요.
@@ -187,6 +187,6 @@ restart-service docker
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 
