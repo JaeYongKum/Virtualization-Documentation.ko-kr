@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: 13a33a6003cfa77d81a6e8e2afdf1da8d017ee30
-ms.openlocfilehash: a5537a4cb56127e51e0a550220995cd5f6b93722
+ms.sourcegitcommit: 295199bbb8c93f26562ef918df30082e1dd78f6d
+ms.openlocfilehash: bb61ccfb9756b341be2e989cb7c5bbe571072aab
 
 ---
 
@@ -25,6 +25,12 @@ ms.openlocfilehash: a5537a4cb56127e51e0a550220995cd5f6b93722
 Windows Server 2016이 실행되는 컴퓨터 시스템(물리적 또는 가상) 1대. Windows Server 2016 TP5를 사용하는 경우 [Window Server 2016 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016 )으로 업데이트하세요. 
 
 > 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
+
+Azure에서 배포 하려는 경우 이 [템플릿](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-server-container-tools/containers-azure-template)이 편리합니다.<br/>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FVirtualization-Documentation%2Fmaster%2Fwindows-server-container-tools%2Fcontainers-azure-template%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+
 
 ## 1. Docker 설치
 
@@ -140,6 +146,6 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

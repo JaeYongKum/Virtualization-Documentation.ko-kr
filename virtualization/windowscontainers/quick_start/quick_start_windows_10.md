@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: 34ab361ea415ab2d8d5133927beafc7911f1aaf1
+ms.sourcegitcommit: b7cd9b43f001fe8625b0c4ea8cc507c8f11de7ef
+ms.openlocfilehash: 1b57ad289368fb7d5f628e605cfc320748854c30
 
 ---
 
@@ -31,7 +31,9 @@ ms.openlocfilehash: 34ab361ea415ab2d8d5133927beafc7911f1aaf1
 
 ## 1. 컨테이너 기능 설치
 
-Windows 컨테이너를 사용하려면 먼저 컨테이너 기능을 사용하도록 설정해야 합니다. 이렇게 하려면 관리자 권한 PowerShell 세션에서 다음 명령을 실행합니다.
+Windows 컨테이너를 사용하려면 먼저 컨테이너 기능을 사용하도록 설정해야 합니다. 이렇게 하려면 **관리자 권한** PowerShell 세션에서 다음 명령을 실행합니다.
+
+`Enable-WindowsOptionalFeature`가 없다는 내용의 오류가 표시되면 PowerShell을 관리자 권한으로 실행했는지 다시 확인하세요.
 
 ```none
 Enable-WindowsOptionalFeature -Online -FeatureName containers -All
@@ -167,6 +169,6 @@ docker run --rm helloworld powershell c:\helloworld.ps1
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 
