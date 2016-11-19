@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: b82acdf9-042d-4b5c-8b67-1a8013fa1435
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: ccd1e0fc96b96349a04e6f3f33b97e5dc28582cd
+ms.sourcegitcommit: 9b99982abfbbda12758bb1c922ed1bd431ecca20
+ms.openlocfilehash: b90120bb085f0f44fde2eadd13cfa1b93011c5a7
 
 ---
 
@@ -105,7 +105,9 @@ docker pull microsoft/windowsservercore
 
 ## Nano Server에서 Docker 관리
 
-최상의 환경을 위해 원격 시스템에서 Nano Server의 Docker를 관리하는 것이 좋습니다. 이렇게 하려면 다음 항목을 완료해야 합니다.
+최상의 환경을 위해 원격 시스템에서 Nano Server의 Docker를 관리하는 것이 좋습니다. 현재 PowerShell 원격에서는 대화형 컨테이너 셸의 TTY 터미널 출력을 초기 클라이언트의 프롬프트로 리디렉션할 수 없기 때문입니다. 분리된 컨테이너를 시작할 수 있으며, `docker run -dt`를 사용하여 백그라운드에서 실행되지만 `docker run -it`를 사용한 대화형 컨테이너는 예상대로 작동하지 않습니다. PowerShell ISE에도 유사한 이유로 대화형 출력 관련 문제가 있습니다.
+
+원격 Docker 서버를 관리하려면 다음 항목을 완료해야 합니다.
 
 ### 컨테이너 호스트 준비
 
@@ -198,6 +200,6 @@ Restart-Computer
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO2-->
 
 
