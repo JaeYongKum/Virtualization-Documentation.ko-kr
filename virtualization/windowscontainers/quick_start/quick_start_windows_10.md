@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
 translationtype: Human Translation
-ms.sourcegitcommit: b7cd9b43f001fe8625b0c4ea8cc507c8f11de7ef
-ms.openlocfilehash: 1b57ad289368fb7d5f628e605cfc320748854c30
+ms.sourcegitcommit: 9b99982abfbbda12758bb1c922ed1bd431ecca20
+ms.openlocfilehash: c9f3a7669ae82e0b3a91956336d67225687c715b
 
 ---
 
@@ -116,7 +116,9 @@ Windows 컨테이너 이미지에 대한 자세한 내용은 [컨테이너 이�
 
 ## 4. 첫 번째 컨테이너 배포
 
-이 간단한 예제에서는 'Hello World' 컨테이너 이미지를 만들고 배포합니다. 최상의 환경을 유지하려면 관리자 권한 Windows CMD 셸에서 이 명령을 실행합니다.
+이 간단한 예제에서는 'Hello World' 컨테이너 이미지를 만들고 배포합니다. 최상의 환경을 유지하려면 관리자 권한 Windows CMD 셸 또는 PowerShell에서 이 명령을 실행합니다.
+
+> Windows PowerShell ISE는 컨테이너가 있는 대화형 세션에서 작동하지 않습니다. 컨테이너가 실행 중인 경우에도 중단된 것으로 표시됩니다.
 
 먼저 `nanoserver` 이미지에서 대화형 세션을 사용하여 컨테이너를 시작합니다. 컨테이너가 시작되면 컨테이너 내에서 명령 셸이 표시됩니다.  
 
