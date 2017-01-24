@@ -1,0 +1,84 @@
+---
+title: "Windows 컨테이너 기본 이미지 기록"
+description: "SHA256 계층 해시과 함께 릴리스된 Windows 컨테이너 이미지 목록"
+keywords: "Docker, 컨테이너, 해시"
+author: patricklang
+ms.date: 01/12/2018
+ms.topic: article
+ms.prod: windows-containers
+ms.service: windows-containers
+ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
+translationtype: Human Translation
+ms.sourcegitcommit: fe1e5d1f35e088581d44c43108c843347111eaef
+ms.openlocfilehash: 622c8f638a815e19a54aa75b6b5ea0688d966ae3
+
+---
+
+# Windows 컨테이너 기본 이미지 기록
+
+모든 Windows 컨테이너는 Microsoft가 제공하는 기본 OS를 기반으로 구축됩니다. 컨테이너가 구축된 기반 Windows 버전이 확실하지 않을 경우 `docker inspect <tag>`를 실행하고 최상위 행 또는 두 번째 행을 아래 차트와 일치하는지 확인합니다.
+
+예를 들어 `docker inspect microsoft/windowsservercore:10.0.14393.447`을 실행하면 다음이 표시됩니다.
+
+```none
+...
+"RootFS": {
+    "Type": "layers",
+    "Layers": [
+        "sha256:3fd27ecef6a323f5ea7f3fde1f7b87a2dbfb1afa797f88fd7d20e8dbdc856f67",
+        "sha256:b9454c3094c68005f07ae8424021ff0e7906dac77a172a874cd5ec372528fc15"
+    ]
+}
+```
+Microsoft에서 제공하는 이미지에는 두 계층이 있습니다.
+
+각 버전에서 변경된 내용을 찾으려면 [Windows 10 및 Windows Server 2016 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history)에서 기술 자료를 찾아보세요.
+
+
+<table>
+    <tr>
+        <th>Windows 버전</th>
+        <th>microsoft/windowsservercore</th>
+        <th>microsoft/nanoserver</th>
+    </tr>
+    <tr>
+        <td>10.0.14393.206</td>
+        <td>sha256:3fd27ecef6a323f5ea7f3fde1f7b87a2dbfb1afa797f88fd7d20e8dbdc856f67</td>
+        <td>sha256:342d4e407550c52261edd20cd901b5ce438f0b1e940336de3978210612365063</td>
+    </tr>
+    <tr>
+        <td>10.0.14393.321</td>
+        <td>sha256:3fd27ecef6a323f5ea7f3fde1f7b87a2dbfb1afa797f88fd7d20e8dbdc856f67<br/>
+        sha256:cc6b0a07c696c3679af48ab4968de1b42d35e568f3d1d72df21f0acb52592e0b</td>
+        <td>sha256:342d4e407550c52261edd20cd901b5ce438f0b1e940336de3978210612365063<br/>
+        sha256:2c195a33d84d936c7b8542a8d9890a2a550e7558e6ac73131b130e5730b9a3a5</td>
+    </tr>
+    <tr>
+        <td>10.0.14393.447</td>
+        <td>sha256:3fd27ecef6a323f5ea7f3fde1f7b87a2dbfb1afa797f88fd7d20e8dbdc856f67<br/>
+        sha256:b9454c3094c68005f07ae8424021ff0e7906dac77a172a874cd5ec372528fc15</td>
+        <td>sha256:342d4e407550c52261edd20cd901b5ce438f0b1e940336de3978210612365063<br/>
+        sha256:c8606bedb07a714a6724b8f88ce85b71eaf5a1c80b4c226e069aa3ccbbe69154</td>
+    </tr>
+    <tr>
+        <td>10.0.14393.576</td>
+        <td>sha256:f358be10862ccbc329638b9e10b3d497dd7cd28b0e8c7931b4a545c88d7f7cd6<br/>
+        sha256:de57d9086f9a337bb084b78f5f37be4c8f1796f56a1cd3ec8d8d1c9c77eb693c</td>
+        <td>sha256:6c357baed9f5177e8c8fd1fa35b39266f329535ec8801385134790eb08d8787d<br/>
+        sha256:0d812bf7a7032db75770c3d5b92c0ac9390ca4a9efa0d90ba2f55ccb16515381</td>
+    </tr>
+    <tr>
+        <td>10.0.14393.693</td>
+        <td>sha256:f358be10862ccbc329638b9e10b3d497dd7cd28b0e8c7931b4a545c88d7f7cd6<br/>
+        sha256:c28d44287ce521eac86e0296c7677f5d8ca1e86d1e45e7618ec900da08c95df3</td>
+        <td>sha256:6c357baed9f5177e8c8fd1fa35b39266f329535ec8801385134790eb08d8787d<br/>
+        sha256:dd33c5d8d8b3c230886132c328a7801547f13de1dac9a629e2739164a285b3ab</td>
+    </tr>
+</table>
+
+
+
+
+<!--HONumber=Jan17_HO4-->
+
+

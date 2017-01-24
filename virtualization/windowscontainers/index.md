@@ -9,8 +9,8 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
 translationtype: Human Translation
-ms.sourcegitcommit: 1787637fdd2c3bf8ef453a7425dc965e65e5ce12
-ms.openlocfilehash: a1b876d01b8076ee9feb275bd09247775bfcef69
+ms.sourcegitcommit: 54eff4bb74ac9f4dc870d6046654bf918eac9bb5
+ms.openlocfilehash: 9b630e372b575ef1721c0d0926ec2caec3e5ec34
 
 ---
 
@@ -24,14 +24,14 @@ Windows 컨테이너는 여러 개의 격리된 응용 프로그램을 단일 �
 <td>**빠른 시작**<br /><br />
 Windows Server 빠른 시작<br /><br />
 <ul>
-<li>[1단계 – 개념 및 용어](quick_start/quick_start.md)<br /><br /></li>
-<li>[2단계 – Windows Server 및 첫 번째 컨테이너 구성](quick_start/quick_start_windows_server.md)<br /><br /></li>
-<li>[3단계 – 컨테이너 이미지 만들기 및 푸시](quick_start/quick_start_images.md)<br /><br /></li>
+<li>[1단계 – 개념 및 용어](quick-start/index.md)<br /><br /></li>
+<li>[2단계 – Windows Server 및 첫 번째 컨테이너 구성](quick-start/quick-start-windows-server.md)<br /><br /></li>
+<li>[3단계 – 컨테이너 이미지 만들기 및 푸시](quick-start/quick-start-images.md)<br /><br /></li>
 </ul>
 Windows 10 빠른 시작<br /><br />
 <ul>
-<li>[1단계 – 개념 및 용어](quick_start/quick_start.md)<br /><br /></li>
-<li>[2단계 – Windows 10 및 첫 번째 컨테이너 구성](quick_start/quick_start_windows_10.md)<br /><br /></li>
+<li>[1단계 – 개념 및 용어](quick-start/index.md)<br /><br /></li>
+<li>[2단계 – Windows 10 및 첫 번째 컨테이너 구성](quick-start/quick-start-windows-10.md)<br /><br /></li>
 </ul>
 </td>
 </tr>
@@ -40,9 +40,9 @@ Windows 10 빠른 시작<br /><br />
 <td>**배포**<br /><br />
 Windows Server 2016 및 Nano Server에서 Windows 컨테이너를 배포하는 방법을 알아봅니다.<br /><br />
 <ul>
-<li>[시스템 요구 사항](deployment/system_requirements.md)<br /><br /></li>
-<li>[컨테이너 호스트 배포 - Windows Server](deployment/deployment.md)<br /><br /></li>
-<li>[컨테이너 호스트 배포 - Nano Server](deployment/deployment_nano.md)<br /><br /></li>
+<li>[시스템 요구 사항](deploy-containers/system-requirements.md)<br /><br /></li>
+<li>[컨테이너 호스트 배포 - Windows Server](deploy-containers/deploy-containers-on-server.md)<br /><br /></li>
+<li>[컨테이너 호스트 배포 - Nano Server](deploy-containers/deploy-containers-on-nano.md)<br /><br /></li>
 <li>[바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)<br /><br /></li>
 </ul>
 </td>
@@ -53,11 +53,10 @@ Windows Server 2016 및 Nano Server에서 Windows 컨테이너를 배포하는 �
 <td>**Windows의 Docker**<br /><br />
 Windows에서 Docker를 관리하는 방법을 알아보세요.<br /><br />
 <ul>
-<li>[Windows의 Docker 엔진](docker/configure_docker_daemon.md)<br /><br /></li>
-<li>[Windows의 Dockerfile](docker/manage_windows_dockerfile.md)<br /><br /></li>
-<li>[컨테이너 데이터 관리](management/manage_data.md)<br /><br /></li>
-<li>[Dockerfile 최적화](docker/optimize_windows_dockerfile.md)<br /><br /></li>
-<li>[컨테이너 네트워킹](management/container_networking.md)<br /><br /></li>
+<li>[Windows의 Docker 엔진](manage-docker/configure-docker-daemon.md)<br /><br /></li>
+<li>[Windows의 Dockerfile](manage-docker/manage-windows-dockerfile.md)<br /><br /></li>
+<li>[Dockerfile 최적화](manage-docker/optimize-windows-dockerfile.md)<br /><br /></li>
+<li>[컨테이너 네트워킹](manage-containers/container-networking.md)<br /><br /></li>
 </ul>
 </td>
 </tr>
@@ -88,6 +87,6 @@ Windows 컨테이너 팀의 데모 및 인터뷰에 관심이 있으십니까?<b
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 

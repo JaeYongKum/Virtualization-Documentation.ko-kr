@@ -1,6 +1,22 @@
+---
+title: "Windows 컨테이너 샘플"
+description: "Windows 컨테이너를 사용하여 인기 프로젝트와 코드 샘플로의 링크를 찾아보세요."
+keywords: "Docker, 컨테이너, windows, 샘플"
+author: enderb-ms
+ms.date: 12/19/2016
+ms.topic: article
+ms.prod: windows-containers
+ms.service: windows-containers
+ms.assetid: 5c6f6350-f8d6-4426-b53d-9fb09c2bf267
+translationtype: Human Translation
+ms.sourcegitcommit: b2950dca4b29e97eb951379645c118468a1fb403
+ms.openlocfilehash: eac2026cff552315a4cb256b595f1bd3317ee11c
+
+---
+
 # Windows 컨테이너 샘플
 
-샘플 및 예제는 Windows 팀 및 커뮤니티의 멤버를 통해 제출된 컬렉션입니다.  이러한 샘플은 있는 그대로 제공되고 어떤 명시적인 보증 또는 보장하지 않습니다.  추가 샘플을 제공하거나 현재 집합을 개선할 수 있습니다.
+이는 Windows 팀 및 커뮤니티의 멤버가 제출한 샘플 및 예제 컬렉션입니다.  이러한 샘플은 있는 그대로 제공되고 어떤 명시적인 보증 또는 보장하지 않습니다.  추가 샘플을 제공하거나 현재 집합을 개선할 수 있습니다.
 
 # Categories
 
@@ -64,6 +80,7 @@
 ## 기타
 
 
-<!--HONumber=Oct16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

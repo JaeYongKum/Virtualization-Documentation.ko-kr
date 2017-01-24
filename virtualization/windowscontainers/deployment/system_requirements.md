@@ -1,93 +1,13 @@
 ---
-title: "Windows의 컨테이너 요구 사항"
-description: "Windows의 컨테이너 요구 사항입니다."
-keywords: "메타데이터, 컨테이너"
-author: enderb-ms
-ms.date: 09/26/2016
-ms.topic: deployment-article
-ms.prod: windows-containers
-ms.service: windows-containers
-ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
+redirect_url: ../deploy-containers/system-requirements
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: af8d8a05fc953dcc93672a0f936caca5e37f0de3
+ms.sourcegitcommit: 54eff4bb74ac9f4dc870d6046654bf918eac9bb5
+ms.openlocfilehash: 441815bed7d4bffa5e19e7294abae2dc31947fa2
 
 ---
 
-# Windows의 컨테이너 요구 사항
-
-이 가이드는 Windows 컨테이너 호스트에 대한 요구 사항을 나열합니다.
-
-## OS 요구 사항
-
-- Windows 컨테이너 기능은 Windows Server 2016(코어 및 데스크톱 경험 포함), Nano Server, Windows 10 Professional 및 Enterprise(Anniversary Edition)에서만 사용할 수 있습니다.
-- Hyper-V 컨테이너를 실행하려면 Hyper-V 역할을 설치해야 합니다.
-- Windows Server 컨테이너 호스트에는 c:\.에 Windows가 설치되어 있어야 합니다. Hyper-V 컨테이너만 배포할 경우 이 제한이 적용되지 않습니다.
-
-## 가상화된 컨테이너 호스트
-
-Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되고 Hyper-V 호스트 컨테이너를 호스팅할 경우 중첩된 가상화를 사용해야 합니다. 중첩된 가상화에는 다음과 같은 요구 사항이 있습니다.
-
-- 가상화된 Hyper-V 호스트에 사용할 수 있는 4GB 이상의 RAM.
-- Windows Server 2016 또는 호스트 시스템의 Windows 10, 가상 컴퓨터의 Windows Server(Full, Core) 또는 Nano Server.
-- Intel VT-x가 포함된 프로세서.(이 기능은 현재 Intel 프로세서에 대해서만 사용할 수 있습니다)
-- 또한 컨테이너 호스트 VM에는 적어도 2개의 가상 프로세서가 필요합니다.
-
-## 지원되는 기본 이미지
-
-Windows 컨테이너는 두 컨테이너 기본 이미지(Windows Server Core 및 Nano Server)와 함께 제공됩니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
-
-<table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
-<thead>
-<tr valign="top">
-<th><center>호스트 운영 체제</center></th>
-<th><center>Windows Server 컨테이너</center></th>
-<th><center>Hyper-V 컨테이너</center></th>
-</tr>
-</thead>
-<tbody>
-<tr valign="top">
-<td><center>Windows Server 2016 데스크톱</center></td>
-<td><center>Server Core/Nano Server</center></td>
-<td><center>Server Core/Nano Server</center></td>
-</tr>
-<tr valign="top">
-<td><center>Windows Server 2016 Core</center></td>
-<td><center>Server Core/Nano Server</center></td>
-<td><center>Server Core/Nano Server</center></td>
-</tr>
-<tr valign="top">
-<td><center>Nano Server</center></td>
-<td><center> Nano Server</center></td>
-<td><center>Server Core/Nano Server</center></td>
-</tr>
-<tr valign="top">
-<td><center>Windows 10 Pro/Enterprise</center></td>
-<td><center>사용할 수 없음</center></td>
-<td><center>Server Core/Nano Server</center></td>
-</tr>
-</tbody>
-</table>
-
-## 컨테이너 호스트 버전과 컨테이너 이미지 버전 일치
-### Windows Server 컨테이너
-Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유하기 때문에 컨테이너의 기본 이미지는 호스트의 기본 이미지와 일치해야 합니다.  버전이 다른 경우 컨테이너는 시작할 수 있지만 일부 기능은 사용하지 못할 수 있습니다. 그러므로 일치하지 않는 버전은 지원되지 않습니다.  Windows 운영 체제에는 주 버전, 부 버전, 빌드 및 수정의 네 가지 수준의 버전이 있습니다(예: 10.0.14393.0). 빌드 번호는 OS의 새 버전이 게시되는 경우에만 변경됩니다. 수정 번호는 Windows 업데이트가 적용되면 업데이트됩니다. Windows Server 컨테이너는 빌드 번호가 다른 경우 시작이 차단됩니다(예: 10.0.14300.1030(Technical Preview 5) 및 10.0.14393(Windows Server 2016 RTM)). 빌드 번호가 일치하지만 수정 번호가 다른 경우 시작이 차단되지 않습니다(예: 10.0.14393(Windows Server 2016 RTM) 및 10.0.14393.206(Windows Server 2016 GA)). 기술적으로는 차단되지 않지만 일부 상황에서 제대로 작동하지 않을 수 있는 구성이므로 제품 환경에 대해 지원되지 않습니다. 
-
-Windows 호스트에서 설치한 버전을 확인하기 위해 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion을 쿼리할 수 있습니다.  기본 이미지에서 사용하는 버전을 확인하기 위해 Docker 허브에서 태그를 검토하거나 이미지 설명에 제공된 이미지 해시 테이블을 검토할 수 있습니다.  [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정이 릴리스된 날짜가 나와 있습니다.
-
-이 예에서 14393은 주 빌드 번호이고 321은 수정 번호입니다.
-```none
-Windows PowerShell
-Copyright (C) 2016 Microsoft Corporation. All rights reserved.
-
-PS C:\Users\Administrator> (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\').BuildLabEx
-14393.321.amd64fre.rs1_release_inmarket.161004-2338
-```
-
-### Hyper-V 컨테이너
-컨테이너와 호스트 간에 커널을 공유하는 Windows Server 컨테이너와 달리, 각 Hyper-V 컨테이너는 고유한 Windows 커널 인스턴스를 사용합니다.  이로 인해 컨테이너 호스트와 컨테이너 이미지 버전을 일치시키지 못할 수 있습니다.  빌드 번호가 Windows Server 2016 GA(10.0.14393.206)와 같거나 이보다 큰 빌드는 수정 번호와 상관없이 지원되는 구성에서 Windows Server Core 또는 Nano Server의 Windows Server 2016 GA 이미지를 실행할 수 있습니다.  향후 고객 의견에 따라 빌드 번호가 얼마나 멀리 떨어질 수 있는지에 대한 특정 지침을 제공할 예정입니다.  Windows 업데이트에서 제공하는 모든 기능, 안정성 및 보안 보증을 받으려면 모든 시스템에서 최신 버전을 유지해야 합니다.  
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Jan17_HO4-->
 
 

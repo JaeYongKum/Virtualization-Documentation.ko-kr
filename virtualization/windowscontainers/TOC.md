@@ -1,5 +1,4 @@
-# Windows 컨테이너 정보
-## [Windows 컨테이너 개요](about/about_overview.md)
+# [Windows 컨테이너 정보](about/index.md)
 
 # Windows Server 빠른 시작
 ## [1단계 – 개념](quick_start/quick_start.md)
@@ -13,7 +12,7 @@
 # Windows 컨테이너 배포
 ## [시스템 요구 사항](deployment/system_requirements.md)
 ## [컨테이너 호스트 - Windows Server](deployment/deployment.md)
-## [컨테이너 호스트 - Nano Server](deployment/deployment_nano.md)
+## [컨테이너 호스트 - Nano 서버](deployment/deployment_nano.md)
 ## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 ## [Active Directory 서비스 계정](management/manage_serviceaccounts.md)
 
@@ -42,6 +41,6 @@
 # [컨테이너 OS 이미지 EULA](Images_EULA.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
