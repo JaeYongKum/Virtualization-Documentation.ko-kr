@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [virtualization\hyper-v-on-windows\user-guide\make-integration-service.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/b6b63318ed71931c2b49039e57685414f869a945/virtualization/hyper-v-on-windows/user-guide/make-integration-service.md) | HandedOffSuccess | [Details](#19e8cf269b0bef127fb06d2c99391107cd8683b1204)
+ [virtualization\hyper-v-on-windows\user-guide\setup-nat-network.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/57c69e8d19a9b87e230b760eb86b7b6b701ff983/virtualization/hyper-v-on-windows/user-guide/setup-nat-network.md) | HandedOffSuccess | [Details](#235d804310cac38a4628bc2d931371d390e2d991226)
 
 ## Item Details
-##### <a name='19e8cf269b0bef127fb06d2c99391107cd8683b1204'></a> Source: [virtualization\hyper-v-on-windows\user-guide\make-integration-service.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/b6b63318ed71931c2b49039e57685414f869a945/virtualization/hyper-v-on-windows/user-guide/make-integration-service.md)
+##### <a name='235d804310cac38a4628bc2d931371d390e2d991226'></a> Source: [virtualization\hyper-v-on-windows\user-guide\setup-nat-network.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/57c69e8d19a9b87e230b760eb86b7b6b701ff983/virtualization/hyper-v-on-windows/user-guide/setup-nat-network.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [make-integration-service.c3268239155e1fcb3f21c78fc57128dead3831c3.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/0de8ce576e2720d7d1b6525dab03be27f37f38e9/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/make-integration-service.c3268239155e1fcb3f21c78fc57128dead3831c3.ko-kr.xlf)
-* Handoff Datetime: 2017-02-16 04:25:46
+* Handoff File: [setup-nat-network.569fba8d30bc800503603312f9faf0554f426411.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/27f9104134e70bf05db6c1e4fe5d3d61b2791569/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/setup-nat-network.569fba8d30bc800503603312f9faf0554f426411.ko-kr.xlf)
+* Handoff Datetime: 2017-02-16 07:26:46
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [virtualization\hyper-v-on-windows\user-guide\make-integration-service.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/hyper-v-on-windows/user-guide/make-integration-service.md)
-* Current Handback File: [make-integration-service.c3268239155e1fcb3f21c78fc57128dead3831c3.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/make-integration-service.c3268239155e1fcb3f21c78fc57128dead3831c3.ko-kr.xlf)
+* Current Target File: [virtualization\hyper-v-on-windows\user-guide\setup-nat-network.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/hyper-v-on-windows/user-guide/setup-nat-network.md)
+* Current Handback File: [setup-nat-network.569fba8d30bc800503603312f9faf0554f426411.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/setup-nat-network.569fba8d30bc800503603312f9faf0554f426411.ko-kr.xlf)
 * Current Handback Datetime: 2017-01-24 13:19:55
-* Bilingual File: [make-integration-service.c3268239155e1fcb3f21c78fc57128dead3831c3.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/make-integration-service.c3268239155e1fcb3f21c78fc57128dead3831c3.ko-kr.xlf)
+* Bilingual File: [setup-nat-network.569fba8d30bc800503603312f9faf0554f426411.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/setup-nat-network.569fba8d30bc800503603312f9faf0554f426411.ko-kr.xlf)
 * Bilingual Datetime: 2017-01-24 13:22:04
 * [Back to Top](#report-top)
 
