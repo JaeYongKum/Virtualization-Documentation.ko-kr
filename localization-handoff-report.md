@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [virtualization\windowscontainers\quick-start\quick-start-windows-10.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/996d3b1a8f7c8325ac66d331e1d62208c0cf6b53/virtualization/windowscontainers/quick-start/quick-start-windows-10.md) | HandedOffSuccess | [Details](#091a3570291624a3be40e3aabb9f99a482cb6470363)
+ [virtualization\hyper-v-on-windows\reference\tlfs.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/b2699f1ec29e4b84b6c6af3b64969457ce7b58b6/virtualization/hyper-v-on-windows/reference/tlfs.md) | HandedOffSuccess | [Details](#495bd9228e93a1981a646f13e2e583a741eec217201)
 
 ## Item Details
-##### <a name='091a3570291624a3be40e3aabb9f99a482cb6470363'></a> Source: [virtualization\windowscontainers\quick-start\quick-start-windows-10.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/996d3b1a8f7c8325ac66d331e1d62208c0cf6b53/virtualization/windowscontainers/quick-start/quick-start-windows-10.md)
+##### <a name='495bd9228e93a1981a646f13e2e583a741eec217201'></a> Source: [virtualization\hyper-v-on-windows\reference\tlfs.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/b2699f1ec29e4b84b6c6af3b64969457ce7b58b6/virtualization/hyper-v-on-windows/reference/tlfs.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/061e4f99f3f709da5ff3530596086dd85d50da06/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf)
-* Handoff Datetime: 2017-02-27 19:25:38
+* Handoff File: [tlfs.1bc1ee9abc2adf060143e30b11346b0456729304.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/5457fd53a62ec7d34bd081784b256f02d22d4b31/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/tlfs.1bc1ee9abc2adf060143e30b11346b0456729304.ko-kr.xlf)
+* Handoff Datetime: 2017-02-27 21:24:03
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [virtualization\windowscontainers\quick-start\quick-start-windows-10.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/windowscontainers/quick-start/quick-start-windows-10.md)
-* Current Handback File: [quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf)
-* Current Handback Datetime: 2017-01-24 13:19:55
-* Bilingual File: [quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf)
-* Bilingual Datetime: 2017-01-24 13:22:04
+* Current Target File: [virtualization\hyperv_on_windows\reference\tlfs.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/3d08af2dc31bf1e00b03289ab843f056f7672664/virtualization/hyperv_on_windows/reference/tlfs.md)
+* Current Handback File: [tlfs.dcdda4ab93a4524cae3e7de93cf82726d2099b87.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/688e9578ad782f58601ebf2069aee0d035ecd39a/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/tlfs.dcdda4ab93a4524cae3e7de93cf82726d2099b87.ko-kr.xlf)
+* Current Handback Datetime: 2016-11-04 21:50:18
+* Bilingual File: [tlfs.dcdda4ab93a4524cae3e7de93cf82726d2099b87.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/688e9578ad782f58601ebf2069aee0d035ecd39a/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/tlfs.dcdda4ab93a4524cae3e7de93cf82726d2099b87.ko-kr.xlf)
+* Bilingual Datetime: 2016-11-04 21:51:56
 * [Back to Top](#report-top)
 
 
