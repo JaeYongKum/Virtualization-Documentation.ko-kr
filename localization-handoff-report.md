@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [virtualization\windowscontainers\manage-containers\swarm-mode.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/0ad8c30521e8630decc5aca7a409b8b3a22d0c7d/virtualization/windowscontainers/manage-containers/swarm-mode.md) | HandedOffSuccess | [Details](#0e5e131ec9c2c9c57bf6c7c7a9cabf02cbfe352f299)
+ [virtualization\windowscontainers\quick-start\quick-start-windows-10.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/996d3b1a8f7c8325ac66d331e1d62208c0cf6b53/virtualization/windowscontainers/quick-start/quick-start-windows-10.md) | HandedOffSuccess | [Details](#091a3570291624a3be40e3aabb9f99a482cb6470363)
 
 ## Item Details
-##### <a name='0e5e131ec9c2c9c57bf6c7c7a9cabf02cbfe352f299'></a> Source: [virtualization\windowscontainers\manage-containers\swarm-mode.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/0ad8c30521e8630decc5aca7a409b8b3a22d0c7d/virtualization/windowscontainers/manage-containers/swarm-mode.md)
+##### <a name='091a3570291624a3be40e3aabb9f99a482cb6470363'></a> Source: [virtualization\windowscontainers\quick-start\quick-start-windows-10.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/996d3b1a8f7c8325ac66d331e1d62208c0cf6b53/virtualization/windowscontainers/quick-start/quick-start-windows-10.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [swarm-mode.c9f6182916115e0571bb233ed668a7a7b9ff8d55.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/41afa3800d007d4a5ce80bf849b62adf417a8e68/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/swarm-mode.c9f6182916115e0571bb233ed668a7a7b9ff8d55.ko-kr.xlf)
-* Handoff Datetime: 2017-02-22 23:09:52
+* Handoff File: [quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handoff/blob/061e4f99f3f709da5ff3530596086dd85d50da06/ol-handoff/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf)
+* Handoff Datetime: 2017-02-27 19:25:38
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,6 +21,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
+* Current Target File: [virtualization\windowscontainers\quick-start\quick-start-windows-10.md](https://github.com/Microsoft/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/windowscontainers/quick-start/quick-start-windows-10.md)
+* Current Handback File: [quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf)
+* Current Handback Datetime: 2017-01-24 13:19:55
+* Bilingual File: [quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf](https://github.com/Microsoft/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-windows-10.a292cb64dd3dd6e10f23632c8ce9edbe9faf6738.ko-kr.xlf)
+* Bilingual Datetime: 2017-01-24 13:22:04
 * [Back to Top](#report-top)
 
 
