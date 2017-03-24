@@ -9,8 +9,9 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
 translationtype: Human Translation
-ms.sourcegitcommit: 804008c172b80a4f354a92cd4d12a4e23e1d4328
-ms.openlocfilehash: 00a43f8d4d27327c61e318f3a915047106ad2aca
+ms.sourcegitcommit: 1a327806514f1e1b5d2d234b0aa4ce300e26456f
+ms.openlocfilehash: 0e692f7521e4a15e3e56d4b98f7ca15fe94ee167
+ms.lasthandoff: 01/26/2017
 
 ---
 
@@ -39,7 +40,6 @@ Windows 컨테이너는 도메인에 가입될 수는 없지만 장치가 영역
 
 서비스가 시작되면 도메인에 가입된 호스트는 Active Directory에서 gMSA 암호를 자동으로 가져오고 해당 계정을 사용하여 서비스를 실행합니다. 서비스가 gMSA로 실행되므로 gMSA가 액세스할 수 있는 모든 리소스에 액세스할 수 있습니다.
 
-
 Windows 컨테이너도 유사한 프로세스를 수행합니다.
 
 1. gMSA를 만듭니다. 기본적으로 도메인 관리자 또는 계정 운영자가 해야 합니다. 그러지 않으면 gMSA를 만들고 관리하는 권한을 이 계정을 사용하는 서비스를 관리하는 관리자에게 위임할 수 있습니다. [gMSA 시작하기](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11).aspx)를 참조하세요.
@@ -59,7 +59,7 @@ Windows 컨테이너도 유사한 프로세스를 수행합니다.
 ## SQL 연결 문자열
 서비스가 컨테이너에서 로컬 시스템 또는 네트워크 서비스로 실행되는 경우 Windows 통합 인증을 사용하여 Microsoft SQL Server에 연결할 수 있습니다.
 
-예:
+예제:
 
 ```none
 Server=sql.contoso.com;Database=MusicStore;Integrated Security=True;MultipleActiveResultSets=True;Connect Timeout=30
@@ -67,7 +67,7 @@ Server=sql.contoso.com;Database=MusicStore;Integrated Security=True;MultipleActi
 
 Microsoft SQL Server에서 도메인과 gMSA 이름 다음에 $를 사용하여 로그인을 만듭니다. 만든 로그인을 데이터베이스의 사용자에 추가하고 적절한 액세스 권한을 부여할 수 있습니다.
 
-예: 
+예제: 
 
 ```sql
 CREATE LOGIN "DEMO\WebApplication1$"
@@ -84,8 +84,5 @@ EXEC sp_addrolemember 'db_datareader', 'WebApplication1'
 EXEC sp_addrolemember 'db_datawriter', 'WebApplication1'
 ```
 
-
-
-<!--HONumber=Nov16_HO1-->
-
+작동을 확인하려면 Microsoft Ignite 2016의 "Walk the Path to Containerization - transforming workloads into containers"(컨테이너화 안내 - 워크로드를 컨테이너로 변환) 세션에서 사용 가능한 [녹화된 데모](https://youtu.be/cZHPz80I-3s?t=2672)를 참조하세요.
 

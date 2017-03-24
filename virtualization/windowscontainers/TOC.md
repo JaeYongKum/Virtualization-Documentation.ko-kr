@@ -21,7 +21,9 @@
 ## [Windows의 Dockerfile](docker/manage_windows_dockerfile.md)
 ## [Dockerfile 최적화](docker/optimize_windows_dockerfile.md)
 ## [컨테이너 네트워킹](management/container_networking.md)
+## [Swarm 모드 시작](manage-containers/swarm-mode.md)
 ## [PowerShell로 Docker 관리](https://github.com/Microsoft/Docker-PowerShell)
+## [Windows Docker 호스트의 원격 관리](management/manage_remotehost.md)
 
 # 컨테이너 샘플
 ## [응용 프로그램 프레임워크](samples.md#Application-Frameworks)
@@ -39,8 +41,3 @@
 
 
 # [컨테이너 OS 이미지 EULA](Images_EULA.md)
-
-
-<!--HONumber=Nov16_HO3-->
-
-

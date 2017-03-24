@@ -9,8 +9,9 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
 translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: b0903a3e00b92bc60e26282dde072b66030ada09
+ms.sourcegitcommit: e714d4dc22c0049d3365d4a4f3c11d072f46a161
+ms.openlocfilehash: 7d16fcf22187ae3ace25fe1bedbc02f3c6b63eb8
+ms.lasthandoff: 02/14/2017
 
 ---
 
@@ -34,7 +35,7 @@ ms.openlocfilehash: b0903a3e00b92bc60e26282dde072b66030ada09
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
 3. 가상 컴퓨터를 시작합니다.
-4. 물리적 서버에서 하는 것처럼 가상 컴퓨터 내에 Hyper-V를 설치합니다. Hyper-V 설치에 대한 자세한 내용은 [Hyper-V 설치]( https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/quick_start/walkthrough_install)를 참조하세요.
+4. 물리적 서버에서 하는 것처럼 가상 컴퓨터 내에 Hyper-V를 설치합니다. Hyper-V 설치에 대한 자세한 내용은 [Hyper-V 설치](../quick-start/enable-hyper-v.md)를 참조하세요.
 
 ## 중첩된 가상화 사용 안 함
 중지된 가상 컴퓨터에 대해 중첩된 가상화를 사용하지 않도록 설정하려면 다음 PowerShell 명령을 사용합니다.
@@ -76,9 +77,4 @@ Netsh interface ip add dnsserver “Ethernet” address=<my DNS server>
 
 ## 타사 가상화 앱
 Hyper-V 외의 가상화 응용 프로그램은 Hyper-V 가상 컴퓨터에서 지원되지 않으며 실패할 확률이 높습니다. 하드웨어 가상화 확장이 필요한 모든 소프트웨어가 여기에 포함됩니다.
-
-
-
-<!--HONumber=Oct16_HO4-->
-
 

@@ -9,8 +9,9 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
 translationtype: Human Translation
-ms.sourcegitcommit: 54eff4bb74ac9f4dc870d6046654bf918eac9bb5
-ms.openlocfilehash: 31a55ead81e05f7dee1d1f4f8a2101114d1ca017
+ms.sourcegitcommit: 76e041aac426604280208f616f7994181112215a
+ms.openlocfilehash: 766a99a74738fa41ef77410c70aefa7e664f014e
+ms.lasthandoff: 03/01/2017
 
 ---
 
@@ -27,7 +28,7 @@ Windows Server 2016이 실행되는 컴퓨터 시스템(물리적 또는 가상)
 > 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
 Azure에서 배포 하려는 경우 이 [템플릿](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-server-container-tools/containers-azure-template)이 편리합니다.<br/>
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FVirtualization-Documentation%2Fmaster%2Fwindows-server-container-tools%2Fcontainers-azure-template%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FVirtualization-Documentation%2Flive%2Fwindows-server-container-tools%2Fcontainers-azure-template%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
@@ -38,18 +39,18 @@ Docker를 설치하기 위해 [OneGet provider PowerShell module](https://github
 
 관리자 권한으로 PowerShell 세션을 열고 다음 명령을 실행합니다.
 
-먼저 OneGet PowerShell 모듈을 설치합니다.
+먼저 PowerShell 갤러리에서 Docker-Microsoft PackageManagement Provider를 설치합니다.
 
 ```none
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 ```
 
-그런 다음 OneGet을 사용하여 최신 버전의 Docker를 설치합니다.
+그런 다음 PackageManagement PowerShell 모듈을 사용하여 최신 버전의 Docker를 설치합니다.
 ```none
 Install-Package -Name docker -ProviderName DockerMsftProvider
 ```
 
-PowerShell에서 'DockerDefault' 패키지 소스를 신뢰할 수 있는지 물으면 A를 입력하여 설치를 계속합니다. 설치가 완료되면 컴퓨터를 다시 부팅합니다.
+PowerShell에서 'DockerDefault' 패키지 소스를 신뢰할 수 있는지 물으면 `A`를 입력하여 설치를 계속합니다. 설치가 완료되면 컴퓨터를 다시 부팅합니다.
 
 ```none
 Restart-Computer -Force
@@ -148,9 +149,4 @@ Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Refere
 [Windows Server의 컨테이너 이미지](./quick-start-images.md)
 
 [Windows 10의 Windows 컨테이너](./quick-start-windows-10.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

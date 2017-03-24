@@ -9,8 +9,9 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
 translationtype: Human Translation
-ms.sourcegitcommit: 2cf6d04c4a8de0148a2f981d21bec72cff23f6e8
-ms.openlocfilehash: c87e964aac32183eddf000d84d96ffa1122075f7
+ms.sourcegitcommit: 359e29de50a51e0d3db263c46861ae6814f277d2
+ms.openlocfilehash: 8b2f4103ad0048a99e9befeb47d370a9b5cd092f
+ms.lasthandoff: 03/01/2017
 
 ---
 
@@ -52,7 +53,7 @@ Hyper-V는 선택적 기능으로 Windows에서 기본 제공됩니다. Hyper-V 
 
 ### CMD와 DISM을 사용하여 Hyper-V를 사용하도록 설정
 
-배포 이미지 서비스 및 관리(DISM) 도구를 사용하면 Windows와 Windows 이미지를 구성하는 데 도움이 됩니다.  DISM은 많은 응용 프로그램을 갖추고 있으며, 운영 체제가 실행 중인 동안 Windows 기능을 사용하도록 설정할 수 있습니다.  
+DISM(배포 이미지 서비스 및 관리) 도구를 사용하면 Windows와 Windows 이미지를 구성하는 데 도움이 됩니다.  DISM은 많은 응용 프로그램을 갖추고 있으며, 운영 체제가 실행 중인 동안 Windows 기능을 사용하도록 설정할 수 있습니다.  
 
 DISM을 사용하여 Hyper-V 역할을 활성화하려면:
 1. 관리자 권한으로 PowerShell 또는 CMD 세션을 엽니다.
@@ -82,9 +83,4 @@ DISM에 대한 자세한 내용은 [DISM 기술 참조](https://technet.microsof
 
 ## 다음 단계 - 네트워크 설정
 [인터넷에 연결](connect-to-network.md)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

@@ -1,7 +1,7 @@
 ---
 title: "고유한 통합 서비스 만들기"
 description: "Windows 10 통합 서비스"
-keywords: windows 10, hyper-v
+keywords: windows 10, hyper-v, HVSocket, AF_HYPERV
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
@@ -9,26 +9,25 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1ef8f18c-3d76-4c06-87e4-11d8d4e31aea
 translationtype: Human Translation
-ms.sourcegitcommit: 54eff4bb74ac9f4dc870d6046654bf918eac9bb5
-ms.openlocfilehash: 9e4be610f02e12f48fb88464eb8075b97996d5b2
+ms.sourcegitcommit: b6b63318ed71931c2b49039e57685414f869a945
+ms.openlocfilehash: 19e8cf269b0bef127fb06d2c99391107cd8683b1
+ms.lasthandoff: 02/16/2017
 
 ---
 
 # 고유한 통합 서비스 만들기
 
-Windows 10부터, 누구나 Hyper-V 호스트와 Hyper-V 호스트에서 실행 중인 가상 컴퓨터 간에 새 소켓 기반 통신을 사용하여 기본 제공 Hyper-V 통합 서비스와 아주 유사한 서비스를 만들 수 있습니다.  이러한 Hyper-V 소켓을 사용하면 서비스가 네트워킹 스택과는 독립적으로 실행될 수 있고 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다.
+Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대한 새로운 주소 집합과 특수 끝점을 제공하는 Windows 소켓인 Hyper-V 소켓을 사용하여 Hyper-V 호스트 및 해당 가상 컴퓨터와 통신하는 응용 프로그램을 만들 수 있습니다.  Hyper-V 소켓을 통한 통신은 모두 네트워킹을 사용하지 않고 실행되며 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다.   Hyper-V 소켓을 사용하는 응용 프로그램은 Hyper-V의 통합 서비스와 비슷합니다.
 
-이 문서에서는 Hyper-V 소켓에 구축된 간단한 응용 프로그램을 만들어 사용하는 방법을 안내합니다.
-
-[PowerShell Direct](../user-guide/powershell-direct.md)는 Hyper-V 소켓을 사용하여 통신하는 응용 프로그램 예제(이 경우 기본 제공 Windows 서비스)입니다.
+이 문서에서는 Hyper-V 소켓에 구축되는 간단한 프로그램을 만드는 방법을 안내합니다.
 
 **지원되는 호스트 OS**
-* Windows 10 빌드 14290 이상
-* Windows Server Technical Preview 4 이상
+* Windows 10에서 지원됨
+* Windows Server 2016
 * 앞으로의 릴리스(서버 2016 +)
 
 **지원되는 게스트 OS**
-* Windows 10
+* Windows 10
 * Windows Server Technical Preview 4 이상
 * 앞으로의 릴리스(서버 2016 +)
 * Linux 통합 서비스를 포함하는 Linux 게스트([Supported Linux and FreeBSD virtual machines for Hyper-V on Windows(Windows의 Hyper-V에 대해 지원되는 Linux 및 FreeBSD 가상 컴퓨터)](https://technet.microsoft.com/library/dn531030(ws.12).aspx) 참조)
@@ -36,33 +35,18 @@ Windows 10부터, 누구나 Hyper-V 호스트와 Hyper-V 호스트에서 실행 
 **기능 및 제한 사항**  
 * 커널 모드 또는 사용자 모드 동작 지원  
 * 데이터 스트림만      
-* 블록 메모리 없음(백업/비디오에는 적합하지 않음)   
+* 블록 메모리 없음(백업/비디오에는 적합하지 않음) 
 
 --------------
 
-## 시작하기
-이제 Hyper-V 소켓을 네이티브 코드(C/C++)에서 사용할 수 있습니다.  
+## 시작
 
-간단한 응용 프로그램을 작성하기 위해 다음이 필요합니다.
-* C 컴파일러.  없으면 [Visual Studio 커뮤니티](https://aka.ms/vs)를 확인하세요.
-* Hyper-V를 실행하는 컴퓨터와 가상 컴퓨터  
-  * 호스트 및 게스트(VM) 운영 체제는 Windows 10, Windows Server Technical Preview 3 이상이어야 합니다.
-* Hyper-V 호스트에 설치된 [Windows 10 SDK](http://aka.ms/flightingSDK)
+요구 사항:
+* C/C++ 컴파일러.  없으면 [Visual Studio 커뮤니티](https://aka.ms/vs)를 확인하세요.
+* [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) -- Visual Studio 2015(업데이트 3 포함) 이상에 미리 설치되어 있습니다.
+* 한 대 이상의 가상 컴퓨터와 함께 위의 호스트 운영 체제 중 하나를 실행하는 컴퓨터. -- 응용 프로그램 테스트용입니다.
 
-**Windows SDK 정보**
-
-Windows SDK 링크:
-* [참가자용 Windows 10 SDK Preview](http://aka.ms/flightingSDK)
-* [Windows 10 SDK](https://dev.windows.com/en-us/downloads/windows-10-sdk)
-
-Windows 10 빌드 14290에서는 Hyper-V 소켓용 API를 사용할 수 있게 되었습니다. 플라이팅 다운로드는 최신 참가자 Fast Track 플라이팅 빌드와 일치합니다.  
-이상한 동작이 발생하는 경우 [TechNet 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home "TechNet Forums")에서 알려주세요.  게시물에 다음 내용을 포함하세요.
-* 예기치 않은 동작 
-* 호스트, 게스트 및 SDK의 OS 및 빌드 번호  
-  
-  SDK 빌드 번호는 SDK 설치 관리자의 제목에 표시됩니다.  
-  ![](./media/flightingSDK.png)
-
+> **참고:** API for Hyper-V 소켓용 API는   직후 Windows 10에서 공개되었습니다.  HVSocket을 사용하는 응용 프로그램은 Windows 10 호스트와 게스트에서 실행되지만 빌드 14290 이후의 Windows SDK로만 개발할 수 있습니다.  
 
 ## 새 응용 프로그램 등록
 Hyper-V 소켓을 사용하려면 응용 프로그램을 Hyper-V 호스트의 레지스트리에 등록해야 합니다.
@@ -76,18 +60,18 @@ Hyper-V 소켓을 사용하려면 응용 프로그램을 Hyper-V 호스트의 �
 ``` PowerShell
 $friendlyName = "HV Socket Demo"
 
-# Create a new random GUID and add it to the services list then add the name as a value
-
+# Create a new random GUID.  Add it to the services list
 $service = New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices" -Name ((New-Guid).Guid)
 
+# Set a friendly name 
 $service.SetValue("ElementName", $friendlyName)
 
 # Copy GUID to clipboard for later use
 $service.PSChildName | clip.exe
 ```
 
-** 레지스트리 위치 및 정보 **  
 
+**레지스트리 위치 및 정보:**  
 ``` 
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices\
 ```  
@@ -105,9 +89,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices\
     999E53D4-3D5C-4C3E-8779-BED06EC056E1\
-        ElementName REG_SZ  VM Session Service
+        ElementName    REG_SZ    VM Session Service
     YourGUID\
-        ElementName REG_SZ  Your Service Friendly Name
+        ElementName    REG_SZ    Your Service Friendly Name
 ```
 
 > ** 팁: **  PowerShell에서 GUID를 생성하고 클립보드에 복사하려면 다음을 실행합니다.  
@@ -194,7 +178,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 | HV_GUID_PARENT | a42e7cda-d03f-480c-9cc2-a4de20abb878 | 부모 주소입니다. 이 VMID 연결을 사용하면 커넥터와 동일한 부모 파티션에 연결합니다.* |
 
 
-***HV_GUID_PARENT**  
+\* `HV_GUID_PARENT`  
 가상 컴퓨터의 부모는 해당 호스트입니다.  컨테이너의 부모는 컨테이너의 호스트입니다.  
 가상 컴퓨터에서 실행 중인 컨테이너로부터의 연결은 해당 컨테이너를 호스팅하는 VM에 연결합니다.  
 이 VMID에서의 수신은 다음으로부터의 연결을 허용합니다.  
@@ -211,10 +195,7 @@ Send()
 Listen()  
 Accept()  
 
+## 유용한 링크
 [WinSock API 완료](https://msdn.microsoft.com/en-us/library/windows/desktop/ms741394.aspx)
 
-
-
-<!--HONumber=Jan17_HO2-->
-
-
+[Hyper-V 통합 서비스 참조](../reference/integration-services.md)
