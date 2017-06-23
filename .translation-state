@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "cc1c605722b46a2e9879b6e1a62bb49cb11e09f5",
+  "LastProcessedCommit": "2b92f4d91b9f86b313de788a7df9aa923bb1cc6f",
   "LastTranslatedCommit": "4c9fe7c0a71d38b9de5a04919df641436b8a3f0d",
   "LastConfigHash": "4c2c35f4aa9ea46247617ca71955d3351dd55c56",
   "Items": {
@@ -20615,6 +20615,21 @@
       "HandoffFileCommit": "0ef3ce5ffa559b7e71816a283cefd9d39471032b",
       "HandoffDateTime": "2017-06-20T19:54:06.436081Z",
       "HandoffXliffHash": "3813d3714b94c0599b29e40a5b5d3263c587fde2",
+      "HandoffPriority": ""
+    },
+    "9bc5f5ed52c50dfa6a8310d8c65cc9a918fba8fb": {
+      "FileHash": "9bc5f5ed52c50dfa6a8310d8c65cc9a918fba8fb",
+      "SourceFileCommit": "2b92f4d91b9f86b313de788a7df9aa923bb1cc6f",
+      "SourceFilePath": "virtualization\\windowscontainers\\TOC.md",
+      "HandoffReason": 1,
+      "FilePathList": [
+        "virtualization\\windowscontainers\\TOC.md"
+      ],
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\Virtualization-Documentation-Private.ko-kr\\live\\TOC.13173dbdc376543cb6eb74ef16484f39c0ef0fdb.ko-kr.xlf",
+      "HandoffFileCommit": "9efb0b780c5a9d05513a64c76f88a8bb0dbf0386",
+      "HandoffDateTime": "2017-06-23T20:53:03.5657607Z",
+      "HandoffXliffHash": "1d6799d997399bf7036bd702b844f8c5a76afecd",
       "HandoffPriority": ""
     }
   }
