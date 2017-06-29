@@ -8,13 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-translationtype: Human Translation
-ms.sourcegitcommit: fe1e5d1f35e088581d44c43108c843347111eaef
-ms.openlocfilehash: 622c8f638a815e19a54aa75b6b5ea0688d966ae3
-
+ms.openlocfilehash: af819955c06b2db405f230cf3b7fee4c13e7c87c
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# Windows 컨테이너 기본 이미지 기록
+# <a name="windows-container-base-image-history"></a>Windows 컨테이너 기본 이미지 기록
 
 모든 Windows 컨테이너는 Microsoft가 제공하는 기본 OS를 기반으로 구축됩니다. 컨테이너가 구축된 기반 Windows 버전이 확실하지 않을 경우 `docker inspect <tag>`를 실행하고 최상위 행 또는 두 번째 행을 아래 차트와 일치하는지 확인합니다.
 
@@ -75,10 +74,4 @@ Microsoft에서 제공하는 이미지에는 두 계층이 있습니다.
         sha256:dd33c5d8d8b3c230886132c328a7801547f13de1dac9a629e2739164a285b3ab</td>
     </tr>
 </table>
-
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

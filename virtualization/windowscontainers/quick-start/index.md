@@ -8,17 +8,16 @@ ms.topic: article
 ms.prod: windows-contianers
 ms.service: windows-containers
 ms.assetid: 4878f5d2-014f-4f3c-9933-97f03348a147
-translationtype: Human Translation
-ms.sourcegitcommit: 54eff4bb74ac9f4dc870d6046654bf918eac9bb5
-ms.openlocfilehash: d91f53908610ca245b6c8b4c017baed7f044667e
-
+ms.openlocfilehash: 577618112339e274b3d25908afc5428bd1c36173
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# Windows 컨테이너 빠른 시작
+# <a name="windows-containers-quick-start"></a>Windows 컨테이너 빠른 시작
 
 Windows 컨테이너 빠른 시작에서는 제품 및 컨테이너 용어를 소개하고, 간단한 컨테이너 배포 예제를 단계별로 실행하며, 고급 항목에 대한 참조도 제공합니다. 컨테이너 또는 Windows 컨테이너를 처음 사용하는 경우 이 빠른 시작의 각 단계를 따라하면 기술을 직접 경험할 수 있습니다.
 
-## 1. 컨테이너란?
+## <a name="1-what-are-containers"></a>1. 컨테이너란?
 
 컨테이너는 격리되어 있고 리소스로 제어되며 이식 가능한 운영 체제입니다.
 
@@ -26,7 +25,7 @@ Windows 컨테이너 빠른 시작에서는 제품 및 컨테이너 용어를 �
 
 컨테이너 안에 있다면 방금 설치한 물리적 컴퓨터나 가상 컴퓨터 안에 있는 것과 매우 유사할 것입니다. 또한 Windows 컨테이너인 [Docker](https://www.docker.com/)를 다른 컨테이너와 같은 방식으로 관리할 수 있습니다.
 
-## 2. Windows 컨테이너 형식
+## <a name="2-windows-container-types"></a>2. Windows 컨테이너 형식
 
 Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런타임을 포함합니다.
 
@@ -34,9 +33,9 @@ Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런�
 
 **Hyper-V 컨테이너** – 고도로 최적화된 가상 컴퓨터에서 각 컨테이너를 실행하여 Windows Server 컨테이너에서 제공하는 격리를 확장합니다. 이 구성에서 컨테이너 호스트의 커널은 다른 Hyper-V 컨테이너와 공유되지 않습니다.
 
-## 3. 컨테이너의 기본 사항
+## <a name="3-container-fundamentals"></a>3. 컨테이너의 기본 사항
 
-컨테이너 작업을 시작하고 나면 컨테이너와 가상 컴퓨터 사이에 유사한 부분이 많음을 알게 될 것입니다. 컨테이너는 운영 체제를 실행하며, 파일 시스템을 보유하고, 물리적 또는 가상 컴퓨터 시스템과 마찬가지로 네트워크에서 액세스할 수 있습니다. 그렇긴 하지만 컨테이너의 바탕이 되는 기술 및 개념은 가상 컴퓨터와는 상당한 차이가 있습니다. Windows 컨테이너의 만들기 및 작업을 시작할 때 다음 주요 개념이 유용할 것입니다. 
+컨테이너 작업을 시작하고 나면 컨테이너와 가상 컴퓨터 사이에 유사한 부분이 많음을 알게 될 것입니다. 컨테이너는 운영 체제를 실행하며, 파일 시스템을 보유하고, 물리적 또는 가상 컴퓨터 시스템과 마찬가지로 네트워크에서 액세스할 수 있습니다. 그렇긴 하지만 컨테이너의 바탕이 되는 기술 및 개념은 가상 컴퓨터와는 상당한 차이가 있습니다. Windows 컨테이너의 만들기 및 작업을 시작할 때 다음 주요 개념이 유용할 것입니다.  
 
 **컨테이너 호스트:** - Windows 컨테이너 기능으로 구성된 물리적 또는 가상 컴퓨터 시스템입니다.
 
@@ -48,15 +47,9 @@ Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런�
 
 **Dockerfile:** -Dockerfile은 컨테이너 이미지 만들기를 자동화하는 데 사용됩니다.
 
-## 다음 단계:
+## <a name="next-step"></a>다음 단계:
 
 [Windows Server 컨테이너 빠른 시작](quick-start-windows-server.md)  
 
 [Windows 10 컨테이너 빠른 시작](quick-start-windows-10.md)
-
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -8,13 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9c398c4-ee72-45c6-9ce8-4f06569dae6c
-translationtype: Human Translation
-ms.sourcegitcommit: 8f08c85921b9d41f10f3b8cff5e4bafe945bd4af
-ms.openlocfilehash: 4e887dc8c284dd189dc59a71aa9d22d6c8a231ea
-
+ms.openlocfilehash: 79110dac9c2a04c2104bf563166a34d9229b7bf9
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# 검사점을 사용하여 가상 컴퓨터를 이정 상태로 되돌리기
+# <a name="using-checkpoints-to-revert-virtual-machines-to-a-previous-state"></a>검사점을 사용하여 가상 컴퓨터를 이정 상태로 되돌리기
 
 가상화의 가장 큰 혜택 중 하나는 가상 컴퓨터의 상태를 쉽게 저장하는 기능입니다. Hyper-V에서 가상 컴퓨터 검사점의 사용을 통해 수행됩니다. 소프트웨어 구성을 변경, 소프트웨어 업데이트를 적용하거나 새 소프트웨어를 설치하기 전에 가상 컴퓨터 검사점을 만들려고 할 수 있습니다. 시스템 변경이 문제를 발생시킬 경우 가상 컴퓨터는 검사점이 수행되었던 때의 상태로 되돌릴 수 있습니다.
 
@@ -29,7 +28,7 @@ Windows 10 Hyper-V는 두 가지 유형의 검사점을 포함합니다.
 > **참고:** Hyper-V PowerShell 모듈에는 검사점 및 스냅숏을 교대로 사용할 수 있는 여러 가지 별칭이 있습니다.  
   이 문서에서는 검사점을 사용하지만 용어 스냅숏을 사용하여 비슷한 명령을 볼 수도 있습니다.
 
-## 검사점 유형 변경
+## <a name="changing-the-checkpoint-type"></a>검사점 유형 변경
 
 **Hyper-V 관리자 사용**
 
@@ -60,7 +59,7 @@ Set-VM -Name <vmname> -CheckpointType Production
 Set-VM -Name <vmname> -CheckpointType ProductionOnly
 ```
 
-## 검사점 만들기
+## <a name="creating-checkpoints"></a>검사점 만들기
 
 가상 컴퓨터에 대해 구성된 유형의 검사점을 만듭니다. 이 유형을 변경하는 방법에 대한 지침은 이 문서의 앞부분에서 [검사점 유형 구성](checkpoints.md#changing-the-checkpoint-type) 섹션을 참조하세요.
 
@@ -85,15 +84,15 @@ Checkpoint-VM -Name <VMName>
 Get-VMCheckpoint -VMName <VMName>
 ```
 
-## 검사점 적용
+## <a name="applying-checkpoints"></a>검사점 적용
 
 가상 컴퓨터를 이전의 시점으로 되돌리려면 기존 검사점을 적용할 수 있습니다.
 
 **Hyper-V 관리자 사용**
 
-1.  **Hyper-V 관리자**의 **가상 컴퓨터**에서 가상 컴퓨터를 선택합니다.
-2.  검사점 섹션에서 사용할 검사점을 마우스 오른쪽 단추로 클릭하고 **적용**을 클릭합니다.
-3.  다음 옵션이 있는 대화 상자가 표시됩니다.  
+1.    **Hyper-V 관리자**의 **가상 컴퓨터**에서 가상 컴퓨터를 선택합니다.
+2.    검사점 섹션에서 사용할 검사점을 마우스 오른쪽 단추로 클릭하고 **적용**을 클릭합니다.
+3.    다음 옵션이 있는 대화 상자가 표시됩니다.  
   * **검사점을 만든 후 적용**: 이전 검사점을 적용하기 전에 가상 컴퓨터의 새로운 검사점을 만듭니다. 
   * **적용**: 선택한 검사점만 적용합니다. 이 작업은 취소할 수 없습니다.
   * **취소**: 작업을 수행하지 않고 대화 상자를 닫습니다.
@@ -113,7 +112,7 @@ Get-VMCheckpoint -VMName <VMName>
     Restore-VMCheckpoint -Name <checkpoint name> -VMName <VMName> -Confirm:$false
     ```
 
-## 검사점 이름 바꾸기
+## <a name="renaming-checkpoints"></a>검사점 이름 바꾸기
 
 다수의 검사점이 특정한 시점에 만들어집니다.  식별이 가능한 이름을 부여하면 검사점이 만들어졌을 때 시스템 상태에 대한 세부 정보를 손쉽게 기억할 수 있습니다.
 
@@ -127,10 +126,10 @@ virtual_machine_name (MM/DD/YYY -hh:mm:ss AM\PM)
 
 **Hyper-V 관리자 사용**
 
-1.  **Hyper-v 관리자**에서 가상 컴퓨터를 선택합니다.
-2.  검사점을 마우스 오른쪽 단추로 클릭한 다음 **이름 바꾸기**를 선택합니다.
-3.  검사점에 대한 새 이름을 입력합니다. 이 필드는 100자 미만이어야 하며 비워둘 수 없습니다.
-4.  작업을 마치면 **ENTER**를 클릭합니다.
+1.    **Hyper-v 관리자**에서 가상 컴퓨터를 선택합니다.
+2.    검사점을 마우스 오른쪽 단추로 클릭한 다음 **이름 바꾸기**를 선택합니다.
+3.    검사점에 대한 새 이름을 입력합니다. 이 필드는 100자 미만이어야 하며 비워둘 수 없습니다.
+4.    작업을 마치면 **ENTER**를 클릭합니다.
 
 **PowerShell 사용**
 
@@ -138,7 +137,7 @@ virtual_machine_name (MM/DD/YYY -hh:mm:ss AM\PM)
 Rename-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -NewName <new checkpoint name>
 ```
 
-## 검사점 삭제
+## <a name="deleting-checkpoints"></a>검사점 삭제
 
 검사점을 삭제하면 Hyper-V 호스트에 공간을 확보하는 데 도움이 됩니다.
 
@@ -150,16 +149,16 @@ Rename-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -NewN
 
 검사점을 확실히 제거하려면 
 
-1.  **Hyper-v 관리자**에서 가상 컴퓨터를 선택합니다.
-2.  **검사점** 섹션에서 삭제할 검사점을 마우스 오른쪽 단추로 클릭하고 삭제를 클릭합니다. 검사점과 모든 후속 검사점을 삭제할 수도 있습니다. 이렇게 하려면 삭제할 가장 빠른 검사점을 마우스 오른쪽 단추로 클릭하고 ****검사점** 하위 트리** 삭제를 클릭합니다.
-3.  검사점 삭제를 확인하는 메시지가 나타날 수 있습니다. 검사점이 정확한지 확인하고 **삭제**를 클릭합니다. 
+1.    **Hyper-v 관리자**에서 가상 컴퓨터를 선택합니다.
+2.    **검사점** 섹션에서 삭제할 검사점을 마우스 오른쪽 단추로 클릭하고 삭제를 클릭합니다. 검사점과 모든 후속 검사점을 삭제할 수도 있습니다. 그렇게 하려면 삭제할 가장 빠른 검사점을 마우스 오른쪽 단추로 클릭하고 ****검사점 삭제** 하위 트리**를 클릭합니다.
+3.    검사점 삭제를 확인하는 메시지가 나타날 수 있습니다. 검사점이 정확한지 확인하고 **삭제**를 클릭합니다. 
  
 **PowerShell 사용**
 ```powershell
 Remove-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name>
 ```
 
-## 검사점 내보내기
+## <a name="exporting-checkpoints"></a>검사점 내보내기
 
 내보내기는 검사점이 새로운 위치로 이동할 수 있도록 검사점을 가상 컴퓨터로 모읍니다. 가져온 후에는 검사점이 가상 컴퓨터로 복원됩니다.  내보낸 검사점은 백업에 사용될 수 있습니다.
 
@@ -168,22 +167,22 @@ Remove-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name>
 Export-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -Path <path for export>
 ```
 
-## 검사점 사용 또는 사용 안 함
+## <a name="enable-or-disable-checkpoints"></a>검사점 사용 또는 사용 안 함
 
-1.  **Hyper-V 관리자**에서 가상 컴퓨터의 이름을 마우스 오른쪽 단추로 클릭하고 **설정**을 클릭합니다.
-2.  **관리** 섹션에서 **검사점**을 선택합니다.
-3.  이 가상 컴퓨터에서 검사점을 지정하려면 검사점 사용을 선택해야 합니다(기본 동작).  
+1.    **Hyper-V 관리자**에서 가상 컴퓨터의 이름을 마우스 오른쪽 단추로 클릭하고 **설정**을 클릭합니다.
+2.    **관리** 섹션에서 **검사점**을 선택합니다.
+3.    이 가상 컴퓨터에서 검사점을 지정하려면 검사점 사용을 선택해야 합니다(기본 동작).  
 검사점을 사용하지 않으려면 **검사점 사용** 확인란의 선택을 취소합니다.
-4.  변경 내용을 적용하려면 **적용**을 클릭합니다. 작업이 완료되면 **확인**을 클릭하여 대화 상자를 닫습니다.
+4.    변경 내용을 적용하려면 **적용**을 클릭합니다. 작업이 완료되면 **확인**을 클릭하여 대화 상자를 닫습니다.
 
-## 검사점 위치 구성
+## <a name="configure-checkpoint-location"></a>검사점 위치 구성
 
 가상 컴퓨터에 검사점이 없는 경우 검사점 구성과 상태 파일의 저장 위치를 변경할 수 있습니다.
 
-1.  **Hyper-V 관리자**에서 가상 컴퓨터의 이름을 마우스 오른쪽 단추로 클릭하고 **설정**을 클릭합니다.    
-2.  **관리** 섹션에서 **검사점** 또는 **검사점 파일 위치**를 선택합니다.  
-4.  **검사점 파일 위치**에서 파일을 저장하려는 폴더의 경로를 입력합니다.  
-5.  변경 내용을 적용하려면 **적용**을 클릭합니다. 작업이 완료되면 **확인**을 클릭하여 대화 상자를 닫습니다.
+1.    **Hyper-V 관리자**에서 가상 컴퓨터의 이름을 마우스 오른쪽 단추로 클릭하고 **설정**을 클릭합니다.    
+2.    **관리** 섹션에서 **검사점** 또는 **검사점 파일 위치**를 선택합니다.    
+4.    **검사점 파일 위치**에서 파일을 저장하려는 폴더의 경로를 입력합니다.    
+5.    변경 내용을 적용하려면 **적용**을 클릭합니다. 작업이 완료되면 **확인**을 클릭하여 대화 상자를 닫습니다.
 
 검사점 구성 파일이 저장되는 기본 위치는 `%systemroot%\ProgramData\Microsoft\Windows\Hyper-V\Snapshots`입니다.
 
@@ -193,11 +192,11 @@ Export-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -Path
 This folder will contain the .VMRS file with the runtime and saved state data and a .VMCX configuration file, which uses the checkpoint GUID as the file name.
 -->
 
-## 검사점 데모
+## <a name="checkpoint-demo"></a>검사점 데모
 
 이 연습은 프로덕션 검사점에 대비하여 표준 검사점을 만들고 적용하는 것을 안내합니다.  이 예에서는 가상 컴퓨터를 간단히 변경하고 달라진 작동을 관찰합니다. 
 
-### 표준 검사점
+### <a name="standard-checkpoint"></a>표준 검사점
 
 1. 가상 컴퓨터에 로그인하고 바탕 화면에 텍스트 파일을 만듭니다.
 2. 메모장으로 파일을 열고 텍스트 '이것이 표준 검사점입니다.'를 입력합니다. **파일을 저장하거나 메모장을 닫지 마세요**.  
@@ -220,7 +219,7 @@ This folder will contain the .VMRS file with the runtime and saved state data an
 
 검사점이 적용되면 시스템은 텍스트 파일이 존재할 때 뿐만 아니라 검사점이 만들어졌을 때의 정확한 상태에 있습니다. 이 경우 메모장이 열리고 텍스트 파일이 로드됩니다.
 
-### 프로덕션 검사점
+### <a name="production-checkpoint"></a>프로덕션 검사점
 
 이제 프로덕션 검사점을 살펴보겠습니다. 이 프로세스는 표준 검사점 작업과 거의 동일하지만 약간 다른 결과를 갖게 됩니다. 시작하기 전에 가상 컴퓨터가 있고 검사점 유형을 프로덕션 검사점으로 변경했는지 확인합니다.
 
@@ -246,9 +245,3 @@ This folder will contain the .VMRS file with the runtime and saved state data an
 
 1. 시작하고 가상 컴퓨터에 로그인합니다.
 2. 텍스트 파일이 복원된 것을 확인합니다. 하지만 표준 검사점과 달리 메모장은 열려 있지 않습니다.   
-
-
-
-<!--HONumber=Nov16_HO1-->
-
-

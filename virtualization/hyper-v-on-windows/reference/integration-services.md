@@ -8,27 +8,22 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
-translationtype: Human Translation
-ms.sourcegitcommit: 06782d73418afaa15d036c5cff09b3167cd3f1b6
-ms.openlocfilehash: 647c47998334600dc4f143d2471c0104e5d4e9a9
-
+ms.openlocfilehash: 2e2289bbb7801824c13e5ba4cb17d51beb26fbfa
+ms.sourcegitcommit: b55d4d31a5706e2f65f4c4a029c2f55a76711253
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# Hyper-V 통합 서비스
+# <a name="hyper-v-integration-services"></a>Hyper-V 통합 서비스
 
 통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며 나머지 서비스는 가상 컴퓨터의 기능이 제대로 작동하도록 하는 데 매우 중요할 수 있습니다.
 
 이 문서는 Windows에서 사용할 수 있는 각 통합 서비스에 대한 참조입니다.  또한 특정 통합 서비스 또는 통합 서비스 기록과 관련된 정보에 대한 시작 지점으로 사용할 수 있습니다.
 
 **사용자 가이드:**  
-* [Hyper-V 호스트의 통합 서비스 사용/사용 안 함](../user-guide/managing-integration-services.md#enable-or-disable-integration-services-using-powershell)
-* 가상 컴퓨터 내에서 통합 서비스를 사용하거나 사용하지 않도록 설정합니다.
-  * [Windows](../user-guide/managing-integration-services.md#manage-integration-services-from-guest-os-windows)
-  * [Linux](../user-guide/managing-integration-services.md#manage-integration-services-from-guest-os-linux)
-* [통합 서비스 업데이트 및 유지 관리](../user-guide/managing-integration-services.md#integration-service-maintenance)
+* [통합 서비스 관리](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/manage/manage-Hyper-V-integration-services)
 
 
-## 빠른 참조
+## <a name="quick-reference"></a>빠른 참조
 
 | Name | Windows 서비스 이름 | Linux 디먼 이름 |  설명 | 사용하지 않을 때 VM에 미치는 영향 |
 |:---------|:---------|:---------|:---------|:---------|
@@ -41,7 +36,7 @@ ms.openlocfilehash: 647c47998334600dc4f143d2471c0104e5d4e9a9
 | [Hyper-V PowerShell Direct 서비스](#hyper-v-powershell-direct-service) | vmicvmsession | 사용할 수 없음 | 네트워크 연결 없이 PowerShell을 사용하여 가상 컴퓨터를 관리하는 방법을 제공합니다. | 낮음 |  
 
 
-## Hyper-V 하트비트 서비스
+## <a name="hyper-v-heartbeat-service"></a>Hyper-V 하트비트 서비스
 
 **Windows 서비스 이름:** vmicheartbeat  
 **Linux 디먼 이름:** hv_utils  
@@ -53,7 +48,7 @@ ms.openlocfilehash: 647c47998334600dc4f143d2471c0104e5d4e9a9
 
 Hyper-V에서 가상 컴퓨터 상태가 “실행 중”인 것으로 보고하면(아래 예제 참조) Hyper-V에서 가상 컴퓨터에 대해 리소스를 예약해 두었다는 의미이며, 설치되었거나 작동 중인 운영 체제가 있다는 의미가 아닙니다.  이 경우 하트비트가 유용합니다.  하트비트 서비스는 가상 컴퓨터 내의 운영 체제가 부팅되었음을 Hyper-V에 알립니다.  
 
-### PowerShell을 사용하여 하트비트 확인
+### <a name="check-heartbeat-with-powershell"></a>PowerShell을 사용하여 하트비트 확인
 
 관리자는 [Get-VM](https://technet.microsoft.com/en-us/library/hh848479.aspx)을 실행하여 가상 컴퓨터의 하트비트를 확인합니다.
 ``` PowerShell
@@ -71,7 +66,7 @@ DemoVM  Running  Operating normally
 
 
 
-## Hyper-V 게스트 종료 서비스
+## <a name="hyper-v-guest-shutdown-service"></a>Hyper-V 게스트 종료 서비스
 
 **Windows 서비스 이름:** vmicshutdown  
 **Linux 디먼 이름:** hv_utils  
@@ -80,7 +75,7 @@ DemoVM  Running  Operating normally
 **영향:** **강력한 영향**  사용하지 않도록 설정하면 호스트는 가상 컴퓨터 내에서 종료를 트리거할 수 없습니다.  모든 종료는 데이터 손실이나 데이터 손상을 일으킬 수 있는 하드 전원 끄기가 됩니다.  
 
 
-## Hyper-V 시간 동기화 서비스
+## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 시간 동기화 서비스
 
 **Windows 서비스 이름:** vmictimesync  
 **Linux 디먼 이름:** hv_utils  
@@ -89,7 +84,7 @@ DemoVM  Running  Operating normally
 **영향:** **강력한 영향**  사용하지 않도록 설정하면 가상 컴퓨터의 시계는 이상하게 작동합니다.  
 
 
-## Hyper-V 데이터 교환 서비스(KVP)
+## <a name="hyper-v-data-exchange-service-kvp"></a>Hyper-V 데이터 교환 서비스(KVP)
 
 **Windows 서비스 이름:** vmickvpexchange  
 **Linux 디먼 이름:** hv_kvp_daemon  
@@ -108,7 +103,7 @@ DemoVM  Running  Operating normally
 * [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://technet.microsoft.com/en-us/library/dn798287.aspx).  
 
 
-## Hyper-V 볼륨 섀도 복사본 요청자
+## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V 볼륨 섀도 복사본 요청자
 
 **Windows 서비스 이름:** vmicvss  
 **Linux 디먼 이름:** hv_vss_daemon  
@@ -121,7 +116,7 @@ DemoVM  Running  Operating normally
 볼륨 섀도 복사본에 대한 자세한 내용은 [여기](https://msdn.microsoft.com/en-us/library/dd405549.aspx)에서 확인하세요.
 
 
-## Hyper-V 게스트 서비스 인터페이스
+## <a name="hyper-v-guest-service-interface"></a>Hyper-V 게스트 서비스 인터페이스
 
 **Windows 서비스 이름:** vmicguestinterface  
 **Linux 디먼 이름:** hv_fcopy_daemon  
@@ -133,7 +128,7 @@ DemoVM  Running  Operating normally
 기본적으로 사용할 수 없게 설정되어 있습니다.  [Copy-Item을 사용하는 PowerShell Direct](../user-guide/powershell-direct.md#copy-files-with-new-pssession-and-copy-item)를 참조하세요. 
 
 
-## Hyper-V PowerShell Direct 서비스
+## <a name="hyper-v-powershell-direct-service"></a>Hyper-V PowerShell Direct 서비스
 
 **Windows 서비스 이름:** vmicvmsession  
 **Linux 디먼 이름:** 해당 없음  
@@ -152,9 +147,3 @@ PowerShell Direct는 Hyper-V 호스트 또는 가상 컴퓨터에서 네트워�
 **사용자 가이드:**  
 * [가상 컴퓨터에서 실행되는 스크립트](../user-guide/powershell-direct.md#run-a-script-or-command-with-invoke-command)
 * [가상 컴퓨터에 파일 복사 및 가상 컴퓨터의 파일 복사](../user-guide/powershell-direct.md#copy-files-with-new-pssession-and-copy-item)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
-

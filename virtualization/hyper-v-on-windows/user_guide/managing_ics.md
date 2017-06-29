@@ -9,13 +9,12 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
 redirect_url: https://technet.microsoft.com/windows-server-docs/compute/hyper-v/manage/manage-Hyper-V-integration-services
-translationtype: Human Translation
-ms.sourcegitcommit: 687a3b35c1ee41b9620b1ae296255d681c672646
-ms.openlocfilehash: c27a51e9a12de9cec2720eadf6e09b8a582bae77
-
+ms.openlocfilehash: 83bcc4c2f47e2a3921be257f45a3a0e22dcba89a
+ms.sourcegitcommit: fd6c5ec419aae425af7ce6c6a44d59c98f62502a
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# Hyper-V 통합 서비스 관리
+# <a name="managing-hyper-v-integration-services"></a>Hyper-V 통합 서비스 관리
 
 통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며(예: 게스트 파일 복사) 나머지 서비스는 가상 컴퓨터의 기능이 제대로 작동하는 데 매우 중요할 수 있습니다(시간 동기화).
 
@@ -23,20 +22,17 @@ ms.openlocfilehash: c27a51e9a12de9cec2720eadf6e09b8a582bae77
 
 각 개별 통합 서비스에 대한 자세한 내용은 [통합 서비스](../reference/integration-services.md)를 참조하세요.
 
-## Hyper-V 관리자를 사용하여 통합 서비스 활성화 또는 비활성화
+## <a name="enable-or-disable-integration-services-using-hyper-v-manager"></a>Hyper-V 관리자를 사용하여 통합 서비스 활성화 또는 비활성화
 
 1. 가상 컴퓨터를 선택하고 설정을 엽니다.
-  ![](./media/HyperVManager-OpenVMSettings.png)
   
 2. 가상 컴퓨터 설정 창에서 관리 아래의 통합 서비스 탭으로 이동합니다.
-  
-  ![](./media/HyperVManager-IntegrationServices.png)
   
   여기에서 Hyper-V 호스트에서 사용할 수 있는 모든 통합 서비스를 볼 수 있습니다.  게스트 운영 체제는 나열된 모든 통합 시스템을 지원하거나 지원하지 않을 수 있습니다. 게스트 운영 체제에 대한 버전 정보를 확인하려면 게스트 운영 체제에 로그온하고 명령 프롬프트에서 다음 명령을 실행합니다.
 
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 
-## PowerShell을 사용하여 통합 서비스 활성화 또는 비활성화
+## <a name="enable-or-disable-integration-services-using-powershell"></a>PowerShell을 사용하여 통합 서비스 활성화 또는 비활성화
 
 PowerShell에서 [`Enable-VMIntegrationService`](https://technet.microsoft.com/en-us/library/hh848500.aspx) 및 [`Disable-VMIntegrationService`](https://technet.microsoft.com/en-us/library/hh848488.aspx)를 실행하여 통합 서비스를 사용하거나 사용하지 않도록 설정할 수도 있습니다.
 
@@ -77,13 +73,13 @@ PowerShell에서 [`Enable-VMIntegrationService`](https://technet.microsoft.com/e
 통합 서비스는 호스트와 게스트 모두에서 작동하기 위해 활성화하도록 설계되었습니다.  모든 통합 서비스는 Windows 게스트 운영 체제에서 기본적으로 활성화되지만 비활성화할 수 있습니다.  다음 섹션에서 방법을 살펴봅니다.
 
 
-## 게스트 OS (Windows)에서 통합 서비스 관리
+## <a name="manage-integration-services-from-guest-os-windows"></a>게스트 OS (Windows)에서 통합 서비스 관리
 
 > **참고:** 통합 서비스를 비활성화하면 가상 컴퓨터를 관리하는 호스트 기능에 심각한 영향을 줄 수 있습니다.  통합 서비스는 호스트와 게스트 모두에서 작동하도록 활성화되어야 합니다.
 
 통합 서비스는 windows에서 서비스로 표시됩니다. 가상 컴퓨터 내에서 통합 서비스를 활성화하거나 비활성화하려면 Windows 서비스 관리자를 엽니다.
 
-![](media/HVServices.png) 
+![](../user-guide/media/HVServices.png) 
 
 이름에 Hyper-V를 포함하는 서비스를 찾습니다. 활성화 또는 비활성화하려는 서비스를 오른쪽 단추로 클릭하고 서비스를 시작하거나 중지합니다.
 
@@ -114,7 +110,7 @@ Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
 
 기본적으로 모든 통합 서비스는 게스트 운영 체제에서 활성화됩니다.
 
-## 게스트 OS(Linux)에서 통합 서비스 관리
+## <a name="manage-integration-services-from-guest-os-linux"></a>게스트 OS(Linux)에서 통합 서비스 관리
 
 Linux 통합 서비스는 일반적으로 Linux 커널을 통해 제공됩니다.
 
@@ -195,7 +191,7 @@ sudo hv_kvp_daemon
 이제 `ps -ef | hv`를 다시 실행하는 경우 `hv_kvp_daemon` 프로세스가 새로운 프로세스 ID로 표시됩니다.
 
 
-## 통합 서비스 유지 관리
+## <a name="integration-service-maintenance"></a>통합 서비스 유지 관리
 
 가상 컴퓨터가 Windows Update에서 중요 업데이트를 받을 수 있는 경우 Windows 10에서 통합 서비스 유지 관리는 기본적으로 이루어집니다.  
 
@@ -209,7 +205,7 @@ sudo hv_kvp_daemon
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
+| Windows 8 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | Windows 7 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | Windows Vista(SP 2) | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | - | | |
@@ -217,12 +213,12 @@ sudo hv_kvp_daemon
 | Windows Server 2012 | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | Windows Server 2008 R2(SP 1) | Windows Update | 데이터 교환 통합 서비스가 필요합니다.* |
 | Windows Server 2008(SP 2) | Windows Update | 추가 지원은 Server 2016에서만 가능합니다([자세히 알아보기](https://support.microsoft.com/en-us/lifecycle?p1=12925)). |
-| Windows Home Server 2011 | Windows Update | 서버 2016에서는 지원되지 않습니다([자세히 알아보기](https://support.microsoft.com/en-us/lifecycle?p1=15820)). |
+| Windows Home Server2011 | Windows Update | 서버 2016에서는 지원되지 않습니다([자세히 알아보기](https://support.microsoft.com/en-us/lifecycle?p1=15820)). |
 | Windows Small Business Server 2011 | Windows Update | 일반 지원에는 포함되지 않습니다([자세히 알아보기](https://support.microsoft.com/en-us/lifecycle?p1=15817)). |
 | - | | |
 | Linux 게스트 | 패키지 관리자 | Linux용 통합 구성 요소는 배포판에 포함되지만 선택적 업데이트가 제공될 수 있습니다. ******** |
 
->  \* 데이터 교환 통합 서비스를 활성화할 수 없는 경우 다운로드 센터에서 캐비닛(cab) 파일로 [여기](https://support.microsoft.com/en-us/kb/3071740)에서 해당 게스트에 대한 통합 구성 요소를 사용할 수 있습니다.  
+>  \* 데이터 교환 통합 서비스를 활성화할 수 없는 경우 이러한 게스트의 통합 구성 요소가 [여기](https://support.microsoft.com/en-us/kb/3071740)에 다운로드 센터의 캐비닛(cab) 파일로 제공됩니다.  
   cab 파일을 적용하기 위한 지침은 [여기](http://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)에서 사용할 수 있습니다.
 
 
@@ -232,7 +228,7 @@ sudo hv_kvp_daemon
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows 7 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Vista(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
@@ -241,7 +237,7 @@ sudo hv_kvp_daemon
 | Windows Server 2012 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2008 R2 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2008(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
-| Windows Home Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Home Server2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Small Business Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2003 R2(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2003(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
@@ -254,7 +250,7 @@ sudo hv_kvp_daemon
 | 게스트 OS | 업데이트 메커니즘 | 참고 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows 8 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows 7 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Vista(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows XP(SP 2, SP 3) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
@@ -263,7 +259,7 @@ sudo hv_kvp_daemon
 | Windows Server 2012 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2008 R2 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다.|
 | Windows Server 2008(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
-| Windows Home Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
+| Windows Home Server2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Small Business Server 2011 | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2003 R2(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
 | Windows Server 2003(SP 2) | 통합 서비스 디스크 | [여기](https://technet.microsoft.com/en-us/library/hh846766.aspx#BKMK_step4)에 지침이 제공됩니다. |
@@ -271,9 +267,3 @@ sudo hv_kvp_daemon
 | Linux 게스트 | 패키지 관리자 | Linux용 통합 구성 요소는 배포판에 포함되지만 선택적 업데이트가 제공될 수 있습니다. ** |
 
  > ** Linux 게스트에 대한 더 많은 정보는 [여기](https://technet.microsoft.com/en-us/library/dn531030.aspx)에서 찾아보세요. 
-
-
-
-<!--HONumber=Jan17_HO2-->
-
-

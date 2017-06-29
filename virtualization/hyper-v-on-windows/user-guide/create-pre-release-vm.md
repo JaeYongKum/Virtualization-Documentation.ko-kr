@@ -8,13 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 426c87cc-fa50-4b8d-934e-0b653d7dea7d
-translationtype: Human Translation
-ms.sourcegitcommit: ffdf89b0ae346197b9ae631ee5260e0565261c55
-ms.openlocfilehash: ea91ea0ffca5479cb0593ef9961625f7b7ab1f42
-
+ms.openlocfilehash: 8df30a00eaa2c98feeb4c80c302937c9dfc6d758
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# Hyper-V의 시험판 기능 체험
+# <a name="try-pre-release-features-for-hyper-v"></a>Hyper-V의 시험판 기능 체험
 
 > 이 예비 콘텐츠는 변경될 수 있습니다.  
   시험판 가상 컴퓨터는 Microsoft에서 지원되지 않으므로 개발 또는 테스트 환경에만 사용됩니다.
@@ -29,7 +28,7 @@ Windows Server 2016 Technical Preview에서 Hyper-V의 시험판 기능에 미�
 * 시험판 가상 컴퓨터의 빌드 사이에 일관된 정의가 없습니다. 호스트 운영 체제를 업데이트하는 경우 기존 시험판 가상 컴퓨터가 호스트와 호환되지 않을 수 있습니다. 이러한 가상 컴퓨터는 시작되지 않거나, 초기에는 작동하는 것처럼 보이지만 나중에는 중요한 호환성 문제가 발생할 수 있습니다.
 * 다른 빌드를 사용하는 호스트로 시험판 가상 컴퓨터를 가져오는 경우 결과를 예측할 수 없습니다. 시험판 가상 컴퓨터를 다른 호스트로 이동할 수는 있습니다. 그러나 이 시나리오는 두 호스트가 모두 동일한 빌드에서 실행되는 경우에만 작동합니다.
 
-## 시험판 가상 컴퓨터 만들기
+## <a name="create-a-pre-release-virtual-machine"></a>시험판 가상 컴퓨터 만들기
 
 Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에 시험판 가상 컴퓨터를 만들 수 있습니다.
 
@@ -46,12 +45,6 @@ New-VM -Name <VM Name> -Prerelease
 
  이러한 문서에서 다루는 예제는 Windows 10 또는 Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에서 작동합니다. 그러나 지금은 -Prerelease 플래그만 사용하여 Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에 시험판 가상 컴퓨터를 만들 수 있습니다.
 
-## 참고 항목
+## <a name="see-also"></a>참고 항목
 -  [Virtualization Blog(가상화 블로그)](https://blogs.technet.microsoft.com/virtualization/) - 사용할 수 있는 시험판 기능 및 체험 방법에 대해 알아봅니다.
 - [Supported virtual machine configuration versions(지원되는 가상 컴퓨터 구성 버전)](https://technet.microsoft.com/library/mt695898.aspx#BKMK_SupportedConfigVersions) - 가상 컴퓨터 구성 버전을 확인하는 방법 및 Microsoft에서 지원하는 버전에 대해 알아봅니다.
-
-
-
-<!--HONumber=Oct16_HO4-->
-
-

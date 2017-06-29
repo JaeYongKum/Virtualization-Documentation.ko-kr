@@ -8,18 +8,16 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
-translationtype: Human Translation
-ms.sourcegitcommit: c08793b0f9cc7e6f34696dd2e843ef6e6deea2a4
-ms.openlocfilehash: 12c7c713468618a9fedc82ec5a1c488f57edcfd7
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b01c1112ed119908bdabfa0eeee16f4ba11a47f6
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# 컨테이너 호스트 배포 - Windows Server
+# <a name="container-host-deployment---windows-server"></a>컨테이너 호스트 배포 - Windows Server
 
 Windows 컨테이너 호스트 배포 단계는 운영 체제와 호스트 시스템 유형(물리적 또는 가상)에 따라 다릅니다. 이 문서에서는 물리적 시스템이나 가상 시스템에서 Windows Server 2016 또는 Windows Server Core 2016에 Windows 컨테이너 호스트를 배포하는 방법에 대해 자세히 설명합니다.
 
-## Docker 설치
+## <a name="install-docker"></a>Docker 설치
 
 Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 
 
@@ -45,7 +43,7 @@ Install-Package -Name docker -ProviderName DockerMsftProvider
 Restart-Computer -Force
 ```
 
-## 기본 컨테이너 이미지 설치
+## <a name="install-base-container-images"></a>기본 컨테이너 이미지 설치
 
 Windows 컨테이너를 사용하기 전에 먼저 기본 이미지를 설치해야 합니다. 기본 이미지는 컨테이너 운영 체제로 Windows Server Core 또는 Nano Server에서 사용할 수 있습니다. Docker 컨테이너 이미지에 대한 자세한 내용은 [Build your own images on docker.com](https://docs.docker.com/engine/tutorials/dockerimages/)(docker.com에서 고유한 이미지 만들기)을 참조하세요.
 
@@ -63,11 +61,11 @@ docker pull microsoft/nanoserver
 
 > [EULA](../images-eula.md)에서 Windows 컨테이너 OS 이미지 EULA를 읽어보세요.
 
-## Hyper-V 컨테이너 호스트
+## <a name="hyper-v-container-host"></a>Hyper-V 컨테이너 호스트
 
 Hyper-V 컨테이너를 실행하려면 Hyper-V 역할이 필요합니다. Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 Hyper-V 역할을 설치하기 전에 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화]( https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting)를 참조하세요.
 
-### 중첩된 가상화
+### <a name="nested-virtualization"></a>중첩된 가상화
 
 다음 스크립트는 컨테이너 호스트에 대한 중첩된 가상화를 구성합니다. 이 스크립트는 부모 Hyper-V 컴퓨터에서 실행됩니다. 이 스크립트를 실행할 때 컨테이너 호스트 가상 컴퓨터가 꺼져 있는지 확인하세요.
 
@@ -85,11 +83,10 @@ Set-VMMemory $vm -DynamicMemoryEnabled $false
 Get-VMNetworkAdapter -VMName $vm | Set-VMNetworkAdapter -MacAddressSpoofing On
 ```
 
-### Hyper-V 역할 사용
+### <a name="enable-the-hyper-v-role"></a>Hyper-V 역할 사용
 
 PowerShell을 사용하여 Hyper-V 기능을 사용하도록 설정하려면 관리자 권한 PowerShell 세션에서 다음 명령을 실행합니다.
 
 ```none
 Install-WindowsFeature hyper-v
 ```
-

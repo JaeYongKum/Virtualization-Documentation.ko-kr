@@ -8,13 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-translationtype: Human Translation
-ms.sourcegitcommit: 5d746be15856aad683bf684d2eef573d732ab457
-ms.openlocfilehash: 6add396bea629d5438cde5892458f6c8405bf644
-
+ms.openlocfilehash: 355daae1b673f0b05f08d0706664967a825de6f7
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# Windows Server의 컨테이너 이미지
+# <a name="container-images-on-windows-server"></a>Windows Server의 컨테이너 이미지
 
 이전 Windows Server 빠른 시작에서는 미리 만든 .Net Core 샘플에서 Windows 컨테이너를 만들었습니다. 이 연습에서는 수동으로 사용자 지정 컨테이너 이미지 만들기, Dockerfile을 사용하여 컨테이너 이미지 생성 자동화, Docker 허브 공개 레지스트리에 컨테이너 이미지 저장에 대해 자세히 알아봅니다.
 
@@ -26,7 +25,7 @@ ms.openlocfilehash: 6add396bea629d5438cde5892458f6c8405bf644
 - Windows 컨테이너 기능 및 Docker로 이 시스템을 구성합니다. 이러한 단계에 대한 연습은 [Windows Server의 Windows 컨테이너](./quick-start-windows-server.md)를 참조하세요.
 - Docker ID는 Docker 허브에 컨테이너 이미지를 푸시하기 위해 사용됩니다. Docker ID가 없는 경우 [Docker Cloud](https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
 
-## 1. 컨테이너 이미지 - 수동
+## <a name="1-container-image---manual"></a>1. 컨테이너 이미지 - 수동
 
 최상의 환경을 위해 Windows 명령 셸(cmd.exe)에서 이 연습 과정을 안내합니다.
 
@@ -99,7 +98,7 @@ windowsservercore   latest              dbfee88ee9fd        8 weeks ago         
 
 이제 이 이미지를 배포할 수 있습니다. 결과 컨테이너에 캡처된 모든 수정 내용이 포함됩니다.
 
-## 2. 컨테이너 이미지 - Dockerfile
+## <a name="2-container-image---dockerfile"></a>2. 컨테이너 이미지 - Dockerfile
 
 마지막 연습에서 컨테이너를 수동으로 만들어 수정한 다음 새 컨테이너 이미지에 캡처했습니다. Docker에는 Dockerfile을 사용하여 이 프로세스를 자동화하는 방법이 포함되어 있습니다. 이 연습의 결과는 지난 연습과 거의 동일하지만 이번에는 프로세스가 자동화됩니다. 이 연습에서는 Docker ID가 필요합니다. Docker ID가 없는 경우 [Docker Cloud]( https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
 
@@ -169,7 +168,7 @@ c1dc6c1387b9   iis-dockerfile   "ping -t localhost"   About a minute ago   Up Ab
 docker rm -f <container name>
 ```
 
-## 3. Docker Push
+## <a name="3-docker-push"></a>3. Docker Push
 
 Docker 컨테이너 이미지는 컨테이너 레지스트리에 저장할 수 있습니다. 이미지를 레지스트리에 저장하면 나중에 사용하기 위해 여러 컨테이너 호스트에서 검색할 수 있습니다. Docker는 [Docker Hub](https://hub.docker.com/)(Docker 허브)에 컨테이너 이미지를 저장하기 위한 공개 레지스트리를 제공합니다.
 
@@ -216,12 +215,6 @@ microsoft/iis             latest              e4525dda8206        3 hours ago   
 docker pull <user>/iis-dockerfile
 ```
 
-## 다음 단계
+## <a name="next-steps"></a>다음 단계
 
 [Windows 10의 Windows 컨테이너](./quick-start-windows-10.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
-

@@ -8,17 +8,16 @@ ms.topic: article
 ms.prod: virtualization
 ms.service: virtualization
 ms.assetid: 731ed95a-ce13-4c6e-a450-49563bdc498c
-translationtype: Human Translation
-ms.sourcegitcommit: 54eff4bb74ac9f4dc870d6046654bf918eac9bb5
-ms.openlocfilehash: d4fd2dbaf362ac3ad52667743177a203174b397d
-
+ms.openlocfilehash: b5fe1a2e4c59007fbbb679c9050e28a5e076b08f
+ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.translationtype: HT
+ms.contentlocale: ko-KR
 ---
-
-# 문서 작성에 참여
+# <a name="contribute-to-the-docs"></a>문서 작성에 참여
 
 > **참고:**  문서 작성에 참여하려면 [GitHub](https://www.github.com) 계정이 있어야 합니다.
 
-## 기존 문서 편집
+## <a name="edit-an-existing-doc"></a>기존 문서 편집
 
 1. 편집할 문서를 찾습니다.  
 
@@ -59,12 +58,12 @@ ms.openlocfilehash: d4fd2dbaf362ac3ad52667743177a203174b397d
 
 7. [끌어오기 요청](contribute-to-docs.md#pull-requests) 만들기  
 
-## 끌어오기 요청
+## <a name="pull-requests"></a>끌어오기 요청
 
 대부분의 변경 내용은 끌어오기 요청을 통해 커밋됩니다.  끌어오기 요청은 다수의 검토자가 변경 집합을 검토하고, 변경하고, 현재 콘텐츠에 메모를 추가하는 방식입니다.
 
 
-## 리포지토리를 분기하고 로컬에서 편집
+## <a name="fork-the-repo-and-edit-locally"></a>리포지토리를 분기하고 로컬에서 편집
 
 장기 문서 작업의 경우 리포지토리를 로컬로 복제하고 컴퓨터에서 작업합니다.
 
@@ -85,7 +84,7 @@ ms.openlocfilehash: d4fd2dbaf362ac3ad52667743177a203174b397d
   * 몇 가지 유용한 기능을 안내하는 Git용 VSCode
   * 첫 번째 커밋 수행
 
-### Git 설정
+### <a name="set-up-git"></a>Git 설정
 
 1. [여기](https://git-for-windows.github.io/)에서 Windows에 git 설치
 
@@ -179,7 +178,7 @@ ms.openlocfilehash: d4fd2dbaf362ac3ad52667743177a203174b397d
   }
   ```
 
-### 자격 증명 유효성 검사 및 스태시
+### <a name="validate-and-stash-credentials"></a>자격 증명 유효성 검사 및 스태시
 
   리포지토리가 올바르게 설정되었는지 확인하려면 새 콘텐츠 끌어오기를 시도하세요.
 
@@ -188,17 +187,11 @@ ms.openlocfilehash: d4fd2dbaf362ac3ad52667743177a203174b397d
   ```
 
 
-### markdown 편집 환경 설정
+### <a name="set-up-markdown-editing-environment"></a>markdown 편집 환경 설정
 
 1. VSCode를 다운로드합니다.
 
 6. 테스트 커밋을 수행합니다.  자격 증명이 올바르게 스태시된 경우 모두 완벽하게 작동해야 합니다.
 
-
-
-
-
-
-<!--HONumber=Jan17_HO2-->
 
 
