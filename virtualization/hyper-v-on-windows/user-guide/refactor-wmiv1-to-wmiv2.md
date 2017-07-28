@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: b13a3594-d168-448b-b0a1-7d77153759a8
 ms.openlocfilehash: e2d6faabe77346199a5d292fcfd92cdfd63909b8
-ms.sourcegitcommit: a424c11258e47f224e14c4349b852b9e37b7604f
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="move-from-hyper-v-wmi-v1-to-wmi-v2"></a>Hyper-V WMI v1에서 WMI v2로 이동
+# Hyper-V WMI v1에서 WMI v2로 이동
 
 WMI(Windows Management Instrumentation)는 기본 Hyper-V 관리자 및 Hyper-V PowerShell cmdlet의 관리 인터페이스입니다.  대부분의 사람들이 PowerShell cmdlet 또는 Hyper-V 관리자를 사용하지만 일부 개발자는 WMI를 직접 사용해야 합니다.  
 
@@ -23,7 +23,7 @@ WMI(Windows Management Instrumentation)는 기본 Hyper-V 관리자 및 Hyper-V 
 
 이 문서는 이전 WMI 네임스페이스와 통신하는 코드를 새 네임스페이스로 변환하는 것과 관련된 리소스 참조를 포함하고 있습니다.  이 문서는 처음에는 API 정보 및 샘플 코드의 리포지토리/Hyper-V WMI API를 사용하는 프로그램 또는 스크립트를 v1 네임스페이스에서 v2 네임스페이스로 이식하는 데 사용할 수 있는 스크립트 역할을 할 것입니다.
 
-## <a name="msdn-samples"></a>MSDN 샘플
+## MSDN 샘플
 
 [Hyper-V 가상 컴퓨터 마이그레이션 샘플](http://code.msdn.microsoft.com/windowsdesktop/Hyper-V-virtual-machine-aef356ee)  
 [Hyper-V 가상 파이버 채널 샘플](http://code.msdn.microsoft.com/windowsdesktop/Hyper-V-virtual-Fiber-35d27dcd)  
@@ -38,7 +38,7 @@ WMI(Windows Management Instrumentation)는 기본 Hyper-V 관리자 및 Hyper-V 
 [Hyper-V 리소스 풀 관리 샘플](http://code.msdn.microsoft.com/windowsdesktop/Hyper-V-resource-pool-df906d95)  
 [Hyper-V 복구 스냅숏 샘플](http://code.msdn.microsoft.com/windowsdesktop/Hyper-V-recovery-snapshot-ea72320c)  
 
-## <a name="samples-from-blogs"></a>블로그의 샘플
+## 블로그의 샘플
 
 [Hyper-V WMI V2 네임스페이스를 사용하여 VM에 네트워크 어댑터 추가](http://blogs.msdn.com/b/taylorb/archive/2013/07/15/adding-a-network-adapter-to-a-vm-using-the-hyper-v-wmi-v2-namespace.aspx)  
 [Hyper-V WMI V2 네임스페이스를 사용하여 VM 네트워크 어댑터를 스위치에 연결](http://blogs.msdn.com/b/taylorb/archive/2013/07/15/connecting-a-vm-network-adapter-to-a-switch-using-the-hyper-v-wmi-v2-namespace.aspx)  

@@ -9,12 +9,13 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
 redirect_url: https://technet.microsoft.com/windows-server-docs/compute/hyper-v/manage/manage-Hyper-V-integration-services
-ms.openlocfilehash: 83bcc4c2f47e2a3921be257f45a3a0e22dcba89a
-ms.sourcegitcommit: fd6c5ec419aae425af7ce6c6a44d59c98f62502a
+ms.openlocfilehash: 374ce6f8c4aede7190916675698551eb667458f9
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="managing-hyper-v-integration-services"></a>Hyper-V 통합 서비스 관리
+# Hyper-V 통합 서비스 관리
 
 통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며(예: 게스트 파일 복사) 나머지 서비스는 가상 컴퓨터의 기능이 제대로 작동하는 데 매우 중요할 수 있습니다(시간 동기화).
 
@@ -22,7 +23,7 @@ ms.contentlocale: ko-KR
 
 각 개별 통합 서비스에 대한 자세한 내용은 [통합 서비스](../reference/integration-services.md)를 참조하세요.
 
-## <a name="enable-or-disable-integration-services-using-hyper-v-manager"></a>Hyper-V 관리자를 사용하여 통합 서비스 활성화 또는 비활성화
+## Hyper-V 관리자를 사용하여 통합 서비스 활성화 또는 비활성화
 
 1. 가상 컴퓨터를 선택하고 설정을 엽니다.
   
@@ -32,7 +33,7 @@ ms.contentlocale: ko-KR
 
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 
-## <a name="enable-or-disable-integration-services-using-powershell"></a>PowerShell을 사용하여 통합 서비스 활성화 또는 비활성화
+## PowerShell을 사용하여 통합 서비스 활성화 또는 비활성화
 
 PowerShell에서 [`Enable-VMIntegrationService`](https://technet.microsoft.com/en-us/library/hh848500.aspx) 및 [`Disable-VMIntegrationService`](https://technet.microsoft.com/en-us/library/hh848488.aspx)를 실행하여 통합 서비스를 사용하거나 사용하지 않도록 설정할 수도 있습니다.
 
@@ -73,7 +74,7 @@ PowerShell에서 [`Enable-VMIntegrationService`](https://technet.microsoft.com/e
 통합 서비스는 호스트와 게스트 모두에서 작동하기 위해 활성화하도록 설계되었습니다.  모든 통합 서비스는 Windows 게스트 운영 체제에서 기본적으로 활성화되지만 비활성화할 수 있습니다.  다음 섹션에서 방법을 살펴봅니다.
 
 
-## <a name="manage-integration-services-from-guest-os-windows"></a>게스트 OS (Windows)에서 통합 서비스 관리
+## 게스트 OS (Windows)에서 통합 서비스 관리
 
 > **참고:** 통합 서비스를 비활성화하면 가상 컴퓨터를 관리하는 호스트 기능에 심각한 영향을 줄 수 있습니다.  통합 서비스는 호스트와 게스트 모두에서 작동하도록 활성화되어야 합니다.
 
@@ -110,7 +111,7 @@ Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
 
 기본적으로 모든 통합 서비스는 게스트 운영 체제에서 활성화됩니다.
 
-## <a name="manage-integration-services-from-guest-os-linux"></a>게스트 OS(Linux)에서 통합 서비스 관리
+## 게스트 OS(Linux)에서 통합 서비스 관리
 
 Linux 통합 서비스는 일반적으로 Linux 커널을 통해 제공됩니다.
 
@@ -191,7 +192,7 @@ sudo hv_kvp_daemon
 이제 `ps -ef | hv`를 다시 실행하는 경우 `hv_kvp_daemon` 프로세스가 새로운 프로세스 ID로 표시됩니다.
 
 
-## <a name="integration-service-maintenance"></a>통합 서비스 유지 관리
+## 통합 서비스 유지 관리
 
 가상 컴퓨터가 Windows Update에서 중요 업데이트를 받을 수 있는 경우 Windows 10에서 통합 서비스 유지 관리는 기본적으로 이루어집니다.  
 

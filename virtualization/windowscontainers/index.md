@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
-ms.openlocfilehash: ac6e99800fcabef31464a81799fc9e329438b0ae
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 9b630e372b575ef1721c0d0926ec2caec3e5ec34
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="windows-containers-documentation"></a>Windows 컨테이너 설명서
+# Windows 컨테이너 설명서
 
 Windows 컨테이너는 여러 개의 격리된 응용 프로그램을 단일 시스템에서 실행할 수 있는 운영 체제 수준 가상화를 제공합니다. 두 가지 형식의 컨테이너 런타임이 각각 다른 응용 프로그램 격리 수준을 가진 기능과 함께 포함됩니다. Windows Server 컨테이너는 네임스페이스 및 프로세스 격리를 통해 격리됩니다. Hyper-V 컨테이너는 간단한 가상 컴퓨터에서 각 컨테이너를 캡슐화합니다. 이 문서 집합은 관리 작업에서 빠른 시작 가이드, 배포 가이드 및 기술 세부 정보를 제공합니다.
 

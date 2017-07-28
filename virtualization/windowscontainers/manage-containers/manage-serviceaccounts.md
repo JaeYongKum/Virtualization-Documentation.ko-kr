@@ -8,26 +8,27 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: e864242e69a84d7636241ea2a772722add5b8b7c
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 0e692f7521e4a15e3e56d4b98f7ca15fe94ee167
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="active-directory-service-accounts-for-windows-containers"></a>Windows 컨테이너용 Active Directory 서비스 계정
+# Windows 컨테이너용 Active Directory 서비스 계정
 
 데이터를 안전하게 보호하고 무단 사용을 방지할 수 있도록 사용자와 다른 서비스가 응용 프로그램 및 서비스에 인증된 연결을 만들어야 할 수 있습니다. Windows AD(Active Directory) 도메인은 기본적으로 암호 및 인증서 인증을 모두 지원합니다. Windows 도메인에 가입된 호스트에서 응용 프로그램 또는 서비스를 빌드하는 경우 응용 프로그램 및 서비스는 로컬 시스템 또는 네트워크 서비스로 실행되는 경우 기본적으로 호스트의 ID를 사용합니다. 그렇지 않은 경우 인증을 위해 다른 AD 계정을 대신 구성할 수 있습니다.
 
 Windows 컨테이너는 도메인에 가입될 수는 없지만 장치가 영역에 가입된 경우와 유사하게 Active Directory 도메인 ID를 활용할 수도 있습니다. Windows Server 2012 R2 도메인 컨트롤러에서는 서비스에서 공유하도록 설계된 gMSA(그룹 관리 서비스 계정)라는 새로운 도메인 계정을 도입했습니다. gMSA(그룹 관리 서비스 계정)를 사용하면 Windows 컨테이너 자체 및 컨테이너에 호스트되는 서비스가 특정 gMSA를 도메인 ID로 사용하도록 구성할 수 있습니다. 로컬 시스템 또는 네트워크 서비스로 실행되는 모든 서비스는 도메인에 가입된 호스트의 ID를 사용하는 지금의 경우처럼 앞으로 Windows 컨테이너의 ID를 사용합니다. 컨테이너 이미지에는 실수로 노출될 수 있는 암호나 인증서 개인 키가 저장되지 않으며 저장된 암호나 인증서를 변경하기 위해 다시 빌드할 필요 없이 컨테이너를 개발, 테스트 및 프로덕션 환경으로 다시 배포할 수 있습니다. 
 
 
-# <a name="glossary--references"></a>용어 및 참조
+# 용어 및 참조
 - [Active Directory](http://social.technet.microsoft.com/wiki/contents/articles/1026.active-directory-services-overview.aspx)는 Windows에서 사용자, 컴퓨터 및 서비스 계정 정보의 검색 및 복제에 사용되는 서비스입니다. 
   - [Active Directory Domain Services](https://technet.microsoft.com/en-us/library/dd448614.aspx)는 컴퓨터와 사용자를 인증하는 데 사용되는 Windows Active Directory 도메인을 제공합니다. 
   - 장치가 Active Directory의 구성원인 경우 _도메인에 가입된_ 것입니다. 도메인에 가입됨은 장치 상태로, 장치에 도메인 컴퓨터 ID를 제공할 뿐 아니라 다양한 도메인에 가입된 서비스도 제공하는 상태입니다.
   - [그룹 관리 서비스 계정](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11).aspx)(종종 약식으로 gMSA로 사용)은 암호를 공유하지 않고 Active Directory 사용 서비스를 간단히 보호할 수 있도록 지원하는 Active Directory 계정 유형입니다. 여러 컴퓨터나 컨테이너가 필요에 따라 동일한 gMSA를 공유하여 서비스 간 연결을 인증합니다.
 - _CredentialSpec_ PowerShell 모듈 - 이 모듈은 컨테이너에서 사용할 그룹 관리 서비스 계정을 구성하는 데 사용됩니다. 스크립트 모듈 및 예제 단계는 [windows-server-container-tools](https://github.com/Microsoft/Virtualization-Documentation/tree/live/windows-server-container-tools)의 ServiceAccount를 참조하세요.
 
-# <a name="how-it-works"></a>작동 방법
+# 작동 방법
 
 현재 그룹 관리 서비스 계정은 컴퓨터나 서비스 간의 연결을 보호하는 데 주로 사용됩니다. 이 계정을 사용하는 일반적인 단계는 다음과 같습니다.
 
@@ -51,10 +52,10 @@ Windows 컨테이너도 유사한 프로세스를 수행합니다.
 ![다이어그램 - 서비스 계정](media/serviceaccount_diagram.png)
 
 
-# <a name="example-uses"></a>사용 예
+# 사용 예
 
 
-## <a name="sql-connection-strings"></a>SQL 연결 문자열
+## SQL 연결 문자열
 서비스가 컨테이너에서 로컬 시스템 또는 네트워크 서비스로 실행되는 경우 Windows 통합 인증을 사용하여 Microsoft SQL Server에 연결할 수 있습니다.
 
 예제:

@@ -8,16 +8,17 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: 1699bec6515608c722c28babd26719b27baa53c6
-ms.sourcegitcommit: b13a29758013a21215ee6e21e7e7ed7f58b62485
+ms.openlocfilehash: a70564f565a69f15ef4d668ccab0aa3b18c758ae
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="windows-containers"></a>Windows 컨테이너
+# Windows 컨테이너
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
-## <a name="what-are-containers"></a>컨테이너란?
+## 컨테이너란?
 
 [Windows 기반 컨테이너: 엔터프라이즈급 제어 기능을 통한 최신 앱 개발](https://youtu.be/Ryx3o0rD5lY)에 대한 간략한 개요를 확인하세요.
 
@@ -27,16 +28,16 @@ ms.contentlocale: ko-KR
 
 컨테이너는 방금 설치한 물리적 컴퓨터나 가상 컴퓨터처럼 보이고 작동합니다. 다른 컨테이너처럼 [Docker](https://www.docker.com/)로 Windows Server 컨테이너를 관리할 수 있습니다.
 
-## <a name="windows-container-types"></a>Windows 컨테이너 형식
+## Windows 컨테이너 형식
 
 Windows 컨테이너는 두 개의 서로 다른 컨테이너 형식 또는 런타임을 포함합니다.
 
-**Windows Server 컨테이너** – 프로세스 및 네임스페이스 격리 기술을 통해 응용 프로그램 격리 기능을 제공합니다. Windows Server 컨테이너는 컨테이너 호스트 및 해당 호스트에서 실행되는 모든 컨테이너와 커널을 공유합니다.  이러한 컨테이너는 적대적 보안 경계를 제공하지 않으므로 신뢰할 수 없는 코드 격리에 사용하면 안 됩니다.
+**Windows Server 컨테이너** – 프로세스 및 네임스페이스 격리 기술을 통해 응용 프로그램 격리 기능을 제공합니다. Windows Server 컨테이너는 컨테이너 호스트 및 해당 호스트에서 실행되는 모든 컨테이너와 커널을 공유합니다.  이러한 컨테이너는 적대적 보안 경계를 제공하지 않으므로 신뢰할 수 없는 코드 격리에 사용하면 안 됩니다.  이러한 컨테이너는 호스트 및 같은 호스트에 있는 다른 컨테이너와 커널 공간을 공유하므로 일관적이어야 합니다. 즉, 버전과 구성이 동일해야 합니다.
 
-**Hyper-V 격리** – 고도로 최적화된 가상 컴퓨터에서 각 컨테이너를 실행하여 Windows Server 컨테이너에서 제공하는 격리를 확장합니다. 이 구성에서는 컨테이너 호스트의 커널이 같은 호스트에 있는 다른 컨테이너와 공유되지 않습니다.  이러한 컨테이너는 가상 컴퓨터와 보안 보장 수준이 같은 적대적 다중 테넌트 호스팅을 위해 디자인되었습니다.
+**Hyper-V 격리** – 고도로 최적화된 가상 컴퓨터에서 각 컨테이너를 실행하여 Windows Server 컨테이너에서 제공하는 격리를 확장합니다. 이 구성에서는 컨테이너 호스트의 커널이 같은 호스트에 있는 다른 컨테이너와 공유되지 않습니다.  이러한 컨테이너는 가상 컴퓨터와 보안 보장 수준이 같은 적대적 다중 테넌트 호스팅을 위해 디자인되었습니다. 이러한 컨테이너는 호스트 또는 호스트의 다른 컨테이너와 커널을 공유하지 않으므로 버전과 구성이 다른 커널을 실행할 수 있습니다(지원되는 버전에서). 예를 들어 Windows 10의 모든 Windows 컨테이너는 Windows Server 커널 버전과 구성을 활용하기 위해 Hyper-V 격리를 사용합니다.
 
 
-## <a name="container-fundamentals"></a>컨테이너의 기본 사항
+## 컨테이너의 기본 사항
 
 컨테이너 작업을 시작하고 나면 컨테이너와 가상 컴퓨터 사이에 유사한 부분이 많음을 알게 될 것입니다. 컨테이너는 운영 체제를 실행하며, 파일 시스템을 보유하고, 물리적 또는 가상 컴퓨터 시스템과 마찬가지로 네트워크에서 액세스할 수 있습니다. 그렇긴 하지만 컨테이너의 바탕이 되는 기술 및 개념은 가상 컴퓨터와는 상당한 차이가 있습니다.  
 
@@ -56,7 +57,7 @@ Windows 컨테이너의 만들기 및 작업을 시작할 때 다음 주요 개�
 
 <center>![](media/containerfund.png)</center>
 
-## <a name="containers-for-developers"></a>개발자를 위한 컨테이너
+## 개발자를 위한 컨테이너
 
 개발자의 데스크톱에서 테스트 컴퓨터와 여러 프러덕션 컴퓨터에 이르기까지, 몇 초 만에 모든 환경 전체에 동일하게 배포되는 Docker 이미지를 만들 수 있습니다.  이 덕분에 Docker가 관리하는 컨테이너화된 공개 응용 프로그램 레지스트리인 DockerHub를 통해, Docker 컨테이너 안에 패키징된 응용 프로그램의 거대한 생태계가 탄생했으며 지속적으로 확장되고 있습니다. 현재 공개 커뮤니티 리포지토리에 180,000개 이상의 응용 프로그램이 게시되어 있습니다.  
 
@@ -68,19 +69,19 @@ Windows 컨테이너의 만들기 및 작업을 시작할 때 다음 주요 개�
 
 컨테이너는 개발자가 더 품질 높은 응용 프로그램을 더 신속하게 구축하여 제공하는 데 도움이 됩니다.
 
-## <a name="containers-for-it-professionals"></a>IT 전문가 위한 컨테이너 ##
+## IT 전문가 위한 컨테이너 ##
 
 IT 전문가들은 컨테이너를 사용하여 개발, QA, 프러덕션 팀에 표준화된 환경을 제공할 수 있습니다. 복잡한 설치와 구성 절차에 대해 더 이상 걱정할 것이 없습니다. 시스템 관리자들은 컨테이너를 사용하여 OS 설치와 기반 인프라에서의 차이점을 골라낼 수 있습니다.
 
 컨테이너는 관리자들이 업데이트와 유지 관리가 더 간단한 인프라를 만드는 데 도움이 됩니다.
 
-## <a name="video-overview"></a>비디오 개요
+## 비디오 개요
 
 <iframe 
 src="https://channel9.msdn.com/Blogs/containers/Containers-101-with-Microsoft-and-Docker/player" width="800" height="450" allowFullScreen="true" frameBorder="0" scrolling="no"></iframe>
 
 
-## <a name="try-windows-server-containers"></a>Windows Server 컨테이너 사용해 보기
+## Windows Server 컨테이너 사용해 보기
 
 [컨테이너 빠른 시작 소개](../quick_start/quick_start.md)
 

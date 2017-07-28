@@ -8,18 +8,19 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
-ms.openlocfilehash: 8b0cd6046f8b556f9dd5082c5ddf80af83814c1c
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 2077f7cf0428e08ce915470ac4cc3b0ccc9c6369
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="optimize-windows-dockerfiles"></a>Windows Dockerfile 최적화
+# Windows Dockerfile 최적화
 
 여러 가지 방법을 사용하여 Docker 빌드 프로세스와 결과 Docker 이미지를 모두 최적화할 수 있습니다. 이 문서에서는 Docker 빌드 프로세스의 작동 방식에 대해 자세히 설명하고 Windows 컨테이너에서 최적의 이미지 만들기에 사용할 수 있는 여러 가지 방법을 보여 줍니다.
 
-## <a name="docker-build"></a>Docker 빌드
+## Docker 빌드
 
-### <a name="image-layers"></a>이미지 계층
+### 이미지 계층
 
 Docker 빌드 최적화를 검토하기 전에 Docker 빌드의 작동 방식을 이해해야 합니다. Docker 빌드 프로세스 중에는 Dockerfile이 사용되며, 실행 가능한 각 명령이 고유한 임시 컨테이너에서 하나씩 실행됩니다. 결과로 실행 가능한 각 명령에 대한 새로운 이미지 계층이 생성됩니다. 
 
@@ -50,13 +51,13 @@ f0e017e5b088        21 seconds ago       cmd /S /C echo "Hello World - Dockerfil
 
 Dockerfile은 이미지 계층을 최소화하고, 빌드 성능을 최적화하며, 가독성과 같은 표면적인 문제를 최적화하도록 작성할 수 있습니다. 결국 동일한 이미지 빌드 작업을 여러 가지 방법으로 완료할 수 있습니다. Dockerfile의 형식이 빌드 시간 및 결과 이미지에 어떻게 영향을 미치는지 이해하면 자동화 환경이 개선됩니다. 
 
-## <a name="optimize-image-size"></a>이미지 크기 최적화
+## 이미지 크기 최적화
 
 Docker 컨테이너 이미지를 작성할 때 이미지 크기가 중요한 요인이 될 수 있습니다. 컨테이너 이미지를 레지스트리와 호스트 간에 이동하고 내보내고 가져오며 궁극적으로 공간을 사용합니다. Docker 빌드 프로세스 중에 여러 가지 방법을 사용하여 이미지 크기를 최소화할 수 있습니다. 이 섹션에서는 Windows 컨테이너와 관련된 몇 가지 방법에 대해 자세히 설명합니다. 
 
 Dockerfile 모범 사례에 대한 자세한 내용은 [Docker.com의 Best practices for writing Dockerfiles(Dockerfile 작성에 대한 모범 사례)]( https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)를 참조하세요.
 
-### <a name="group-related-actions"></a>그룹 관련 작업
+### 그룹 관련 작업
 
 각 `RUN` 명령은 컨테이너 이미지에 새 계층을 만들므로 작업을 하나의 `RUN` 명령으로 그룹화하면 계층 수를 줄일 수 있습니다. 계층을 최소화해도 이미지 크기에 많은 영향을 주지 않지만 그룹화 관련 작업은 영향을 줄 수 있으며, 이 점은 다음 예제에서 확인할 수 있습니다.
 
@@ -104,7 +105,7 @@ IMAGE               CREATED             CREATED BY                              
 69e44f37c748        54 seconds ago      cmd /S /C powershell.exe -Command   $ErrorAct   216.3 MB                
 ```
 
-### <a name="remove-excess-files"></a>초과 파일 제거
+### 초과 파일 제거
 
 설치 관리자 같은 파일이 사용된 후 필요하지 않으면 파일을 제거하여 이미지 크기를 줄입니다. 이 작업은 이미지 계층에 파일을 복사하는 것과 동일한 단계에서 수행되어야 합니다. 이렇게 하면 파일이 하위 수준의 이미지 계층에서 유지되지 않도록 할 수 있습니다.
 
@@ -120,9 +121,9 @@ RUN powershell.exe -Command \
   Remove-Item c:\python-3.5.1.exe -Force
 ```
 
-## <a name="optimize-build-speed"></a>빌드 속도 최적화
+## 빌드 속도 최적화
 
-### <a name="multiple-lines"></a>여러 줄
+### 여러 줄
 
 Docker 빌드 속도를 최적화하면 작업을 여러 개의 개별 명령으로 구분하는 것이 유용할 수 있습니다. `RUN` 작업이 여러 개 있으면 캐싱 유효성이 증가합니다. 각 `RUN` 명령에 대해 개별 계층이 만들어지므로 동일한 단계가 다른 Docker 빌드 작업에서 이미 실행된 경우 이 캐시된 작업(이미지 계층)이 다시 사용됩니다. 결과적으로 Docker 빌드 런타임이 줄어듭니다.
 
@@ -197,7 +198,7 @@ d43abb81204a        7 days ago          cmd /S /C powershell -Command  Sleep 2 ;
 6801d964fda5        5 months ago
 ```
 
-### <a name="ordering-instructions"></a>명령 순서 지정
+### 명령 순서 지정
 
 Dockerfile은 위에서 아래로 처리되며, 각 명령은 캐시된 계층과 비교됩니다. 캐시된 계층이 없는 명령이 있으면 이 명령과 모든 후속 명령은 새 컨테이너 이미지 계층에서 처리됩니다. 따라서 명령이 배치되는 순서가 중요합니다. 일정하게 유지될 명령은 Dockerfile의 위쪽에 배치합니다. 변경될 수 있는 명령은 Dockerfile의 아래쪽에 배치합니다. 이렇게 하면 기존 캐시를 부정할 가능성이 줄어듭니다.
 
@@ -248,9 +249,9 @@ c92cc95632fb        28 seconds ago      cmd /S /C mkdir test-4   5.644 MB
 6801d964fda5        5 months ago                                 0 B
 ```
 
-## <a name="cosmetic-optimization"></a>표면적 문제 최적화
+## 표면적 문제 최적화
 
-### <a name="instruction-case"></a>명령 대/소문자
+### 명령 대/소문자
 
 Dockerfile 명령은 대/소문자를 구분하지 않지만 규칙은 대문자를 사용하는 것입니다. 그러면 명령 호출과 명령 작업을 구별하여 가독성이 향상됩니다. 다음 두 예제에서는 이 개념을 보여 줍니다. 
 
@@ -273,7 +274,7 @@ RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 CMD [ "cmd" ]
 ```
 
-### <a name="line-wrapping"></a>줄 바꿈
+### 줄 바꿈
 
 길고 복잡한 작업은 백슬래시 `\` 문자를 사용하여 여러 줄로 구분할 수 있습니다. 다음 Dockerfile에서는 Visual Studio 재배포 가능 패키지를 설치하고 설치 관리자 파일을 제거한 다음 구성 파일을 만듭니다. 이러한 세 작업을 모두 한 줄에 지정합니다.
 
@@ -294,7 +295,7 @@ RUN powershell -Command \
     New-Item c:\config.ini
 ```
 
-## <a name="further-reading--references"></a>추가 참고 자료 및 참조
+## 추가 참고 자료 및 참조
 
 [Windows의 Dockerfile](manage-windows-dockerfile.md)
 

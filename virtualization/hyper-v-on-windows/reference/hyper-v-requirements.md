@@ -8,18 +8,19 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6e5e6b01-7a9d-4123-8cc7-f986e10cd372
-ms.openlocfilehash: 36f95049c227b1498540e1ee5c9194a09fbfeb83
-ms.sourcegitcommit: d5f30aa1bdfb34dd9e1909d73b5bd9f4153d6b46
+ms.openlocfilehash: 8f7e609e1e7c23181bed64e45c9c6160e425d4b6
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="windows-10-hyper-v-system-requirements"></a>Windows 10 Hyper-V 시스템 요구 사항
+# Windows 10 Hyper-V 시스템 요구 사항
 
 Hyper-V는 Windows 8 이상의 64비트 Windows Professional, Enterprise 및 Education 버전에서 사용할 수 있습니다.  Hyper-V는 Intel 및 AMD의 최신 세대 64비트 프로세서에서 제공하는 SLAT(두 번째 수준 주소 변환)가 필요합니다.
 
 RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수 있고, 가상 컴퓨터 수가 늘면 더 많은 리소스가 필요합니다. 크게는 물리적 하드웨어에 따라 32개의 프로세서와 512GB RAM을 사용하는 대형 가상 컴퓨터를 만들 수도 있습니다.
 
-## <a name="operating-system-requirements"></a>운영 체제 요구 사항
+## 운영 체제 요구 사항
 
 이러한 버전의 Windows 10에서 Hyper-V 역할을 활성화할 수 있습니다.
 
@@ -35,7 +36,7 @@ RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수
 
 >Windows 10 Home edition은 Windows 10 Professional로 업그레이드할 수 있습니다. 그러려면 **설정** > **업데이트 및 보안** > **활성화**를 엽니다. 여기에서 스토어를 방문하고 업그레이드를 구입할 수 있습니다.
 
-## <a name="hardware-requirements"></a>하드웨어 요구 사항
+## 하드웨어 요구 사항
 
 이 문서에서는 Hyper-V와 호환되는 하드웨어의 전체 목록을 제공하지 않지만 다음 항목은 필요합니다.
     
@@ -47,7 +48,7 @@ RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수
 - 가상화 기술 - 마더보드 제조업체에 따라 다른 레이블이 있을 수 있습니다.
 - 하드웨어 적용 데이터 실행 방지.
 
-## <a name="verify-hardware-compatibility"></a>하드웨어 호환성 확인
+## 하드웨어 호환성 확인
 
 호환성을 확인하려면 PowerShell 또는 명령 프롬프트(cmd.exe)를 열고 **systeminfo**를 입력합니다. 나열된 모든 Hyper-V 요구 사항이 **예**의 값을 가지는 경우 시스템은 Hyper-V 역할을 실행할 수 있습니다. 항목이 **아니요**를 반환하는 경우 이 문서에 나열된 요구 사항을 확인하고 가능한 경우 조정합니다.
 

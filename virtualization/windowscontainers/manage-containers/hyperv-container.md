@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
-ms.openlocfilehash: 88c452117299d855073668d33e4323243d93e9d1
-ms.sourcegitcommit: fa56cb152977de952ec1e493005dfc0e62538b4f
+ms.openlocfilehash: 7957e48291ab2d29f3687c595c760d838dab60b8
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="hyper-v-containers"></a>Hyper-V 컨테이너
+# Hyper-V 컨테이너
 
 **이 예비 콘텐츠는 변경될 수 있습니다.** 
 
@@ -23,9 +24,9 @@ Windows 컨테이너 기술은 Windows Server 컨테이너와 Hyper-V 컨테이�
 
 **Hyper-V 컨테이너** – 호스트에서 여러 컨테이너 인스턴스를 동시에 실행할 수 있지만 각 컨테이너는 특별한 가상 컴퓨터 안에서 실행됩니다. 이를 통해 각 Hyper-V 컨테이너와 컨테이너 호스트 사이에 커널 수준 격리가 제공됩니다.
 
-## <a name="hyper-v-container"></a>Hyper-V 컨테이너
+## Hyper-V 컨테이너
 
-### <a name="create-container"></a>컨테이너 만들기
+### 컨테이너 만들기
 
 Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이너 관리와 거의 동일합니다. Docker로 Hyper-V 컨테이너를 만들 때 `--isolation=hyperv` 매개 변수를 사용합니다.
 
@@ -33,7 +34,7 @@ Docker로 Hyper-V 컨테이너를 관리하는 것은 Windows Server 컨테이�
 docker run -it --isolation=hyperv microsoft/nanoserver cmd
 ```
 
-### <a name="isolation-explanation"></a>격리 설명
+### 격리 설명
 
 이 예제에서는 Windows Server 및 Hyper-V 컨테이너 간의 격리 기능을 구별합니다. 
 

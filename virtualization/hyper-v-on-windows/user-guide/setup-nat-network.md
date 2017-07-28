@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1f8a691c-ca75-42da-8ad8-a35611ad70ec
-ms.openlocfilehash: ca951a356fbf11ed784b78f9742fd43da005e58c
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: a9d9f1b8cb0c76e57def1a92d993970ed40dbe7a
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="set-up-a-nat-network"></a>NAT 네트워크 설정
+# NAT 네트워크 설정
 
 Windows 10 Hyper-V에서는 가상 네트워크에 대해 기본 NAT(Network Address Translation)를 허용합니다.
 
@@ -26,9 +27,9 @@ Windows 10 Hyper-V에서는 가상 네트워크에 대해 기본 NAT(Network Add
 * Windows 10 1주년 업데이트 이상
 * Hyper-V 사용(지침은 [여기](../quick-start/enable-hyper-v.md) 참조)
 
-> **참고:**  현재 호스트마다 NAT 네트워크를 하나씩 만들 수 있습니다. Windows NAT(WinNAT) 구현, 기능 및 제한 사항에 대한 자세한 내용은 [WinNAT 기능 및 제한 사항 블로그](https://blogs.technet.microsoft.com/virtualization/2016/05/25/windows-nat-winnat-capabilities-and-limitations/)를 참조하세요.
+> **참고:**  현재는 호스트당 NAT 네트워크 하나로 제한됩니다. Windows NAT(WinNAT) 구현, 기능 및 제한 사항에 대한 자세한 내용은 [WinNAT 기능 및 제한 사항 블로그](https://blogs.technet.microsoft.com/virtualization/2016/05/25/windows-nat-winnat-capabilities-and-limitations/)를 참조하세요.
 
-## <a name="nat-overview"></a>NAT 개요
+## NAT 개요
 NAT는 호스트 컴퓨터의 IP 주소와 내부 Hyper-V 가상 스위치를 통한 포트를 사용하여 네트워크 리소스에 대한 액세스 권한을 가상 컴퓨터에 제공합니다.
 
 NAT(Network Address Translation)는 외부 IP 주소 및 포트를 훨씬 더 큰 내부 IP 주소 집합에 매핑하여 IP 주소를 절약하도록 설계된 네트워킹 모드입니다.  기본적으로 NAT는 흐름 테이블을 사용하여 외부(호스트) IP 주소 및 포트 번호에서 네트워크의 끝점(가상 컴퓨터, 컴퓨터, 컨테이너 등)과 연결된 올바른 내부 IP 주소로 트래픽을 라우팅합니다.
@@ -38,7 +39,7 @@ NAT(Network Address Translation)는 외부 IP 주소 및 포트를 훨씬 더 �
 이러한 모든 이유로 NAT 네트워킹은 컨테이너 기술에 매우 일반적입니다([컨테이너 네트워킹](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/management/container_networking) 참조).
 
 
-## <a name="create-a-nat-virtual-network"></a>NAT 가상 네트워크 만들기
+## NAT 가상 네트워크 만들기
 새로운 NAT 네트워크 설정 과정을 살펴보겠습니다.
 
 1.  관리자 권한으로 PowerShell 콘솔을 엽니다.  
@@ -119,18 +120,18 @@ NAT(Network Address Translation)는 외부 IP 주소 및 포트를 훨씬 더 �
 
 축하합니다.  이제 가상 NAT 네트워크를 만들었습니다.  NAT 네트워크에 가상 컴퓨터를 추가하려면 [이러한 지침](#connect-a-virtual-machine)을 따르세요.
 
-## <a name="connect-a-virtual-machine"></a>가상 컴퓨터 연결
+## 가상 컴퓨터 연결
 
 새 NAT 네트워크에 가상 컴퓨터를 연결하려면 [NAT 네트워크 설정](#create-a-nat-virtual-network) 섹션의 첫 번째 단계에서 만든 내부 스위치를 VM 설정 메뉴를 사용하여 가상 컴퓨터에 연결합니다.
 
 WinNAT 자체는 끝점(예: VM)에 IP 주소를 할당하지 않으므로 VM 자체 내에서 수동으로 할당해야 합니다. 즉, NAT 내부 접두사의 범위 내에서 IP 주소를 설정하고 기본 게이트웨이 IP 주소를 설정하며 DNS 서버 정보를 설정하는 등의 작업을 수행해야 합니다. 유일한 주의할 상황은 끝점이 컨테이너에 연결되어 있는 경우입니다. 이 경우 HNS(호스트 네트워크 서비스)는 HCS(호스트 계산 서비스)를 할당하고 사용하여 IP 주소, 게이트웨이 IP 및 DNS 정보를 컨테이너에 직접 할당합니다.
 
 
-## <a name="configuration-example-attaching-vms-and-containers-to-a-nat-network"></a>구성 예제: NAT 네트워크에 VM 및 컨테이너 연결
+## 구성 예제: NAT 네트워크에 VM 및 컨테이너 연결
 
 _단일 NAT에 여러 VM 및 컨테이너를 연결해야 하는 경우 NAT 내부 서브넷 접두사가 다른 응용 프로그램 또는 서비스(예: Windows용 Docker 및 Windows 컨테이너 – HNS)에 의해 할당되는 IP 범위를 포괄할만큼 충분히 큰지 확인해야 합니다. 이를 위해서는 응용 프로그램 수준의 IP 할당 및 네트워크 구성이 필요하며 관리자가 이러한 구성을 수동으로 진행하고 기존 IP 할당이 동일한 호스트에서 다시 사용되지 않도록 보장되어야 합니다._
 
-### <a name="docker-for-windows-linux-vm-and-windows-containers"></a>Windows용 Docker(Linux VM) 및 Windows 컨테이너
+### Windows용 Docker(Linux VM) 및 Windows 컨테이너
 아래 솔루션에서는 Windows용 Docker(Linux 컨테이너를 실행하는 Linux VM) 및 Windows 컨테이너가 별도의 내부 vSwitch를 사용하여 동일한 WinNAT 인스턴스를 공유할 수 있습니다. Linux 및 Windows 컨테이너 간의 연결은 계속 유지됩니다.
 
 사용자는 "VMNAT"라는 내부 vSwitch를 통해 NAT 네트워크에 VM을 연결했으며 Docker 엔진과 Windows 컨테이너 기능을 설치하려고 합니다.
@@ -162,7 +163,7 @@ Docker/HNS에서는 <container prefix>에서 Windows 컨테이너에 IP를 할�
 
 결과적으로 두 개의 내부 VM 스위치와 이러한 스위치 간에 공유되는 하나의 NetNat이 필요합니다.
 
-## <a name="multiple-applications-using-the-same-nat"></a>여러 응용 프로그램에서 동일한 NAT 사용
+## 여러 응용 프로그램에서 동일한 NAT 사용
 
 일부 시나리오에서는 여러 응용 프로그램이나 서비스에서 동일한 NAT를 사용해야 합니다. 이 경우 여러 응용 프로그램/서비스에서 더 큰 NAT 내부 서브넷 접두사를 사용할 수 있도록 다음 워크플로를 따라야 합니다.
 
@@ -193,9 +194,9 @@ Docker/HNS에서는 <container prefix>에서 Windows 컨테이너에 IP를 할�
 결과적으로 DockerNAT와 nat라는 두 개의 내부 vSwitch가 만들어집니다. Get-NetNat를 실행하여 확인한 NAT 네트워크(10.0.0.0/17) 하나만 있어야 합니다. Windows 컨테이너의 IP 주소는 Windows HNS(호스트 네트워크 서비스)가 10.0.76.0/24 서브넷에서 할당합니다. 기존 MobyLinux.ps1 스크립트에 따라 Docker 4 Windows의 IP 주소는 10.0.75.0/24 서브넷에서 할당됩니다.
 
 
-## <a name="troubleshooting"></a>문제 해결
+## 문제 해결
 
-### <a name="multiple-nat-networks-are-not-supported"></a>여러 개의 NAT 네트워크가 지원되지 않음  
+### 여러 개의 NAT 네트워크가 지원되지 않음  
 이 가이드에서는 호스트에 다른 NAT가 없다고 가정합니다. 그러나 응용 프로그램이나 서비스에서는 NAT를 사용해야 하므로 설정 과정에서 NAT를 만들 수 있습니다. Windows(WinNAT)는 내부 NAT 서브넷 접두사를 하나만 지원하므로 여러 NAT를 만들려고 하면 시스템이 알 수 없는 상태로 전환됩니다.
 
 이로 인해 문제가 발생할 수 있는지 확인하려면 NAT가 하나뿐인지 확인합니다.
@@ -238,8 +239,8 @@ PS>    }
 PS> }
 PS> remove-netnat -Confirm:$false
 PS> Get-ContainerNetwork | Remove-ContainerNetwork
-PS>    Get-VmSwitch -Name nat | Remove-VmSwitch (_failure is expected_)
-PS>    Stop-Service docker
+PS> Get-VmSwitch -Name nat | Remove-VmSwitch (_failure is expected_)
+PS> Stop-Service docker
 PS> Set-Service docker -StartupType Disabled
 Reboot Host
 PS> Get-NetNat | Remove-NetNat
@@ -249,5 +250,5 @@ PS> Start-Service docker
 
 이 [여러 응용 프로그램에서 동일한 NAT 사용에 대한 설정 가이드](#multiple-applications-using-the-same-nat)를 참조하여 필요한 경우 NAT 환경을 다시 빌드하세요. 
 
-## <a name="references"></a>참조
+## 참조
 [NAT 네트워크](https://en.wikipedia.org/wiki/Network_address_translation)에 대해 자세히 알아보세요.

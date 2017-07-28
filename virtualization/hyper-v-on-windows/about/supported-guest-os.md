@@ -7,16 +7,17 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
-ms.openlocfilehash: 8b764cb06b94465f516f9e5e8f06860ced8b39bb
-ms.sourcegitcommit: d5f30aa1bdfb34dd9e1909d73b5bd9f4153d6b46
+ms.openlocfilehash: 7ef4d5aa084d199abfb39d1c44e4dd1305e07904
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="supported-windows-guests"></a>지원되는 Windows 게스트 
+# 지원되는 Windows 게스트 
 
 이 문서는 Windows의 Hyper-V에서 지원되는 운영 체제 조합을 나열합니다.  지원되는 통합 서비스 및 기타 요인에 대해서도 소개합니다.
 
-## <a name="what-does-support-mean"></a>지원은 무엇을 의미합니까? 
+## 지원은 무엇을 의미합니까? 
 지원은 Microsoft가 이러한 호스트/게스트 조합을 테스트했다는 것을 의미합니다.  이러한 조합과 관련된 문제는 제품 지원 서비스의 도움을 받을 수 있습니다.
  
 Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지원을 제공합니다.
@@ -26,7 +27,7 @@ Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지
 
 지원을 받으려면 Hyper-V 호스트 및 게스트는 Windows Update를 통해 사용할 수 있는 모든 중요 업데이트로 업데이트되어야 합니다.
 
-## <a name="supported-guest-operating-systems"></a>지원되는 게스트 운영 체제
+## 지원되는 게스트 운영 체제
 
 지원을 받으려면 Windows 게스트 운영 체제와 호스트 운영 체제 모두 Windows Update를 통해 사용할 수 있는 모든 중요 업데이트로 최신 상태를 유지해야 합니다.
 
@@ -34,7 +35,7 @@ Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지
 |:-----|:-----|:-----|
 | Windows 10 | 32 | |
 | Windows 8.1 | 32 | |
-| Windows8 | 32 |    |
+| Windows8 | 32 |  |
 | Windows 7 SP 1(서비스 팩 1) | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows 7 | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows Vista SP2(서비스 팩 2) | 2 | Business/Enterprise/Ultimate(N 및 KN 버전 포함) | 
@@ -48,7 +49,7 @@ Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지
   
  > Windows 10은 Windows 8.1 및 Windows Server 2012 R2 Hyper-V 호스트에서 게스트 운영 체제로 실행할 수 있습니다.
 
-## <a name="supported-linux-and-free-bsd"></a>지원되는 Linux 및 무료 BSD
+## 지원되는 Linux 및 무료 BSD
 
 | 게스트 운영 체제 |  |
 |:-----|:------|

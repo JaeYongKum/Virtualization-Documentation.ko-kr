@@ -8,16 +8,17 @@ ms.topic: about-article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 29fbe13a-228a-4eaa-9d4d-90ae60da5965
-ms.openlocfilehash: a06a92bce8f985e463a4b33a09a71d21e264a036
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 27808eddb624bdfc61d971d46be609a49c051664
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="building-a-container-ecosystem"></a>컨테이너 생태계 구축
+# 컨테이너 생태계 구축
 
 컨테이너 생태계를 구축하는 것이 왜 그렇게 중요한지 이해하기 위해 먼저 Docker에 대해 살펴보겠습니다.
 
-## <a name="dockers-appeal"></a>Docker의 효과
+## Docker의 효과
 
 컨테이너 개념(네임스페이 격리 및 리소스 관리)은 BSD Jails, Solaris Zones 및 UNIX chroot(루트 변경) 메커니즘으로 거슬러 올라가 오래 전부터 사용되었습니다.   Docker의 역할은 공통 도구 집합, 패키징 모델, 배포 메커니즘을 제공하는 것입니다.  이를 통해 Docker는 응용 프로그램의 컨테이너화와 배포를 크게 간소화합니다.  그러면 이러한 응용 프로그램이 Linux 호스트의 어느 위치에서나 Windows에서 기능을 실행할 수 있습니다.
 
@@ -30,7 +31,7 @@ Docker는 개발을 위한 훌륭한 토대가 됩니다.
 이제 이러한 응용 프로그램 생태계와, Docker 개념을 바탕으로 자신의 요구에 부합하는 개발 및 배포 워크플로를 만드는 방법에 대해 살펴보겠습니다.
 
 
-## <a name="components-in-a-container-ecosystem"></a>컨테이너 생태계의 구성 요소
+## 컨테이너 생태계의 구성 요소
 
 Windows 컨테이너는 대규모 컨테이너 생태계의 핵심 구성 요소입니다. 전 업계에 걸친 협력을 통해 개발자들에게 각 계층의 솔루션 스택에서 옵션을 제공하고 있습니다.
 

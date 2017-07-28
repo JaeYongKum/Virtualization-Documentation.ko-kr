@@ -8,15 +8,16 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: cfbb2542-fead-48e7-8318-4da92a7b5b6f
-ms.openlocfilehash: b074692369719f32acf04714f539f03fb521e85d
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: b6c25285c3cee3a863bef40c34a1cf13b66b42fb
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="community-videos-and-blogs"></a>커뮤니티 비디오 및 블로그
+# 커뮤니티 비디오 및 블로그
 이 페이지에는 회원이나 컨테이너 커뮤니티에서 만든 비디오와 블로그에 대한 링크가 포함되어 있습니다.  유용한 리소스를 알고 있거나 리소스를 직접 만든 경우 이 목록에 추가할 PR을 제출하세요.
 
-## <a name="getting-started"></a>시작
+## 시작
 [Run Linux and Windows Containers on Windows 10](https://stefanscherer.github.io/run-linux-and-windows-containers-on-windows-10/)(Windows 10에서 Linux 및 Windows 컨테이너 실행)- Stefan Scherer
 
 [Build and run your first Docker Windows Server container](https://blog.docker.com/2016/09/build-your-first-docker-windows-server-container/)(첫 번째 Docker Windows Server 컨테이너 빌드 및 실행) - Michael Friis
@@ -24,7 +25,7 @@ ms.contentlocale: ko-KR
 [Run IIS + ASP.NET on Windows 10 with Docker](http://blog.alexellis.io/run-iis-asp-net-on-windows-10-with-docker/)(Windows 10에서 Docker를 사용하여 IIS + ASP.NET 실행) - Alex Ellis
 
 
-## <a name="building-and-examples"></a>빌드 및 예제
+## 빌드 및 예제
 [An Overview of .NET and Containers](http://blog.alexellis.io/docker-dotnet-containers/)(.NET 및 컨테이너 개요) - Alex Ellis
 
 [Docker with Microsoft SQL 2016 + ASP.NET](http://blog.alexellis.io/docker-does-sql2016-aspnet/)(Docker와 Microsoft SQL 2016 + ASP.NET 통합) - Alex Ellis
@@ -43,7 +44,7 @@ ms.contentlocale: ko-KR
 
 [Running Neo4j in Windows Containers](http://glennsarti.github.io/blog/neo4j-nano-containers)(Windows 컨테이너에서 Neo4j 실행) - Glenn Sarti
 
-## <a name="configuration-and-managment"></a>구성 및 관리
+## 구성 및 관리
 [How to protect a Windows 2016 Docker engine with TLS](https://stefanscherer.github.io/protecting-a-windows-2016-docker-engine-with-tls/)(TLS를 사용하여 Windows 2016 Docker 엔진을 보호하는 방법) - Stefan Scherer
 
 [Windows #Container Performance of Layers](http://dille.name/blog/2017/01/13/windows-container-performance-of-layers/)(레이어의 Windows 컨테이너 성능) - Nicholas Dille

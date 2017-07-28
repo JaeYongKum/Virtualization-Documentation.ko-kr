@@ -8,18 +8,21 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: a6ed0cccb984d303990973a1e2009cc2922f9443
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 66bb1ba56fde13d76392ddb4a1f8e6855201e7a3
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="windows-containers-on-windows-10"></a>Windows 10의 Windows 컨테이너
+# Windows 10의 Windows 컨테이너
 
 이 연습에서는 Windows 10 Professional 또는 Enterprise(Anniversary Edition)에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 이 연습을 통해 Windows용 Docker를 설치하고 간단한 컨테이너를 실행해 볼 수 있습니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./index.md)에서 찾을 수 있습니다.
 
 이 빠른 시작은 Windows 10에만 해당합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
-**필수 구성 요소:**
+***Hyper-V 격리:*** Windows Server 컨테이너는 프로덕션에 사용되는 동일한 커널 버전 및 구성을 개발자에게 제공하려면 Windows 10에서 Hyper-V 격리가 필요합니다. 자세한 내용은 [Windows 컨테이너 정보](../about/index.md) 페이지에서 확인할 수 있습니다.
+
+**필수 조건:**
 
 - Windows 10 Anniversary Edition 또는 크리에이터스 업데이트(Professional 또는 Enterprise)를 실행하는 물리적 컴퓨터 시스템 하나.   
 - 이 빠른 시작은 Windows 10 가상 컴퓨터에서 실행할 수 있지만 중첩된 가상화를 사용하도록 설정해야 합니다. 자세한 정보는 [중첩된 가상화 가이드](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting)에서 확인할 수 있습니다.
@@ -28,17 +31,17 @@ ms.contentlocale: ko-KR
 > 실행 중인 OS 버전을 확인하려면 `winver.exe`, 를 실행한 후, [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history)
 > 계속하기 전에 14393.222 이상인지 확인합니다.
 
-## <a name="1-install-docker-for-windows"></a>1. Windows용 Docker 설치
+## 1. Windows용 Docker 설치
 
 [Windows용 Docker를 다운로드](https://download.docker.com/win/stable/InstallDocker.msi)하고 설치 프로그램을 실행합니다. [자세한 설치 지침](https://docs.docker.com/docker-for-windows/install)은 Docker 설명서에 제공됩니다.
 
-## <a name="2-switch-to-windows-containers"></a>2. Windows 컨테이너로 전환
+## 2. Windows 컨테이너로 전환
 
 설치가 완료되면 Windows용 Docker는 기본적으로 Linux 컨테이너를 실행하도록 설정됩니다. Docker 트레이 메뉴를 사용하거나 PowerShell 프롬프트에서 `& $Env:ProgramFiles\Docker\Docker\DockerCli.exe -SwitchDaemon` 명령을 실행하여 Windows 컨테이너로 전환합니다.
 
 ![](./media/docker-for-win-switch.png)
 
-## <a name="3-install-base-container-images"></a>3. 기본 컨테이너 이미지 설치
+## 3. 기본 컨테이너 이미지 설치
 
 Windows 컨테이너는 기본 이미지로 만듭니다. 다음 명령은 Nano Server 기본 이미지를 가져옵니다.
 
@@ -57,7 +60,7 @@ microsoft/nanoserver   latest              105d76d0f40e        4 days ago       
 
 > [EULA](../images-eula.md)에서 Windows 컨테이너 OS 이미지 EULA를 읽어보세요.
 
-## <a name="4-run-your-first-container"></a>4. 첫 번째 컨테이너 실행
+## 4. 첫 번째 컨테이너 실행
 
 이 간단한 예제에서는 'Hello World' 컨테이너 이미지를 만들고 배포합니다. 최상의 환경을 유지하려면 관리자 권한 Windows CMD 셸 또는 PowerShell에서 이 명령을 실행합니다.
 
@@ -108,6 +111,6 @@ docker run --rm helloworld powershell c:\helloworld.ps1
 `docker run` 명령의 결과로 'HelloWorld' 이미지에서 Hyper-V 컨테이너를 만들고 샘플 'Hello World' 스크립트를 실행(출력은 셸에 에코됨)한 다음 컨테이너를 중지하고 제거했습니다.
 이후 Windows 10 및 컨테이너 빠른 시작에서는 Windows 10의 컨테이너에서 응용 프로그램을 만들고 배포하는 과정을 자세히 살펴봅니다.
 
-## <a name="next-steps"></a>다음 단계
+## 다음 단계
 
 [Windows Server의 Windows 컨테이너](./quick-start-windows-server.md)

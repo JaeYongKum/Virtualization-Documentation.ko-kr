@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
-ms.openlocfilehash: 2e2289bbb7801824c13e5ba4cb17d51beb26fbfa
-ms.sourcegitcommit: b55d4d31a5706e2f65f4c4a029c2f55a76711253
+ms.openlocfilehash: c98ab9c32dfcd6e9b3a0258d0282b28d78726f6a
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="hyper-v-integration-services"></a>Hyper-V 통합 서비스
+# Hyper-V 통합 서비스
 
 통합 서비스(통합 구성 요소라고도 함)는 가상 컴퓨터가 Hyper-V 호스트와 통신하도록 허용하는 서비스입니다. 이러한 서비스 중 상당수는 편리하며 나머지 서비스는 가상 컴퓨터의 기능이 제대로 작동하도록 하는 데 매우 중요할 수 있습니다.
 
@@ -23,7 +24,7 @@ ms.contentlocale: ko-KR
 * [통합 서비스 관리](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/manage/manage-Hyper-V-integration-services)
 
 
-## <a name="quick-reference"></a>빠른 참조
+## 빠른 참조
 
 | Name | Windows 서비스 이름 | Linux 디먼 이름 |  설명 | 사용하지 않을 때 VM에 미치는 영향 |
 |:---------|:---------|:---------|:---------|:---------|
@@ -36,7 +37,7 @@ ms.contentlocale: ko-KR
 | [Hyper-V PowerShell Direct 서비스](#hyper-v-powershell-direct-service) | vmicvmsession | 사용할 수 없음 | 네트워크 연결 없이 PowerShell을 사용하여 가상 컴퓨터를 관리하는 방법을 제공합니다. | 낮음 |  
 
 
-## <a name="hyper-v-heartbeat-service"></a>Hyper-V 하트비트 서비스
+## Hyper-V 하트비트 서비스
 
 **Windows 서비스 이름:** vmicheartbeat  
 **Linux 디먼 이름:** hv_utils  
@@ -48,7 +49,7 @@ ms.contentlocale: ko-KR
 
 Hyper-V에서 가상 컴퓨터 상태가 “실행 중”인 것으로 보고하면(아래 예제 참조) Hyper-V에서 가상 컴퓨터에 대해 리소스를 예약해 두었다는 의미이며, 설치되었거나 작동 중인 운영 체제가 있다는 의미가 아닙니다.  이 경우 하트비트가 유용합니다.  하트비트 서비스는 가상 컴퓨터 내의 운영 체제가 부팅되었음을 Hyper-V에 알립니다.  
 
-### <a name="check-heartbeat-with-powershell"></a>PowerShell을 사용하여 하트비트 확인
+### PowerShell을 사용하여 하트비트 확인
 
 관리자는 [Get-VM](https://technet.microsoft.com/en-us/library/hh848479.aspx)을 실행하여 가상 컴퓨터의 하트비트를 확인합니다.
 ``` PowerShell
@@ -66,7 +67,7 @@ DemoVM  Running  Operating normally
 
 
 
-## <a name="hyper-v-guest-shutdown-service"></a>Hyper-V 게스트 종료 서비스
+## Hyper-V 게스트 종료 서비스
 
 **Windows 서비스 이름:** vmicshutdown  
 **Linux 디먼 이름:** hv_utils  
@@ -75,7 +76,7 @@ DemoVM  Running  Operating normally
 **영향:** **강력한 영향**  사용하지 않도록 설정하면 호스트는 가상 컴퓨터 내에서 종료를 트리거할 수 없습니다.  모든 종료는 데이터 손실이나 데이터 손상을 일으킬 수 있는 하드 전원 끄기가 됩니다.  
 
 
-## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 시간 동기화 서비스
+## Hyper-V 시간 동기화 서비스
 
 **Windows 서비스 이름:** vmictimesync  
 **Linux 디먼 이름:** hv_utils  
@@ -84,7 +85,7 @@ DemoVM  Running  Operating normally
 **영향:** **강력한 영향**  사용하지 않도록 설정하면 가상 컴퓨터의 시계는 이상하게 작동합니다.  
 
 
-## <a name="hyper-v-data-exchange-service-kvp"></a>Hyper-V 데이터 교환 서비스(KVP)
+## Hyper-V 데이터 교환 서비스(KVP)
 
 **Windows 서비스 이름:** vmickvpexchange  
 **Linux 디먼 이름:** hv_kvp_daemon  
@@ -103,7 +104,7 @@ DemoVM  Running  Operating normally
 * [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://technet.microsoft.com/en-us/library/dn798287.aspx).  
 
 
-## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V 볼륨 섀도 복사본 요청자
+## Hyper-V 볼륨 섀도 복사본 요청자
 
 **Windows 서비스 이름:** vmicvss  
 **Linux 디먼 이름:** hv_vss_daemon  
@@ -116,7 +117,7 @@ DemoVM  Running  Operating normally
 볼륨 섀도 복사본에 대한 자세한 내용은 [여기](https://msdn.microsoft.com/en-us/library/dd405549.aspx)에서 확인하세요.
 
 
-## <a name="hyper-v-guest-service-interface"></a>Hyper-V 게스트 서비스 인터페이스
+## Hyper-V 게스트 서비스 인터페이스
 
 **Windows 서비스 이름:** vmicguestinterface  
 **Linux 디먼 이름:** hv_fcopy_daemon  
@@ -128,7 +129,7 @@ DemoVM  Running  Operating normally
 기본적으로 사용할 수 없게 설정되어 있습니다.  [Copy-Item을 사용하는 PowerShell Direct](../user-guide/powershell-direct.md#copy-files-with-new-pssession-and-copy-item)를 참조하세요. 
 
 
-## <a name="hyper-v-powershell-direct-service"></a>Hyper-V PowerShell Direct 서비스
+## Hyper-V PowerShell Direct 서비스
 
 **Windows 서비스 이름:** vmicvmsession  
 **Linux 디먼 이름:** 해당 없음  

@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
-ms.openlocfilehash: be51a89292f339c40b05bb48e0921777fd4a9801
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 569ba8619e60a9c34c2939ff2106076e66040aa8
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="windows-containers-on-windows-server"></a>Windows Server의 Windows 컨테이너
+# Windows Server의 Windows 컨테이너
 
 이 연습에서는 Windows Server 2016에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 이 연습을 하는 동안 컨테이너 역할을 설치하고 간단한 Windows Server 컨테이너를 배포하게 됩니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./index.md)에서 찾을 수 있습니다.
 
@@ -31,7 +32,7 @@ Azure에서 배포 하려는 경우 이 [템플릿](https://github.com/Microsoft
 </a>
 
 
-## <a name="1-install-docker"></a>1. Docker 설치
+## 1. Docker 설치
 
 Docker를 설치하기 위해 [OneGet 공급자 PowerShell 모듈](https://github.com/oneget/oneget)을 사용하겠습니다. 이 모듈은 공급자(여기서는 [MicrosoftDockerProvider](https://github.com/OneGet/MicrosoftDockerProvider))와 함께 작동하여 설치를 수행합니다. 공급자를 사용하여 컴퓨터에서 컨테이너 기능을 사용하도록 설정할 수 있습니다. Docker 설치를 위해 컴퓨터를 다시 부팅해야 할 수도 있습니다. Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다.
 
@@ -59,7 +60,7 @@ Restart-Computer -Force
 >  - 다음을 사용하여 현재 버전을 검색 `Find-Package -Name Docker -ProviderName DockerMsftProvider`
 >  - 준비를 마쳤으면 `Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force` 명령을 사용하여 업그레이드, 그리고 `Start-Service Docker`
 
-## <a name="2-install-windows-updates"></a>2. Windows 업데이트 설치
+## 2. Windows 업데이트 설치
 
 다음을 실행하여 Windows Server 시스템이 최신 상태인지 확인합니다.
 
@@ -87,7 +88,7 @@ sconfig
 
 메시지가 표시되면 모든 업데이트를 다운로드할 수 있는 옵션 A를 선택합니다.
 
-## <a name="3-deploy-your-first-container"></a>3. 첫 번째 컨테이너 배포
+## 3. 첫 번째 컨테이너 배포
 
 이 연습에서는 미리 만든 .NET 샘플 이미지를 Docker 허브 레지스트리에서 다운로드하고 .Net Hello World 응용 프로그램을 실행하는 간단한 컨테이너를 배포합니다.  
 
@@ -147,7 +148,7 @@ OS: Microsoft Windows 10.0.14393
 
 Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Reference(Docker Run 참조)]( https://docs.docker.com/engine/reference/run/)를 참조하세요.
 
-## <a name="next-steps"></a>다음 단계
+## 다음 단계
 
 [Windows Server의 컨테이너 이미지](./quick-start-images.md)
 

@@ -8,23 +8,24 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 532195c6-564b-4954-97c2-5a5795368c09
-ms.openlocfilehash: 12792da23a9e9f85674e8878f5bf81f8bc7ab4e4
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 67513f6ee7d990f4d9086dfd63fb719374377b1f
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="create-a-virtual-network"></a>가상 네트워크 만들기
+# 가상 네트워크 만들기
 
 가상 컴퓨터는 컴퓨터와 네트워크를 공유할 가상 네트워크가 필요합니다.  가상 네트워크 만들기는 선택적입니다. 가상 컴퓨터를 인터넷이나 네트워크에 연결할 필요가 없다면 [Windows 가상 컴퓨터 만들기](create-virtual-machine.md)로 건너뛰세요.
 
 
-## <a name="connect-virtual-machines-to-the-internet"></a>가상 컴퓨터를 인터넷에 연결
+## 가상 컴퓨터를 인터넷에 연결
 
 Hyper-V에는 외부, 내부, 개인의 세 가지 가상 스위치 유형이 있습니다. 컴퓨터의 네트워크를 여기에서 실행 중인 가상 컴퓨터와 공유하려면 외부 스위치를 만듭니다.
 
 이 연습은 외부 가상 스위치를 만드는 과정을 안내합니다. 완료되면 Hyper-V 호스트가 가상 컴퓨터를 컴퓨터의 네트워크 연결을 통해 인터넷에 연결할 수 있는 가상 스위치를 가지게 됩니다. 
 
-### <a name="create-a-virtual-switch-with-hyper-v-manager"></a>Hyper-V 관리자를 사용하여 가상 스위치 만들기
+### Hyper-V 관리자를 사용하여 가상 스위치 만들기
 
 1. Hyper-V 관리자를 엽니다.  이를 빠르게 하는 방법은 Windows 단추나 키를 누르고 "Hyper-V Manager"를 입력하는 것입니다.  
 검색으로 Hyper-V 관리자를 찾을 수 없다면 Hyper-V 또는 Hyper-V 관리 도구를 사용하지 않도록 설정한 것입니다.  [Hyper-V를 사용하도록 설정](enable-hyper-v.md)하기 위한 지침을 참조하십시오.
@@ -54,7 +55,7 @@ Hyper-V에는 외부, 내부, 개인의 세 가지 가상 스위치 유형이 �
 11. **확인**을 선택하여 가상 스위치 관리자 창을 닫습니다.
 
 
-### <a name="create-a-virtual-switch-with-powershell"></a>PowerShell을 사용하여 가상 스위치 만들기
+### PowerShell을 사용하여 가상 스위치 만들기
 
 다음 단계는 PowerShell을 사용하여 외부 연결로 가상 스위치를 만드는 데 사용할 수 있습니다. 
 
@@ -81,9 +82,9 @@ Hyper-V에는 외부, 내부, 개인의 세 가지 가상 스위치 유형이 �
     New-VMSwitch -Name "External VM Switch" -AllowManagementOS $True -NetAdapterName $net.Name
     ```
 
-## <a name="virtual-networking-on-a-laptop"></a>노트북에서 가상 네트워킹
+## 노트북에서 가상 네트워킹
 
-### <a name="nat-networking"></a>NAT 네트워킹
+### NAT 네트워킹
 NAT(네트워크 주소 변환)를 사용하면 내부 Hyper-V 가상 스위치를 통해 호스트 컴퓨터의 IP 주소를 포트와 조합하여 가상 컴퓨터에서 컴퓨터의 네트워크에 액세스할 수 있습니다.
 
 이는 몇 가지 유용한 속성을 가지고 있습니다.
@@ -93,9 +94,9 @@ NAT(네트워크 주소 변환)를 사용하면 내부 Hyper-V 가상 스위치�
 
 NAT 네트워크를 설정하고 가상 컴퓨터에 연결하려면 [NAT 네트워킹 사용자 가이드](../user-guide/setup-nat-network.md)를 따르십시오.
 
-### <a name="the-two-switch-approach"></a>두 스위치 접근 방식
+### 두 스위치 접근 방식
 노트북에서 Windows 10 Hyper-V를 실행 중이고 무선 네트워킹과 유선 네트워크 사이를 자주 전환한다면 이더넷과 무선 네트워크 카드 모두를 위한 가상 스위치를 만들고자 할 수 있습니다. 이 구성을 사용하면 노트북이 네트워크에 연결된 방법에 따라 이러한 스위치 간에 가상 컴퓨터를 변경할 수 있습니다. 가상 컴퓨터는 유선 및 무선 간에 자동으로 전환되지 않습니다.
 
 
-## <a name="next-step---create-a-virtual-machine"></a>다음 단계 - 가상 컴퓨터 만들기
+## 다음 단계 - 가상 컴퓨터 만들기
 [Windows 가상 컴퓨터 만들기](create-virtual-machine.md)

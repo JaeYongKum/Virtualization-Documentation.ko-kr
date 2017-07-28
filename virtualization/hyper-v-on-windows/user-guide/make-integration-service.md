@@ -7,12 +7,13 @@ ms.date: 04/07/2017
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 1ef8f18c-3d76-4c06-87e4-11d8d4e31aea
-ms.openlocfilehash: d50648efcaac40d6a60430b44c070717adf31b4d
-ms.sourcegitcommit: d5f30aa1bdfb34dd9e1909d73b5bd9f4153d6b46
+ms.openlocfilehash: 971593b762b51bd24f43c40d4697fdd3cef82400
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="make-your-own-integration-services"></a>고유한 통합 서비스 만들기
+# 고유한 통합 서비스 만들기
 
 Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대한 새로운 주소 집합과 특수 끝점을 제공하는 Windows 소켓인 Hyper-V 소켓을 사용하여 Hyper-V 호스트 및 해당 가상 컴퓨터와 통신하는 응용 프로그램을 만들 수 있습니다.  Hyper-V 소켓을 통한 통신은 모두 네트워킹을 사용하지 않고 실행되며 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다.   Hyper-V 소켓을 사용하는 응용 프로그램은 Hyper-V의 통합 서비스와 비슷합니다.
 
@@ -34,7 +35,7 @@ Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대�
 
 --------------
 
-## <a name="getting-started"></a>시작
+## 시작
 
 요구 사항:
 * C/C++ 컴파일러.  없으면 [Visual Studio 커뮤니티](https://aka.ms/vs)를 확인하세요.
@@ -43,7 +44,7 @@ Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대�
 
 > **참고:** API for Hyper-V 소켓용 API는   직후 Windows 10에서 공개되었습니다.  HVSocket을 사용하는 응용 프로그램은 Windows 10 호스트와 게스트에서 실행되지만 빌드 14290 이후의 Windows SDK로만 개발할 수 있습니다.  
 
-## <a name="register-a-new-application"></a>새 응용 프로그램 등록
+## 새 응용 프로그램 등록
 Hyper-V 소켓을 사용하려면 응용 프로그램을 Hyper-V 호스트의 레지스트리에 등록해야 합니다.
 
 레지스트리에 서비스를 등록하면 다음이 가능합니다.
@@ -84,9 +85,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices\
     999E53D4-3D5C-4C3E-8779-BED06EC056E1\
-        ElementName    REG_SZ    VM Session Service
+        ElementName REG_SZ  VM Session Service
     YourGUID\
-        ElementName    REG_SZ    Your Service Friendly Name
+        ElementName REG_SZ  Your Service Friendly Name
 ```
 
 > ** 팁: **  PowerShell에서 GUID를 생성하고 클립보드에 복사하려면 다음을 실행합니다.  
@@ -94,7 +95,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 (New-Guid).Guid | clip.exe
 ```
 
-## <a name="create-a-hyper-v-socket"></a>Hyper-V 소켓 만들기
+## Hyper-V 소켓 만들기
 
 대부분의 기본적인 경우 소켓을 정의하려면 주소 집합, 연결 유형 및 프로토콜이 필요합니다.
 
@@ -122,7 +123,7 @@ SOCKET sock = socket(AF_HYPERV, SOCK_STREAM, HV_PROTOCOL_RAW);
 ```
 
 
-## <a name="bind-to-a-hyper-v-socket"></a>Hyper-V 소켓에 바인딩
+## Hyper-V 소켓에 바인딩
 
 소켓을 연결 정보에 바인딩합니다.
 
@@ -161,7 +162,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 
 특정 가상 컴퓨터에 대한 연결이 아닌 경우 VMID 와일드 카드 집합도 사용할 수 있습니다. 
  
-### <a name="vmid-wildcards"></a>VMID 와일드카드
+### VMID 와일드카드
 
 | 이름 | GUID | 설명 |
 |:-----|:-----|:-----|
@@ -181,7 +182,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 (VM 내: 컨테이너 호스트/컨테이너 없음): VM 호스트  
 (VM 내부 아님: 컨테이너 호스트/컨테이너 없음): 지원 안 함
 
-## <a name="supported-socket-commands"></a>지원되는 소켓 명령
+## 지원되는 소켓 명령
 
 Socket()  
 Bind()  
@@ -190,7 +191,7 @@ Send()
 Listen()  
 Accept()  
 
-## <a name="useful-links"></a>유용한 링크
+## 유용한 링크
 [WinSock API 완료](https://msdn.microsoft.com/en-us/library/windows/desktop/ms741394.aspx)
 
 [Hyper-V 통합 서비스 참조](../reference/integration-services.md)

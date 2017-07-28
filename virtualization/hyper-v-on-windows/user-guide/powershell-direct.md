@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
-ms.openlocfilehash: 6e9a70e370f1c13a69dd617d4564be9d6c2f6017
-ms.sourcegitcommit: bb171f4a858fefe33dd0748b500a018fd0382ea6
+ms.openlocfilehash: 1eea533459b565ffceca23ca7454e9678abc52e9
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="virtual-machine-automation-and-management-using-powershell"></a>PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
+# PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
  
 PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설정에 상관없이 Hyper-V 호스트의 Windows 10 또는 Windows Server Technical Preview 가상 컴퓨터에서 임의의 PowerShell을 실행할 수 있습니다.
 
@@ -23,7 +24,7 @@ PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설�
 * 영구 세션(빌드 14280 이상) -- New-PSSession을 사용하여 영구 세션을 만들려면 [여기를 클릭](#copy-files-with-new-pssession-and-copy-item)하세요.  
 Copy-Item을 사용하여 가상 컴퓨터 간에 계속 파일을 복사한 다음 Remove-PSSession을 사용하여 연결을 끊습니다.
 
-## <a name="requirements"></a>요구 사항
+## 요구 사항
 **운영 체제 요구 사항:**
 * 호스트: Windows 10, Hyper-V를 실행하는 Windows Server Technical Preview 2 이상
 * 게스트/가상 컴퓨터: Windows 10, Windows Server Technical Preview 2 이상
@@ -38,7 +39,7 @@ Copy-Item을 사용하여 가상 컴퓨터 간에 계속 파일을 복사한 다
 
 -------------
 
-## <a name="create-and-exit-an-interactive-powershell-session"></a>대화형 PowerShell 세션 만들기 및 종료
+## 대화형 PowerShell 세션 만들기 및 종료
 
 가상 컴퓨터에서 PowerShell 명령을 실행하는 가장 쉬운 방법은 대화형 세션을 시작하는 것입니다.
 
@@ -79,7 +80,7 @@ Copy-Item을 사용하여 가상 컴퓨터 간에 계속 파일을 복사한 다
 
 -------------
 
-## <a name="run-a-script-or-command-with-invoke-command"></a>Invoke-Command를 사용하여 스크립트 또는 명령 실행
+## Invoke-Command를 사용하여 스크립트 또는 명령 실행
 
 Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하나의 명령이나 하나의 스크립트를 실행해야 하지만 그 후에는 가상 컴퓨터와 계속 상호 작용할 필요가 없는 경우에 매우 적합합니다.
 
@@ -118,7 +119,7 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
 
 -------------
 
-## <a name="copy-files-with-new-pssession-and-copy-item"></a>New-PSSession 및 Copy-Item을 사용하여 파일 복사
+## New-PSSession 및 Copy-Item을 사용하여 파일 복사
 
 > **참고:** PowerShell Direct는 Windows 빌드 14280 이상에서만 영구 세션을 지원합니다.
 
@@ -166,11 +167,11 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
   
 -------------
 
-## <a name="troubleshooting"></a>문제 해결
+## 문제 해결
 
 PowerShell Direct를 통해 표시되는 작은 집합의 일반적인 오류 메시지가 있습니다.  다음은 가장 일반적인, 몇 가지 원인 및 문제를 진단하기 위한 도구입니다.
 
-### <a name="-vmname-or--vmid-parameters-dont-exist"></a>-VMName 또는 -VMID 매개 변수가 없습니다.
+### -VMName 또는 -VMID 매개 변수가 없습니다.
 **문제:**  
 `Enter-PSSession`, `Invoke-Command` 또는 `New-PSSession`에 `-VMName` 또는 `-VMId` 매개 변수가 없습니다.
 
@@ -192,7 +193,7 @@ $PSVersionTable.PSVersion
 ```
 
 
-### <a name="error-a-remote-session-might-have-ended"></a>오류: 원격 세션이 종료됐을 수 있습니다.
+### 오류: 원격 세션이 종료됐을 수 있습니다.
 > **참고:**  
 호스트 빌드 10240과 12400 사이의 Enter-PSSession에 대해 아래의 모든 오류가 " 원격 세션이 종료되었을 수 있습니다."로 보고되었습니다.
 
@@ -226,7 +227,7 @@ New-PSSession : An error has occurred which Windows PowerShell cannot handle. A 
 Restart-Service -Name vmicvmsession
 ```
 
-### <a name="error-parameter-set-cannot-be-resolved"></a>오류: 매개 변수 집합을 확인할 수 없습니다.
+### 오류: 매개 변수 집합을 확인할 수 없습니다.
 **오류 메시지:**  
 ``` 
 Enter-PSSession : Parameter set cannot be resolved using the specified named parameters.
@@ -240,7 +241,7 @@ Enter-PSSession : Parameter set cannot be resolved using the specified named par
 관리자 자격 증명을 `-Credential` 매개 변수를 사용하여 가상 컴퓨터에 전달하거나 메시지가 표시될 때 수동으로 입력하여 전달할 수 있습니다.
 
 
-### <a name="error-the-credential-is-invalid"></a>오류: 자격 증명이 잘못되었습니다.
+### 오류: 자격 증명이 잘못되었습니다.
 
 **오류 메시지:**  
 ```
@@ -253,7 +254,7 @@ Enter-PSSession : The credential is invalid.
   * 게스트에 사용자 계정이 없습니다.(OS가 이전에 부팅되지 않았습니다)
   * 관리자 권한으로 연결하는 경우: 관리자가 활성 사용자로 설정되지 않았습니다.  [여기](https://technet.microsoft.com/en-us/library/hh825104.aspx)에서 자세한 내용을 알아보세요.
   
-### <a name="error-the-input-vmname-parameter-does-not-resolve-to-any-virtual-machine"></a>오류: 입력 VMName 매개 변수가 가상 컴퓨터로 확인되지 않습니다.
+### 오류: 입력 VMName 매개 변수가 가상 컴퓨터로 확인되지 않습니다.
 
 **오류 메시지:**  
 ```
@@ -269,7 +270,7 @@ Enter-PSSession : The input VMName parameter does not resolve to any virtual mac
 
 -------------
 
-## <a name="samples-and-user-guides"></a>샘플 및 사용자 가이드
+## 샘플 및 사용자 가이드
 
 PowerShell Direct는 JEA(Just Enough Administration)를 지원합니다.  사용해 보려면 이 사용자 가이드를 확인하세요.
 

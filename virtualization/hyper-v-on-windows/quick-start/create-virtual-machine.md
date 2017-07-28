@@ -7,16 +7,17 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 66723f33-b12c-49d1-82cf-71ba9d6087e9
-ms.openlocfilehash: 200ec68011628262950362620ae5b438f1b6b86c
-ms.sourcegitcommit: c8e6bf83ee873fe19b522ba9e416ecf5d29f4c95
+ms.openlocfilehash: fc6228253c2ad5fe8a01db283f578abbfbee716c
+ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
 ms.translationtype: HT
 ms.contentlocale: ko-KR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="create-virtual-machine-with-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
+# Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
 
 가상 컴퓨터를 만들고 새 가상 컴퓨터에 운영 체제를 설치하는 방법을 알아보세요.  실행하려는 운영 체제의 .iso 파일이 필요합니다. 필요한 경우 [TechNet Evaluation Center](http://www.microsoft.com/en-us/evalcenter/)에서 Windows 10 평가판을 가져옵니다.
 
-## <a name="create-a-virtual-machine-with-hyper-v-manager"></a>Hyper-V 관리자를 사용하여 가상 컴퓨터 만들기
+## Hyper-V 관리자를 사용하여 가상 컴퓨터 만들기
 
 1. Window 키를 누르고 "Hyper-V 관리자"를 입력하거나 응용 프로그램에서 **Hyper-V 관리자**를 검색하여 Hyper-V 관리자를 엽니다.
 
@@ -61,7 +62,7 @@ ms.contentlocale: ko-KR
   
 10. 가상 컴퓨터 세부 정보를 검토하고 **마침**을 클릭하여 가상 컴퓨터 만들기를 완료합니다.
 
-## <a name="create-a-virtual-machine-with-powershell"></a>PowerShell을 사용하여 가상 컴퓨터 만들기
+## PowerShell을 사용하여 가상 컴퓨터 만들기
 
 1. 관리자 권한으로 PowerShell ISE를 엽니다.
 
@@ -87,7 +88,7 @@ ms.contentlocale: ko-KR
   Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
   ```
   
-## <a name="complete-the-operating-system-deployment"></a>운영 체제 배포 완료
+## 운영 체제 배포 완료
 
 가상 컴퓨터 빌드를 완료하려면 가상 컴퓨터를 시작하고 운영 체제 설치를 진행해야 합니다.
 
