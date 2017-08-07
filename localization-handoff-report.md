@@ -1,20 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [virtualization\windowscontainers\quick-start\building-sample-app.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/4f5b9f70804bf6282af8bef603cc343c524c3102/virtualization/windowscontainers/quick-start/building-sample-app.md) | HandedOffSuccess | [Details](#2ba3e6409fc60022a55d21c187bfcaefd962908b350)
- [virtualization\windowscontainers\quick-start\quick-start-images.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/4f5b9f70804bf6282af8bef603cc343c524c3102/virtualization/windowscontainers/quick-start/quick-start-images.md) | HandedOffSuccess | [Details](#0d247989294de59ed599aba3ab982cac772efcf6394)
+ [virtualization\windowscontainers\manage-docker\optimize-windows-dockerfile.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/48470217e479c49528d4d855c9aeeb89b68d6513/virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile.md) | HandedOffSuccess | [Details](#b0e916520b3cbcf4fdd0e02bc8a4fd7042fd2b8b330)
 
 ## Item Details
-##### <a name='2ba3e6409fc60022a55d21c187bfcaefd962908b350'></a> Source: [virtualization\windowscontainers\quick-start\building-sample-app.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/4f5b9f70804bf6282af8bef603cc343c524c3102/virtualization/windowscontainers/quick-start/building-sample-app.md)
+##### <a name='b0e916520b3cbcf4fdd0e02bc8a4fd7042fd2b8b330'></a> Source: [virtualization\windowscontainers\manage-docker\optimize-windows-dockerfile.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/48470217e479c49528d4d855c9aeeb89b68d6513/virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [building-sample-app.957afdd492b872efb91595b513db655c559f8646.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handoff/blob/4510b5ba29534088a6a58aa66925343125287567/ol-handoff/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/live/building-sample-app.957afdd492b872efb91595b513db655c559f8646.ko-kr.xlf)
-* Handoff Datetime: 2017-08-04 17:46:17
+* Handoff File: [optimize-windows-dockerfile.d1e84ff888241bdefbb9c9503a660b5ffd457b21.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handoff/blob/4a71938bc5cddc47afab1069a86e20938fde0130/ol-handoff/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/live/optimize-windows-dockerfile.d1e84ff888241bdefbb9c9503a660b5ffd457b21.ko-kr.xlf)
+* Handoff Datetime: 2017-08-07 18:46:47
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,24 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* [Back to Top](#report-top)
-
-##### <a name='0d247989294de59ed599aba3ab982cac772efcf6394'></a> Source: [virtualization\windowscontainers\quick-start\quick-start-images.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/4f5b9f70804bf6282af8bef603cc343c524c3102/virtualization/windowscontainers/quick-start/quick-start-images.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [quick-start-images.e5904b6fd8770efb91af0e77142fe3e655c268ad.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handoff/blob/4510b5ba29534088a6a58aa66925343125287567/ol-handoff/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/live/quick-start-images.e5904b6fd8770efb91af0e77142fe3e655c268ad.ko-kr.xlf)
-* Handoff Datetime: 2017-08-04 17:46:17
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [virtualization\windowscontainers\quick-start\quick-start-images.md](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/windowscontainers/quick-start/quick-start-images.md)
-* Current Handback File: [quick-start-images.e5904b6fd8770efb91af0e77142fe3e655c268ad.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-images.e5904b6fd8770efb91af0e77142fe3e655c268ad.ko-kr.xlf)
+* Current Target File: [virtualization\windowscontainers\manage-docker\optimize-windows-dockerfile.md](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile.md)
+* Current Handback File: [optimize-windows-dockerfile.d1e84ff888241bdefbb9c9503a660b5ffd457b21.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/optimize-windows-dockerfile.d1e84ff888241bdefbb9c9503a660b5ffd457b21.ko-kr.xlf)
 * Current Handback Datetime: 2017-01-24 13:19:55
-* Bilingual File: [quick-start-images.e5904b6fd8770efb91af0e77142fe3e655c268ad.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/quick-start-images.e5904b6fd8770efb91af0e77142fe3e655c268ad.ko-kr.xlf)
+* Bilingual File: [optimize-windows-dockerfile.d1e84ff888241bdefbb9c9503a660b5ffd457b21.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/optimize-windows-dockerfile.d1e84ff888241bdefbb9c9503a660b5ffd457b21.ko-kr.xlf)
 * Bilingual Datetime: 2017-01-24 13:22:04
 * [Back to Top](#report-top)
 
