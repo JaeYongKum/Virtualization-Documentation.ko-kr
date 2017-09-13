@@ -1,63 +1,64 @@
 ---
-title: "지원되는 Windows 게스트"
-description: "지원되는 Windows 게스트입니다."
+title: Supported Windows guests
+description: Supported Windows guests.
 keywords: windows 10, hyper-v
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
-ms.openlocfilehash: 7ef4d5aa084d199abfb39d1c44e4dd1305e07904
-ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
+ms.openlocfilehash: ac1ec3740cfa75acd8c005df3f67531c693cd914
+ms.sourcegitcommit: 63e890ad2caae3ce55503af81c6c5ff0d1e630f6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 08/17/2017
 ---
-# 지원되는 Windows 게스트 
+# Supported Windows guests 
 
-이 문서는 Windows의 Hyper-V에서 지원되는 운영 체제 조합을 나열합니다.  지원되는 통합 서비스 및 기타 요인에 대해서도 소개합니다.
+This article lists the operating system combinations supported in Hyper-V on Windows.  It also serves as an introduction to integration services and other factors in support.
 
-## 지원은 무엇을 의미합니까? 
-지원은 Microsoft가 이러한 호스트/게스트 조합을 테스트했다는 것을 의미합니다.  이러한 조합과 관련된 문제는 제품 지원 서비스의 도움을 받을 수 있습니다.
+## What does support mean? 
+Support means Microsoft has tested these host/guest combinations.  Issues with these combinations may receive attention from Product Support Services.
  
-Microsoft는 다음과 같은 방식으로 게스트 운영 체제에 대한 지원을 제공합니다.
-* Microsoft 운영 체제 및 통합 서비스에서 발견된 문제는 Microsoft 지원에서 지원됩니다.
-* Hyper-V에서 실행할 운영 체제 공급업체의 인증을 받은 다른 운영 체제에서 발견된 문제는 해당 공급업체가 지원 서비스를 제공합니다.
-* 기타 운영 체제에서 발견된 문제에 대해 Microsoft는 다중 공급업체 지원 커뮤니티인 [TSANet](http://www.tsanet.org/)에 문제를 제출합니다.
+Microsoft provides support for guest operating systems in the following manner:
+* Issues found in Microsoft operating systems and in integration services are supported by Microsoft support.
+* For issues found in other operating systems that have been certified by the operating system vendor to run on Hyper-V, support is provided by the vendor.
+* For issues found in other operating systems, Microsoft submits the issue to the multi-vendor support community, [TSANet](http://www.tsanet.org/).
 
-지원을 받으려면 Hyper-V 호스트 및 게스트는 Windows Update를 통해 사용할 수 있는 모든 중요 업데이트로 업데이트되어야 합니다.
+In order to be supported, both the Hyper-V host and guest must be updated with all critical updates available through Windows Update.
 
-## 지원되는 게스트 운영 체제
+## Supported guest operating systems
 
-지원을 받으려면 Windows 게스트 운영 체제와 호스트 운영 체제 모두 Windows Update를 통해 사용할 수 있는 모든 중요 업데이트로 최신 상태를 유지해야 합니다.
+In order to receive support, both the Windows guest operating systems and the host operating system must be current with all critical updates available through Windows Update.
 
-| 게스트 운영 체제 |  최대 가상 프로세서 수 | 참고 | 
+| Guest operating system |  Maximum number of virtual processors | Notes | 
 |:-----|:-----|:-----|
 | Windows 10 | 32 | |
 | Windows 8.1 | 32 | |
-| Windows8 | 32 |  |
-| Windows 7 SP 1(서비스 팩 1) | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
-| Windows 7 | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
-| Windows Vista SP2(서비스 팩 2) | 2 | Business/Enterprise/Ultimate(N 및 KN 버전 포함) | 
+| Windows 8 | 32 |  |
+| Windows 7 with Service Pack 1 (SP 1) | 4 | Ultimate, Enterprise, and Professional editions (32-bit and 64-bit). |
+| Windows 7 | 4 | Ultimate, Enterprise, and Professional editions (32-bit and 64-bit). |
+| Windows Vista with Service Pack 2 (SP2) | 2 | Business, Enterprise, and Ultimate, including N and KN editions. | 
 | - | | |
-| Windows Server 2012 R2 | 64 | |
+| Windows Server 2016 | 64 | |
+| WindowsServer 2012 R2 | 64 | |
 | Windows Server 2012 | 64 | |
-| Windows Server 2008 R2 SP 1(서비스 팩 1) | 64 | Datacenter/Enterprise/Standard/Web Edition. |
-| Windows Server 2008 SP 2(서비스 팩 2) | 4 | Datacenter/Enterprise/Standard/Web Edition(32비트/64비트). |
-| Windows Home Server2011 | 4 | |
+| Windows Server 2008 R2 with Service Pack 1 (SP 1) | 64 | Datacenter, Enterprise, Standard and Web editions. |
+| Windows Server 2008 with Service Pack 2 (SP 2) | 4 | Datacenter, Enterprise, Standard and Web editions (32-bit and 64-bit). |
+| Windows Home Server 2011 | 4 | |
 | Windows Small Business Server 2011 | Essentials edition - 2, Standard edition - 4 | |
   
- > Windows 10은 Windows 8.1 및 Windows Server 2012 R2 Hyper-V 호스트에서 게스트 운영 체제로 실행할 수 있습니다.
+ > Windows 10 can run as a guest operating system on Windows 8.1 and Windows Server 2012 R2 Hyper-V hosts.
 
-## 지원되는 Linux 및 무료 BSD
+## Supported Linux and Free BSD
 
-| 게스트 운영 체제 |  |
+| Guest operating system |  |
 |:-----|:------|
-| [CentOS 및 Red Hat Enterprise Linux ](https://technet.microsoft.com/library/dn531026.aspx) | |
-| [Hyper-V의 Debian 가상 컴퓨터](https://technet.microsoft.com/library/dn614985.aspx) | |
+| [CentOS and Red Hat Enterprise Linux ](https://technet.microsoft.com/library/dn531026.aspx) | |
+| [Debian virtual machines on Hyper-V](https://technet.microsoft.com/library/dn614985.aspx) | |
 | [SUSE](https://technet.microsoft.com/en-us/library/dn531027.aspx) | |
 | [Oracle Linux](https://technet.microsoft.com/en-us/library/dn609828.aspx)  | |
 | [Ubuntu](https://technet.microsoft.com/en-us/library/dn531029.aspx) | |
 | [FreeBSD](https://technet.microsoft.com/library/dn848318.aspx) | |
 
-이전 버전의 Hyper-V에 대한 지원 정보를 포함한 자세한 내용은 [Hyper-V의 Linux 및 FreeBSD 가상 컴퓨터](https://technet.microsoft.com/library/dn531030.aspx)를 참조하세요.
+For more information, including support information on past versions of Hyper-V, see [Linux and FreeBSD Virtual Machines on Hyper-V](https://technet.microsoft.com/library/dn531030.aspx).

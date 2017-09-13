@@ -1,63 +1,63 @@
-# 참가자 컨테이너 이미지 사용
+# Using Insider Container Images
 
-이 연습에서는 Windows Insider Preview 프로그램의 최신 Windows Server 참가자 빌드에 Windows 컨테이너 기능을 배포하고 사용하는 방법을 안내합니다. 이 연습을 진행하는 과정에서 컨테이너 역할을 설치하고 기본 OS 이미지의 미리 보기 버전을 배포할 것입니다. 이 빠른 시작을 시작하기 전에 기본 컨테이너 개념과 용어를 잘 이해해야 합니다. 이 정보는 [빠른 시작 소개](./index.md)에서 찾을 수 있습니다.
+This exercise will walk you through the deployment and use of the Windows container feature on the latest insider build of Windows Server from the Windows Insider Preview program. During this exercise, you will install the container role and deploy a preview edition of the base OS images. 컨테이너에 대해 좀 더 숙지해야 하는 경우 [컨테이너 정보](../about/index.md)에서 이 정보를 찾을 수 있습니다.
 
-이 빠른 시작은 Windows Server Insider Preview 프로그램의 Windows Server 컨테이너와 관련이 있습니다. 이 빠른 시작을 시작하기 전에 프로그램에 대해 충분히 숙지하시기 바랍니다.
+이 빠른 시작은 Windows Server Insider Preview 프로그램의 Windows Server 컨테이너와 관련이 있습니다. Please familiarize yourself with the program before continuing this quick start.
 
-**필수 조건:**
+**Prerequisites:**
 
-- [Windows 참가자 프로그램](https://insider.windows.com/GettingStarted)에 가입하고 사용 약관 검토. 
-- Windows 참가자 프로그램의 최신 Windows Server 및/또는 Windows 참가자 프로그램의 최신 Windows 10 빌드를 실행하는 컴퓨터 시스템(실제 또는 가상) 하나.
+- Become a part of the [Windows Insider Program](https://insider.windows.com/GettingStarted) and review the Terms of Use.
+- One computer system (physical or virtual) running the latest build of Windows Server from the Windows Insider program and/or the latest build of Windows 10 from the Windows Insider program.
 
->아래에 설명된 기본 이미지를 사용하려면 Windows Server Insider Preview 프로그램의 Windows Server 빌드 또는 Windows Insider Preview 프로그램의 Windows 10 빌드를 사용해야 합니다. 두 빌드 중 하나를 사용하지 않을 경우 이러한 기본 이미지를 사용하면 컨테이너가 시작되지 않는 오류가 발생합니다.
+>It is required that you use a build of Windows Server from the Windows Server Insider Preview program, or a build of Windows 10 from the Windows Insider Preview program, to use the base image described below. If you are not using one of these builds, the use of these base images will result in failure to start a container.
 
-## Docker 설치
-Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 또한 컨테이너 최적화 Nano 서버 이미지를 사용하는 최고의 환경을 제공할 수 있도록 다단계 빌드를 지원하는 Docker 버전이 필요합니다.
+## Install Docker
+Docker is required in order to work with Windows containers. Docker consists of the Docker Engine, and the Docker client. You will also need a version of Docker that supports multi-stage builds for the best experience using the Container-optimized Nano Server image.
 
-Docker를 설치하기 위해 OneGet provider PowerShell module(OneGet 공급자 PowerShell 모듈)을 사용합니다. 공급자는 컴퓨터에서 컨테이너 기능을 사용하도록 설정하고 Docker를 설치합니다. 그러면 컴퓨터를 다시 부팅해야 합니다. 여러 상황에 사용할 수 있도록 docker 버전이 다른 여러 채널이 있습니다. 이 연습에서는 Stable 채널의 최신 Community Edition Docker 버전을 사용하겠습니다. Docker에서 최신 개발을 테스트하려는 경우 Edge 채널을 사용할 수도 있습니다. 
+To install Docker, we'll use the OneGet provider PowerShell module. The provider will enable the containers feature on your machine and install Docker - this will require a reboot. Note that there are multiple channels with different version of docker to use in different cases. For this exercise, we will be using the latest Community Edition version of Docker from the Stable channel. There is also an Edge channel available if you would like to test the latest developments in Docker.
 
-관리자 권한으로 PowerShell 세션을 열고 다음 명령을 실행합니다.
+Open an elevated PowerShell session and run the following commands.
 
->참고: 참가자 빌드에 Docker를 설치하려면 현재 일반적으로 사용되는 공급자 대신 다른 공급자가 필요합니다. 아래에서 차이점을 살펴보세요.
+>Note: Installing Docker in the insider builds requires a different provider than the one normally used as of today. Please note the difference below.
 
-OneGet PowerShell 모듈을 설치합니다.
+Install the OneGet PowerShell module.
 ```powershell
 Install-Module -Name DockerMsftProviderInsider -Repository PSGallery -Force
 ```
-OneGet을 사용하여 최신 버전의 Docker를 설치합니다.
+Use OneGet to install the latest version of Docker.
 ```powershell
 Install-Package -Name docker -ProviderName DockerMsftProviderInsider -RequiredVersion 17.06.0-ce
 ```
-설치가 완료되면 컴퓨터를 다시 부팅합니다.
+When the installation is complete, reboot the computer.
 ```none
 Restart-Computer -Force
 ```
 
-## 기본 컨테이너 이미지 설치
+## Install Base Container Image
 
-Windows 컨테이너를 사용하려면 기본 이미지를 설치해야 합니다. Windows 참가자 프로그램에 가입하면 기본 이미지에 대해 최신 빌드를 테스트할 수도 있습니다. 참가자 기본 이미지를 사용하면 Windows Server 기반의 기본 이미지 4개가 제공됩니다. 아래 표에서 각 이미지의 용도를 확인하세요.
+Before working with Windows containers, a base image needs to be installed. By being part of the Windows Insider program, you can also test our latest builds for the base images. With the Insider base images, there are now 4 available base images based on Windows Server. Refer to the table below to check for what purposes each should be used:
 
-| 기본 OS 이미지                       | 용도                      |
+| Base OS Image                       | Usage                      |
 |-------------------------------------|----------------------------|
-| microsoft/windowsservercore         | 프로덕션 및 개발 |
-| microsoft/nanoserver                | 프로덕션 및 개발 |
-| microsoft/windowsservercore-insider | 개발 전용           |
-| microsoft/nanoserver-insider        | 개발 전용           |
+| microsoft/windowsservercore         | Production and Development |
+| microsoft/nanoserver                | Production and Development |
+| microsoft/windowsservercore-insider | Development only           |
+| microsoft/nanoserver-insider        | Development only           |
 
-Nano 서버 참가자 기본 이미지를 가져오려면 다음을 실행합니다.
+To pull the Nano Server Insider base image run the following:
 
 ```none
 docker pull microsoft/nanoserver-insider
 ```
 
-Windows Server Core 참가자 기본 이미지를 가져오려면 다음을 실행합니다.
+To pull the Windows Server Core insider base image run the following:
 
 ```none
 docker pull microsoft/windowsservercore-insider
 ```
 
-Windows 컨테이너 OS 이미지 EULA([EULA](../EULA.md )) 및 Windows 참가자 프로그램 사용 약관([사용 약관](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver))을 꼭 읽어보세요. 
+Please read the Windows Containers OS Image EULA which can be found here – [EULA](../EULA.md ), and the Windows Insider program Terms of Use which can be found here – [Terms of Use](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver).
 
-## 다음 단계
+## Next Steps
 
-[.NET Core 2.0 또는 PowerShell Core 6를 사용하여 또는 사용하지 않고 응용 프로그램 빌드 및 실행](./Nano-RS3-.NET-Core-and-PS.md)
+[Build and run an application with or without .NET Core 2.0 or PowerShell Core 6](./Nano-RS3-.NET-Core-and-PS.md)
