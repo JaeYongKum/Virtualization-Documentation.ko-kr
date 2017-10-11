@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [virtualization\hyper-v-on-windows\quick-start\enable-hyper-v.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/a3c9101a05d730d4173720d224bd8df8e9a56739/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v.md) | HandedOffSuccess | [Details](#85f6b30544fc433c9d768c2167024d097a9cef25125)
+ [virtualization\windowscontainers\quick-start\building-sample-app.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/fa9ec91b14c612df03c5b7bb094eb1fabf421715/virtualization/windowscontainers/quick-start/building-sample-app.md) | HandedOffSuccess | [Details](#b9f20e6b3f071b9c71a387fce9640b244e9a95b5350)
 
 ## Item Details
-##### <a name='85f6b30544fc433c9d768c2167024d097a9cef25125'></a> Source: [virtualization\hyper-v-on-windows\quick-start\enable-hyper-v.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/a3c9101a05d730d4173720d224bd8df8e9a56739/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v.md)
+##### <a name='b9f20e6b3f071b9c71a387fce9640b244e9a95b5350'></a> Source: [virtualization\windowscontainers\quick-start\building-sample-app.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/fa9ec91b14c612df03c5b7bb094eb1fabf421715/virtualization/windowscontainers/quick-start/building-sample-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enable-hyper-v.0da13d8a447b5ecf77ca9319671182fae670898e.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handoff/blob/87beb95100dd73eae4da7ef97d1ab2aac326adcd/ol-handoff/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/live/enable-hyper-v.0da13d8a447b5ecf77ca9319671182fae670898e.ko-kr.xlf)
-* Handoff Datetime: 2017-10-10 22:36:01
+* Handoff File: [building-sample-app.957afdd492b872efb91595b513db655c559f8646.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handoff/blob/dde6ab9e3985ac266ac21d5c46e48a6027463b5e/ol-handoff/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/live/building-sample-app.957afdd492b872efb91595b513db655c559f8646.ko-kr.xlf)
+* Handoff Datetime: 2017-10-11 18:36:58
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,6 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [virtualization\hyper-v-on-windows\quick-start\enable-hyper-v.md](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/blob/4c9fe7c0a71d38b9de5a04919df641436b8a3f0d/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v.md)
-* Current Handback File: [enable-hyper-v.0da13d8a447b5ecf77ca9319671182fae670898e.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/d6540f3f1ffd8ee56bcae6bc6f9228925cb63cc6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/enable-hyper-v.0da13d8a447b5ecf77ca9319671182fae670898e.ko-kr.xlf)
-* Current Handback Datetime: 2017-03-24 13:50:40
-* Bilingual File: [enable-hyper-v.0da13d8a447b5ecf77ca9319671182fae670898e.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/d6540f3f1ffd8ee56bcae6bc6f9228925cb63cc6/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/enable-hyper-v.0da13d8a447b5ecf77ca9319671182fae670898e.ko-kr.xlf)
-* Bilingual Datetime: 2017-03-24 13:54:12
 * [Back to Top](#report-top)
 
 
