@@ -1,11 +1,33 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [virtualization\windowscontainers\index.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/f8dc88d253c9e1a6a47b148d2c122a326a800633/virtualization/windowscontainers/index.md) | HandedOffSuccess | [Details](#176ad668f4daa7d84afc5928e76dce0c127e1095313)
 
 ## Item Details
+##### <a name='176ad668f4daa7d84afc5928e76dce0c127e1095313'></a> Source: [virtualization\windowscontainers\index.md](https://github.com/Microsoft/Virtualization-Documentation-Private/blob/f8dc88d253c9e1a6a47b148d2c122a326a800633/virtualization/windowscontainers/index.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [index.54df784a655ef654249a5e240db1281432a1f37b.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handoff/blob/ff1906713508c0280da566d6d3164bb46a47b44a/ol-handoff/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/live/index.54df784a655ef654249a5e240db1281432a1f37b.ko-kr.xlf)
+* Handoff Datetime: 2017-11-15 21:09:40
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [virtualization\windowscontainers\index.md](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.ko-kr/blob/39f11390d6b8821ae405975c549739fd0d96a38e/virtualization/windowscontainers/index.md)
+* Current Handback File: [index.54df784a655ef654249a5e240db1281432a1f37b.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/index.54df784a655ef654249a5e240db1281432a1f37b.ko-kr.xlf)
+* Current Handback Datetime: 2017-01-24 13:19:55
+* Bilingual File: [index.54df784a655ef654249a5e240db1281432a1f37b.ko-kr.xlf](https://github.com/MicrosoftDocs/Virtualization-Documentation-Private.handback/blob/c6b1da7250c59446d14d8645519ba777051e61a3/ol-handback/Microsoft/Virtualization-Documentation-Private.ko-kr/live/index.54df784a655ef654249a5e240db1281432a1f37b.ko-kr.xlf)
+* Bilingual Datetime: 2017-01-24 13:22:04
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
