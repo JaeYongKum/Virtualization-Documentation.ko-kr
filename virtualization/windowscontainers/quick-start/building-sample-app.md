@@ -7,13 +7,13 @@ ms.date: 07/25/2017
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 2ba3e6409fc60022a55d21c187bfcaefd962908b
-ms.sourcegitcommit: 4f5b9f70804bf6282af8bef603cc343c524c3102
+ms.openlocfilehash: b9f20e6b3f071b9c71a387fce9640b244e9a95b5
+ms.sourcegitcommit: fa9ec91b14c612df03c5b7bb094eb1fabf421715
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 10/11/2017
 ---
-# 샘플 앱 빌드
+# <a name="build-a-sample-app"></a>샘플 앱 빌드
 
 이 연습에서는 샘플 ASP.net 앱을 가져온 후 컨테이너에서 실행되도록 변환하는 방법을 안내합니다. Windows 10에서 컨테이너를 작동하는 방법을 알아보려면 [Windows 10 빠른 시작](./quick-start-windows-10.md)을 참조하세요.
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 08/04/2017
 
 컴퓨터에 Git 소스 컨트롤이 설치되지 않은 경우 [Git](https://git-scm.com/download)에서 다운로드할 수 있습니다.
 
-## 시작
+## <a name="getting-started"></a>시작
 
 이 샘플 프로젝트는 [VSCode](https://code.visualstudio.com/)를 사용하여 설정되었습니다. Powershell도 사용할 것입니다. github에서 데모 코드를 가져옵시다. git를 사용하여 리포지토리를 복제해도 되고 [SampleASPContainerApp](https://github.com/cwilhit/SampleASPContainerApp)에서 직접 프로젝트를 다운로드해도 됩니다.
 
@@ -36,7 +36,7 @@ git clone https://github.com/cwilhit/SampleASPContainerApp.git
 New-Item C:/Your/Proj/Location/Dockerfile -type file
 ```
 
-## Dockerfile 쓰기
+## <a name="writing-our-dockerfile"></a>Dockerfile 쓰기
 
 프로젝트 루트 폴더에 만든 이 Dockerfile을 열고(선호하는 텍스트 편집기를 사용하여) 몇 가지 논리를 추가해 봅시다. 그런 다음 한 줄씩 살펴보면서 상황을 설명하겠습니다.
 
@@ -94,7 +94,7 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 
 소위 말하는 _다단계 빌드_라는 것을 성공적으로 수행했습니다. 최종 결과의 크기를 최소화하기 위해 임시 컨테이너를 사용하여 이미지를 빌드한 다음 게시된 dll을 다른 컨테이너로 이동했습니다. 우리는 이 컨테이너의 종속성을 실행에 필요한 최소한의 수준으로 유지해야 합니다. 만약 첫 번째 이미지를 계속 사용했다면 필수적이지 않은 다른 계층이 포함되었을 것이며(ASP.NET 앱을 빌드하기 위해), 이렇게 되면 이미지 크기가 더 커졌을 것입니다.
 
-## 앱 실행
+## <a name="running-the-app"></a>앱 실행
 
 dockerfile이 작성되었으니, 앱을 빌드한 다음 컨테이너를 실행하라고 docker에 알려주기만 하면 됩니다. 게시할 포트를 지정하고 컨테이너에 "myapp"이라는 태그를 지정합니다. powershell에서 다음 명령을 실행합니다.
 
@@ -106,7 +106,7 @@ docker run -d -p 5000:80 --name myapp myasp
 앱이 실행되는 것을 보려면 앱이 실행되고 있는 주소를 방문해야 합니다. 이 명령을 실행하여 IP 주소를 가져옵니다.
 
 ```Powershell
- docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" myapp
+ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" myasp
 ```
 
 이 명령을 실행하면 실행 중인 컨테이너의 IP 주소를 얻을 수 있습니다. 그러면 다음과 같은 출력이 표시됩니다.
@@ -121,7 +121,7 @@ docker run -d -p 5000:80 --name myapp myasp
 
 탐색 모음에서 "MvcMovie"를 클릭하면 동영상 항목을 입력, 편집 및 삭제할 수 있는 웹 페이지로 이동됩니다.
 
-## 다음 단계
+## <a name="next-steps"></a>다음 단계
 
 성공적으로 ASP.NET 웹앱을 가져오고, Docker를 사용하여 구성 및 빌드하고, 실행 중인 컨테이너에 배포했습니다. 하지만 수행 가능한 추가 단계가 더 남아 있습니다! 웹앱을 더 많은 구성 요소(웹 API를 실행하는 컨테이너, 프런트 엔드를 실행하는 컨테이너, SQL 서버를 실행하는 컨테이너)로 분할할 수 있습니다.
 

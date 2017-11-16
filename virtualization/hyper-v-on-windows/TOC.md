@@ -3,6 +3,7 @@
 # [가상 컴퓨터 만들기](quick-start/quick-create-virtual-machine.md)
 # Hyper-V가 설치된 가상 컴퓨터 관리
 ## [Hyper-V 및 PowerShell](quick-start/try-hyper-v-powershell.md)
+## [가상 컴퓨터와 장치 공유](user-guide/enhanced-session-mode.md)
 ## [검사점 사용](user-guide/checkpoints.md)
 ## [PowerShell Direct를 사용하여 연결](user-guide/powershell-direct.md)
 ## [시험판 VM 만들기](user-guide/create-pre-release-vm.md) 

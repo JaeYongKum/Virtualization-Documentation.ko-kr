@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: 622c8f638a815e19a54aa75b6b5ea0688d966ae3
-ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
+ms.openlocfilehash: 1c506016175a8be2608e10063a788d55aa792ce4
+ms.sourcegitcommit: 8ce23ca36f3dbae96a09f73d8c2f235943f8cd47
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 10/17/2017
 ---
-# Windows 컨테이너 기본 이미지 기록
+# <a name="windows-container-base-image-history"></a>Windows 컨테이너 기본 이미지 기록
 
 모든 Windows 컨테이너는 Microsoft가 제공하는 기본 OS를 기반으로 구축됩니다. 컨테이너가 구축된 기반 Windows 버전이 확실하지 않을 경우 `docker inspect <tag>`를 실행하고 최상위 행 또는 두 번째 행을 아래 차트와 일치하는지 확인합니다.
 
@@ -30,10 +30,18 @@ ms.lasthandoff: 07/21/2017
     ]
 }
 ```
-Microsoft에서 제공하는 이미지에는 두 계층이 있습니다.
+
+Microsoft에서 제공하는 이미지에는 두 계층이 있습니다. 맨 위 계층은 상수이며 기존 Windows Server 릴리스를 나타내고, 두 번째 계층은 포함된 최신 누적 업데이트에 따라 달라집니다.
 
 각 버전에서 변경된 내용을 찾으려면 [Windows 10 및 Windows Server 2016 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history)에서 기술 자료를 찾아보세요.
 
+
+## <a name="tools-to-simplify-this-process"></a>이 프로세스를 간소화하기 위한 도구
+
+Stefan Scherer는 전체 컨테이너를 다운로드하지 않고 버전을 파악하고 이미지 매니페스트를 읽을 수 있는 도구를 만들었습니다. 자세한 내용은 Stefan Scherer의 [블로그](https://stefanscherer.github.io/winspector/) 및 [GitHub](https://github.com/StefanScherer/winspector) 리포지토리를 확인하세요.
+
+
+## <a name="image-versions"></a>이미지 버전
 
 <table>
     <tr>
