@@ -1,6 +1,6 @@
 ---
-title: Nested Virtualization
-description: Nested Virtualization
+title: "중첩된 가상화"
+description: "중첩된 가상화"
 keywords: windows 10, hyper-v
 author: theodthompson
 ms.date: 06/20/2016
@@ -8,71 +8,71 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
-ms.openlocfilehash: fb790611ea994c68f3e3a3b0404a297c595f0646
-ms.sourcegitcommit: 6eddc44b18109df52a02c01ce2661db621882e7d
+ms.openlocfilehash: 6f3cc3edb42a063abed33c7783e4a8bf13324cda
+ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 11/08/2017
 ---
-# Run Hyper-V in a Virtual Machine with Nested Virtualization
+# <a name="run-hyper-v-in-a-virtual-machine-with-nested-virtualization"></a>가상 컴퓨터에서 중첩된 가상화를 사용하여 Hyper-V 실행
 
-Nested virtualization is a feature that allows you to run Hyper-V inside of a Hyper-V virtual machine. In other words, with nested virtualization, a Hyper-V host itself can be virtualized. Some use cases for nested virtualization would be to run a Hyper-V Container in a virtualized container host, set-up a Hyper-V lab in a virtualized environment, or to test multi-machine scenarios without the need for individual hardware. This document will detail software and hardware prerequisites, configuration steps, and limitations. 
+중첩된 가상화는 Hyper-V 가상 컴퓨터 내에서 Hyper-V를 실행할 수 있는 기능입니다. 즉, 중첩된 가상화를 통해 Hyper-V 호스트 자체를 가상화할 수 있습니다. 중첩된 가상화의 몇 가지 사용 사례로 가상화된 컨테이너 호스트에서 Hyper-V 컨테이너 실행, 가상화된 환경에서 Hyper-V 랩 실행, 개별 하드웨어 없이 다중 컴퓨터 시나리오 테스트 등을 들 수 있습니다. 이 문서에서는 소프트웨어 및 하드웨어 필수 조건, 구성 단계 및 제한 사항을 자세히 설명합니다. 
 
-## Prerequisites
+## <a name="prerequisites"></a>필수 구성 요소
 
-- A Hyper-V host running Windows Server 2016 or Windows 10 Anniversary Update.
-- A Hyper-V VM running Windows Server 2016 or Windows 10 Anniversary Update.
-- A Hyper-V VM with configuration version 8.0 or greater.
-- An Intel processor with VT-x and EPT technology.
+- Windows Server 2016 또는 Windows 10 1주년 업데이트를 실행하는 Hyper-V 호스트
+- Windows Server 2016 또는 Windows 10 1주년 업데이트를 실행하는 Hyper-V VM
+- 구성 버전 8.0 이상을 사용하는 Hyper-V VM
+- VT-x 및 EPT 기술을 사용하는 Intel 프로세서
 
-## Configure Nested Virtualization
+## <a name="configure-nested-virtualization"></a>중첩된 가상화 구성
 
-1. Create a virtual machine. See the prerequisites above for the required OS and VM versions.
-2. While the virtual machine is in the OFF state, run the following command on the physical Hyper-V host. This enables nested virtualization for the virtual machine.
+1. 가상 컴퓨터를 만듭니다. 필요한 OS 및 VM 버전은 위의 필수 조건을 참조하세요.
+2. 가상 컴퓨터가 꺼짐 상태일 때 물리적 Hyper-V 호스트에서 다음 명령을 실행합니다. 그러면 가상 컴퓨터에서 중첩된 가상화를 사용할 수 있습니다.
 
-```none
+```
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
-3. Start the virtual machine.
-4. Install Hyper-V within the virtual machine, just like you would for a physical server. For more information on installing Hyper-V see, [Install Hyper-V](../quick-start/enable-hyper-v.md).
+3. 가상 컴퓨터를 시작합니다.
+4. 물리적 서버에서 하는 것처럼 가상 컴퓨터 내에 Hyper-V를 설치합니다. Hyper-V 설치에 대한 자세한 내용은 [Hyper-V 설치](../quick-start/enable-hyper-v.md)를 참조하세요.
 
-## Disable Nested Virtualization
-You can disable nested virtualization for a stopped virtual machine using the following PowerShell command:
-```none
+## <a name="disable-nested-virtualization"></a>중첩된 가상화 사용 안 함
+중지된 가상 컴퓨터에 대해 중첩된 가상화를 사용하지 않도록 설정하려면 다음 PowerShell 명령을 사용합니다.
+```
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $false
 ```
 
-## Dynamic Memory and Runtime Memory Resize
-When Hyper-V is running inside a virtual machine, the virtual machine must be turned off to adjust its memory. This means that even if dynamic memory is enabled, the amount of memory will not fluctuate. For virtual machines without dynamic memory enabled, any attempt to adjust the amount of memory while it's on will fail. 
+## <a name="dynamic-memory-and-runtime-memory-resize"></a>동적 메모리 및 런타임 메모리 크기 조정
+Hyper-V가 가상 컴퓨터 내에 실행되고 있는 경우 가상 컴퓨터를 꺼야만 해당 메모리를 조정할 수 있습니다. 즉, 동적 메모리를 사용하도록 설정한 경우에도 메모리 양이 변동되지 않습니다. 동적 메모리를 사용하도록 설정하지 않은 가상 컴퓨터의 경우 켜져 있을 때 메모리 양을 조정하려고 하면 항상 실패합니다. 
 
-Note that simply enabling nested virtualization will have no effect on dynamic memory or runtime memory resize. The incompatibility only occurs while Hyper-V is running in the VM.
+중첩된 가상화를 사용하도록 설정하는 것만으로는 동적 메모리 또는 런타임 메모리의 크기가 조정되지 않습니다. 이러한 비호환성은 Hyper-V가 VM에서 실행 중인 경우에만 발생합니다.
 
-## Networking Options
-There are two options for networking with nested virtual machines: MAC address spoofing and NAT mode.
+## <a name="networking-options"></a>네트워킹 옵션
+중첩된 가상 컴퓨터에서는 MAC 주소 스푸핑 및 NAT 모드의 두 가지 네트워킹 옵션을 지정합니다.
 
-### MAC Address Spoofing
-In order for network packets to be routed through two virtual switches, MAC address spoofing must be enabled on the first level of virtual switch. This is completed with the following PowerShell command.
+### <a name="mac-address-spoofing"></a>MAC 주소 스푸핑
+네트워크 패킷을 두 가상 스위치를 통해 전송하려면 첫 번째 수준의 가상 스위치에서 MAC 주소 스푸핑을 사용하도록 설정해야 합니다. 이 작업은 다음 PowerShell 명령으로 수행합니다.
 
-```none
+```
 Get-VMNetworkAdapter -VMName <VMName> | Set-VMNetworkAdapter -MacAddressSpoofing On
 ```
-### Network Address Translation
-The second option relies on network address translation (NAT). This approach is best suited for cases where MAC address spoofing is not possible, like in a public cloud environment.
+### <a name="network-address-translation"></a>Network Address Translation
+두 번째 옵션은 NAT(네트워크 주소 변환)를 사용합니다. 이 방법은 공용 클라우드 환경과 같이 MAC 주소 스푸핑이 가능하지 않은 경우에 적합합니다.
 
-First, a virtual NAT switch must be created in the host virtual machine (the "middle" VM). Note that the IP addresses are just an example, and will vary across environments:
-```none
+먼저 호스트 가상 컴퓨터("중간" VM)에서 가상 NAT 스위치를 만들어야 합니다. IP 주소는 예일 뿐이며 환경에 따라 다릅니다.
+```
 New-VMSwitch -Name VmNAT -SwitchType Internal
 New-NetNat –Name LocalNAT –InternalIPInterfaceAddressPrefix “192.168.100.0/24”
 ```
-Next, assign an IP address to the net adapter:
-```none
+그런 다음 넷 어댑터에 IP 주소를 할당합니다.
+```
 Get-NetAdapter "vEthernet (VmNat)" | New-NetIPAddress -IPAddress 192.168.100.1 -AddressFamily IPv4 -PrefixLength 24
 ```
-Each nested virtual machine must have an IP address and gateway assigned to it. Note that the gateway IP must point to the NAT adapter from the previous step. You may also want to assign a DNS server:
-```none
+중접된 가상 컴퓨터 각각에는 IP 주소와 게이트웨이가 할당되어 있어야 합니다. 게이트웨이 IP는 이전 단계의 NAT 어댑터를 가리켜야 합니다. DNS 서버를 할당할 수도 있습니다.
+```
 Get-NetAdapter "Ethernet" | New-NetIPAddress -IPAddress 192.168.100.2 -DefaultGateway 192.168.100.1 -AddressFamily IPv4 -PrefixLength 24
 Netsh interface ip add dnsserver “Ethernet” address=<my DNS server>
 ```
 
-## 3rd Party Virtualization Apps
-Virtualization applications other than Hyper-V are not supported in Hyper-V virtual machines, and are likely to fail. This includes any software that requires hardware virtualization extensions.
+## <a name="3rd-party-virtualization-apps"></a>타사 가상화 앱
+Hyper-V 외의 가상화 응용 프로그램은 Hyper-V 가상 컴퓨터에서 지원되지 않으며 실패할 확률이 높습니다. 하드웨어 가상화 확장이 필요한 모든 소프트웨어가 여기에 포함됩니다.

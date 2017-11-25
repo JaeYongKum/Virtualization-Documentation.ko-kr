@@ -1,32 +1,32 @@
 ---
-title: Optimize Windows Dockerfiles
-description: Optimize Dockerfiles for Windows containers.
-keywords: docker, containers
+title: "Windows Dockerfile 최적화"
+description: "Windows 컨테이너용 Dockerfile을 최적화합니다."
+keywords: "Docker, 컨테이너"
 author: PatrickLang
 ms.date: 05/26/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
-ms.openlocfilehash: b0e916520b3cbcf4fdd0e02bc8a4fd7042fd2b8b
-ms.sourcegitcommit: 48470217e479c49528d4d855c9aeeb89b68d6513
+ms.openlocfilehash: 59a1a3b9fa43238defbd5155dc7b264109df4625
+ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/08/2017
 ---
-# Optimize Windows Dockerfiles
+# <a name="optimize-windows-dockerfiles"></a>Windows Dockerfile 최적화
 
-Several methods can be used to optimize both the Docker build process, and the resulting Docker images. This document details how the Docker build process operates, and demonstrates several tactics that can be used for optimal image create with Windows Containers.
+여러 가지 방법을 사용하여 Docker 빌드 프로세스와 결과 Docker 이미지를 모두 최적화할 수 있습니다. 이 문서에서는 Docker 빌드 프로세스의 작동 방식에 대해 자세히 설명하고 Windows 컨테이너에서 최적의 이미지 만들기에 사용할 수 있는 여러 가지 방법을 보여 줍니다.
 
-## Docker Build
+## <a name="docker-build"></a>Docker 빌드
 
-### Image Layers
+### <a name="image-layers"></a>이미지 계층
 
-Before examining Docker build optimization, it is important to understand how Docker build works. During the Docker build process, a Dockerfile is consumed, and each actionable instruction is run, one-by-one, in its own temporary container. The result is a new image layer for each actionable instruction. 
+Docker 빌드 최적화를 검토하기 전에 Docker 빌드의 작동 방식을 이해해야 합니다. Docker 빌드 프로세스 중에는 Dockerfile이 사용되며, 실행 가능한 각 명령이 고유한 임시 컨테이너에서 하나씩 실행됩니다. 결과로 실행 가능한 각 명령에 대한 새로운 이미지 계층이 생성됩니다. 
 
-Take a look at the following Dockerfile. In this example, the `windowsservercore` base OS image is being used, IIS installed, and then a simple website created.
+다음 Dockerfile을 살펴보세요. 이 예제에서는 `windowsservercore` 기본 OS 이미지를 사용하고 IIS를 설치한 다음 간단한 웹 사이트를 만듭니다.
 
-```none
+```
 # Sample Dockerfile
 
 FROM windowsservercore
@@ -35,9 +35,9 @@ RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 CMD [ "cmd" ]
 ```
 
-From this Dockerfile, one might expect the resulting image to consist of two layers, one for the container OS image, and a second that includes IIS and the website, this however is not the case. The new image is constructed of many layers, each one dependent on the previous. To visualize this, the `docker history` command can be run against the new image. Doing so shows that the image consists of four layers, the base, and then three additional layers, one for each instruction in the Dockerfile.
+이 Dockerfile에서는 결과 이미지가 컨테이너 OS 이미지와 IIS 및 웹 사이트를 포함하는 두 번째 이미지에 대해 하나씩 두 개의 계층으로 구성된다고 예상하지만 실제로는 그렇지 않습니다. 새 이미지는 많은 계층으로 생성되며, 각 계층은 이전 계층에 종속됩니다. 이를 시각화하려면 새 이미지에 대해 `docker history` 명령을 실행할 수 있습니다. 이렇게 하면 이미지가 네 개의 계층 즉, 기본에 대한 계층 하나와 Dockerfile의 각 명령에 대해 하나씩 세 개의 추가 계층으로 구성됩니다.
 
-```none
+```
 docker history iis
 
 IMAGE               CREATED              CREATED BY                                      SIZE                COMMENT
@@ -47,25 +47,25 @@ f0e017e5b088        21 seconds ago       cmd /S /C echo "Hello World - Dockerfil
 6801d964fda5        4 months ago                                                         0 B
 ```
 
-Each of these layers can be mapped to an instruction from the Dockerfile. The bottom layer (`6801d964fda5` in this example) represents the base OS image. One layer up, the IIS installation can be seen. The next layer includes the new website, and so on.
+이러한 각 계층은 Dockerfile의 명령에 매핑할 수 있습니다. 맨 아래 계층(이 예제의 `6801d964fda5`)은 기본 OS 이미지를 나타냅니다. 한 계층 위에서는 IIS 설치를 확인할 수 있습니다. 다음 계층에는 새 웹 사이트가 포함되는 등입니다.
 
-Dockerfiles can be written to minimize image layers, optimize build performance, and also optimize cosmetic things such as readability. Ultimately, there are many ways to complete the same image build task. Understanding how the format of a Dockerfile effects build time, and the resulting image, improves the automation experience. 
+Dockerfile은 이미지 계층을 최소화하고, 빌드 성능을 최적화하며, 가독성과 같은 표면적인 문제를 최적화하도록 작성할 수 있습니다. 결국 동일한 이미지 빌드 작업을 여러 가지 방법으로 완료할 수 있습니다. Dockerfile의 형식이 빌드 시간 및 결과 이미지에 어떻게 영향을 미치는지 이해하면 자동화 환경이 개선됩니다. 
 
-## Optimize Image Size
+## <a name="optimize-image-size"></a>이미지 크기 최적화
 
-When building Docker container images, image size may be an important factor. Container images are moved between registries and host, exported and imported, and ultimately consume space. Several tactics can be used during the Docker build process to minimize image size. This section details some of these tactics specific to Windows Containers. 
+Docker 컨테이너 이미지를 작성할 때 이미지 크기가 중요한 요인이 될 수 있습니다. 컨테이너 이미지를 레지스트리와 호스트 간에 이동하고 내보내고 가져오며 궁극적으로 공간을 사용합니다. Docker 빌드 프로세스 중에 여러 가지 방법을 사용하여 이미지 크기를 최소화할 수 있습니다. 이 섹션에서는 Windows 컨테이너와 관련된 몇 가지 방법에 대해 자세히 설명합니다. 
 
-For additional information on Dockerfile best practices, see [Best practices for writing Dockerfiles on Docker.com]( https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/).
+Dockerfile 모범 사례에 대한 자세한 내용은 [Docker.com의 Best practices for writing Dockerfiles(Dockerfile 작성에 대한 모범 사례)]( https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)를 참조하세요.
 
-### Group related actions
+### <a name="group-related-actions"></a>그룹 관련 작업
 
-Because each `RUN` instruction creates a new layer in the container image, grouping actions into one `RUN` instruction can reduce the number of layers. While minimizing layers may not effect image size much, grouping related actions can, which will be seen in subsequent examples.
+각 `RUN` 명령은 컨테이너 이미지에 새 계층을 만들므로 작업을 하나의 `RUN` 명령으로 그룹화하면 계층 수를 줄일 수 있습니다. 계층을 최소화해도 이미지 크기에 많은 영향을 주지 않지만 그룹화 관련 작업은 영향을 줄 수 있으며, 이 점은 다음 예제에서 확인할 수 있습니다.
 
-The following two examples demonstrate the same operation, which results in container images of identical capability, however the two Dockerfiles constructed differently. The resulting images are also compared.  
+다음 두 예제에서는 동일한 기능의 컨테이너 이미지를 만드는 동일한 작업을 보여 주지만 두 Dockerfile은 다르게 생성되었습니다. 결과 이미지도 비교합니다.  
 
-This first example downloads Python for Windows, installs it and cleans up by removing the downloaded setup file. Each of these actions are run in their own `RUN` instruction.
+이 첫 번째 예제에서는 Windows용 Python을 다운로드, 설치한 후 다운로드한 설치 파일을 제거하여 정리합니다. 이러한 각 작업은 고유한 `RUN` 명령으로 실행됩니다.
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell.exe -Command Invoke-WebRequest "https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe" -OutFile c:\python-3.5.1.exe
@@ -73,9 +73,9 @@ RUN powershell.exe -Command Start-Process c:\python-3.5.1.exe -ArgumentList '/qu
 RUN powershell.exe -Command Remove-Item c:\python-3.5.1.exe -Force
 ```
 
-The resulting image consists of three additional layers, one for each `RUN` instruction.
+결과 이미지는 각 `RUN` 명령에 대해 하나씩 세 개의 추가 계층으로 구성됩니다.
 
-```none
+```
 docker history doc-example-1
 
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
@@ -84,9 +84,9 @@ a395ca26777f        15 seconds ago      cmd /S /C powershell.exe -Command Remove
 957147160e8d        3 minutes ago       cmd /S /C powershell.exe -Command Invoke-WebR   125.7 MB
 ```
 
-To compare, here is the same operation, however all steps run with the same `RUN` instruction. Note that each step in the `RUN` instruction is on a new line of the Dockerfile, the '\' character is being used to line wrap. 
+다음은 동일한 작업이지만 비교하기 위해 모든 단계가 동일한 `RUN` 명령을 사용하여 실행됩니다. `RUN` 명령의 각 단계는 Dockerfile의 새 줄에 있으므로 '\' 문자를 사용하여 줄 바꿈합니다. 
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell.exe -Command \
@@ -96,22 +96,22 @@ RUN powershell.exe -Command \
   Remove-Item c:\python-3.5.1.exe -Force
 ```
 
-The resulting image here consists of one additional layer for the `RUN` instruction.
+여기서 결과 이미지는 `RUN` 명령에 대한 하나의 추가 계층으로 구성됩니다.
 
-```none
+```
 docker history doc-example-2
 
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
 69e44f37c748        54 seconds ago      cmd /S /C powershell.exe -Command   $ErrorAct   216.3 MB                
 ```
 
-### Remove excess files
+### <a name="remove-excess-files"></a>초과 파일 제거
 
-If a file, such as an installer, is not required after it has been used, remove the file to reduce image size. This needs to occur in the same step in which the file was copied into the image layer. Doing so prevents the file from persisting in a lower level image layer.
+설치 관리자 같은 파일이 사용된 후 필요하지 않으면 파일을 제거하여 이미지 크기를 줄입니다. 이 작업은 이미지 계층에 파일을 복사하는 것과 동일한 단계에서 수행되어야 합니다. 이렇게 하면 파일이 하위 수준의 이미지 계층에서 유지되지 않도록 할 수 있습니다.
 
-In this example, the Python package is downloaded, executed, and then the executable removed. This is all completed in one `RUN` operation and results in a single image layer.
+이 예제에서는 Python 패키지를 다운로드하고 실행한 다음 실행 파일을 제거합니다. 모든 작업이 하나의 `RUN` 작업에서 완료되고 단일 이미지 계층이 생성됩니다.
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell.exe -Command \
@@ -121,15 +121,15 @@ RUN powershell.exe -Command \
   Remove-Item c:\python-3.5.1.exe -Force
 ```
 
-## Optimize Build Speed
+## <a name="optimize-build-speed"></a>빌드 속도 최적화
 
-### Multiple Lines
+### <a name="multiple-lines"></a>여러 줄
 
-When optimizing for Docker build speed, it may be advantageous to separate operations into multiple individual instructions. Having multiple `RUN` operations increase caching effectiveness. Because individual layers are created for each `RUN` instruction, if an identical step has already been run in a different Docker Build operation, this cached operation (image layer) is re-used. The result is that Docker Build runtime is decreased.
+Docker 빌드 속도를 최적화하면 작업을 여러 개의 개별 명령으로 구분하는 것이 유용할 수 있습니다. `RUN` 작업이 여러 개 있으면 캐싱 유효성이 증가합니다. 각 `RUN` 명령에 대해 개별 계층이 만들어지므로 동일한 단계가 다른 Docker 빌드 작업에서 이미 실행된 경우 이 캐시된 작업(이미지 계층)이 다시 사용됩니다. 결과적으로 Docker 빌드 런타임이 줄어듭니다.
 
-In the following example, both Apache and the Visual Studio Redistribute packages are downloaded, installed, and then the un-needed files cleaned up. This is all done with one `RUN` instruction. If any of these actions are updated, all actions will re-run.
+다음 예제에서는 Apache와 Visual Studio 재배포 가능 패키지를 모두 다운로드하고 설치한 다음 필요 없는 파일을 정리합니다. 이 모든 작업은 하나의 `RUN` 명령으로 수행됩니다. 이러한 작업이 업데이트되면 모든 작업이 다시 실행됩니다.
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell -Command \
@@ -153,9 +153,9 @@ RUN powershell -Command \
   Remove-Item c:\php.zip
 ```
 
-The resulting image consists of two layers, one for the base OS image, and the second that contains all operations from the single `RUN` instruction.
+결과 이미지는 기본 OS 이미지와 단일 `RUN` 명령의 모든 작업을 포함하는 두 번째 이미지에 대해 하나씩 두 개의 계층으로 구성됩니다.
 
-```none
+```
 docker history doc-sample-1
 
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
@@ -163,9 +163,9 @@ IMAGE               CREATED             CREATED BY                              
 6801d964fda5        5 months ago                                                        0 B
 ```
 
-To contrast, here are the same actions broken down into three `RUN` instructions. In this case, each `RUN` instruction is cached in a container image layer, and only those that have changed, need to be re-run on subsequent Dockerfile builds.
+반대로 다음은 세 개의 `RUN` 명령으로 분할된 동일한 작업입니다. 이 경우 각 `RUN` 명령은 컨테이너 이미지 계층에서 캐시되며, 변경된 명령만 후속 Dockerfile 빌드에서 다시 실행해야 합니다.
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell -Command \
@@ -187,9 +187,9 @@ RUN powershell -Command \
     Remove-Item c:\php.zip -Force
 ```
 
-The resulting image consists of four layers, one for the base OS image, and then one for each `RUN` instruction. Because each `RUN` instruction has been run in its own layer, any subsequent runs of this Dockerfile or identical set of instructions in a different Dockerfile, will use cached image layer, thus reducing build time. Instruction ordering is important when working with image cache, for more details, see the next section of this document.
+결과 이미지는 기본 OS 이미지와 각 `RUN` 명령에 대해 하나씩 네 개의 계층으로 구성됩니다. 각 `RUN` 명령이 고유한 계층에서 실행되었기 때문에 이 Dockerfile의 모든 후속 실행 또는 다른 Dockerfile의 동일한 명령 집합에서는 캐시된 이미지 계층을 사용하여 빌드 시간을 줄입니다. 이미지 캐시로 작업할 때는 명령 순서가 중요합니다. 자세한 내용은 이 문서의 다음 섹션을 참조하세요.
 
-```none
+```
 docker history doc-sample-2
 
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
@@ -199,13 +199,13 @@ d43abb81204a        7 days ago          cmd /S /C powershell -Command  Sleep 2 ;
 6801d964fda5        5 months ago
 ```
 
-### Ordering Instructions
+### <a name="ordering-instructions"></a>명령 순서 지정
 
-A Dockerfile is processed from top to the bottom, each Instruction compared against cached layers. When an instruction is found without a cached layer, this instruction and all subsequent instructions are processed in new container image layers. Because of this, the order in which instructions are placed is important. Place instructions that will remain constant towards the top of the Dockerfile. Place instructions that may change towards the bottom of the Dockerfile. Doing so reduces the likelihood of negating existing cache.
+Dockerfile은 위에서 아래로 처리되며, 각 명령은 캐시된 계층과 비교됩니다. 캐시된 계층이 없는 명령이 있으면 이 명령과 모든 후속 명령은 새 컨테이너 이미지 계층에서 처리됩니다. 따라서 명령이 배치되는 순서가 중요합니다. 일정하게 유지될 명령은 Dockerfile의 위쪽에 배치합니다. 변경될 수 있는 명령은 Dockerfile의 아래쪽에 배치합니다. 이렇게 하면 기존 캐시를 부정할 가능성이 줄어듭니다.
 
-The intention of this example is to demonstrated how Dockerfile instruction ordering can effect caching effectiveness. In this simple Dockerfile, four numbered folders are created.  
+이 예제는 Dockerfile의 명령 순서가 캐싱 유효성에 어떻게 영향을 줄 수 있는지를 보여 주기 위한 것입니다. 이 간단한 Dockerfile에서는 번호가 매겨진 4개의 폴더를 만듭니다.  
 
-```none
+```
 FROM windowsservercore
 
 RUN mkdir test-1
@@ -213,9 +213,9 @@ RUN mkdir test-2
 RUN mkdir test-3
 RUN mkdir test-4
 ```
-The resulting image has five layers, one for the base OS image, and one for each of the `RUN` instructions.
+결과 이미지에는 기본 OS 이미지와 각 `RUN` 명령에 대해 하나씩 5개의 계층이 있습니다.
 
-```none
+```
 docker history doc-sample-1
 
 IMAGE               CREATED              CREATED BY               SIZE                COMMENT
@@ -226,9 +226,9 @@ afba1a3def0a        38 seconds ago       cmd /S /C mkdir test-4   42.46 MB
 6801d964fda5        5 months ago                                  0 B    
 ```
 
-The docker file has now been slightly modified. Notice that the third `RUN` instruction has changed. When Docker build is run against this Dockerfile, the first three instructions, which are identical to those in the last example, use the cached image layers. However, because the changed `RUN` instruction has not been cached, a new layer is created for itself and all subsequent instructions.
+Docker 파일이 약간 수정되었습니다. 세 번째 `RUN` 명령이 변경되었습니다. 이 Dockerfile에 대해 Docker 빌드가 실행되면 마지막 예제의 명령과 동일한 처음 세 명령은 캐시된 이미지 계층을 사용합니다. 그러나 변경된 `RUN` 명령이 캐시되지 않았기 때문에 새 계층이 해당 명령 자체와 모든 후속 명령에 대해 만들어집니다.
 
-```none
+```
 FROM windowsservercore
 
 RUN mkdir test-1
@@ -237,9 +237,9 @@ RUN mkdir test-5
 RUN mkdir test-4
 ```
 
-Comparing Image ID’s of the new image, to that in the last example, you will see that the first three layers (bottom to the top) are shared, however the fourth and fifth are unique.
+새 이미지의 이미지 ID를 마지막 예제와 비교하면 처음 세 계층(아래에서 위로)은 공유되지만 네 번째와 다섯 번째는 고유함을 확인할 수 있습니다.
 
-```none
+```
 docker history doc-sample-2
 
 IMAGE               CREATED             CREATED BY               SIZE                COMMENT
@@ -250,14 +250,14 @@ c92cc95632fb        28 seconds ago      cmd /S /C mkdir test-4   5.644 MB
 6801d964fda5        5 months ago                                 0 B
 ```
 
-## Cosmetic Optimization
+## <a name="cosmetic-optimization"></a>표면적 문제 최적화
 
-### Instruction Case
+### <a name="instruction-case"></a>명령 대/소문자
 
-Dockerfile instructions are not case sensitive, however convention is to use upper case. This improves readability by differentiating between Instruction call, and instruction operation. The below two examples demonstrate this concept. 
+Dockerfile 명령은 대/소문자를 구분하지 않지만 규칙은 대문자를 사용하는 것입니다. 그러면 명령 호출과 명령 작업을 구별하여 가독성이 향상됩니다. 다음 두 예제에서는 이 개념을 보여 줍니다. 
 
-Lower case:
-```none
+소문자:
+```
 # Sample Dockerfile
 
 from windowsservercore
@@ -265,8 +265,8 @@ run dism /online /enable-feature /all /featurename:iis-webserver /NoRestart
 run echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 cmd [ "cmd" ]
 ```
-Upper case: 
-```none
+대문자: 
+```
 # Sample Dockerfile
 
 FROM windowsservercore
@@ -275,18 +275,18 @@ RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 CMD [ "cmd" ]
 ```
 
-### Line Wrapping
+### <a name="line-wrapping"></a>줄 바꿈
 
-Long and complex operations can be separated onto multiple line using the backslash `\` character. The following Dockerfile installs the Visual Studio Redistributable package, removes the installer files, and then creates a configuration file. These three operations are all specified on one line.
+길고 복잡한 작업은 백슬래시 `\` 문자를 사용하여 여러 줄로 구분할 수 있습니다. 다음 Dockerfile에서는 Visual Studio 재배포 가능 패키지를 설치하고 설치 관리자 파일을 제거한 다음 구성 파일을 만듭니다. 이러한 세 작업을 모두 한 줄에 지정합니다.
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell -Command c:\vcredist_x86.exe /quiet ; Remove-Item c:\vcredist_x86.exe -Force ; New-Item c:\config.ini
 ```
-The command can be re-written so that each operation from the one `RUN` instruction is specified on its own line. 
+`RUN` 명령 하나의 각 작업을 고유한 줄에 지정하도록 명령을 다시 작성할 수 있습니다. 
 
-```none
+```
 FROM windowsservercore
 
 RUN powershell -Command \
@@ -296,8 +296,8 @@ RUN powershell -Command \
     New-Item c:\config.ini
 ```
 
-## Further Reading & References
+## <a name="further-reading--references"></a>추가 참고 자료 및 참조
 
-[Dockerfile on Windows] (manage-windows-dockerfile.md)
+[Windows의 Dockerfile](manage-windows-dockerfile.md)
 
-[Best practices for writing Dockerfiles on Docker.com](https://docs.docker.com/engine/reference/builder/)
+[Docker.com의 Best practices for writing Dockerfile(Dockerfile 작성에 대한 모범 사례)](https://docs.docker.com/engine/reference/builder/)
