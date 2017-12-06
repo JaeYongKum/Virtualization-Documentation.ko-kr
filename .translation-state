@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "ad5f6344230c7c4977adf3769fb7b01a5eca7bb9",
+  "LastProcessedCommit": "9c1d9b284017cdd7fc4a00dab5fb2ed7e0ae9ef4",
   "LastTranslatedCommit": "4c9fe7c0a71d38b9de5a04919df641436b8a3f0d",
   "LastConfigHash": "8a1020b7136b784cdc0f8c9eca877ab77b2a9c5f",
   "Items": {
@@ -22080,6 +22080,21 @@
       "HandoffFileCommit": "26f261049b9dc93401267466cc36a9f697f7b4fa",
       "HandoffDateTime": "2017-12-05T19:09:05.5318957Z",
       "HandoffXliffHash": "3627407da47d923d9ecc8be7ce6baef32ad8d326",
+      "HandoffPriority": ""
+    },
+    "0aa3b8f564697133e0206ef1530b1ec0128c6c03": {
+      "FileHash": "0aa3b8f564697133e0206ef1530b1ec0128c6c03",
+      "SourceFileCommit": "9c1d9b284017cdd7fc4a00dab5fb2ed7e0ae9ef4",
+      "SourceFilePath": "virtualization\\windowscontainers\\quick-start\\Using-Insider-Container-Images.md",
+      "HandoffReason": 1,
+      "FilePathList": [
+        "virtualization\\windowscontainers\\quick-start\\Using-Insider-Container-Images.md"
+      ],
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\MicrosoftDocs\\Virtualization-Documentation-Private.ko-kr\\live\\Using-Insider-Container-Images.e5e0475a114cc523b477c05e12d726fc5e2ceead.ko-kr.xlf",
+      "HandoffFileCommit": "2fc6c36da6eba7d5ce248e188a624312262bcabf",
+      "HandoffDateTime": "2017-12-06T22:07:57.5302352Z",
+      "HandoffXliffHash": "38b61236f0b9096f5da4f3ca1c621da95ce4978d",
       "HandoffPriority": ""
     }
   }
