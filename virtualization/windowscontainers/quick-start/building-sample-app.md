@@ -7,11 +7,11 @@ ms.date: 07/25/2017
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: b9f20e6b3f071b9c71a387fce9640b244e9a95b5
-ms.sourcegitcommit: fa9ec91b14c612df03c5b7bb094eb1fabf421715
+ms.openlocfilehash: b1d0c4bcf35cd40e9ca058d4e2a51fa028cade2c
+ms.sourcegitcommit: 04c78918c77d2ad6053e6a95dc57bc488efbbf8b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="build-a-sample-app"></a>샘플 앱 빌드
 
@@ -98,6 +98,8 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 
 dockerfile이 작성되었으니, 앱을 빌드한 다음 컨테이너를 실행하라고 docker에 알려주기만 하면 됩니다. 게시할 포트를 지정하고 컨테이너에 "myapp"이라는 태그를 지정합니다. powershell에서 다음 명령을 실행합니다.
 
+_참고_: 사용자의 PowerShell 콘솔의 현재 작업 디렉터리는 위에서 만든 dockerfile이 있는 디렉터리여야 합니다.
+
 ```Powershell
 docker build -t myasp .
 docker run -d -p 5000:80 --name myapp myasp
@@ -106,7 +108,7 @@ docker run -d -p 5000:80 --name myapp myasp
 앱이 실행되는 것을 보려면 앱이 실행되고 있는 주소를 방문해야 합니다. 이 명령을 실행하여 IP 주소를 가져옵니다.
 
 ```Powershell
- docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" myasp
+ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" myapp
 ```
 
 이 명령을 실행하면 실행 중인 컨테이너의 IP 주소를 얻을 수 있습니다. 그러면 다음과 같은 출력이 표시됩니다.
