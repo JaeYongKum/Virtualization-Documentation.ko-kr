@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1f8a691c-ca75-42da-8ad8-a35611ad70ec
-ms.openlocfilehash: dd11b3a78307d4c39a3c383120a04e91c8d0f70f
-ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
+ms.openlocfilehash: 6f5872a4f16bcce504af3e6e81ef3e820013d121
+ms.sourcegitcommit: ad5f6344230c7c4977adf3769fb7b01a5eca7bb9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="set-up-a-nat-network"></a>NAT 네트워크 설정
 
@@ -69,7 +69,7 @@ NAT(Network Address Translation)는 외부 IP 주소 및 포트를 훨씬 더 �
 
     내부 스위치에 `vEthernet (SwitchName)` 같은 이름과 `Hyper-V Virtual Ethernet Adapter` 같은 인터페이스 설명이 지정됩니다. 다음 단계에서 사용할 수 있도록 `ifIndex`를 적어 둡니다.
 
-4. [New-NetIPAddress](https://technet.microsoft.com/en-us/library/hh826150.aspx)를 사용하여 NAT 게이트웨이를 구성합니다.  
+4. [New-NetIPAddress](https://docs.microsoft.com/powershell/module/nettcpip/New-NetIPAddress)를 사용하여 NAT 게이트웨이를 구성합니다.  
 
   다음은 일반 명령입니다.
   ``` PowerShell
@@ -97,7 +97,7 @@ NAT(Network Address Translation)는 외부 IP 주소 및 포트를 훨씬 더 �
   New-NetIPAddress -IPAddress 192.168.0.1 -PrefixLength 24 -InterfaceIndex 24
   ```
 
-5. [New-NetNat](https://technet.microsoft.com/en-us/library/dn283361(v=wps.630).aspx)를 사용하여 NAT 네트워크를 구성합니다.  
+5. [New-NetNat](https://docs.microsoft.com/powershell/module/netnat/New-NetNat)를 사용하여 NAT 네트워크를 구성합니다.  
 
   다음은 일반 명령입니다.
 
