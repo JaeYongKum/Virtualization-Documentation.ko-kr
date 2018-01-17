@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: b916b8bb2e09dfc78414785ad0d0252b5abec619
-ms.sourcegitcommit: b578961db242f08261798d1b498b091b8c405924
+ms.openlocfilehash: 37782c4d2491b9b1963a326204e30a6f484b5ec9
+ms.sourcegitcommit: 6eefb890f090a6464119630bfbdc2794e6c3a3df
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/18/2017
 ---
 # <a name="windows-containers"></a>Windows 컨테이너
 
@@ -74,9 +74,9 @@ Hyper-V 격리를 사용하여 또는 사용하지 않고 Windows에서 컨테�
 
 다른 컨테이너와 마찬가지로, [Docker](https://www.docker.com)를 사용하여 Windows Server 컨테이너를 관리할 수 있습니다.
 
-## <a name="containers-for-developers"></a>개발자를 위한 컨테이너 ##
+## <a name="containers-for-developers"></a>개발자용 컨테이너 ##
 
-개발자의 데스크톱에서 테스트 컴퓨터와 여러 프러덕션 컴퓨터에 이르기까지, 몇 초 만에 모든 환경 전체에 동일하게 배포되는 Docker 이미지를 만들 수 있습니다.  이 덕분에 Docker가 관리하는 컨테이너화된 공개 응용 프로그램 레지스트리인 DockerHub를 통해, Docker 컨테이너 안에 패키징된 응용 프로그램의 거대한 생태계가 탄생했으며 지속적으로 확장되고 있습니다. 현재 공개 커뮤니티 리포지토리에 180,000개 이상의 응용 프로그램이 게시되어 있습니다.
+개발자의 데스크톱에서 테스트 컴퓨터와 여러 프로덕션 컴퓨터에 이르기까지, 몇 초 만에 모든 환경 전체에 동일하게 배포되는 Docker 이미지를 만들 수 있습니다. 이 덕분에 Docker가 관리하는 컨테이너화된 공개 응용 프로그램 레지스트리인 DockerHub를 통해, Docker 컨테이너 안에 패키징된 응용 프로그램의 거대한 생태계가 탄생했으며 지속적으로 확장되고 있습니다. 현재 공개 커뮤니티 리포지토리에 180,000개 이상의 응용 프로그램이 게시되어 있습니다.
 
 앱을 컨테이너화할 때는 앱과, 해당 앱을 실행하는 데 필요한 구성 요소만 "이미지"로 결합됩니다. 그런 다음 이 이미지를 통해 필요할 때 컨테이너가 만들어집니다. 이미지를 기반으로 다른 이미지를 만들 수도 있으므로 이미지 만들기 작업이 매우 신속해집니다. 여러 컨테이너가 동일한 이미지를 공유할 수 있습니다. 즉 컨테이너가 매우 신속하게 시작되고 더 적은 리소스를 사용합니다. 예를 들어, 앱 분산과 각 서비스의 개별적이고 긴속한 확장을 위해 컨테이너를 사용하여 가볍고 이식 가능한 앱 구성 요소 또는 '마이크로 서비스'를 유도할 수 있습니다. 
 

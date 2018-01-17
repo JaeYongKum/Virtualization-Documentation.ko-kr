@@ -8,19 +8,19 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 5c6f6350-f8d6-4426-b53d-9fb09c2bf267
-ms.openlocfilehash: eac2026cff552315a4cb256b595f1bd3317ee11c
-ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
+ms.openlocfilehash: 45ee10cb8353c1b293b75628f1d023008b2bf150
+ms.sourcegitcommit: c2def00b88a411d25d2d4e97ff020db8dc228581
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 12/04/2017
 ---
-# Windows 컨테이너 샘플
+# <a name="windows-container-samples"></a>Windows 컨테이너 샘플
 
 이는 Windows 팀 및 커뮤니티의 멤버가 제출한 샘플 및 예제 컬렉션입니다.  이러한 샘플은 있는 그대로 제공되고 어떤 명시적인 보증 또는 보장하지 않습니다.  추가 샘플을 제공하거나 현재 집합을 개선할 수 있습니다.
 
-# Categories
+# <a name="categories"></a>Categories
 
-## 응용 프로그램 프레임워크
+## <a name="application-frameworks"></a>응용 프로그램 프레임워크
 [aspnet](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/aspnet)
 
 [iis](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/iis) 
@@ -39,7 +39,7 @@ ms.lasthandoff: 07/21/2017
 
 [nginx](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/nginx)
 
-## 프로그래밍 언어
+## <a name="programing-languages"></a>프로그래밍 언어
 [dotnet35](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/dotnet35)
 
 [golang](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/golang)
@@ -57,7 +57,7 @@ ms.lasthandoff: 07/21/2017
 [server-jre-8u51-windows-x64](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/server-jre-8u51-windows-x64)
 
 
-## 데이터베이스
+## <a name="databases"></a>데이터베이스
 [mongodb](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/mongodb)
 
 [mysql](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/mysql)
@@ -66,15 +66,15 @@ ms.lasthandoff: 07/21/2017
 
 [sqlite](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/sqlite)
 
-[sqlserver-express](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/sqlserver-express)
+sqlserver-express - [Docker 허브 이미지](https://hub.docker.com/r/microsoft/mssql-server-windows-express/) 또는 [dockerfile](https://github.com/Microsoft/mssql-docker/blob/master/windows/mssql-server-windows-express/dockerfile)
 
 
-## 인프라와 CI 도구
+## <a name="infrastructure-and-ci-tools"></a>인프라와 CI 도구
 [PowerShellDSC_iis 10.0](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/PowerShellDSC_iis-10.0)
 
 
-## 재미를 위한 내용
+## <a name="just-for-fun"></a>재미를 위한 내용
 [MineCraft](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/MineCraft) 
 
 
-## 기타
+## <a name="other"></a>기타

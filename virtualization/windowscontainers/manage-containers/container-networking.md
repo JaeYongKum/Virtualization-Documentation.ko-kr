@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 98feee128860885b4f62420cc6eb86d23579551b
-ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
+ms.openlocfilehash: 394aa58c3421e512d005f59d5bd30667f1c26f16
+ms.sourcegitcommit: 6eefb890f090a6464119630bfbdc2794e6c3a3df
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/18/2017
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 > ***일반 Docker 네트워킹 명령, 옵션 및 구문에 대한 내용은 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/)을 참조하세요.*** 이 문서에 설명된 경우를 제외한 모든 Docker 네트워킹 명령은 Linux와 동일한 구문을 통해 Windows에서 지원됩니다. 그러나 Windows와 Linux의 네트워크 스택이 서로 다르므로 일부 Linux 네트워크 명령은 Windows에서 지원되지 않습니다(예: ifconfig).
@@ -201,6 +201,7 @@ Windows 10에서 Windows용 Docker(Docker CE 엔진용 Windows 드라이버)는 
 ```
 PS C:\> Get-VMNetworkAdapter -VMName ContainerHostVM | Set-VMNetworkAdapter -MacAddressSpoofing On
 ```
+사용자 하이퍼바이저로 VMware를 실행하는 경우 이를 작동하도록 하려면 promiscuous 모드를 사용하도록 설정해야 합니다. 자세한 내용은 [여기](https://kb.vmware.com/s/article/1004099)에서 확인할 수 있습니다.
 #### <a name="creating-multiple-transparent-networks-on-a-single-container-host"></a>단일 컨테이너 호스트에 여러 투명 네트워크 만들기
 투명 네트워크를 두 개 이상 만들려면 외부 Hyper-V 가상 스위치가 바인딩될 (가상) 네트워크 어댑터를 지정해야 합니다. 네트워크 인터페이스를 지정하려면 다음 구문을 사용합니다.
 ```
@@ -235,7 +236,7 @@ l2bridge 드라이버를 사용하여 만든 컨테이너 네트워크에서는 
 #### <a name="existing-vswitch-not-visible-to-docker-can-block-transparent-network-creation"></a>기존 vSwitch(Docker에서 보이지 않음)가 투명 네트워크 생성을 차단할 수 있음
 투명 네트워크를 만드는 중 오류가 발생하는 경우 Docker에서 자동으로 검색되지 않고 투명 네트워크가 컨테이너 호스트의 외부 네트워크 어댑터에 바인딩되지 못하게 방해하는 외부 vSwitch가 시스템에 있는 것일 수 있습니다. 
 
-투명 네트워크를 만들 때 Docker는 네트워크에 대한 외부 vSwitch를 만든 다음 스위치를 (외부) 네트워크 어댑터에 바인딩하려고 합니다. 어댑터는 VM 네트워크 어댑터 또는 실제 네트워크 어댑터일 수 있습니다. vSwitch가 컨테이너 호스트에 이미 생성되고 *Docker에 표시되는 경우* Windows Docker 엔진은 새 스위치를 만드는 대신 해당 스위치를 사용합니다. 그러나 vSwitch가 대역 외에서 생성되고(HYper-V 관리자 또는 PowerShell을 사용하여 컨테이너 호스트에서 생성) 아직 Docker에 표시되지 않는 경우, Windows Docker 엔진은 새 vSwitch를 만들려고 시도한 다음 새 스위치를 컨테이너 호스트 외부 네트워크 어댑터에 연결할 수 없습니다(네트워크 어댑터가 이미 대역 외에서 생성된 스위치에 연결되어 있기 때문).
+투명 네트워크를 만들 때 Docker는 네트워크에 대한 외부 vSwitch를 만든 다음 스위치를 (외부) 네트워크 어댑터에 바인딩하려고 합니다. 어댑터는 VM 네트워크 어댑터 또는 실제 네트워크 어댑터일 수 있습니다. vSwitch가 컨테이너 호스트에 이미 생성되고 *Docker에 표시되는 경우* Windows Docker 엔진은 새 스위치를 만드는 대신 해당 스위치를 사용합니다. 그러나 vSwitch가 대역 외에서 생성되고(Hyper-V 관리자 또는 PowerShell을 사용하여 컨테이너 호스트에서 생성) 아직 Docker에 표시되지 않는 경우, Windows Docker 엔진은 새 vSwitch를 만들려고 시도한 다음 새 스위치를 컨테이너 호스트 외부 네트워크 어댑터에 연결할 수 없습니다(네트워크 어댑터가 이미 대역 외에서 생성된 스위치에 연결되어 있기 때문).
 
 예를 들어 Docker 서비스가 실행 중일 때 호스트에 새 vSwitch를 먼저 만든 다음 투명 네트워크를 만들려고 하면 이 문제가 발생합니다. 이 경우 Docker에서는 사용자가 만든 스위치를 인식할 수 없으며 투명 네트워크에 대한 새 vSwitch를 만듭니다.
 

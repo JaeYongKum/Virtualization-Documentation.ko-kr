@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
-ms.openlocfilehash: ccc45d47fc9f17c10b149bc647463824e1ecbc9e
-ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
+ms.openlocfilehash: 5b187853be0ebb28bcede43bfca7e4042a23dfce
+ms.sourcegitcommit: a3479a4d8372a637fb641cd7d5003f1d8a37b741
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="docker-engine-on-windows"></a>Windows의 Docker 엔진
 
@@ -25,7 +25,6 @@ Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Doc
 * [Windows Server 2016의 Windows 컨테이너](../quick-start/quick-start-windows-server.md)
 * [Windows 10의 Windows 컨테이너](../quick-start/quick-start-windows-10.md)
 
-
 ### <a name="manual-installation"></a>수동 설치
 Docker 엔진 및 클라이언트의 내부 개발 버전을 대신 사용하려는 경우 다음 단계를 따를 수 있습니다. 이는 Docker 엔진과 클라이언트를 모두 설치합니다. 새로운 기능을 테스트하는 개발자이거나 Windows 참가자 빌드를 사용하는 경우 Docker의 내부 개발 버전을 사용해야 할 수 있습니다. 그렇지 않은 경우 위 Docker 설치 섹션의 단계를 따라 최신 릴리스 버전을 받으세요.
 
@@ -36,8 +35,7 @@ Docker 엔진 다운로드
 https://master.dockerproject.org에서 항상 최신 버전을 찾을 수 있습니다. 이 샘플은 마스터 분기의 최신 버전을 사용합니다. 
 
 ```powershell
-$version = (Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/docker/docker/master/VERSION).Content.Trim()
-Invoke-WebRequest "https://master.dockerproject.org/windows/x86_64/docker-$($version).zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
+Invoke-WebRequest "https://master.dockerproject.org/windows/x86_64/docker.zip" -OutFile "$env:TEMP\docker.zip" -UseBasicParsing
 ```
 
 zip 보관 파일을 프로그램 파일로 확장합니다.
@@ -90,7 +88,7 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
     "log-driver": "", 
     "mtu": 0,
     "pidfile": "",
-    "graph": "",
+    "data-root": "",
     "cluster-store": "",
     "cluster-advertise": "",
     "debug": true,
@@ -123,7 +121,7 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
 
 ```
 {    
-    "graph": "d:\\docker"
+    "data-root": "d:\\docker"
 }
 ```
 
@@ -190,3 +188,72 @@ Restart-Service docker
 
 자세한 내용은 [Docker.com의 Windows 구성 파일](https://docs.docker.com/engine/reference/commandline/dockerd/#/windows-configuration-file)을 참조하세요.
 
+## <a name="uninstall-docker"></a>Docker 제거
+*이 섹션의 단계를 사용하여 Docker를 제거하고 Windows 10 또는 Windows Server 2016 시스템에서 Docker 시스템 구성 요소의 전체 정리를 수행할 수 있습니다.*
+
+> 참고: 다음 단계의 모든 명령은 **권리자 권한** PowerShell 세션으로 실행해야 합니다.
+
+### <a name="step-1-prepare-your-system-for-dockers-removal"></a>1단계: Docker의 제거를 위해 시스템 준비 
+Docker를 제거하기 전에 시스템에서 실행 중인 컨테이너가 없는지 확인하지 않은 경우 확인하는 것이 좋습니다. 이를 수행하는 몇 가지 유용한 명령은 다음과 같습니다.
+```
+# Leave swarm mode (this will automatically stop and remove services and overlay networks)
+docker swarm leave --force
+
+# Stop all running containers
+docker ps --quiet | ForEach-Object {docker stop $_}
+```
+Docker를 제거하기 전에 모든 컨테이너, 컨테이너 이미지, 네트워크 및 볼륨 또한 시스템에서 제거하는 것이 좋습니다.
+```
+docker system prune --volumes --all
+```
+
+### <a name="step-2-uninstall-docker"></a>2단계: Docker 제거 
+
+#### ***<a name="steps-to-uninstall-docker-on-windows-10"></a>Windows 10에서 Docker를 제거하는 단계:10:***
+- Windows 10 컴퓨터에서 **"설정" > "앱"**으로 이동합니다.
+- **"앱 및 기능"** 아래에서 **"Windows용 Docker"**를 선택합니다.
+- **"Windows용 Docker" > "제거"**를 클릭합니다.
+
+#### ***<a name="steps-to-uninstall-docker-on-windows-server-2016"></a>Windows Server 2016에서 Docker를 제거하는 단계:16:***
+권리자 권한 PowerShell 세션에서 `Uninstall-Package` 및 `Uninstall-Module` cmdlet을 사용하여 시스템에서 Docker 모듈 및 해당 패키지 관리 공급자를 제거합니다. 
+> 팁: Docker를 설치하는 데 사용한 패키지 공급자를 찾을 수 있습니다. `PS C:\> Get-PackageProvider -Name *Docker*`
+
+*예*:
+```
+Uninstall-Package -Name docker -ProviderName DockerMsftProvider
+Uninstall-Module -Name DockerMsftProvider
+```
+
+### <a name="step-3-cleanup-docker-data-and-system-components"></a>3단계: Docker 데이터 및 시스템 구성 요소 정리
+Docker의 *기본 네트워크*를 제거하여 Docker를 삭제하고 난 후 구성이 시스템에 남아 있지 않도록 합니다.
+```
+Get-HNSNetwork | Remove-HNSNetwork
+```
+시스템에서 Docker의 *프로그램 데이터* 제거:
+```
+Remove-Item "C:\ProgramData\Docker" -Recurse
+```
+Windows에서 Docker/컨테이너와 관련된 *Windows 선택적 기능*을 제거하고자 할 수도 있습니다. 
+
+최소한 여기에는 Docker를 설치할 때 모든 Windows 10 또는 Windows Server 2016에서 자동으로 활성화되는 "컨테이너" 기능이 포함됩니다. Docker를 설치할 때 Windows 10에서 자동으로 활성화되지만 Windows Server 2016에서는 명시적으로 활성화해야 하는 "Hyper-V"가 포함될 수도 있습니다.
+
+> **Hyper-V 비활성화에 대한 중요한 참고 사항:** [Hyper-V 기능](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)은 단순히 컨테이너보다 더 많은 것을 활성화할 수 있는 일반적인 가상화 기능입니다! Hyper-V 기능을 비활성화하기 전에 이를 필요로 하는 다른 가상화 구성 요소는 없는지 확인합니다.
+
+#### ***<a name="steps-to-remove-windows-features-on-windows-10"></a>Windows 10에서 Windows 기능을 제거하는 단계:10:***
+- Windows 10 컴퓨터에서 **"제어판" > "프로그램" > "프로그램 및 기능" > "Windows 기능 켜기/끄기"**로 이동합니다.
+- 비활성화하려는 기능의 이름을 찾습니다. 이 경우 **"컨테이너"** 및 (선택 사항) **"Hyper-V"**입니다.
+- 비활성화하려는 기능 이름 옆의 확인란 선택을 **취소**합니다.
+- **"확인"**을 클릭합니다.
+
+#### ***<a name="steps-to-remove-windows-features-on-windows-server-2016"></a>Windows Server 2016에서 Windows 기능을 제거하는 단계:16:***
+관리자 권한 PowerShell 세션에서 다음 명령을 사용하여 시스템에서 **"컨테이너"** 및 (선택 사항) **"Hyper-V"** 기능을 비활성화합니다.
+```
+Remove-WindowsFeature Containers
+Remove-WindowsFeature Hyper-V 
+```
+
+### <a name="step-4-reboot-your-system"></a>4단계: 시스템 재부팅
+제거/정리 단계를 완료하려면 관리자 권한 PowerShell 세션에서 다음을 실행합니다.
+```
+Restart-Computer -Force
+```
