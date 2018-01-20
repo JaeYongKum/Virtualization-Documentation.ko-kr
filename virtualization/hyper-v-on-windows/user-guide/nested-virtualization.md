@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
-ms.openlocfilehash: d5b8e888b62495c98c0691dc0d62deecf7c1eb6e
-ms.sourcegitcommit: 6eefb890f090a6464119630bfbdc2794e6c3a3df
+ms.openlocfilehash: 82c8ba6b09b6d1bfde7217eeaf16cfb7967d4f62
+ms.sourcegitcommit: 59541f11d481d8df341597bd73ce7fac14f442ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="run-hyper-v-in-a-virtual-machine-with-nested-virtualization"></a>가상 컴퓨터에서 중첩된 가상화를 사용하여 Hyper-V 실행
 
@@ -98,6 +98,8 @@ Netsh interface ip add dnsserver “Ethernet” address=<my DNS server>
 ![](./media/HVNoNesting.png)
 
 반대로 아래 다이어그램은 중첩된 가상화가 활성화된 Hyper-V를 보여 줍니다. 이 경우 Hyper-V는 해당 가상 컴퓨터에 하드웨어 가상화 확장을 제공합니다. 중첩을 활성화하면 게스트 가상 컴퓨터는 자체 하이퍼바이저를 설치하고 자체 게스트 VM을 실행할 수 있습니다.
+
+![](./media/HVNesting.png)
 
 ## <a name="3rd-party-virtualization-apps"></a>타사 가상화 앱
 

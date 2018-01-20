@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ebd79cd3-5fdd-458d-8dc8-fc96408958b5
-ms.openlocfilehash: 44693b413dd8043fbec68835eafe6754615fa449
-ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
+ms.openlocfilehash: 4d4b8a533aa5517c5850967f0b92c97da5190296
+ms.sourcegitcommit: 4042339cfd8a4440a5aba2b6f28968a52ab066fa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="troubleshooting"></a>문제 해결
 
@@ -29,7 +29,7 @@ Invoke-WebRequest https://aka.ms/Debug-ContainerHost.ps1 -UseBasicParsing | Invo
 ## <a name="finding-logs"></a>로그 찾기
 Windows 컨테이너를 관리하기 위해 여러 서비스가 사용됩니다. 다음 섹션에서는 각 서비스에 대한 로그를 확인할 수 있는 위치를 보여 줍니다.
 
-### <a name="docker-engine"></a>Docker 엔진
+# <a name="docker-engine"></a>Docker 엔진
 Docker 엔진은 파일 대신 Windows '응용 프로그램' 이벤트 로그에 기록합니다. 이러한 로그는 Windows PowerShell을 사용하여 쉽게 읽고 정렬하고 필터링할 수 있습니다.
 
 예를 들어 가장 오래된 순서부터 시작하여 최근 5분의 Docker 엔진 로그가 표시됩니다.
@@ -44,7 +44,7 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5
 Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-30)  | Sort-Object Time | Export-CSV ~/last30minutes.CSV
 ```
 
-#### <a name="enabling-debug-logging"></a>디버그 로깅 사용
+## <a name="enabling-debug-logging"></a>디버그 로깅 사용
 Docker 엔진에서 디버그 수준 로깅을 사용하도록 설정할 수도 있습니다. 그러면 일반 로그에 정보가 부족한 경우의 문제 해결에 유용할 수 있습니다.
 
 먼저 관리자 권한 명령 프롬프트를 연 다음 `sc.exe qc docker`를 실행하여 Docker 서비스에 대한 현재 명령줄을 가져옵니다.
@@ -90,7 +90,7 @@ sc.exe stop docker
 <path\to\>dockerd.exe -D > daemon.log 2>&1
 ```
 
-#### <a name="obtaining-stack-dump-and-daemon-data"></a>스택 덤프 및 데몬 데이터 얻기.
+## <a name="obtaining-stack-dump-and-daemon-data"></a>스택 덤프 및 데몬 데이터 얻기.
 
 일반적으로 Microsoft 지원 또는 Docker 개발자가 명시적으로 요청하는 경우에만 유용합니다. Docker가 멈춘 것으로 표시되는 상황을 진단하는 데 도움이 될 수 있습니다. 
 
@@ -110,7 +110,7 @@ docker-signal -pid=<id>
 `daemon-data*.log`에 개인 정보가 포함될 수 있으므로 일반적으로는 신뢰할 수 있는 지원 담당자와만 공유해야 합니다. `goroutine-stacks*.log` 개인 정보가 포함되지 않게 하세요.
 
 
-### <a name="host-compute-service"></a>호스트 계산 서비스
+# <a name="host-compute-service"></a>호스트 계산 서비스
 Docker 엔진은 Windows 관련 호스트 컨테이너 서비스를 사용합니다. 이 서비스에는 다음과 같은 별도의 로그가 있습니다. 
 - Microsoft-Windows-Hyper-V-Compute-Admin
 - Microsoft-Windows-Hyper-V-Compute-Operational
@@ -123,7 +123,7 @@ Get-WinEvent -LogName Microsoft-Windows-Hyper-V-Compute-Admin
 Get-WinEvent -LogName Microsoft-Windows-Hyper-V-Compute-Operational 
 ```
 
-#### <a name="capturing-hcs-analyticdebug-logs"></a>HCS 분석/디버그 로그 캡처
+## <a name="capturing-hcs-analyticdebug-logs"></a>HCS 분석/디버그 로그 캡처
 
 Hyper-V 계산에 분석/디버그 로그를 사용하려면 로그를 `hcslog.evtx`에 저장하세요.
 
@@ -140,7 +140,7 @@ wevtutil.exe epl Microsoft-Windows-Hyper-V-Compute-Analytic <hcslog.evtx>
 wevtutil.exe sl Microsoft-Windows-Hyper-V-Compute-Analytic /e:false /q:true
 ```
 
-#### <a name="capturing-hcs-verbose-tracing"></a>HCS 자세한 추적 캡처
+## <a name="capturing-hcs-verbose-tracing"></a>HCS 자세한 추적 캡처
 
 일반적으로 Microsoft 지원에서 요청한 경우에만 유용합니다. 
 

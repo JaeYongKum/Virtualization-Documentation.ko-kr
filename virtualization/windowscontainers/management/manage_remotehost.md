@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 0cc1b621-1a92-4512-8716-956d7a8fe495
-ms.openlocfilehash: 1ab2a9b823c5c903bd08b476f5caef65ec6e3207
-ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
+ms.openlocfilehash: b975c593bd5c736ec3e7e1e21b76b2f6a2c8f8a4
+ms.sourcegitcommit: 50d31ccdc097f17b8b99cd95da0671de182795cf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 01/06/2018
 ---
-# Windows Docker 호스트의 원격 관리
+# <a name="remote-management-of-a-windows-docker-host"></a>Windows Docker 호스트의 원격 관리
 
 `docker-machine`이 없더라도 원격으로 액세스할 수 있는 Docker 호스트를 Windows Server 2016 VM에 만들 수 있습니다.
 
@@ -40,8 +40,8 @@ ker\client\key.pem ps
 ```
 
 
-## 문제 해결
-### TLS 없이 연결을 시도하여 NSG 방화벽 설정이 올바른지 확인합니다.
+## <a name="troubleshooting"></a>문제 해결
+### <a name="try-connecting-without-tls-to-determine-your-nsg-firewall-settings-are-correct"></a>TLS 없이 연결을 시도하여 NSG 방화벽 설정이 올바른지 확인합니다.
 연결 오류는 대개 오류에서 다음과 같이 나타납니다.
 ```
 error during connect: Get https://wsdockerhost.southcentralus.cloudapp.azure.com:2376/v1.25/version: dial tcp 13.85.27.177:2376: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
@@ -60,14 +60,14 @@ error during connect: Get https://wsdockerhost.southcentralus.cloudapp.azure.com
 docker -H tcp://wsdockerhost.southcentralus.cloudapp.azure.com:2376 --tlsverify=0 version
 ```
 
-### 인증서 문제
+### <a name="cert-problems"></a>인증서 문제
 IP 주소나 DNS 이름에 대한 인증서를 만들지 않고 Docker 호스트에 액세스하면 다음과 같은 오류가 발생합니다.
 ```
 error during connect: Get https://w.x.y.c.z:2376/v1.25/containers/json: x509: certificate is valid for 127.0.0.1, a.b.c.d, not w.x.y.z
 ```
 w.x.y.z가 호스트의 공용 IP에 대한 DNS 이름이고, DNS 이름이 인증서의 [일반 이름](https://www.ssl.com/faqs/common-name/)(`SERVER_NAME` 환경 변수) 또는 dockertls에 제공된 `IP_ADDRESSES` 변수의 IP 주소 중 하나와 일치하는지 확인합니다.
 
-### crypto/x509 경고
+### <a name="cryptox509-warning"></a>crypto/x509 경고
 경고가 발생할 수 있습니다. 
 ```
 level=warning msg="Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows"

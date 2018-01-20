@@ -7,11 +7,11 @@ ms.topic: get-started-article
 ms.prod: containers
 description: "처음부터 Kubernetes 클러스터 마스터를 만듭니다."
 keywords: "kubernetes, 1.9, 마스터, linux"
-ms.openlocfilehash: 8fa8b0a6b97d9909d0b1e670b37a0a541901a08d
-ms.sourcegitcommit: ad5f6344230c7c4977adf3769fb7b01a5eca7bb9
+ms.openlocfilehash: d5251b1a2dc06bef396820e324fb240eed04acc8
+ms.sourcegitcommit: b0e21468f880a902df63ea6bc589dfcff1530d6e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="kubernetes-master--from-scratch"></a>처음부터 Kubernetes 마스터 #
 이 페이지는 처음부터 끝까지 Kubernetes 마스터를 수동 배포하는 방법을 안내합니다.
@@ -49,10 +49,10 @@ mv * ~/kube/
 > [!Note]  
 > 패치를 포함하거나 사전 설치된 바이너리를 다운로드하는 대신 최신 Kubernetes 코드를 사용하려면 [이 페이지](./compiling-kubernetes-binaries.md)를 참조하세요.
 
-[Kubernetes 메인 라인](https://github.com/kubernetes/kubernetes/releases/tag/v1.9.0-beta.1)에서 공식 Linux 바이너리를 다운로드하고 다음과 같이 설치합니다.
+[Kubernetes 메인 라인](https://github.com/kubernetes/kubernetes/releases/tag/v1.9.1)에서 공식 Linux 바이너리를 다운로드하고 다음과 같이 설치합니다.
 
 ```bash
-wget -O kubernetes.tar.gz https://github.com/kubernetes/kubernetes/releases/download/v1.9.0-beta.1/kubernetes.tar.gz
+wget -O kubernetes.tar.gz https://github.com/kubernetes/kubernetes/releases/download/v1.9.1/kubernetes.tar.gz
 tar -vxzf kubernetes.tar.gz 
 cd kubernetes/cluster 
 # follow the prompts from this command, the defaults are generally fine:
