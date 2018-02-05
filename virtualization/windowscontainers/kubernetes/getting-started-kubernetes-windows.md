@@ -8,11 +8,11 @@ ms.prod: containers
 description: "v1.9 베타 Kubernetes 클러스터에 Windows 노드를 가입합니다."
 keywords: "kubernetes, 1.9, windows, 시작"
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: d88ab46dc0046256ebed9c6696a99104a7197fad
-ms.sourcegitcommit: ad5f6344230c7c4977adf3769fb7b01a5eca7bb9
+ms.openlocfilehash: f1b832f8a21c034582e157342acf7826fb7b6ea3
+ms.sourcegitcommit: b0e21468f880a902df63ea6bc589dfcff1530d6e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes #
 Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1709#networking)를 통해 사용자들은 Windows 네트워킹에서 최신 기능을 활용할 수 있습니다.
@@ -57,7 +57,7 @@ Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.mi
 
 ## <a name="preparing-a-windows-node"></a>Windows 노드 준비 ##
 > [!Note]  
-> Windows 섹션의 모든 코드 조각을 관리자 권한 PowerShell로 실행해야 합니다.
+> Windows 섹션의 모든 코드 조각을 _관리자 권한_ PowerShell로 실행해야 합니다.
 
 Kubernetes는 [Docker](https://www.docker.com/)를 컨테이너 조정자로 사용하므로 설치해야 합니다. [공식 MSDN 지침](virtualization/windowscontainers/manage-docker/configure-docker-daemon.md#install-docker), [Docker 지침](https://store.docker.com/editions/enterprise/docker-ee-server-windows)을 따르거나 또는 다음 단계를 시도할 수 있습니다.
 
@@ -85,13 +85,13 @@ rm -recurse -force master,master.zip
 
 ```powershell
 docker pull microsoft/windowsservercore:1709
-docker tag $(docker images -q) microsoft/windowsservercore:latest
+docker tag microsoft/windowsservercore:1709 microsoft/windowsservercore:latest
 cd C:/k/
 docker build -t kubeletwin/pause .
 ```
 
 > [!Note]  
-> 나중에 배포할 샘플 서비스에 쓰기 위해 이를 `:latest`로 태그 지정합니다.
+> 나중에 배포하는 샘플 서비스가 실제로 사용 가능한 최신 Windows Server Core 이미지가 _아니어도_ 해당 이미지에 따라 달라지므로 샘플 서비스를 `:latest` 태그로 지정합니다. 충돌하는 컨테이너 이미지를 조심하는 것이 중요합니다. 예상되는 태그가 없으면 호환되지 않는 컨테이너 이미지의 `docker pull`이 발생하여 [배포 문제](./common-problems.md#when-deploying-docker-containers-keep-restarting)가 발생할 수 있습니다. 
 
 
 ### <a name="downloading-binaries"></a>바이너리 다운로드 ###
@@ -101,10 +101,7 @@ docker build -t kubeletwin/pause .
   - `kubelet.exe`
   - `kube-proxy.exe`
 
-최신 1.9 릴리스의 `CHANGELOG.md` 파일에 있는 링크에서 이를 다운로드할 수 있습니다. 이 문서를 작성한 시점을 기준으로 [1.9.0-beta.1](https://github.com/kubernetes/kubernetes/releases/tag/v1.9.0-beta.1)이며 Windows 바이너리는 [여기](https://dl.k8s.io/v1.9.0-beta.1/kubernetes-node-windows-amd64.tar.gz)에 있습니다. [7-Zip](http://www.7-zip.org/)과 같은 도구를 사용하여 아카이브 압축을 풀고 `C:\k\`에 바이너리를 놓습니다.
-
-> [!Warning]  
-> 이 문서 작성 시점을 기준으로 `kube-proxy.exe`가 제대로 작동하려면 보류 중인 Kubernetes [풀 요청](https://github.com/kubernetes/kubernetes/pull/56529)이 필요합니다. 이를 수행하기 위해 [바이너리를 직접 빌드](./compiling-kubernetes-binaries.md)해야 할 수도 있습니다.
+최신 1.9 릴리스의 `CHANGELOG.md` 파일에 있는 링크에서 이를 다운로드할 수 있습니다. 이 문서를 작성한 시점을 기준으로 [1.9.1](https://github.com/kubernetes/kubernetes/releases/tag/v1.9.1)이며 Windows 바이너리는 [여기](https://storage.googleapis.com/kubernetes-release/release/v1.9.1/kubernetes-node-windows-amd64.tar.gz)에 있습니다. [7-Zip](http://www.7-zip.org/)과 같은 도구를 사용하여 아카이브 압축을 풀고 `C:\k\`에 바이너리를 놓습니다.
 
 
 ### <a name="joining-the-cluster"></a>클러스터 가입 ###
@@ -153,4 +150,4 @@ watch kubectl get pods -o wide
   - `curl` *서비스 이름*에 Kubernetes [기본 DNS 접미사](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services)가 있음. 이는 DNS 기능을 보여줍니다.
 
 > [!Warning]  
-> Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이는 [잘 알려진 제한 사항](./common-problems.md#common-windows-errors)입니다.
+> Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이는 [잘 알려진 제한 사항](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip)입니다.

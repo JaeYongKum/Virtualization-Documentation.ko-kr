@@ -7,11 +7,11 @@ ms.topic: get-started-article
 ms.prod: containers
 description: "원본에서 Kubernetes 바이너리를 컴파일 및 크로스 컴파일합니다."
 keywords: "kubernetes, 1.9, linux, 컴파일"
-ms.openlocfilehash: 53d55eed155254f809bc3f45b8e3891dab54f209
-ms.sourcegitcommit: ad5f6344230c7c4977adf3769fb7b01a5eca7bb9
+ms.openlocfilehash: c9b0146202d7e9e5d857ca88faa43282bd504dfa
+ms.sourcegitcommit: b0e21468f880a902df63ea6bc589dfcff1530d6e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="compiling-kubernetes-binaries"></a>Kubernetes 바이너리 컴파일 #
 Kubernetes 컴파일에는 Go 환경 작업이 필요합니다. 이 페이지는 Linux 바이너리를 컴파일하고 Windows 바이너리를 크로스 컴파일하는 여러 방법에 대해 다룹니다.
@@ -57,10 +57,10 @@ go get -d $KUBEREPO
 cd $GOPATH/src/$KUBEREPO
 ```
 
-이제 빌드할 분기를 확인하고 Linux `kubelet` 바이너리를 빌드합니다. 이는 위에서 언급한 Windows 빌드 오류가 발생하지 않도록 하기 위해 필요합니다. 여기에서는 `v1.9.0-beta.1`을 사용하겠습니다. `checkout`은 나중에 보류 중인 PR, 패치, 또는 사용자 지정 바이너리에 대한 기타 수정을 적용하는 장소입니다.
+이제 빌드할 분기를 확인하고 Linux `kubelet` 바이너리를 빌드합니다. 이는 위에서 언급한 Windows 빌드 오류가 발생하지 않도록 하기 위해 필요합니다. 여기에서는 `v1.9.1`을 사용하겠습니다. `git checkout` 이후에 보류 중인 PR, 패치를 적용하거나 사용자 지정 바이너리에 대해 다른 수정을 할 수 있습니다.
 
 ```bash
-git checkout tags/v1.9.0-beta.1
+git checkout tags/v1.9.1
 make clean && make WHAT=cmd/kubelet
 ```
 
@@ -88,7 +88,7 @@ mkdir -p "${SRC_DIR}"
 git clone https://github.com/kubernetes/kubernetes.git ${SRC_DIR}
 
 cd ${SRC_DIR}
-git checkout tags/v1.9.0-beta.1
+git checkout tags/v1.9.1
 KUBE_BUILD_PLATFORMS=linux/amd64   build/run.sh make WHAT=cmd/kubelet
 KUBE_BUILD_PLATFORMS=windows/amd64 build/run.sh make WHAT=cmd/kubelet 
 KUBE_BUILD_PLATFORMS=windows/amd64 build/run.sh make WHAT=cmd/kube-proxy 

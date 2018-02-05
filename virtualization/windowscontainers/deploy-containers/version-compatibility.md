@@ -3,11 +3,11 @@ title: "Windows 컨테이너 버전 호환성"
 description: "Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법"
 keywords: "메타데이터, 컨테이너, 버전"
 author: patricklang
-ms.openlocfilehash: e3e9d0ba52f7dddfa2f40a9d243467ab474b459e
-ms.sourcegitcommit: 7b58ed1779d8475abe5b9e8e69f764972882063d
+ms.openlocfilehash: 5c82c715bca6260e776946d538b942b74b7f1bc1
+ms.sourcegitcommit: 7fc79235cbee052e07366b8a6aa7e035a5e3434f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -45,6 +45,46 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
     </tr>
 </table>               
 
+## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 호스트 버전과 컨테이너 이미지 버전 일치
+### <a name="windows-server-containers"></a>Windows Server 컨테이너
+Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유하기 때문에 컨테이너의 기본 이미지는 호스트의 기본 이미지와 일치해야 합니다.  버전이 다른 경우 컨테이너는 시작할 수 있지만 일부 기능은 사용하지 못할 수 있습니다. Windows 운영 체제에는 주 버전, 부 버전, 빌드 및 수정의 네 가지 수준의 버전이 있습니다(예: 10.0.14393.103). 빌드 번호(예: 14393)는 버전 1709, 1803, Fall Creators Update 등 OS의 새 버전이 게시되는 경우에만 변경됩니다. 수정 번호(예: 103)는 Windows 업데이트가 적용되면 업데이트됩니다.
+#### <a name="build-number-new-release-of-windows"></a>빌드 번호(Windows의 새 릴리스)
+컨테이너 호스트와 컨테이너 이미지의 빌드 번호가 다르면 Windows Server 컨테이너 시작이 차단됩니다. 예를 들면 10.0.14393.*(Windows Server 2016) 및 10.0.16299.*(Windows Server 버전 1709)입니다.  
+#### <a name="revision-number-patching"></a>수정 번호(패치)
+컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다르더라도 Windows Server 컨테이너 시작이 차단되지 _않습니다_. 예를 들면 10.0.14393.1914(KB4051033이 적용된 Windows Server 2016) 및 10.0.14393.1944(KB4053579가 적용된 Windows Server 2016)입니다.  
+Windows Server 2016 기반 호스트/이미지의 경우 컨테이너 이미지의 수정이 지원되는 구성에 있는 호스트와 일치해야 합니다.  Windows Server 버전 1709부터 이것이 더 이상 적용되지 않으며 호스트와 컨테이너 이미지가 수정과 일치하지 않아도 됩니다.  항상 시스템을 최신 패치와 업데이트로 최신 상태로 유지하는 것이 좋습니다.
+#### <a name="practical-application"></a>유용한 팁
+예제 1: 컨테이너 호스트가 KB4041691이 적용된 Windows Server 2016을 실행합니다.  이 호스트에 배포된 모든 Windows Server 컨테이너는 10.0.14393.1770 컨테이너 기본 이미지를 기반으로 해야 합니다.  KB4053579가 호스트에 적용된 경우 지원을 계속 받을 수 있도록 동시에 컨테이너 이미지를 업데이트해야 합니다.
+예제 2: 컨테이너 호스트가 KB4043961이 적용된 Windows Server 버전 1709를 실행합니다.  이 호스트에 배포된 모든 Windows Server 컨테이너는 Windows Server 버전 1709(10.0.16299) 컨테이너 기본 이미지를 기반으로 해야 하지만 호스트 KB와 일치하지 않아도 됩니다.  KB4054517가 호스트에 적용된 경우 컨테이너 이미지를 업데이트할 필요가 없지만 모든 보안 문제를 완전히 해결하기 위해 정렬되어야 합니다.
+#### <a name="querying-version"></a>버전 쿼리
+방법 1: 버전 1709부터 cmd 프롬프트 및 `ver` 명령이 이제 수정 세부 정보를 반환합니다.
+```
+Microsoft Windows [Version 10.0.16299.125]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\>ver
+
+Microsoft Windows [Version 10.0.16299.125] 
+```
+방법 2: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion 레지스트리 키를 쿼리합니다. 예:
+```
+C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
+```
+또는
+```
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Administrator> (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\').BuildLabEx
+14393.321.amd64fre.rs1_release_inmarket.161004-2338
+```
+
+기본 이미지에서 사용하는 버전을 확인하기 위해 Docker 허브에서 태그를 검토하거나 이미지 설명에 제공된 이미지 해시 테이블을 검토할 수 있습니다.  [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정이 릴리스된 날짜가 나와 있습니다.
+
+### <a name="hyper-v-isolation-for-containers"></a>컨테이너에 대한 Hyper-V 격리
+Hyper-V 격리를 사용하여 또는 사용하지 않고 Windows 컨테이너를 실행할 수 있습니다.  Hyper-V 격리는 최적화된 VM을 사용하여 컨테이너 주위에 안전한 경계를 만듭니다.  컨테이너와 호스트 간에 커널을 공유하는 표준 Windows 컨테이너와 달리, 격리된 각 Hyper-V 컨테이너가 고유의 Windows 커널 인스턴스를 갖습니다.  따라서 컨테이너 호스트 및 이미지의 OS 버전이 달라도 됩니다(아래 호환성 매트릭스 참조).  
+
+Hyper-V 격리를 사용하여 컨테이너를 실행하려면 간단하게 docker run 명령에 `--isolation=hyperv` 태그를 추가하기만 하면 됩니다.
 
 ## <a name="errors-from-mismatched-versions"></a>일치하지 않는 버전으로 인해 오류 발생
 

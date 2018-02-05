@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 86d0b2f3ae86f99680e03e2bb8ad2712c6c70c16
-ms.sourcegitcommit: 456485f36ed2d412cd708aed671d5a917b934bbe
+ms.openlocfilehash: df9ca8a4bcd6bf959e221593ea69d5ed624cdae1
+ms.sourcegitcommit: 6beac5753c9f65bb6352df8c829c2e62e24bd2e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="active-directory-service-accounts-for-windows-containers"></a>Windows 컨테이너용 Active Directory 서비스 계정
 
@@ -46,6 +46,9 @@ Windows 컨테이너도 유사한 프로세스를 수행합니다.
 3. 데이터베이스나 파일 공유와 다른 서비스에서 gMSA에 액세스하도록 허용합니다.
 4. [windows-server-container-tools](https://github.com/Microsoft/Virtualization-Documentation/tree/live/windows-server-container-tools)의 CredentialSpec PowerShell 모듈을 사용하여 gMSA를 사용하는 데 필요한 설정을 저장합니다.
 5. 추가 옵션을 사용하여 컨테이너를 시작합니다. `--security-opt "credentialspec=..."`
+
+[!NOTE]
+[여기](https://docs.microsoft.com/en-us/windows/device-security/security-policy-settings/network-access-allow-anonymous-sidname-translation)에 설명된 대로 컨테이너 호스트에서 익명의 SID/이름 변환을 허용해야 할 수 있습니다. 그렇지 않으면 해당 계정을 SID로 변환할 수 없다는 오류가 발생할 수 있습니다.
 
 컨테이너가 시작되면 로컬 시스템 또는 네트워크 서비스로 실행되는 설치된 시스템이 gMSA로 실행되는 것으로 표시됩니다. 이는 이러한 계정을 도메인에 가입된 호스트에서 사용하는 방법과 동일하지만, 컴퓨터 계정 대신 gMSA를 사용하는 점만 다릅니다. 
 
