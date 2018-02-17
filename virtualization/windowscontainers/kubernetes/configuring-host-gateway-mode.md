@@ -6,7 +6,7 @@ Kubernetes 네트워킹에서 사용 가능한 옵션 중 하나는 모든 노�
 이 경우 `iptables`를 사용합니다. `$CLUSTER_PREFIX` 변수를 모든 포드가 사용할 줄임 서브넷으로 교체(또는 설정)합니다.
 
 ```bash
-$CLUSTER_PREFIX="192.168"
+CLUSTER_PREFIX="192.168"
 sudo iptables -t nat -F
 sudo iptables -t nat -A POSTROUTING ! -d $CLUSTER_PREFIX.0.0/16 \
               -m addrtype ! --dst-type LOCAL -j MASQUERADE
@@ -22,7 +22,7 @@ sudo route add -net $CLUSTER_PREFIX.0.0 netmask 255.255.0.0 dev eth0
 마지막으로 **노드별**로 다음 홉 게이트웨이를 추가합니다. 예를 들어 `192.168.1.0/16`에서 첫 번째 노드가 Windows 노드인 경우:
 
 ```bash
-sudo route add -net $CLUSTER.1.0 netmask 255.255.255.0 gw $CLUSTER.1.2 dev eth0
+sudo route add -net $CLUSTER_PREFIX.1.0 netmask 255.255.255.0 gw $CLUSTER_PREFIX.1.2 dev eth0
 ```
 
 클러스터의 모든 노드*에 대해* 클러스터의 모든 노드*에* 유사한 경로를 추가해야 합니다.
@@ -35,7 +35,6 @@ sudo route add -net $CLUSTER.1.0 netmask 255.255.255.0 gw $CLUSTER.1.2 dev eth0
 
 ## <a name="configuring-static-routes--windows"></a>정적 경로 구성 | Windows ##
 이 경우 `New-NetRoute`를 사용합니다. [이 리포지토리](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/AddRoutes.ps1)에 사용할 수 있는 자동화된 스크립드 `AddRoutes.ps1`이 있습니다. *Linux 마스터* IP 주소 및 Windows 노드 *외부* 어댑터의 기본 게이트웨이(포드 게이트웨이가 아니라)를 알아야 합니다. 그런 다음 다음이 필요합니다.
-
 
 ```powershell
 $url = "https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/windows/AddRoutes.ps1"
