@@ -1,3 +1,4 @@
+
 # <a name="using-insider-container-images"></a>참가자 컨테이너 이미지 사용
 
 이 연습에서는 Windows Insider Preview 프로그램의 최신 Windows Server 참가자 빌드에 Windows 컨테이너 기능을 배포하고 사용하는 방법을 안내합니다. 이 연습을 진행하는 과정에서 컨테이너 역할을 설치하고 기본 OS 이미지의 미리 보기 버전을 배포할 것입니다. 컨테이너에 대해 좀 더 숙지해야 하는 경우 [컨테이너 정보](../about/index.md)에서 이 정보를 찾을 수 있습니다.
@@ -11,22 +12,25 @@
 
 >아래에 설명된 기본 이미지를 사용하려면 Windows Server Insider Preview 프로그램의 Windows Server 빌드 또는 Windows Insider Preview 프로그램의 Windows 10 빌드를 사용해야 합니다. 두 빌드 중 하나를 사용하지 않을 경우 이러한 기본 이미지를 사용하면 컨테이너가 시작되지 않는 오류가 발생합니다.
 
-## <a name="install-docker"></a>Docker 설치
-Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 또한 컨테이너 최적화 Nano 서버 이미지를 사용하는 최고의 환경을 제공할 수 있도록 다단계 빌드를 지원하는 Docker 버전이 필요합니다.
+## <a name="install-docker-enterprise-edition-ee"></a>Docker Enterprise Edition(EE) 설치
+Windows 컨테이너를 사용하려면 Docker EE가 필요합니다. Docker EE는 Docker 엔진 및 Docker 클라이언트로 구성됩니다. 
 
-Docker를 설치하기 위해 OneGet provider PowerShell module(OneGet 공급자 PowerShell 모듈)을 사용합니다. 공급자는 컴퓨터에서 컨테이너 기능을 사용하도록 설정하고 Docker를 설치합니다. 그러면 컴퓨터를 다시 부팅해야 합니다. 여러 상황에 사용할 수 있도록 docker 버전이 다른 여러 채널이 있습니다. 이 연습에서는 Stable 채널의 최신 Community Edition Docker 버전을 사용하겠습니다. Docker에서 최신 개발을 테스트하려는 경우 Edge 채널을 사용할 수도 있습니다.
+Docker EE를 설치하기 위해 OneGet provider PowerShell module(OneGet 공급자 PowerShell 모듈)을 사용합니다. 공급자는 컴퓨터에서 컨테이너 기능을 사용하도록 설정하고 Docker EE를 설치합니다. 그러면 컴퓨터를 다시 부팅해야 합니다. 관리자 권한으로 PowerShell 세션을 열고 다음 명령을 실행합니다.
 
-관리자 권한으로 PowerShell 세션을 열고 다음 명령을 실행합니다.
-
->참고: 참가자 빌드에 Docker를 설치하려면 현재 일반적으로 사용되는 공급자 대신 다른 공급자가 필요합니다. 아래에서 차이점을 살펴보세요.
-
-OneGet PowerShell 모듈을 설치합니다.
-```powershell
-Install-Module -Name DockerMsftProviderInsider -Repository PSGallery -Force
+>참고: Windows Server 참가자 빌드를 사용하여 Docker EE를 설치하려면 비 참가자 빌드에 사용되는 것과 다른 OneGet 공급자가 필요합니다. Docker EE와 DockerMsftProvider OneGet 공급자가 이미 설치된 경우 계속하기 전에 이를 제거합니다.
+```powershell 
+Stop-Service docker
+Uninstall-Package docker
+Uninstall-Module DockerMsftProvider
 ```
-OneGet을 사용하여 최신 버전의 Docker를 설치합니다.
+
+Windows 참가자 빌드와 함께 사용할 OneGet PowerShell 모듈을 설치합니다.
 ```powershell
-Install-Package -Name docker -ProviderName DockerMsftProviderInsider
+Install-Module -Name DockerProvider -Repository PSGallery -Force
+```
+OneGet을 사용하여 최신 버전의 Docker EE 미리 보기를 설치합니다.
+```powershell
+Install-Package -Name docker -ProviderName DockerProvider -RequiredVersion Preview
 ```
 설치가 완료되면 컴퓨터를 다시 부팅합니다.
 ```

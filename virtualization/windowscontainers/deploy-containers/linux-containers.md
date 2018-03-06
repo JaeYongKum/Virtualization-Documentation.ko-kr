@@ -25,12 +25,12 @@ Moby 프로젝트의 현재 진행 상황은 [GitHub](https://github.com/moby/mo
 
 이러한 응용 프로그램 모두에는 볼륨 매핑이 요구되며 여기에는 [마운트 바인딩](#Bind-mounts)에 따라 적용되는 일부 제한 사항이 있습니다. 응용 프로그램이 올바르게 시작되거나 실행되지 않습니다.
 
-- Mysql
-- Postgress
-- Wordpress
+- MySQL
+- PostgreSQL
+- WordPress
 - Jenkins
-- Mariadb
-- Rabbitmq
+- MariaDB
+- RabbitMQ
 
 
 ### <a name="bind-mounts"></a>마운트 바인딩

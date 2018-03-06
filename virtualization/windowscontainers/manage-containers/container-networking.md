@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 394aa58c3421e512d005f59d5bd30667f1c26f16
-ms.sourcegitcommit: 6eefb890f090a6464119630bfbdc2794e6c3a3df
+ms.openlocfilehash: 70e662e73693d9fef9d36635289ec9affb8d0331
+ms.sourcegitcommit: f542e8c95b5bb31b05b7c88f598f00f76779b519
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 > ***일반 Docker 네트워킹 명령, 옵션 및 구문에 대한 내용은 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/)을 참조하세요.*** 이 문서에 설명된 경우를 제외한 모든 Docker 네트워킹 명령은 Linux와 동일한 구문을 통해 Windows에서 지원됩니다. 그러나 Windows와 Linux의 네트워크 스택이 서로 다르므로 일부 Linux 네트워크 명령은 Windows에서 지원되지 않습니다(예: ifconfig).

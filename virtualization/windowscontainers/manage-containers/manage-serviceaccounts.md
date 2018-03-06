@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: df9ca8a4bcd6bf959e221593ea69d5ed624cdae1
-ms.sourcegitcommit: 6beac5753c9f65bb6352df8c829c2e62e24bd2e2
+ms.openlocfilehash: 1ad04198c74f4566bd37b4ba884034aa5cd7c7ef
+ms.sourcegitcommit: ea6edc5bac5705a19d48ffdf1ba676c940c2eb67
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="active-directory-service-accounts-for-windows-containers"></a>Windows 컨테이너용 Active Directory 서비스 계정
 
@@ -50,7 +50,16 @@ Windows 컨테이너도 유사한 프로세스를 수행합니다.
 [!NOTE]
 [여기](https://docs.microsoft.com/en-us/windows/device-security/security-policy-settings/network-access-allow-anonymous-sidname-translation)에 설명된 대로 컨테이너 호스트에서 익명의 SID/이름 변환을 허용해야 할 수 있습니다. 그렇지 않으면 해당 계정을 SID로 변환할 수 없다는 오류가 발생할 수 있습니다.
 
-컨테이너가 시작되면 로컬 시스템 또는 네트워크 서비스로 실행되는 설치된 시스템이 gMSA로 실행되는 것으로 표시됩니다. 이는 이러한 계정을 도메인에 가입된 호스트에서 사용하는 방법과 동일하지만, 컴퓨터 계정 대신 gMSA를 사용하는 점만 다릅니다. 
+그러나 익명의 SID/이름 변환을 허용해야 하는지 확인하기 전에 다음 작업을 수행해야 합니다.
+
+1. gMSA 계정의 이름이 서비스 이름과 일치해야 합니다(예: "myapp").
+2. 컨테이너를 시작할 때 사용해야 하는 호스트 이름을 지정하려면 -h 인수를 포함합니다. 
+```
+docker run --security-opt "credentialspec=file://myapp.json" -d -p 80:80 -h myapp.mydomain.local <imagename>
+```
+3. gMSA 계정을 만들 때 사용되는 서비스 사용자 이름(SPN)은 컨테이너를 시작할 때 사용되는 -h 인수와 일치해야 합니다. 계정을 만드는 동안 gMSA에 SPN을 추가하지 않은 경우 나중에 계정의 속성에 추가할 수 있습니다.
+
+컨테이너가 시작되면 로컬 시스템 또는 네트워크 서비스로 실행되는 설치된 서비스가 gMSA로 실행되는 것으로 표시됩니다. 이는 이러한 계정을 도메인에 가입된 호스트에서 사용하는 방법과 동일하지만, 컴퓨터 계정 대신 gMSA를 사용하는 점만 다릅니다. 
 
 ![다이어그램 - 서비스 계정](media/serviceaccount_diagram.png)
 

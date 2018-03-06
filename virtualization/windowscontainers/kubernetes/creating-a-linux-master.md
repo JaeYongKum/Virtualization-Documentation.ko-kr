@@ -7,11 +7,11 @@ ms.topic: get-started-article
 ms.prod: containers
 description: "처음부터 Kubernetes 클러스터 마스터를 만듭니다."
 keywords: "kubernetes, 1.9, 마스터, linux"
-ms.openlocfilehash: d5251b1a2dc06bef396820e324fb240eed04acc8
-ms.sourcegitcommit: b0e21468f880a902df63ea6bc589dfcff1530d6e
+ms.openlocfilehash: 3ea338f7af3dd921731fce0ec5a8b2cf8c4fef0c
+ms.sourcegitcommit: f542e8c95b5bb31b05b7c88f598f00f76779b519
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="kubernetes-master--from-scratch"></a>처음부터 Kubernetes 마스터 #
 이 페이지는 처음부터 끝까지 Kubernetes 마스터를 수동 배포하는 방법을 안내합니다.
@@ -27,9 +27,17 @@ ms.lasthandoff: 01/17/2018
 먼저 모든 필수 구성 요소를 설치합니다.
 
 ```bash
-sudo apt-get install curl git build-essential docker.io conntrack
+sudo apt-get install curl git build-essential docker.io conntrack python2.7
 ```
 
+프록시 뒤에 있는 경우 현재 세션에 대한 환경 변수를 다음과 같이 정의합니다.
+```bash
+HTTP_PROXY=http://proxy.example.com:80/
+HTTPS_PROXY=http://proxy.example.com:443/
+http_proxy=http://proxy.example.com:80/
+https_proxy=http://proxy.example.com:443/
+```
+또는 이 설정을 영구적으로 유지하려는 경우 /etc/environment에 변수를 추가합니다(변경 사항을 적용하려면 로그아웃한 후 다시 로그인해야 함).
 
 [이 리포지토리](https://github.com/Microsoft/SDN/tree/master/Kubernetes/linux)에 설치 과정에 도움이 되는 스크립트 컬렉션이 있습니다. `~/kube/`에 시험해 보세요. 이 전체 디렉터리는 이후 단계에서 여러 Docker 컨테이너에 대해 마운트되므로 이 가이드에서 사용된 구조를 동일하게 유지하세요.
 
@@ -102,6 +110,7 @@ $ MASTER_IP=10.123.45.67   # example! replace
 
 ```bash
 cd ~/kube/certs
+chmod u+x generate-certs.sh
 ./generate-certs.sh $MASTER_IP
 ```
 
@@ -133,6 +142,7 @@ Kubernetes가 이를 매니페스트로 혼동하지 않도록 Python 스크립�
 생성된 인증서를 사용하기 위해 Kubernetes를 구성합니다. 이렇게 하면 `~/.kube/config`에서 구성이 만들어집니다.
 
 ```bash
+cd ~/kube
 ./configure-kubectl.sh $MASTER_IP
 ```
 

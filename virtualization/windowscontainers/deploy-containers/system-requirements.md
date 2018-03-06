@@ -7,11 +7,11 @@ ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: 88d094202c49cf725e9d608a0810e7d9f8a1e271
-ms.sourcegitcommit: 7fc79235cbee052e07366b8a6aa7e035a5e3434f
+ms.openlocfilehash: ff9b24ccc802b228b649c2330333cbe008350aec
+ms.sourcegitcommit: ea6edc5bac5705a19d48ffdf1ba676c940c2eb67
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -67,7 +67,7 @@ Windows 컨테이너는 두 컨테이너 기본 이미지(Windows Server Core �
 > <span id="warn-1">Windows Server 버전 1709부터 Nano 서버는 더 이상 컨테이너 호스트로 사용할 수 없습니다.</span>
 
 
-### <a name="memory-requirments"></a>메모리 요구 사항
+### <a name="memory-requirements"></a>메모리 요구 사항
 컨테이너에 대해 사용 가능한 메모리에 대한 제한은 [리소스 컨트롤](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/resource-controls)을 통해 또는 컨테이너 호스트를 오버로드하여 구성할 수 있습니다.  컨테이너를 시작하고 기본 명령(ipconfig, dir 등)을 실행하는 데 필요한 최소 메모리 용량은 다음과 같습니다.  __이러한 값은 컨테이너 간 리소스 공유 또는 컨테이너에서 실행되는 응용 프로그램의 요구 사항을 고려하지 않습니다.  예를 들어 512MB의 사용 가능한 메모리가 있는 호스트는 Server Core 컨테이너가 리소스를 공유하므로 Hyper-V에서 여러 개의 Server Core 컨테이너를 실행할 수 있습니다.__
 
 #### <a name="windows-server-2016"></a>WindowsServer 2016

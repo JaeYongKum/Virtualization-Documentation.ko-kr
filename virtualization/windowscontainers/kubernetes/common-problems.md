@@ -7,11 +7,11 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: "Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다."
 keywords: "kubernetes, 1.9, linux, 컴파일"
-ms.openlocfilehash: 4fb7ac312b08c63564beb0f40889ff6a050c7166
-ms.sourcegitcommit: b0e21468f880a902df63ea6bc589dfcff1530d6e
+ms.openlocfilehash: b6be43f1afabdf8ef9c2ddc6f46ed5ac43a9e7a5
+ms.sourcegitcommit: 2e8f1fd06d46562e56c9e6d70e50745b8b234372
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -50,6 +50,7 @@ chmod +x [script name]
 ## <a name="common-networking-errors"></a>일반적인 네트워킹 오류 ##
 네트워크 또는 호스트에 특정 유형의 노드 간 통신을 방지하는 추가 제한 사항이 있을 수 있습니다. 다음을 확인합니다.
 
+  - 네트워크 토폴로지가 올바르게 구성되었는지 여부
   - 포드에서 가져온 것처럼 보이는 트래픽이 허용되었는지 여부
   - 웹 서비스를 배포하는 경우 HTTP 트래픽이 허용되었는지 여부
   - ICMP 패킷이 손실되지 않았는지 여부
@@ -83,7 +84,7 @@ Hyper-V 가상 컴퓨터를 사용하는 경우 네트워크 어댑터에서 MAC
 Windows 네트워킹 스택에는 Kubernetes 네트워킹을 위한 가상 어댑터가 작동되어야 합니다. 다음 명령이 관리 셀에 결과를 리턴하지 않는 경우 가상 네트워크 만들기 &mdash; Kubelet 작동에 필요한 전제 조건 &mdash; 가 실패했습니다.
 
 ```powershell
-Get-HnsNetwork | ? Name -Like "l2bridge"
+Get-HnsNetwork | ? Name -ieq "l2bridge"
 Get-NetAdapter | ? Name -Like "vEthernet (Ethernet*"
 ```
 

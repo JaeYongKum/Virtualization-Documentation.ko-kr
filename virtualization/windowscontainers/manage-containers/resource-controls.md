@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8ccd4192-4a58-42a5-8f74-2574d10de98e
-ms.openlocfilehash: d3eb7e2b751468953a152e8c723551fb3e1d12dd
-ms.sourcegitcommit: a072513214b0dabb9dba20ce43ea52aaf7806c5f
+ms.openlocfilehash: 413e28aabccdf894ebc249d8eae59e75e4b42345
+ms.sourcegitcommit: 1bd3d86bfbad8351cb19bdc84129dd5aec976c0c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/01/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="implementing-resource-controls-for-windows-containers"></a>Windows 컨테이너용 리소스 컨트롤 구현
 컨테이너별 및 리소스별로 구현할 수 있는 몇 가지 리소스 컨트롤이 있습니다.  기본적으로 컨테이너 실행은 대개 공평한 공유를 기반으로 하지만 이러한 컨트롤의 구성을 기반으로 하는 일반적인 Windows 리소스 관리에 따라 적용되지만 개발자 또는 관리자는 리소스 사용을 제한하거나 이에 영향을 미칠 수 있습니다.  제어할 수 있는 리소스에는 CPU/프로세서, 메모리/RAM, 디스크/저장소 및 네트워킹/처리량이 포함됩니다.
@@ -28,6 +28,7 @@ Windows 컨테이너는 [작업 개체]( https://msdn.microsoft.com/en-us/librar
 | HCS 인터페이스 | [MemoryMaximumInMB]( https://github.com/Microsoft/hcsshim/blob/b144c605002d4086146ca1c15c79e56bfaadc2a7/interface.go#L67) |
 | 공유 커널 | [JOB_OBJECT_LIMIT_JOB_MEMORY](https://msdn.microsoft.com/en-us/library/windows/desktop/ms684147(v=vs.85).aspx) |
 | Hyper-V 격리 | 가상 컴퓨터 메모리 |
+| _Windows Server 2016의 Hyper-V 격리와 관련된 주의 사항: 메모리 캡을 사용할 때 컨테이너가 처음에 메모리 캡 용량을 할당한 다음 이를 다시 컨테이너 호스트로 반환하기 시작합니다.  이후 버전(1709 이상)에서는 최적화되었습니다._ |
 | ||
 | *CPU(개수)* ||
 | Docker 인터페이스 | [--cpus](https://docs.docker.com/engine/admin/resource_constraints/#cpu) |

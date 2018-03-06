@@ -8,11 +8,11 @@ ms.prod: containers
 description: "v1.9 베타 Kubernetes 클러스터에 Windows 노드를 가입합니다."
 keywords: "kubernetes, 1.9, windows, 시작"
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: f1b832f8a21c034582e157342acf7826fb7b6ea3
-ms.sourcegitcommit: b0e21468f880a902df63ea6bc589dfcff1530d6e
+ms.openlocfilehash: 0ccd7dae8da0841c98bec5cdf7345100d1b51107
+ms.sourcegitcommit: 2e8f1fd06d46562e56c9e6d70e50745b8b234372
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes #
 Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1709#networking)를 통해 사용자들은 Windows 네트워킹에서 최신 기능을 활용할 수 있습니다.
@@ -36,19 +36,11 @@ Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.mi
 이 가이드에서는 다음을 수행합니다.
 
 > [!div class="checklist"]  
-> * [네트워크 토폴로지](#network-topology) 준비  
 > * [Linux 마스터](#preparing-the-linux-master) 노드 구성  
 > * 이에 [Windows 작업자 노드](#preparing-a-windows-node) 가입  
+> * [네트워크 토폴로지](#network-topology) 준비  
 > * [샘플 Windows 서비스](#running-a-sample-service) 배포  
 > * [일반적인 문제 및 실수](./common-problems.md) 검토  
-
-
-## <a name="network-topology"></a>네트워크 토폴로지 ##
-여러 가지 방법으로 가상 [서브넷 클러스터](#cluster-subnet-def)를 라우팅할 수 있도록 만들 수 있습니다. 다음을 수행할 수 있습니다.
-
-  - [호스트 게이트웨이 모드](./configuring-host-gateway-mode.md)를 구성하여 정적 다음 홉 경로를 설정하여 포드 간 통신을 활성화할 수 있습니다.
-  - 스마트 ToR(Top-of-Rack) 스위치를 구성하여 서브넷을 라우팅합니다.
-  - [Flannel](https://coreos.com/flannel/docs/latest/kubernetes.html)과 같은 타사 오버레이 플러그 인을 사용합니다(Flannel에 대한 Windows 지원 베타 단계입니다).
 
 
 ## <a name="preparing-the-linux-master"></a>Linux 마스터 준비 ##
@@ -59,7 +51,7 @@ Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.mi
 > [!Note]  
 > Windows 섹션의 모든 코드 조각을 _관리자 권한_ PowerShell로 실행해야 합니다.
 
-Kubernetes는 [Docker](https://www.docker.com/)를 컨테이너 조정자로 사용하므로 설치해야 합니다. [공식 MSDN 지침](virtualization/windowscontainers/manage-docker/configure-docker-daemon.md#install-docker), [Docker 지침](https://store.docker.com/editions/enterprise/docker-ee-server-windows)을 따르거나 또는 다음 단계를 시도할 수 있습니다.
+Kubernetes는 [Docker](https://www.docker.com/)를 컨테이너 조정자로 사용하므로 설치해야 합니다. [공식 MSDN 지침](../manage-docker/configure-docker-daemon.md#install-docker), [Docker 지침](https://store.docker.com/editions/enterprise/docker-ee-server-windows)을 따르거나 또는 다음 단계를 시도할 수 있습니다.
 
 ```powershell
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
@@ -67,7 +59,13 @@ Install-Package -Name Docker -ProviderName DockerMsftProvider
 Restart-Computer -Force
 ```
 
-[이 Microsoft 리포지토리](https://github.com/Microsoft/SDN)에 클러스터에 이 노드를 가입하는 데 도움이 되는 스크립트 컬랙션이 있습니다. [여기](https://github.com/Microsoft/SDN/archive/master.zip)에서 ZIP 파일을 직접 다운로드할 수 있습니다. `Kubernetes/windows` 폴더만 필요하며 해당 폴더의 내용을 `C:\k\`로 이동해야 합니다.
+프록시 뒤에 있는 경우 다음 PowerShell 환경 변수를 정의해야 합니다.
+```powershell
+[Environment]::SetEnvironmentVariable("HTTP_PROXY", "http://proxy.example.com:80/", [EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("HTTPS_PROXY", "http://proxy.example.com:443/", [EnvironmentVariableTarget]::Machine)
+```
+
+[이 Microsoft 리포지토리](https://github.com/Microsoft/SDN)에 클러스터에 이 노드를 가입하는 데 도움이 되는 스크립트 컬렉션이 있습니다. [여기](https://github.com/Microsoft/SDN/archive/master.zip)에서 ZIP 파일을 직접 다운로드할 수 있습니다. `Kubernetes/windows` 폴더만 필요하며 해당 폴더의 내용을 `C:\k\`로 이동해야 합니다.
 
 ```powershell
 wget https://github.com/Microsoft/SDN/archive/master.zip -o master.zip
@@ -78,6 +76,14 @@ rm -recurse -force master,master.zip
 ```
 
 [이전에 식별된](#preparing-the-linux-master) 인증서 파일을 이 새 `C:\k` 디렉터리에 복사합니다.
+
+
+## <a name="network-topology"></a>네트워크 토폴로지 ##
+여러 가지 방법으로 가상 [서브넷 클러스터](#cluster-subnet-def)를 라우팅할 수 있도록 만들 수 있습니다. 다음을 수행할 수 있습니다.
+
+  - [호스트 게이트웨이 모드](./configuring-host-gateway-mode.md)를 구성하여 정적 다음 홉 경로를 설정하여 포드 간 통신을 활성화할 수 있습니다.
+  - 스마트 ToR(Top-of-Rack) 스위치를 구성하여 서브넷을 라우팅합니다.
+  - [Flannel](https://coreos.com/flannel/docs/latest/kubernetes.html)과 같은 타사 오버레이 플러그인을 사용합니다(Flannel에 대한 Windows 지원 베타 단계입니다).
 
 
 ### <a name="creating-the-pause-image"></a>"일시 중지" 이미지 만들기 ###
@@ -103,8 +109,49 @@ docker build -t kubeletwin/pause .
 
 최신 1.9 릴리스의 `CHANGELOG.md` 파일에 있는 링크에서 이를 다운로드할 수 있습니다. 이 문서를 작성한 시점을 기준으로 [1.9.1](https://github.com/kubernetes/kubernetes/releases/tag/v1.9.1)이며 Windows 바이너리는 [여기](https://storage.googleapis.com/kubernetes-release/release/v1.9.1/kubernetes-node-windows-amd64.tar.gz)에 있습니다. [7-Zip](http://www.7-zip.org/)과 같은 도구를 사용하여 아카이브 압축을 풀고 `C:\k\`에 바이너리를 놓습니다.
 
+`kubectl` 명령을 `C:\k\` 디렉터리 외부에서 사용할 수 있도록 하려면 `PATH` 환경 변수를 다음과 같이 수정하십시오.
+
+```powershell
+$env:Path += ";C:\k"
+```
+
+이 변경 사항을 영구적으로 유지하려면 다음과 같이 대상 컴퓨터에서 변수를 수정하십시오.
+
+```powershell
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\k", [EnvironmentVariableTarget]::Machine)
+```
 
 ### <a name="joining-the-cluster"></a>클러스터 가입 ###
+다음을 사용하여 클러스터 구성이 올바른지 확인하십시오.
+
+```powershell
+kubectl version
+```
+
+연결 오류가 나타나는 경우
+
+```
+Unable to connect to the server: dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+```
+
+구성이 적절하게 발견되었는지 확인합니다.
+
+```powershell
+kubectl config view
+```
+
+`kubectl`이 구성 파일을 찾는 위치를 변경하기 위해 `--kubeconfig` 매개 변수를 전달하거나 `KUBECONFIG` 환경 변수를 수정할 수 있습니다. 예를 들어 구성 파일이 `C:\k\config`에 있는 경우 다음과 같습니다.
+
+```powershell
+$env:KUBECONFIG="C:\k\config"
+```
+
+이 설정을 현재 사용자 범위에서 영구적으로 유지하려면 다음을 수행하십시오.
+
+```powershell
+[Environment]::SetEnvironmentVariable("KUBECONFIG", "C:\k\config", [EnvironmentVariableTarget]::User)
+```
+
 노드가 이제 클러스터에 가입할 준비가 되었습니다. 별개의 *관리자 권한* PowerShell 창에서 이 스크립트를 실행합니다(이 순서대로). 첫 번째 스크립트의 `-ClusterCidr` 매개 변수는 구성된 [클러스터 서브넷](#cluster-subnet-def)이며 여기에서는 `192.168.0.0/16`입니다.
 
 ```powershell
@@ -122,7 +169,7 @@ docker build -t kubeletwin/pause .
 
   - **포드 서브넷 및 노드 간 연결**: 가상 포드 인터페이스와 노드 간에 ping합니다. 각각 Linux 및 Windows의 `route -n` 및 `ipconfig` 아래의 게이트웨이 주소를 찾고 `cbr0` 인터페이스를 찾습니다.
 
-이런 기본 테스트 중 하나라도 작동하지 않는 경우 문제 해결을 위해 [문제 해결 페이지](./common-problems.md#network-connectivity)를 사용해 볼 수 있습니다.
+이런 기본 테스트 중 하나라도 작동하지 않는 경우 문제 해결을 위해 [문제 해결 페이지](./common-problems.md#common-networking-errors)를 사용해 볼 수 있습니다.
 
 
 ## <a name="running-a-sample-service"></a>샘플 서비스 실행 ##
@@ -140,7 +187,7 @@ watch kubectl get pods -o wide
 이렇게 하면 배포 및 서비스가 생성되며 이들의 상태를 추적하기 위해 무기한으로 포드를 감시합니다. 관찰을 완료했으면 `Ctrl+C`를 눌러 `watch` 명령을 종료하면 됩니다.
 
 
-모든 것이 순조롭다면 다음이 가능한지 확인하기 위해 유효성 검사를 시행할 수 있습니다.
+모든 작업이 제대로 진행되면 다음을 수행할 수 있습니다.
 
   - Windows 측 `docker ps` 명령 아래에서 컨테이너 4개를 확인합니다.
   - `curl` 포트 80에 있는 *포드* IP에서 Linux 마스터로부터 웹 서버 응답을 가져옵니다. 이는 네트워크에 걸친 적절한 노드에서 포드 통신을 보여줍니다.
@@ -150,4 +197,4 @@ watch kubectl get pods -o wide
   - `curl` *서비스 이름*에 Kubernetes [기본 DNS 접미사](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services)가 있음. 이는 DNS 기능을 보여줍니다.
 
 > [!Warning]  
-> Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이는 [잘 알려진 제한 사항](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip)입니다.
+> Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이는 향후 서비스될 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip)입니다.
