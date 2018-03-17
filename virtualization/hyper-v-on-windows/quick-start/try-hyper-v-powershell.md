@@ -8,17 +8,17 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6d1ae036-0841-4ba5-b7e0-733aad31e9a7
-ms.openlocfilehash: 520ef410eddad61c40d31655e6bf7ede7846d4b2
-ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
+ms.openlocfilehash: bd0175fe209e3311a38af29ccd0f473a2bd32dd8
+ms.sourcegitcommit: 6e3c3b2ff125f949c03a342c3709a6e57c5f736c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 03/17/2018
 ---
-# Hyper-V 및 Windows PowerShell 사용
+# <a name="working-with-hyper-v-and-windows-powershell"></a>Hyper-V 및 Windows PowerShell 사용
 
 Hyper-V 배포, 가상 컴퓨터 만들기 및 이러한 가상 컴퓨터 관리의 기본 사항을 살펴보았으므로 이제 PowerShell 사용하여 이러한 다양한 작업을 자동화할 수 있는 방법을 살펴보겠습니다.
 
-### Hyper-V 명령 목록 반환
+### <a name="return-a-list-of-hyper-v-commands"></a>Hyper-V 명령 목록 반환
 
 1.  Windows 시작 단추를 클릭하고 **PowerShell**을 입력합니다.
 2.  다음 명령을 실행하여 Hyper-V PowerShell 모듈과 함께 사용할 수 있는 검색 가능한 PowerShell 명령 목록을 표시합니다.
@@ -40,7 +40,7 @@ Get-Help Get-VM
  ![](media\get_help.png)
 
 
-### 가상 컴퓨터 목록 반환
+### <a name="return-a-list-of-virtual-machines"></a>가상 컴퓨터 목록 반환
 
 `Get-VM` 명령을 사용하여 가상 컴퓨터 목록을 반환합니다.
 
@@ -64,7 +64,7 @@ Get-VM
  Get-VM | where {$_.State -eq 'Off'}
  ```
 
-### 가상 컴퓨터 시작 및 종료
+### <a name="start-and-shut-down-virtual-machines"></a>가상 컴퓨터 시작 및 종료
 
 1. 특정 가상 컴퓨터를 시작하려면 가상 컴퓨터의 이름으로 다음 명령을 실행합니다.
 
@@ -83,14 +83,14 @@ Get-VM
  Get-VM | where {$_.State -eq 'Running'} | Stop-VM
  ```
 
-### VM 검사점 만들기
+### <a name="create-a-vm-checkpoint"></a>VM 검사점 만들기
 
 PowerShell을 사용하여 검사점을 만들려면 `Get-VM` 명령을 사용하여 가상 컴퓨터를 선택하고 이를 `Checkpoint-VM` 명령에 파이프합니다. 마지막으로 `-SnapshotName`을 사용하여 검사점에 이름을 지정합니다. 전체 명령은 다음과 같습니다.
 
  ```powershell
  Get-VM -Name <VM Name> | Checkpoint-VM -SnapshotName <name for snapshot>
  ```
-### 새 가상 컴퓨터 만들기
+### <a name="create-a-new-virtual-machine"></a>새 가상 컴퓨터 만들기
 
 다음 예제는 PowerShell ISE(통합 스크립팅 환경)에서 새 가상 컴퓨터를 만드는 방법을 보여 줍니다. 이는 간단한 예이며 추가 PowerShell 기능 및 고급 VM 배포를 포함하도록 확장할 수 있습니다.
 
@@ -111,10 +111,10 @@ PowerShell을 사용하여 검사점을 만들려면 `Get-VM` 명령을 사용�
      SwitchName = (Get-VMSwitch).Name[0]
  }
 
- New-VM @VM
+ New-VM $VM
   ```
 
-## 요약 및 참조
+## <a name="wrap-up-and-references"></a>요약 및 참조
 
 이 문서는 몇 가지 샘플 시나리오 뿐 아니라 Hyper-V PowerShell 모듈을 살펴보는 몇 가지 간단한 단계를 보여 주었습니다. Hyper-V PowerShell 모듈에 대한 자세한 내용은 [Windows PowerShell 참조의 Hyper-V Cmdlet](https://technet.microsoft.com/%5Clibrary/Hh848559.aspx)을 참조하세요.  
  
