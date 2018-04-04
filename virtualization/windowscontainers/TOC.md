@@ -23,7 +23,7 @@
 ## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
 # Windows에서 Docker 관리
-## [Windows의 Docker 엔진](docker/configure_docker_daemon.md)
+## [Windows의 Docker 엔진](manage-docker/configure-docker-daemon.md)
 ## [Windows의 Dockerfile](manage-docker/manage-windows-dockerfile.md)
 ## [Dockerfile 최적화](manage-docker/optimize-windows-dockerfile.md)
 ## [컨테이너 네트워킹](manage-containers/container-networking.md)
@@ -39,6 +39,10 @@
 ## [네트워크 토폴로지 구성](kubernetes/configuring-host-gateway-mode.md)
 ## [Kubernetes 바이너리 컴파일](kubernetes/compiling-kubernetes-binaries.md)
 ## [문제 해결](kubernetes/common-problems.md)
+
+# Service Fabric 빠른 시작
+## [첫 번째 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers)
+## [Windows 컨테이너에서 .NET 응용 프로그램 배포](/azure/service-fabric/service-fabric-host-app-in-a-container) 
 
 # 컨테이너 샘플
 ## [응용 프로그램 프레임워크](samples.md#Application-Frameworks)

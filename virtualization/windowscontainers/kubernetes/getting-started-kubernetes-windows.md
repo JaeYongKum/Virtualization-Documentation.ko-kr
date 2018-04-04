@@ -1,20 +1,21 @@
 ---
-title: "Windows의 Kubernetes"
+title: Windows의 Kubernetes
 author: gkudra-msft
 ms.author: gekudray
 ms.date: 11/16/2017
 ms.topic: get-started-article
 ms.prod: containers
-description: "v1.9 베타 Kubernetes 클러스터에 Windows 노드를 가입합니다."
-keywords: "kubernetes, 1.9, windows, 시작"
+description: v1.9 베타 Kubernetes 클러스터에 Windows 노드를 가입합니다.
+keywords: kubernetes, 1.9, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 0ccd7dae8da0841c98bec5cdf7345100d1b51107
-ms.sourcegitcommit: 2e8f1fd06d46562e56c9e6d70e50745b8b234372
+ms.openlocfilehash: 124895e93cbaee50c66b6b5a7cc2c71c144dad67
+ms.sourcegitcommit: 6e3c3b2ff125f949c03a342c3709a6e57c5f736c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes #
+
 Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1709#networking)를 통해 사용자들은 Windows 네트워킹에서 최신 기능을 활용할 수 있습니다.
 
   - **공유 포드 구획**: 이제 인프라 및 작업자 포드가 네트워크 구획을 공유합니다(Linux 네임스페이스와 유사함).
@@ -24,15 +25,14 @@ Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.mi
 
 이 페이지는 완전히 새로운 Windows 노드를 기존 Linux 기반 클러스터에 가입하는 가이드를 제공합니다. 처음부터 시작하려면 [이 페이지](./creating-a-linux-master.md)에서 이전에 수행했던 것과 동일한 방식으로 처음부터 마스터를 설정하기 위해 Kubernetes 클러스터를 배포하는 데 사용할 수 있는 여러 리소스를 참조하세요.
 
-
 <a name="definitions"></a> 다음은 이 가이드에서 참조되는 몇 가지 조건에 대한 정의입니다.
 
   - **외부 네트워크**는 노드가 이를 통해 통신하는 네트워크입니다.
   - <a name="cluster-subnet-def"></a>**클러스터 서브넷**은 라우팅할 수 있는 가상 네트워크입니다. 포드를 사용하기 위해 여기에서 노드에는 보다 작은 서브넷이 할당됩니다.
   - **서비스 서브넷**은 라우팅할 수 없으며 네트워크 토폴로지에 대한 고려 없이 동일하게 서비스에 액세스하기 위해 포드에 의해 사용되는 11.0/16의 완전히 가상 서브넷입니다. 노드에서 실행되는 `kube-proxy`에 의해 라우팅할 수 있는 주소 공간으로 또는 공간에서 변환됩니다.
 
+## <a name="what-you-will-accomplish"></a>수행할 작업 ##
 
-## <a name="what-we-will-accomplish"></a>수행할 작업 ##
 이 가이드에서는 다음을 수행합니다.
 
 > [!div class="checklist"]  
@@ -42,16 +42,16 @@ Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.mi
 > * [샘플 Windows 서비스](#running-a-sample-service) 배포  
 > * [일반적인 문제 및 실수](./common-problems.md) 검토  
 
-
 ## <a name="preparing-the-linux-master"></a>Linux 마스터 준비 ##
-[우리의 지침](./creating-a-linux-master.md)을 따랐든지 또는 이미 기존 클러스터가 있든지 상관 없이 Linux 마스터에서 필요한 것은 Kubernetes의 인증서 구성뿐입니다. 설정에 따라 `/etc/kubernetes/admin.conf`, `~/.kube/config`, 또는 다른 곳에 있을 수 있습니다.
 
+[지침](./creating-a-linux-master.md)을 따랐는지 또는 이미 기존 클러스터가 있는지에 관계 없이 Linux 마스터에서 필요한 것은 Kubernetes의 인증서 구성뿐입니다. 설정에 따라 `/etc/kubernetes/admin.conf`, `~/.kube/config`, 또는 다른 곳에 있을 수 있습니다.
 
 ## <a name="preparing-a-windows-node"></a>Windows 노드 준비 ##
-> [!Note]  
+
+> [!NOTE]  
 > Windows 섹션의 모든 코드 조각을 _관리자 권한_ PowerShell로 실행해야 합니다.
 
-Kubernetes는 [Docker](https://www.docker.com/)를 컨테이너 조정자로 사용하므로 설치해야 합니다. [공식 MSDN 지침](../manage-docker/configure-docker-daemon.md#install-docker), [Docker 지침](https://store.docker.com/editions/enterprise/docker-ee-server-windows)을 따르거나 또는 다음 단계를 시도할 수 있습니다.
+Kubernetes는 [Docker](https://www.docker.com/)를 컨테이너 조정자로 사용하므로 설치해야 합니다. [공식 Docs 지침](../manage-docker/configure-docker-daemon.md#install-docker), [Docker 지침](https://store.docker.com/editions/enterprise/docker-ee-server-windows)을 따르거나 또는 다음 단계를 시도할 수 있습니다.
 
 ```powershell
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
@@ -65,7 +65,7 @@ Restart-Computer -Force
 [Environment]::SetEnvironmentVariable("HTTPS_PROXY", "http://proxy.example.com:443/", [EnvironmentVariableTarget]::Machine)
 ```
 
-[이 Microsoft 리포지토리](https://github.com/Microsoft/SDN)에 클러스터에 이 노드를 가입하는 데 도움이 되는 스크립트 컬렉션이 있습니다. [여기](https://github.com/Microsoft/SDN/archive/master.zip)에서 ZIP 파일을 직접 다운로드할 수 있습니다. `Kubernetes/windows` 폴더만 필요하며 해당 폴더의 내용을 `C:\k\`로 이동해야 합니다.
+[이 Microsoft 리포지토리](https://github.com/Microsoft/SDN)에 이 노드를 클러스터에 가입시키는 데 도움이 되는 스크립트 컬렉션이 있습니다. [여기](https://github.com/Microsoft/SDN/archive/master.zip)에서 ZIP 파일을 직접 다운로드할 수 있습니다. `Kubernetes/windows` 폴더만 필요하며 해당 폴더의 내용을 `C:\k\`로 이동해야 합니다.
 
 ```powershell
 wget https://github.com/Microsoft/SDN/archive/master.zip -o master.zip
@@ -77,16 +77,16 @@ rm -recurse -force master,master.zip
 
 [이전에 식별된](#preparing-the-linux-master) 인증서 파일을 이 새 `C:\k` 디렉터리에 복사합니다.
 
-
 ## <a name="network-topology"></a>네트워크 토폴로지 ##
+
 여러 가지 방법으로 가상 [서브넷 클러스터](#cluster-subnet-def)를 라우팅할 수 있도록 만들 수 있습니다. 다음을 수행할 수 있습니다.
 
   - [호스트 게이트웨이 모드](./configuring-host-gateway-mode.md)를 구성하여 정적 다음 홉 경로를 설정하여 포드 간 통신을 활성화할 수 있습니다.
   - 스마트 ToR(Top-of-Rack) 스위치를 구성하여 서브넷을 라우팅합니다.
-  - [Flannel](https://coreos.com/flannel/docs/latest/kubernetes.html)과 같은 타사 오버레이 플러그인을 사용합니다(Flannel에 대한 Windows 지원 베타 단계입니다).
-
+  - [Flannel](https://coreos.com/flannel/docs/latest/kubernetes.html)과 같은 타사 오버레이 플러그인을 사용합니다(Flannel에 대한 Windows 지원은 베타 단계임).
 
 ### <a name="creating-the-pause-image"></a>"일시 중지" 이미지 만들기 ###
+
 `docker`를 설치했으므로 이제 인프라 포드를 준비하기 위해 Kubernetes에 의해 사용되는 "일시 중지" 이미지를 준비해야 합니다.
 
 ```powershell
@@ -96,11 +96,11 @@ cd C:/k/
 docker build -t kubeletwin/pause .
 ```
 
-> [!Note]  
+> [!NOTE]
 > 나중에 배포하는 샘플 서비스가 실제로 사용 가능한 최신 Windows Server Core 이미지가 _아니어도_ 해당 이미지에 따라 달라지므로 샘플 서비스를 `:latest` 태그로 지정합니다. 충돌하는 컨테이너 이미지를 조심하는 것이 중요합니다. 예상되는 태그가 없으면 호환되지 않는 컨테이너 이미지의 `docker pull`이 발생하여 [배포 문제](./common-problems.md#when-deploying-docker-containers-keep-restarting)가 발생할 수 있습니다. 
 
 
-### <a name="downloading-binaries"></a>바이너리 다운로드 ###
+### <a name="downloading-binaries"></a>이진 파일 다운로드 ###
 그 동안에 `pull`이 발생하는 동안 Kubernetes에서 다음 클라이언트 측 바이너리를 다운로드합니다.
 
   - `kubectl.exe`
@@ -162,8 +162,9 @@ $env:KUBECONFIG="C:\k\config"
 1분 안에 Windows 노드가 `kubectl get nodes` 아래의 Linux 마스터에서 표시됩니다.
 
 
-### <a name="validating-your-network-topology"></a>네트워크 토폴로지 유효성 검사 ###
-적절한 네트워크 구성을 검사하는 몇 가지 기본 테스트가 있습니다.
+### <a name="validating-your-network-topology"></a>네트워크 토폴로지 확인 ###
+
+적절한 네트워크 구성을 확인하는 몇 가지 기본 테스트가 있습니다.
 
   - **노드 간 연결**: 마스터 및 Windows 작업자 노드 간에 ping이 양방향에서 성공해야 합니다.
 
@@ -173,8 +174,8 @@ $env:KUBECONFIG="C:\k\config"
 
 
 ## <a name="running-a-sample-service"></a>샘플 서비스 실행 ##
-클러스터가 성공적으로 가입되고 네트워크가 적절히 구성되었는지 확인하기 위해 매우 간단한 [PowerShell 기반 웹 서비스](https://github.com/Microsoft/SDN/blob/master/Kubernetes/WebServer.yaml)를 배포해보겠습니다.
 
+클러스터에 성공적으로 가입되고 네트워크가 적절히 구성되었는지 확인하기 위해 매우 간단한 [PowerShell 기반 웹 서비스](https://github.com/Microsoft/SDN/blob/master/Kubernetes/WebServer.yaml)를 배포할 것입니다.
 
 Linux 마스터에서 서비스를 다운로드하여 실행합니다.
 
@@ -186,7 +187,6 @@ watch kubectl get pods -o wide
 
 이렇게 하면 배포 및 서비스가 생성되며 이들의 상태를 추적하기 위해 무기한으로 포드를 감시합니다. 관찰을 완료했으면 `Ctrl+C`를 눌러 `watch` 명령을 종료하면 됩니다.
 
-
 모든 작업이 제대로 진행되면 다음을 수행할 수 있습니다.
 
   - Windows 측 `docker ps` 명령 아래에서 컨테이너 4개를 확인합니다.
@@ -196,5 +196,5 @@ watch kubectl get pods -o wide
   - `curl` Linux 마스터 및 개별 포드에서 가상 *서비스* IP(`kubectl get services` 아래에 표시).
   - `curl` *서비스 이름*에 Kubernetes [기본 DNS 접미사](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services)가 있음. 이는 DNS 기능을 보여줍니다.
 
-> [!Warning]  
+> [!WARNING]  
 > Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이는 향후 서비스될 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip)입니다.
