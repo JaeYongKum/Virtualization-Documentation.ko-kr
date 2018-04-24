@@ -8,11 +8,11 @@ ms.prod: containers
 description: v1.9 베타 Kubernetes 클러스터에 Windows 노드를 가입합니다.
 keywords: kubernetes, 1.9, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 124895e93cbaee50c66b6b5a7cc2c71c144dad67
-ms.sourcegitcommit: 6e3c3b2ff125f949c03a342c3709a6e57c5f736c
+ms.openlocfilehash: 6309ca8c0fd50e1b8e926776bef6dfe82bb815f0
+ms.sourcegitcommit: ee86ee093b884c79039a8ff417822c6e3517b92d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes #
 
@@ -24,6 +24,9 @@ Kubernetes 1.9의 최신 버전 및 Windows Server [버전 1709](https://docs.mi
 
 
 이 페이지는 완전히 새로운 Windows 노드를 기존 Linux 기반 클러스터에 가입하는 가이드를 제공합니다. 처음부터 시작하려면 [이 페이지](./creating-a-linux-master.md)에서 이전에 수행했던 것과 동일한 방식으로 처음부터 마스터를 설정하기 위해 Kubernetes 클러스터를 배포하는 데 사용할 수 있는 여러 리소스를 참조하세요.
+
+> [!TIP] 
+> Azure에서 클러스터를 배포하려는 경우 오픈 소스 ACS-Engine 도구를 사용하면 간편합니다. 단계별 [연습](https://github.com/Azure/acs-engine/blob/master/docs/kubernetes/windows.md)을 볼 수 있습니다.
 
 <a name="definitions"></a> 다음은 이 가이드에서 참조되는 몇 가지 조건에 대한 정의입니다.
 
@@ -189,12 +192,24 @@ watch kubectl get pods -o wide
 
 모든 작업이 제대로 진행되면 다음을 수행할 수 있습니다.
 
-  - Windows 측 `docker ps` 명령 아래에서 컨테이너 4개를 확인합니다.
+  - Windows 노드의 `docker ps` 명령 아래에서 컨테이너 4개를 확인합니다.
+  - Linux 마스터의 `kubectl get pods` 명령 아래에서 포드 2개를 확인합니다.
   - `curl` 포트 80에 있는 *포드* IP에서 Linux 마스터로부터 웹 서버 응답을 가져옵니다. 이는 네트워크에 걸친 적절한 노드에서 포드 통신을 보여줍니다.
-  - `curl` 포트 4444에 있는 *노드* IP에서 웹 서버 응답을 가져옵니다. 이는 적절한 호스트에서 컨테이너 포트 매핑을 보여 줍니다.
   - `docker exec`를 통해 *포드 간* Ping(Windows 노드가 여러 개 있는 경우 호스트 간 포함). 이는 적절한 포드 간 통신을 나타냅니다.
   - `curl` Linux 마스터 및 개별 포드에서 가상 *서비스* IP(`kubectl get services` 아래에 표시).
   - `curl` *서비스 이름*에 Kubernetes [기본 DNS 접미사](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services)가 있음. 이는 DNS 기능을 보여줍니다.
 
-> [!WARNING]  
-> Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이는 향후 서비스될 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip)입니다.
+> [!Warning]  
+> Windows 노드는 서비스 IP에 액세스할 수 없습니다. 이를 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip)이라고 하며, 다음 Windows Server 업데이트에서 개선될 예정입니다.
+
+
+### <a name="port-mapping"></a>포트 매핑 ### 
+또한 노드의 포트를 매핑하여 각 노드를 통해 포드에 호스팅되는 서비스에 액세스할 수도 있습니다. 이 기능을 보여주기 위해 노드의 포트 4444를 포드의 포트 80에 매핑하는 [다른 샘플 YAML](https://github.com/Microsoft/SDN/blob/master/Kubernetes/PortMapping.yaml)도 볼 수 있습니다. 배포하려면 전과 동일한 단계를 따르세요.
+
+```bash
+wget https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/PortMapping.yaml -O win-webserver-port-mapped.yaml
+kubectl apply -f win-webserver-port-mapped.yaml
+watch kubectl get pods -o wide
+```
+
+이제 포트 4444의 *노드* IP에 대해 `curl`을 수행할 수 있습니다. 이는 일 대 일 매핑을 적용해야 하므로 노드당 단일 포드로의 확장이 제한된다는 점에 유의하세요.

@@ -34,10 +34,10 @@ sudo route add -net $CLUSTER_PREFIX.1.0 netmask 255.255.255.0 gw $CLUSTER_PREFIX
 
 
 ## <a name="configuring-static-routes--windows"></a>정적 경로 구성 | Windows ##
-이 경우 `New-NetRoute`를 사용합니다. [이 리포지토리](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/AddRoutes.ps1)에 사용할 수 있는 자동화된 스크립드 `AddRoutes.ps1`이 있습니다. *Linux 마스터* IP 주소 및 Windows 노드 *외부* 어댑터의 기본 게이트웨이(포드 게이트웨이가 아니라)를 알아야 합니다. 그런 다음 다음이 필요합니다.
+이 경우 `New-NetRoute`를 사용합니다. [이 리포지토리](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/AddRoutes.ps1)에 사용할 수 있는 자동화된 스크립드 `AddRoutes.ps1`이 있습니다. *Linux 마스터*의 IP 주소를 알아야 합니다.
 
 ```powershell
 $url = "https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/windows/AddRoutes.ps1"
-wget $url -o AddRoutes.ps1
-./AddRoutes.ps1 -MasterIp 10.1.2.3 -Gateway 10.1.3.1
+Invoke-WebRequest $url -o AddRoutes.ps1
+./AddRoutes.ps1 -MasterIp 10.1.2.3
 ```

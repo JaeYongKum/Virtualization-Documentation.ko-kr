@@ -1,17 +1,17 @@
 ---
-title: "Windows의 컨테이너 요구 사항"
-description: "Windows의 컨테이너 요구 사항입니다."
-keywords: "메타데이터, 컨테이너"
+title: Windows의 컨테이너 요구 사항
+description: Windows의 컨테이너 요구 사항입니다.
+keywords: 메타데이터, 컨테이너
 author: enderb-ms
 ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: ff9b24ccc802b228b649c2330333cbe008350aec
-ms.sourcegitcommit: ea6edc5bac5705a19d48ffdf1ba676c940c2eb67
+ms.openlocfilehash: e1fe969c70aa61b62eb9212b7faa23d37d17b565
+ms.sourcegitcommit: 8b331cb67dfe609fcbfc3de06edbf51fe8562c6c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -91,6 +91,7 @@ Windows Server Core와 Nano 서버 중에 무엇을 선택해야 할까요? 개�
 - .NET Core 미포함([.NET Core Nano 서버 이미지](https://hub.docker.com/r/microsoft/dotnet/) 사용 가능)
 - PowerShell 제거됨
 - WMI 제거됨
+- Windows Server 버전 1709부터 응용 프로그램이 사용자 컨텍스트로 실행되므로 응용 프로그램 관리자 권한이 필요한 명령이 실패하게 됩니다. --user 플래그(예: docker run --user ContainerAdministrator)를 통해 컨테이너 관리자 계정을 지정할 수 있습니다. 하지만 향후에는 NanoServer에서 관리자 계정을 완전히 제거하려고 합니다.
 
 이러한 것들이 가장 큰 차이점이며 그 외에도 다른 차이점이 더 있습니다. 여기서는 다루지 않았지만 제외된 다른 구성 요소가 더 있습니다. 적합하다고 판단될 경우 언제든지 Nano 서버 위에 계층을 추가할 수 있다는 점을 기억하세요. 관련 예제는 [NET Core Nano 서버 Dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/2.0/sdk/nanoserver/amd64/Dockerfile)을 참조하세요.
 
