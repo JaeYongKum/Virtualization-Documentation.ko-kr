@@ -3,12 +3,12 @@ title: Windows Server 컨테이너 저장소
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
 keywords: 컨테이너, 볼륨, 저장소, 마운트, 바인딩 마운트
 author: patricklang
-ms.openlocfilehash: ba30c436ddd61ec71b2c98d1a8cb24f97863d872
-ms.sourcegitcommit: 6c8c70c8231943dda3c5af38e5530ea3dd91fc82
+ms.openlocfilehash: 9dde3b2d7be10a8d3d393f8426976dfc5bdacfab
+ms.sourcegitcommit: 9653a3f7451011426f8af934431bb14dbcb30a62
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1934537"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "2082904"
 ---
 # <a name="overview"></a>개요
 
@@ -22,7 +22,7 @@ ms.locfileid: "1934537"
 
 ### <a name="where-layers-are-stored-and-how-to-change-it"></a>계층이 저장되는 위치 및 이를 변경하는 방법
 
-기본 설치에서 계층은 `C:\ProgramData\docker`에 저장되며 "image"와 "windowsfilter" 디렉터리에 분산됩니다. [Windows의 Docker 엔진](../manage-docker/configure_docker_daemon.md) 설명서에서와 같이 `docker-root` 구성을 사용하여 계층이 저장되는 위치를 변경할 수 있습니다.
+기본 설치에서 계층은 `C:\ProgramData\docker`에 저장되며 "image"와 "windowsfilter" 디렉터리에 분산됩니다. [Windows의 Docker 엔진](../manage-docker/configure-docker-daemon.md) 설명서에서와 같이 `docker-root` 구성을 사용하여 계층이 저장되는 위치를 변경할 수 있습니다.
 
 > [!NOTE]
 > 계층 저장소에 대해 NTFS만 지원됩니다. ReFS는 지원되지 않습니다.
