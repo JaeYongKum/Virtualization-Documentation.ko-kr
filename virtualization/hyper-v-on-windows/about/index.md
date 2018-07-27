@@ -3,16 +3,16 @@ title: Windows 10의 Hyper-V 소개
 description: Hyper-V, 가상화 및 관련 기술을 소개합니다.
 keywords: windows 10, hyper-v
 author: scooley
-ms.date: 04/07/2018
+ms.date: 06/25/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: eb2b827c-4a6c-4327-9354-50d14fee7ed8
-ms.openlocfilehash: 78991d0b6d8b27ea20365fed74f35cee64eb089f
-ms.sourcegitcommit: 64c8d5d6f068d385b94db4637259bb3852666efe
+ms.openlocfilehash: 95b7b25ffe47f22f2f00e5911195ebbea660a1c0
+ms.sourcegitcommit: d625ea23c3eea484d54fa7bec10ac545b0386379
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "1797679"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "2093680"
 ---
 # <a name="introduction-to-hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 소개
 
@@ -58,7 +58,6 @@ Windows에서 Hyper-V를 실행할 때 몇 가지 기능은 Windows Server에서
 
 Windows Server에서만 사용할 수 있는 Hyper-V 기능:
 
-* RemoteFX를 사용하여 GPU 가상화
 * 가상 컴퓨터를 실시간으로 한 호스트에서 다른 호스트로 마이그레이션
 * Hyper-V 복제본
 * 가상 파이버 채널

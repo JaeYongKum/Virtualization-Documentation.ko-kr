@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9238389-7028-4015-8140-27253b156f37
-ms.openlocfilehash: 3a8af73c1cf7b2eb640be0dcaf77601ed5e96ce5
-ms.sourcegitcommit: 7c3af076eb8bad98e1c3de0af63dacd842efcfa3
+ms.openlocfilehash: 2235201a56a238cbd5a75b0a6cae64cdb26108a2
+ms.sourcegitcommit: edc153ffef01094c2324a0da2f9a301b31015a58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1844339"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "1928380"
 ---
 # <a name="create-a-custom-virtual-machine-gallery"></a>사용자 지정 가상 컴퓨터 갤러리 만들기
 
@@ -103,7 +103,7 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 
 그리고 물론 가상 컴퓨터(.iso 또는.vhdx)도 포함됩니다.
 
-아래 JSON 템플릿은 시작 항목과 갤러리의 스키마를 가지고 있습니다.  VSCode에서 편집하는 경우, 자동으로 intellisense를 제공합니다.
+아래 JSON 템플릿은 시작 항목과 갤러리의 스키마를 가지고 있습니다.  VSCode에서 편집하는 경우, 자동으로 IntelliSense를 제공합니다.
 
 [!code-json[main](../../../hyperv-tools/vmgallery/vm-gallery-template.json)]
 
@@ -135,6 +135,6 @@ VM 갤러리에 사용자 지정 갤러리 원본을 추가하는 가장 쉬운 
 
 ## <a name="resources"></a>리소스
 
-github [링크](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/live/hyperv-tools/vmgallery)에는 여러 갤러리 스크립트 및 도우미가 있습니다.
+GitHub [링크](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/live/hyperv-tools/vmgallery)에는 여러 갤러리 스크립트 및 도우미가 있습니다.
 
 샘플 갤러리 항목은 [여기](https://go.microsoft.com/fwlink/?linkid=851584)를 참조하세요.  기본 제공 갤러리를 정의하는 JSON 파일입니다.
