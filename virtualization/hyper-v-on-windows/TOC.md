@@ -24,6 +24,7 @@
 ## [Hyper-V 통합 서비스](reference/integration-services.md)
 ## [Hyper-V 아키텍처](reference/hyper-v-architecture.md)
 ## [하이퍼바이저 사양](reference/tlfs.md)
+## [Hyper-v 백업 방법](reference/HyperVBackupApproaches.md)
 
 # 커뮤니티 및 지원
 ## [Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)

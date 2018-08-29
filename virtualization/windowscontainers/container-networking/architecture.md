@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 0ade6677a8cd07f21cd00d019f167685e0ba5e7e
-ms.sourcegitcommit: ec186664e76d413d3bf75f2056d5acb556f4205d
-ms.translationtype: HT
+ms.openlocfilehash: 0d43176a07b0ba23f6a893c1b3dcfa1ffddc423d
+ms.sourcegitcommit: db508decd9bf6c0dce9952e1a86bf80f00d025eb
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1876127"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "2315656"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 > ***보증의 부인: 일반 Docker 네트워킹 명령, 옵션 및 구문에 대한 내용은 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/)을 참조하세요.*** [아래](#unsupported-features-and-network-options)에 설명된 경우를 제외한 모든 Docker 네트워킹 명령은 Linux에서와 동일한 구문을 통해 Windows에서 지원됩니다. 그러나 Windows와 Linux의 네트워크 스택이 서로 다르므로 일부 Linux 네트워크 명령은 Windows에서 지원되지 않습니다(예: ifconfig).
@@ -68,7 +68,11 @@ HNS(호스트 네트워킹 서비스)와 HCS(호스트 계산 서비스)가 함�
 
 
  ## <a name="unsupported-features-and-network-options"></a>지원되지 않는 기능과 네트워크 옵션
- 다음과 같은 네트워킹 옵션은 현재 Windows에서 지원되지 **않습니다**.
+ 다음과 같은 네트워킹 옵션은 현재 **하지** Windows에서 지원 됩니다.
+   * IPsec 통해 컨테이너 통신을 암호화 합니다.
+   * 컨테이너에 대 한 HTTP 프록시 지원 합니다.  이 대 한 예비 PR를 추적할 수 [여기](https://github.com/Microsoft/hcsshim/pull/163)합니다.
+   * Hyper-v 컨테이너를 실행 중인에 끝점을 연결 (핫 추가).
+   * 투명 하 게 네트워크 드라이버를 통해 가상화 된 Azure 인프라에 대 한 네트워킹입니다.
 
  | 명령        | 지원되지 않는 옵션   |
  | ---------------|:--------------------:|
