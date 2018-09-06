@@ -3,12 +3,12 @@ title: Windows Server 컨테이너 저장소
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
 keywords: 컨테이너, 볼륨, 저장소, 마운트, 바인딩 마운트
 author: patricklang
-ms.openlocfilehash: 9dde3b2d7be10a8d3d393f8426976dfc5bdacfab
-ms.sourcegitcommit: 9653a3f7451011426f8af934431bb14dbcb30a62
-ms.translationtype: HT
+ms.openlocfilehash: 7d22a149da21a3367b82f2920c189ae9a4b1c173
+ms.sourcegitcommit: 2c22506a7fdbbbe5ab4138281fc9256a98b51efd
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "2082904"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3386048"
 ---
 # <a name="overview"></a>개요
 
@@ -101,13 +101,18 @@ Windows Server 버전 1709에서 "SMB 글로벌 매핑"이라는 새로운 기�
 
 ##### <a name="configuration-steps"></a>구성 단계
 
-1. 컨테이너 호스트에서 원격 SMB 공유를 글로벌 매핑합니다. $creds = Get-Credential New-SmbGlobalMapping -RemotePath \\contosofileserver\share1 -Credential $creds -LocalPath G: 이 명령은 원격 SMB 서버 인증을 위해 자격 증명을 사용합니다. 그런 다음 원격 공유 경로를 G: 드라이브 문자에 매핑합니다(사용 가능한 다른 모든 드라이브 문자일 수 있음). 이 컨테이너 호스트에서 생성된 컨테이너는 이제 자신의 데이터 볼륨을 G: 드라이브에 있는 경로에 매핑할 수 있습니다.
+1. 컨테이너 호스트에서 원격 SMB 공유를 전체적으로 매핑하십시오.
+    ```
+    $creds = Get-Credential
+    New-SmbGlobalMapping -RemotePath \\contosofileserver\share1 -Credential $creds -LocalPath G:
+    ```
+    이 명령은 원격 SMB 서버를 사용 하 여 인증 자격 증명을 사용 합니다. 그런 다음 원격 공유 경로를 G: 드라이브 문자에 매핑합니다(사용 가능한 다른 모든 드라이브 문자일 수 있음). 이 컨테이너 호스트에서 생성된 컨테이너는 이제 자신의 데이터 볼륨을 G: 드라이브에 있는 경로에 매핑할 수 있습니다.
 
-> 참고: 컨테이너에 대해 SMB 글로벌 매핑을 사용할 때 컨테이너 호스트의 모든 사용자가 원격 공유에 액세스할 수 있습니다. 컨테이너 호스트에서 실행되는 모든 응용 프로그램 또한 매핑된 원격 공유에 액세스할 수 있습니다.
+    > 참고: 컨테이너에 대해 SMB 글로벌 매핑을 사용할 때 컨테이너 호스트의 모든 사용자가 원격 공유에 액세스할 수 있습니다. 컨테이너 호스트에서 실행되는 모든 응용 프로그램 또한 매핑된 원격 공유에 액세스할 수 있습니다.
 
 2. 글로벌 마운트된 SMB 공유에 매핑된 데이터 볼륨이 있는 컨테이너 만들기 docker run -it --name demo -v g:\ContainerData:G:\AppData1 microsoft/windowsservercore:1709 cmd.exe
 
-컨테이너 내에서 G:\AppData1은 원격 공유의 "ContainerData" 디렉터리에 매핑됩니다. 글로벌 매핑된 원격 공유에 저장된 모든 데이터는 컨테이너 내에 있는 응용 프로그램에서 사용할 수 있습니다. 여러 컨테이너가 동일한 명령을 사용하여 이 공유된 데이터에 대한 읽기/쓰기 액세스를 가져올 수 있습니다.
+    컨테이너 내에서 G:\AppData1은 원격 공유의 "ContainerData" 디렉터리에 매핑됩니다. 글로벌 매핑된 원격 공유에 저장된 모든 데이터는 컨테이너 내에 있는 응용 프로그램에서 사용할 수 있습니다. 여러 컨테이너가 동일한 명령을 사용하여 이 공유된 데이터에 대한 읽기/쓰기 액세스를 가져올 수 있습니다.
 
 이 SMB 글로벌 매핑 지원은 다음을 포함하여 호환되는 모든 SMB 서버 위에서 작업할 수 있는 SMB 클라이언트 측 기능입니다.
 
