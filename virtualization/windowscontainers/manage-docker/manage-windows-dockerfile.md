@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
-ms.openlocfilehash: 4f42ee1c368638b521c33278c97f9ef1e7fdb8d0
-ms.sourcegitcommit: 2b5d806fc978e60fb71ce33ef491d4cfd6fc4456
+ms.openlocfilehash: a32d66251d8d9dddcd8abb1b64600459c903e317
+ms.sourcegitcommit: 2c22506a7fdbbbe5ab4138281fc9256a98b51efd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "2596061"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3386058"
 ---
 # <a name="dockerfile-on-windows"></a>Windows의 Dockerfile
 
@@ -49,7 +49,7 @@ Dockerfile을 전체적으로 살펴보려면 [docker.com의 Dockerfile referenc
 FROM microsoft/windowsservercore
 
 # Metadata indicating an image maintainer.
-MAINTAINER jshelton@contoso.com
+LABEL maintainer="jshelton@contoso.com"
 
 # Uses dism.exe to install the IIS role.
 RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
@@ -61,11 +61,11 @@ RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 CMD [ "cmd" ]
 ```
 
-Windows 용 Dockerfiles 추가 예제를 보려면 [Dockerfile에 대 한 Windows 리포지토리]을 참조 하십시오. (https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples)합니다.
+Windows 용 Dockerfile의 추가 예제는 [Dockerfile for Windows Repository]를 참조 하세요 (https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples).
 
 ## <a name="instructions"></a>지침
 
-Dockerfile 명령은 컨테이너 이미지를 만드는 데 필요한 단계를 Docker 엔진에 제공합니다. 이러한 명령은 순서대로 하나씩 수행됩니다. 다음은 몇 가지 기본 Dockerfile 명령에 대한 세부 정보입니다. Dockerfile 지침을 전체 목록은 [Docker.com에서 Dockerfile 참조]을 참조 하십시오. (https://docs.docker.com/engine/reference/builder/)합니다.
+Dockerfile 명령은 컨테이너 이미지를 만드는 데 필요한 단계를 Docker 엔진에 제공합니다. 이러한 명령은 순서대로 하나씩 수행됩니다. 다음은 몇 가지 기본 Dockerfile 명령에 대한 세부 정보입니다. Dockerfile 명령의 전체 목록은 [Docker.com의 Dockerfile 참조]를 참조 하세요 (https://docs.docker.com/engine/reference/builder/).
 
 ### <a name="from"></a>FROM
 
