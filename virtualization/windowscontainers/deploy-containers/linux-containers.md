@@ -2,7 +2,7 @@
 
 이 기능은 [Hyper-V 격리](../manage-containers/hyperv-container.md)를 사용하여 충분한 OS에서 Linux 커널을 실행해 컨테이너를 지원합니다. 이를 구축하기 위한 Windows 및 Hyper-V 변경 사항은 _Windows 10 Fall Creators Update_ 및 _Windows Server(버전 1709)_ 에서 시작되었지만 , Docker 기술이 구축된 오픈 소스 [Moby 프로젝트](https://www.github.com/moby/moby) 및 Linux 커널에서 사용하도록 이를 모아야 했습니다. 
 
-[!VIDEO https://sec.ch9.ms/ch9/1e5a/08ff93f2-987e-4f8d-8036-2570dcac1e5a/LinuxContainer.mp4]
+[Linux 컨테이너 비디오](https://sec.ch9.ms/ch9/1e5a/08ff93f2-987e-4f8d-8036-2570dcac1e5a/LinuxContainer.mp4)
 
 이 작업을 수행하려면 다음 사항이 필요합니다.
 
