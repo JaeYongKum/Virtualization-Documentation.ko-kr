@@ -7,12 +7,12 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
-ms.openlocfilehash: 39499afc93b3329810db30cd32544a41ad138583
-ms.sourcegitcommit: 64c8d5d6f068d385b94db4637259bb3852666efe
-ms.translationtype: HT
+ms.openlocfilehash: dd4021c653d98a3bd7a338d9f502a572830f344d
+ms.sourcegitcommit: 5e5644bff6dba70e384db6c80787b3bbe7adb93c
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "1797659"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4303929"
 ---
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
@@ -23,14 +23,14 @@ Windows 10 제어판, PowerShell(즐겨 사용하는 방식)을 사용하거나 
 
 ## <a name="check-requirements"></a>요구 사항 확인
 
-* Windows 10 Enterprise, Professional 또는 Education
+* Windows 10 Enterprise, Pro, 또는 교육
 * 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
 * VM 모니터 모드 확장(Intel CPU의 VT-c)을 지원하는 CPU.
 * 최소 4GB의 메모리.
 
 Hyper-V 역할은 Windows 10 Home에는 **설치할 수 없습니다**.
 
-**설정** > **업데이트 및 보안** > **정품 인증**을 열어 Windows 10 Home 버전에서 Windows 10 Professional로 업그레이드합니다.
+Windows 10 Home 버전에서 **설정을**사용 하 여 Windows 10 Pro로 업그레이드 > **업데이트 및 보안** > **정품 인증**합니다.
 
 자세한 내용과 문제 해결은 [Windows 10 Hyper-V 시스템 요구 사항](../reference/hyper-v-requirements.md)을 참조하세요.
 
