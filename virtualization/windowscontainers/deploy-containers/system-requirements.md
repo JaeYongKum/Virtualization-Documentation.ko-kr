@@ -7,12 +7,12 @@ ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: 71719fcbb6021bd26a464339a8caa9c4cb5698b9
-ms.sourcegitcommit: 2b5d806fc978e60fb71ce33ef491d4cfd6fc4456
-ms.translationtype: HT
+ms.openlocfilehash: 8ff9373bd943c360079679a7e41256c24aa21aa8
+ms.sourcegitcommit: d69ed13d505e96f514f456cdae0f93dab4fd3746
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "2596051"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4340871"
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -20,7 +20,7 @@ ms.locfileid: "2596051"
 
 ## <a name="os-requirements"></a>OS 요구 사항
 
-- Windows 컨테이너 기능은 Windows Server 빌드 1709, Windows Server 2016(코어 및 데스크톱 경험 포함), Windows 10 Professional 및 Enterprise(Anniversary Edition)에서만 사용할 수 있습니다.
+- Windows 컨테이너 기능은 Windows Server 2016에서 사용할 수 있습니다 (코어 및 데스크톱 경험 포함), Windows 10 Professional 및 Enterprise (Anniversary Edition) 이상.
 - Hyper-V 컨테이너를 실행하려면 Hyper-V 역할을 설치해야 합니다.
 - Windows Server 컨테이너 호스트에서는 Windows가 c:\에 설치되어야 합니다. Hyper-V 컨테이너만 배포할 경우 이 제한이 적용되지 않습니다.
 
@@ -29,7 +29,7 @@ ms.locfileid: "2596051"
 Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되고 Hyper-V 호스트 컨테이너를 호스팅할 경우 중첩된 가상화를 사용해야 합니다. 중첩된 가상화에는 다음과 같은 요구 사항이 있습니다.
 
 - 가상화된 Hyper-V 호스트에 사용할 수 있는 4GB 이상의 RAM.
-- Windows Server 빌드 1709, Windows Server 2016 또는 호스트 시스템의 Windows 10, 가상 컴퓨터의 Windows Server(Full, Core).
+- Windows Server 버전 1803, Windows Server (Full, Core) 및 Windows Server 버전 1709, Windows Server 2016 또는 Windows 10 호스트 시스템에 가상 컴퓨터에서 Windows Server 2019 합니다.
 - Intel VT-x가 포함된 프로세서.(이 기능은 현재 Intel 프로세서에 대해서만 사용할 수 있습니다)
 - 또한 컨테이너 호스트 VM에는 적어도 2개의 가상 프로세서가 필요합니다.
 
@@ -47,7 +47,7 @@ Windows 컨테이너는 두 컨테이너 기본 이미지(Windows Server Core �
 </thead>
 <tbody>
 <tr valign="top">
-<td><center>Windows Server 2016(Standard 또는 Datacenter)</center></td>
+<td><center>Windows Server 2016 / 2019 (Standard 또는 Datacenter)</center></td>
 <td><center>Server Core/Nano 서버</center></td>
 <td><center>Server Core/Nano 서버</center></td>
 </tr>
