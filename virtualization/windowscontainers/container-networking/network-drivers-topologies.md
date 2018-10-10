@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: bb3681a83991b3d4e24348b686146616d4a88c4f
-ms.sourcegitcommit: db508decd9bf6c0dce9952e1a86bf80f00d025eb
+ms.openlocfilehash: 4f21efba8dd1079302b56e98d954b3ba574779e9
+ms.sourcegitcommit: 2779f01978b37ec4f8d895febe7037272fb2c703
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "2315666"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4492809"
 ---
 # <a name="windows-container-network-drivers"></a>Windows 컨테이너 네트워크 드라이버  
 
@@ -23,19 +23,19 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
   > Windows 10 크리에이터스 업데이트가 설치되어 있는 경우, 여러 NAT 네트워크가 지원됩니다!
 
 - **transparent** – 'transparent' 드라이버를 통해 생성된 네트워크에 연결된 컨테이너가 *외부* Hyper-V 스위치를 통해 실제 네트워크에 직접 연결됩니다. 실제 네트워크의 IP는 외부 DHCP 서버를 사용하여 정적으로(사용자가 지정한 ``--subnet`` 옵션이 필요함) 또는 동적으로 할당할 수 있습니다. 
-  > 참고:로 인해는 요구 사항, 아래 투명 하 게 네트워크를 통해 연결 하는 컨테이너 호스트에서 지원 되지 않습니다 Azure Vm 합니다.
+  > 참고:으로 인해의 요구 사항, 아래 투명 네트워크를 통해 연결 하는 컨테이너 호스트에서 지원 되지 않는 Azure Vm 합니다.
   
-  > 필요:이 모드에서에서 사용할 때 가상화 시나리오 (컨테이너 호스트는 VM 임) _MAC 주소 스푸핑 하는 것이 필요_합니다.
+  > 에 필요 합니다:이 모드에서에서 사용할 때 가상화 시나리오 (컨테이너 호스트는 VM) _MAC 주소 스푸핑이 필요_합니다.
 
 - **overlay** - Docker 엔진이 [Swarm 모드](../manage-containers/swarm-mode.md)에서 실행 중일 때, 오버레이 네트워크에 연결된 컨테이너는 여러 컨테이너 호스트에서 동일한 네트워크에 연결된 다른 컨테이너들과 통신이 가능합니다. Swarm 클러스터에 만들어지는 각 오버레이 네트워크는 개인 IP 접두사에 의해 정의된 자체 IP 서브넷으로 만들어집니다. 오버레이 네트워크 드라이버는 VXLAN 캡슐화를 사용합니다. **적합한 네트워크 제어 평면(Flannel 또는 OVN)을 사용할 때 Kubernetes에서도 사용할 수 있습니다.**
-  > 필요: 오버레이 네트워크를 만들기 위한 이러한 *필요한* [필수 구성 요소](https://docs.docker.com/network/overlay/#operations-for-all-overlay-networks) 를 만족 하는 환경 있는지 확인 합니다.
+  > 필요: 귀하의 환경이 오버레이 네트워크를 만들기 위해 이러한 *필요한* [필수 구성 요소](https://docs.docker.com/network/overlay/#operations-for-all-overlay-networks) 있는지 확인 합니다.
 
-  > 필요: [KB4015217](https://support.microsoft.com/en-us/help/4015217/windows-10-update-kb4015217), Windows 10 작성자 업데이트 또는 이후 버전의 Windows Server 2016 필요합니다.
+  > 필요: [KB4015217](https://support.microsoft.com/en-us/help/4015217/windows-10-update-kb4015217), Windows 10 크리에이터 스 업데이트 또는 이상 릴리스를 사용 하 여 Windows Server 2016이 필요합니다.
 
 - **l2bridge** - 'l2bridge' 드라이버를 사용하여 만든 네트워크에 연결된 컨테이너는 컨테이너 호스트와 동일한 IP 서브넷에 있게 될 것이며, *외부* Hyper-V 스위치를 통해 실제 네트워크에 연결됩니다. IP 주소는 컨테이너 호스트와 동일한 접두사에서 정적으로 할당해야 합니다. 호스트의 모든 컨테이너 끝점은 수신 및 송신 시 계층 2 주소 변환(MAC 다시 쓰기) 작업으로 인해 호스트와 동일한 MAC 주소를 갖게 됩니다.
-  > 필요:이 모드에서에서 사용할 때 가상화 시나리오 (컨테이너 호스트는 VM 임) _MAC 주소 스푸핑 하는 것이 필요_합니다.
+  > 에 필요 합니다:이 모드에서에서 사용할 때 가상화 시나리오 (컨테이너 호스트는 VM) _MAC 주소 스푸핑이 필요_합니다.
   
-  > Windows Server 2016, Windows 10 작성자 업데이트 또는 이후 버전 필요: 필요 합니다.
+  > Windows Server 2016, Windows 10 크리에이터 스 업데이트 이상이 필요 합니다:이 필요합니다.
 
 - **l2tunnel** - 그러나 l2bridge와 유사하게 _이 드라이버는 Microsoft 클라우드 스택에서만 사용해야 합니다_. 컨테이너에서 제공한 패킷은 SDN 정책이 적용되는 가상화 호스트로 전송됩니다.
 
@@ -60,7 +60,7 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
 
 | 네트워킹 모드/드라이버 | IPAM |
 | -------------------------|:----:|
-| NAT | 내부 NAT 서브넷 접두사에서 호스트 네트워킹 서비스(HNS)에 의한 동적 IP 할당 및 지정 |
+| NAT | 동적 IP 할당 및 내부 NAT 서브넷 접두사에서 호스트 네트워킹 서비스 (HNS) 지정 |
 | transparent | 컨테이너 호스트의 네트워크 접두사 내의 IP 주소에서 정적 또는 동적(외부 DHCP 서버 사용) IP 할당 및 지정 |
 | 오버레이 | Docker 엔진 Swarm 모드에서 관리되는 접두사에서 동적 IP 할당 및 HNS 통한 지정 |
 | L2Bridge | 컨테이너 호스트의 네트워크 접두사 내의 IP 주소에서 정적 IP 할당 및 지정(HNS 플러그인을 통해서도 지정 가능) |
