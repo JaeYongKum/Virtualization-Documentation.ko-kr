@@ -2,18 +2,18 @@
 title: Windows Server에 Windows 컨테이너 배포
 description: Windows Server에 Windows 컨테이너 배포
 keywords: Docker, 컨테이너
-author: enderb-ms
+author: taylorb-microsoft
 ms.date: 09/26/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
-ms.openlocfilehash: 701112cac9c3f6d647fe5fb70309350fd0d07161
-ms.sourcegitcommit: d69ed13d505e96f514f456cdae0f93dab4fd3746
+ms.openlocfilehash: 0d982996a1aabd434df04551f30725a21b31d500
+ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4340851"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6948012"
 ---
 # <a name="container-host-deployment---windows-server"></a>컨테이너 호스트 배포 - Windows Server
 
@@ -47,12 +47,12 @@ Restart-Computer -Force
 
 ## <a name="install-a-specific-version-of-docker"></a>특정 버전의 Docker 설치 합니다.
 
-현재 채널 2 개 사용 가능한는 Windows server에 대 한 Docker EE
+가지 현재 채널 2 개 Windows Server에 대 한 Docker EE에 사용할 수 있습니다.
 
 * `17.06` -Docker Enterprise Edition (Docker 엔진을 UCP, DTR)를 사용 하는 경우이 버전을 사용 합니다. `17.06` 기본값이입니다.
-* `18.03` -Docker EE 엔진만 실행 중인 경우이 버전을 사용 합니다.
+* `18.03` -Docker EE 엔진 에서만 실행 중인 경우이 버전을 사용 합니다.
 
-특정 버전을 설치 하려면 사용 합니다 `RequiredVersion` 플래그:
+특정 버전을 설치 하려면 사용은 `RequiredVersion` 플래그:
 
 ```PowerShell
 Install-Package -Name docker -ProviderName DockerMsftProvider -Force -RequiredVersion 18.03
@@ -66,7 +66,7 @@ Update-Module DockerMsftProvider
 
 ## <a name="update-docker"></a>Docker를 업데이트 합니다.
 
-이후 채널에는 이전 채널에서 Docker EE 엔진을 업데이트 해야 하는 경우 둘 모두를 사용 합니다 `-Update` 및 `-RequiredVersion` 플래그입니다.
+이후 채널에 이전 채널에서 Docker EE 엔진을 업데이트 해야 할 경우 둘 모두를 사용 합니다 `-Update` 및 `-RequiredVersion` 플래그:
 
 ```PowerShell
 Install-Package -Name docker -ProviderName DockerMsftProvider -Update -Force -RequiredVersion 18.03
@@ -76,9 +76,9 @@ Install-Package -Name docker -ProviderName DockerMsftProvider -Update -Force -Re
 
 Windows 컨테이너를 사용하기 전에 먼저 기본 이미지를 설치해야 합니다. 기본 이미지는 컨테이너 운영 체제로 Windows Server Core 또는 Nano Server에서 사용할 수 있습니다. Docker 컨테이너 이미지에 대한 자세한 내용은 [Build your own images on docker.com](https://docs.docker.com/engine/tutorials/dockerimages/)(docker.com에서 고유한 이미지 만들기)을 참조하세요.
 
-Windows Server 2019의 릴리스를 통해 Microsoft 소스 컨테이너 이미지는 Microsoft 컨테이너 레지스트리 라는 새 레지스트리 이동 됩니다. Microsoft에서 게시 하는 컨테이너 이미지를 Docker 허브를 통해 검색할 수 계속 해야 합니다. Windows Server 2019와 하면 넘어 게시 하는 새 컨테이너 이미지에는 MCR에서 끌어오기를 표시 되어야 합니다. Windows Server 2019 되기 전에 게시 이전 컨테이너 이미지에 대 한 Docker의 레지스트리에서 끌어오기를 계속 해야 합니다.
+Windows Server 2019 릴리스에서 Microsoft 소스 컨테이너 이미지는 Microsoft 컨테이너 레지스트리 라는 새 레지스트리 이동 됩니다. Microsoft에서 게시 하는 컨테이너 이미지를 Docker 허브를 통해 검색할 수 계속 해야 합니다. Windows Server 2019와 하면 넘어 게시 하는 새 컨테이너 이미지에는 MCR에서이 가져올 수 표시 되어야 합니다. Windows Server 2019 되기 전에 게시 이전 컨테이너 이미지에 대 한 Docker의 레지스트리에서 끌어오기를 계속 해야 합니다.
 
-### <a name="windows-server-2019-and-newer"></a>Windows Server 2019 및 최신 버전
+### <a name="windows-server-2019-and-newer"></a>Windows Server 2019 이상
 
 다음을 실행 하는 ' Windows Server Core' 기본 이미지를 설치:
 

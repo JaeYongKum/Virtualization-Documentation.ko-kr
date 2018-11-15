@@ -2,13 +2,13 @@
 title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
-author: patricklang
-ms.openlocfilehash: 8657c03ad71685b0f01532894781c44d76e1b0bc
-ms.sourcegitcommit: d69ed13d505e96f514f456cdae0f93dab4fd3746
+author: taylorb-microsoft
+ms.openlocfilehash: c744da429ed8116363437d3117ae1432d7a94f8d
+ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4340881"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6948082"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 

@@ -12,15 +12,6 @@
 ## [1단계 - 참가자 이미지 사용](quick-start/Using-Insider-Container-Images.md)
 ## [2단계 - 응용 프로그램 빌드 및 실행](quick-start/Nano-RS3-.NET-Core-and-PS.md)
 ## [3단계 - 알려진 문제](quick-start/Insider-Known-Issues.md)
-## [Linux 컨테이너 미리 보기](deploy-containers/linux-containers.md)
-
-# Windows 컨테이너 배포
-## [시스템 요구 사항](deploy-containers/system-requirements.md)
-## [버전 호환성](deploy-containers/version-compatibility.md)
-## [배포](deploy-containers/deploy-containers-on-server.md)
-## [Hyper-V 격리](manage-containers/hyperv-container.md)
-## [Active Directory 서비스 계정](manage-containers/manage-serviceaccounts.md)
-## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
 # Windows에서 Docker 관리
 ## [Windows의 Docker 엔진](manage-docker/configure-docker-daemon.md)
@@ -28,7 +19,6 @@
 ## [Dockerfile 최적화](manage-docker/optimize-windows-dockerfile.md)
 ## [컨테이너 저장소](manage-containers/container-storage.md)
 ## [Swarm 모드 시작](manage-containers/swarm-mode.md)
-## [PowerShell로 Docker 관리](https://github.com/Microsoft/Docker-PowerShell)
 ## [Windows Docker 호스트의 원격 관리](management/manage_remotehost.md)
 ## [리소스 컨트롤](manage-containers/resource-controls.md)
 
@@ -39,11 +29,14 @@
 ## [고급 네트워킹 옵션](container-networking/advanced.md)
 
 # Windows의 Kubernetes 
-## [시작](kubernetes/getting-started-kubernetes-windows.md)
-## [Linux 마스터 노드 만들기](kubernetes/creating-a-linux-master.md)
-## [네트워크 토폴로지 구성](kubernetes/configuring-host-gateway-mode.md)
-## [Kubernetes 바이너리 컴파일](kubernetes/compiling-kubernetes-binaries.md)
+## [1-개요](kubernetes/getting-started-kubernetes-windows.md)
+## [2-Kubernetes 마스터 만들기](kubernetes/creating-a-linux-master.md)
+## [3-네트워크 솔루션을 선택합니다.](kubernetes/network-topologies.md)
+## [4-Windows 작업자 조인합니다.](kubernetes/joining-windows-workers.md)
+## [5-Linux 작업자 조인합니다.](kubernetes/joining-linux-workers.md)
+## [6-리소스를 Kubernetes를 배포합니다.](kubernetes/deploying-resources.md)
 ## [문제 해결](kubernetes/common-problems.md)
+## [Kubernetes 바이너리 컴파일](kubernetes/compiling-kubernetes-binaries.md)
 
 # Service Fabric 빠른 시작
 ## [첫 번째 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers)
@@ -63,5 +56,12 @@
 ## [커뮤니티 비디오 및 블로그](communitylinks.md)
 ## [문제 해결](troubleshooting.md)
 
+# 참조
+## [시스템 요구 사항](deploy-containers/system-requirements.md)
+## [버전 호환성](deploy-containers/version-compatibility.md)
+## [Hyper-V 격리](manage-containers/hyperv-container.md)
+## [Windows의 Linux 컨테이너](deploy-containers/linux-containers.md)
+## [Active Directory 서비스 계정](manage-containers/manage-serviceaccounts.md)
+## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
 # [컨테이너 OS 이미지 EULA](Images_EULA.md)

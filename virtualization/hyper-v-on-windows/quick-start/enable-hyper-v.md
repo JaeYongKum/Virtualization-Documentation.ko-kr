@@ -7,12 +7,12 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
-ms.openlocfilehash: dd4021c653d98a3bd7a338d9f502a572830f344d
-ms.sourcegitcommit: 5e5644bff6dba70e384db6c80787b3bbe7adb93c
+ms.openlocfilehash: cd576f72c9947cd6f79cc362709c1a4ceab9b47e
+ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4303929"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6947962"
 ---
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
@@ -23,9 +23,9 @@ Windows 10 제어판, PowerShell(즐겨 사용하는 방식)을 사용하거나 
 
 ## <a name="check-requirements"></a>요구 사항 확인
 
-* Windows 10 Enterprise, Pro, 또는 교육
+* Windows 10 Enterprise, Pro, Education
 * 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
-* VM 모니터 모드 확장(Intel CPU의 VT-c)을 지원하는 CPU.
+* VM 모니터 모드 확장 (vt-c Intel Cpu)에 대 한 CPU 지원 합니다.
 * 최소 4GB의 메모리.
 
 Hyper-V 역할은 Windows 10 Home에는 **설치할 수 없습니다**.
@@ -70,9 +70,11 @@ DISM에 대한 자세한 내용은 [DISM 기술 참조](https://technet.microsof
 
 1. Windows 단추를 마우스 오른쪽 단추로 클릭하고 '앱 및 기능'을 선택합니다.
 
-2. **Windows 기능 사용/사용 안 함**을 선택합니다.
+2. 관련된 설정에서 오른쪽에 **프로그램 및 기능을** 선택 합니다. 
 
-3. **Hyper-V**를 선택하고 **확인**을 클릭합니다.
+3. **Windows 기능 사용/사용 안 함**을 선택합니다.
+
+4. **Hyper-V**를 선택하고 **확인**을 클릭합니다.
 
 ![Windows 프로그램 및 기능 대화 상자](media/enable_role_upd.png)
 

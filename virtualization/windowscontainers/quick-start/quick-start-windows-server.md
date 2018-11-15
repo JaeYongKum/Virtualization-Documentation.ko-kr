@@ -2,28 +2,28 @@
 title: Windows Server의 Windows 컨테이너
 description: 컨테이너 배포 빠른 시작
 keywords: Docker, 컨테이너
-author: enderb-ms
+author: cwilhit
 ms.date: 09/26/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
-ms.openlocfilehash: 7d526aa64d478516a3f66acaf62b62b45282e5af
-ms.sourcegitcommit: 3d72f15651da378908f134916cd5c9d2064f8f95
-ms.translationtype: HT
+ms.openlocfilehash: ed60470f18f644fcc4fe741d02e6f6e39af48368
+ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "2256936"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6947992"
 ---
 # <a name="windows-containers-on-windows-server"></a>Windows Server의 Windows 컨테이너
 
-이 연습에서는 Windows Server 2016에서 Windows 컨테이너 기능의 기본 배포 및 사용에 대해 안내합니다. 이 연습을 하는 동안 컨테이너 역할을 설치하고 간단한 Windows Server 컨테이너를 배포하게 됩니다. 컨테이너에 대해 좀 더 숙지해야 하는 경우 [컨테이너 정보](../about/index.md)에서 이 정보를 찾을 수 있습니다.
+Windows Server 2019의 Windows 컨테이너 기능의 기본 배포를 통해이 연습을 보여 줍니다. 이 연습을 하는 동안 컨테이너 역할을 설치하고 간단한 Windows Server 컨테이너를 배포하게 됩니다. 컨테이너에 대해 좀 더 숙지해야 하는 경우 [컨테이너 정보](../about/index.md)에서 이 정보를 찾을 수 있습니다.
 
-이 빠른 시작은 Windows Server 2016의 Windows Server 컨테이너와 관련이 있습니다. Windows 10의 컨테이너를 포함하여 추가적인 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
+이 빠른 시작은 Windows Server 2019의 Windows Server 컨테이너와 관련이 있습니다. Windows 10의 컨테이너를 포함하여 추가적인 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
 **필수 구성 요소:**
 
-Windows Server 2016이 실행되는 컴퓨터 시스템(물리적 또는 가상) 1대. Windows Server 2016 TP5를 사용하는 경우 [Window Server 2016 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016 )으로 업데이트하세요.
+Windows Server 2019를 실행 하는 컴퓨터 시스템 (물리적 또는 가상). Windows Server 2019 Insider Preview를 사용 하는 경우에 [Window Server 2019 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019 )으로 업데이트 하세요.
 
 > 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
@@ -96,13 +96,13 @@ sconfig
 `docker run`을 사용하여 .Net 컨테이너를 배포합니다. 그러면 컨테이너 이미지도 다운로드되며, 다운로드는 몇 분 정도 걸릴 수 있습니다.
 
 ```console
-docker run microsoft/dotnet-samples:dotnetapp-nanoserver
+docker run microsoft/dotnet-samples:dotnetapp-nanoserver-1809
 ```
 
 컨테이너가 시작되면 Hello World 메시지를 인쇄한 다음 종료합니다.
 
 ```console
-         Dotnet-bot: Welcome to using .NET Core!
+         Hello from .NET Core!
     __________________
                       \
                        \
@@ -143,8 +143,8 @@ docker run microsoft/dotnet-samples:dotnetapp-nanoserver
 
 
 **Environment**
-Platform: .NET Core 2.0
-OS: Microsoft Windows 10.0.14393
+Platform: .NET Core
+OS: Microsoft Windows 10.0.17763
 ```
 
 Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Reference(Docker Run 참조)]( https://docs.docker.com/engine/reference/run/)를 참조하세요.
