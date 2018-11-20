@@ -61,6 +61,7 @@
 ## [버전 호환성](deploy-containers/version-compatibility.md)
 ## [Hyper-V 격리](manage-containers/hyperv-container.md)
 ## [Windows의 Linux 컨테이너](deploy-containers/linux-containers.md)
+## [RunHCS 및 Containerd](deploy-containers/containerd.md)
 ## [Active Directory 서비스 계정](manage-containers/manage-serviceaccounts.md)
 ## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
