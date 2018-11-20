@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: 8a68bf9e5e78add65aedb51fff8521ee258e353e
-ms.sourcegitcommit: 9a61fc06c25d17ddb61124a21a3ca821828b833d
+ms.openlocfilehash: 970de62c9a0011fa09d6741b2665479efd394313
+ms.sourcegitcommit: 166aa2430ea47d7774392e65a9875501f86dd5ed
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/20/2018
-ms.locfileid: "7460498"
+ms.locfileid: "7460579"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -46,12 +46,15 @@ Windows에서 다른 접근 방식을 했습니다.  Windows 컨테이너를 지
 
 ## <a name="runhcs"></a>runhcs
 
-RunHCS는 runc의 분기입니다.  Runc, 같은 runhcs 명령줄 클라이언트 패키지 열기 컨테이너 (Initiative) 형식에 따라 응용 프로그램을 실행 하기 위한 며 열기 컨테이너 이니셔티브 사양 준수 구현 됩니다.  
+`runhcs` 분기는 `runc`.  마찬가지로 `runc`, `runhcs` 은 명령줄 클라이언트 패키지 열기 컨테이너 (Initiative) 형식에 따라 응용 프로그램을 실행 하기 위한 이며 열기 컨테이너 이니셔티브 사양 준수 구현 합니다.
 
 Runc와 runhcs 기능 차이점은 다음과 같습니다.
 
-* runhcs는 Windows에서 실행 됩니다.
-* runhcs는 Windows와 Windows 프로세스 컨테이너 외에도 Linux [Hyper-v 컨테이너](../manage-containers/hyperv-container.md) 를 실행할 수 있습니다.
+* `runhcs` Windows에서 실행 됩니다.  [HCS](containerd.md#hcs) 를 만들고 컨테이너 관리와 통신 합니다.
+* `runhcs` 다양 한 다른 컨테이너 형식을 실행할 수 있습니다.
+
+  * Windows 및 Linux [Hyper-v 컨테이너](../manage-containers/hyperv-container.md)
+  * Windows 컨테이너 (컨테이너 이미지는 컨테이너 호스트 일치 해야 합니다)를 처리 합니다.
 
 **사용량:**
 
@@ -89,6 +92,18 @@ Runhcs에서 사용할 수 있는 컨테이너 명령은 다음과 같습니다.
 
 다중 컨테이너 간주 될 수 있는 유일한 명령 **목록**입니다.  지정 된 루트 runhcs 시작 되지 않는 실행 (또는 일시 중지) 컨테이너를 나열 합니다.
 
+### <a name="hcs"></a>HCS
+
+드디어 두 래퍼를 사용할 수 있는 github의 HCS와 상호 작용 하. HCS는 C API 이므로 래퍼 쉽게 HCS는 더 높은 수준의 언어에서 호출 합니다.  
+
+* [hcsshim](https://github.com/microsoft/hcsshim) -HCSShim Go에 작성 되며 runhcs 기준으로 합니다.
+AppVeyor의 최신 버전을 선택 하거나 직접 작성 합니다.
+* [dotnet computevirtualization](https://github.com/microsoft/dotnet-computevirtualization) -dotnet computevirtualization C# 래퍼는 HCS입니다.
+
+HCS (직접 또는 래퍼를 통해)를 사용 하 여 하려는 한 녹/Haskell/InsertYourLanguage 래퍼는 HCS 확인 하려는 경우 메모를 두십시오.
+
+HCS는 살펴볼 깊은 [John Stark DockerCon 프레젠테이션](https://www.youtube.com/watch?v=85nCF5S8Qok)를 시청 하세요.
+
 ## <a name="containerdcri"></a>containerd/cri
 
 > ! 참고 CRI 지원은 Server 2019/Windows 10 1809 영어로 이상만입니다.
@@ -103,26 +118,3 @@ CRI 사양에 대 한 링크.
 ![Containerd 기반 컨테이너 환경](media/containerd-platform.png)
 
 Windows Server 2016 이상 시스템에서 runHCS 및 containerd 관리할 수, 포드 (컨테이너의 그룹)을 지 원하는 필요한 Windows의 컨테이너 도구에 대 한 주요 변경 사항.  CRI 지원은 이상 Windows Server 2019/Windows 10 1809 사용할 수 있습니다.
-
-## <a name="hcs"></a>HCS
-
-드디어 두 래퍼를 사용할 수 있는 github의 HCS와 상호 작용 하. HCS는 C API 이므로 래퍼 쉽게 HCS는 더 높은 수준의 언어에서 호출 합니다.  
-
-### <a name="hcsshim"></a>HCSShim
-
-HCSShim Go에 작성 되며 runhcs 기준으로 합니다.
-AppVeyor의 최신 버전을 선택 하거나 직접 작성 합니다.
-
-[GitHub](https://github.com/microsoft/hcsshim)에서 항목을 확인 하세요.
-
-### <a name="dotnet-computevirtualization"></a>dotnet computevirtualization
-
-> ! NOTE 참조 구현-만 개발자/테스트를 위해 사용 됩니다.
-
-dotnet computevirtualization C# 래퍼는 HCS입니다.
-
-[GitHub](https://github.com/microsoft/dotnet-computevirtualization)에서 항목을 확인 하세요.
-
-HCS (직접 또는 래퍼를 통해)를 사용 하 여 하려는 한 녹/Haskell/InsertYourLanguage 래퍼는 HCS 확인 하려는 경우 메모를 두십시오.
-
-HCS는 살펴볼 깊은 [John Stark DockerCon 프레젠테이션](https://www.youtube.com/watch?v=85nCF5S8Qok)를 시청 하세요.
