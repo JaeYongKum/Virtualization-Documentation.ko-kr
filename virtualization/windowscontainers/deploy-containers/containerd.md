@@ -1,5 +1,5 @@
 ---
-title: 컨테이너 스택 빌드
+title: Windows 컨테이너 플랫폼
 description: 새 컨테이너 빌딩 블록 사용할 수 있는 Windows에 대해 자세히 알아봅니다.
 keywords: LCOW, linux 컨테이너, docker, 컨테이너, containerd, cri, runhcs, runc
 author: scooley
@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: 970de62c9a0011fa09d6741b2665479efd394313
-ms.sourcegitcommit: 166aa2430ea47d7774392e65a9875501f86dd5ed
+ms.openlocfilehash: 5811ea0761567c3a7db036358b24d1a3e7c51baf
+ms.sourcegitcommit: fdaf666973fca37d8c428e0247454dd47c01f1c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/20/2018
-ms.locfileid: "7460579"
+ms.locfileid: "7460602"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -106,7 +106,9 @@ HCS는 살펴볼 깊은 [John Stark DockerCon 프레젠테이션](https://www.yo
 
 ## <a name="containerdcri"></a>containerd/cri
 
-> ! 참고 CRI 지원은 Server 2019/Windows 10 1809 영어로 이상만입니다.
+> [!IMPORTANT]
+> CRI 지원은 Server 2019/Windows 10 1809 영어로 이상만입니다.  또한 여전히 적극적으로 Windows에 대 한 containerd를 개발 하는 것입니다.
+> 개발자/테스트 합니다.
 
 [CRI](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto) (컨테이너 런타임 인터페이스) 공유 샌드박스에서 workload(s)로 컨테이너에 설명 OCI 사양 단일 컨테이너를 정의 하는 동안 환경에 포드를 호출 합니다.  포드는 하나 이상의 컨테이너 워크 로드를 포함할 수 있습니다.  포드가는 Kubernetes 및 서비스 패브릭 메시 처리 메모리 및 vNETs와 같은 일부 공유 리소스를 사용 하 여 동일한 호스트에 있어야 하는 그룹화 된 워크 로드와 같은 컨테이너 오 케 스트레이 터를 사용 합니다.
 
