@@ -2,20 +2,20 @@
 title: Azure 가상 네트워크에 있는 리소스와 직접 통신 하는 중첩 된 Vm 구성
 description: 중첩된 가상화
 keywords: windows 10, hyper-v가 설치, Azure
-author: johncslack
+author: mrajess
 ms.date: 12/10/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1ecb85a6-d938-4c30-a29b-d18bd007ba08
-ms.openlocfilehash: f316f4c576eae6dd7c14de367e42012a3c724eac
-ms.sourcegitcommit: a9ab01b718b065124829b05868955f40e9020071
+ms.openlocfilehash: abe6f0da68ff90af0b2b5e675f70f106d42ca81c
+ms.sourcegitcommit: 8db42caaace760b7eeb1367b631b38e7904a9f26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8917735"
+ms.locfileid: "8962311"
 ---
-# <a name="configuring-nested-vms-to-communicate-directly-with-resources-in-an-azure-virtual-network"></a>Azure 가상 네트워크에 있는 리소스와 직접 통신 하는 중첩 된 Vm 구성
+# <a name="configure-nested-vms-to-communicate-with-resources-in-an-azure-virtual-network"></a>Azure 가상 네트워크에 있는 리소스와 통신 하는 중첩 된 Vm 구성
 
 배포 하 고 Azure 내에 중첩 된 가상 컴퓨터 구성에 대 한 원래 지침 NAT 스위치를 통해 이러한 Vm에 액세스 하는 필요 합니다. 이 몇 가지 제한이 있습니다.
 
@@ -45,7 +45,7 @@ ms.locfileid: "8917735"
 
 * 배경: 중첩 된 Vm은 DHCP에서에서 받지 내부 또는 외부 스위치를 구성 하는 경우에 해당 호스트에 연결 된 VNet. 
   * 즉, Hyper-v 호스트 DHCP를 제공 해야 합니다.
-* 우리는 Hyper-v 호스트에서만 사용할 Ip 블록을 할당 합니다.  Hyper-v 호스트의 VNet에 현재 할당 된 임대 인식 하지 않으므로는 호스트가 할당 된 IP 이미 존재에서 하는 상황을 피하기 위해 방금 Hyper-v 호스트에서 사용할 Ip 블록 할당 해야 합니다. 이렇게 하면 중복 IP 시나리오를 방지할 수 있습니다. 
+* 우리는 Hyper-v 호스트에서만 사용할 Ip 블록을 할당 합니다.  Hyper-v 호스트의 VNet에 현재 할당 된 임대 인식 하지 않으므로는 호스트가 할당 된 IP 이미 존재에서 하는 상황을 피하기 위해 방금 Hyper-v 호스트에서 사용할 Ip 블록 할당 해야 합니다. 이렇게 하면 중복 IP 시나리오를 방지할 수 있습니다.
   * 블록을 선택 하는 Ip 서브넷에 Hyper-v 호스트에 있는 VNet 내에 해당 됩니다.
   * 기존 서브넷에 해당 하는 이유는 ExpressRoute 위로 다시 BGP 광고를 처리 하는 것입니다. 사용 하 여 Hyper-v 호스트에 대 한 IP 범위에서는 방금 만든 경우 일련의 클라이언트가 수 있도록 정적 경로 만들려고 했습니다 온-프레미스 중첩 된 가상 컴퓨터와 통신할 수 있습니다. 이 의미는 중첩 된 Vm에 대 한 IP 범위를 차지 하 고 다음 클라이언트는 범위에 대 한 Hyper-v 호스트에 지시 하는 데 필요한 모든 경로 만들 수 하드 요구 사항이 아닙니다.
 * Hyper-v에서 내부 스위치를 만듭니다 하 고 새로 생성된 된 인터페이스 dhcp 따로 설정 하는 범위 내에서 IP 주소가 할당은 다음 합니다. 이 IP 주소는 중첩 된 Vm에 대 한 기본 게이트웨이 될 되며 수 내부 스위치와이 VNet에 연결 된 호스트의 NIC 간의 경로 하는 데 사용 합니다.
