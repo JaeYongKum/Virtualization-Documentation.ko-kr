@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: aa69739697e9e2c668aaf5026c6f5ddc69d43c4d
-ms.sourcegitcommit: f6f53fd0da65ac44d16fb793c5aa1af56c14d90e
+ms.openlocfilehash: d831b5950d84c9f82e2a4874827b2ffb107ad50e
+ms.sourcegitcommit: 4090d158dd3573ea90799de5b014c131a206b000
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5428995"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "6121583"
 ---
 # <a name="windows-containers-on-windows-10"></a>Windows 10의 Windows 컨테이너
 
@@ -35,7 +35,7 @@ ms.locfileid: "5428995"
 
 ## <a name="1-install-docker-for-windows"></a>1. Windows용 Docker 설치
 
-[Windows용 Docker를 다운로드](https://download.docker.com/win/stable/InstallDocker.msi)하고 설치 프로그램을 실행합니다. [자세한 설치 지침](https://docs.docker.com/docker-for-windows/install)은 Docker 설명서에 제공됩니다.
+[Windows 용 Docker를 다운로드](https://store.docker.com/editions/community/docker-ce-desktop-windows) 및 실행 설치 프로그램 (됩니다 로그인 해야 합니다. 계정이 생성 이미 계정이 없는 경우). [자세한 설치 지침](https://docs.docker.com/docker-for-windows/install)은 Docker 설명서에 제공됩니다.
 
 ## <a name="2-switch-to-windows-containers"></a>2. Windows 컨테이너로 전환
 

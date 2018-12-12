@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 27317dbf5ba5386a3bd555c53c781aac2fc110a7
-ms.sourcegitcommit: edc153ffef01094c2324a0da2f9a301b31015a58
-ms.translationtype: HT
+ms.openlocfilehash: d92d14fd10e07e159ff2023b4dd6ade8b11ca2e5
+ms.sourcegitcommit: 4090d158dd3573ea90799de5b014c131a206b000
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "1912670"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "6121593"
 ---
 # <a name="active-directory-service-accounts-for-windows-containers"></a>Windows 컨테이너용 Active Directory 서비스 계정
 
@@ -48,8 +48,8 @@ Windows 컨테이너도 유사한 프로세스를 수행합니다.
 4. [windows-server-container-tools](https://github.com/Microsoft/Virtualization-Documentation/tree/live/windows-server-container-tools)의 CredentialSpec PowerShell 모듈을 사용하여 gMSA를 사용하는 데 필요한 설정을 저장합니다.
 5. 추가 옵션을 사용하여 컨테이너를 시작합니다. `--security-opt "credentialspec=..."`
 
-[!NOTE]
-[여기](https://docs.microsoft.com/en-us/windows/device-security/security-policy-settings/network-access-allow-anonymous-sidname-translation)에 설명된 대로 컨테이너 호스트에서 익명의 SID/이름 변환을 허용해야 할 수 있습니다. 그렇지 않으면 해당 계정을 SID로 변환할 수 없다는 오류가 발생할 수 있습니다.
+> [!NOTE]
+> [여기](https://docs.microsoft.com/en-us/windows/device-security/security-policy-settings/network-access-allow-anonymous-sidname-translation)에 설명된 대로 컨테이너 호스트에서 익명의 SID/이름 변환을 허용해야 할 수 있습니다. 그렇지 않으면 해당 계정을 SID로 변환할 수 없다는 오류가 발생할 수 있습니다.
 
 그러나 익명의 SID/이름 변환을 허용해야 하는지 확인하기 전에 다음 작업을 수행해야 합니다.
 
