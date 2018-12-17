@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: 5dcc2af869ba0433b1d755f6d70f5dae6e18cdc5
-ms.sourcegitcommit: 4090d158dd3573ea90799de5b014c131a206b000
+ms.openlocfilehash: ade690dbfed2fd154ee94955f3104c47dae40045
+ms.sourcegitcommit: 8ab1fccfc680911493c769157a6cfe7cbcf17bde
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "6121613"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "8972067"
 ---
 # <a name="windows-containers"></a>Windows 컨테이너
 
@@ -25,7 +25,7 @@ ms.locfileid: "6121613"
 
 <center style="margin: 25px">![](media/box1.png)</center>
 
-이 컨테이너를 가져와서 우리가 원하는 호스트 아파트에 배치하면 똑같은 부엌이 됩니다. 필요한 기구가 모두 있으니 전기와 수도만 연결하면 바로 요리를 시작할 수 있습니다.
+이 컨테이너를 가져와서 우리가 원하는 호스트 아파트에 배치하면 똑같은 부엌이 됩니다. 작업을 수행 해야 하는 연결할 전기와, 니 (매우 많기 때문 필요한 모든 기기!) 요리를 시작할 합니다.
 
 <center style="margin: 25px">![](media/apartment.png)</center>
 
@@ -37,7 +37,7 @@ ms.locfileid: "6121613"
 
 컨테이너는 격리되고 리소스로 제어되는 휴대용 런타임 환경으로, 호스트 컴퓨터 또는 가상 컴퓨터에서 실행됩니다. 컨테이너에서 실행되는 응용 프로그램 또는 프로세스는 필요한 모든 종속성 및 구성 파일이 패키지로 포함되기 때문에 컨테이너 외부에서 다른 프로세스가 전혀 실행되지 않는 것처럼 보입니다.
 
-컨테이너의 호스트는 컨테이너용 리소스 집합을 프로비전하고 컨테이너는 이러한 리소스만 사용합니다. 으로 컨테이너 인식 어떤 것에 제공 된 외부에서 다른 리소스가 없는 존재 하 고 컨테이너 인접 한 컨테이너에 대해 제공 된 리소스를 수정할 수 없습니다 따라서 합니다.
+컨테이너의 호스트는 컨테이너용 리소스 집합을 프로비전하고 컨테이너는 이러한 리소스만 사용합니다. 으로 컨테이너 인식 어떤 것에 제공 된 외부에서 다른 리소스가 없는 존재 하 고 컨테이너 인접 컨테이너에 대 한 배포 되어 있는 리소스를 수정할 수 없습니다 따라서 합니다.
 
 Windows 컨테이너의 만들기 및 작업을 시작할 때 다음 주요 개념이 유용할 것입니다.
 
