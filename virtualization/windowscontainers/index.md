@@ -1,6 +1,6 @@
 ---
-title: Windows 컨테이너 설명서
-description: Windows 컨테이너 설명서
+title: Windows 설명서의 컨테이너
+description: windows 컨테이너를 실행 하는 것에 대 한 설명서
 keywords: Docker, 컨테이너
 author: cwilhit
 ms.date: 05/02/2016
@@ -8,14 +8,14 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
-ms.openlocfilehash: 2b887d8ae92d5134014ea71235237cc446a7816f
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.openlocfilehash: 84e3f318069961853248bcc30abadcd68642649c
+ms.sourcegitcommit: 95cec99aa8e817d3e3cb2163bd62a32d9e8f7181
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6947952"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973623"
 ---
-# <a name="windows-containers-documentation"></a>Windows 컨테이너 설명서
+# <a name="containers-on-windows-documentation"></a>Windows 설명서의 컨테이너
 
 Windows 컨테이너는 여러 개의 격리된 응용 프로그램을 단일 시스템에서 실행할 수 있는 운영 체제 수준 가상화를 제공합니다. 이 문서 집합은 관리 작업에서 빠른 시작 가이드, 배포 가이드 및 기술 세부 정보를 제공합니다.
 
@@ -34,7 +34,7 @@ Windows 컨테이너는 여러 개의 격리된 응용 프로그램을 단일 �
 <tr>
 <td ><center>![](media/1.png)</center></td>
 <td>**배포**<br /><br />
-Windows Server 2016에서 Windows 컨테이너를 배포하는 방법을 알아봅니다.<br /><br />
+Windows Server 2019의 Windows 컨테이너를 배포 하는 방법을 알아봅니다<br /><br />
 <ul>
 <li>[시스템 요구 사항](deploy-containers/system-requirements.md)<br /><br /></li>
 <li>[컨테이너 호스트 배포](deploy-containers/deploy-containers-on-server.md)<br /><br /></li>

@@ -8,14 +8,14 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: ade690dbfed2fd154ee94955f3104c47dae40045
-ms.sourcegitcommit: 8ab1fccfc680911493c769157a6cfe7cbcf17bde
+ms.openlocfilehash: 16cf281193ced00ea1b0e2d96291de7f44822284
+ms.sourcegitcommit: 95cec99aa8e817d3e3cb2163bd62a32d9e8f7181
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "8972067"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973613"
 ---
-# <a name="windows-containers"></a>Windows 컨테이너
+# <a name="containers-on-windows"></a>Windows의 컨테이너
 
 ## <a name="what-are-containers"></a>컨테이너란?
 
@@ -31,7 +31,9 @@ ms.locfileid: "8972067"
 
 컨테이너는 이 부엌과 거의 동일합니다. 서로 다른 종류의 방도 있을 것이고 같은 종류의 방도 있을 것입니다. 중요한 점은 필요한 모든 것이 컨테이너에 패키징된다는 것입니다.
 
-[Windows 기반 컨테이너: 엔터프라이즈급 제어 기능을 통한 최신 앱 개발](https://youtu.be/Ryx3o0rD5lY)에 대한 간략한 개요를 확인하세요.
+아래 간략 한 개요를 확인 하세요.
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Ryx3o0rD5lY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## <a name="container-fundamentals"></a>컨테이너의 기본 사항
 
