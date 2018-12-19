@@ -8,22 +8,22 @@ ms.topic: about-article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 29fbe13a-228a-4eaa-9d4d-90ae60da5965
-ms.openlocfilehash: e88f2951abef72bdd938c23a068cc912e31628cb
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.openlocfilehash: fec8b08d5bd86102d21ce93b726dc0b931413441
+ms.sourcegitcommit: 69228f28723f366c6b2933c7701077c8df74b32b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6948072"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976749"
 ---
 # <a name="building-a-container-ecosystem"></a>컨테이너 생태계 구축
 
 컨테이너 생태계를 구축하는 것이 왜 그렇게 중요한지 이해하기 위해 먼저 Docker에 대해 살펴보겠습니다.
 
-## <a name="dockers-appeal"></a>Docker의 효과
+## <a name="docker"></a>Docker
 
-컨테이너 개념(네임스페이 격리 및 리소스 관리)은 BSD Jails, Solaris Zones 및 UNIX chroot(루트 변경) 메커니즘으로 거슬러 올라가 오래 전부터 사용되었습니다.   Docker의 역할은 공통 도구 집합, 패키징 모델, 배포 메커니즘을 제공하는 것입니다.  이를 통해 Docker는 응용 프로그램의 컨테이너화와 배포를 크게 간소화합니다.  그러면 이러한 응용 프로그램이 Linux 호스트의 어느 위치에서나 Windows에서 기능을 실행할 수 있습니다.
+컨테이너 개념(네임스페이 격리 및 리소스 관리)은 BSD Jails, Solaris Zones 및 UNIX chroot(루트 변경) 메커니즘으로 거슬러 올라가 오래 전부터 사용되었습니다.   Docker의 역할은 공통 도구 집합, 패키징 모델, 배포 메커니즘을 제공하는 것입니다.  이 작업을 수행 하 여 Docker 컨테이너 화와 응용 프로그램의 배포를 간소화 합니다.  그러면 이러한 응용 프로그램이 Linux 호스트의 어느 위치에서나 Windows에서 기능을 실행할 수 있습니다.
 
-이렇게 어디에서나 사용 가능한 기술은 모든 호스트에서 동일한 관리 명령을 제공함으로써 관리를 간소화할 뿐 아니라 원할한 DevOps를 위한 고유한 기회를 창출합니다.
+어디에서 나 패키징 모델 및 배포 기술로 모든 호스트에 대해 동일한 관리 명령을 제공 함으로써 관리를 간소화 하 고 DevOps 위한 고유한 기회를 만듭니다.
 
 개발자의 데스크톱에서 테스트 컴퓨터와 여러 프러덕션 컴퓨터에 이르기까지, 몇 초 만에 모든 환경 전체에 동일하게 배포되는 Docker 이미지를 만들 수 있습니다.  이 덕분에 Docker가 관리하는 컨테이너화된 공개 응용 프로그램 레지스트리인 DockerHub를 통해, Docker 컨테이너 안에 패키징된 응용 프로그램의 거대한 생태계가 탄생했으며 지속적으로 확장되고 있습니다. 
 
