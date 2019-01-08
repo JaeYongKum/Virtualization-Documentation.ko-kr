@@ -7,12 +7,12 @@ ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: e736199221f06c572f89e8dafac55ce114bf7481
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.openlocfilehash: 478305ff2298a0392935f9857febc445c1199b83
+ms.sourcegitcommit: 5300274fd7b88c6cf5e37b2f4c02779efaa3a613
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6948022"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "8996047"
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -35,7 +35,7 @@ Windows 컨테이너 호스트가 Hyper-V 가상 컴퓨터에서 실행되고 Hy
 
 ## <a name="supported-base-images"></a>지원되는 기본 이미지
 
-Windows 컨테이너는 두 컨테이너 기본 이미지(Windows Server Core 및 Nano 서버)와 함께 제공됩니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
+Windows 컨테이너는 4 개의 컨테이너 기본 이미지와 함께 제공 됩니다: Windows Server Core, Nano 서버, 창 및 IoT Core 합니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
 
 <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
 <thead>
@@ -48,18 +48,23 @@ Windows 컨테이너는 두 컨테이너 기본 이미지(Windows Server Core �
 <tbody>
 <tr valign="top">
 <td><center>Windows Server 2016 / 2019 (Standard 또는 Datacenter)</center></td>
-<td><center>Server Core/Nano 서버</center></td>
-<td><center>Server Core/Nano 서버</center></td>
+<td><center>Server Core, Nano 서버에 Windows</center></td>
+<td><center>Server Core, Nano 서버에 Windows</center></td>
 </tr>
 <tr valign="top">
 <td><center>Nano Server<a href="#warn-1">*</a></center></td>
 <td><center> Nano 서버</center></td>
-<td><center>Server Core/Nano 서버</center></td>
+<td><center>Server Core, Nano 서버에 Windows</center></td>
 </tr>
 <tr valign="top">
 <td><center>Windows 10 Pro/Enterprise</center></td>
 <td><center>사용할 수 없음</center></td>
-<td><center>Server Core/Nano 서버</center></td>
+<td><center>Server Core, Nano 서버에 Windows</center></td>
+</tr>
+<tr valign="top">
+<td><center>IoT Core</center></td>
+<td><center>IoT Core</center></td>
+<td><center>사용할 수 없음</center></td>
 </tr>
 </tbody>
 </table>
@@ -84,9 +89,16 @@ Windows 컨테이너는 두 컨테이너 기본 이미지(Windows Server Core �
 | Server Core | 45MB                     | 360MB + 1GB 페이지 파일 |
 
 
-### <a name="nano-server-vs-windows-server-core"></a>Nano 서버와 Windows Server Core 비교
+### <a name="base-image-differences"></a>기본 이미지의 차이점
 
-Windows Server Core와 Nano 서버 중에 무엇을 선택해야 할까요? 개발자는 무엇이든 자유롭게 빌드할 수 있지만, 응용 프로그램이 .NET Framework와 완벽하게 호환되기를 원한다면 [Windows Server Core](https://hub.docker.com/r/microsoft/windowsservercore/)를 사용해야 합니다. 반면, 응용 프로그램이 클라우드용으로 빌드되고 .NET Core를 사용하는 경우 [Nano 서버](https://hub.docker.com/r/microsoft/nanoserver/)를 사용해야 합니다. Nano 서버는 설치 공간을 최대한 줄일 목적으로 개발되었기 때문에 필수적이지 않은 여러 라이브러리가 제거되었습니다. Nano 서버 위에 빌드하려고 생각 중이라면 다음 사항을 염두에 두어야 합니다.
+오른쪽 기본 이미지를 토대로 어떻게 선택? 자유롭게 빌드할 때는 원하는 대로 각 이미지에 대 한 일반적인 지침은 다음과 같습니다.
+
+- [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): 응용 프로그램 전체.NET framework에 필요한 경우 사용 하 여 최상의 이미지입니다.
+- [Nano 서버](https://hub.docker.com/_/microsoft-windows-nanoserver):만.NET Core를 필요로 하는 응용 프로그램을 Nano 서버는 훨씬 가볍습니다 이미지를 제공 합니다.
+- [Windows](https://hub.docker.com/_/microsoft-windowsfamily-windows): 응용 프로그램이 구성 요소 또는 Server Core에서 누락 되는.dll에 따라 또는 Nano 서버 이미지, GDI 라이브러리 등 사용할 수 있습니다. 이 이미지는 Windows 전체 종속성 집합을 전달합니다.
+- [IoT Core](https://hub.docker.com/_/microsoft-windows-iotcore):이 이미지는 [IoT 응용 프로그램](https://developer.microsoft.com/en-us/windows/iot)에 대 한 구축 합니다. IoT Core 호스트를 대상으로 하는 경우이 컨테이너 이미지를 사용 해야 합니다.
+
+대부분의 사용자에 대 한 Windows Server Core 또는 Nano 서버에 가장 적합 한 이미지를 사용 하 여 됩니다. 아래 Nano 서버 위에 빌드하려고 생각 중 이라면 주의 해야 할 몇 가지 사항이 있습니다.
 
 - 서비스 스택 제거됨
 - .NET Core 미포함([.NET Core Nano 서버 이미지](https://hub.docker.com/r/microsoft/dotnet/) 사용 가능)
