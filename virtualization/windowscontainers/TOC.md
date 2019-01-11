@@ -32,14 +32,14 @@
 # 오케스트레이션
 ## Windows의 Kubernetes 
 ### [개요](kubernetes/getting-started-kubernetes-windows.md)
-### [Kubernetes 마스터 만들기](kubernetes/creating-a-linux-master.md)
-### [네트워크 솔루션 선택](kubernetes/network-topologies.md)
-### [Windows 작업자 조인](kubernetes/joining-windows-workers.md)
-### [Linux 작업자 조인](kubernetes/joining-linux-workers.md)
+### [Kubernetes 마스터를 만듭니다.](kubernetes/creating-a-linux-master.md)
+### [네트워크 솔루션을 선택합니다.](kubernetes/network-topologies.md)
+### [Windows 작업자에 가입](kubernetes/joining-windows-workers.md)
+### [Linux 작업자에 가입](kubernetes/joining-linux-workers.md)
 ### [Kubernetes 리소스 배포](kubernetes/deploying-resources.md)
 ### [문제 해결](kubernetes/common-problems.md)
 ### [Kubernetes 바이너리 컴파일](kubernetes/compiling-kubernetes-binaries.md)
-## Windows 서비스 패브릭
+## Windows에서 서비스 패브릭
 ### [첫 번째 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers)
 ### [Windows 컨테이너에서 .NET 응용 프로그램 배포](/azure/service-fabric/service-fabric-host-app-in-a-container) 
 ## Docker Swarm
@@ -54,6 +54,7 @@
 ## [시스템 요구 사항](deploy-containers/system-requirements.md)
 ## [버전 호환성](deploy-containers/version-compatibility.md)
 ## [Hyper-V 격리](manage-containers/hyperv-container.md)
+## [컨테이너에서 하드웨어 장치](deploy-containers/hardware-devices-in-containers.md)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
 ## [Active Directory 서비스 계정](manage-containers/manage-serviceaccounts.md)
 ## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
