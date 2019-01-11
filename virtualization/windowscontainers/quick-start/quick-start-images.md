@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-ms.openlocfilehash: 5da18c7c1e2fc6882d5879070e91d36d0c0a475a
-ms.sourcegitcommit: 95cec99aa8e817d3e3cb2163bd62a32d9e8f7181
+ms.openlocfilehash: 0350e62deef06402991f505dd263db7fd506cba1
+ms.sourcegitcommit: 1aef193cf56dd0870139b5b8f901a8d9808ebdcd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "8973665"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001589"
 ---
 # <a name="automating-builds-and-saving-images"></a>빌드 자동화 및 이미지 저장
 
@@ -21,7 +21,7 @@ ms.locfileid: "8973665"
 
 이 빠른 시작은 Windows Server 2016의 Windows Server 컨테이너 전용이며 Windows Server Core 컨테이너 기본 이미지를 사용합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 조건
 
 다음 요구 사항을 충족 하는지 확인 하세요.
 
@@ -129,6 +129,8 @@ Login Succeeded
 ```console
 docker push <user>/iis-dockerfile
 ```
+
+Docker 허브 최대 각 계층을 보이지 않게 하는 Docker를으로 docker 다른 레지스트리 (외부 계층) 또는 Docker 허브에 이미 존재 하는 계층을 건너뜁니다.  예를 들어 Microsoft 컨테이너 레지스트리 또는 개인 회사 레지스트리에서 계층에서 호스팅되는 최신 버전의 Windows Server Core, 및 Docker 허브로 푸시되 지 합니다.
 
 이제 `docker pull`을 사용하여 Docker 허브의 컨테이너 이미지를 Windows 컨테이너 호스트에 다운로드할 수 있습니다. 이 자습서에서는 기존 이미지를 삭제한 다음 Docker 허브에서 끌어옵니다. 
 
