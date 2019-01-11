@@ -3,12 +3,12 @@ title: Windows의 컨테이너에서 장치
 description: Windows의 컨테이너에 대 한 장치 지원은 어떤
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: b300c9a4262c30da3f6fdf2c4aeedab76b167417
-ms.sourcegitcommit: 4336d7617c30d26a987ad3450b048e17404c365d
+ms.openlocfilehash: f70388bf3724af7cb92f20e2053aa4ddb1f953a3
+ms.sourcegitcommit: 5cbaef0806db21d7bbcc99964837f10f4207a51f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001049"
+ms.locfileid: "9001755"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
 
@@ -43,7 +43,7 @@ Windows에서는 모든 장치 목록을 구현 하는 인터페이스 클래스
 
 ## <a name="what-devices-are-supported"></a>어떤 장치는 지원
 
-다음 장치 (및 해당 장치 인터페이스 clas Guid)는 현재 지원 됩니다.
+다음 장치 (및 해당 장치 클래스 Guid 인터페이스)는 현재 지원 합니다.
   
 <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
 <thead>
