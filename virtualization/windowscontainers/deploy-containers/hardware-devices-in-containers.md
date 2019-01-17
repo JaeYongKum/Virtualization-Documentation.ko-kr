@@ -3,12 +3,12 @@ title: Windows의 컨테이너에서 장치
 description: Windows의 컨테이너에 대 한 장치 지원은 어떤
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: f70388bf3724af7cb92f20e2053aa4ddb1f953a3
-ms.sourcegitcommit: 5cbaef0806db21d7bbcc99964837f10f4207a51f
+ms.openlocfilehash: 6397a5050ee0c7cb4b62dc935af4975d9ab6b3db
+ms.sourcegitcommit: 1b6a244c3604e48c42c851e580e3b59e2384c91a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001755"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014520"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
 
@@ -17,9 +17,9 @@ ms.locfileid: "9001755"
 ## <a name="requirements"></a>요구 사항
 
 - Windows를 실행 해야 Server 2019 이상 또는 Windows 10 Pro/Enterprise 2018 년 10 월을 사용 하 여 업데이트
-- 하면 18.09 이상 Docker 버전 실행 되어야 합니다.
 - 컨테이너 이미지 버전 1809 이상 이어야 합니다.
 - 컨테이너는 격리 프로세스 모드에서 실행 되는 Windows 컨테이너 이어야 합니다.
+- Windows 장치 기능 Docker 디먼에 있는 동안이 아직 존재 하지 않는 Docker 클라이언트에서 (이 [끌어오기 요청](https://github.com/docker/cli/pull/1606) 을 추적 참조). Interrim에서 해야 moby 소스에서 [직접 docker 실행 파일을 빌드](https://github.com/moby/moby/blob/master/docs/contributing/software-req-win.md) 으로 해결 합니다. 잘 모를 경우에 위에서 연결 PR 병합 될 때까지이 기능을 사용해 대기 하는 것이 좋습니다.
 
 ## <a name="run-a-container-with-a-device"></a>장치를 사용 하 여 컨테이너를 실행 합니다.
 
