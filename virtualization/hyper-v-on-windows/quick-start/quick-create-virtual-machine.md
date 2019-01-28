@@ -7,18 +7,18 @@ ms.date: 04/07/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: f1e75efa-8745-4389-b8dc-91ca931fe5ae
-ms.openlocfilehash: 3bb873a35d905e9eefada151184d6115bb18d2e7
-ms.sourcegitcommit: 9653a3f7451011426f8af934431bb14dbcb30a62
-ms.translationtype: HT
+ms.openlocfilehash: 5975f43859368334cab31b6d0eb37f084e9c03ca
+ms.sourcegitcommit: 51da93c4548c5df7a9f01e54d46d81b338c874cf
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "2082874"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031177"
 ---
 # <a name="create-a-virtual-machine-with-hyper-v"></a>Hyper-V를 사용하여 가상 컴퓨터 만들기
 
 가상 컴퓨터를 만들고 운영 체제를 설치합니다.
 
-가상 컴퓨터를 생성하기 위한 새로운 도구를 개발해오면서 지난 3개의 릴리스에서 지침이 상당 부분 변경되었습니다.
+지난 3 개의 릴리스에서 지침 크게 변경 가상 컴퓨터를 생성 하기 위한 새로운 도구 구축한 경험이 있습니다.
 
 올바른 명령 집합을 위한 운영 체제를 선택하세요.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6e5e6b01-7a9d-4123-8cc7-f986e10cd372
-ms.openlocfilehash: 51720a92cd04cfae25c7d0c010ee7b441073dd7e
-ms.sourcegitcommit: 5e5644bff6dba70e384db6c80787b3bbe7adb93c
+ms.openlocfilehash: ba0a0a83d74aa6ae73dabddf4057eebc98700f66
+ms.sourcegitcommit: 51da93c4548c5df7a9f01e54d46d81b338c874cf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4303919"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031157"
 ---
 # <a name="windows-10-hyper-v-system-requirements"></a>Windows 10 Hyper-V 시스템 요구 사항
 
@@ -58,5 +58,5 @@ RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수
 기존 Hyper-V 호스트에서 **systeminfo**를 실행하는 경우 Hyper-V 요구 사항 섹션을 읽습니다.
 
 ```
-Hyper-V Requirements: A hypervisor has been detected. Features required for Hyper-V are not be displayed.
+Hyper-V Requirements: A hypervisor has been detected. Features required for Hyper-V will not be displayed.
 ```
