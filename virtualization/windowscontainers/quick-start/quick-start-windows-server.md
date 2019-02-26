@@ -8,31 +8,31 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
-ms.openlocfilehash: e27148873299543a89eaf92801b40732dd27b402
-ms.sourcegitcommit: 95cec99aa8e817d3e3cb2163bd62a32d9e8f7181
+ms.openlocfilehash: 44e415af08881d18ebb2d82f5f79098f7fb034f8
+ms.sourcegitcommit: f172d14ef1ebfb5a9df1b3529e0722d9103e0eba
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "8973673"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "9112930"
 ---
 # <a name="windows-containers-on-windows-server"></a>Windows Server의 Windows 컨테이너
 
-이 연습 과정을 안내 기본 배포 및 Windows 컨테이너 기능을 사용 하 여 Windows Server 2019에 합니다.
+Windows Server 2019 및 Windows Server 2016에서 Windows 컨테이너 기능의 기본 배포를 통해이 연습을 보여 줍니다.
 
 이 빠른 시작에서 수행 합니다.
 
 1. Windows Server에서 컨테이너 기능을 사용 하도록 설정
 2. Docker 설치
-3. 간단한 Windows 컨테이너 실행
+3. 간단한 Windows 컨테이너를 실행
 
 컨테이너에 대해 좀 더 숙지해야 하는 경우 [컨테이너 정보](../about/index.md)에서 이 정보를 찾을 수 있습니다.
 
-이 빠른 시작은 Windows Server 2019의 Windows Server 컨테이너와 관련이 있습니다. Windows 10의 컨테이너를 포함하여 추가적인 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
+이 빠른 시작은 Windows Server 2019 및 Windows Server 2016의 Windows Server 컨테이너와 관련이 있습니다. Windows 10의 컨테이너를 포함하여 추가적인 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 조건
 
 다음 요구 사항을 충족 하는지 확인 하세요.
-- Windows Server 2019를 실행 하는 한 컴퓨터 시스템 (물리적 또는 가상). Windows Server 2019 Insider Preview를 사용 하는 경우에 [Window Server 2019 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019 )으로 업데이트 하세요.
+- Windows Server 2019를 실행 하는 컴퓨터 시스템 (물리적 또는 가상). Windows Server 2019 Insider Preview를 사용 하는 경우에 [Window Server 2019 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019 )으로 업데이트 하세요.
 
 > 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
@@ -46,7 +46,7 @@ Azure에서 배포 하려는 경우 이 [템플릿](https://github.com/Microsoft
 
 ## <a name="install-docker"></a>Docker 설치
 
-Docker를 설치 하려면 [MicrosoftDockerProvider](https://github.com/OneGet/MicrosoftDockerProvider)여기서에서-설치를 수행 하는 공급자와 함께 작동 하는 [OneGet 공급자 PowerShell 모듈](https://github.com/oneget/oneget) 을 사용 하겠습니다. 공급자를 사용하여 컴퓨터에서 컨테이너 기능을 사용하도록 설정할 수 있습니다. Docker 설치를 위해 컴퓨터를 다시 부팅해야 할 수도 있습니다. Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다.
+Docker 설치 하기 [MicrosoftDockerProvider](https://github.com/OneGet/MicrosoftDockerProvider)이 예에서-설치를 수행 하는 공급자와 함께 작동 하는 [OneGet 공급자 PowerShell 모듈](https://github.com/oneget/oneget) 을 사용 합니다. 공급자를 사용하여 컴퓨터에서 컨테이너 기능을 사용하도록 설정할 수 있습니다. Docker 설치를 위해 컴퓨터를 다시 부팅해야 할 수도 있습니다. Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진 및 Docker 클라이언트로 구성됩니다.
 
 관리자 권한으로 PowerShell 세션을 열고 다음 명령을 실행합니다.
 
@@ -105,10 +105,18 @@ sconfig
 
 이 연습에서는 미리 만든 .NET 샘플 이미지를 Docker 허브 레지스트리에서 다운로드하고 .Net Hello World 응용 프로그램을 실행하는 간단한 컨테이너를 배포합니다.  
 
-`docker run`을 사용하여 .Net 컨테이너를 배포합니다. 그러면 컨테이너 이미지도 다운로드되며, 다운로드는 몇 분 정도 걸릴 수 있습니다.
+`docker run`을 사용하여 .Net 컨테이너를 배포합니다. 그러면 컨테이너 이미지도 다운로드되며, 다운로드는 몇 분 정도 걸릴 수 있습니다. Windows Server의 호스트 버전에 따라 아래 다음 명령을 실행 합니다.
+
+#### <a name="windows-server-2019"></a>WindowsServer 2019
 
 ```console
 docker run microsoft/dotnet-samples:dotnetapp-nanoserver-1809
+```
+
+#### <a name="windows-server-2016"></a>WindowsServer 2016
+
+```console
+docker run microsoft/dotnet-samples:dotnetapp-nanoserver-sac2016
 ```
 
 컨테이너가 시작되면 Hello World 메시지를 인쇄한 다음 종료합니다.
