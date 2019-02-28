@@ -3,16 +3,16 @@ title: Windows 10에서 Hyper-V를 사용하도록 설정
 description: Windows 10에 Hyper-V 설치
 keywords: windows 10, hyper-v
 author: scooley
-ms.date: 05/02/2016
+ms.date: 02/15/2019
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
-ms.openlocfilehash: cd576f72c9947cd6f79cc362709c1a4ceab9b47e
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.openlocfilehash: 53152d0237a7f81858a5cb2f0fd8aabd439c4613
+ms.sourcegitcommit: 914e0dd1168daf1d2b0f22bd011035016cc08baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6947962"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "9099361"
 ---
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
@@ -23,7 +23,7 @@ Windows 10 제어판, PowerShell(즐겨 사용하는 방식)을 사용하거나 
 
 ## <a name="check-requirements"></a>요구 사항 확인
 
-* Windows 10 Enterprise, Pro, Education
+* Windows 10 Enterprise, Pro, 또는 교육
 * 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
 * VM 모니터 모드 확장 (vt-c Intel Cpu)에 대 한 CPU 지원 합니다.
 * 최소 4GB의 메모리.

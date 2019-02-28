@@ -3,13 +3,15 @@ title: Windows의 컨테이너에서 장치
 description: Windows의 컨테이너에 대 한 장치 지원은 어떤
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: 6397a5050ee0c7cb4b62dc935af4975d9ab6b3db
-ms.sourcegitcommit: 1b6a244c3604e48c42c851e580e3b59e2384c91a
+ms.openlocfilehash: da9785b051826efa4bb2c64542a7c75a12ddd2b4
+ms.sourcegitcommit: 4490d384ade48699e7f56dc265185dac75bf9d77
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014520"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058993"
 ---
+**이 현재 미리 보기 재료입니다. 자세한 내용은 '요구 사항 섹션 아래에서 네 번째 항목이 표시 됩니다.**
+
 # <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
 
 기본적으로 Windows 컨테이너 호스트 디바이스--Linux 컨테이너와 마찬가지로 최소한의 액세스를 제공 됩니다. 가지 특정 워크 로드 것이 유용한-또는 명령적-액세스 하 고 호스트 하드웨어 장치와 통신 합니다. 이 가이드에서는 컨테이너에서 지원 되는 어떤 디바이스 및 시작 하는 방법을 설명 합니다.
@@ -19,7 +21,7 @@ ms.locfileid: "9014520"
 - Windows를 실행 해야 Server 2019 이상 또는 Windows 10 Pro/Enterprise 2018 년 10 월을 사용 하 여 업데이트
 - 컨테이너 이미지 버전 1809 이상 이어야 합니다.
 - 컨테이너는 격리 프로세스 모드에서 실행 되는 Windows 컨테이너 이어야 합니다.
-- Windows 장치 기능 Docker 디먼에 있는 동안이 아직 존재 하지 않는 Docker 클라이언트에서 (이 [끌어오기 요청](https://github.com/docker/cli/pull/1606) 을 추적 참조). Interrim에서 해야 moby 소스에서 [직접 docker 실행 파일을 빌드](https://github.com/moby/moby/blob/master/docs/contributing/software-req-win.md) 으로 해결 합니다. 잘 모를 경우에 위에서 연결 PR 병합 될 때까지이 기능을 사용해 대기 하는 것이 좋습니다.
+- Windows 장치 기능 Docker 디먼에 있는 동안이 아직 존재 하지 않는 Docker 클라이언트에서 (이 [끌어오기 요청](https://github.com/docker/cli/pull/1606) 을 추적 참조). Windows 용 Docker의 이후 릴리스에서 기다려야 /이 기능을 활용 하려면이 코드를 사용 하 여 Docker EE 합니다. 이 문서는 상태가 변경 될 때 업데이트 됩니다.
 
 ## <a name="run-a-container-with-a-device"></a>장치를 사용 하 여 컨테이너를 실행 합니다.
 

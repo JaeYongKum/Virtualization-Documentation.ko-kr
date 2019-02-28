@@ -38,6 +38,7 @@
 ### [Linux 작업자에 가입](kubernetes/joining-linux-workers.md)
 ### [Kubernetes 리소스 배포](kubernetes/deploying-resources.md)
 ### [문제 해결](kubernetes/common-problems.md)
+### [Kubernetes에서 Windows 서비스](kubernetes/kube-windows-services.md)
 ### [Kubernetes 바이너리 컴파일](kubernetes/compiling-kubernetes-binaries.md)
 ## Windows에서 서비스 패브릭
 ### [첫 번째 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers)
