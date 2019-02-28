@@ -5,15 +5,15 @@ ms.author: daschott
 ms.date: 11/02/2018
 ms.topic: get-started-article
 ms.prod: containers
-description: V1.12 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
-keywords: kubernetes, 1.12, windows, 시작
+description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
+keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 764d440837118801226c0bf37f92ffb0d7bdb9e5
-ms.sourcegitcommit: 1aef193cf56dd0870139b5b8f901a8d9808ebdcd
+ms.openlocfilehash: ed0f13bd429e88f05469f91c3fc691bf0188b0a2
+ms.sourcegitcommit: 41318edba7459a9f9eeb182bf8519aac0996a7f1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001619"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "9120571"
 ---
 # <a name="joining-windows-server-nodes-to-a-cluster"></a>Windows Server 노드 클러스터에 가입 #
 [Kubernetes 마스터 노드를 설정](./creating-a-linux-master.md) 하 고 [원하는 네트워크 솔루션을 선택](./network-topologies.md)했다면 가입 Windows 서버 노드 클러스터를 만들 준비가 되었습니다. 이 [Windows 노드 준비](#preparing-a-windows-node) 에 조인 하기 전에 필요합니다.
@@ -96,10 +96,13 @@ mkdir c:\k
 #### <a name="copy-kubernetes-certificate"></a>Kubernetes 인증서를 복사 합니다. #### 
 Kubernetes 인증서 파일을 복사 (`$HOME/.kube/config`) [마스터를](./creating-a-linux-master.md#collect-cluster-information) `C:\k` 디렉터리입니다.
 
+> [!tip]
+> 노드 간에 config 파일을 전송 [xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy) 또는 [WinSCP](https://winscp.net/eng/download.php) 같은 도구를 사용할 수 있습니다.
+
 #### <a name="download-kubernetes-binaries"></a>Kubernetes 바이너리를 다운로드 합니다. ####
 Kubernetes를 실행할 수 있도록 먼저 다운로드 해야 합니다 `kubectl`, `kubelet`, 및 `kube-proxy` 이진 파일입니다. 에 있는 링크에서이 다운로드할 수는 `CHANGELOG.md` 파일의 [최신 릴리스](https://github.com/kubernetes/kubernetes/releases/)합니다.
- - 예를 들어 다음은 [v1.12 노드 이진 파일](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.12.md#node-binaries)입니다.
- - [7-zip](http://www.7-zip.org/) 와 같은 도구를 사용 하 여 아카이브 압축을 풀고 바이너리에 `C:\k\`.
+ - 예를 들어 다음은 [v1.13 노드 이진 파일](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#node-binaries)입니다.
+ - [확장 보관](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) 와 같은 도구를 사용 하 여 아카이브 압축을 풀고 바이너리에 `C:\k\`.
 
 #### <a name="optional-setup-kubectl-on-windows"></a>(선택 사항) Windows 설치 프로그램 kubectl ####
 Windows에서 클러스터를 제어 하려는 경우를 할 수 있는 사용 하 여는 `kubectl` 명령입니다. 첫 번째 되도록 `kubectl` 외부에서 사용할 수는 `C:\k\` 디렉터리를 수정 합니다 `PATH` 환경 변수:
@@ -144,25 +147,18 @@ Unable to connect to the server: dial tcp [::1]:8080: connectex: No connection c
 
 ## <a name="joining-the-windows-node"></a>Windows 노드를 가입 ##
 [사용자가 선택한 네트워킹 솔루션](./network-topologies.md)따라 다음 작업을 수행할 수 있습니다.
-1. [Windows Server 노드 Flannel 클러스터에 가입](#joining-a-flannel-cluster)
+1. [Windows Server 노드 Flannel (vxlan 또는 호스트 gw) 클러스터에 가입](#joining-a-flannel-cluster)
 2. [Windows Server 노드에 ToR 스위치를 사용 하 여 클러스터에 가입](#joining-a-tor-cluster)
 
 ### <a name="joining-a-flannel-cluster"></a>Flannel 클러스터에 가입 ###
-클러스터에이 노드를 가입 하는 데 도움이 되는 [Microsoft 리포지토리](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/l2bridge) 에서 Flannel 배포 스크립트 컬렉션이 있습니다.
+클러스터에이 노드를 가입 하는 데 도움이 되는 [Microsoft 리포지토리](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/overlay) 에서 Flannel 배포 스크립트 컬렉션이 있습니다.
 
-[여기](https://github.com/Microsoft/SDN/archive/master.zip)에서 ZIP 파일을 직접 다운로드할 수 있습니다. 필요한 유일한 것은는 `Kubernetes/flannel/l2bridge` 디렉터리에는 콘텐츠를 압축 `C:\k\`:
+콘텐츠를 압축 [Flannel start.ps1](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/start.ps1) 스크립트를 다운로드 `C:\k`:
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-wget https://github.com/Microsoft/SDN/archive/master.zip -o master.zip
-Expand-Archive master.zip -DestinationPath master
-mv master/SDN-master/Kubernetes/flannel/l2bridge/* C:/k/
-rm -recurse -force master,master.zip
+wget https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/flannel/start.ps1 -o c:\k\start.ps1
 ```
-
-이 외에도 클러스터 서브넷 (예: 검사 "10.244.0.0/16")에 정확한 지 확인 해야 합니다.
-- [net conf.json](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/net-conf.json)
-
 
 [Windows 노드 준비](#preparing-a-windows-node)를 가정 하 고 `c:\k` 디렉터리 아래와 같이 표시, 노드를 가입할 수 있습니다.
 
@@ -172,13 +168,78 @@ rm -recurse -force master,master.zip
 Windows 노드를 가입 하는 프로세스를 간소화 하려면 하기만 하면 시작 하는 단일 Windows 스크립트를 실행 하려면 `kubelet`, `kube-proxy`, `flanneld`, 노드를 가입 하 고 있습니다.
 
 > [!Note]
-> [이 스크립트](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/start.ps1) 는 업데이트와 같은 추가 파일을 다운로드 `flanneld` 실행 파일 및 [Dockerfile에 대 한 인프라 포드](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/Dockerfile) *를 실행 하 고*있습니다. L2bridge 포드 네트워크에 대 한 새 외부 vSwitch를 처음 만드는 동안 몇 초 동안 네트워크 중단의 뿐만 아니라 열/종료 되는 여러 powershell 창 있을 수 있습니다.
+> [start.ps1](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/start.ps1) [install.ps1](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/install.ps1)가 같은 추가 파일 다운로드 참조는 `flanneld` 실행 파일 및 [인프라 포드에 대 한 Dockerfile](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/Dockerfile) *및 설치 수에 대 한*합니다. 오버레이 네트워킹 모드에 대 한 로컬 UDP 포트 4789에 대 한 [방화벽](https://github.com/Microsoft/SDN/blob/master/Kubernetes/windows/helper.psm1#L111) 열립니다. 여러 powershell 창 포드 네트워크에 대 한 새 외부 vSwitch를 처음 만드는 동안 몇 초 동안 네트워크 중단의 뿐만 아니라 열/종료 되 고 있을 수 있습니다.
 
 ```powershell
 cd c:\k
-chcp 65001
-.\start.ps1 -ManagementIP <Windows Node IP> -ClusterCIDR <Cluster CIDR> -ServiceCIDR <Service CIDR> -KubeDnsServiceIP <Kube-dns Service IP> 
+.\start.ps1 -ManagementIP <Windows Node IP> -NetworkMode <network mode>  -ClusterCIDR <Cluster CIDR> -ServiceCIDR <Service CIDR> -KubeDnsServiceIP <Kube-dns Service IP> -LogDir <Log directory>
 ```
+# [<a name="managementip"></a>ManagementIP](#tab/ManagementIP)
+Windows 노드에 할당 된 IP 주소입니다. 사용할 수 있습니다 `ipconfig` 검색 합니다.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-ManagementIP`        |
+|기본값    | n.A. **required**        |
+
+# [<a name="networkmode"></a>NetworkMode](#tab/NetworkMode)
+네트워크 모드 `l2bridge` (flannel 호스트 gw) 또는 `overlay` (flannel vxlan) [네트워크 솔루션](./network-topologies.md)으로 선택 합니다.
+
+> [!Important] 
+> `overlay` 네트워킹 모드 (flannel vxlan) Kubernetes v1.14 바이너리 필요 이상.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-NetworkMode`        |
+|기본값    | `l2bridge`        |
+
+
+# [<a name="clustercidr"></a>ClusterCIDR](#tab/ClusterCIDR)
+[클러스터 서브넷 범위](./getting-started-kubernetes-windows.md#cluster-subnet-def)입니다.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-ClusterCIDR`        |
+|기본값    | `10.244.0.0/16`        |
+
+
+# [<a name="servicecidr"></a>ServiceCIDR](#tab/ServiceCIDR)
+[서비스 서브넷 범위](./getting-started-kubernetes-windows.md#service-subnet-def)입니다.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-ServiceCIDR`        |
+|기본값    | `10.96.0.0/12`        |
+
+
+# [<a name="kubednsserviceip"></a>KubeDnsServiceIP](#tab/KubeDnsServiceIP)
+[Kubernetes DNS 서비스 IP](./getting-started-kubernetes-windows.md#kube-dns-def)합니다.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-KubeDnsServiceIP`        |
+|기본값    | `10.96.0.10`        |
+
+
+# [<a name="interfacename"></a>InterfaceName](#tab/InterfaceName)
+Windows 호스트의 네트워크 인터페이스의 이름입니다. 사용할 수 있습니다 `ipconfig` 검색 합니다.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-InterfaceName`        |
+|기본값    | `Ethernet`        |
+
+
+# [<a name="logdir"></a>LogDir](#tab/LogDir)
+Kubelet 및 kube 프록시 로그는 해당 출력 파일로 리디렉션됩니다 있는 디렉터리입니다.
+
+|  |  | 
+|---------|---------|
+|매개 변수     | `-LogDir`        |
+|기본값    | `C:\k`        |
+
+
+---
 
 > [!tip]
 > 이미 기록한 클러스터 서브넷, 서비스 서브넷 및 Linux 마스터에서 kube DNS IP [이전](./creating-a-linux-master.md#collect-cluster-information)
@@ -188,6 +249,7 @@ chcp 65001
   * 3 powershell 창 열기에 대 한 참조 `kubelet`, 하나의 대 한 `flanneld`,이 고 다른 `kube-proxy`
   * 호스트 에이전트 프로세스에 대 한 참조 `flanneld`, `kubelet`, 및 `kube-proxy` 노드에서 실행
 
+성공 하면 [다음 단계](#next-steps)를 계속 합니다.
 
 ## <a name="joining-a-tor-cluster"></a>ToR 클러스터에 가입 ##
 > [!NOTE]

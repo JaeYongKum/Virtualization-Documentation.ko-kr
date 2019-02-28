@@ -6,19 +6,19 @@ ms.date: 11/02/2018
 ms.topic: get-started-article
 ms.prod: containers
 description: Kubernetes resoureces 혼합 OS Kubernetes 클러스터에 배포 됩니다.
-keywords: kubernetes, 1.12, windows, 시작
+keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 608cda1494d03da59e8a875910c8eedd04ba11dc
-ms.sourcegitcommit: 8e9252856869135196fd054e3cb417562f851b51
+ms.openlocfilehash: 7d2f1dd789a96a3ee4898ef196f872e574d6321f
+ms.sourcegitcommit: 41318edba7459a9f9eeb182bf8519aac0996a7f1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6179034"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "9120481"
 ---
 # <a name="deploying-kubernetes-resources"></a>Kubernetes 리소스 배포 #
-최소한 1 마스터 및 1 작업자 이루어진 Kubernetes 클러스터를 했 고, Kubernetes 리소스를 배포할 준비가 합니다.
+최소한 1 마스터 및 1 작업자로 구성 된 Kubernetes 클러스터 했 고, 준비가 Kubernetes 리소스를 배포 합니다.
 > [!TIP] 
-> 이름을 바꾼 Windows에서 현재 지원 되는 Kubernetes 리소스? 자세한 내용은 [공식적으로 지원 되는 기능](https://kubernetes.io/docs/getting-started-guides/windows/#supported-features) 및 [Windows 예정임 Kubernetes](https://trello.com/b/rjTqrwjl/windows-k8s-roadmap) 를 참조 하세요.
+> 이름을 바꾼 Windows에서 현재 지원 되는 Kubernetes 리소스? 자세한 내용은 [공식적으로 지원 되는 기능](https://kubernetes.io/docs/getting-started-guides/windows/#supported-features) 및 [로드맵 Windows에서 Kubernetes](https://trello.com/b/rjTqrwjl/windows-k8s-roadmap) 를 참조 하십시오.
 
 
 ## <a name="running-a-sample-service"></a>샘플 서비스 실행 ##
@@ -31,7 +31,7 @@ kubectl get nodes
 
 모든 멋지게 다운로드 하 고 다음 서비스를 실행할 수 있습니다.
 > [!Important] 
-> 하기 전에 `kubectl apply`, 확인을 두-check/수정 확인은 `microsoft/windowsservercore` 이미지에서 예제 파일을 [컨테이너 이미지에 노드로 실행할 수입니다](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility#choosing-container-os-versions)!
+> 하기 전에 `kubectl apply`을 확인을 두-check/수정 확인 합니다 `microsoft/windowsservercore` [를 노드 하 여 실행할 수 있는 컨테이너 이미지](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility#choosing-container-os-versions)에 샘플 파일의 이미지!
 
 ```bash
 wget https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/flannel/l2bridge/manifests/simpleweb.yml -O win-webserver.yaml
@@ -47,13 +47,13 @@ watch kubectl get pods -o wide
   - Linux 마스터의 `kubectl get pods` 명령 아래에서 포드 2개를 확인합니다.
   - `curl` 포트 80에 있는 *포드* IP에서 Linux 마스터로부터 웹 서버 응답을 가져옵니다. 이는 네트워크에 걸친 적절한 노드에서 포드 통신을 보여줍니다.
   - `docker exec`를 통해 *포드 간* Ping(Windows 노드가 여러 개 있는 경우 호스트 간 포함). 이는 적절한 포드 간 통신을 나타냅니다.
-  - `curl` 가상 *서비스 IP* (아래에 표시 `kubectl get services`) Linux 마스터 및 개별 포드에서; 적절 한 서비스 포드 통신을 보여 줍니다.
+  - `curl` 가상 *서비스 IP* (아래에 표시 `kubectl get services`) Linux 마스터 및 개별 포드에서; 적절 한 서비스 포드 통신을 보여줍니다.
   - `curl` Kubernetes [기본 DNS 접미사](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services)를 적절 한 서비스 검색을 보여 주는 *서비스 이름* 입니다.
-  - `curl` Linux 마스터 또는 클러스터; 외부 컴퓨터에서 *NodePort* 인바운드 연결을 보여 줍니다.
-  - `curl` 포드; 내에서 외부 Ip 아웃 바운드 연결을 보여 줍니다.
+  - `curl` Linux 마스터 또는 클러스터; 외부 컴퓨터에서 *NodePort* 이 인바운드 연결을 보여 줍니다.
+  - `curl` 포드; 내에서 외부 Ip 아웃 바운드 연결을 보여줍니다.
 
 > [!Note]  
-> Windows *컨테이너 호스트* 는 **하지** 서비스 IP에 예약 된 서비스에서 액세스할 수 있습니다. 이는 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip) Windows server 이후 버전에서 향상 됩니다. 하지만 Windows *포드* **는** 서비스 IP에 액세스할 수 없습니다.
+> Windows *컨테이너 호스트* 는 **하지** 서비스 IP에 예약 된 서비스에서 액세스할 수 있습니다. 이는 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip) 하며, Windows server 이후 버전에서 개선 될입니다. 하지만 Windows *포드* **는** 서비스 IP에 액세스할 수 없습니다.
 
 ### <a name="port-mapping"></a>포트 매핑 ### 
 또한 노드의 포트를 매핑하여 각 노드를 통해 포드에 호스팅되는 서비스에 액세스할 수도 있습니다. 이 기능을 보여주기 위해 노드의 포트 4444를 포드의 포트 80에 매핑하는 [다른 샘플 YAML](https://github.com/Microsoft/SDN/blob/master/Kubernetes/PortMapping.yaml)도 볼 수 있습니다. 배포하려면 전과 동일한 단계를 따르세요.
@@ -68,7 +68,11 @@ watch kubectl get pods -o wide
 
 
 ## <a name="next-steps"></a>다음 단계 ##
-이 섹션에서는 Windows 노드에서 Kubernetes 리소스를 예약 하는 방법을 설명한 합니다. 이 가이드를 완료 했습니다. 문제가 있는 경우 문제 해결 섹션을 참조 하십시오.
+이 섹션에서는 Windows 노드에서 Kubernetes 리소스를 예약 하는 방법을 설명한 합니다. 이 가이드를 완료 했습니다. 문제가 있는 경우, 문제 해결 섹션을 참조 하십시오.
 
 > [!div class="nextstepaction"]
 > [문제 해결](./common-problems.md)
+
+그렇지 않으면 수도 있습니다 Kubernetes 구성 요소가 Windows 서비스로 실행 되는 데 관심이 있습니다.
+> [!div class="nextstepaction"]
+> [Windows 서비스](./kube-windows-services.md)
