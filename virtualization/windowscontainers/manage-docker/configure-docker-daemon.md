@@ -8,27 +8,27 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
-ms.openlocfilehash: 3b592620f4667450c2454f8760b7f3c844c7e2ab
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.openlocfilehash: bbc405fc2a490cfe5082be112fde724707e24785
+ms.sourcegitcommit: 21d93e5febd9b1b47ae1aa59d08086e6ec1691e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6948052"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "9121055"
 ---
 # <a name="docker-engine-on-windows"></a>Windows의 Docker 엔진
 
-Docker 엔진 및 클라이언트 Windows 포함 되며 설치 하 고 개별적으로 구성 해야 합니다. 또한 Docker 엔진에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서는 설치 및 Docker 엔진을 구성 하는 방법을 자세히 설명 하 고도 자주 사용 되는 구성의 몇 가지 예를 제공 합니다.
+Docker 엔진 및 클라이언트 Windows 포함 되며 설치 하 고 개별적으로 구성 해야 합니다. 또한 Docker 엔진에서는 여러 사용자 지정 구성을 허용합니다. 몇 가지 예로 디먼이 들어오는 요청을 수락하는 방법, 기본 네트워킹 옵션 및 디버그/로그 설정 등을 구성할 수 있습니다. Windows에서는 이러한 구성을 구성 파일에 지정하거나 Windows 서비스 제어 관리자를 사용하여 지정할 수 있습니다. 이 문서는 Docker 엔진을 설치 및 구성 하는 방법에 자세히 설명 하 고도 자주 사용 되는 구성의 몇 가지 예를 제공 합니다.
 
 
 ## <a name="install-docker"></a>Docker 설치
 Windows 컨테이너를 사용하려면 Docker가 필요합니다. Docker는 Docker 엔진(dockerd.exe) 및 Docker 클라이언트(docker.exe)로 구성됩니다. 모든 것을 가장 쉽게 설치하는 방법은 빠른 시작 가이드에 있습니다. 데 도움을 모두 설정 하 고 첫 번째 컨테이너를 실행 합니다. 
 
-* [Windows Server 2016의 Windows 컨테이너](../quick-start/quick-start-windows-server.md)
+* [Windows Server 2019의 Windows 컨테이너](../quick-start/quick-start-windows-server.md)
 * [Windows 10의 Windows 컨테이너](../quick-start/quick-start-windows-10.md)
 
 스크립트 설치에 대한 내용은 [스크립트를 이용하여 Docker EE 설치](https://docs.docker.com/install/windows/docker-ee/#use-a-script-to-install-docker-ee)를 참조하세요.
 
-Docker를 사용 하기 전에 컨테이너 이미지를 설치 해야 합니다. 자세한 내용은 [이미지를 사용하는 빠른 시작 가이드](../quick-start/quick-start-images.md)를 참조하십시오.
+Docker를 사용 하려면 먼저 컨테이너 이미지 설치 해야 합니다. 자세한 내용은 [이미지를 사용하는 빠른 시작 가이드](../quick-start/quick-start-images.md)를 참조하십시오.
 
 ## <a name="configure-docker-with-configuration-file"></a>구성 파일을 사용하여 Docker 구성
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
-ms.openlocfilehash: 44e415af08881d18ebb2d82f5f79098f7fb034f8
-ms.sourcegitcommit: f172d14ef1ebfb5a9df1b3529e0722d9103e0eba
+ms.openlocfilehash: b58bdd79da1c644281ebd9e79c16587d9fc156f4
+ms.sourcegitcommit: 21d93e5febd9b1b47ae1aa59d08086e6ec1691e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "9112930"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "9121045"
 ---
 # <a name="windows-containers-on-windows-server"></a>Windows Server의 Windows 컨테이너
 
@@ -68,7 +68,8 @@ PowerShell에서 'DockerDefault' 패키지 소스를 신뢰할 수 있는지 물
 Restart-Computer -Force
 ```
 
-> ! [팁] Docker를 나중에 업데이트 하려면:
+> [!TIP]
+> Docker를 나중에 업데이트 하려면:
 >  - 다음을 사용하여 설치된 버전을 확인 `Get-Package -Name Docker -ProviderName DockerMsftProvider`
 >  - 다음을 사용하여 현재 버전을 검색 `Find-Package -Name Docker -ProviderName DockerMsftProvider`
 >  - 준비를 마쳤으면 `Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force` 명령을 사용하여 업그레이드, 그리고 `Start-Service Docker`
