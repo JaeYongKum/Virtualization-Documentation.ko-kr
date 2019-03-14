@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.12, linux, 컴파일
-ms.openlocfilehash: dfc7ab5aab9a04ef39916fb9e9b9886cad2f46a6
-ms.sourcegitcommit: 41318edba7459a9f9eeb182bf8519aac0996a7f1
+ms.openlocfilehash: 30bb0c064c96ff4bd0b6e1c078221b2d9170d4e7
+ms.sourcegitcommit: 817a629f762a4a5d4bcff58302f2bc2408bf8be1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "9120441"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "9149923"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -62,6 +62,9 @@ Kubernetes 네트워킹 요구 사항 중 하나는 내부 NAT 하지 않고도 
                     "10.127.130.0/24" # Management (host) subnet
                 ]
 ```
+
+### <a name="my-windows-node-cannot-access-a-nodeport-service"></a>내 Windows 노드가 NodePort 서비스에 액세스할 수 없습니다. ###
+자체 노드에서 로컬 NodePort 액세스 실패 합니다. 이는 잘 알려진 제한 사항입니다. NodePort 액세스가 다른 노드 또는 외부 클라이언트에서 작동 합니다.
 
 ### <a name="after-some-time-vnics-and-hns-endpoints-of-containers-are-being-deleted"></a>잠시 후 Vnic 및 HNS 컨테이너 끝점은 삭제할 ###
 이 문제는 원인은 때 합니다 `hostname-override` 매개 변수 [kube 프록시](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)에 전달 되지 않습니다. 이 해결 하려면 사용자는 다음과 같이 kube 프록시에 호스트 이름을 전달 해야 합니다.

@@ -8,12 +8,12 @@ ms.prod: containers
 description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
 keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: f9348debf427c47f9326368ff02914603de06a1b
-ms.sourcegitcommit: 41318edba7459a9f9eeb182bf8519aac0996a7f1
+ms.openlocfilehash: 2edc940d4132870a6f7d6714bb50faef201136ba
+ms.sourcegitcommit: 817a629f762a4a5d4bcff58302f2bc2408bf8be1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "9120461"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "9149913"
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes #
 이 페이지는 Linux 기반 클러스터에 Windows 노드를 가입 하 여 Windows에서 Kubernetes를 사용 하 여 시작에 대 한 개요 역할을 합니다. Windows Server [버전 1809에서](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1809#container-networking-with-kubernetes)Kubernetes 1.13의 릴리스를 통해 사용자는 Windows 베타에서 Kubernetes의 [최신 기능](https://kubernetes.io/docs/getting-started-guides/windows/#supported-features) 을 활용을 수행할 수 있습니다.
@@ -45,17 +45,6 @@ ms.locfileid: "9120461"
 > Docker를 설치 하면 기본적으로 만들어졌으며 다른 Docker 네트워크 (NAT) 있습니다. Windows에서 Kubernetes 대신 클러스터 서브넷에서 Ip를 할당 하는 대로 작동 하는 데 필요 하지 않습니다.
 
 
-### <a name="disable-anti-spoofing-protection-required-for-l2bridge"></a>스푸핑 방지 보호 (l2bridge 필요) 사용 안 함 ###
-L2bridge (일명 [flannel 호스트 게이트웨이](./network-topologies.md#flannel-in-host-gateway-mode)) 네트워킹에 대 한 사용 하려는 Windows 컨테이너 호스트 Vm (게스트)에 대 한 MAC 주소 스푸핑을 사용 하도록 설정 해야 합니다. 이 위해 (예: Hyper-v에 대 한) Vm을 호스팅하는 컴퓨터에서 관리자 권한으로 다음을 실행 해야 있습니다.
-
-```powershell
-Get-VMNetworkAdapter -VMName "<name>" | Set-VMNetworkAdapter -MacAddressSpoofing On
-```
-> [!TIP]
-> VMware 기반 제품 가상화 요구 사항에 맞게를 사용 하는 경우 MAC 스푸핑 요구 사항에 대해 [promiscuous 모드](https://kb.vmware.com/s/article/1004099) 활성화를 참조 하십시오.
-
->[!TIP]
-> 배포 하는 경우 Azure IaaS Vm에 Kubernetes 다른 클라우드 공급자에서 직접, 권장 [오버레이 네트워킹](./network-topologies.md#flannel-in-vxlan-mode) 대신 합니다.
 
 ## <a name="what-you-will-accomplish"></a>수행할 작업 ##
 
