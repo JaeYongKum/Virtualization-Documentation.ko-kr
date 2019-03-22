@@ -57,7 +57,7 @@
 ## [Hyper-V 격리](manage-containers/hyperv-container.md)
 ## [컨테이너에서 하드웨어 장치](deploy-containers/hardware-devices-in-containers.md)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
-## [Active Directory 서비스 계정](manage-containers/manage-serviceaccounts.md)
+## [그룹 관리 서비스 계정](manage-containers/manage-serviceaccounts.md)
 ## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 ## [Windows의 Linux 컨테이너](deploy-containers/linux-containers.md)
 
