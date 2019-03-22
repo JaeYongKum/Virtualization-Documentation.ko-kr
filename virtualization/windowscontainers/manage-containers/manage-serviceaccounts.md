@@ -3,17 +3,17 @@ title: Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 description: Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 keywords: docker, 컨테이너, active directory, gmsa
 author: rpsqrd
-ms.date: 03/21/2019
+ms.date: 03/22/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 5f80d245984b0cf5c4503971a74cc8bbcca0c19c
-ms.sourcegitcommit: f53b8b3dc695cdf22106095b15698542140ae088
+ms.openlocfilehash: 17c4089c98a74ea5937bac5d0eb4d4f1749aecf7
+ms.sourcegitcommit: b8afbfb63c33a491d7bad44d8d5962e6a60cb566
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2019
-ms.locfileid: "9257410"
+ms.locfileid: "9257449"
 ---
 # <a name="group-managed-service-accounts-for-windows-containers"></a>Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 
@@ -288,14 +288,14 @@ Cached Tickets: (2)
 [...]
 ```
 
-PowerShell 또는 gMSA 계정으로 다른 콘솔 응용 프로그램을 열려면 시스템 일반 ContainerAdministrator (또는 NanoServer에 대 한 ContainerUser) 대신 계정에서 실행 되도록 컨테이너를 요청할 수 있습니다.
+PowerShell 또는 gMSA 계정으로 다른 콘솔 응용 프로그램을 열려면 네트워크 서비스 계정 대신 일반 ContainerAdministrator (또는 NanoServer에 대 한 ContainerUser) 계정에서 실행 되도록 컨테이너를 요청할 수 있습니다.
 
 ```powershell
 # NOTE: you can only run as SYSTEM on Windows Server 1709 and later
-docker run --security-opt "credentialspec=file://contoso_webapp01.json" --hostname webapp01 --user "NT AUTHORITY\SYSTEM" -it mcr.microsoft.com/windows/servercore:ltsc2019 powershell
+docker run --security-opt "credentialspec=file://contoso_webapp01.json" --hostname webapp01 --user "NT AUTHORITY\NETWORK SERVICE" -it mcr.microsoft.com/windows/servercore:ltsc2019 powershell
 ```
 
-시스템으로를 실행 중인 경우 gMSA로 도메인 컨트롤러에 SYSVOL에 연결 하 여 네트워크 인증을 테스트할 수 있습니다.
+네트워크 서비스를 실행 중인 경우 gMSA로 도메인 컨트롤러에 SYSVOL에 연결 하 여 네트워크 인증을 테스트할 수 있습니다.
 
 ```
 # This command should succeed if you're successfully running as the gMSA
