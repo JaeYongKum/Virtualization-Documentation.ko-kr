@@ -55,6 +55,7 @@
 ## [시스템 요구 사항](deploy-containers/system-requirements.md)
 ## [버전 호환성](deploy-containers/version-compatibility.md)
 ## [Hyper-V 격리](manage-containers/hyperv-container.md)
+## [프린터 서비스](deploy-containers/print-spooler.md)
 ## [컨테이너에서 하드웨어 장치](deploy-containers/hardware-devices-in-containers.md)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
 ## [그룹 관리 서비스 계정](manage-containers/manage-serviceaccounts.md)
