@@ -3,17 +3,17 @@ title: Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 description: Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 keywords: docker, 컨테이너, active directory, gmsa
 author: rpsqrd
-ms.date: 03/22/2019
+ms.date: 03/25/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 17c4089c98a74ea5937bac5d0eb4d4f1749aecf7
-ms.sourcegitcommit: b8afbfb63c33a491d7bad44d8d5962e6a60cb566
+ms.openlocfilehash: 20daa81a571fde23b91e24e9713e37d225870ec0
+ms.sourcegitcommit: 1dec99a5b295e8a08022ae3dec128c7c7818ad15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "9257449"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "9262356"
 ---
 # <a name="group-managed-service-accounts-for-windows-containers"></a>Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 
@@ -342,8 +342,8 @@ Docker 서비스를 사용 하 여 자격 증명 사양을 사용에 대 한 자
 
 ### <a name="using-gmsa-with-kubernetes"></a>GMSA를 사용 하 여 Kubernetes를 사용한
 
-Kubernetes에서이 계정을 위임할와 Windows 컨테이너 예약에 대 한 지원은 Kubernetes 1.14 부터는 알파 지원 됩니다.
-이 기능에 대 한 최신 정보 및 Kubernetes 배포에서 테스트 하는 방법에 대 한 정보에 대 한 [컨테이너 Identity 웹에 대 한 Windows 그룹 관리 서비스 계정](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/20181221-windows-group-managed-service-accounts-for-container-identity.md) 을 확인 합니다.
+Kubernetes에서이 계정을 위임할와 Windows 컨테이너 예약에 대 한 지원은 Kubernetes 1.14의 알파 기능으로 사용할 수 있습니다.
+이 기능에 대 한 최신 정보 및 Kubernetes 배포에서 테스트 하는 방법에 대 한 정보에 대 한 [Windows 포드가 및 컨테이너에 대 한 구성 gMSA](https://kubernetes.io/docs/tasks/configure-pod-container/configure-gmsa) 를 참조 하세요.
 
 ## <a name="example-uses"></a>사용 예
 
