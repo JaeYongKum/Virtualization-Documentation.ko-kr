@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 017ff7868d10ed58f749c0ef8824dd32586afb2c
-ms.sourcegitcommit: ec186664e76d413d3bf75f2056d5acb556f4205d
-ms.translationtype: HT
+ms.openlocfilehash: cf5173a98032820e1ad72e99e9b6e874dedbed83
+ms.sourcegitcommit: 1715411ac2768159cd9c9f14484a1cad5e7f2a5f
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1876129"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "9263520"
 ---
 # <a name="advanced-network-options-in-windows"></a>Windows의 고급 네트워크 옵션
 Windows 관련 기능 및 특징을 활용할 수 있도록 여러 가지 네트워크 드라이버 옵션이 지원됩니다. 
@@ -92,13 +92,13 @@ docker: Error response from daemon: container e15d99c06e312302f4d23747f2dfda4b11
 자동으로 이 문제를 감지/방지하도록 플랫폼 변경 작업을 진행 중입니다. 현재는 다음과 같은 해결 방법을 사용하여 호스트 컴퓨터에서 IPv6를 사용하도록 설정할 수 있습니다.
 
 ```
-C:\> reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters  /v DisabledComponents  /f
+C:\> reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters  /v DisabledComponents  /f
 ```
 
 
 #### <a name="linux-containers-on-windows"></a>Windows의 Linux 컨테이너
 
-**신규:** _Moby Linux VM 없이_ Linux 및 Windows 컨테이너를 나란히 실행하는 것이 가능하도록 지원할 예정입니다. 자세한 내용은 [Wndows 기반의 Linux 컨테이너(LCOW)에 대한 블로그 게시물](https://blog.docker.com/2017/11/docker-for-windows-17-11/)을 참조하세요.
+**신규:** _Moby Linux VM 없이_ Linux 및 Windows 컨테이너를 나란히 실행하는 것이 가능하도록 지원할 예정입니다. 자세한 내용은 [Wndows 기반의 Linux 컨테이너(LCOW)에 대한 블로그 게시물](https://blog.docker.com/2017/11/docker-for-windows-17-11/)을 참조하세요. 다음은 [시작](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10-linux)하는 방법.
 > 참고: LCOW는 Moby Linux VM을 더 이상 사용하지 않으며, HNS "nat" 내부 vSwitch를 이용합니다.
 
 #### <a name="moby-linux-vms-use-dockernat-switch-with-docker-for-windows-a-product-of-docker-cehttpswwwdockercomcommunity-edition"></a>Moby Linux VM은 Windows용 Docker([Docker CE](https://www.docker.com/community-edition) 제품)와 함께 DockerNAT 스위치를 사용합니다.

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.12, linux, 컴파일
-ms.openlocfilehash: 30bb0c064c96ff4bd0b6e1c078221b2d9170d4e7
-ms.sourcegitcommit: 817a629f762a4a5d4bcff58302f2bc2408bf8be1
+ms.openlocfilehash: 1c5a5ec90b828a4f2430508f02cb9b9afb1c4d53
+ms.sourcegitcommit: 1715411ac2768159cd9c9f14484a1cad5e7f2a5f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "9149923"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "9263510"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -44,8 +44,29 @@ nssm set <Service Name> AppStderr C:\k\mysvc.log
 
 ## <a name="common-networking-errors"></a>일반적인 네트워킹 오류 ##
 
-### <a name="my-windows-pods-do-not-have-network-connectivity"></a>내 Windows 포드가 네트워크에 연결 되지 않았을 ###
-모든 가상 컴퓨터를 사용 하는 경우 모든 VM 네트워크 어댑터에서 MAC 스푸핑이 활성화 되어 있는지 확인 합니다. 자세한 내용은 [스푸핑 방지 보호](./getting-started-kubernetes-windows.md#disable-anti-spoofing-protection) 참조 하세요.
+### <a name="i-am-seeing-errors-such-as-hnscall-failed-in-win32-the-wrong-diskette-is-in-the-drive"></a>오류와 같은 표시 "hnsCall 32에서 실패: 잘못 된 디스크가 드라이브에." ###
+오래 된 HNS 개체 끊거나 없이 HNS 변경 될 HNS 개체 또는 새 Windows 업데이트 설치에 사용자 지정 수정이 오류가 발생할 수 있습니다. HNS 개체를 업데이트 하기 전에 이전에 생성 된 현재 설치 된 HNS 버전와 호환 되는지 나타냅니다.
+
+Windows Server 2019 (켜고 아래), 사용자가 HNS.data 파일을 삭제 하 여 HNS 개체를 삭제할 수 있습니다. 
+```
+Stop-Service HNS
+rm C:\ProgramData\Microsoft\Windows\HNS\HNS.data
+Start-Service HNS
+```
+
+사용자가 호환 되지 않는 HNS 끝점 또는 네트워크에 직접 삭제 수 있어야 합니다.
+```
+hnsdiag list endpoints
+hnsdiag delete endpoints <id>
+hnsdiag list networks 
+hnsdiag delete networks <id>
+Restart-Service HNS
+```
+
+Windows Server 사용자의 경우 버전 1903 이동 다음 레지스트리 위치에를 네트워크 이름을 모든 Nic를 삭제 (예: `vxlan0` 또는 `cbr0`):
+```
+\\Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\NicList
+```
 
 
 ### <a name="my-windows-pods-cannot-ping-external-resources"></a>내 Windows 포드가 외부 리소스를 ping 할 수 없습니다 ###
@@ -87,6 +108,20 @@ PS C:> C:\flannel\flanneld.exe --kubeconfig-file=c:\k\config --iface=<Windows_Wo
 ```
 
 현재 검토이 문제를 해결 하는 [PR](https://github.com/coreos/flannel/pull/1042) 이기도 합니다.
+
+
+### <a name="on-flannel-host-gw-my-windows-pods-do-not-have-network-connectivity"></a>(호스트 gw) Flannel에 내 Windows 포드가 네트워크 연결 되어 있지 않으면 ###
+L2bridge (일명 [flannel 호스트 게이트웨이](./network-topologies.md#flannel-in-host-gateway-mode)) 네트워킹에 대 한 사용 하려는 Windows 컨테이너 호스트 Vm (게스트)에 대 한 MAC 주소 스푸핑을 사용 하도록 설정 해야 합니다. 이 위해 (예: Hyper-v에 대 한) Vm을 호스팅하는 컴퓨터에서 관리자 권한으로 다음을 실행 해야 있습니다.
+
+```powershell
+Get-VMNetworkAdapter -VMName "<name>" | Set-VMNetworkAdapter -MacAddressSpoofing On
+```
+
+> [!TIP]
+> VMware 기반 제품 가상화 요구 사항에 맞게를 사용 하는 경우 MAC 스푸핑 요구 사항에 대해 [promiscuous 모드](https://kb.vmware.com/s/article/1004099) 활성화를 참조 하십시오.
+
+>[!TIP]
+> 배포 하는 경우 Azure IaaS Vm에 Kubernetes 다른 클라우드 공급자에서 직접, 또한 대신 사용할 수 있습니다 [네트워킹을 오버레이](./network-topologies.md#flannel-in-vxlan-mode) 합니다.
 
 ### <a name="my-windows-pods-cannot-launch-because-of-missing-runflannelsubnetenv"></a>내 Windows 포드가 /run/flannel/subnet.env 누락으로 인해 시작할 수 없습니다. ###
 이 Flannel 제대로 시작 되지 않은 것을 나타냅니다. Flanneld.exe 다시 시작을 시도 하거나 하거나 복사할 수는 있지만 파일을 통해 수동으로에서 `/run/flannel/subnet.env` 에 Kubernetes 마스터 `C:\run\flannel\subnet.env` Windows 작업자 노드 수정 합니다 `FLANNEL_SUBNET` 여러 행. 예를 들어, 노드 서브넷 10.244.4.1/24 필요한 경우:

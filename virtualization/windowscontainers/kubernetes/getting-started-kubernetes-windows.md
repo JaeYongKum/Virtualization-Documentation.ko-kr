@@ -8,18 +8,18 @@ ms.prod: containers
 description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
 keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 2edc940d4132870a6f7d6714bb50faef201136ba
-ms.sourcegitcommit: 817a629f762a4a5d4bcff58302f2bc2408bf8be1
+ms.openlocfilehash: df3185db086e8e38143fe60d90db864038980603
+ms.sourcegitcommit: 1715411ac2768159cd9c9f14484a1cad5e7f2a5f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "9149913"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "9263490"
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes #
-이 페이지는 Linux 기반 클러스터에 Windows 노드를 가입 하 여 Windows에서 Kubernetes를 사용 하 여 시작에 대 한 개요 역할을 합니다. Windows Server [버전 1809에서](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1809#container-networking-with-kubernetes)Kubernetes 1.13의 릴리스를 통해 사용자는 Windows 베타에서 Kubernetes의 [최신 기능](https://kubernetes.io/docs/getting-started-guides/windows/#supported-features) 을 활용을 수행할 수 있습니다.
+이 페이지는 Linux 기반 클러스터에 Windows 노드를 가입 하 여 Windows에서 Kubernetes를 사용 하 여 시작에 대 한 개요 역할을 합니다. Windows Server [버전 1809에서](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1809#container-networking-with-kubernetes)Kubernetes 1.14의 릴리스를 통해 사용자는 Windows에서 Kubernetes에서 다음 기능을 활용을 수행할 수 있습니다.
 
   - **오버레이 네트워킹**: vxlan 모드에서 Flannel를 사용 하 여 가상 오버레이 네트워크를 구성 합니다.
-    - 두 Windows Server 2019 KB4482887 설치 또는 [Windows Server vNext Insider Preview](https://blogs.windows.com/windowsexperience/tag/windows-insider-program/) 빌드 18317 + 필요
+    - 두 Windows Server 2019 [KB4489899](https://support.microsoft.com/en-us/help/4489899) 설치 또는 [Windows Server vNext Insider Preview](https://blogs.windows.com/windowsexperience/tag/windows-insider-program/) 빌드 18317 + 필요
     - Kubernetes v1.14 필요 (이상)와 `WinOverlay` 기능 게이트 설정
     - Flannel v0.11.0 필요 (이상)
   - **간소화 된 네트워크 관리**: 호스트 게이트웨이 모드에서 Flannel를 사용 하 여 노드 간에 자동 경로 관리
@@ -31,7 +31,7 @@ ms.locfileid: "9149913"
 > [!TIP] 
 > Azure에서 클러스터를 배포 하려는 경우 오픈 소스 AKS 엔진 도구를 사용 하면 간편 합니다. 단계별 [연습](https://github.com/Azure/aks-engine/blob/master/docs/topics/windows.md)을 볼 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건 ##
+## <a name="prerequisites"></a>필수 구성 요소 ##
 
 ### <a name="plan-ip-addressing-for-your-cluster"></a>클러스터에 IP 주소 계획 ###
 <a name="definitions"></a>Kubernetes 클러스터 포드 및 서비스에 대 한 새 서브넷 소개, 이므로 환경에서 다른 기존 네트워크와 충돌 중 확인 해야 합니다. 다음은 Kubernetes를 성공적으로 배포 하려면 확보 해야 하는 모든 주소 공간입니다.
