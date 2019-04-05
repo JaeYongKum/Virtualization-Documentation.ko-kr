@@ -3,19 +3,19 @@ title: Windows 컨테이너에서 인쇄 스풀러
 description: Windows 컨테이너에서 인쇄 스풀러 서비스에 대 한 현재 작업 동작에 설명
 keywords: docker, 컨테이너, 프린터, 스풀러
 author: cwilhit
-ms.openlocfilehash: 45176e651ee2ef9b6daea9919004601734084083
-ms.sourcegitcommit: 04c372c87c832f73a1aa120b0ff6c2c2b9c8c1b1
+ms.openlocfilehash: 48130bc6a826a45dfa49d0a3b4600d227f34704e
+ms.sourcegitcommit: 3c81b0efd1ac2c4c93d58f16edae1044c9a5ad55
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "9257988"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "9284577"
 ---
 # <a name="print-spooler-in-windows-containers"></a>Windows 컨테이너에서 인쇄 스풀러
 
-인쇄 서비스에 종속 된 응용 프로그램 수 될 컨테이너 화 된 성공적으로 Windows 컨테이너를 사용 합니다. 호스트에 프린터 드라이버 설치에 종속 된 응용 프로그램을 컨테이너 화 된 수 없습니다. 컨테이너 호스트에는 상태를 누설 합니다 컨테이너 내에서 드라이버 설치는 지원 하지 않습니다. 성공적으로 프린터 서비스 기능을 사용 하기 위해 충족 해야 하는 특별 한 요구 사항이 있습니다. 이 가이드는 배포 구성 하는 방법을 설명 합니다.
+인쇄 서비스에 종속 된 응용 프로그램 수 될 컨테이너 화 된 성공적으로 Windows 컨테이너를 사용 합니다. 성공적으로 프린터 서비스 기능을 사용 하기 위해 충족 해야 하는 특별 한 요구 사항이 있습니다. 이 가이드는 배포 구성 하는 방법을 설명 합니다.
 
 > [!IMPORTANT]
-> 기능 폼 제한 되는 인쇄에 대 한 액세스를 얻는 서비스 성공적으로 컨테이너에서 작동 하는 동안 일부 인쇄 관련 작업을 작동할 수 있습니다. 이 경우 아래 대 한 피드백을 여세요.
+> 기능 폼 제한 되는 인쇄에 대 한 액세스를 얻는 서비스 성공적으로 컨테이너에서 작동 하는 동안 일부 인쇄 관련 작업을 작동할 수 있습니다. 예를 들어 호스트에 프린터 드라이버 설치에 대 한 종속성이 있는 앱 수 없는 될 컨테이너 화 된 때문에 **컨테이너 내에서 드라이버 설치는 지원 되지 않는**합니다. 컨테이너에서 지원 하고자 하는 지원 되지 않는 인쇄 기능을 찾을 경우 아래 대 한 피드백을 여세요.
 
 ## <a name="setup"></a>Setup
 

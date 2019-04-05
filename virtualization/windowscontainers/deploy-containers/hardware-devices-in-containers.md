@@ -3,25 +3,27 @@ title: Windows의 컨테이너에서 장치
 description: Windows의 컨테이너에 대 한 장치 지원은 어떤
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: da9785b051826efa4bb2c64542a7c75a12ddd2b4
-ms.sourcegitcommit: 4490d384ade48699e7f56dc265185dac75bf9d77
+ms.openlocfilehash: 18ae4ab229a677c63c3e17d684a3c3193df49c5e
+ms.sourcegitcommit: 3c81b0efd1ac2c4c93d58f16edae1044c9a5ad55
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058993"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "9284597"
 ---
-**이 현재 미리 보기 재료입니다. 자세한 내용은 '요구 사항 섹션 아래에서 네 번째 항목이 표시 됩니다.**
-
 # <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
 
 기본적으로 Windows 컨테이너 호스트 디바이스--Linux 컨테이너와 마찬가지로 최소한의 액세스를 제공 됩니다. 가지 특정 워크 로드 것이 유용한-또는 명령적-액세스 하 고 호스트 하드웨어 장치와 통신 합니다. 이 가이드에서는 컨테이너에서 지원 되는 어떤 디바이스 및 시작 하는 방법을 설명 합니다.
 
+> [!IMPORTANT]
+> 이 기능을 지 원하는 Docker 버전이 필요 합니다 `--device` Windows 컨테이너에 대 한 명령줄 옵션입니다. 공식 Docker 지원 예정 된 다음 Docker EE 엔진 19.03 릴리스에 대 한 합니다. 그 때까지 Docker에 대 한 [업스트림 소스](https://master.dockerproject.org/) 에 필요한 비트 포함 되어 있습니다.
+
 ## <a name="requirements"></a>요구 사항
 
-- Windows를 실행 해야 Server 2019 이상 또는 Windows 10 Pro/Enterprise 2018 년 10 월을 사용 하 여 업데이트
-- 컨테이너 이미지 버전 1809 이상 이어야 합니다.
+이 기능이 제대로 작동 하도록 환경에는 다음 요구 사항을 충족 해야 합니다.
+- Windows 10, 버전 1809 이상 또는 Windows Server 2019 컨테이너 호스트를 실행 해야 합니다.
+- 컨테이너 기본 이미지 버전 1809 이상 이어야 합니다.
 - 컨테이너는 격리 프로세스 모드에서 실행 되는 Windows 컨테이너 이어야 합니다.
-- Windows 장치 기능 Docker 디먼에 있는 동안이 아직 존재 하지 않는 Docker 클라이언트에서 (이 [끌어오기 요청](https://github.com/docker/cli/pull/1606) 을 추적 참조). Windows 용 Docker의 이후 릴리스에서 기다려야 /이 기능을 활용 하려면이 코드를 사용 하 여 Docker EE 합니다. 이 문서는 상태가 변경 될 때 업데이트 됩니다.
+- 컨테이너 호스트 19.03 또는 최신 Docker 엔진을 실행 되어야 합니다.
 
 ## <a name="run-a-container-with-a-device"></a>장치를 사용 하 여 컨테이너를 실행 합니다.
 
@@ -71,16 +73,20 @@ Windows에서는 모든 장치 목록을 구현 하는 인터페이스 클래스
 <td><center>SPI 버스</center></td>
 <td><center>DCDE6AF9-6610-4285-828F-CAAF78C424CC</center></td>
 </tr>
+<tr valign="top">
+<td><center>DirectX GPU 가속</center></td>
+<td><center>전용된 문서를 참조 하세요.</center></td>
+</tr>
 </tbody>
 </table>
 
 > [!TIP]
 > 위에 나열 된 장치는 현재 지원 되는 Windows 컨테이너에 _만_ 장치입니다. 다른 클래스 Guid를 전달 하는 컨테이너 시작 실패 발생 합니다.
 
-## <a name="hyper-v-container-device-support"></a>Hyper-v 컨테이너 장치 지원
+## <a name="hyper-v-isolated-windows-container-support"></a>V-격리 하이퍼 Windows 컨테이너 지원
 
-장치 할당 및 장치 공유 지원 되지 않습니다 Hyper-v 격리 된 컨테이너에서 현재.
+장치 할당 및 장치 공유 하이퍼 V 격리 Windows 컨테이너에서 워크 로드에 대 한 현재 지원 되지 않습니다.
 
-## <a name="linux-containers-on-windows-lcow-device-support"></a>Linux 컨테이너 (LCOW) Windows 장치 지원
+## <a name="hyper-v-isolated-linux-container-support"></a>V-격리 하이퍼 Linux 컨테이너 지원
 
-장치 할당 및 장치 공유 지원 되지 않습니다 LCOW에서 현재.
+장치 할당 및 장치 공유 하이퍼 V 격리 Linux 컨테이너에서 워크 로드에 대 한 현재 지원 되지 않습니다.
