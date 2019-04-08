@@ -3,12 +3,12 @@ title: Windows 컨테이너에서 GPU 가속
 description: Windows 컨테이너에 있는 GPU 가속 수준
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: 518ce8fd8373060b5ebb1147a2d25e3d24517861
-ms.sourcegitcommit: 3c81b0efd1ac2c4c93d58f16edae1044c9a5ad55
+ms.openlocfilehash: fbee74e1d40838922ae938afd8fda5715a6abaf7
+ms.sourcegitcommit: af1d0d6c0642ee44bd34db7a9a58fe6c65f73a33
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "9284616"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "9285947"
 ---
 # <a name="gpu-acceleration-in-windows-containers"></a>Windows 컨테이너에서 GPU 가속
 
@@ -17,7 +17,7 @@ ms.locfileid: "9284616"
 Gpu에서 기존의 렌더링 및 시뮬레이션 컴퓨터 학습 교육 및 유추에 많은 인기 있는 워크 로드에 대 한 일반적인 도구 이미 있습니다. Windows 컨테이너는 DirectX 및이 기반으로 모든 프레임 워크에 대 한 GPU 가속을 지원 합니다.
 
 > [!IMPORTANT]
-> 이 기능을 사용 하려면 지 원하는 Docker 버전이 필요 합니다 `--device` Windows 컨테이너에 대 한 명령줄 옵션입니다. 공식 Docker 지원 예정 된 다음 Docker EE 엔진 19.03 릴리스에 대 한 합니다. 그 때까지 Docker에 대 한 [업스트림 소스](https://master.dockerproject.org/) 에 필요한 비트 포함 되어 있습니다.
+> 이 기능을 지 원하는 Docker 버전이 필요 합니다 `--device` Windows 컨테이너에 대 한 명령줄 옵션입니다. 공식 Docker 지원 예정 된 다음 Docker EE 엔진 19.03 릴리스에 대 한 합니다. 그 때까지 Docker에 대 한 [업스트림 소스](https://master.dockerproject.org/) 에 필요한 비트 포함 되어 있습니다.
 
 ## <a name="requirements"></a>요구 사항
 
