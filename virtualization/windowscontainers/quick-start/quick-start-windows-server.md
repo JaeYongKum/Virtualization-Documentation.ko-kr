@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
-ms.openlocfilehash: b58bdd79da1c644281ebd9e79c16587d9fc156f4
-ms.sourcegitcommit: 21d93e5febd9b1b47ae1aa59d08086e6ec1691e0
+ms.openlocfilehash: fd2de24a4c8c03817978a53b340e2a77285c69ad
+ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "9121045"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "9380417"
 ---
 # <a name="windows-containers-on-windows-server"></a>Windows Server의 Windows 컨테이너
 
@@ -29,12 +29,12 @@ Windows Server 2019 및 Windows Server 2016에서 Windows 컨테이너 기능의
 
 이 빠른 시작은 Windows Server 2019 및 Windows Server 2016의 Windows Server 컨테이너와 관련이 있습니다. Windows 10의 컨테이너를 포함하여 추가적인 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 다음 요구 사항을 충족 하는지 확인 하세요.
 - Windows Server 2019를 실행 하는 컴퓨터 시스템 (물리적 또는 가상). Windows Server 2019 Insider Preview를 사용 하는 경우에 [Window Server 2019 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019 )으로 업데이트 하세요.
 
-> 중요 업데이트는 함수에서 Windows 컨테이너 기능을 위해 필요합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
+> 중요 업데이트는 Windows 컨테이너 기능 기능을 위해 필요 합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
 Azure에서 배포 하려는 경우 이 [템플릿](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-server-container-tools/containers-azure-template)이 편리합니다.
 

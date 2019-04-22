@@ -3,12 +3,12 @@ title: Windows 컨테이너에서 GPU 가속
 description: Windows 컨테이너에 있는 GPU 가속 수준
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: fbee74e1d40838922ae938afd8fda5715a6abaf7
-ms.sourcegitcommit: af1d0d6c0642ee44bd34db7a9a58fe6c65f73a33
+ms.openlocfilehash: 281241e07e4bc184e73c4e74a117b44253a775be
+ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "9285947"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "9380057"
 ---
 # <a name="gpu-acceleration-in-windows-containers"></a>Windows 컨테이너에서 GPU 가속
 
@@ -22,6 +22,7 @@ Gpu에서 기존의 렌더링 및 시뮬레이션 컴퓨터 학습 교육 및 �
 ## <a name="requirements"></a>요구 사항
 
 이 기능이 제대로 작동 하도록 환경에는 다음 요구 사항을 충족 해야 합니다.
+
 - Windows 10, 버전 1809 이상 또는 Windows Server 2019 컨테이너 호스트를 실행 해야 합니다.
 - 컨테이너 기본 이미지 [mcr.microsoft.com/windows:1809](https://hub.docker.com/_/microsoft-windowsfamily-windows) 이어야 합니다. 또는 최신 합니다. Windows Server Core와 Nano 서버 컨테이너 이미지는 현재 지원 되지 않습니다.
 - 컨테이너 호스트 19.03 또는 최신 Docker 엔진을 실행 되어야 합니다.

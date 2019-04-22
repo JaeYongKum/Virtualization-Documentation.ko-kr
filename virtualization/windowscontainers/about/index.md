@@ -1,18 +1,23 @@
 ---
 title: Windows 컨테이너 정보
 description: Windows 컨테이너에 대해 알아봅니다.
-keywords: 'Docker, 컨테이너'
+keywords: Docker, 컨테이너
 author: taylorb-microsoft
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
+ms.openlocfilehash: 6473c323c675fc59360dd982a14895a93743098a
+ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "9380047"
 ---
-
 # <a name="containers-on-windows"></a>Windows의 컨테이너
 
-## <a name="what-are-containers"></a>컨테이너란?
+## <a name="what-are-containers"></a>컨테이너 란
 
 컨테이너는 응용 프로그램을 자체 격리 상자 안에 래핑하는 방법입니다. 컨테이너 속에 있는 응용 프로그램은 상자 외부에 있는 다른 응용 프로그램 또는 프로세스에 대한 정보를 전혀 갖고 있지 않습니다. 이 응용 프로그램이 실행에 사용하는 모든 것 역시 이 컨테이너 안에 있습니다.  상자가 어디로 이동하든 응용 프로그램 실행에 필요한 모든 것이 번들에 포함되기 때문에 응용 프로그램이 항상 충족됩니다.
 
@@ -29,16 +34,15 @@ ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
 아래 간략 한 개요를 확인 하세요.
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Ryx3o0rD5lY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 ## <a name="container-fundamentals"></a>컨테이너의 기본 사항
 
 컨테이너는 격리되고 리소스로 제어되는 휴대용 런타임 환경으로, 호스트 컴퓨터 또는 가상 컴퓨터에서 실행됩니다. 모든 필수 종속성 및 구성 파일; 패키지에서 응용 프로그램 또는 컨테이너에서 실행 되는 프로세스 이 컨테이너 외부에서 실행 하는 다른 프로세스는 효과 제공 했습니다.
 
 컨테이너의 호스트는 컨테이너용 리소스 집합을 프로비전하고 컨테이너는 이러한 리소스만 사용합니다. 으로 컨테이너 인식 배분 어떤 것에 제공 된 외부 없고 컨테이너 인접 한 컨테이너에 대 한 배포 되어 있는 리소스를 수정할 수 없습니다 따라서 합니다.
 
-Windows 컨테이너의 만들기 및 작업을 시작할 때 다음 주요 개념이 유용할 것입니다.
+다음 주요 개념이 유용할 만들기 시작할 때 및 Windows 컨테이너를 사용 합니다.
 
-**컨테이너 호스트:** Windows 컨테이너 기능을 통해 구성된 물리적 또는 가상 컴퓨터 시스템입니다. 컨테이너 호스트는 하나 이상의 Windows 컨테이너를 실행합니다.
+**컨테이너 호스트:** 물리적 또는 가상 컴퓨터 시스템에서 Windows 컨테이너 기능을 사용 하 여 구성 합니다. 컨테이너 호스트는 하나 이상의 Windows 컨테이너를 실행 합니다.
 
 **컨테이너 이미지:** 샌드박스에서 캡처한 소프트웨어 설치 등 컨테이너 파일 시스템이나 레지스트리에 대한 수정 내용입니다. 대부분의 경우 이러한 변경 내용을 상속하여 새 컨테이너를 만들 수 있게 이 상태를 캡처하고자 할 수 있습니다. 그것이 바로 이미지입니다. 컨테이너가 중지되면  해당 샌드박스를 취소하거나 새 컨테이너 이미지로 변환할 수 있습니다. 예를 들어 Windows Server Core OS 이미지에서 컨테이너를 배포했다고 가정해 보겠습니다. 그런 다음 컨테이너에 MySQL을 설치합니다. 이 컨테이너의 배포 가능한 버전 역할을 하도록 이 컨테이너에서 새 이미지를 만듭니다. 이 이미지는 수행한 변경 내용 (MySQL)만 포함하지만 컨테이너 OS 이미지 위에서 계층으로 작동하게 됩니다.
 
@@ -70,9 +74,9 @@ Hyper-V 격리를 사용하여 또는 사용하지 않고 Windows에서 컨테�
 
 ![Docker 컨테이너](media/docker.png)
 
-다른 컨테이너와 마찬가지로, [Docker](https://www.docker.com)를 사용하여 Windows Server 컨테이너를 관리할 수 있습니다.
+다른 컨테이너와 마찬가지로 Windows Server 컨테이너는 [Docker](https://www.docker.com)를 사용 하 여 관리할 수 있습니다.
 
-## <a name="containers-for-developers"></a>개발자용 컨테이너 ##
+## <a name="containers-for-developers"></a>개발자를 위한 컨테이너
 
 개발자의 데스크톱에서 테스트 컴퓨터와 여러 프로덕션 컴퓨터에 이르기까지, 몇 초 만에 모든 환경 전체에 동일하게 배포되는 Docker 이미지를 만들 수 있습니다. 이 덕분에 Docker가 관리하는 컨테이너화된 공개 응용 프로그램 레지스트리인 DockerHub를 통해, Docker 컨테이너 안에 패키징된 응용 프로그램의 거대한 생태계가 탄생했으며 지속적으로 확장되고 있습니다. 현재 공개 커뮤니티 리포지토리에 180,000개 이상의 응용 프로그램이 게시되어 있습니다.
 
@@ -84,13 +88,14 @@ Hyper-V 격리를 사용하여 또는 사용하지 않고 Windows에서 컨테�
 
 컨테이너는 개발자가 더 품질 높은 응용 프로그램을 더 신속하게 구축하여 제공하는 데 도움이 됩니다.
 
-## <a name="containers-for-it-professionals"></a>IT 전문가 위한 컨테이너 ##
+## <a name="containers-for-it-professionals"></a>IT 전문가 위한 컨테이너
 
 IT 전문가들은 컨테이너를 사용하여 개발, QA, 프러덕션 팀에 표준화된 환경을 제공할 수 있습니다. 복잡한 설치와 구성 절차에 대해 더 이상 걱정할 것이 없습니다. 시스템 관리자들은 컨테이너를 사용하여 OS 설치와 기반 인프라에서의 차이점을 골라낼 수 있습니다.
 
 컨테이너는 관리자들이 업데이트와 유지 관리가 더 간단한 인프라를 만드는 데 도움이 됩니다.
 
 ## <a name="container-orchestrators"></a>컨테이너 오케스트레이터
+
 작은 크기와 응용 프로그램 방향으로 인해 컨테이너는 빠른 전달 환경과 마이크로 서비스 기반 아키텍처에 매우 적합합니다. 그러나 컨테이너와 마이크로 서비스를 사용하면 사용자 환경에서 수백 또는 수천 개의 구성 요소를 쉽게 가질 수 있습니다.  수십 개의 가상 머신이나 물리적 서버를 수동으로 관리할 수 있지만 자동화 없이 프로덕션 규모의 컨테이너 환경을 관리할 수는 없습니다.  많은 수의 컨테이너를 자동화하고 관리하는 작업 및 컨테이너가 상호 작용하는 방식을 오케스트레이션이라고 합니다. 
 
 오케스트레이션의 표준 정의에는 다음 작업이 포함됩니다.

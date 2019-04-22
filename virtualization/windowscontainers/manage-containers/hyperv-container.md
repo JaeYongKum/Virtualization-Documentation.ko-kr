@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
-ms.openlocfilehash: db0f8c45c1cdb6617e4c347251284509e2a7d3bc
-ms.sourcegitcommit: 914e0dd1168daf1d2b0f22bd011035016cc08baf
+ms.openlocfilehash: 4ab473c1752c377955bb23bdf6c9ef83a3336aa8
+ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099341"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "9380127"
 ---
 # <a name="hyper-v-isolation"></a>Hyper-V 격리
 
@@ -35,7 +35,7 @@ docker run -it --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 cmd
 
 ### <a name="isolation-explanation"></a>격리 설명
 
-이 예제에서는 Windows Server 및 Hyper-v 컨테이너 간의 격리 기능 차이 보여 줍니다. 
+이 예제에서는 Windows Server 및 Hyper-v 격리 간의 격리 기능 차이 보여 줍니다.
 
 여기에서는 프로세스 격리 된 컨테이너를 배포 하 고 장기 실행 ping 프로세스를 호스트 합니다.
 
@@ -61,7 +61,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
      67       5      820       3836 ...71     0.03   3964   3 PING
 ```
 
-반대로이 예제에서는 ping 프로세스에 Hyper-v 격리 된 컨테이너를 시작 합니다. 
+반대로이 예제에서는 ping 프로세스에 Hyper-v 격리 된 컨테이너를 시작 합니다.
 
 ```
 docker run -d --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 ping -t localhost

@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
-ms.openlocfilehash: aad0c1f2fa7aea564b7348d662df46256a82abc4
-ms.sourcegitcommit: f376676c7864ae19fcb1649006ce6b60c6218634
+ms.openlocfilehash: 5d9e95d2263c9603712054376bfa9e7190feb1b0
+ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "8989452"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "9380407"
 ---
 # <a name="optimize-windows-dockerfiles"></a>Windows Dockerfile 최적화
 
-여러 가지 방법을 사용하여 Docker 빌드 프로세스와 결과 Docker 이미지를 모두 최적화할 수 있습니다. 이 문서에서는 Docker 빌드 프로세스의 작동 방식에 대해 자세히 설명하고 Windows 컨테이너에서 최적의 이미지 만들기에 사용할 수 있는 여러 가지 방법을 보여 줍니다.
+여러 가지 방법을 사용하여 Docker 빌드 프로세스와 결과 Docker 이미지를 모두 최적화할 수 있습니다. Docker 빌드 프로세스 작동 방법과 최적의 이미지에 사용할 수 있는 여러 가지 방법을 보여 줍니다.이 문서 세부 정보는 Windows 컨테이너를 사용 하 여 만듭니다.
 
 ## <a name="docker-build"></a>Docker 빌드
 
@@ -54,9 +54,9 @@ Dockerfile은 이미지 계층을 최소화하고, 빌드 성능을 최적화하
 
 ## <a name="optimize-image-size"></a>이미지 크기 최적화
 
-Docker 컨테이너 이미지를 작성할 때 이미지 크기가 중요한 요인이 될 수 있습니다. 컨테이너 이미지를 레지스트리와 호스트 간에 이동하고 내보내고 가져오며 궁극적으로 공간을 사용합니다. Docker 빌드 프로세스 중에 여러 가지 방법을 사용하여 이미지 크기를 최소화할 수 있습니다. 이 섹션에서는 Windows 컨테이너와 관련된 몇 가지 방법에 대해 자세히 설명합니다. 
+Docker 컨테이너 이미지를 작성할 때 이미지 크기가 중요한 요인이 될 수 있습니다. 컨테이너 이미지를 레지스트리와 호스트 간에 이동하고 내보내고 가져오며 궁극적으로 공간을 사용합니다. Docker 빌드 프로세스 중에 여러 가지 방법을 사용하여 이미지 크기를 최소화할 수 있습니다. 이 섹션에서는 Windows 컨테이너와 관련이 이러한 기법 중 일부에 대해 자세히 설명 합니다.
 
-Dockerfile 모범 사례에 대한 자세한 내용은 [Docker.com의 Best practices for writing Dockerfiles(Dockerfile 작성에 대한 모범 사례)]( https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)를 참조하세요.
+Dockerfile 모범 사례에 대한 자세한 내용은 [Docker.com의 Best practices for writing Dockerfiles(Dockerfile 작성에 대한 모범 사례)](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)를 참조하세요.
 
 ### <a name="group-related-actions"></a>그룹 관련 작업
 
