@@ -1,7 +1,7 @@
 ---
-title: "커뮤니티 리소스"
-description: "커뮤니티 리소스"
-keywords: "windows 10, hyper-v, 컨테이너, docker"
+title: 커뮤니티 리소스
+description: 커뮤니티 리소스
+keywords: windows 10, hyper-v, 컨테이너, docker
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
@@ -9,16 +9,17 @@ ms.prod: virtualization
 ms.service: virtualization
 ms.assetid: 731ed95a-ce13-4c6e-a450-49563bdc498c
 ms.openlocfilehash: d4fd2dbaf362ac3ad52667743177a203174b397d
-ms.sourcegitcommit: 65de5708bec89f01ef7b7d2df2a87656b53c3145
-ms.translationtype: HT
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9578626"
 ---
-# 문서 작성에 참여
+# <a name="contribute-to-the-docs"></a>문서 작성에 참여
 
 > **참고:**  문서 작성에 참여하려면 [GitHub](https://www.github.com) 계정이 있어야 합니다.
 
-## 기존 문서 편집
+## <a name="edit-an-existing-doc"></a>기존 문서 편집
 
 1. 편집할 문서를 찾습니다.  
 
@@ -59,12 +60,12 @@ ms.lasthandoff: 07/21/2017
 
 7. [끌어오기 요청](contribute-to-docs.md#pull-requests) 만들기  
 
-## 끌어오기 요청
+## <a name="pull-requests"></a>끌어오기 요청
 
 대부분의 변경 내용은 끌어오기 요청을 통해 커밋됩니다.  끌어오기 요청은 다수의 검토자가 변경 집합을 검토하고, 변경하고, 현재 콘텐츠에 메모를 추가하는 방식입니다.
 
 
-## 리포지토리를 분기하고 로컬에서 편집
+## <a name="fork-the-repo-and-edit-locally"></a>리포지토리를 분기하고 로컬에서 편집
 
 장기 문서 작업의 경우 리포지토리를 로컬로 복제하고 컴퓨터에서 작업합니다.
 
@@ -85,7 +86,7 @@ ms.lasthandoff: 07/21/2017
   * 몇 가지 유용한 기능을 안내하는 Git용 VSCode
   * 첫 번째 커밋 수행
 
-### Git 설정
+### <a name="set-up-git"></a>Git 설정
 
 1. [여기](https://git-for-windows.github.io/)에서 Windows에 git 설치
 
@@ -179,7 +180,7 @@ ms.lasthandoff: 07/21/2017
   }
   ```
 
-### 자격 증명 유효성 검사 및 스태시
+### <a name="validate-and-stash-credentials"></a>자격 증명 유효성 검사 및 스태시
 
   리포지토리가 올바르게 설정되었는지 확인하려면 새 콘텐츠 끌어오기를 시도하세요.
 
@@ -188,7 +189,7 @@ ms.lasthandoff: 07/21/2017
   ```
 
 
-### markdown 편집 환경 설정
+### <a name="set-up-markdown-editing-environment"></a>markdown 편집 환경 설정
 
 1. VSCode를 다운로드합니다.
 

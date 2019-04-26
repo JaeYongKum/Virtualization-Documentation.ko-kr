@@ -9,11 +9,11 @@ description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 �
 keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
 ms.openlocfilehash: 7c3a0111b3d19ae1b513a84665f870bba24ae33d
-ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "9380037"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9576991"
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes
 

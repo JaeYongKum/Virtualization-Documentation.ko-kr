@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: eb2b827c-4a6c-4327-9354-50d14fee7ed8
 ms.openlocfilehash: d71c5d2ae3c8ff78e36cc54686b10b1dc745e0c3
-ms.sourcegitcommit: 5e5644bff6dba70e384db6c80787b3bbe7adb93c
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4303909"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9576354"
 ---
 # <a name="introduction-to-hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 소개
 
@@ -36,7 +36,7 @@ Hyper-V는 특히 하드웨어 가상화를 제공합니다.  즉, 각 가상 �
 
 ## <a name="system-requirements"></a>시스템 요구 사항
 
-Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 Education에서 사용할 수 있습니다. Home 버전에서 사용할 수는 없습니다.
+Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 Education에서 사용할 수 있습니다. Home 버전에서 사용할 수 없는 경우
 
 > Windows 10 Home 버전에서 **설정을**사용 하 여 Windows 10 Pro로 업그레이드 > **업데이트 및 보안** > **정품 인증**합니다. 여기에서 스토어를 방문하여 업그레이드를 구입할 수 있습니다.
 

@@ -8,16 +8,16 @@ ms.prod: containers
 description: 원본에서 Kubernetes 바이너리를 컴파일 및 크로스 컴파일합니다.
 keywords: kubernetes, 1.12, linux, 컴파일
 ms.openlocfilehash: 40bf7e65a8910cdab095abb269aa0a92508189cd
-ms.sourcegitcommit: 8e9252856869135196fd054e3cb417562f851b51
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6178876"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9574824"
 ---
 # <a name="compiling-kubernetes-binaries"></a>Kubernetes 바이너리 컴파일 #
 Kubernetes 컴파일에는 Go 환경 작업이 필요합니다. 이 페이지는 Linux 바이너리를 컴파일하고 Windows 바이너리를 크로스 컴파일하는 여러 방법에 대해 다룹니다.
 > [!NOTE] 
-> 이 페이지는 완전히 자유 번째이자 유일한 관심 Kubernetes 개발자에 게 최신 및 최고의 소스 코드를 사용 하 여 실험을 포함 합니다.
+> 이 페이지는 완전히 자유 번째이자 유일한 관심이 Kubernetes 개발자에 게 최신 & 가장 큰 소스 코드를 사용 하 여 실험을 포함 합니다.
 
 > [!tip]
 > 구독할 수 최신 개발에 대 한 알림을 받도록 [@kubernetes-announce](https://groups.google.com/forum/#!forum/kubernetes-announce).

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: 6473c323c675fc59360dd982a14895a93743098a
-ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
+ms.openlocfilehash: e3d260bd65b6f81bc4ea9c305937f2784192d28a
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "9380047"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9576414"
 ---
 # <a name="containers-on-windows"></a>Windows의 컨테이너
 
@@ -50,7 +50,7 @@ ms.locfileid: "9380047"
 
 **컨테이너 OS 이미지:** 컨테이너가 이미지에서 배포됩니다. 컨테이너 OS 이미지는 컨테이너를 구성하는 잠재적으로 많은 이미지 계층에서 첫 번째 계층입니다. 이 이미지는 운영 체제 환경을 제공합니다. 컨테이너 OS 이미지는 변경할 수 없습니다. 즉, 수정할 수 없습니다.
 
-**컨테이너 리포지토리:** 컨테이너 이미지가 생성될 때마다 컨테이너 이미지와 해당 종속성이 로컬 리포지토리에 저장됩니다. 이러한 이미지는 컨테이너 호스트에서 여러 번 다시 사용할 수 있습니다. 컨테이너 이미지를 공용 또는 개인 레지스트리(예: DockerHub)에 저장하여 여러 다른 컨테이너 호스트에서 사용할 수도 있습니다.
+**컨테이너 리포지토리:** 컨테이너 이미지가 생성될 때마다 컨테이너 이미지와 해당 종속성이 로컬 리포지토리에 저장됩니다. 이러한 이미지는 컨테이너 호스트에서 여러 번 다시 사용할 수 있습니다. 여러 다른 컨테이너 호스트에서 사용할 수 있도록 Docker 허브 같은 공용 또는 개인 레지스트리에 컨테이너 이미지를 저장할 수도 있습니다.
 
 ![컨테이너의 기본 사항](media/containerfund.png)
 
@@ -109,9 +109,9 @@ IT 전문가들은 컨테이너를 사용하여 개발, QA, 프러덕션 팀에 
 - 서비스 검색: 컨테이너가 호스트 컴퓨터 간에 이동하고 IP 주소를 변경하는 경우에도 컨테이너를 서로 자동으로 찾을 수 있습니다.
 - 조정된 응용 프로그램 업그레이드: 응용 프로그램 작동 중지 시간을 피하도록 컨테이너 업그레이드를 관리하고 문제가 발생하는 경우 롤백합니다.
 
-Azure에서 2개의 컨테이너 오케스트레이터 제공: AKS(Azure Container Service) 및 Service Fabric.
+Azure에서 2 명의 컨테이너 오 케 스트레이 터: Kubernetes 서비스 AKS (Azure) 및 Service Fabric.
 
-[AKS(Azure Container Service)](/azure/aks/)를 사용하면 컨테이너화된 응용 프로그램을 실행하도록 미리 구성된 가상 머신 클러스터를 간단하게 만들고 구성하고 관리할 수 있습니다. 이를 통해 기존 기술을 사용하거나 점차 커지고 있는 대규모의 커뮤니티 전문 지식을 활용하여 컨테이너 기반 응용 프로그램을 Microsoft Azure에 배포하고 관리할 수 있습니다. AKS를 사용하면 Kubernetes 및 Docker 이미지 형식을 통해 응용 프로그램 이동성을 유지하면서 Azure의 엔터프라이즈급 기능을 활용할 수 있습니다.
+[Kubernetes 서비스 AKS (azure)](/azure/aks/) 하면 간단 하 게 만들고 구성 하 고 컨테이너 화 된 응용 프로그램을 실행 하도록 미리 구성 된 가상 머신 클러스터를 관리 합니다. 이를 통해 기존 기술을 사용하거나 점차 커지고 있는 대규모의 커뮤니티 전문 지식을 활용하여 컨테이너 기반 응용 프로그램을 Microsoft Azure에 배포하고 관리할 수 있습니다. AKS를 사용하면 Kubernetes 및 Docker 이미지 형식을 통해 응용 프로그램 이동성을 유지하면서 Azure의 엔터프라이즈급 기능을 활용할 수 있습니다.
 
 [Azure Service Fabric](/azure/service-fabric/)은 신뢰할 수 있는 확장 가능한 마이크로 서비스 및 컨테이너를 쉽게 패키징하고 배포하고 관리할 수 있는 분산 시스템 플랫폼입니다. Service Fabric은 클라우드 원시 응용 프로그램을 배포하고 관리하는 데 있어 중요한 과제를 해결합니다. 개발자와 관리자는 복잡한 인프라 문제를 방지하고, 확장 가능하고 신뢰할 수 있으며 관리가 용이한 중요 업무의 까다로운 작업을 구현하는 데 집중할 수 있습니다. Service Fabric은 컨테이너에서 실행되는 이러한 엔터프라이즈급, 계층 1, 클라우드 규모 응용 프로그램을 구축하고 관리하는 차세대 플랫폼을 나타냅니다.
 

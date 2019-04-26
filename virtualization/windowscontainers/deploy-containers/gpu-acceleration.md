@@ -4,11 +4,11 @@ description: Windows 컨테이너에 있는 GPU 가속 수준
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
 ms.openlocfilehash: 281241e07e4bc184e73c4e74a117b44253a775be
-ms.sourcegitcommit: a5ff22c205149dac4fc05325ef3232089826f1ef
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "9380057"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9578663"
 ---
 # <a name="gpu-acceleration-in-windows-containers"></a>Windows 컨테이너에서 GPU 가속
 
