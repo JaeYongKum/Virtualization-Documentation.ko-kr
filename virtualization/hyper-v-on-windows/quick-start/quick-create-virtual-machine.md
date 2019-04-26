@@ -7,12 +7,12 @@ ms.date: 04/07/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: f1e75efa-8745-4389-b8dc-91ca931fe5ae
-ms.openlocfilehash: d9531164022b99a4be9b3c8e09736828a2da2f61
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 970e92def02e5386d38a2e72d5ef921aa8321fdf
+ms.sourcegitcommit: 08cc38955faad26f075b912a64b8ffb6b36f190c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576554"
+ms.locfileid: "9578686"
 ---
 # <a name="create-a-virtual-machine-with-hyper-v"></a>Hyper-V를 사용하여 가상 컴퓨터 만들기
 
@@ -22,9 +22,9 @@ ms.locfileid: "9576554"
 
 올바른 명령 집합을 위한 운영 체제를 선택하세요.
 
-* [Windows 10 Fall Creators Update (v1709) 이상](quick-create-virtual-machine.md#windows-10-fall-creators-update)
-* [Windows 10 크리에이터 스 업데이트 (v1703)](quick-create-virtual-machine.md#windows-10-creators-update)
-* [Windows 10 1 주년 업데이트 (v1607) 및 이전 버전](quick-create-virtual-machine.md#before-windows-10-creators-update)
+* [Windows 10 Fall Creators Update (v1709) 이상](quick-create-virtual-machine.md#windows-10-fall-creators-update-windows-10-version-1709)
+* [Windows 10 크리에이터 스 업데이트 (v1703)](quick-create-virtual-machine.md#windows-10-creators-update-windows-10-version-1703)
+* [Windows 10 1 주년 업데이트 (v1607) 및 이전 버전](quick-create-virtual-machine.md#before-windows-10-creators-update-windows-10-version-1607-and-earlier)
 
 그럼 시작해 보겠습니다.
 
@@ -81,7 +81,7 @@ ms.locfileid: "9576554"
 
 > **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 컴퓨터 내에서 실행 중인 Windows에 대한 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.
 
-## <a name="before-windows-10-creators-update-windows-10-version-1607-and-older"></a>Windows 10 크리에이터 스 업데이트 (Windows 10 버전 1607 이전)
+## <a name="before-windows-10-creators-update-windows-10-version-1607-and-earlier"></a>Windows 10 크리에이터 스 업데이트 (Windows 10 버전 1607이 하)
 
 Windows 10 크리에이터스 업데이트 이상을 실행하고 있지 않으면 다음 지침에 따라 새 가상 컴퓨터 마법사를 대신 사용합니다.
 
