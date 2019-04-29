@@ -9,11 +9,11 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 532195c6-564b-4954-97c2-5a5795368c09
 ms.openlocfilehash: 2079898ee4a3bd7d15e3cbbaea40486d1682a44a
-ms.sourcegitcommit: 4090d158dd3573ea90799de5b014c131a206b000
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "6121563"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9578294"
 ---
 # <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
@@ -97,10 +97,10 @@ NAT 네트워크를 설정하고 가상 컴퓨터에 연결하려면 [NAT 네트
 
 ### <a name="the-two-switch-approach"></a>두 스위치 접근 방식
 
-노트북에서 Windows 10 Hyper-v를 실행 하 고 무선 네트워킹과 유선된 네트워크 사이 자주 전환 경우 이더넷과 무선 네트워크 카드에 대 한 가상 스위치를 만드는 것이 좋습니다.  노트북의 네트워크에 연결 하는 방법에 따라 이러한 스위치 간에 가상 컴퓨터를 변경할 수 있습니다. 가상 컴퓨터 유선 및 무선 간에 전환 하지 않으면 자동으로 합니다. 
+노트북에서 Windows 10 Hyper-v를 실행 중인 하 고 무선 네트워킹과 유선된 네트워크 사이 자주 전환 하는 경우 이더넷과 무선 네트워크 카드에 대 한 가상 스위치를 만드는 것이 좋습니다.  노트북의 네트워크에 연결 하는 방법에 따라 이러한 스위치 간에 가상 컴퓨터를 변경할 수 있습니다. 가상 컴퓨터 유선 및 무선 간에 전환 하지 않으면 자동으로 합니다. 
 
 >[!IMPORTANT]
->두 스위치 접근 방식 무선 카드를 통해 외부 vSwitch를 지원 하지 않는 및 테스트용 으로만 사용 해야 합니다.
+>두 스위치 접근 방식 무선 카드를 통해 외부 vSwitch 지원 하지 않으며 테스트 목적 으로만 사용 해야 합니다.
 
 ## <a name="next-step---create-a-virtual-machine"></a>다음 단계 - 가상 컴퓨터 만들기
 [Windows 가상 컴퓨터 만들기](create-virtual-machine.md)

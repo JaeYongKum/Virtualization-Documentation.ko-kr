@@ -8,21 +8,22 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: cf5173a98032820e1ad72e99e9b6e874dedbed83
-ms.sourcegitcommit: 1715411ac2768159cd9c9f14484a1cad5e7f2a5f
+ms.openlocfilehash: 001f1abaeefaf34e12b0f7e3323bf32140080d05
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "9263520"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9575084"
 ---
 # <a name="advanced-network-options-in-windows"></a>Windows의 고급 네트워크 옵션
+
 Windows 관련 기능 및 특징을 활용할 수 있도록 여러 가지 네트워크 드라이버 옵션이 지원됩니다. 
 
 ## <a name="switch-embedded-teaming-with-docker-networks"></a>네트워크를 사용하는 스위치 포함 팀
 
-> 모든 네트워크 드라이버에 적용 
+> 모든 네트워크 드라이버에 적용
 
-`-o com.docker.network.windowsshim.interface` 옵션으로 여러 네트워크 어댑터(쉼표로 구분)를 지정하여 Docker에서 사용할 컨테이너 호스트 네트워크를 만들 때 [스위치 포함 팀](https://technet.microsoft.com/en-us/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming#a-namebkmksswitchembeddedaswitch-embedded-teaming-set)을 활용할 수 있습니다. 
+`-o com.docker.network.windowsshim.interface` 옵션으로 여러 네트워크 어댑터(쉼표로 구분)를 지정하여 Docker에서 사용할 컨테이너 호스트 네트워크를 만들 때 [스위치 포함 팀](https://technet.microsoft.com/en-us/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming#a-namebkmksswitchembeddedaswitch-embedded-teaming-set)을 활용할 수 있습니다.
 
 ```
 C:\> docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 2", "Ethernet 3" TeamedNet
@@ -30,7 +31,7 @@ C:\> docker network create -d transparent -o com.docker.network.windowsshim.inte
 
 ## <a name="set-the-vlan-id-for-a-network"></a>네트워크의 VLAN ID 설정
 
-> transparent 및 l2bridge 네트워크 드라이버에 적용 
+> transparent 및 l2bridge 네트워크 드라이버에 적용
 
 네트워크의 VLAN ID를 설정하려면 `docker network create` 명령에 `-o com.docker.network.windowsshim.vlanid=<VLAN ID>` 옵션을 사용합니다. 예를 들어 다음 명령을 사용하여 VLAN ID가 11인 투명 네트워크를 만들 수 있습니다.
 

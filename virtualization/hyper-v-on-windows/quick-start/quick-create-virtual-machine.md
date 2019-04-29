@@ -7,12 +7,12 @@ ms.date: 04/07/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: f1e75efa-8745-4389-b8dc-91ca931fe5ae
-ms.openlocfilehash: 5975f43859368334cab31b6d0eb37f084e9c03ca
-ms.sourcegitcommit: 51da93c4548c5df7a9f01e54d46d81b338c874cf
+ms.openlocfilehash: 970e92def02e5386d38a2e72d5ef921aa8321fdf
+ms.sourcegitcommit: 08cc38955faad26f075b912a64b8ffb6b36f190c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "9031177"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9578686"
 ---
 # <a name="create-a-virtual-machine-with-hyper-v"></a>Hyper-V를 사용하여 가상 컴퓨터 만들기
 
@@ -22,13 +22,13 @@ ms.locfileid: "9031177"
 
 올바른 명령 집합을 위한 운영 체제를 선택하세요.
 
-* [Windows 10 Fall Creators Update 이상](quick-create-virtual-machine.md#windows-10-fall-creators-update)
-* [Windows 10 크리에이터스 업데이트](quick-create-virtual-machine.md#windows-10-creators-update)
-* [Windows 10 1주년 업데이트 이하](quick-create-virtual-machine.md#before-windows-10-creators-update)
+* [Windows 10 Fall Creators Update (v1709) 이상](quick-create-virtual-machine.md#windows-10-fall-creators-update-windows-10-version-1709)
+* [Windows 10 크리에이터 스 업데이트 (v1703)](quick-create-virtual-machine.md#windows-10-creators-update-windows-10-version-1703)
+* [Windows 10 1 주년 업데이트 (v1607) 및 이전 버전](quick-create-virtual-machine.md#before-windows-10-creators-update-windows-10-version-1607-and-earlier)
 
 그럼 시작해 보겠습니다.
 
-## <a name="windows-10-fall-creators-update"></a>Windows 10 Fall Creators Update
+## <a name="windows-10-fall-creators-update-windows-10-version-1709"></a>Windows 10 Fall Creators Update (Windows 10 버전 1709)
 
 가을 크리에이터스 업데이트에서는 Hyper-V 관리자와 독립적으로 실행할 수 있는 가상 컴퓨터 갤러리를 포함하도록 빨리 만들기 기능이 확장되었습니다.
 
@@ -53,7 +53,7 @@ ms.locfileid: "9031177"
 
 이제 되었습니다.  나머지 작업은 빨리 만들기가 처리합니다.
 
-## <a name="windows-10-creators-update"></a>Windows 10 크리에이터스 업데이트
+## <a name="windows-10-creators-update-windows-10-version-1703"></a>Windows 10 크리에이터 스 업데이트 (Windows 10 버전 1703)
 
 ![UI 빨리 만들기의 스크린샷](media/quickcreatesteps_inked.jpg)
 
@@ -81,7 +81,7 @@ ms.locfileid: "9031177"
 
 > **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 컴퓨터 내에서 실행 중인 Windows에 대한 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.
 
-## <a name="before-windows-10-creators-update"></a>Windows 10 크리에이터스 업데이트 이전
+## <a name="before-windows-10-creators-update-windows-10-version-1607-and-earlier"></a>Windows 10 크리에이터 스 업데이트 (Windows 10 버전 1607이 하)
 
 Windows 10 크리에이터스 업데이트 이상을 실행하고 있지 않으면 다음 지침에 따라 새 가상 컴퓨터 마법사를 대신 사용합니다.
 

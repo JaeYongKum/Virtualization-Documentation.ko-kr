@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-ms.openlocfilehash: a28b9ced2c9669b65bfa02bd02c1061226dcea7e
-ms.sourcegitcommit: f172d14ef1ebfb5a9df1b3529e0722d9103e0eba
+ms.openlocfilehash: 41fa89dcaba38d43d39681240a1a108c9250ba78
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "9112920"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9575174"
 ---
 # <a name="automating-builds-and-saving-images"></a>빌드 자동화 및 이미지 저장
 
@@ -21,12 +21,12 @@ ms.locfileid: "9112920"
 
 이 빠른 시작은 Windows Server 2019 또는 Windows Server 2016에서 Windows Server 컨테이너와 관련이 및 Windows Server Core 컨테이너 기본 이미지를 사용 합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 다음 요구 사항을 충족 하는지 확인 하세요.
 
 - 한 대의 컴퓨터 시스템 (물리적 또는 가상) 실행 중인 Windows Server 2019 또는 Windows Server 2016입니다.
-- Windows 컨테이너 기능 및 Docker로 이 시스템을 구성합니다. 이러한 단계에 대한 연습은 [Windows Server의 Windows 컨테이너](./quick-start-windows-server.md)를 참조하세요.
+- Windows 컨테이너 기능 및 Docker로이 시스템을 구성 합니다. 이러한 단계에 연습에서는 [Windows Server의 Windows 컨테이너](./quick-start-windows-server.md)를 참조 하세요.
 - Docker ID는 Docker 허브에 컨테이너 이미지를 푸시하기 위해 사용됩니다. Docker ID가 없는 경우 [Docker Cloud](https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
 
 ## <a name="container-image---dockerfile"></a>컨테이너 이미지-Dockerfile

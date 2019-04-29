@@ -1,6 +1,6 @@
 ---
 title: Windows 컨테이너 샘플
-description: Windows 컨테이너를 사용하여 인기 프로젝트와 코드 샘플로의 링크를 찾아보세요.
+description: 인기 프로젝트와 Windows 컨테이너를 사용 하 여 코드 샘플에 유용할 수 있습니다.
 keywords: Docker, 컨테이너, windows, 샘플
 author: cwilhit
 ms.date: 12/19/2016
@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 5c6f6350-f8d6-4426-b53d-9fb09c2bf267
-ms.openlocfilehash: 6d0f85e46ab5f2c73fb378d4862a2fc3107e47b3
-ms.sourcegitcommit: 69228f28723f366c6b2933c7701077c8df74b32b
+ms.openlocfilehash: fb6910f535337d25b7635ffe339345a7063daa92
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976769"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9574554"
 ---
 # <a name="windows-container-samples"></a>Windows 컨테이너 샘플
 

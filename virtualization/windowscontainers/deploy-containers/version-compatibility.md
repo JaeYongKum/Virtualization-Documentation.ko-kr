@@ -4,11 +4,11 @@ description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
 ms.openlocfilehash: c744da429ed8116363437d3117ae1432d7a94f8d
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6948082"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9574954"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -31,7 +31,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
         <td style="background-color:#F1F8E9"><b>Windows 10 Fall Creators Update</b><br/>빌드 16299.*</td>
         <td style="background-color:#F1F8E9"><b>Windows Server 버전 1803</b><br/>빌드 17134.*</td>
         <td style="background-color:#F1F8E9"><b>Windows 10 버전 1803</b><br/>빌드 17134.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows Server 2019</b><br/>빌드 17763.*</td>
+        <td style="background-color:#F1F8E9"><b>WindowsServer 2019</b><br/>빌드 17763.*</td>
         <td style="background-color:#F1F8E9"><b>Windows 10 버전 1809</b><br/>빌드 17763.*</td>
     </tr>
     <tr>
@@ -68,7 +68,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
         <td>지원<br/> `hyperv` 격리만</td>
     </tr>
     <tr>
-        <td style="background-color:#E3F2FD"><b>Windows Server 2019</b><br/>빌드 17763.*</td>
+        <td style="background-color:#E3F2FD"><b>WindowsServer 2019</b><br/>빌드 17763.*</td>
         <td>지원되지 않음</td>
         <td>지원되지 않음</td>
         <td>지원되지 않음</td>

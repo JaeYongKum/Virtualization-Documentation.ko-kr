@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ebd79cd3-5fdd-458d-8dc8-fc96408958b5
-ms.openlocfilehash: d67b38b04cf781ab5cba8e0142831f71b65aa974
-ms.sourcegitcommit: 8ab1fccfc680911493c769157a6cfe7cbcf17bde
+ms.openlocfilehash: 4fac4d6e091fdf25e9683adca438302ca3beebfb
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "8972057"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9576704"
 ---
 # <a name="troubleshooting"></a>문제 해결
 
@@ -28,7 +28,7 @@ Invoke-WebRequest https://aka.ms/Debug-ContainerHost.ps1 -UseBasicParsing | Invo
 
 
 ## <a name="finding-logs"></a>로그 찾기
-Windows 컨테이너를 관리하기 위해 여러 서비스가 사용됩니다. 다음 섹션에서는 각 서비스에 대한 로그를 확인할 수 있는 위치를 보여 줍니다.
+Windows 컨테이너를 관리 하는 데 사용 되는 서비스를 여러 개 있습니다. 다음 섹션에서는 각 서비스에 대한 로그를 확인할 수 있는 위치를 보여 줍니다.
 
 # <a name="docker-engine"></a>Docker 엔진
 Docker 엔진은 파일 대신 Windows '응용 프로그램' 이벤트 로그에 기록합니다. 이러한 로그는 Windows PowerShell을 사용하여 쉽게 읽고 정렬하고 필터링할 수 있습니다.
@@ -104,7 +104,7 @@ Get-Process dockerd
 docker-signal -pid=<id>
 ```
 
-출력 파일은이 데이터 루트에 docker 디렉터리에서 실행 되 고 있습니다. 기본 디렉터리는 `C:\ProgramData\Docker`입니다. 실제 디렉터리는 `docker info -f "{{.DockerRootDir}}"` 명령을 실행하여 확인할 수 있습니다.
+출력 파일을 찾을 수는 데이터 루트에 docker 디렉터리에서 실행 되 고 있습니다. 기본 디렉터리는 `C:\ProgramData\Docker`입니다. 실제 디렉터리는 `docker info -f "{{.DockerRootDir}}"` 명령을 실행하여 확인할 수 있습니다.
 
 파일이 있을 `goroutine-stacks-<timestamp>.log`.
 

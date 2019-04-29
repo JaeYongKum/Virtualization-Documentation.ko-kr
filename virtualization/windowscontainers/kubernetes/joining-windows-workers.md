@@ -9,11 +9,11 @@ description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 �
 keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
 ms.openlocfilehash: ed0f13bd429e88f05469f91c3fc691bf0188b0a2
-ms.sourcegitcommit: 41318edba7459a9f9eeb182bf8519aac0996a7f1
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "9120571"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9578244"
 ---
 # <a name="joining-windows-server-nodes-to-a-cluster"></a>Windows Server 노드 클러스터에 가입 #
 [Kubernetes 마스터 노드를 설정](./creating-a-linux-master.md) 하 고 [원하는 네트워크 솔루션을 선택](./network-topologies.md)했다면 가입 Windows 서버 노드 클러스터를 만들 준비가 되었습니다. 이 [Windows 노드 준비](#preparing-a-windows-node) 에 조인 하기 전에 필요합니다.

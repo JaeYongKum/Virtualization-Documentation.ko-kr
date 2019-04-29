@@ -9,11 +9,11 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1ecb85a6-d938-4c30-a29b-d18bd007ba08
 ms.openlocfilehash: 18ab4d1d87c22f70fe09aae5222a7d125ac9c974
-ms.sourcegitcommit: 914e0dd1168daf1d2b0f22bd011035016cc08baf
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099391"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9578674"
 ---
 # <a name="configure-nested-vms-to-communicate-with-resources-in-an-azure-virtual-network"></a>Azure 가상 네트워크에 있는 리소스와 통신 하는 중첩 된 Vm 구성
 

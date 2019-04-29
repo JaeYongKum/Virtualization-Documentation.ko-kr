@@ -9,11 +9,11 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9c398c4-ee72-45c6-9ce8-4f06569dae6c
 ms.openlocfilehash: 7ed9c5e3c3067bd8ddfa8005f4d9307c76dce4cd
-ms.sourcegitcommit: 4412583b77f3bb4b2ff834c7d3f1bdabac7aafee
+ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6948032"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "9575404"
 ---
 # <a name="using-checkpoints-to-revert-virtual-machines-to-a-previous-state"></a>검사점을 사용하여 가상 컴퓨터를 이정 상태로 되돌리기
 
@@ -23,7 +23,7 @@ Windows 10 Hyper-V는 두 가지 유형의 검사점을 포함합니다.
 
 * **표준 검사점**: 검사점이 시작 된 시간에 가상 컴퓨터 및 가상 컴퓨터 메모리 상태의 스냅숏을 합니다. 스냅숏은 전체 백업이 아니며 Active Directory와 같은 다른 노드 간에 데이터를 복제하는 시스템과 데이터 일관성 문제를 야기할 수 있습니다.  Hyper-V는 Windows 10 이전에 표준 검사점(이전의 스냅숏)만을 제공했습니다.
 
-* **프로덕션 검사점**: Linux 가상 컴퓨터에서 가상 컴퓨터의 데이터 일관성 백업을 만듭니다 볼륨 섀도 복사본 서비스 또는 파일 시스템 고정을 사용 합니다. 가상 컴퓨터 메모리 상태의 스냅숏은 만들지 않습니다.
+* **프로덕션 검사점**: 가상 컴퓨터의 데이터 일관성 백업을 만듭니다 Linux 가상 컴퓨터에서 볼륨 섀도 복사본 서비스 또는 파일 시스템 고정을 사용 합니다. 가상 컴퓨터 메모리 상태의 스냅숏은 만들지 않습니다.
 
 프로덕션 검사점은 기본으로 선택되지만 Hyper-V 관리자 또는 PowerShell을 사용하여 변경할 수 있습니다.
 
@@ -116,7 +116,7 @@ Get-VMCheckpoint -VMName <VMName>
 
 ## <a name="renaming-checkpoints"></a>검사점 이름 바꾸기
 
-다수의 검사점이 특정한 시점에 만들어집니다.  식별 가능한 이름이 지정 쉽게 검사점이 만들어졌을 때 시스템 상태에 대 한 세부 정보를 기억할 수 있습니다.
+다수의 검사점이 특정한 시점에 만들어집니다.  하는 식별이 가능한 이름을 부여 하면 검사점이 만들어졌을 때 시스템 상태에 대 한 세부 정보를 기억 하기 쉽습니다.
 
 기본적으로, 검사점의 이름은 검사점을 만든 날짜 및 시간과 연결된 가상 컴퓨터의 이름입니다. 표준 형식은 다음과 같습니다. 
 
