@@ -43,7 +43,7 @@
 ## Windows에서 서비스 패브릭
 ### [첫 번째 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers)
 ### [Windows 컨테이너에서 .NET 응용 프로그램 배포](/azure/service-fabric/service-fabric-host-app-in-a-container) 
-## Docker Swarm
+## Docker swarm
 ### [Swarm 모드 시작](manage-containers/swarm-mode.md)
 
 # 커뮤니티 및 지원

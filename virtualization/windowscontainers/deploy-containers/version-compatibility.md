@@ -3,110 +3,94 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: c744da429ed8116363437d3117ae1432d7a94f8d
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 76549bbfbaf374acb79f1be4280949aecf4e87f0
+ms.sourcegitcommit: c48dcfe43f73b96e0ebd661164b6dd164c775bfa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9574954"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "9610283"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
-Windows Server 2016 및 Windows 10 1주년 업데이트(두 버전 모두 14393)는 Windows Server 컨테이너를 빌드하고 실행할 수 있었던 최초의 Windows 릴리스였습니다. 이러한 버전을 사용하여 빌드된 컨테이너는 Windows Server 버전 1709와 같은 최신 릴리스에서 실행할 수 있지만 실행을 시작하기 전에 알아야 할 몇 가지 사항이 있습니다.
+Windows Server 2016 및 Windows 10 1 주년 업데이트 (두 버전 모두 14393) 빌드 및 Windows Server 컨테이너를 실행할 수 있는 최초의 Windows 릴리스 였습니다. 이러한 버전을 사용하여 빌드된 컨테이너는 Windows Server 버전 1709와 같은 최신 릴리스에서 실행할 수 있지만 실행을 시작하기 전에 알아야 할 몇 가지 사항이 있습니다.
 
-Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미칠 수 있는 사항을 몇 가지 변경해야만 했습니다. 기존 컨테이너는 [Hyper-V 격리](../manage-containers/hyperv-container.md)를 통해 최신 호스트에서 동일하게 실행되고 동일한 기존 커널 버전이 계속 사용됩니다. 그러나 최신 Windows 빌드를 기반으로 컨테이너를 실행하려면 최신 호스트 빌드에서만 실행할 수 있습니다.
+Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미칠 수 있는 사항을 몇 가지 변경해야만 했습니다. 이전 컨테이너 동일한 [Hyper-v 격리](../manage-containers/hyperv-container.md)를 통해 최신 호스트에서 실행 되 고 동일한 기존 커널 버전이 합니다. 그러나 최신 Windows 빌드를 기반으로 컨테이너를 실행 하려는 경우 최신 호스트 빌드에서만 실행할 수 있습니다.
 
+|컨테이너 OS 버전|호스트 OS 버전|호환성|
+|---|---|---|
+|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2016<br>빌드: 14393.* |지원 `process` 또는 `hyperv` 격리|
+|WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1709<br>빌드 16299.* |지원 `hyperv` 격리|
+|WindowsServer 2016<br>빌드: 14393.* |Windows 10 Fall Creators Update<br>빌드 16299.* |지원 `hyperv` 격리|
+|WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1803<br>빌드 17134.* |지원 `hyperv` 격리|
+|WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1803<br>빌드 17134.* |지원 `hyperv` 격리|
+|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2019<br>빌드 17763.* |지원 `hyperv` 격리|
+|WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1809<br>빌드 17763.* |지원 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows Server 버전 1709<br>빌드 16299.* |지원 `process` 또는 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10 Fall Creators Update<br>빌드 16299.* |지원 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows Server, 버전 1803<br>빌드 17134.* |지원 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1803<br>빌드 17134.* |지원 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2019<br>빌드 17763.* |지원 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1809<br>빌드 17763.* |지원 `hyperv` 격리|
+|Windows Server, 버전 1803<br>빌드 17134.* |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|Windows Server, 버전 1803<br>빌드 17134.* |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
+|Windows Server, 버전 1803<br>빌드 17134.* |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
+|Windows Server, 버전 1803<br>빌드 17134.* |Windows Server, 버전 1803<br>빌드 17134.* |지원 `process` 또는 `hyperv` 격리|
+|Windows Server, 버전 1803<br>빌드 17134.* |Windows 10, 버전 1803<br>빌드 17134.* |지원 `hyperv` 격리|
+|Windows Server, 버전 1803<br>빌드 17134.* |WindowsServer 2019<br>빌드 17763.* |지원 `hyperv` 격리|
+|Windows Server, 버전 1803<br>빌드 17134.* |Windows 10, 버전 1809<br>빌드 17763.* |지원 `hyperv` 격리|
+|WindowsServer 2019<br>빌드 17763.* |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|WindowsServer 2019<br>빌드 17763.* |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음
+|WindowsServer 2019<br>빌드 17763.* |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
+|WindowsServer 2019<br>빌드 17763.* |Windows Server, 버전 1803<br>빌드 17134.* |지원되지 않음|
+|WindowsServer 2019<br>빌드 17763.* |Windows 10, 버전 1803<br>빌드 17134.* |지원되지 않음|
+|WindowsServer 2019<br>빌드 17763.* |WindowsServer 2019<br>빌드 17763.* |지원 `process` 또는 `hyperv` 격리|
+|WindowsServer 2019<br>빌드 17763.* |Windows 10, 버전 1809<br>빌드 17763.* |지원 `hyperv` 격리|
 
+## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 이미지 버전을 사용 하 여 일치 하는 컨테이너 호스트 버전
 
-<table>
-    <tr>
-    <th style="background-color:#BBDEFB">컨테이너 OS 버전</th>
-    <th span='6' style="background-color:#DCEDC8">호스트 OS 버전</th>
-    </tr>
-    <tr>
-        <td/>
-        <td style="background-color:#F1F8E9"><b>WindowsServer 2016</b><br/>빌드: 14393.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows 10 1609, 1703</b><br/>빌드: 14393.*, 15063.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows Server 버전 1709</b><br/>빌드 16299.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows 10 Fall Creators Update</b><br/>빌드 16299.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows Server 버전 1803</b><br/>빌드 17134.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows 10 버전 1803</b><br/>빌드 17134.*</td>
-        <td style="background-color:#F1F8E9"><b>WindowsServer 2019</b><br/>빌드 17763.*</td>
-        <td style="background-color:#F1F8E9"><b>Windows 10 버전 1809</b><br/>빌드 17763.*</td>
-    </tr>
-    <tr>
-        <td style="background-color:#E3F2FD"><b>WindowsServer 2016</b><br/>빌드: 14393.*</td>
-        <td>지원<br/> `process` 또는 `hyperv` 격리</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-    </tr>
-    <tr>
-        <td style="background-color:#E3F2FD"><b>Windows Server 버전 1709</b><br/>빌드 16299.*</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원<br/> `process` 또는 `hyperv` 격리</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-    </tr>
-    <tr>
-        <td style="background-color:#E3F2FD"><b>Windows Server 버전 1803</b><br/>빌드 17134.*</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원<br/> `process` 또는 `hyperv` 격리</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-    </tr>
-    <tr>
-        <td style="background-color:#E3F2FD"><b>WindowsServer 2019</b><br/>빌드 17763.*</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원되지 않음</td>
-        <td>지원<br/> `process` 또는 `hyperv` 격리</td>
-        <td>지원<br/> `hyperv` 격리만</td>
-    </tr>
-</table>               
-
-## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 호스트 버전과 컨테이너 이미지 버전 일치
 ### <a name="windows-server-containers"></a>Windows Server 컨테이너
-Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유하기 때문에 컨테이너의 기본 이미지는 호스트의 기본 이미지와 일치해야 합니다.  버전이 다른 경우 컨테이너는 시작할 수 있지만 일부 기능은 사용하지 못할 수 있습니다. Windows 운영 체제에는 주 버전, 부 버전, 빌드 및 수정의 네 가지 수준의 버전이 있습니다(예: 10.0.14393.103). 빌드 번호(예: 14393)는 버전 1709, 1803, Fall Creators Update 등 OS의 새 버전이 게시되는 경우에만 변경됩니다. 수정 번호(예: 103)는 Windows 업데이트가 적용되면 업데이트됩니다.
-#### <a name="build-number-new-release-of-windows"></a>빌드 번호(Windows의 새 릴리스)
-컨테이너 호스트와 컨테이너 이미지의 빌드 번호가 다르면 Windows Server 컨테이너 시작이 차단됩니다. 예를 들면 10.0.14393.*(Windows Server 2016) 및 10.0.16299.*(Windows Server 버전 1709)입니다.  
-#### <a name="revision-number-patching"></a>수정 번호(패치)
-컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다르더라도 Windows Server 컨테이너 시작이 차단되지 _않습니다_. 예를 들면 10.0.14393.1914(KB4051033이 적용된 Windows Server 2016) 및 10.0.14393.1944(KB4053579가 적용된 Windows Server 2016)입니다.  
-Windows Server 2016 기반 호스트/이미지의 경우 컨테이너 이미지의 수정이 지원되는 구성에 있는 호스트와 일치해야 합니다.  Windows Server 버전 1709부터 이것이 더 이상 적용되지 않으며 호스트와 컨테이너 이미지가 수정과 일치하지 않아도 됩니다.  항상 시스템을 최신 패치와 업데이트로 최신 상태로 유지하는 것이 좋습니다.
+
+Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유 하기 때문에 컨테이너의 기본 이미지는 호스트 일치 해야 합니다. 버전이 서로 다르면 컨테이너 시작할 수는 있지만 완전 기능적 보장 되지 않습니다. Windows 운영 체제에 네 가지 수준의 버전이: 주 버전, 부 버전, 빌드 및 수정 합니다. 예를 들어 버전 10.0.14393.103 10의 주 버전, 부 버전 0, 14393의 빌드 번호 및 103의 수정 번호 것입니다. 빌드 번호는 OS의 새 버전이 게시 되는 버전 1709, 1803, Fall Creators Update 및 등 때에 변경 됩니다. 수정 번호는 Windows 업데이트가 적용되면 업데이트됩니다.
+
+#### <a name="build-number-new-release-of-windows"></a>빌드 번호 (Windows의 새 릴리스)
+
+Windows Server 컨테이너는 컨테이너 호스트와 컨테이너 이미지의 빌드 번호가 다른 경우 시작이 차단 됩니다. 예를 들어, 컨테이너 호스트 버전 10.0.14393. *는 (Windows Server 2016) 및 컨테이너 이미지는 버전 10.0.16299. * (Windows Server 버전 1709) 컨테이너 시작 되지 않습니다.  
+
+#### <a name="revision-number-patching"></a>수정 번호 (패치)
+
+Windows Server 컨테이너와 컨테이너 호스트와 컨테이너 이미지의 수정 버전 번호가 다르면 시작 차단 되지 않습니다. 예를 들어 컨테이너 호스트는 버전 10.0.14393.1914 (k b 4051033이 적용 된 Windows Server 2016) 컨테이너 이미지는 버전 10.0.14393.1944 (k b 4053579가 적용 된 Windows Server 2016) 하는 경우 다음 이미지를 시작할 수 있습니다 경우에 수정 숫자는 다릅니다.
+
+Windows Server 2016 기반 호스트 또는 이미지에 대 한 컨테이너 이미지의 수정 버전에서 지원 되는 구성 되도록 호스트를 일치 해야 합니다. 그러나 호스트 또는 Windows Server 버전 1709 이상 사용 하 여 이미지에 대 한이 규칙이 적용 되지 않습니다 및 호스트와 컨테이너 이미지가 수정과 일치 하지 않아도 됩니다. 시스템을 최신 패치와 업데이트로 최신 상태로 유지 하는 것이 좋습니다.
+
 #### <a name="practical-application"></a>유용한 팁
-예제 1: 컨테이너 호스트가 KB4041691이 적용된 Windows Server 2016을 실행합니다.  이 호스트에 배포된 모든 Windows Server 컨테이너는 10.0.14393.1770 컨테이너 기본 이미지를 기반으로 해야 합니다.  KB4053579가 호스트에 적용된 경우 지원을 계속 받을 수 있도록 동시에 컨테이너 이미지를 업데이트해야 합니다.
-예제 2: 컨테이너 호스트가 KB4043961이 적용된 Windows Server 버전 1709를 실행합니다.  이 호스트에 배포된 모든 Windows Server 컨테이너는 Windows Server 버전 1709(10.0.16299) 컨테이너 기본 이미지를 기반으로 해야 하지만 호스트 KB와 일치하지 않아도 됩니다.  KB4054517가 호스트에 적용된 경우 컨테이너 이미지를 업데이트할 필요가 없지만 모든 보안 문제를 완전히 해결하기 위해 정렬되어야 합니다.
+
+예제 1: 컨테이너 호스트는 k b 4041691이 적용 된 Windows Server 2016를 실행 중입니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너 버전 10.0.14393.1770 컨테이너 기본 이미지를 기반으로 해야 합니다. K b 4053579가 호스트 컨테이너에 적용 하면 해당 호스트 컨테이너 지원 하는지 이미지 업데이트 해야 합니다.
+
+예제 2: 컨테이너 호스트는 KB4043961 적용 된 Windows Server 버전 1709 실행 중입니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너는 Windows Server 버전 1709 (10.0.16299) 컨테이너 기본 이미지를 기초로 해야 하지만 호스트 KB와 일치 하도록 필요는 없습니다. KB4054517 호스트에 적용 되는 경우 컨테이너 이미지를 계속 지원 하지만 잠재적인 보안 문제를 해결할 수를 업데이트 하는 것이 좋습니다.
+
 #### <a name="querying-version"></a>버전 쿼리
-방법 1: 버전 1709부터 cmd 프롬프트 및 `ver` 명령이 이제 수정 세부 정보를 반환합니다.
-```
+
+방법 1: 버전 1709에에서 도입 된, cmd 프롬프트 및 **ver** 명령이 이제를 반환 수정 세부 정보.
+
+```batch
 Microsoft Windows [Version 10.0.16299.125]
 (c) 2017 Microsoft Corporation. All rights reserved.
 
 C:\>ver
 
-Microsoft Windows [Version 10.0.16299.125] 
+Microsoft Windows [Version 10.0.16299.125]
 ```
-방법 2: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion 레지스트리 키를 쿼리합니다. 예:
-```
+
+방법 2: 쿼리 다음 레지스트리 키: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion
+
+예를 들면 다음과 같습니다.
+
+```batch
 C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
 ```
-또는
-```
+
+```batch
 Windows PowerShell
 Copyright (C) 2016 Microsoft Corporation. All rights reserved.
 
@@ -114,78 +98,81 @@ PS C:\Users\Administrator> (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows N
 14393.321.amd64fre.rs1_release_inmarket.161004-2338
 ```
 
-기본 이미지에서 사용하는 버전을 확인하기 위해 Docker 허브에서 태그를 검토하거나 이미지 설명에 제공된 이미지 해시 테이블을 검토할 수 있습니다.  [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정이 릴리스된 날짜가 나와 있습니다.
+어떤 버전을 확인 하려면 기본 이미지 사용 하 여 Docker 허브 또는 이미지 설명에 제공 된 이미지 해시 테이블에서 태그를 검토 합니다. [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정이 릴리스된 나열 됩니다.
 
-### <a name="hyper-v-isolation-for-containers"></a>컨테이너에 대한 Hyper-V 격리
-Hyper-V 격리를 사용하여 또는 사용하지 않고 Windows 컨테이너를 실행할 수 있습니다.  Hyper-V 격리는 최적화된 VM을 사용하여 컨테이너 주위에 안전한 경계를 만듭니다.  컨테이너와 호스트 간에 커널을 공유하는 표준 Windows 컨테이너와 달리, 격리된 각 Hyper-V 컨테이너가 고유의 Windows 커널 인스턴스를 갖습니다.  따라서 컨테이너 호스트 및 이미지의 OS 버전이 달라도 됩니다(아래 호환성 매트릭스 참조).  
+### <a name="hyper-v-isolation-for-containers"></a>컨테이너에 대 한 Hyper-v 격리
+
+또는 Hyper-v 격리 없이 Windows 컨테이너를 실행할 수 있습니다. Hyper-V 격리는 최적화된 VM을 사용하여 컨테이너 주위에 안전한 경계를 만듭니다. 컨테이너와 호스트 간에 커널을 공유 하는 표준 Windows 컨테이너와 달리 각 Hyper-v 격리 된 컨테이너에는 고유한 Windows 커널 인스턴스. 즉 컨테이너 호스트 및 이미지의 서로 다른 OS 버전을 사용할 수 있습니다 (자세한 내용은 다음 호환성 매트릭스 참조).  
 
 Hyper-V 격리를 사용하여 컨테이너를 실행하려면 간단하게 docker run 명령에 `--isolation=hyperv` 태그를 추가하기만 하면 됩니다.
 
 ## <a name="errors-from-mismatched-versions"></a>일치하지 않는 버전으로 인해 오류 발생
 
-지원되지 않은 조합을 실행하려는 경우 다음과 같은 오류가 발생합니다.
+지원 되지 않는 조합을 실행 하려는 경우 다음 오류를 볼 수 있습니다.
 
-```
+```dockerfile
 docker: Error response from daemon: container b81ed896222eb87906ccab1c3dd2fc49324eafa798438f7979b87b210906f839 encountered an error during CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101) extra info: {"SystemType":"Container","Name":"b81ed896222eb87906ccab1c3dd2fc49324eafa798438f7979b87b210906f839","Owner":"docker","IsDummy":false,"VolumePath":"\\\\?\\Volume{2443d38a-1379-4bcf-a4b7-fc6ad4cd7b65}","IgnoreFlushesDuringBoot":true,"LayerFolderPath":"C:\\ProgramData\\docker\\windowsfilter\\b81ed896222eb87906ccab1c3dd2fc49324eafa798438f7979b87b210906f839","Layers":[{"ID":"1532b584-8431-5b5a-8735-5e1b4fe9c2a9","Path":"C:\\ProgramData\\docker\\windowsfilter\\b2b88bc2a47abcc682e422507abbba9c9b6d826d34e67b9e4e3144cc125a1f80"},{"ID":"a64b8da5-cd6e-5540-bc73-d81acae6da54","Path":"C:\\ProgramData\\docker\\windowsfilter\\5caaedbced1f546bccd01c9d31ea6eea4d30701ebba7b95ee8faa8c098a6845a"}],"HostName":"b81ed896222e","MappedDirectories":[],"HvPartition":false,"EndpointList":["002a0d9e-13b7-42c0-89b2-c1e80d9af243"],"Servicing":false,"AllowUnqualifiedDNSQuery":true}.
 ```
 
-이 문제를 해결하려면 다음과 같이 할 수 있습니다.
+세 가지 방법으로이 오류를 해결할 수 있습니다.
 
-- `microsoft/nanoserver` 버전을 기반으로 컨테이너를 다시 빌드하거나 `microsoft/windowsservercore`
-- 호스트가 최신 버전인 경우 `docker run --isolation=hyperv ...`
-- 동일한 Windows 버전의 다른 호스트에서 실행을 사용합니다.
+- 올바른 버전의 기반으로 컨테이너를 다시 빌드하거나 `microsoft/nanoserver` 또는 `microsoft/windowsservercore`
+- 호스트가 최신 실행 **docker run--격리 = hyper-v...**
+- 동일한 Windows 버전을 사용 하 여 다른 호스트에서 컨테이너를 실행 합니다.
 
-## <a name="choosing-container-os-versions"></a>컨테이너 OS 버전 선택
+## <a name="choose-which-container-os-version-to-use"></a>컨테이너 OS 버전을 사용 하 여 선택
 
-> 참고: "최신" 태그는 Windows Server 2016, 현재 [LTSC 제품](https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview)과 함께 업데이트됩니다. 컨테이너 이미지가 Windows Server 버전 1709 릴리스와 일치시키려면 다음 내용을 읽어보세요.
+>[!NOTE]
+>"최신" 태그는 Windows Server 2016, 현재 [장기 서비스 채널 제품](https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview)함께 업데이트 됩니다. 다음 지침은 Windows Server 버전 1709 릴리스와 일치 하는 컨테이너 이미지에 대 한 것입니다.
 
-사용자의 목적에 맞는 필요한 컨테이너 OS 버전이 무엇인지 알아야 합니다. Windows Server 버전 1709를 사용 중인데 이 버전에 대한 최신 패치를 얻으려면 원하는 기본 OS 컨테이너 이미지 버전을 지정할 때 "1709"라는 태그를 사용해야 합니다.
+컨테이너에 대 한 사용 해야 하는 버전을 알고 있어야 합니다. 예를 들어 Windows Server 버전 1709 사용 하는 것에 대 한 최신 패치를 원하는 경우 태그 사용 해야 `1709` 같이 원하는 기본 OS 컨테이너 이미지의 버전을 지정 하는 경우:
 
-``` Dockerfile
+``` dockerfile
 FROM microsoft/windowsservercore:1709
 ...
 ```
 
-그러나 Windows Server 버전 1709의 특정 패치를 원하는 경우 태그에 KB 번호를 지정할 수 있습니다. 예를 들어 Windows Server 버전 1709에서 Nano Server 기본 OS 컨테이너 이미지를 원하는 경우, 여기에 KB4043961이 적용되도록 지정할 수 있습니다.
+그러나 Windows Server 버전 1709의 특정 패치를 원하는 경우 태그에 KB 번호를 지정할 수 있습니다. 예를 들어 Windows Server에 적용 된 4043961 사용 하 여 버전 1709에서 Nano 서버 기본 OS 컨테이너 이미지를 가져오려면, 사용자 지정 하는 것 같이:
 
-``` Dockerfile
+``` dockerfile
 FROM microsoft/nanoserver:1709_KB4043961
 ...
 ```
 
-Windows Server 2016에서 Nano Server 기본 OS 컨테이너 이미지가 필요한 경우 "최신"이라는 태그를 사용하여 이러한 기본 OS 컨테이너 이미지의 최신 버전을 얻을 수도 있습니다.
+Windows Server 2016에서 Nano 서버 기본 OS 컨테이너 이미지에 필요 하면 "최신" 이라는 태그를 사용 하 여 이러한 기본 OS 컨테이너 이미지의 최신 버전을 가져올 수 있습니다.
 
-``` Dockerfile
+``` dockerfile
 FROM microsoft/nanoserver
 ...
 ```
-태그에 OS 버전을 지정하여 이전에 사용했던 스키마에 필요한 동일한 패치를 계속 지정할 수도 있습니다.
 
-``` Dockerfile
+또한 태그에 OS 버전을 지정 하 여 이전에 사용 했던 스키마를 사용 하 여 필요한 동일한 패치를 지정할 수 있습니다.
+
+``` dockerfile
 FROM microsoft/nanoserver:10.0.14393.1770
 ...
 ```
 
 ## <a name="matching-versions-using-docker-swarm"></a>Docker Swarm을 사용하여 버전 일치시키기
 
-현재 Docker Swarm에는 컨테이너가 동일한 버전의 호스트 매칭에 사용하는 Windows 버전과 일치시키는 기본 제공 방식은 없습니다. 최신 컨테이너를 사용하도록 서비스가 업데이트되면 성공적으로 실행됩니다.
+현재 docker Swarm의 컨테이너 호스트와 동일한 버전에 사용 하는 Windows 버전과 일치 하는 기본 제공 방법이 필요는 없습니다. 최신 컨테이너를 사용 하 여 서비스를 업데이트 하면 성공적으로 실행 됩니다.
 
-잠시 동안 다양한 Windows 버전을 실행해야 하는 경우 사용할 수 있는 접근 방식이 2가지 있습니다.  항상 Hyper-V 격리를 사용하거나 레이블 상수를 사용하도록 Windows 호스트를 구성합니다.
+수행할 수 있는 접근 방식이 2 가지 오랜 시간에 대 한 여러 버전의 Windows 실행 해야 하는 경우: 항상 Hyper-v 격리를 사용 하거나 레이블 상수를 사용 하 여 Windows 호스트를 구성 하는 중입니다.
 
 ### <a name="finding-a-service-that-wont-start"></a>시작하지 않는 서비스 찾기
 
-서비스가 시작되지 않으면 `MODE`는 `replicated`지만 `REPLICAS`는 0에서 문제가 발생합니다. OS 버전 문제인지 확인하려면 다음 명령을 사용하세요.
+서비스가 시작 되지 않으면 하는 `MODE` 는 `replicated` 하지만 `REPLICAS` 0에서 문제가 됩니다. OS 버전 문제 인지를 보려면 다음 명령을 실행 합니다.
 
- `docker service ls` - 서비스 이름을 찾습니다.
+**Docker 서비스 ls** 서비스 이름을 찾습니다를 실행 합니다.
 
-```
+```dockerfile
 ID                  NAME                MODE                REPLICAS            IMAGE                                             PORTS
 xh6mwbdq2uil        angry_liskov        replicated          0/1                 microsoft/iis:windowsservercore-10.0.14393.1715
 ```
 
-`docker service ps <name>` - 상태 및 최근 시도 정보를 가져옵니다.
+상태 및 최근 시도 정보를 가져오려면 **docker 서비스 ps (서비스 이름)** 실행 합니다.
 
-```
+```dockerfile
 C:\Program Files\Docker>docker service ps angry_liskov
 ID                  NAME                 IMAGE                                             NODE                DESIRED STATE       CURRENT STATE               ERROR                              PORTS
 klkbhn742lv0        angry_liskov.1       microsoft/iis:windowsservercore-10.0.14393.1715   WIN-BSTMQDRQC2E     Ready               Ready 3 seconds ago
@@ -196,24 +183,22 @@ ytnnv80p03xx         \_ angry_liskov.1   microsoft/iis:windowsservercore-10.0.14
 xeqkxbsao57w         \_ angry_liskov.1   microsoft/iis:windowsservercore-10.0.14393.1715   WIN-BSTMQDRQC2E     Shutdown            Failed about a minute ago   "starting container failed: co…"
 ```
 
-"컨테이너 시작 실패: ..."와 같은 메시지가 표시되면 다음 내용을 포함하는 전체 오류가 나타날 수 있습니다. `docker service ps --no-trunc <container name>`
+표시 `starting container failed: ...`, **docker 서비스 ps-아니요-trunc (컨테이너 이름)를**사용 하 여 전체 오류가 나타날 수 있습니다.
 
-
-```
+```dockerfile
 C:\Program Files\Docker>docker service ps --no-trunc angry_liskov
 ID                          NAME                 IMAGE                                                                                                                     NODE                DESIRED STATE       CURRENT STATE                     ERROR                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          PORTS
 dwsd6sjlwsgic5vrglhtxu178   angry_liskov.1       microsoft/iis:windowsservercore-10.0.14393.1715@sha256:868bca7e89e1743792e15f78edb5a73070ef44eae6807dc3f05f9b94c23943d5   WIN-BSTMQDRQC2E     Running             Starting less than a second ago                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 y5blbdum70zoh1f6uhx5nxsfv    \_ angry_liskov.1   microsoft/iis:windowsservercore-10.0.14393.1715@sha256:868bca7e89e1743792e15f78edb5a73070ef44eae6807dc3f05f9b94c23943d5   WIN-BSTMQDRQC2E     Shutdown            Failed 39 seconds ago             "starting container failed: container e7b5d3adba7e510569c18d8e55f7c689d7cb92be40a516c91b363e27f84604d0 encountered an error during CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101) extra info: {"SystemType":"Container","Name":"e7b5d3adba7e510569c18d8e55f7c689d7cb92be40a516c91b363e27f84604d0","Owner":"docker","VolumePath":"\\\\?\\Volume{2443d38a-1379-4bcf-a4b7-fc6ad4cd7b65}","IgnoreFlushesDuringBoot":true,"LayerFolderPath":"C:\\ProgramData\\docker\\windowsfilter\\e7b5d3adba7e510569c18d8e55f7c689d7cb92be40a516c91b363e27f84604d0","Layers":[{"ID":"bcf2630f-ea95-529b-b33c-e5cdab0afdb4","Path":"C:\\ProgramData\\docker\\windowsfilter\\200235127f92416724ae1d53ed3fdc86d78767132d019bdda1e1192ee4cf3ae4"},{"ID":"e3ea10a8-4c2f-5b93-b2aa-720982f116f6","Path":"C:\\ProgramData\\docker\\windowsfilter\\0ccc9fa71a9f4c5f6f3bc8134fe3533e454e09f453de662cf99ab5d2106abbdc"},{"ID":"cff5391f-e481-593c-aff7-12e080c653ab","Path":"C:\\ProgramData\\docker\\windowsfilter\\a49576b24cd6ec4a26202871c36c0a2083d507394a3072186133131a72601a31"},{"ID":"499cb51e-b891-549a-b1f4-8a25a4665fbd","Path":"C:\\ProgramData\\docker\\windowsfilter\\fdf2f52c4323c62f7ff9b031c0bc3af42cf5fba91098d51089d039fb3e834c08"},{"ID":"1532b584-8431-5b5a-8735-5e1b4fe9c2a9","Path":"C:\\ProgramData\\docker\\windowsfilter\\b2b88bc2a47abcc682e422507abbba9c9b6d826d34e67b9e4e3144cc125a1f80"},{"ID":"a64b8da5-cd6e-5540-bc73-d81acae6da54","Path":"C:\\ProgramData\\docker\\windowsfilter\\5caaedbced1f546bccd01c9d31ea6eea4d30701ebba7b95ee8faa8c098a6845a"}],"HostName":"e7b5d3adba7e","HvPartition":false,"EndpointList":["298bb656-8800-4948-a41c-1b0500f3d94c"],"AllowUnqualifiedDNSQuery":true}"
 ```
 
-동일한 오류를 보여주는 내용 `CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101)`
-
+이 동일한 오류를 `CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101)`.
 
 ### <a name="fix---update-the-service-to-use-a-matching-version"></a>수전 - 일치하는 버전을 사용하도록 서비스 업데이트
 
-Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 본인이 작성하지 않은 이미지를 사용하는 서비스가 있는 파일을 만들 때 참조를 적절히 업데이트하려는 경우가 있습니다. 아래 내용을 참조하세요.
+Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 구성 파일을 만들지 않은 이미지를 사용 하는 서비스 수 있는 경우, 참조를 적절히 업데이트 해야 합니다. 예를 들면 다음과 같습니다.
 
-``` docker-compose
+``` yaml
 version: '3'
 
 services:
@@ -222,8 +207,9 @@ services:
 ...
 ```
 
-나머지 하나는 가리키고 있는 이미지가 본인이 직접 만든 이미지인 다음과 같은 경우(예: contoso/myimage)입니다.
-``` docker-compose
+입니다. 가리키는 이미지 직접 만든 이미지인 하는 경우 (예를 들어 contoso/myimage):
+
+```yaml
 version: '3'
 
 services:
@@ -231,94 +217,99 @@ services:
     image: contoso/myimage
 ...
 ```
-이 경우 이전 섹션에 설명된 메서드를 사용하여 docker-compose 줄 대신 dockerfile을 수정할 수 있습니다.
+
+이 경우 docker-compose 줄 대신 dockerfile을 수정할 [버전으로 인해 오류](#errors-from-mismatched-versions) 에 설명 된 메서드를 사용 해야 합니다.
 
 ### <a name="mitigation---use-hyper-v-isolation-with-docker-swarm"></a>마이그레이션 - Docker Swarm을 통해 Hyper-V 격리 사용
 
-컨테이너 단위로 Hyper-V 격리를 사용하여 지원하는 제안이 있지만 코드가 아직 완성되지 않았습니다. [GitHub](https://github.com/moby/moby/issues/31616)에서 진행 상황을 확인할 수 있습니다. 코드가 완성될 때까지 호스트는 항상 Hyper-V 격리로 실행되도록 구성해야 합니다.
+각 컨테이너 단위로 Hyper-v 격리를 사용 하 여 지원 하기 위해 원하는 제안이 있지만 코드가 아직 완성 되지 않습니다. [GitHub](https://github.com/moby/moby/issues/31616)에서 진행 상황을 확인할 수 있습니다. 코드가 완성될 때까지 호스트는 항상 Hyper-V 격리로 실행되도록 구성해야 합니다.
 
 이렇게 하려면 Docker 서비스 구성을 변경한 다음 Docker 엔진을 다시 시작해야 합니다.
 
 1. 편집 `C:\ProgramData\docker\config\daemon.json`
 2. 다음 줄 추가 `"exec-opts":["isolation=hyperv"]`
 
-참고: daemon.json 파일은 기본적으로 존재하지 않습니다. 디렉터리를 미리 보는 경우라면 파일을 만들어야 합니다. 그런 다음 아래 내용에 복사할 수 있습니다.
+    >[!NOTE]
+    >Daemon.json 파일은 기본적으로 존재 하지 않습니다. 디렉터리를 미리 보는 경우라면 파일을 만들어야 합니다. 그런 다음 다음에 복사 합니다.
 
-```JSON
-{
-    "exec-opts":["isolation=hyperv"]
-}
-```
-파일을 닫고 저장합니다. 그런 다음 docker 엔진을 다시 시작합니다.
+    ```JSON
+    {
+        "exec-opts":["isolation=hyperv"]
+    }
+    ```
 
-```PowerShell
-Stop-Service docker
-Start-Service docker
-```
+3. 닫습니다 파일을 저장 하 고 PowerShell에서 다음 cmdlet을 실행 하 여 docker 엔진을 다시 시작 합니다.
 
-서비스를 다시 시작한 후 컨테이너를 실행합니다. 컨테이너가 실행되면 컨테이너를 검사하여 컨테이너의 격리 수준을 확인할 수 있습니다.
+    ```powershell
+    Stop-Service docker
+    Start-Service docker
+    ```
 
-```PowerShell
-docker inspect --format='{{json .HostConfig.Isolation}}' $instanceNameOrId
-```
+4. 서비스를 다시 시작 된 후 컨테이너를 실행 합니다. 컨테이너가 실행 되 면 다음 cmdlet 사용 하 여 컨테이너를 검사 하 여 컨테이너의 격리 수준을 확인할 수 있습니다.
+
+    ```powershell
+    docker inspect --format='{{json .HostConfig.Isolation}}' $instanceNameOrId
+    ```
 
 "process" 또는 "hyperv"를 반환합니다. daemon.json을 수정하여 위에 설명한 대로 설정한 경우 후자로 표시되어야 합니다.
 
 ### <a name="mitigation---use-labels-and-constraints"></a>완화 방법: 레이블 및 제약 조건 사용
 
-**1단계 각 노드에 레이블 추가**
+버전을 일치 시키는 레이블 및 제약 조건을 사용 하는 방법은 다음과 같습니다.
 
-각 노드에서 `OS` 및 `OsVersion`이라는 2개의 레이블을 추가합니다. 로컬로 실행하고 있다고 가정하지만 원격 호스트에서 설정하도록 수정할 수 있습니다.
+1. 각 노드에 레이블을 추가 합니다.
 
-```powershell
-docker node update --label-add OS="windows" $ENV:COMPUTERNAME
-docker node update --label-add OsVersion="$((Get-ComputerInfo).OsVersion)" $ENV:COMPUTERNAME
-```
+    각 노드에서 2 개의 레이블을 추가: `OS` 및 `OsVersion`. 로컬로 실행하고 있다고 가정하지만 원격 호스트에서 설정하도록 수정할 수 있습니다.
 
-이후에 `docker node inspect`를 사용하여 이를 검사할 수 있습니다. 이렇게 하면 추가된 새 레이블이 표시됩니다.
+    ```powershell
+    docker node update --label-add OS="windows" $ENV:COMPUTERNAME
+    docker node update --label-add OsVersion="$((Get-ComputerInfo).OsVersion)" $ENV:COMPUTERNAME
+    ```
 
-```
-        "Spec": {
-            "Labels": {
-                "OS": "windows",
-                "OsVersion": "10.0.16296"
-            },
-            "Role": "manager",
-            "Availability": "active"
-        }
-```
+    그런 다음, 새로 추가 된 레이블이 표시 해야 하는 **docker 노드 검사** 명령을 실행 하 여 확인할 수 있습니다.
 
-**2단계 - 서비스 제약 조건 추가**
+    ```yaml
+           "Spec": {
+                "Labels": {
+                   "OS": "windows",
+                   "OsVersion": "10.0.16296"
+               },
+                "Role": "manager",
+                "Availability": "active"
+            }
+    ```
 
-각 노드에 레이블이 지정되었으면 서비스 배치를 결정하는 제약 조건을 업데이트할 수 있습니다. 아래 예에서는 "contoso_service"를 실제 서비스 이름과 대체합니다.
+2. 서비스 제약 조건을 추가 합니다.
 
-```
-docker service update \
-    --constraint-add "node.labels.OS == windows" \
-    --constraint-add "node.labels.OsVersion == $((Get-ComputerInfo).OsVersion)" \
-    contoso_service
-```
+    각 노드에 레이블이 지정 했으면 이제는 서비스의 배치를 결정 하는 제약 조건을 업데이트할 수 있습니다. 다음 예제에서는 "contoso_service를"를 실제 서비스의 이름으로 바꿉니다.
 
-이렇게 하면 노드가 실행될 수 있는 위치가 강제하고 제한됩니다.
+    ```powershell
+    docker service update \
+        --constraint-add "node.labels.OS == windows" \
+        --constraint-add "node.labels.OsVersion == $((Get-ComputerInfo).OsVersion)" \
+        contoso_service
+    ```
 
-서비스 제약 조건을 방법에 대한 자세한 내용은 서비스 생성 [참조](https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-constraints-constraint)를 확인하세요.
+    이렇게 하면 노드가 실행될 수 있는 위치가 강제하고 제한됩니다.
 
+서비스 제약 조건을 사용 하는 방법에 대 한 자세한 내용은 확인 [서비스 만들기 참조](https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-constraints-constraint)하세요.
 
 ## <a name="matching-versions-using-kubernetes"></a>Kubernetes를 통한 버전 일치
 
-포드가 Kubernetes에 예약되어 있는 경우 동일한 문제가 발생할 수 있습니다. 다음과 유사한 전략을 사용하여 이러한 문제를 방지할 수 있습니다.
+포드가 Kubernetes에 예약 되어 때 [Docker Swarm을 사용 하 여 일치 하는 버전](#matching-versions-using-docker-swarm) 에 설명 된 동일한 문제가 발생할 수 있습니다. 유사한 전략을 사용 하 여이 문제를 방지할 수 있습니다.
 
-- 배포 및 제작 시 동일한 OS 버전을 기반으로 컨테이너를 다시 빌드합니다. - 위의 **컨테이너 OS 버전 선택** 참조
-- Windows Server 2016 및 Windows Server 버전 1709 노드가 동일한 클러스터에 있는 경우 노드 레이블 및 nodeSelectors를 사용하여 포드가 호환되는 노드에 예정되어 있는지 확인합니다.
+- 개발 및 프로덕션에서 동일한 OS 버전을 기반으로 컨테이너를 다시 빌드하십시오. 자세한 내용은 [컨테이너 OS 버전을 사용할지 선택](#choose-which-container-os-version-to-use)참조 하세요.
+- 노드 레이블 및 nodeSelectors를 사용 하 여 Windows Server 2016 및 Windows Server 버전 1709 노드가 동일한 클러스터에 있는 경우 포드가 호환 되는 노드에 예정 되어 있는지 확인 하려면
 - OS 버전을 기반으로 별도의 클러스터를 사용합니다.
-
 
 ### <a name="finding-pods-failed-on-os-mismatch"></a>OS 불일치에서 실패한 포드 찾기
 
-OS 버전이 불일치하는 노드에 예정된 포드가 배포에 포함되었으며 Hyper-V 격리를 사용하도록 설정되지 않는 경우입니다. 동일한 오류가 이벤트에 표시되며 `kubectl describe pod <podname>`와 함께 나열됩니다. 몇 번의 시도 후 포드 상태가 다음과 같이 나타날 것입니다. `CrashLoopBackOff`
+이 경우 Hyper-v 격리 사용 하지 않고 일치 하지 않는 OS 버전을 하는 노드에 예정 된 포드가 배포에 포함 합니다.
+
+동일한 오류가 이벤트에 표시되며 `kubectl describe pod <podname>`와 함께 나열됩니다. 몇 번의 시도 후 포드 상태가 것입니다. `CrashLoopBackOff`.
 
 ```
-$ kubectl -n plang describe po fabrikamfiber.web-789699744-rqv6p
+$ kubectl -n plang describe pod fabrikamfiber.web-789699744-rqv6p
 
 Name:           fabrikamfiber.web-789699744-rqv6p
 Namespace:      plang
@@ -377,12 +368,11 @@ Events:
   32m           11s             139     kubelet, 38519acs9011   spec.containers{fabrikamfiberweb}       Warning         BackOff                 Back-off restarting failed container
 ```
 
+### <a name="mitigation---using-node-labels-and-nodeselector"></a>완화 방법-노드 레이블 및 nodeSelector 사용
 
-### <a name="mitigation---using-node-labels--nodeselector"></a>완화 방법 - 노드 레이블 및 NodeSelector 사용
+모든 노드의 목록을 가져오려면 **kubectl 노드를 가져오지** 를 실행 합니다. 그 후 자세한 내용을 **kubectl 설명 노드 (노드 이름)을** 실행할 수 있습니다.
 
-`kubectl get node` 는 모든 노드 목록을 가져오고, `kubectl describe node <nodename>`을 사용하여 자세한 정보를 얻을 수 있습니다. 
-
-이 경우 다른 버전을 실행하는 두 개의 Windows 노드가 있습니다.
+다음 예제에서는 두 개의 Windows 노드가 서로 다른 버전을 실행 중입니다.
 
 ```
 $ kubectl get node
@@ -448,132 +438,135 @@ System Info:
 
 ```
 
+이 예제를 사용 하 여 버전과 일치 하는 방법을 보여 해 보겠습니다.
 
-1. 노드 이름과 시스템 정보의 `Kernel Version`을 기록해 둡니다.
+1. 각 노드 이름을 기록해 및 `Kernel Version` 시스템 정보에서.
 
-이름         | 버전
--------------|--------------------------------------------------------
-38519acs9010 | 14393.1715.amd64fre.rs1_release_inmarket.170906-1810
-38519acs9011 | 16299.0.amd64fre.rs3_release.170922-1354
+    이 예제에서는 다음과 같은 정보가 표시 됩니다.
+
+    이름         | 버전
+    -------------|--------------------------------------------------------
+    38519acs9010 | 14393.1715.amd64fre.rs1_release_inmarket.170906-1810
+    38519acs9011 | 16299.0.amd64fre.rs3_release.170922-1354
+
+2. 레이블을 `beta.kubernetes.io/osbuild`라는 각 노드에 추가합니다. Windows Server 2016 주 및 부 버전 (이 예제의 14393.1715) Hyper-v 격리를 지원 해야 합니다. Windows Server 버전 1709는 주 버전 (이 예제의 16299)와 일치 하도록 하기만 합니다.
+
+    이 예제에서는 레이블을 추가 하는 명령은 다음과 같이 표시 됩니다.
+
+    ```
+    $ kubectl label node 38519acs9010 beta.kubernetes.io/osbuild=14393.1715
 
 
+    node "38519acs9010" labeled
+    $ kubectl label node 38519acs9011 beta.kubernetes.io/osbuild=16299
 
-2. 레이블을 `beta.kubernetes.io/osbuild`라는 각 노드에 추가합니다. Hyper-V 격리 없이 Windows Server 2016을 지원하려면 주 버전 및 부 버전(14393.1715)이 모두 필요합니다. Windows Server 버전 1709만 주 버전(16299)과 일치해야 합니다.
+    node "38519acs9011" labeled
 
-위 샘플에서 가져온 아래 내용을 참조하세요.
+    ```
 
-```
-$ kubectl label node 38519acs9010 beta.kubernetes.io/osbuild=14393.1715
+3. **Kubectl get-노드 레이블 표시를**실행 하 여 레이블이 있는지 확인 합니다.
 
+    이 예제에서는 출력은 다음과 같습니다.
 
-node "38519acs9010" labeled
-$ kubectl label node 38519acs9011 beta.kubernetes.io/osbuild=16299
+    ```
+    $ kubectl get nodes --show-labels
 
-node "38519acs9011" labeled
+    NAME                        STATUS                     AGE       VERSION                    LABELS
+    38519acs9010                Ready,SchedulingDisabled   3d        v1.7.7-7+e79c96c8ff2d8e    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=windows,beta.kubernetes.io/osbuild=14393.1715,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=38519acs9010
+    38519acs9011                Ready                      3d        v1.7.7-25+bc3094f1d650a2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_DS1_v2,beta.kubernetes.io/os=windows,beta.kubernetes.io/osbuild=16299,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=38519acs9011
+    k8s-linuxpool1-38519084-0   Ready                      3d        v1.7.7                     agentpool=linuxpool1,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=k8s-linuxpool1-38519084-0,kubernetes.io/role=agent
+    k8s-master-38519084-0       Ready                      3d        v1.7.7                     beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=k8s-master-38519084-0,kubernetes.io/role=master
+    ```
 
-```
+4. 배포에 노드 선택기를 추가 합니다. 이 예제에서는 경우 추가 하겠습니다는 `nodeSelector` 사용 하 여 컨테이너 spec에 `beta.kubernetes.io/os` = windows 및 `beta.kubernetes.io/osbuild` = 14393 또는 16299 컨테이너에서 사용 되는 기본 OS와 일치 하도록 합니다.
 
-3. 다음 줄을 사용하여 레이블이 있는지 확인합니다. `kubectl get nodes --show-labels`
+    Windows Server 2016용으로 만들어진 컨테이너를 실행하는 전체 샘플 코드는 다음과 같습니다.
 
-```
-$ kubectl get nodes --show-labels
-
-NAME                        STATUS                     AGE       VERSION                    LABELS
-38519acs9010                Ready,SchedulingDisabled   3d        v1.7.7-7+e79c96c8ff2d8e    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=windows,beta.kubernetes.io/osbuild=14393.1715,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=38519acs9010
-38519acs9011                Ready                      3d        v1.7.7-25+bc3094f1d650a2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_DS1_v2,beta.kubernetes.io/os=windows,beta.kubernetes.io/osbuild=16299,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=38519acs9011
-k8s-linuxpool1-38519084-0   Ready                      3d        v1.7.7                     agentpool=linuxpool1,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=k8s-linuxpool1-38519084-0,kubernetes.io/role=agent
-k8s-master-38519084-0       Ready                      3d        v1.7.7                     beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=k8s-master-38519084-0,kubernetes.io/role=master
-```
-
-4. 배포에 노드 선택기 추가
-
-`beta.kubernetes.io/os` = windows 및 `beta.kubernetes.io/osbuild` = 14393.* 또는 16299를 사용하여 컨테이너 spec에 `nodeSelector`를 추가해 컨테이너에서 사용되는 기본 OS를 일치시킵니다.
-
-Windows Server 2016용으로 만들어진 컨테이너를 실행하는 전체 샘플 코드는 다음과 같습니다.
-
-```yaml
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose-combined.yml
-    kompose.version: 1.2.0 (99f88ef)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: fabrikamfiber.web
-  name: fabrikamfiber.web
-spec:
-  replicas: 1
-  strategy: {}
-  template:
+    ```yaml
+    apiVersion: extensions/v1beta1
+    kind: Deployment
     metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose-combined.yml
+        kompose.version: 1.2.0 (99f88ef)
       creationTimestamp: null
       labels:
         io.kompose.service: fabrikamfiber.web
+      name: fabrikamfiber.web
     spec:
-      containers:
-      - image: patricklang/fabrikamfiber.web:latest
-        name: fabrikamfiberweb
-        ports:
-        - containerPort: 80
-        resources: {}
-      restartPolicy: Always
-      nodeSelector:
-        "beta.kubernetes.io/os": windows
-        "beta.kubernetes.io/osbuild": "14393.1715"
-status: {}
-```
+      replicas: 1
+      strategy: {}
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            io.kompose.service: fabrikamfiber.web
+        spec:
+          containers:
+          - image: patricklang/fabrikamfiber.web:latest
+            name: fabrikamfiberweb
+            ports:
+            - containerPort: 80
+            resources: {}
+          restartPolicy: Always
+          nodeSelector:
+            "beta.kubernetes.io/os": windows
+            "beta.kubernetes.io/osbuild": "14393.1715"
+    status: {}
+    ```
 
-이제 포드는 업데이트된 배포에서 시작할 수 있습니다. 노드 선택기가 `kubectl describe pod <podname>`에도 표시되므로 노드 선택기가 추가되었음을 확인할 수 있습니다.
+    이제 포드는 업데이트된 배포에서 시작할 수 있습니다. 노드 선택기에도 표시 `kubectl describe pod <podname>`이므로 추가 되었는지 확인 하려면 해당 명령을 실행할 수 있습니다.
 
-```
-$ kubectl -n plang describe po fa
+    예를 들어 출력은 다음과 같습니다.
 
-Name:           fabrikamfiber.web-1780117715-5c8vw
-Namespace:      plang
-Node:           38519acs9010/10.240.0.4
-Start Time:     Tue, 10 Oct 2017 01:43:28 +0000
-Labels:         io.kompose.service=fabrikamfiber.web
-                pod-template-hash=1780117715
-Annotations:    kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"plang","name":"fabrikamfiber.web-1780117715","uid":"6a07aaf3-ad5c-11e7-b16e-000d3...
-Status:         Running
-IP:             10.244.1.84
-Created By:     ReplicaSet/fabrikamfiber.web-1780117715
-Controlled By:  ReplicaSet/fabrikamfiber.web-1780117715
-Containers:
-  fabrikamfiberweb:
-    Container ID:       docker://c94594fb53161f3821cf050d9af7546991aaafbeab41d333d9f64291327fae13
-    Image:              patricklang/fabrikamfiber.web:latest
-    Image ID:           docker-pullable://patricklang/fabrikamfiber.web@sha256:562741016ce7d9a232a389449a4fd0a0a55aab178cf324144404812887250ead
-    Port:               80/TCP
-    State:              Running
-      Started:          Tue, 10 Oct 2017 01:43:42 +0000
-    Ready:              True
-    Restart Count:      0
-    Environment:        <none>
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-rw9dn (ro)
-Conditions:
-  Type          Status
-  Initialized   True
-  Ready         True
-  PodScheduled  True
-Volumes:
-  default-token-rw9dn:
-    Type:       Secret (a volume populated by a Secret)
-    SecretName: default-token-rw9dn
-    Optional:   false
-QoS Class:      BestEffort
-Node-Selectors: beta.kubernetes.io/os=windows
-                beta.kubernetes.io/osbuild=14393.1715
-Tolerations:    <none>
-Events:
-  FirstSeen     LastSeen        Count   From                    SubObjectPath                           Type            Reason                  Message
-  ---------     --------        -----   ----                    -------------                           --------        ------                  -------
-  5m            5m              1       default-scheduler                                               Normal          Scheduled               Successfully assigned fabrikamfiber.web-1780117715-5c8vw to 38519acs9010
-  5m            5m              1       kubelet, 38519acs9010                                           Normal          SuccessfulMountVolume   MountVolume.SetUp succeeded for volume "default-token-rw9dn"
-  5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Pulling                 pulling image "patricklang/fabrikamfiber.web:latest"
-  5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Pulled                  Successfully pulled image "patricklang/fabrikamfiber.web:latest"
-  5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Created                 Created container
-  5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Started                 Started container
-```
+    ```
+    $ kubectl -n plang describe po fa
+
+    Name:           fabrikamfiber.web-1780117715-5c8vw
+    Namespace:      plang
+    Node:           38519acs9010/10.240.0.4
+    Start Time:     Tue, 10 Oct 2017 01:43:28 +0000
+    Labels:         io.kompose.service=fabrikamfiber.web
+                    pod-template-hash=1780117715
+    Annotations:    kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"plang","name":"fabrikamfiber.web-1780117715","uid":"6a07aaf3-ad5c-11e7-b16e-000d3...
+    Status:         Running
+    IP:             10.244.1.84
+    Created By:     ReplicaSet/fabrikamfiber.web-1780117715
+    Controlled By:  ReplicaSet/fabrikamfiber.web-1780117715
+    Containers:
+      fabrikamfiberweb:
+        Container ID:       docker://c94594fb53161f3821cf050d9af7546991aaafbeab41d333d9f64291327fae13
+        Image:              patricklang/fabrikamfiber.web:latest
+        Image ID:           docker-pullable://patricklang/fabrikamfiber.web@sha256:562741016ce7d9a232a389449a4fd0a0a55aab178cf324144404812887250ead
+        Port:               80/TCP
+        State:              Running
+          Started:          Tue, 10 Oct 2017 01:43:42 +0000
+        Ready:              True
+        Restart Count:      0
+        Environment:        <none>
+        Mounts:
+          /var/run/secrets/kubernetes.io/serviceaccount from default-token-rw9dn (ro)
+    Conditions:
+      Type          Status
+      Initialized   True
+      Ready         True
+      PodScheduled  True
+    Volumes:
+      default-token-rw9dn:
+        Type:       Secret (a volume populated by a Secret)
+        SecretName: default-token-rw9dn
+        Optional:   false
+    QoS Class:      BestEffort
+    Node-Selectors: beta.kubernetes.io/os=windows
+                    beta.kubernetes.io/osbuild=14393.1715
+    Tolerations:    <none>
+    Events:
+      FirstSeen     LastSeen        Count   From                    SubObjectPath                           Type            Reason                  Message
+      ---------     --------        -----   ----                    -------------                           --------        ------                  -------
+      5m            5m              1       default-scheduler                                               Normal          Scheduled               Successfully assigned fabrikamfiber.web-1780117715-5c8vw to 38519acs9010
+      5m            5m              1       kubelet, 38519acs9010                                           Normal          SuccessfulMountVolume   MountVolume.SetUp succeeded for volume "default-token-rw9dn"
+      5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Pulling                 pulling image "patricklang/fabrikamfiber.web:latest"
+      5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Pulled                  Successfully pulled image "patricklang/fabrikamfiber.web:latest"
+      5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Created                 Created container
+      5m            5m              1       kubelet, 38519acs9010   spec.containers{fabrikamfiberweb}       Normal          Started                 Started container
+    ```
