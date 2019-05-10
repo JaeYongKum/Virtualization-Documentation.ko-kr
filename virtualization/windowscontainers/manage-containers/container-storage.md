@@ -3,12 +3,12 @@ title: Windows Server 컨테이너 저장소
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
 keywords: 컨테이너, 볼륨, 저장소, 마운트, 바인딩 마운트
 author: patricklang
-ms.openlocfilehash: 7d22a149da21a3367b82f2920c189ae9a4b1c173
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 87b9c364bfdec2b445bb06caf0e9fd4d849119d4
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9574874"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620871"
 ---
 # <a name="overview"></a>개요
 
@@ -53,7 +53,7 @@ Docker 구성 파일
   ]
 ```
 > 이 방법은 Docker 빌드에 대해 작동합니다.
-Docker 구성 파일을 수정하는 것에 대한 자세한 내용은 [Docker 구성](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-docker/configure-docker-daemon#configure-docker-with-configuration-file) 설명서를 참조하세요.
+Docker 구성 파일을 수정하는 것에 대한 자세한 내용은 [Docker 구성](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon#configure-docker-with-configuration-file) 설명서를 참조하세요.
 
 
 ## <a name="persistent-volumes"></a>영구 볼륨

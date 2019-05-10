@@ -1,15 +1,20 @@
 ---
 title: Windows 컨테이너 정보
 description: Windows 컨테이너에 대해 알아봅니다.
-keywords: 'Docker, 컨테이너'
+keywords: Docker, 컨테이너
 author: taylorb-microsoft
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
+ms.openlocfilehash: bf503971ee8b4c0bbe6b9812b2f4965560ff466c
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620861"
 ---
-
 # <a name="containers-on-windows"></a>Windows의 컨테이너
 
 ## <a name="what-are-containers"></a>컨테이너 란
@@ -51,7 +56,7 @@ ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
 
 가상 컴퓨터에 익숙한 분들의 눈에는 컨테이너가 가상 컴퓨터와 매우 유사하게 보일 수 있습니다. 컨테이너는 운영 체제를 실행하며, 파일 시스템을 보유하고, 물리적 또는 가상 컴퓨터 시스템과 마찬가지로 네트워크에서 액세스할 수 있습니다. 그렇긴 하지만 컨테이너의 바탕이 되는 기술 및 개념은 가상 컴퓨터와는 상당한 차이가 있습니다.
 
-Microsoft Azure 전문가 Mark Russinovich의 [유용한 블로그 게시물](https://azure.microsoft.com/en-us/blog/containers-docker-windows-and-trends/)을 통해 이러한 차이점에 대해 자세히 알아볼 수 있습니다.
+Microsoft Azure 전문가 Mark Russinovich의 [유용한 블로그 게시물](https://azure.microsoft.com/blog/containers-docker-windows-and-trends/)을 통해 이러한 차이점에 대해 자세히 알아볼 수 있습니다.
 
 ## <a name="windows-container-types"></a>Windows 컨테이너 형식
 

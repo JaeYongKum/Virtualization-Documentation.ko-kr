@@ -8,12 +8,12 @@ ms.prod: containers
 description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
 keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: ed0f13bd429e88f05469f91c3fc691bf0188b0a2
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: fec18baa58ae6aa7d637be575548a1823a551207
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578244"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620991"
 ---
 # <a name="joining-windows-server-nodes-to-a-cluster"></a>Windows Server 노드 클러스터에 가입 #
 [Kubernetes 마스터 노드를 설정](./creating-a-linux-master.md) 하 고 [원하는 네트워크 솔루션을 선택](./network-topologies.md)했다면 가입 Windows 서버 노드 클러스터를 만들 준비가 되었습니다. 이 [Windows 노드 준비](#preparing-a-windows-node) 에 조인 하기 전에 필요합니다.
@@ -83,7 +83,7 @@ docker run microsoft/nanoserver:latest
 ![텍스트](./media/docker-run-sample.png)
 
 > [!tip]
-> 실행할 수 없으면 컨테이너 하십시오 참고: [컨테이너 이미지와 일치 하는 컨테이너 호스트 버전](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility#matching-container-host-version-with-container-image-versions)
+> 실행할 수 없으면 컨테이너 하십시오 참고: [컨테이너 이미지와 일치 하는 컨테이너 호스트 버전](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility#matching-container-host-version-with-container-image-versions)
 
 
 #### <a name="prepare-kubernetes-for-windows-directory"></a>Kubernetes에 대 한 Windows 디렉터리 준비 ####
@@ -97,12 +97,12 @@ mkdir c:\k
 Kubernetes 인증서 파일을 복사 (`$HOME/.kube/config`) [마스터를](./creating-a-linux-master.md#collect-cluster-information) `C:\k` 디렉터리입니다.
 
 > [!tip]
-> 노드 간에 config 파일을 전송 [xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy) 또는 [WinSCP](https://winscp.net/eng/download.php) 같은 도구를 사용할 수 있습니다.
+> 노드 간에 config 파일을 전송 [xcopy](https://docs.microsoft.com/windows-server/administration/windows-commands/xcopy) 또는 [WinSCP](https://winscp.net/eng/download.php) 같은 도구를 사용할 수 있습니다.
 
 #### <a name="download-kubernetes-binaries"></a>Kubernetes 바이너리를 다운로드 합니다. ####
 Kubernetes를 실행할 수 있도록 먼저 다운로드 해야 합니다 `kubectl`, `kubelet`, 및 `kube-proxy` 이진 파일입니다. 에 있는 링크에서이 다운로드할 수는 `CHANGELOG.md` 파일의 [최신 릴리스](https://github.com/kubernetes/kubernetes/releases/)합니다.
  - 예를 들어 다음은 [v1.13 노드 이진 파일](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#node-binaries)입니다.
- - [확장 보관](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) 와 같은 도구를 사용 하 여 아카이브 압축을 풀고 바이너리에 `C:\k\`.
+ - [확장 보관](https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) 와 같은 도구를 사용 하 여 아카이브 압축을 풀고 바이너리에 `C:\k\`.
 
 #### <a name="optional-setup-kubectl-on-windows"></a>(선택 사항) Windows 설치 프로그램 kubectl ####
 Windows에서 클러스터를 제어 하려는 경우를 할 수 있는 사용 하 여는 `kubectl` 명령입니다. 첫 번째 되도록 `kubectl` 외부에서 사용할 수는 `C:\k\` 디렉터리를 수정 합니다 `PATH` 환경 변수:
@@ -213,7 +213,7 @@ Windows 노드에 할당 된 IP 주소입니다. 사용할 수 있습니다 `ipc
 
 
 # [<a name="kubednsserviceip"></a>KubeDnsServiceIP](#tab/KubeDnsServiceIP)
-[Kubernetes DNS 서비스 IP](./getting-started-kubernetes-windows.md#kube-dns-def)합니다.
+[Kubernetes DNS 서비스 IP](./getting-started-kubernetes-windows.md#plan-ip-addressing-for-your-cluster)합니다.
 
 |  |  | 
 |---------|---------|

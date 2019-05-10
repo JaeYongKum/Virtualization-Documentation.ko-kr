@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 426c87cc-fa50-4b8d-934e-0b653d7dea7d
-ms.openlocfilehash: ea91ea0ffca5479cb0593ef9961625f7b7ab1f42
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 8f1c1b96fe88f46a24b8ebb46d4f387c9717f6ba
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577424"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620711"
 ---
 # <a name="try-pre-release-features-for-hyper-v"></a>Hyper-V의 시험판 기능 체험
 
@@ -36,17 +36,17 @@ Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에 시�
 
 1. Windows 데스크톱에서 시작 단추를 클릭하고 **Windows PowerShell** 이름의 일부를 입력합니다.
 2. **Windows PowerShell**을 마우스 오른쪽 단추로 클릭하고 **관리자 권한으로 실행**을 선택합니다.
-3. -Prerelease 플래그와 함께 [NEW-VM](https://technet.microsoft.com/library/hh848537.aspx) cmdlet을 사용하여 시험판 가상 컴퓨터를 만듭니다. 예를 들어 다음 명령을 실행합니다. 여기서 VM Name은 만들려는 가상 컴퓨터의 이름입니다.
+3. -Prerelease 플래그와 함께 [NEW-VM](https://docs.microsoft.com/powershell/module/hyper-v/new-vm?view=win10-ps) cmdlet을 사용하여 시험판 가상 컴퓨터를 만듭니다. 예를 들어 다음 명령을 실행합니다. 여기서 VM Name은 만들려는 가상 컴퓨터의 이름입니다.
 
 ``` PowerShell
 New-VM -Name <VM Name> -Prerelease
 ```
 다른 예제에서는 다음과 같이 -Prerelease 플래그를 사용할 수 있습니다.
- - 기존 가상 하드 디스크 또는 새 하드 디스크를 사용하는 가상 컴퓨터를 만들려면 [Create a virtual machine in Hyper-V on Windows Server 2016 Technical Preview(Windows Server 2016 Technical Preview의 Hyper-V에서 가상 컴퓨터 만들기)](https://technet.microsoft.com/library/mt126140.aspx#BKMK_PowerShell)에서 PowerShell 예제를 참조하세요.
- - 운영 체제 이미지로 부팅되는 새 가상 하드 디스크를 만들려면 [Windows 10의 Hyper-V에 Windows 가상 컴퓨터 배포](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/quick_start/walkthrough_create_vm)에서 PowerShell 예제를 참조하세요.
+ - 기존 가상 하드 디스크 또는 새 하드 디스크를 사용하는 가상 컴퓨터를 만들려면 [Create a virtual machine in Hyper-V on Windows Server 2016 Technical Preview(Windows Server 2016 Technical Preview의 Hyper-V에서 가상 컴퓨터 만들기)](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Create-a-virtual-machine-in-Hyper-V#BKMK_PowerShell)에서 PowerShell 예제를 참조하세요.
+ - 운영 체제 이미지로 부팅되는 새 가상 하드 디스크를 만들려면 [Windows 10의 Hyper-V에 Windows 가상 컴퓨터 배포](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)에서 PowerShell 예제를 참조하세요.
 
  이러한 문서에서 다루는 예제는 Windows 10 또는 Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에서 작동합니다. 그러나 지금은 -Prerelease 플래그만 사용하여 Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에 시험판 가상 컴퓨터를 만들 수 있습니다.
 
 ## <a name="see-also"></a>참고 항목
--  [Virtualization Blog(가상화 블로그)](https://blogs.technet.microsoft.com/virtualization/) - 사용할 수 있는 시험판 기능 및 체험 방법에 대해 알아봅니다.
-- [Supported virtual machine configuration versions(지원되는 가상 컴퓨터 구성 버전)](https://technet.microsoft.com/library/mt695898.aspx#BKMK_SupportedConfigVersions) - 가상 컴퓨터 구성 버전을 확인하는 방법 및 Microsoft에서 지원하는 버전에 대해 알아봅니다.
+-  [Virtualization Blog(가상화 블로그)](https://techcommunity.microsoft.com/t5/Virtualization/bg-p/Virtualization) - 사용할 수 있는 시험판 기능 및 체험 방법에 대해 알아봅니다.
+- [Supported virtual machine configuration versions(지원되는 가상 컴퓨터 구성 버전)](https://docs.microsoft.com/windows-server/virtualization/hyper-v/deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server#BKMK_SupportedConfigVersions) - 가상 컴퓨터 구성 버전을 확인하는 방법 및 Microsoft에서 지원하는 버전에 대해 알아봅니다.

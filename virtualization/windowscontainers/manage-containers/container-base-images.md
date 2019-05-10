@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: eb2df861021f889e335d49a337b379ecbf17a47d
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 1b8bb433781e00bb8a435f14751d180ec52dec30
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576924"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621053"
 ---
 # <a name="windows-container-base-image-history"></a>Windows 컨테이너 기본 이미지 기록
 
@@ -34,7 +34,7 @@ ms.locfileid: "9576924"
 
 Microsoft에서 제공하는 이미지에는 두 계층이 있습니다. 맨 위 계층은 상수이며 기존 Windows Server 릴리스를 나타내고, 두 번째 계층은 포함된 최신 누적 업데이트에 따라 달라집니다.
 
-각 버전에서 변경된 내용을 찾으려면 [Windows 10 및 Windows Server 2016 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history)에서 기술 자료를 찾아보세요.
+각 버전에서 변경된 내용을 찾으려면 [Windows 10 및 Windows Server 2016 업데이트 기록](https://support.microsoft.com/help/12387/windows-10-update-history)에서 기술 자료를 찾아보세요.
 
 
 ## <a name="tools-to-simplify-this-process"></a>이 프로세스를 간소화하기 위한 도구

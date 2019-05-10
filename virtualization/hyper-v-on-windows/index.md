@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 05269ce0-a54f-4ad8-af75-2ecf5142b866
-ms.openlocfilehash: a070164812b7dca39070d5f78411a017457f8573
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 18a2d6e58127aba456b279d217794ab5469b06d7
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577918"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620691"
 ---
 # <a name="hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 
 
@@ -52,7 +52,7 @@ ms.locfileid: "9577918"
             <p><strong>커뮤니티 및 지원에 연결</strong></p>
             <p>추가 기술 지원 및 커뮤니티 리소스입니다.</p>
             <ul>
-                <li class="unordered">[Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=winserverhyperv)<br /><br /></li>
+                <li class="unordered">[Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverhyperv)<br /><br /></li>
                 <li class="unordered">[Hyper-V 및 Windows 컨테이너에 대한 커뮤니티 리소스](/virtualization/community/index.md)<br /><br /></li>
             </ul>   
         </td>

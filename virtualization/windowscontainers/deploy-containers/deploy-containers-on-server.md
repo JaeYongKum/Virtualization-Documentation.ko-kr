@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
-ms.openlocfilehash: 35f35b490ce5aa80068578d78a6427ace7352b73
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: f4c6b37c6e33593be0237bd4059435a99c2bdd86
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9574984"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620831"
 ---
 # <a name="container-host-deployment-windows-server"></a>컨테이너 호스트 배포: Windows Server
 
@@ -110,7 +110,7 @@ docker pull microsoft/nanoserver
 
 ## <a name="hyper-v-isolation-host"></a>Hyper-v 격리 호스트
 
-Hyper-v 격리를 실행 하려면 Hyper-v 역할이 필요 합니다. Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 Hyper-V 역할을 설치하기 전에 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting)를 참조하세요.
+Hyper-v 격리를 실행 하려면 Hyper-v 역할이 필요 합니다. Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 Hyper-V 역할을 설치하기 전에 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)를 참조하세요.
 
 ### <a name="nested-virtualization"></a>중첩 된 가상화
 

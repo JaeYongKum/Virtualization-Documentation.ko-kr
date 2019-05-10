@@ -5,15 +5,15 @@ ms.author: daschott
 ms.date: 02/09/2018
 ms.topic: get-started-article
 ms.prod: containers
-description: Linux 노드 v1.13 사용 하 여 Kubernetes 클러스터에 가입 합니다.
-keywords: kubernetes, 1.13, windows, 시작
+description: Kubernetes 클러스터 v1.14로 Linux 노드를 가입합니다.
+keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: c32cc300fd97eb53605e2f51e6a83e5889747561
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 88207939c82bfe8ffa0b088cfd61cf4ab22cb10a
+ms.sourcegitcommit: aaf115a9de929319cc893c29ba39654a96cf07e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577934"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "9622948"
 ---
 # <a name="joining-linux-nodes-to-a-cluster"></a>Linux 노드 클러스터에 가입
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: e3b2a4dc-9082-4de3-9c95-5d516c03482b
-ms.openlocfilehash: fd2de24a4c8c03817978a53b340e2a77285c69ad
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: df0470fd44c823fe14411d6d3d29188e980d1780
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576714"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621201"
 ---
 # <a name="windows-containers-on-windows-server"></a>Windows Server의 Windows 컨테이너
 
@@ -32,7 +32,7 @@ Windows Server 2019 및 Windows Server 2016에서 Windows 컨테이너 기능의
 ## <a name="prerequisites"></a>필수 구성 요소
 
 다음 요구 사항을 충족 하는지 확인 하세요.
-- Windows Server 2019를 실행 하는 컴퓨터 시스템 (물리적 또는 가상). Windows Server 2019 Insider Preview를 사용 하는 경우에 [Window Server 2019 평가판](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019 )으로 업데이트 하세요.
+- Windows Server 2019를 실행 하는 컴퓨터 시스템 (물리적 또는 가상). Windows Server 2019 Insider Preview를 사용 하는 경우에 [Window Server 2019 평가판](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019 )으로 업데이트 하세요.
 
 > 중요 업데이트는 Windows 컨테이너 기능 기능을 위해 필요 합니다. 이 자습서를 수행하기 전에 모든 업데이트를 설치하세요.
 
@@ -168,7 +168,7 @@ Platform: .NET Core
 OS: Microsoft Windows 10.0.17763
 ```
 
-Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Reference(Docker Run 참조)]( https://docs.docker.com/engine/reference/run/)를 참조하세요.
+Docker Run 명령에 대한 자세한 내용은 [Docker.com의 Docker Run Reference(Docker Run 참조)](https://docs.docker.com/engine/reference/run/)를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

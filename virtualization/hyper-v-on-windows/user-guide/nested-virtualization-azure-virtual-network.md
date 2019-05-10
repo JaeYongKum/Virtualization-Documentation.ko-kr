@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1ecb85a6-d938-4c30-a29b-d18bd007ba08
-ms.openlocfilehash: 18ab4d1d87c22f70fe09aae5222a7d125ac9c974
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 2771989b7745605fb3ce4f95e162ae8b03180b0f
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578674"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621581"
 ---
 # <a name="configure-nested-vms-to-communicate-with-resources-in-an-azure-virtual-network"></a>Azure 가상 네트워크에 있는 리소스와 통신 하는 중첩 된 Vm 구성
 
@@ -26,7 +26,7 @@ ms.locfileid: "9578674"
 
 이 가이드를 하세요 시작 하기 전에:
 
-1. [여기에 제공 된 지침에](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nested-virtualization) 중첩 된 가상화를 읽습니다.
+1. [여기에 제공 된 지침에](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization) 중첩 된 가상화를 읽습니다.
 2. 구현 하기 전에이 전체 문서를 참조 합니다.
 
 ## <a name="high-level-overview-of-what-were-doing-and-why"></a>수행 중인 작업의 높은 수준의 개요 및 이유
@@ -108,7 +108,7 @@ ms.locfileid: "9578674"
 1. DHCP 역할을 설치 합니다. `Install-WindowsFeature DHCP -IncludeManagementTools`
 2. DHCP 범위를 만듭니다. `Add-DhcpServerV4Scope -Name "Nested VMs" -StartRange 10.0.2.2 -EndRange 10.0.2.254 -SubnetMask 255.255.255.0`
 3. 범위에 대 한 DNS 및 기본 게이트웨이 옵션을 구성 합니다. `Set-DhcpServerV4OptionValue -DnsServer 168.63.129.16 -Router 10.0.2.1`
-    * 이름 확인 하려는 경우 올바른 DNS 서버를 입력 해야 합니다. 이 경우 [Azure의 재귀적 DNS를](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances)사용 하 고 있습니다.
+    * 이름 확인 하려는 경우 올바른 DNS 서버를 입력 해야 합니다. 이 경우 [Azure의 재귀적 DNS를](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances)사용 하 고 있습니다.
 
 ## <a name="installing-remote-access"></a>원격 액세스 설치
 
@@ -145,7 +145,7 @@ ms.locfileid: "9578674"
 
 ## <a name="creating-a-route-table-within-azure"></a>Azure 내 경로 테이블 만들기
 
-깊이 읽기를 만들고 Azure 내에서 경로 관리에 대 한 자세한 내용은 [이 문서](https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal) 참조 하세요.
+깊이 읽기를 만들고 Azure 내에서 경로 관리에 대 한 자세한 내용은 [이 문서](https://docs.microsoft.com/azure/virtual-network/tutorial-create-route-table-portal) 참조 하세요.
 
 1. 이동 https://portal.azure.com.
 2. 왼쪽 위 모서리에 있는 "리소스를 만들고"를 선택 합니다.

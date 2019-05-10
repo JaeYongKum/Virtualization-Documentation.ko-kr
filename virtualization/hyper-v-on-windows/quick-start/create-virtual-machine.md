@@ -7,16 +7,16 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 66723f33-b12c-49d1-82cf-71ba9d6087e9
-ms.openlocfilehash: 4ded2de1447db467359b028d19482a76e2c484fc
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 7882e89368bb88390c2efa93c3f2a8f04bb7a37a
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576384"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620781"
 ---
 # <a name="create-virtual-machine-with-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
 
-가상 컴퓨터를 만들고 새 가상 컴퓨터에 운영 체제를 설치하는 방법을 알아보세요.  실행하려는 운영 체제의 .iso 파일이 필요합니다. 필요한 경우 [TechNet Evaluation Center](http://www.microsoft.com/en-us/evalcenter/)에서 Windows 10 평가판을 가져옵니다.
+가상 컴퓨터를 만들고 새 가상 컴퓨터에 운영 체제를 설치하는 방법을 알아보세요.  실행하려는 운영 체제의 .iso 파일이 필요합니다. 필요한 경우 [TechNet Evaluation Center](http://www.microsoft.com/evalcenter/)에서 Windows 10 평가판을 가져옵니다.
 
 ## <a name="create-a-virtual-machine-with-hyper-v-manager"></a>Hyper-V 관리자를 사용하여 가상 컴퓨터 만들기
 
@@ -35,17 +35,17 @@ ms.locfileid: "9576384"
 
 1. 컴퓨터에 대해 생성을 선택하고 **다음**을 클릭합니다.  
 
-  2세대 가상 컴퓨터는 Windows Server 2012 R2에서 도입되었고 간소화된 가상 하드웨어 모델 및 일부 추가 기능을 제공합니다. 2세대 가상 컴퓨터에는 64비트 운영 체제만 설치할 수 있습니다. 2세대 가상 컴퓨터에 대한 자세한 내용은 [Generation 2 Virtual Machine Overview(2세대 가상 컴퓨터 개요)](https://technet.microsoft.com/en-us/library/dn282285.aspx)를 참조하세요.
+  2세대 가상 컴퓨터는 Windows Server 2012 R2에서 도입되었고 간소화된 가상 하드웨어 모델 및 일부 추가 기능을 제공합니다. 2세대 가상 컴퓨터에는 64비트 운영 체제만 설치할 수 있습니다. 2세대 가상 컴퓨터에 대한 자세한 내용은 [Generation 2 Virtual Machine Overview(2세대 가상 컴퓨터 개요)](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282285(v=ws.11)>)를 참조하세요.
   
-  > 새 가상 컴퓨터가 2세대로 구성되고 Linux 배포를 실행할 경우 보안 부팅을 사용하지 않도록 설정해야 합니다. 보안 부팅에 대한 자세한 내용은 [Secure Boot(보안 부팅)](https://technet.microsoft.com/en-us/library/dn486875.aspx)을 참조하세요.
+  > 새 가상 컴퓨터가 2세대로 구성되고 Linux 배포를 실행할 경우 보안 부팅을 사용하지 않도록 설정해야 합니다. 보안 부팅에 대한 자세한 내용은 [Secure Boot(보안 부팅)](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/dn486875(v=ws.11)>)을 참조하세요.
 
-1. **시작 메모리** 값으로 **2048**MB를 선택하고 **동적 메모리 사용**을 선택된 상태로 유지합니다. **다음** 단추를 클릭합니다.
+2. **시작 메모리** 값으로 **2048**MB를 선택하고 **동적 메모리 사용**을 선택된 상태로 유지합니다. **다음** 단추를 클릭합니다.
 
-  메모리는 Hyper-V 호스트 및 호스트에서 실행 중인 가상 컴퓨터 간에 공유됩니다. 단일 호스트에서 실행할 수 있는 가상 컴퓨터의 수는 사용 가능한 메모리에 따라 부분적으로 달라집니다. 동적 메모리를 사용하도록 가상 컴퓨터를 구성할 수 있습니다. 활성화하는 경우 동적 메모리는 실행 중인 가상 컴퓨터에서 사용되지 않은 메모리를 회수 합니다. 이렇게 하면 호스트에서 더 많은 가상 컴퓨터를 실행할 수 있습니다. 동적 메모리에 대한 자세한 내용은 [Hyper-V Dynamic Memory Overview(Hyper-V 동적 메모리 개요)](https://technet.microsoft.com/en-us/library/hh831766.aspx)를 참조하세요.
+  메모리는 Hyper-V 호스트 및 호스트에서 실행 중인 가상 컴퓨터 간에 공유됩니다. 단일 호스트에서 실행할 수 있는 가상 컴퓨터의 수는 사용 가능한 메모리에 따라 부분적으로 달라집니다. 동적 메모리를 사용하도록 가상 컴퓨터를 구성할 수 있습니다. 활성화하는 경우 동적 메모리는 실행 중인 가상 컴퓨터에서 사용되지 않은 메모리를 회수 합니다. 이렇게 하면 호스트에서 더 많은 가상 컴퓨터를 실행할 수 있습니다. 동적 메모리에 대한 자세한 내용은 [Hyper-V Dynamic Memory Overview(Hyper-V 동적 메모리 개요)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))를 참조하세요.
 
-1. 네트워킹 구성 마법사에서 가상 컴퓨터에 대한 가상 스위치를 선택하고 **다음**을 클릭합니다. 자세한 내용은 [가상 스위치 만들기](connect-to-network.md)를 참조하세요.
+3. 네트워킹 구성 마법사에서 가상 컴퓨터에 대한 가상 스위치를 선택하고 **다음**을 클릭합니다. 자세한 내용은 [가상 스위치 만들기](connect-to-network.md)를 참조하세요.
 
-1. 가상 하드 드라이브에 이름을 지정하고 위치를 선택하거나 기본값을 유지하고 마지막으로 크기를 지정합니다. 준비되면 **다음**을 클릭합니다.
+4. 가상 하드 드라이브에 이름을 지정하고 위치를 선택하거나 기본값을 유지하고 마지막으로 크기를 지정합니다. 준비되면 **다음**을 클릭합니다.
 
   가상 하드 드라이브는 가상 컴퓨터에 대해 실제 하드 드라이브와 유사한 저장소를 제공합니다. 가상 컴퓨터에 운영 체제를 설치하기 위해 가상 하드 드라이브가 필요합니다.
   

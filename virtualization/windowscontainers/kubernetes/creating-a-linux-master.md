@@ -6,17 +6,17 @@ ms.date: 02/09/2018
 ms.topic: get-started-article
 ms.prod: containers
 description: Kubernetes 클러스터 마스터를 만듭니다.
-keywords: kubernetes, 1.13, 마스터, linux
-ms.openlocfilehash: 8a3fb073616d115ab84e6cc36f0fb6cedbcf1f7d
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+keywords: kubernetes, 1.14, 마스터, linux
+ms.openlocfilehash: b1ec23b039ce6f5c42859452ecf3a8a5b35e006c
+ms.sourcegitcommit: aaf115a9de929319cc893c29ba39654a96cf07e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578254"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "9622958"
 ---
 # <a name="creating-a-kubernetes-master"></a>Kubernetes 마스터를 만듭니다. #
 > [!NOTE]
-> 이 가이드에 Kubernetes v1.13 유효한 합니다. 많이 다르기 때문에 Kubernetes의 버전에서 버전으로,이 섹션 수 이후 버전의 경우도 마찬가지 보유 하지 않는 가정 합니다. Kubernetes 마스터 kubeadm를 사용 하 여 초기화에 대 한 공식 설명서를 찾을 수 있습니다 [다음과 같습니다](https://kubernetes.io/docs/setup/independent/install-kubeadm/). [혼합 OS 일정 섹션](#enable-mixed-os-scheduling) 의 사용 하기만 하면 됩니다.
+> 이 가이드에 Kubernetes v1.14 유효한 합니다. 많이 다르기 때문에 Kubernetes의 버전에서 버전으로,이 섹션 수 이후 버전의 경우도 마찬가지 보유 하지 않는 가정 합니다. Kubernetes 마스터 kubeadm를 사용 하 여 초기화에 대 한 공식 설명서를 찾을 수 있습니다 [다음과 같습니다](https://kubernetes.io/docs/setup/independent/install-kubeadm/). [혼합 OS 일정 섹션](#enable-mixed-os-scheduling) 의 사용 하기만 하면 됩니다.
 
 > [!NOTE]  
 > 최근에 업데이트 Linux 컴퓨터; 진행 해야 합니다. Kubernetes 마스터 [kube dns](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/), [kube 스케줄러](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)및 [kube apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) 가 되지 된에 포트 Windows 아직 처럼 리소스입니다. 

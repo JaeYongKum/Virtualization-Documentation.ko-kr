@@ -7,12 +7,12 @@ ms.date: 06/25/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: eb2b827c-4a6c-4327-9354-50d14fee7ed8
-ms.openlocfilehash: d71c5d2ae3c8ff78e36cc54686b10b1dc745e0c3
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 14e0f57ca0c952239847e493740048e14889e6d7
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576354"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620721"
 ---
 # <a name="introduction-to-hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 소개
 
@@ -42,7 +42,7 @@ Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 Education에서 �
 
 대부분의 컴퓨터는 Hyper-V를 실행하지만, 각 가상 컴퓨터는 완전히 별도 운영 체제를 기반으로 합니다.  일반적으로 4GB RAM이 설치된 컴퓨터에서 가상 컴퓨터를 하나 이상 실행할 수 있지만 가상 컴퓨터를 추가하거나 게임, 동영상 편집, 디자인 소프트웨어 엔지니어링처럼 리소스를 많이 사용하는 소프트웨어를 설치하고 실행하려면 더 많은 리소스가 필요합니다.
 
-Hyper-V 시스템 요구 사항 및 Hyper-V가 컴퓨터에서 실행되는지 확인하는 방법에 대한 자세한 내용은 [Hyper-V 요구 사항 참조](..\reference\hyper-v-requirements.md)을 살펴보세요.
+Hyper-V 시스템 요구 사항 및 Hyper-V가 컴퓨터에서 실행되는지 확인하는 방법에 대한 자세한 내용은 [Hyper-V 요구 사항 참조](../reference/hyper-v-requirements.md)을 살펴보세요.
 
 ## <a name="operating-systems-you-can-run-in-a-virtual-machine"></a>가상 컴퓨터에서 실행할 수 있는 운영 체제
 
@@ -50,7 +50,7 @@ Windows의 Hyper-V는 다양한 버전의 Linux, FreeBSD 및 Windows를 포함�
 
 참고로 VM에서 사용하는 모든 운영 체제에는 유효한 라이선스가 필요합니다.
 
-Windows의 Hyper-V에서 게스트로 지원되는 운영 체제에 대한 자세한 내용은 [지원되는 Windows 게스트 운영 체제](supported-guest-os.md) 및 [지원되는 Linux 게스트 운영 체제](https://technet.microsoft.com/library/dn531030.aspx)를 참조하세요.
+Windows의 Hyper-V에서 게스트로 지원되는 운영 체제에 대한 자세한 내용은 [지원되는 Windows 게스트 운영 체제](supported-guest-os.md) 및 [지원되는 Linux 게스트 운영 체제](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)를 참조하세요.
 
 ## <a name="differences-between-hyper-v-on-windows-and-hyper-v-on-windows-server"></a>Windows의 Hyper-V와 Windows Server의 Hyper-V 간 차이점
 
@@ -79,4 +79,4 @@ Windows 10에서만 사용할 수 있는 Hyper-V 기능:
 
 ## <a name="next-step"></a>다음 단계
 
-[Windows 10에 Hyper-V 설치](..\quick-start\enable-hyper-v.md)
+[Windows 10에 Hyper-V 설치](../quick-start/enable-hyper-v.md)

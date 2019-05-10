@@ -19,4 +19,4 @@ Microsoft는 여기에서 명시적으로 부여되지 않은 모든 권리를 �
 
 본 추가를 사용함으로써 귀하는 이러한 조건에 동의하게 됩니다. 이러한 조건에 동의하지 않는 경우 이 추가를 사용하지 마세요.
 
-Windows 컨테이너에 대 한이 컨테이너 OS 이미지에 대 한 추가 사용 조건의 일환으로, 준수 해야 하는 또한는 기본 Windows Server 호스트 소프트웨어 사용 조건에 위치한: https://www.microsoft.com/en-us/useterms.  
+Windows 컨테이너에 대 한이 컨테이너 OS 이미지에 대 한 추가 사용 조건의 일환으로, 준수 해야 하는 또한는 기본 Windows Server 호스트 소프트웨어 사용 조건에 위치한: https://www.microsoft.com/useterms.  

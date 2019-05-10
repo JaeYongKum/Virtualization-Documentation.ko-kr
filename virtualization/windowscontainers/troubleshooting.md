@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ebd79cd3-5fdd-458d-8dc8-fc96408958b5
-ms.openlocfilehash: 4fac4d6e091fdf25e9683adca438302ca3beebfb
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: dfa558f3b17362b6f9af429842282309430e1da3
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576704"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620941"
 ---
 # <a name="troubleshooting"></a>문제 해결
 
@@ -24,7 +24,7 @@ Invoke-WebRequest https://aka.ms/Debug-ContainerHost.ps1 -UseBasicParsing | Invo
 ```
 일반적인 솔루션과 함께 실행하는 모든 테스트 목록은 스크립트의 [Readme file](https://github.com/Microsoft/Virtualization-Documentation/blob/live/windows-server-container-tools/Debug-ContainerHost/README.md)(추가 정보 파일)에 있습니다.
 
-문제의 원인을 찾는 데 도움이 되지 않는 경우 스크립트 출력을 [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)에 게시하세요. 이 포럼은 Windows 참가자와 개발자를 비롯한 커뮤니티의 도움을 받을 수 있는 유용한 곳입니다.
+문제의 원인을 찾는 데 도움이 되지 않는 경우 스크립트 출력을 [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)에 게시하세요. 이 포럼은 Windows 참가자와 개발자를 비롯한 커뮤니티의 도움을 받을 수 있는 유용한 곳입니다.
 
 
 ## <a name="finding-logs"></a>로그 찾기

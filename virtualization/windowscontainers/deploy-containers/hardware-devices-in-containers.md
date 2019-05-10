@@ -3,12 +3,12 @@ title: Windows의 컨테이너에서 장치
 description: Windows의 컨테이너에 대 한 장치 지원은 어떤
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: 18ae4ab229a677c63c3e17d684a3c3193df49c5e
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: f32ba3de347bcf968088d2f3f20f22f82166d652
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576684"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621561"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
 
@@ -33,7 +33,7 @@ ms.locfileid: "9576684"
 docker run --isolation=process --device="class/{interface class GUID}" mcr.microsoft.com/windows/servercore:1809
 ```
 
-바꾸어야 합니다 `{interface class guid}` 섹션 아래에서 찾을 수 있는 적절 한 [장치 인터페이스 클래스 guid입니다](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/overview-of-device-interface-classes).
+바꾸어야 합니다 `{interface class guid}` 섹션 아래에서 찾을 수 있는 적절 한 [장치 인터페이스 클래스 guid입니다](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes).
 
 여러 장치를 사용 하 여 컨테이너를 시작 하려면 다음 명령을 사용 하 고 문자열을 함께 여러 `--device` 인수:
 

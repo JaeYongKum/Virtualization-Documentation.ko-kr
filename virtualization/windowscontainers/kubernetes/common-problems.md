@@ -6,13 +6,13 @@ ms.date: 11/02/2018
 ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
-keywords: kubernetes, 1.12, linux, 컴파일
-ms.openlocfilehash: 1c5a5ec90b828a4f2430508f02cb9b9afb1c4d53
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+keywords: kubernetes, 1.14, linux, 컴파일
+ms.openlocfilehash: fbb5b8474323a7d418de972bffbb9e005c94cb85
+ms.sourcegitcommit: aaf115a9de929319cc893c29ba39654a96cf07e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577084"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "9622998"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -124,13 +124,18 @@ Get-VMNetworkAdapter -VMName "<name>" | Set-VMNetworkAdapter -MacAddressSpoofing
 > 배포 하는 경우 Azure IaaS Vm에 Kubernetes 다른 클라우드 공급자에서 직접, 또한 대신 사용할 수 있습니다 [네트워킹을 오버레이](./network-topologies.md#flannel-in-vxlan-mode) 합니다.
 
 ### <a name="my-windows-pods-cannot-launch-because-of-missing-runflannelsubnetenv"></a>내 Windows 포드가 /run/flannel/subnet.env 누락으로 인해 시작할 수 없습니다. ###
-이 Flannel 제대로 시작 되지 않은 것을 나타냅니다. Flanneld.exe 다시 시작을 시도 하거나 하거나 복사할 수는 있지만 파일을 통해 수동으로에서 `/run/flannel/subnet.env` 에 Kubernetes 마스터 `C:\run\flannel\subnet.env` Windows 작업자 노드 수정 합니다 `FLANNEL_SUBNET` 여러 행. 예를 들어, 노드 서브넷 10.244.4.1/24 필요한 경우:
+이 Flannel 제대로 시작 되지 않은 것을 나타냅니다. Flanneld.exe 다시 시작을 시도 하거나 하거나 복사할 수는 있지만 파일을 통해 수동으로에서 `/run/flannel/subnet.env` 에서 Kubernetes 마스터를 `C:\run\flannel\subnet.env` Windows 작업자 노드 및 수정 합니다 `FLANNEL_SUBNET` 행에 할당 된 서브넷 합니다. 예를 들어, 노드 서브넷 10.244.4.1/24 할당 했습니다.
 ```
 FLANNEL_NETWORK=10.244.0.0/16
 FLANNEL_SUBNET=10.244.4.1/24
 FLANNEL_MTU=1500
 FLANNEL_IPMASQ=true
 ```
+것이 안전 flanneld.exe이이 파일을 생성할 수 있도록 합니다.
+
+### <a name="pod-to-pod-connectivity-between-hosts-is-broken-on-my-kubernetes-cluster-running-on-vsphere"></a>VSphere에서 실행 되 고 Kubernetes 클러스터 내에서 항목은 호스트 사이의 포드 연결 
+VSphere와 Flannel 예약 오버레이 네트워킹에 대 한 포트 4789 (기본 VXLAN 포트), 이후 패킷을 차단할 끊을 수 있습니다. VSphere 오버레이 네트워킹을 사용 하는 경우 다른 포트 4789 확보 하기 위해 사용 하도록 구성 되어야 합니다.  
+
 
 ### <a name="my-endpointsips-are-leaking"></a>내 끝점/Ip 누수가 발생 ###
 끝점에서 누수를 일으킬 수 있는 2 현재 알려진된 문제 존재 합니다. 

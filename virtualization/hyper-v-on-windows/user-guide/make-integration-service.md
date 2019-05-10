@@ -7,12 +7,12 @@ ms.date: 04/07/2017
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 1ef8f18c-3d76-4c06-87e4-11d8d4e31aea
-ms.openlocfilehash: 966ca3ff267e03e8c380391281c8dde723e4b1dd
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: f33f6deb977ff96da0b70a7e14bf4896af0307eb
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9575332"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620651"
 ---
 # <a name="make-your-own-integration-services"></a>고유한 통합 서비스 만들기
 
@@ -27,7 +27,7 @@ Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대�
 **지원되는 게스트 OS**
 * Windows 10 이상
 * Windows Server 2016 이상
-* Linux 통합 서비스를 포함하는 Linux 게스트([Supported Linux and FreeBSD virtual machines for Hyper-V on Windows(Windows의 Hyper-V에 대해 지원되는 Linux 및 FreeBSD 가상 컴퓨터)](https://technet.microsoft.com/library/dn531030.aspx) 참조)
+* Linux 통합 서비스를 포함하는 Linux 게스트([Supported Linux and FreeBSD virtual machines for Hyper-V on Windows(Windows의 Hyper-V에 대해 지원되는 Linux 및 FreeBSD 가상 컴퓨터)](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows) 참조)
 > **참고:** 지원되는 Linux 게스트는 다음에 대해 커널을 지원해야 합니다.
 > ```bash
 > CONFIG_VSOCKET=y
@@ -117,9 +117,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 
 대부분의 기본적인 경우 소켓을 정의하려면 주소 집합, 연결 유형 및 프로토콜이 필요합니다.
 
-간단한 [소켓 정의](
-https://msdn.microsoft.com/en-us/library/windows/desktop/ms740506(v=vs.85).aspx
-)
+간단한 [소켓 정의](https://docs.microsoft.com/windows/desktop/api/winsock2/nf-winsock2-socket)
 
 ``` C
 // Windows
@@ -152,7 +150,7 @@ int sock = socket(AF_VSOCK, SOCK_STREAM, 0);
 
 소켓을 연결 정보에 바인딩합니다.
 
-편의를 위해 아래에 함수 정의를 복사해 두었으므로 바인딩에 대한 자세한 내용은 [여기](https://msdn.microsoft.com/en-us/library/windows/desktop/ms737550.aspx)를 참조하세요.
+편의를 위해 아래에 함수 정의를 복사해 두었으므로 바인딩에 대한 자세한 내용은 [여기](https://docs.microsoft.com/windows/desktop/api/winsock/nf-winsock-bind)를 참조하세요.
 
 ``` C
 // Windows
@@ -202,7 +200,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
   ```PowerShell
   (Get-VM -Name $VMName).Id
   ```
-* 서비스 ID – [위에서 설명한](#RegisterANewApplication) GUID로, Hyper-V 호스트 레지스트리에 응용 프로그램과 함께 등록되어 있습니다.
+* 서비스 ID – [위에서 설명한](#register-a-new-application) GUID로, Hyper-V 호스트 레지스트리에 응용 프로그램과 함께 등록되어 있습니다.
 
 특정 가상 컴퓨터에 대한 연결이 아닌 경우 VMID 와일드 카드 집합도 사용할 수 있습니다.
 
@@ -229,6 +227,6 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 Socket() Bind() Connect() Send() Listen() Accept()
 
 ## <a name="useful-links"></a>유용한 링크
-[WinSock API 완료](https://msdn.microsoft.com/en-us/library/windows/desktop/ms741394.aspx)
+[WinSock API 완료](https://docs.microsoft.com/windows/desktop/WinSock/winsock-functions)
 
 [Hyper-V 통합 서비스 참조](../reference/integration-services.md)

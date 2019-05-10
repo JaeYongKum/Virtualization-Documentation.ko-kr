@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
-ms.openlocfilehash: 84974f093cc80f8a216518bab051e13397e89b6e
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 762b82f3714651ffb488f682581680c9526404a8
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577434"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621211"
 ---
 # <a name="hyper-v-integration-services"></a>Hyper-V 통합 서비스
 
@@ -22,7 +22,7 @@ ms.locfileid: "9577434"
 이 문서는 Windows에서 사용할 수 있는 각 통합 서비스에 대한 참조입니다.  또한 특정 통합 서비스 또는 통합 서비스 기록과 관련된 정보에 대한 시작 지점으로 사용할 수 있습니다.
 
 **사용자 가이드:**  
-* [통합 서비스 관리](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/manage/manage-Hyper-V-integration-services)
+* [통합 서비스 관리](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/Manage-Hyper-V-integration-services)
 
 
 ## <a name="quick-reference"></a>빠른 참조
@@ -52,7 +52,7 @@ Hyper-V에서 가상 컴퓨터 상태가 “실행 중”인 것으로 보고하
 
 ### <a name="check-heartbeat-with-powershell"></a>PowerShell을 사용하여 하트비트 확인
 
-관리자는 [Get-VM](https://technet.microsoft.com/en-us/library/hh848479.aspx)을 실행하여 가상 컴퓨터의 하트비트를 확인합니다.
+관리자는 [Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm?view=win10-ps)을 실행하여 가상 컴퓨터의 하트비트를 확인합니다.
 ``` PowerShell
 Get-VM -VMName $VMName | select Name, State, Status
 ```
@@ -102,7 +102,7 @@ DemoVM  Running  Operating normally
 
 
 **사용자 가이드:**  
-* [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://technet.microsoft.com/en-us/library/dn798287.aspx).  
+* [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn798287(v=ws.11)).  
 
 
 ## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V 볼륨 섀도 복사본 요청자
@@ -113,9 +113,9 @@ DemoVM  Running  Operating normally
 **추가됨:** Windows Server 2012, Windows 8  
 **영향:** 사용하도록 설정하면 가상 컴퓨터를 실행하는 중 백업할 수 없습니다(VSS 사용).  
 
-볼륨 섀도 복사본 요청자 통합 서비스는 볼륨 섀도 복사본 서비스([VSS](https://msdn.microsoft.com/en-us/library/aa384589.aspx))에 대해 필요합니다.  VSS(볼륨 섀도 복사본 서비스)는 제공하는 서비스의 성능 및 안정성을 지나치게 저하시키지 않으면서 실행 중인 시스템(특히 서버)에서 백업에 대한 이미지를 캡처하고 복사합니다.  이 통합 서비스는 가상 컴퓨터의 작업과 호스트의 백업 프로세스를 조정하여 그러한 작업을 가능하게 만듭니다.
+볼륨 섀도 복사본 요청자 통합 서비스는 볼륨 섀도 복사본 서비스([VSS](https://docs.microsoft.com/windows/desktop/VSS/overview-of-processing-a-backup-under-vss))에 대해 필요합니다.  VSS(볼륨 섀도 복사본 서비스)는 제공하는 서비스의 성능 및 안정성을 지나치게 저하시키지 않으면서 실행 중인 시스템(특히 서버)에서 백업에 대한 이미지를 캡처하고 복사합니다.  이 통합 서비스는 가상 컴퓨터의 작업과 호스트의 백업 프로세스를 조정하여 그러한 작업을 가능하게 만듭니다.
 
-볼륨 섀도 복사본에 대한 자세한 내용은 [여기](https://msdn.microsoft.com/en-us/library/dd405549.aspx)에서 확인하세요.
+볼륨 섀도 복사본에 대한 자세한 내용은 [여기](https://docs.microsoft.com/previous-versions/windows/desktop/virtual/backing-up-and-restoring-virtual-machines)에서 확인하세요.
 
 
 ## <a name="hyper-v-guest-service-interface"></a>Hyper-V 게스트 서비스 인터페이스
@@ -124,7 +124,7 @@ DemoVM  Running  Operating normally
 **Linux 디먼 이름:** hv_fcopy_daemon  
 **설명:** 가상 컴퓨터에 파일을 복사하거나 가상 컴퓨터의 파일을 복사할 수 있는 Hyper-V 호스트에 대한 인터페이스를 제공합니다.  
 **추가됨:** Windows Server 2012 R2, Windows 8.1  
-**영향:** 사용하도록 설정하면 호스트에서 `Copy-VMFile`을 사용하여 게스트에 파일을 복사하거나 게스트의 파일을 복사할 수 없습니다.  [Copy-VMFile cmdlet](https://technet.microsoft.com/library/dn464282.aspx)에 대해 자세히 알아보세요.  
+**영향:** 사용하도록 설정하면 호스트에서 `Copy-VMFile`을 사용하여 게스트에 파일을 복사하거나 게스트의 파일을 복사할 수 없습니다.  [Copy-VMFile cmdlet](https://docs.microsoft.com/powershell/module/hyper-v/copy-vmfile?view=win10-ps)에 대해 자세히 알아보세요.  
 
 **참고:**  
 기본적으로 사용할 수 없게 설정되어 있습니다.  [Copy-Item을 사용하는 PowerShell Direct](../user-guide/powershell-direct.md#copy-files-with-new-pssession-and-copy-item)를 참조하세요. 

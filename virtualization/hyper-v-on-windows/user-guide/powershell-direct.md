@@ -8,29 +8,29 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
-ms.openlocfilehash: 779dcf51d4903c9467cc52dbadb865beb9929bd2
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: ea6b71200d3115ba3d156b2c133e1be2fa495261
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577324"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620921"
 ---
 # <a name="virtual-machine-automation-and-management-using-powershell"></a>PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
- 
+
 PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설정에 상관 없이 Hyper-V 호스트의 Windows 10 또는 Windows Server 2016 가상 머신에서 임의의 PowerShell을 실행할 수 있습니다.
 
-**PowerShell Direct 실행 방법:**  
-* 대화형 세션 -- Enter-PSSession을 사용하여 대화형 PowerShell 세션을 만들고 종료하려면 [여기를 클릭](#create-and-exit-an-interactive-powershell-session)하세요.
-* 단일 명령이나 스크립트를 실행하는 일회용 세션 -- Invoke-Command를 사용하여 스크립트나 명령을 실행하려면 [여기를 클릭](#run-a-script-or-command-with-invoke-command)하세요.
-* 영구 세션(빌드 14280 이상) -- New-PSSession을 사용하여 영구 세션을 만들려면 [여기를 클릭](#copy-files-with-new-pssession-and-copy-item)하세요.  
-Copy-Item을 사용하여 가상 컴퓨터 간에 계속 파일을 복사한 다음 Remove-PSSession을 사용하여 연결을 끊습니다.
+PowerShell Direct를 실행할 수 있는 방법은 다음과 같습니다.
+
+* [Enter-pssession cmdlet을 사용 하 여 대화형 세션](#create-and-exit-an-interactive-powershell-session)
+* [단일 명령 또는 스크립트를 실행 하는 일회용 섹션으로 Invoke-command cmdlet를 사용 하 여](#run-a-script-or-command-with-invoke-command)
+* [영구 세션 (빌드 14280 이상)-New-pssession을 사용 하 여 항목 복사 및 끊습니다 cmdlet](#copy-files-with-new-pssession-and-copy-item)
 
 ## <a name="requirements"></a>요구 사항
 **운영 체제 요구 사항:**
 * 호스트: Hyper-V를 실행하는 Windows 10, Windows Server 2016 이상.
 * 게스트/가상 머신: Windows 10, Windows Server 2016 이상.
 
-이전 가상 컴퓨터를 관리하는 경우 가상 컴퓨터 연결(VMConnect)을 사용하거나 [가상 컴퓨터에 대한 가상 네트워크를 구성합니다](http://technet.microsoft.com/library/cc816585.aspx). 
+이전 가상 컴퓨터를 관리하는 경우 가상 컴퓨터 연결(VMConnect)을 사용하거나 [가상 컴퓨터에 대한 가상 네트워크를 구성합니다](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816585(v=ws.10)). 
 
 **구성 요구 사항:**    
 * 가상 컴퓨터는 호스트에서 로컬로 실행되고 있어야 합니다.
@@ -77,7 +77,7 @@ Copy-Item을 사용하여 가상 컴퓨터 간에 계속 파일을 복사한 다
 
 > 참고: 세션이 연결되지 않으면 [문제 해결](#troubleshooting)에서 잠재적 원인을 확인하세요. 
 
-이러한 cmdlet에 대한 자세한 내용은 [Enter-PSSession](http://technet.microsoft.com/library/hh849707.aspx) 및 [Exit-PSSession](http://technet.microsoft.com/library/hh849743.aspx)을 참조하세요. 
+이러한 cmdlet에 대한 자세한 내용은 [Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession?view=powershell-5.1) 및 [Exit-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession?view=powershell-5.1)을 참조하세요. 
 
 -------------
 
@@ -116,7 +116,7 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
    
    스크립트는 가상 컴퓨터에서 실행됩니다.  명령이 실행되는 즉시 연결이 자동으로 닫힙니다.
 
-이 cmdlet에 대한 자세한 내용은 [Invoke-Command](http://technet.microsoft.com/library/hh849719.aspx)를 참조하세요. 
+이 cmdlet에 대한 자세한 내용은 [Invoke-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command?view=powershell-5.1)를 참조하세요. 
 
 -------------
 
@@ -126,7 +126,7 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
 
 영구 PowerShell 세션은 하나 이상의 원격 컴퓨터에서 작업을 조정하는 스크립트를 작성할 때 매우 유용합니다.  만들어진 영구 세션은 삭제할 때까지 백그라운드에 존재합니다.  즉, 자격 증명을 전달하지 않고도 `Invoke-Command` 또는 `Enter-PSSession`을 사용하여 동일한 세션을 반복해서 참조할 수 있습니다.
 
-세션은 동일한 토큰별로 상태를 저장합니다.  영구 세션은 계속 유지되므로 세션에서 만들거나 세션에 전달된 모든 변수가 여러 호출에서 그대로 유지됩니다. 영구 세션 작업에는 많은 도구를 사용할 수 있습니다.  이 예제에서는 [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) 및 [Copy-Item](https://technet.microsoft.com/en-us/library/hh849793.aspx)을 사용하여 호스트에서 가상 컴퓨터로, 가상 컴퓨터에서 호스트로 데이터를 이동합니다.
+세션은 동일한 토큰별로 상태를 저장합니다.  영구 세션은 계속 유지되므로 세션에서 만들거나 세션에 전달된 모든 변수가 여러 호출에서 그대로 유지됩니다. 영구 세션 작업에는 많은 도구를 사용할 수 있습니다.  이 예제에서는 [New-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/New-PSSession?view=powershell-5.1) 및 [Copy-Item](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Copy-Item?view=powershell-5.1)을 사용하여 호스트에서 가상 컴퓨터로, 가상 컴퓨터에서 호스트로 데이터를 이동합니다.
 
 **세션을 만든 다음 파일을 복사하려면**  
 
@@ -205,13 +205,13 @@ Enter-PSSession : An error has occurred which Windows PowerShell cannot handle. 
 
 **가능한 원인:**
 * 가상 컴퓨터가 존재하지만 실행되고 있지 않습니다.
-* 게스트 OS는 PowerShell Direct를 지원하지 않습니다([요구 사항](#Requirements) 참조).
+* 게스트 OS는 PowerShell Direct를 지원하지 않습니다([요구 사항](#requirements) 참조).
 * PowerShell은 게스트에서 사용할 수 없습니다.
   * 운영 체제가 부팅을 완료하지 않았습니다.
   * 운영 체제가 올바르게 부팅할 수 없습니다.
   * 일부 부팅 시간 이벤트는 사용자 입력이 필요합니다.
 
-[Get-VM](http://technet.microsoft.com/library/hh848479.aspx) cmdlet을 사용하여 호스트에서 실행되고 있는 VM을 확인할 수 있습니다.
+[Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm?view=win10-ps) cmdlet을 사용하여 호스트에서 실행되고 있는 VM을 확인할 수 있습니다.
 
 **오류 메시지:**  
 ```
@@ -253,7 +253,7 @@ Enter-PSSession : The credential is invalid.
 * 게스트 자격 증명의 유효성을 검사할 수 없습니다.
   * 제공된 자격 증명이 잘못되었습니다.
   * 게스트에 사용자 계정이 없습니다.(OS가 이전에 부팅되지 않았습니다)
-  * 관리자 권한으로 연결하는 경우: 관리자가 활성 사용자로 설정되지 않았습니다.  [여기](https://technet.microsoft.com/en-us/library/hh825104.aspx)에서 자세한 내용을 알아보세요.
+  * 관리자 권한으로 연결하는 경우: 관리자가 활성 사용자로 설정되지 않았습니다.  [여기](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825104(v=win.10)>)에서 자세한 내용을 알아보세요.
   
 ### <a name="error-the-input-vmname-parameter-does-not-resolve-to-any-virtual-machine"></a>오류: 입력 VMName 매개 변수가 가상 컴퓨터로 확인되지 않습니다.
 
@@ -266,7 +266,7 @@ Enter-PSSession : The input VMName parameter does not resolve to any virtual mac
 * Hyper-V 관리자가 아닙니다.  
 * 가상 컴퓨터가 없습니다.
 
-[Get-VM](http://technet.microsoft.com/library/hh848479.aspx) cmdlet을 사용하여 사용 중인 자격 증명에 Hyper-V 관리자 역할이 있는지 확인하고 호스트에서 로컬로 실행 중이고 부팅된 VM을 확인할 수 있습니다.
+[Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm?view=win10-ps) cmdlet을 사용하여 사용 중인 자격 증명에 Hyper-V 관리자 역할이 있는지 확인하고 호스트에서 로컬로 실행 중이고 부팅된 VM을 확인할 수 있습니다.
 
 
 -------------

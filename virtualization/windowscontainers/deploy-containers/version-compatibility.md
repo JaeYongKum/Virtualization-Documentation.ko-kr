@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 76549bbfbaf374acb79f1be4280949aecf4e87f0
-ms.sourcegitcommit: c48dcfe43f73b96e0ebd661164b6dd164c775bfa
+ms.openlocfilehash: 9e20a28f62ec4bb9456307acb7768e1123a57188
+ms.sourcegitcommit: 03e9203e9769997d8be3f66dc7935a3e5c0a83e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "9610283"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621631"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -98,7 +98,7 @@ PS C:\Users\Administrator> (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows N
 14393.321.amd64fre.rs1_release_inmarket.161004-2338
 ```
 
-어떤 버전을 확인 하려면 기본 이미지 사용 하 여 Docker 허브 또는 이미지 설명에 제공 된 이미지 해시 테이블에서 태그를 검토 합니다. [Windows 10 업데이트 기록](https://support.microsoft.com/en-us/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정이 릴리스된 나열 됩니다.
+어떤 버전을 확인 하려면 기본 이미지 사용 하 여 Docker 허브 또는 이미지 설명에 제공 된 이미지 해시 테이블에서 태그를 검토 합니다. [Windows 10 업데이트 기록](https://support.microsoft.com/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정이 릴리스된 나열 됩니다.
 
 ### <a name="hyper-v-isolation-for-containers"></a>컨테이너에 대 한 Hyper-v 격리
 
@@ -123,33 +123,33 @@ docker: Error response from daemon: container b81ed896222eb87906ccab1c3dd2fc4932
 ## <a name="choose-which-container-os-version-to-use"></a>컨테이너 OS 버전을 사용 하 여 선택
 
 >[!NOTE]
->"최신" 태그는 Windows Server 2016, 현재 [장기 서비스 채널 제품](https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview)함께 업데이트 됩니다. 다음 지침은 Windows Server 버전 1709 릴리스와 일치 하는 컨테이너 이미지에 대 한 것입니다.
+>2019 년 4 월 16을 기준으로 "최신" 태그는 더 이상 게시 되거나 [Windows 기본 OS 컨테이너 이미지](https://hub.docker.com/_/microsoft-windows-base-os-images)에 대 한 유지 합니다. 끌어오는 또는 이러한 리포지토리에서 이미지를 참조할 때 특정 태그에 선언 하세요.
 
-컨테이너에 대 한 사용 해야 하는 버전을 알고 있어야 합니다. 예를 들어 Windows Server 버전 1709 사용 하는 것에 대 한 최신 패치를 원하는 경우 태그 사용 해야 `1709` 같이 원하는 기본 OS 컨테이너 이미지의 버전을 지정 하는 경우:
+컨테이너에 대 한 사용 해야 하는 버전을 알고 있어야 합니다. 예를 들어 Windows Server 버전 1809 컨테이너 OS로 사용할 하 고 그에 대 한 최신 패치를 태그 사용 해야 `1809` 같이 원하는 기본 OS 컨테이너 이미지의 버전을 지정 하는 경우:
 
 ``` dockerfile
-FROM microsoft/windowsservercore:1709
+FROM mcr.microsoft.com/windows/nanoserver:1809
 ...
 ```
 
-그러나 Windows Server 버전 1709의 특정 패치를 원하는 경우 태그에 KB 번호를 지정할 수 있습니다. 예를 들어 Windows Server에 적용 된 4043961 사용 하 여 버전 1709에서 Nano 서버 기본 OS 컨테이너 이미지를 가져오려면, 사용자 지정 하는 것 같이:
+그러나 Windows Server 버전 1809의 특정 패치를 원하는 경우 태그에 KB 번호를 지정할 수 있습니다. 예를 들어 Windows Server 버전 1809는 KB4493509 적용 된에서 Nano 서버 기본 OS 컨테이너 이미지를 가져오려면, 사용자 지정 하는 것 같이:
 
 ``` dockerfile
-FROM microsoft/nanoserver:1709_KB4043961
-...
-```
-
-Windows Server 2016에서 Nano 서버 기본 OS 컨테이너 이미지에 필요 하면 "최신" 이라는 태그를 사용 하 여 이러한 기본 OS 컨테이너 이미지의 최신 버전을 가져올 수 있습니다.
-
-``` dockerfile
-FROM microsoft/nanoserver
+FROM mcr.microsoft.com/windows/nanoserver:1809-KB4493509
 ...
 ```
 
 또한 태그에 OS 버전을 지정 하 여 이전에 사용 했던 스키마를 사용 하 여 필요한 동일한 패치를 지정할 수 있습니다.
 
 ``` dockerfile
-FROM microsoft/nanoserver:10.0.14393.1770
+FROM mcr.microsoft.com/windows/nanoserver:10.0.17763.437
+...
+```
+
+기반으로 Windows Server 2019 및 Windows Server 2016 Server Core 기본 이미지는 [장기 서비스 채널 (LTSC)를](https://docs.microsoft.com/en-us/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 해제 합니다. 예를 들어 Windows Server 2019 OS Server Core 이미지의 컨테이너로 고 그에 대 한 최신 패치를 LTSC 지정할 수 있습니다 같이 릴리스 합니다.
+
+``` dockerfile
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 ...
 ```
 

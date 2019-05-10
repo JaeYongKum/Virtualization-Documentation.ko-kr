@@ -7,12 +7,12 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
-ms.openlocfilehash: c14027e6ba1b0cd475ec1543205b315240662f2c
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: e3255d236a3fbb5ac4d908143750b84e3db82ceb
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9575864"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621101"
 ---
 # <a name="supported-windows-guests"></a>지원되는 Windows 게스트
 
@@ -41,7 +41,7 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 | Windows 7 | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows Vista SP2(서비스 팩 2) | 2 | Business/Enterprise/Ultimate(N 및 KN 버전 포함) |
 | - | | |
-| [Windows Server 반기 채널](https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview) | 64 | |
+| [Windows Server 반기 채널](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview) | 64 | |
 | WindowsServer 2019 | 64 | |
 | WindowsServer 2016 | 64 | |
 | WindowsServer 2012 R2 | 64 | |
@@ -57,11 +57,11 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 
 | 게스트 운영 체제 |  |
 |:-----|:------|
-| [CentOS 및 Red Hat Enterprise Linux](https://technet.microsoft.com/library/dn531026.aspx) | |
-| [Hyper-V의 Debian 가상 컴퓨터](https://technet.microsoft.com/library/dn614985.aspx) | |
-| [SUSE](https://technet.microsoft.com/en-us/library/dn531027.aspx) | |
-| [Oracle Linux](https://technet.microsoft.com/en-us/library/dn609828.aspx)  | |
-| [Ubuntu](https://technet.microsoft.com/en-us/library/dn531029.aspx) | |
-| [FreeBSD](https://technet.microsoft.com/library/dn848318.aspx) | |
+| [CentOS 및 Red Hat Enterprise Linux](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V) | |
+| [Hyper-V의 Debian 가상 컴퓨터](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Debian-virtual-machines-on-Hyper-V) | |
+| [SUSE](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V) | |
+| [Oracle Linux](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Oracle-Linux-virtual-machines-on-Hyper-V)  | |
+| [Ubuntu](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Ubuntu-virtual-machines-on-Hyper-V) | |
+| [FreeBSD](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-FreeBSD-virtual-machines-on-Hyper-V) | |
 
-이전 버전의 Hyper-V에 대한 지원 정보를 포함한 자세한 내용은 [Hyper-V의 Linux 및 FreeBSD 가상 컴퓨터](https://technet.microsoft.com/library/dn531030.aspx)를 참조하세요.
+이전 버전의 Hyper-V에 대한 지원 정보를 포함한 자세한 내용은 [Hyper-V의 Linux 및 FreeBSD 가상 컴퓨터](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)를 참조하세요.

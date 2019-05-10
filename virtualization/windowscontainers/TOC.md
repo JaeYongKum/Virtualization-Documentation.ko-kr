@@ -47,7 +47,7 @@
 ### [Swarm 모드 시작](manage-containers/swarm-mode.md)
 
 # 커뮤니티 및 지원
-## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)
+## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)
 ## [커뮤니티 비디오 및 블로그](communitylinks.md)
 ## [문제 해결](troubleshooting.md)
 
@@ -60,7 +60,7 @@
 ## [컨테이너에서 하드웨어 장치](deploy-containers/hardware-devices-in-containers.md)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
 ## [그룹 관리 서비스 계정](manage-containers/manage-serviceaccounts.md)
-## [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
+## [바이러스 백신 최적화](https://docs.microsoft.com/windows-hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 ## [Windows의 Linux 컨테이너](deploy-containers/linux-containers.md)
 
 # [컨테이너 샘플](samples.md)

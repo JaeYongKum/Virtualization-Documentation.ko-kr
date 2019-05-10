@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-ms.openlocfilehash: 41fa89dcaba38d43d39681240a1a108c9250ba78
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: db360bdd2b62667ab017549b3c179d11278abc19
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9575174"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620801"
 ---
 # <a name="automating-builds-and-saving-images"></a>빌드 자동화 및 이미지 저장
 
@@ -31,7 +31,7 @@ ms.locfileid: "9575174"
 
 ## <a name="container-image---dockerfile"></a>컨테이너 이미지-Dockerfile
 
-컨테이너를 수동으로 만들고, 수정한 다음 새 컨테이너 이미지에 캡처할 수는 있지만 Docker에는 Dockerfile을 사용하여 이 프로세스를 자동화하는 방법이 포합됩니다. 이 연습에서는 Docker ID가 필요합니다. Docker ID가 없는 경우 [Docker Cloud]( https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
+컨테이너를 수동으로 만들고, 수정한 다음 새 컨테이너 이미지에 캡처할 수는 있지만 Docker에는 Dockerfile을 사용하여 이 프로세스를 자동화하는 방법이 포합됩니다. 이 연습에서는 Docker ID가 필요합니다. Docker ID가 없는 경우 [Docker Cloud](https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
 
 컨테이너 호스트에서 `c:\build` 디렉터리를 만들고, 이 디렉터리에 `Dockerfile`라는 파일을 만듭니다. 참고 – 파일에는 파일 확장명이 없어야 합니다.
 

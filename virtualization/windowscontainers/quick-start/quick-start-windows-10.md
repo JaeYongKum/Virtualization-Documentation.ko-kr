@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 07f5929505226a50a161b4ae7df5669c2ad89d83
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: be6be81e995dce8ebd757c73793f474f4b0909bf
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9575524"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620741"
 ---
 # <a name="windows-containers-on-windows-10"></a>Windows 10의 Windows 컨테이너
 
@@ -33,7 +33,7 @@ ms.locfileid: "9575524"
 ## <a name="prerequisites"></a>필수 구성 요소
 다음 요구 사항을 충족 하는지 확인 하세요.
 - Windows 10 Professional 또는 Enterprise 1 주년 업데이트 (버전 1607) 이상을 실행 물리적 컴퓨터 시스템 하나. 
-- [Hyper-v가](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 활성화 되어 있는지 확인 합니다.
+- [Hyper-v가](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 활성화 되어 있는지 확인 합니다.
 
 ***Hyper-v 격리:*** Windows Server 컨테이너는 동일한 커널 버전 및 프로덕션 환경에서 사용할 수 있는 구성을 개발자에 게 제공 하기 위해 Windows 10에서 Hyper-v 격리가 필요, 더 Hyper-v에 대 한 격리에서 찾을 수 있습니다 [Windows 컨테이너 정보](../about/index.md) 페이지.
 

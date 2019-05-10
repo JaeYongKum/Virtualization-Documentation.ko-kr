@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
-ms.openlocfilehash: cc869cfaf1c433fbfdc351e9120a0e43c02967ee
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 9ee2a0adad762aa3cee53f3b44210976259b693f
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9574844"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620701"
 ---
 # <a name="containers-on-windows-documentation"></a>Windows 설명서의 컨테이너
 
@@ -30,7 +30,7 @@ Windows Server 2019의 Windows 컨테이너를 배포 하는 방법을 알아봅
 
 * [시스템 요구 사항](deploy-containers/system-requirements.md)
 * [컨테이너 호스트 배포](deploy-containers/deploy-containers-on-server.md)
-* [바이러스 백신 최적화](https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
+* [바이러스 백신 최적화](https://docs.microsoft.com/windows-hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 
 ## <a name="docker-on-windows"></a>Windows의 Docker
 Windows에서 Docker를 관리하는 방법을 알아보세요.
@@ -45,7 +45,7 @@ Windows에서 Docker를 관리하는 방법을 알아보세요.
 
 ## <a name="community"></a>커뮤니티
 커뮤니티와 상호 작용하고 샘플을 사용해 보며 추가 리소스를 찾습니다.
-* [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowscontainers)
+* [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)
 * [커뮤니티 비디오 및 블로그](communitylinks.md)
-* [컨테이너 샘플](https://docs.microsoft.com/en-us/virtualization/windowscontainers/samples)
+* [컨테이너 샘플](https://docs.microsoft.com/virtualization/windowscontainers/samples)
 * [UserVoice](https://windowsserver.uservoice.com/forums/304624-containers)

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
-ms.openlocfilehash: 354469199f3c7e886760e8a391edccde067986af
-ms.sourcegitcommit: c48dcfe43f73b96e0ebd661164b6dd164c775bfa
+ms.openlocfilehash: a04d356415e7bed84980747edc927cc1eaa1e7c1
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "9610293"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621091"
 ---
 # <a name="docker-engine-on-windows"></a>Windows의 Docker 엔진
 
@@ -220,7 +220,7 @@ Windows에서 Docker/컨테이너와 관련된 Windows 선택적 기능을 제�
 여기에 Docker를 설치할 때 모든 Windows 10 또는 Windows Server 2016에서 자동으로 활성화 되는 "컨테이너" 기능이 포함 됩니다. Docker를 설치할 때 Windows 10에서 자동으로 활성화되지만 Windows Server 2016에서는 명시적으로 활성화해야 하는 "Hyper-V"가 포함될 수도 있습니다.
 
 >[!IMPORTANT]
->[Hyper-v](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) 기능은 뿐 아니라 더 많은 컨테이너 수 있는 일반적인 가상화 기능입니다. Hyper-v 기능을 비활성화 하기 전에 없는 다른 가상화 구성 요소는 시스템에서 Hyper-v를 필요로 하는 있는지 확인 합니다.
+>[Hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/) 기능은 뿐 아니라 더 많은 컨테이너 수 있는 일반적인 가상화 기능입니다. Hyper-v 기능을 비활성화 하기 전에 없는 다른 가상화 구성 요소는 시스템에서 Hyper-v를 필요로 하는 있는지 확인 합니다.
 
 Windows 10에서 Windows 기능 제거 하려면:
 

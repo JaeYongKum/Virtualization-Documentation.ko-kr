@@ -15,10 +15,10 @@ Hyper-v WMI를 사용 하 여 가상 컴퓨터 백업을 만들 때 백업에서
 ### <a name="wmi-export"></a>WMI 내보내기
 개발자 (위의 예제에서 사용) 되는 Hyper-v WMI 인터페이스를 통해 백업 데이터를 내보낼 수 있습니다.  Hyper-v는 가상 하드 드라이브에 변경 내용을 컴파일하고 요청 된 위치에 파일을 복사 합니다.  이 방법을 사용 하기 쉽고 모든 시나리오 작동 하며 원격으로 사용할 수는 합니다.  그러나 자주 생성 된 가상 하드 드라이브 많은 양의 네트워크를 통해 전송 하는 데이터를 만듭니다.
 ### <a name="win32-apis"></a>Win32 Api
-개발자가 SetVirtualDiskInformation, GetVirtualDiskInformation를 사용할 수 있으며 QueryChangesVirtualDisk Api 가상 하드 디스크 Win32 API에 설명 된 대로 설정 여기: https://docs.microsoft.com/en-us/windows/desktop/api/_vhd/ 는 이러한 Api를 사용 하려면 Hyper-v WMI 해야 참조를 만드는 데 사용할 참고 연결 된 가상 컴퓨터에서 점입니다.  이러한 Win32 Api 백업된 가상 컴퓨터의 데이터에 대 한 효율적인 액세스에 대 한 다음 수 있습니다.  Win32 Api에 몇 가지 제한이 합니다.
+개발자가 SetVirtualDiskInformation, GetVirtualDiskInformation를 사용할 수 있으며 QueryChangesVirtualDisk Api 가상 하드 디스크 Win32 API에 설명 된 대로 설정 여기: https://docs.microsoft.com/windows/desktop/api/_vhd/ 는 이러한 Api를 사용 하려면 Hyper-v WMI 해야 참조를 만드는 데 사용할 참고 연결 된 가상 컴퓨터에서 점입니다.  이러한 Win32 Api 백업된 가상 컴퓨터의 데이터에 대 한 효율적인 액세스에 대 한 다음 수 있습니다.  Win32 Api에 몇 가지 제한이 합니다.
 *   로컬로 액세스할만 수 있습니다.
 *   안 함에서 데이터 읽기를 지원 하지 가상 하드 디스크 파일 공유
 *   가상 하드 디스크의 내부 구조와 관련 된 데이터 주소 반환
 
 ### <a name="remote-shared-virtual-disk-protocol"></a>원격 공유 가상 디스크 프로토콜
-마지막으로, 개발자 효율적으로 공유 가상 하드 디스크 파일 –에서 백업 데이터 정보에 액세스 해야 할 경우 원격 공유 가상 디스크 프로토콜을 사용 하 여 필요한 됩니다.  이 프로토콜은 여기에서 설명 합니다.https://msdn.microsoft.com/en-us/library/dn393384.aspx
+마지막으로, 개발자 효율적으로 공유 가상 하드 디스크 파일 –에서 백업 데이터 정보에 액세스 해야 할 경우 원격 공유 가상 디스크 프로토콜을 사용 하 여 필요한 됩니다.  이 프로토콜을 설명 하는 [다음과 같습니다](https://docs.microsoft.com/openspecs/windows_protocols/ms-rsvd/c865c326-47d6-4a91-a62d-0e8f26007d15).

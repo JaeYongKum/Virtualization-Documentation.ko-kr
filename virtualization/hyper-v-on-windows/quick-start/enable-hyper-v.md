@@ -7,12 +7,12 @@ ms.date: 02/15/2019
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
-ms.openlocfilehash: 53152d0237a7f81858a5cb2f0fd8aabd439c4613
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: a710f8d60f9d82be7fe02b950a9782b94f3ae6e4
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578274"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620731"
 ---
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
@@ -64,7 +64,7 @@ DISM을 사용하여 Hyper-V 역할을 활성화하려면:
 
   ![콘솔 창에 사용하도록 설정된 Hyper-V가 표시됩니다.](media/dism_upd.png)
 
-DISM에 대한 자세한 내용은 [DISM 기술 참조](https://technet.microsoft.com/en-us/library/hh824821.aspx)를 참조하세요.
+DISM에 대한 자세한 내용은 [DISM 기술 참조](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824821(v=win.10)>)를 참조하세요.
 
 ## <a name="enable-the-hyper-v-role-through-settings"></a>설정을 통해 Hyper-V 역할 활성화
 

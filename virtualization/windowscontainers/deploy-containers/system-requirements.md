@@ -7,12 +7,12 @@ ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: 942676be30760cbe1701d75f7d2fbca9539ce03b
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 19943e45df7847e83010ca31c01c6cb5b18d41cf
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577064"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621501"
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -37,44 +37,19 @@ Windows 컨테이너 호스트는 Hyper-v 가상 컴퓨터에서 실행 되 고 
 
 Windows 컨테이너는 4 개의 컨테이너 기본 이미지와 함께 제공 됩니다: Windows Server Core, Nano 서버, 창 및 IoT Core 합니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
 
-<table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
-<thead>
-<tr valign="top">
-<th><center>호스트 운영 체제</center></th>
-<th><center>Windows Server 컨테이너</center></th>
-<th><center>Hyper-V 격리</center></th>
-</tr>
-</thead>
-<tbody>
-<tr valign="top">
-<td><center>Windows Server 2016 / 2019 (Standard 또는 Datacenter)</center></td>
-<td><center>Server Core, Nano 서버에 Windows</center></td>
-<td><center>Server Core, Nano 서버에 Windows</center></td>
-</tr>
-<tr valign="top">
-<td><center>Nano Server<a href="#warn-1">*</a></center></td>
-<td><center> Nano 서버</center></td>
-<td><center>Server Core, Nano 서버에 Windows</center></td>
-</tr>
-<tr valign="top">
-<td><center>Windows 10 Pro/Enterprise</center></td>
-<td><center>사용할 수 없음</center></td>
-<td><center>Server Core, Nano 서버에 Windows</center></td>
-</tr>
-<tr valign="top">
-<td><center>IoT Core</center></td>
-<td><center>IoT Core</center></td>
-<td><center>사용할 수 없음</center></td>
-</tr>
-</tbody>
-</table>
+|호스트 운영 체제|Windows 컨테이너|Hyper-V 격리|
+|---------------------|-----------------|-----------------|
+|Windows Server 2016 또는 Windows Server 2019 (Standard 또는 Datacenter)|Server Core, Nano 서버에 Windows|Server Core, Nano 서버에 Windows|
+|Nano Server|Nano Server|Server Core, Nano 서버에 Windows|
+|Windows 10 Pro 또는 Windows 10 Enterprise|사용할 수 없음|Server Core, Nano 서버에 Windows|
+|IoT Core|IoT Core|사용할 수 없음|
 
 > [!WARNING]  
 > Windows Server 버전 1709부터 Nano 서버 더 이상 컨테이너 호스트로 사용할 수 없습니다.
 
 ### <a name="memory-requirements"></a>메모리 요구 사항
 
-컨테이너에 대해 사용 가능한 메모리에 대한 제한은 [리소스 컨트롤](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/resource-controls)을 통해 또는 컨테이너 호스트를 오버로드하여 구성할 수 있습니다.  컨테이너를 시작 하 고 기본 명령 (ipconfig, dir 등)를 실행 하는 데 필요한 메모리 양은 최소 다음과 같습니다.
+컨테이너에 대해 사용 가능한 메모리에 대한 제한은 [리소스 컨트롤](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/resource-controls)을 통해 또는 컨테이너 호스트를 오버로드하여 구성할 수 있습니다.  컨테이너를 시작 하 고 기본 명령 (ipconfig, dir 등)를 실행 하는 데 필요한 메모리 양은 최소 다음과 같습니다.
 
 >[!NOTE]
 >이러한 값 컨테이너 또는 컨테이너에서 실행 중인 응용 프로그램의 요구 사항 간 리소스 공유 고려 하지 않습니다.  예를 들어 512MB의 사용 가능한 메모리가 있는 호스트는 Server Core 컨테이너가 리소스를 공유하므로 Hyper-V에서 여러 개의 Server Core 컨테이너를 실행할 수 있습니다.
@@ -100,7 +75,7 @@ Windows 컨테이너는 4 개의 컨테이너 기본 이미지와 함께 제공 
 - [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): 응용 프로그램 전체.NET framework에 필요한 경우 사용 하 여 최상의 이미지입니다.
 - [Nano 서버](https://hub.docker.com/_/microsoft-windows-nanoserver):만.NET Core를 필요로 하는 응용 프로그램을 Nano 서버는 훨씬 가볍습니다 이미지를 제공 합니다.
 - [Windows](https://hub.docker.com/_/microsoft-windowsfamily-windows): 응용 프로그램이 구성 요소 또는 Server Core에서 누락 되는.dll에 따라 또는 Nano 서버 이미지, GDI 라이브러리 등 사용할 수 있습니다. 이 이미지는 Windows 전체 종속성 집합을 전달합니다.
-- [IoT Core](https://hub.docker.com/_/microsoft-windows-iotcore):이 이미지는 [IoT 응용 프로그램](https://developer.microsoft.com/en-us/windows/iot)에 대 한 구축 합니다. IoT Core 호스트를 대상으로 하는 경우이 컨테이너 이미지를 사용 해야 합니다.
+- [IoT Core](https://hub.docker.com/_/microsoft-windows-iotcore):이 이미지는 [IoT 응용 프로그램](https://developer.microsoft.com/windows/iot)에 대 한 구축 합니다. IoT Core 호스트를 대상으로 하는 경우이 컨테이너 이미지를 사용 해야 합니다.
 
 대부분의 사용자에 대 한 Windows Server Core 또는 Nano 서버에 가장 적합 한 이미지를 사용 하 여 됩니다. 다음과 같은 경우 Nano 서버 위에 빌드하려고 생각 중 이라면 유의 해야 합니다.
 

@@ -8,12 +8,12 @@ ms.prod: containers
 description: Kubernetes resoureces 혼합 OS Kubernetes 클러스터에 배포 됩니다.
 keywords: kubernetes, 1.13, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 7d2f1dd789a96a3ee4898ef196f872e574d6321f
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 380eeb536b9642210c49bc91edf680b695d54a90
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9574904"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621041"
 ---
 # <a name="deploying-kubernetes-resources"></a>Kubernetes 리소스 배포 #
 최소한 1 마스터 및 1 작업자로 구성 된 Kubernetes 클러스터 했 고, 준비가 Kubernetes 리소스를 배포 합니다.
@@ -31,7 +31,7 @@ kubectl get nodes
 
 모든 멋지게 다운로드 하 고 다음 서비스를 실행할 수 있습니다.
 > [!Important] 
-> 하기 전에 `kubectl apply`을 확인을 두-check/수정 확인 합니다 `microsoft/windowsservercore` [를 노드 하 여 실행할 수 있는 컨테이너 이미지](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility#choosing-container-os-versions)에 샘플 파일의 이미지!
+> 하기 전에 `kubectl apply`을 확인을 두-check/수정 확인 합니다 `microsoft/windowsservercore` [를 노드 하 여 실행할 수 있는 컨테이너 이미지](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility#choosing-container-os-versions)에 샘플 파일의 이미지!
 
 ```bash
 wget https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/flannel/l2bridge/manifests/simpleweb.yml -O win-webserver.yaml

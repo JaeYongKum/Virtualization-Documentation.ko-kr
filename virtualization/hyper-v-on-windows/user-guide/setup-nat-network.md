@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1f8a691c-ca75-42da-8ad8-a35611ad70ec
-ms.openlocfilehash: 0c365b9351ee09c946e1711f3a3a5e82eb71c785
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: ea6fb4471cf337ff17bb1f936caea192bccaf404
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577314"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621161"
 ---
 # <a name="set-up-a-nat-network"></a>NAT 네트워크 설정
 
@@ -28,7 +28,7 @@ Windows 10 Hyper-V에서는 가상 네트워크에 대해 기본 NAT(Network Add
 * Windows 10 1주년 업데이트 이상
 * Hyper-V 사용(지침은 [여기](../quick-start/enable-hyper-v.md) 참조)
 
-> **참고:**  현재는 호스트당 NAT 네트워크 하나로 제한됩니다. Windows NAT(WinNAT) 구현, 기능 및 제한 사항에 대한 자세한 내용은 [WinNAT 기능 및 제한 사항 블로그](https://blogs.technet.microsoft.com/virtualization/2016/05/25/windows-nat-winnat-capabilities-and-limitations/)를 참조하세요.
+> **참고:**  현재는 호스트당 NAT 네트워크 하나로 제한됩니다. Windows NAT(WinNAT) 구현, 기능 및 제한 사항에 대한 자세한 내용은 [WinNAT 기능 및 제한 사항 블로그](https://techcommunity.microsoft.com/t5/Virtualization/Windows-NAT-WinNAT-Capabilities-and-limitations/ba-p/382303)를 참조하세요.
 
 ## <a name="nat-overview"></a>NAT 개요
 NAT는 호스트 컴퓨터의 IP 주소와 내부 Hyper-V 가상 스위치를 통한 포트를 사용하여 네트워크 리소스에 대한 액세스 권한을 가상 컴퓨터에 제공합니다.
@@ -37,7 +37,7 @@ NAT(Network Address Translation)는 외부 IP 주소 및 포트를 훨씬 더 �
 
 또한 NAT를 사용하면 여러 가상 컴퓨터에서 동일한(내부) 통신 포트가 필요한 응용 프로그램을 고유한 외부 포트에 매핑하여 호스트할 수 있습니다.
 
-이러한 모든 이유로 NAT 네트워킹은 컨테이너 기술에 매우 일반적입니다([컨테이너 네트워킹](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/management/container_networking) 참조).
+이러한 모든 이유로 NAT 네트워킹은 컨테이너 기술에 매우 일반적입니다([컨테이너 네트워킹](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture) 참조).
 
 
 ## <a name="create-a-nat-virtual-network"></a>NAT 가상 네트워크 만들기

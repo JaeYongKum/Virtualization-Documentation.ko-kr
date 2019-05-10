@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: 9f38775d56a95d96bef42b3a33c2571cc5fb2ca0
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: f8bfd60af18731537c2ce02ca7abdb081f3c7369
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578384"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620761"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -37,7 +37,7 @@ Linux 환경에서 Docker와 같은 컨테이너 관리 도구 보다 세밀 하
 
 `containerd` 다운로드 하 고 컨테이너 이미지 컨테이너 실행 및 관리를 압축을 푸는에서 컨테이너 수명 주기를 관리 하는 디먼이입니다.
 
-Windows에서 다른 접근 방식을 했습니다.  Windows 컨테이너를 지원 하기 위해 Docker를 사용 하 여 작업을 착수 했을 때 HCS (호스트 계산 서비스)에 직접 구축 합니다.  [이 블로그 게시물](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/) 매우 다양 한 이유는 HCS 구축 및 이유 것이 방법을 사용 하는 데 걸린 컨테이너 처음에 대 한 정보.
+Windows에서 다른 접근 방식을 했습니다.  Windows 컨테이너를 지원 하기 위해 Docker를 사용 하 여 작업을 착수 했을 때 HCS (호스트 계산 서비스)에 직접 구축 합니다.  [이 블로그 게시물](https://techcommunity.microsoft.com/t5/Containers/Introducing-the-Host-Compute-Service-HCS/ba-p/382332) 매우 다양 한 이유는 HCS 구축 및 이유 것이 방법을 사용 하는 데 걸린 컨테이너 처음에 대 한 정보.
 
 ![Windows에서 초기 Docker 엔진 아키텍처](media/hcs.png)
 
@@ -110,6 +110,16 @@ HCS (직접 또는 래퍼를 통해)를 사용 하려면 한 녹/Haskell/InsertY
 > 개발자/테스트 합니다.
 
 [CRI](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto) (컨테이너 런타임 인터페이스) 공유 샌드박스에서 workload(s)로 컨테이너에 설명 OCI 사양 단일 컨테이너를 정의 하는 동안 환경에 포드를 호출 합니다.  포드는 하나 이상의 컨테이너 워크 로드를 포함할 수 있습니다.  포드가는 Kubernetes 및 서비스 패브릭 메시 처리 메모리 및 vNETs와 같은 일부 공유 리소스를 사용 하 여 동일한 호스트에 있어야 하는 그룹화 된 워크 로드와 같은 컨테이너 오 케 스트레이 터를 사용 합니다.
+
+containerd/cri의 다음 호환성 매트릭스를 포드를 사용할 수 있습니다.
+
+| 호스트 OS | 컨테이너 OS | 격리 | 포드 지원 하나요? |
+|:-------------------------------------------------------------------------|:-----------------------------------------------------------------------------|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>Windows Server 2019/1809</ul></li><ul><li>Windows 10 1809</ul></li> | Linux | `hyperv` | 예-true 다중 컨테이너 포드를 지원 합니다. |
+|  | Windows Server 2019/1809 | `process`* 또는 `hyperv` | 예-각 워크 로드 컨테이너 OS 유틸리티 VM OS를 일치 하는 경우 true 다중 컨테이너 포드를 지원 합니다. |
+|  | WindowsServer 2016</br>Windows Server 1709</br>Windows Server 1803 | `hyperv` | 부분-지원 포드 컨테이너 OS 유틸리티 VM OS를 일치 하는 경우 유틸리티 VM 당 하나의 프로세스 격리 된 컨테이너를 지원할 수 있는 샌드박스 합니다. |
+
+\*Windows 10 호스트에 Hyper-v 격리만 지원
 
 CRI 사양에 대 한 링크.
 

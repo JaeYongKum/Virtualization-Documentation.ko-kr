@@ -5,27 +5,27 @@ ms.author: gekudray
 ms.date: 02/09/2018
 ms.topic: get-started-article
 ms.prod: containers
-description: V1.13 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
-keywords: kubernetes, 1.13, windows, 시작
+description: V1.14 사용 하 여 Kubernetes 클러스터에 Windows 노드를 가입합니다.
+keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 7c3a0111b3d19ae1b513a84665f870bba24ae33d
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: c380f5dc10430a94959718a5ce92f311603db733
+ms.sourcegitcommit: aaf115a9de929319cc893c29ba39654a96cf07e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576991"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "9622928"
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes
 
-이 페이지는 Linux 기반 클러스터에 Windows 노드를 가입 하 여 Windows에서 Kubernetes를 사용 하 여 시작에 대 한 개요 역할을 합니다. Windows Server [버전 1809에서](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1809#container-networking-with-kubernetes)Kubernetes 1.14의 릴리스를 통해 사용자는 Windows에서 Kubernetes에서 다음 기능을 활용을 수행할 수 있습니다.
+이 페이지는 Linux 기반 클러스터에 Windows 노드를 가입 하 여 Windows에서 Kubernetes를 사용 하 여 시작에 대 한 개요 역할을 합니다. Windows Server [버전 1809에서](https://docs.microsoft.com/windows-server/get-started/whats-new-in-windows-server-1809#container-networking-with-kubernetes)Kubernetes 1.14의 릴리스를 통해 사용자는 Windows에서 Kubernetes에서 다음 기능을 활용을 수행할 수 있습니다.
 
 - **오버레이 네트워킹**: vxlan 모드에서 Flannel를 사용 하 여 가상 오버레이 네트워크를 구성 합니다.
-    - 두 Windows Server 2019 [KB4489899](https://support.microsoft.com/en-us/help/4489899) 설치 또는 [Windows Server vNext Insider Preview](https://blogs.windows.com/windowsexperience/tag/windows-insider-program/) 빌드 18317 + 필요
+    - 두 Windows Server 2019 [KB4489899](https://support.microsoft.com/help/4489899) 설치 또는 [Windows Server vNext Insider Preview](https://blogs.windows.com/windowsexperience/tag/windows-insider-program/) 빌드 18317 + 필요
     - Kubernetes v1.14 필요 (이상)와 `WinOverlay` 기능 게이트 설정
     - Flannel v0.11.0 필요 (이상)
 - **간소화 된 네트워크 관리**: 호스트 게이트웨이 모드에서 Flannel를 사용 하 여 노드 간에 자동 경로 관리 합니다.
-- **향상 된 확장성**: [Windows Server 컨테이너에 대 한 장치 없는 Vnic](https://blogs.technet.microsoft.com/networking/2018/04/27/network-start-up-and-performance-improvements-in-windows-10-spring-creators-update-and-windows-server-version-1803/)덕분에 빠르고 안정적이 되도록 컨테이너 시작 시간을 개선 합니다.
-- **Hyper-v 격리 (알파)**: 향상 된 보안을 위한 커널 모드 격리를 통해 [Hyper-v 격리](https://kubernetes.io/docs/getting-started-guides/windows/#hyper-v-containers) 를 조정 합니다. 자세한 내용은 [Windows 컨테이너 형식](https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/#windows-container-types)입니다.
+- **향상 된 확장성**: [Windows Server 컨테이너에 대 한 장치 없는 Vnic](https://techcommunity.microsoft.com/t5/Networking-Blog/Network-start-up-and-performance-improvements-in-Windows-10/ba-p/339716)덕분에 빠르고 안정적이 되도록 컨테이너 시작 시간을 개선 합니다.
+- **Hyper-v 격리 (알파)**: 향상 된 보안을 위한 커널 모드 격리를 통해 [Hyper-v 격리](https://kubernetes.io/docs/getting-started-guides/windows/#hyper-v-containers) 를 조정 합니다. 자세한 내용은 [Windows 컨테이너 형식](https://docs.microsoft.com/virtualization/windowscontainers/about/#windows-container-types)입니다.
     - Kubernetes v1.10 필요 (이상)와 `HyperVContainer` 기능 게이트 사용 하도록 설정 합니다.
 - **저장소 플러그 인**: Windows 컨테이너에 대 한 SMB 및 iSCSI 지원 [FlexVolume 저장소 플러그 인](https://github.com/Microsoft/K8s-Storage-Plugins) 을 사용 합니다.
 

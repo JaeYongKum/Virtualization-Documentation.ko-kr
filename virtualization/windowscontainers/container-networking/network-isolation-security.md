@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 1c0a3fd25a5572604db59e0c68d8b4a3d84b00e9
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: b39ec17ac04995e8e1ce8795b5721df7a291e31c
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576314"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620821"
 ---
 # <a name="network-isolation-and-security"></a>네트워크 격리 및 보안
 
@@ -29,7 +29,7 @@ Get-NetCompartment
 
 ## <a name="network-security"></a>네트워크 보안
 
-사용되는 컨테이너 및 네트워크 드라이버에 따라 Windows 방화벽과 [VFP](https://www.microsoft.com/en-us/research/project/azure-virtual-filtering-platform/)의 조합으로 포트 ACL이 적용됩니다.
+사용되는 컨테이너 및 네트워크 드라이버에 따라 Windows 방화벽과 [VFP](https://www.microsoft.com/research/project/azure-virtual-filtering-platform/)의 조합으로 포트 ACL이 적용됩니다.
 
 ### <a name="windows-server-containers"></a>Windows Server 컨테이너
 

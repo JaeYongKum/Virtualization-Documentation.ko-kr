@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: aee64ad0-752f-4075-a115-2d6b983b4f49
-ms.openlocfilehash: 26eaca5a583f8b2e11ca1e05e2fa9a4366fd8837
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: afbbcf120961081191aaf9051866427c9ce1478e
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9577414"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621281"
 ---
 # <a name="hypervisor-specifications"></a>하이퍼바이저 사양
 
@@ -21,7 +21,7 @@ ms.locfileid: "9577414"
 
 Hyper-V 하이퍼바이저 TLFS(최상위 기능 사양)에서는 다른 운영 체제 구성 요소에 외부적으로 표시되는 하이퍼바이저의 동작을 설명합니다. 이 사양은 게스트 운영 체제 개발자를 위한 것입니다.
   
-> 이 사양은 Microsoft Open Specification Promise에 따라 제공됩니다.  [Microsoft Open Specification Promise](https://msdn.microsoft.com/en-us/openspecifications)에 대한 자세한 내용은 다음을 참조하세요.  
+> 이 사양은 Microsoft Open Specification Promise에 따라 제공됩니다.  [Microsoft Open Specification Promise](https://docs.microsoft.com/openspecs/dev_center/ms-devcentlp/51a0d3ff-9f77-464c-b83f-2de08ed28134)에 대한 자세한 내용은 다음을 참조하세요.  
 
 #### <a name="download"></a>다운로드
 릴리스 | 문서

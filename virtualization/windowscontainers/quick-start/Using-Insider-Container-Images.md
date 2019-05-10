@@ -70,7 +70,7 @@ docker pull mcr.microsoft.com/windows/servercore/insider
 ```
 
 > [!IMPORTANT]
-> Windows 컨테이너 OS 이미지 [EULA](../EULA.md ) 및 Windows 참가자 프로그램 [사용 약관을](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)읽어 보십시오.
+> Windows 컨테이너 OS 이미지 [EULA](../EULA.md ) 및 Windows 참가자 프로그램 [사용 약관을](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)읽어 보십시오.
 
 ## <a name="next-steps"></a>다음 단계
 

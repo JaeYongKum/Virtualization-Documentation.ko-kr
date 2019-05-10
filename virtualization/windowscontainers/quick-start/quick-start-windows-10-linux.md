@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: f9b54dbc9fc7c79bdb9b9aa106d5811401c365f3
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 357fc101b2b0e4d6ccdf53a948ab8d91d19a1522
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578634"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9621571"
 ---
 # <a name="linux-containers-on-windows-10"></a>Windows 10에서 Linux 컨테이너
 
@@ -34,7 +34,7 @@ ms.locfileid: "9578634"
 
 다음 요구 사항을 충족 하는지 확인 하세요.
 - Windows 10 Professional 또는 Enterprise가 크리에이터 스 업데이트 (버전 1709) 이상을 실행 하는 하나의 물리적 컴퓨터 시스템
-- [Hyper-v가](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 활성화 되어 있는지 확인 합니다.
+- [Hyper-v가](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 활성화 되어 있는지 확인 합니다.
 
 ***Hyper-v 격리:*** Windows의 Linux 컨테이너 개발자에 게 제공 하기 위해 Windows 10에서 Hyper-v 격리가 필요는 적절 한 Linux 커널을 컨테이너를 실행 합니다. 더 Hyper-v에 대 한 격리에 [대 한 Windows 컨테이너](../about/index.md) 페이지에서 찾을 수 있습니다.
 

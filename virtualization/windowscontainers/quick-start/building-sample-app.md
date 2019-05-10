@@ -7,18 +7,18 @@ ms.date: 07/25/2017
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 970f039e97ce0628c7a7f78c417017fc95570f82
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 9cfb5cb062259e906ce499423619ec7a5b814ac9
+ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576884"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "9620841"
 ---
 # <a name="build-a-sample-app"></a>샘플 앱 빌드
 
 이 연습에서는 샘플 ASP.net 앱을 가져온 후 컨테이너에서 실행되도록 변환하는 방법을 안내합니다. Windows 10에서 컨테이너를 작동하는 방법을 알아보려면 [Windows 10 빠른 시작](./quick-start-windows-10.md)을 참조하세요.
 
-이 빠른 시작은 Windows 10에만 해당합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다. 이 자습서의 초점은 컨테이너에 있으므로 코드 작성 없이 오직 컨테이너에만 집중하겠습니다. 자습서를 처음부터 빌드하고 싶으면 [ASP.NET Core 설명서](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/)를 참조하세요.
+이 빠른 시작은 Windows 10에만 해당합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다. 이 자습서의 초점은 컨테이너에 있으므로 코드 작성 없이 오직 컨테이너에만 집중하겠습니다. 자습서를 처음부터 빌드하고 싶으면 [ASP.NET Core 설명서](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app-xplat/)를 참조하세요.
 
 컴퓨터에 Git 소스 컨트롤이 설치되지 않은 경우 [Git](https://git-scm.com/download)에서 다운로드할 수 있습니다.
 
