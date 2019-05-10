@@ -6,14 +6,14 @@ ms.date: 11/02/2018
 ms.topic: get-started-article
 ms.prod: containers
 description: Kubernetes resoureces 혼합 OS Kubernetes 클러스터에 배포 됩니다.
-keywords: kubernetes, 1.13, windows, 시작
+keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 380eeb536b9642210c49bc91edf680b695d54a90
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 6ede914def6c5a94313164ad78eeecf61c4fab4a
+ms.sourcegitcommit: aaf115a9de929319cc893c29ba39654a96cf07e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9621041"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "9622938"
 ---
 # <a name="deploying-kubernetes-resources"></a>Kubernetes 리소스 배포 #
 최소한 1 마스터 및 1 작업자로 구성 된 Kubernetes 클러스터 했 고, 준비가 Kubernetes 리소스를 배포 합니다.

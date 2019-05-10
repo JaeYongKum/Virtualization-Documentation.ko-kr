@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: f8bfd60af18731537c2ce02ca7abdb081f3c7369
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 74e22702aa4be30055b3f4f48c7fac926d793095
+ms.sourcegitcommit: 03e9203e9769997d8be3f66dc7935a3e5c0a83e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620761"
+ms.locfileid: "9621611"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -117,7 +117,7 @@ containerd/cri의 다음 호환성 매트릭스를 포드를 사용할 수 있�
 |:-------------------------------------------------------------------------|:-----------------------------------------------------------------------------|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>Windows Server 2019/1809</ul></li><ul><li>Windows 10 1809</ul></li> | Linux | `hyperv` | 예-true 다중 컨테이너 포드를 지원 합니다. |
 |  | Windows Server 2019/1809 | `process`* 또는 `hyperv` | 예-각 워크 로드 컨테이너 OS 유틸리티 VM OS를 일치 하는 경우 true 다중 컨테이너 포드를 지원 합니다. |
-|  | WindowsServer 2016</br>Windows Server 1709</br>Windows Server 1803 | `hyperv` | 부분-지원 포드 컨테이너 OS 유틸리티 VM OS를 일치 하는 경우 유틸리티 VM 당 하나의 프로세스 격리 된 컨테이너를 지원할 수 있는 샌드박스 합니다. |
+|  | Windows Server 2016</br>Windows Server 1709</br>Windows Server 1803 | `hyperv` | 부분-지원 포드 컨테이너 OS 유틸리티 VM OS를 일치 하는 경우 유틸리티 VM 당 하나의 프로세스 격리 된 컨테이너를 지원할 수 있는 샌드박스 합니다. |
 
 \*Windows 10 호스트에 Hyper-v 격리만 지원
 

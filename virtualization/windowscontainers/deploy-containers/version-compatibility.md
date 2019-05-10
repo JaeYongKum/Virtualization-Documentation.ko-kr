@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 9e20a28f62ec4bb9456307acb7768e1123a57188
-ms.sourcegitcommit: 03e9203e9769997d8be3f66dc7935a3e5c0a83e1
+ms.openlocfilehash: 64b6b400e12060b86594b90474fdedd73dfef45e
+ms.sourcegitcommit: 561eaf94c0c0698d43228ebfcd316a7fcd835a59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9621631"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "9622788"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -116,7 +116,7 @@ docker: Error response from daemon: container b81ed896222eb87906ccab1c3dd2fc4932
 
 세 가지 방법으로이 오류를 해결할 수 있습니다.
 
-- 올바른 버전의 기반으로 컨테이너를 다시 빌드하거나 `microsoft/nanoserver` 또는 `microsoft/windowsservercore`
+- 올바른 버전의 기반으로 컨테이너를 다시 빌드하거나 `mcr.microsoft.com/windows/nanoserver` 또는 `mcr.microsoft.com/windows/servercore`
 - 호스트가 최신 실행 **docker run--격리 = hyper-v...**
 - 동일한 Windows 버전을 사용 하 여 다른 호스트에서 컨테이너를 실행 합니다.
 
