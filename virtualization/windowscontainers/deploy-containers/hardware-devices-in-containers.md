@@ -3,12 +3,12 @@ title: Windows의 컨테이너에서 장치
 description: Windows의 컨테이너에 대 한 장치 지원은 어떤
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: f32ba3de347bcf968088d2f3f20f22f82166d652
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: feff730ed21c439312cda65c7b5ccc1a6cf5ae86
+ms.sourcegitcommit: 2b456022ee666863ef53082580ac1d432de86939
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9621561"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "9657361"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
 
@@ -75,7 +75,7 @@ Windows에서는 모든 장치 목록을 구현 하는 인터페이스 클래스
 </tr>
 <tr valign="top">
 <td><center>DirectX GPU 가속</center></td>
-<td><center>전용된 문서를 참조 하세요.</center></td>
+<td><center><a href="https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/gpu-acceleration">GPU 가속</a> 문서를 참조 하세요.</center></td>
 </tr>
 </tbody>
 </table>

@@ -3,12 +3,12 @@ title: Windows 컨테이너에서 GPU 가속
 description: Windows 컨테이너에 있는 GPU 가속 수준
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: 281241e07e4bc184e73c4e74a117b44253a775be
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 066f97b859b133a03e24df5db95cafe405ea3110
+ms.sourcegitcommit: 2b456022ee666863ef53082580ac1d432de86939
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578663"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "9657371"
 ---
 # <a name="gpu-acceleration-in-windows-containers"></a>Windows 컨테이너에서 GPU 가속
 
@@ -17,7 +17,7 @@ ms.locfileid: "9578663"
 Gpu에서 기존의 렌더링 및 시뮬레이션 컴퓨터 학습 교육 및 유추에 많은 인기 있는 워크 로드에 대 한 일반적인 도구 이미 있습니다. Windows 컨테이너는 DirectX 및이 기반으로 모든 프레임 워크에 대 한 GPU 가속을 지원 합니다.
 
 > [!IMPORTANT]
-> 이 기능을 지 원하는 Docker 버전이 필요 합니다 `--device` Windows 컨테이너에 대 한 명령줄 옵션입니다. 공식 Docker 지원 예정 된 다음 Docker EE 엔진 19.03 릴리스에 대 한 합니다. 그 때까지 Docker에 대 한 [업스트림 소스](https://master.dockerproject.org/) 에 필요한 비트 포함 되어 있습니다.
+> 이 기능을 지 원하는 Docker 버전이 필요 합니다 `--device` Windows 컨테이너에 대 한 명령줄 옵션입니다. 현재이 지원은 영어로는 `Docker Desktop for Windows Edge` 해제 합니다. Docker의 edge 릴리스를 다운로드할 수 [다음과 같습니다](https://docs.docker.com/docker-for-windows/edge-release-notes/).
 
 ## <a name="requirements"></a>요구 사항
 
