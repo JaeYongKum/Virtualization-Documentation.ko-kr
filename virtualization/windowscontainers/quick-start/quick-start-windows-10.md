@@ -1,5 +1,5 @@
 ---
-title: Windows 및 Windows 10에서 Linux 컨테이너
+title: Windows 10의 windows 및 Linux 컨테이너
 description: 컨테이너 배포 빠른 시작
 keywords: docker, 컨테이너, LCOW
 author: taylorb-microsoft
@@ -8,45 +8,45 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: be6be81e995dce8ebd757c73793f474f4b0909bf
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: ae311ecccdfbfc30b1079330a8eb02c1ce3ac94b
+ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620741"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "9680973"
 ---
 # <a name="windows-containers-on-windows-10"></a>Windows 10의 Windows 컨테이너
 
 > [!div class="op_single_selector"]
 > - [Windows의 Linux 컨테이너](quick-start-windows-10-linux.md)
-> - [Windows에서 Windows 컨테이너](quick-start-windows-10.md)
+> - [Windows의 windows 컨테이너](quick-start-windows-10.md)
 
-이 연습 생성 및 Windows 10에서 Windows 컨테이너를 실행 하는 방법을 안내.
+이 연습에서는 Windows 10에서 Windows 컨테이너를 만들고 실행 하는 과정을 안내 합니다.
 
-이 빠른 시작에서 수행 합니다.
+이 빠른 시작에서는 다음을 수행 합니다.
 
-1. Windows 용 Docker 설치
-2. 간단한 Windows 컨테이너를 실행
+1. Docker 데스크톱 설치
+2. 간단한 Windows 컨테이너 실행
 
-이 빠른 시작은 Windows 10에만 해당합니다. 추가 빠른 시작 설명서는이 페이지의 왼쪽에 있는 목차에서 찾을 수 있습니다.
+이 빠른 시작은 Windows 10에만 해당합니다. 추가 빠른 시작 설명서는이 페이지의 왼쪽에 있는 목차에 나와 있습니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 다음 요구 사항을 충족 하는지 확인 하세요.
-- Windows 10 Professional 또는 Enterprise 1 주년 업데이트 (버전 1607) 이상을 실행 물리적 컴퓨터 시스템 하나. 
-- [Hyper-v가](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 활성화 되어 있는지 확인 합니다.
+- Windows 10 Professional 또는 Enterprise for 기념일 업데이트 (버전 1607) 이상을 실행 하는 물리적 컴퓨터 시스템 한 대 
+- [Hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 가 사용 하도록 설정 되어 있는지 확인 합니다.
 
-***Hyper-v 격리:*** Windows Server 컨테이너는 동일한 커널 버전 및 프로덕션 환경에서 사용할 수 있는 구성을 개발자에 게 제공 하기 위해 Windows 10에서 Hyper-v 격리가 필요, 더 Hyper-v에 대 한 격리에서 찾을 수 있습니다 [Windows 컨테이너 정보](../about/index.md) 페이지.
+***Hyper-v 격리:*** Windows 10에서 Hyper-v를 격리 해야 하는 경우 프로덕션에 사용할 수 있는 것과 동일한 커널 버전 및 구성을 개발자에 게 제공 하려면 [Windows 정보 컨테이너](../about/index.md) 페이지에서 hyper-v 격리에 대해 자세히 알아보세요.
 
 > [!NOTE]
-> Windows 업데이트 2018 년 10 월 릴리스에서 더 이상 사용자가 개발자/테스트를 위해 Windows 10 Enterprise 또는 Professional에서 Windows 컨테이너 프로세스 격리 모드에서 실행을 허용 했습니다. 자세한 내용은 [FAQ](../about/faq.md) 를 참조 하세요.
+> Windows 10 월 업데이트 2018 릴리스에서는 더 이상 사용자가 개발자/테스트 목적으로 Windows 10 Enterprise 또는 Professional의 프로세스 격리 모드에서 Windows 컨테이너를 실행할 수 없도록 허용 하지 않습니다. 자세히 알아보려면 [FAQ](../about/faq.md) 를 참조 하세요.
 
-## <a name="install-docker-for-windows"></a>Windows 용 Docker 설치
+## <a name="install-docker-desktop"></a>Docker 데스크탑 설치
 
-[Windows 용 Docker를](https://store.docker.com/editions/community/docker-ce-desktop-windows) 다운로드 하 고 (해야 합니다에 로그인 설치 관리자 실행 합니다. 계정이 생성 이미 계정이 없는 경우). [자세한 설치 지침](https://docs.docker.com/docker-for-windows/install)은 Docker 설명서에 제공됩니다.
+[Docker 데스크톱](https://store.docker.com/editions/community/docker-ce-desktop-windows) 을 다운로드 하 고 설치 관리자를 실행 합니다 (로그인이 필요 함). 아직 계정이 없는 경우 계정을 만듭니다. [자세한 설치 지침](https://docs.docker.com/docker-for-windows/install)은 Docker 설명서에 제공됩니다.
 
 ## <a name="switch-to-windows-containers"></a>Windows 컨테이너로 전환
 
-설치가 완료되면 Windows용 Docker는 기본적으로 Linux 컨테이너를 실행하도록 설정됩니다. Windows 컨테이너 중 하나를 사용 하 여 Docker 트레이 메뉴 전환 하거나 PowerShell에서 다음 명령을 실행 하 여 메시지를 표시 합니다.
+설치 후 Docker 데스크톱은 기본적으로 Linux 컨테이너를 실행 합니다. Docker 트레이 메뉴 중 하나를 사용 하거나 PowerShell 프롬프트에서 다음 명령을 실행 하 여 Windows 컨테이너로 전환 합니다.
 
 ```console
 & $Env:ProgramFiles\Docker\Docker\DockerCli.exe -SwitchDaemon .
@@ -72,11 +72,11 @@ microsoft/nanoserver   latest              105d76d0f40e        4 days ago       
 ```
 
 > [!IMPORTANT]
-> Windows 컨테이너 OS 이미지 [EULA](../images-eula.md)를 읽어보세요.
+> Windows 컨테이너 OS 이미지 [EULA](../images-eula.md)를 참조 하세요.
 
-## <a name="run-your-first-windows-container"></a>첫 번째 Windows 컨테이너를 실행 합니다.
+## <a name="run-your-first-windows-container"></a>첫 번째 Windows 컨테이너 실행
 
-이 간단한 예제에서는 ' Hello World' 컨테이너 이미지는 생성 되 고 배포 합니다. 최상의 환경을 유지하려면 관리자 권한 Windows CMD 셸 또는 PowerShell에서 이 명령을 실행합니다.
+이 간단한 예제에서는 ' Hello World ' 컨테이너 이미지가 만들어지고 배포 됩니다. 최상의 환경을 유지하려면 관리자 권한 Windows CMD 셸 또는 PowerShell에서 이 명령을 실행합니다.
 
 > Windows PowerShell ISE는 컨테이너가 있는 대화형 세션에서 작동하지 않습니다. 컨테이너가 실행 중인 경우에도 중단된 것으로 표시됩니다.
 
@@ -86,7 +86,7 @@ microsoft/nanoserver   latest              105d76d0f40e        4 days ago       
 docker run -it mcr.microsoft.com/windows/nanoserver:1809 cmd.exe
 ```
 
-컨테이너 내에서 간단한 ' Hello World' 텍스트 파일을를 만듭니다.
+컨테이너 내에서 간단한 ' Hello World ' 텍스트 파일을 만듭니다.
 
 ```cmd
 echo "Hello World!" > Hello.txt
@@ -122,9 +122,9 @@ docker images
 docker run --rm helloworld cmd.exe /s /c type Hello.txt
 ```
 
-결과 `docker run` 명령에는 'HelloWorld' 이미지에서 Hyper-v 격리에서 실행 되는 컨테이너를 만들었습니다, cmd의 인스턴스를 컨테이너에서 시작 하 고 실행 (출력은 셸에 에코)는 파일을 선택한 다음 컨테이너의 읽기 중지 하 고 제거 합니다.
+`docker run` 명령의 결과는 hyper-v 격리에서 실행 되는 컨테이너가 ' HelloWorld ' 이미지에서 만들어졌으며, cmd의 인스턴스가 컨테이너에서 시작 되 고 파일 읽기 (셸에 게 에코 된 출력)가 실행 된 후 컨테이너 중지 및 제거
 
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [샘플 응용 프로그램을 빌드하는 방법을 알아봅니다.](./building-sample-app.md)
+> [샘플 앱을 작성 하는 방법 알아보기](./building-sample-app.md)
