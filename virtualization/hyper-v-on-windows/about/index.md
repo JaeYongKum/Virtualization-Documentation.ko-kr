@@ -7,12 +7,12 @@ ms.date: 06/25/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: eb2b827c-4a6c-4327-9354-50d14fee7ed8
-ms.openlocfilehash: 14e0f57ca0c952239847e493740048e14889e6d7
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: aab6a285e9c1ed9918b39cb1de88e3e2243fb3a9
+ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620721"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "9680963"
 ---
 # <a name="introduction-to-hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 소개
 
@@ -36,11 +36,11 @@ Hyper-V는 특히 하드웨어 가상화를 제공합니다.  즉, 각 가상 �
 
 ## <a name="system-requirements"></a>시스템 요구 사항
 
-Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 Education에서 사용할 수 있습니다. Home 버전에서 사용할 수 없는 경우
+Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 교육용에서 사용할 수 있습니다. Home edition에서는 사용할 수 없습니다.
 
-> Windows 10 Home 버전에서 **설정을**사용 하 여 Windows 10 Pro로 업그레이드 > **업데이트 및 보안** > **정품 인증**합니다. 여기에서 스토어를 방문하여 업그레이드를 구입할 수 있습니다.
+> **설정** > **업데이트 및 보안** > **활성화**를 열어 windows 10 Home edition에서 windows 10 Pro로 업그레이드 합니다. 여기에서 스토어를 방문하여 업그레이드를 구입할 수 있습니다.
 
-대부분의 컴퓨터는 Hyper-V를 실행하지만, 각 가상 컴퓨터는 완전히 별도 운영 체제를 기반으로 합니다.  일반적으로 4GB RAM이 설치된 컴퓨터에서 가상 컴퓨터를 하나 이상 실행할 수 있지만 가상 컴퓨터를 추가하거나 게임, 동영상 편집, 디자인 소프트웨어 엔지니어링처럼 리소스를 많이 사용하는 소프트웨어를 설치하고 실행하려면 더 많은 리소스가 필요합니다.
+대부분의 컴퓨터는 Hyper-v를 실행 하지만 각 가상 컴퓨터는 완전히 별개의 운영 체제를 실행 합니다.  일반적으로 4GB RAM이 설치된 컴퓨터에서 가상 컴퓨터를 하나 이상 실행할 수 있지만 가상 컴퓨터를 추가하거나 게임, 동영상 편집, 디자인 소프트웨어 엔지니어링처럼 리소스를 많이 사용하는 소프트웨어를 설치하고 실행하려면 더 많은 리소스가 필요합니다.
 
 Hyper-V 시스템 요구 사항 및 Hyper-V가 컴퓨터에서 실행되는지 확인하는 방법에 대한 자세한 내용은 [Hyper-V 요구 사항 참조](../reference/hyper-v-requirements.md)을 살펴보세요.
 
