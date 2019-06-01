@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 23258d9181bb3c89cc59de3ba534cc6643c170f4
-ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
+ms.openlocfilehash: 4d01fb1d11ee9e8a5fa4271699a5a7c59c27409d
+ms.sourcegitcommit: 71e46750813a996cecc445181974a79b95affc8c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "9681013"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "9685348"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -18,34 +18,51 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 OS 버전|호스트 OS 버전|호환성|
 |---|---|---|
-|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2016<br>빌드: 14393.* |지원 `process` 또는 `hyperv` 격리|
-|WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1709<br>빌드 16299.* |격리만 `hyperv` 지원|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows Server, 버전 1903<br>18362 빌드 |지원 `process` 또는 `hyperv` 격리|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10, 버전 1809<br>17763 빌드 |지원되지 않음|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |WindowsServer 2019<br>17763 빌드 |지원되지 않음|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10, 버전 1803<br>17134 빌드 |지원되지 않음|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원되지 않음|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
+|Windows Server 2019, 버전 1903<br>18362 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|WindowsServer 2019<br>17763 빌드 |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2019<br>17763 빌드 |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2019<br>17763 빌드 |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2019<br>17763 빌드 |WindowsServer 2019<br>17763 빌드 |지원 `process` 또는 `hyperv` 격리|
+|WindowsServer 2019<br>17763 빌드 |Windows 10, 버전 1803<br>17134 빌드 |지원되지 않음|
+|WindowsServer 2019<br>17763 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원되지 않음|
+|WindowsServer 2019<br>17763 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
+|WindowsServer 2019<br>17763 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
+|WindowsServer 2019<br>17763 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
+|Windows Server, 버전 1803<br>17134 빌드 |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원 `process` 또는 `hyperv` 격리|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
+|Windows Server, 버전 1803<br>17134 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
+|Windows Server, 버전 1803<br>17134 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows Server, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows 10 Fall Creators Update<br>빌드 16299.* |격리만 `hyperv` 지원|
+|Windows Server 버전 1709<br>빌드 16299.* |Windows Server 버전 1709<br>빌드 16299.* |지원 `process` 또는 `hyperv` 격리|
+|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
+|WindowsServer 2016<br>빌드: 14393.* |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2016<br>빌드: 14393.* |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
 |WindowsServer 2016<br>빌드: 14393.* |Windows 10 Fall Creators Update<br>빌드 16299.* |격리만 `hyperv` 지원|
 |WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
 |WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows Server 버전 1709<br>빌드 16299.* |지원 `process` 또는 `hyperv` 격리|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10 Fall Creators Update<br>빌드 16299.* |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows Server, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원 `process` 또는 `hyperv` 격리|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2019<br>17763 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음
-|WindowsServer 2019<br>17763 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows 10, 버전 1803<br>17134 빌드 |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |WindowsServer 2019<br>17763 빌드 |지원 `process` 또는 `hyperv` 격리|
-|WindowsServer 2019<br>17763 빌드 |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
+|WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1709<br>빌드 16299.* |격리만 `hyperv` 지원|
+|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2016<br>빌드: 14393.* |지원 `process` 또는 `hyperv` 격리|
 
 ## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 이미지 버전과 일치 하는 컨테이너 호스트 버전
 
@@ -122,14 +139,10 @@ docker: Error response from daemon: container b81ed896222eb87906ccab1c3dd2fc4932
 
 ## <a name="choose-which-container-os-version-to-use"></a>사용할 컨테이너 OS 버전 선택
 
-<<<<<<< HEAD
 >[!NOTE]
 >2019 년 4 월 16 일 기준으로 [Windows 기반 OS 컨테이너 이미지](https://hub.docker.com/_/microsoft-windows-base-os-images)에 대해 "최신" 태그가 더 이상 게시 되거나 유지 되지 않습니다. 이러한 리포지토리가에서 이미지를 가져오거나 참조할 때 특정 태그를 선언 하십시오.
 
-<a name="you-must-know-which-version-you-need-to-use-for-your-container-for-example-if-you-want-windows-server-version-1809-as-your-container-os-and-want-to-have-the-latest-patches-for-it-you-should-use-the-tag-1809-when-specifying-which-version-of-the-base-os-container-images-you-want-like-so"></a>컨테이너에 사용 해야 하는 버전을 알아야 합니다. 예를 들어 Windows Server 버전 1809을 컨테이너 OS로 사용 하 고 최신 패치를 설치 하려는 경우 다음과 같이 원하는 기본 OS 컨테이너 이미지 버전을 `1809` 지정할 때 태그를 사용 해야 합니다.
-=======
-사용자의 목적에 맞는 필요한 컨테이너 OS 버전이 무엇인지 알아야 합니다. Windows Server 버전 1709를 사용 중인데 이 버전에 대한 최신 패치를 얻으려면 원하는 기본 OS 컨테이너 이미지 버전을 지정할 때 "1709"라는 태그를 사용해야 합니다.
->>>>>>> 원본/마스터
+컨테이너에 사용 해야 하는 버전을 알아야 합니다. 예를 들어 Windows Server 버전 1809을 컨테이너 OS로 사용 하 고 최신 패치를 설치 하려는 경우 다음과 같이 원하는 기본 OS 컨테이너 이미지 버전을 `1809` 지정할 때 태그를 사용 해야 합니다.
 
 ``` dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809
