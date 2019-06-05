@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 91031f9394cb3fcb1af6c4813f8805ad6f79bf8c
-ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
+ms.openlocfilehash: 926e5cd64053b5ea795bb2c75a231700aed443ca
+ms.sourcegitcommit: f6457ee0635864e8e8bb07da43a6f76388ee3cd1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "9681103"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "9734657"
 ---
 # <a name="linux-containers-on-windows-10"></a>Windows 10의 Linux 컨테이너
 
@@ -32,15 +32,11 @@ ms.locfileid: "9681103"
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-다음 요구 사항을 충족 하는지 확인 하세요. <<<<<<< 머리
-- Windows 10 Professional 또는 Enterprise를 실행 하는 단일 물리적 컴퓨터 시스템 (낙하 크리에이터 업데이트 (버전 1709) 이상
-- [Hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 가 사용 하도록 설정 되어 있는지 확인 합니다.
-=======
+다음 요구 사항을 충족 하는지 확인 하세요.
 - Windows 10 Professional, Windows 10 Enterprise 또는 Windows Server 2019 버전 1809 이상을 실행 하는 물리적 컴퓨터 시스템 한 대
-- [Hyper-v](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 가 사용 하도록 설정 되어 있는지 확인 합니다.
->>>>>>> 원본/마스터
+- [Hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements) 가 사용 하도록 설정 되어 있는지 확인 합니다.
 
-***Hyper-v 격리:*** 개발자에 게 컨테이너를 실행 하는 적절 한 Linux 커널을 제공 하려면 Windows의 Linux 컨테이너에서 Windows 10에 대 한 Hyper-v 격리가 필요 합니다. Hyper-v 격리에 대 한 자세한 내용은 [Windows 컨테이너 정보](../about/index.md) 페이지에 나와 있습니다.
+***Hyper-v 격리:*** 개발자에 게 적절 한 Linux 커널을 제공 하 여 컨테이너를 실행할 수 있도록 Windows의 Linux 컨테이너는 Windows 10에서 Hyper-v를 격리 해야 합니다. Hyper-v 격리에 대 한 자세한 내용은 [Windows 컨테이너 정보](../about/index.md) 페이지에 나와 있습니다.
 
 ## <a name="install-docker-desktop"></a>Docker 데스크탑 설치
 
@@ -48,7 +44,7 @@ ms.locfileid: "9681103"
 
 > 이미 Docker가 설치 되어 있는 경우에는 LCOW를 지원 하기 위해 버전 18.02 이상이 있는지 확인 합니다. Docker를 실행 `docker -v` 하거나 확인 ** 하 여 확인 합니다.
 
-> LCOW 컨테이너를 실행 하려면 *Docker 설정 _GT_ 데몬에* 대 한 ' 실험적 기능 ' 옵션을 활성화 해야 합니다.
+> LCOW 컨테이너를 실행 하려면 *Docker 설정 > 데몬에* 대 한 ' 실험적 기능 ' 옵션을 활성화 해야 합니다.
 
 ## <a name="run-your-first-lcow-container"></a>첫 번째 LCOW 컨테이너를 실행 합니다.
 
