@@ -3,17 +3,17 @@ title: Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 description: Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 keywords: docker, 컨테이너, active directory, gmsa
 author: rpsqrd
-ms.date: 05/23/2019
+ms.date: 06/12/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 8f184e58743bd41ab208b530976772c5fcffd189
-ms.sourcegitcommit: 8e7fba17c761bf8f80017ba7f9447f986a20a2a7
+ms.openlocfilehash: 77eadf9c1f842ab679b23813cbdd305c2f2de7e9
+ms.sourcegitcommit: a5ee3e35eb272c77dd61f5e5384aab26a26fab76
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "9677322"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "9770238"
 ---
 # <a name="group-managed-service-accounts-for-windows-containers"></a>Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 
@@ -187,7 +187,7 @@ Docker는 Docker 데이터 디렉터리의 **credentialspecs** 디렉터리 아�
 컨테이너에서 IIS 웹 사이트를 호스트 하는 경우에는 gMSA를 이용 하는 데 필요한 모든 작업은 앱 풀 id를 **네트워크 서비스**에 설정 합니다. 다음 명령을 추가 하 여 Dockerfile에서이 작업을 수행할 수 있습니다.
 
 ```dockerfile
-RUN (Get-IISAppPool DefaultAppPool).ProcessModel.IdentityType = "NetworkService"
+RUN %windir%\system32\inetsrv\appcmd.exe set AppPool DefaultAppPool -processModel.identityType:NetworkService
 ```
 
 이전에 IIS 앱 풀에 대 한 정적 사용자 자격 증명을 사용한 경우 해당 자격 증명을 대체 하는 gMSA을 고려해 보세요. 개발자, 테스트 및 프로덕션 환경 간에 gMSA을 변경할 수 있으며, IIS는 컨테이너 이미지를 변경할 필요 없이 현재 id를 자동으로 선택 합니다.
