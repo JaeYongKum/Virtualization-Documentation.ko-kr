@@ -57,6 +57,7 @@
 # 참조
 ## [시스템 요구 사항](deploy-containers/system-requirements.md)
 ## [버전 호환성](deploy-containers/version-compatibility.md)
+## [기본 이미지 서비스 수명 주기](deploy-containers/base-image-lifecycle.md)
 ## [Hyper-V 격리](manage-containers/hyperv-container.md)
 ## [프린터 서비스](deploy-containers/print-spooler.md)
 ## [GPU 가속](deploy-containers/gpu-acceleration.md)
