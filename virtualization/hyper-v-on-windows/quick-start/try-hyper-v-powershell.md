@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6d1ae036-0841-4ba5-b7e0-733aad31e9a7
-ms.openlocfilehash: f2df1496b798646b590c9cd3eaf101aef24b507d
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: d53bdce3438c6dafe3a1e0350c7a5df30ff8210b
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620661"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9883126"
 ---
 # <a name="working-with-hyper-v-and-windows-powershell"></a>Hyper-V 및 Windows PowerShell 사용
 
@@ -21,8 +21,8 @@ Hyper-V 배포, 가상 컴퓨터 만들기 및 이러한 가상 컴퓨터 관리
 
 ### <a name="return-a-list-of-hyper-v-commands"></a>Hyper-V 명령 목록 반환
 
-1.  Windows 시작 단추를 클릭하고 **PowerShell**을 입력합니다.
-2.  다음 명령을 실행하여 Hyper-V PowerShell 모듈과 함께 사용할 수 있는 검색 가능한 PowerShell 명령 목록을 표시합니다.
+1. Windows 시작 단추를 클릭하고 **PowerShell**을 입력합니다.
+2. 다음 명령을 실행하여 Hyper-V PowerShell 모듈과 함께 사용할 수 있는 검색 가능한 PowerShell 명령 목록을 표시합니다.
 
  ```powershell
 Get-Command -Module hyper-v | Out-GridView

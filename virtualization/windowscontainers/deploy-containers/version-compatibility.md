@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 4d01fb1d11ee9e8a5fa4271699a5a7c59c27409d
-ms.sourcegitcommit: 71e46750813a996cecc445181974a79b95affc8c
+ms.openlocfilehash: 019dafe855e0fba696db4618a862ec086d435005
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "9685348"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9882996"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -16,53 +16,85 @@ Windows server 2016 및 Windows 10 기념일 업데이트 (버전 14393)는 Wind
 
 Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미칠 수 있는 사항을 몇 가지 변경해야만 했습니다. 이전 컨테이너는 [hyper-v 격리](../manage-containers/hyperv-container.md)를 사용 하 여 최신 호스트에서 동일 하 게 실행 되며 동일한 (이전) 커널 버전을 사용 합니다. 그러나 최신 Windows 빌드를 기반으로 컨테이너를 실행 하려는 경우 새 호스트 빌드에서만 실행할 수 있습니다.
 
-|컨테이너 OS 버전|호스트 OS 버전|호환성|
-|---|---|---|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows Server, 버전 1903<br>18362 빌드 |지원 `process` 또는 `hyperv` 격리|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10, 버전 1809<br>17763 빌드 |지원되지 않음|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |WindowsServer 2019<br>17763 빌드 |지원되지 않음|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10, 버전 1803<br>17134 빌드 |지원되지 않음|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원되지 않음|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
-|Windows Server 2019, 버전 1903<br>18362 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2019<br>17763 빌드 |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2019<br>17763 빌드 |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2019<br>17763 빌드 |WindowsServer 2019<br>17763 빌드 |지원 `process` 또는 `hyperv` 격리|
-|WindowsServer 2019<br>17763 빌드 |Windows 10, 버전 1803<br>17134 빌드 |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
-|WindowsServer 2019<br>17763 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows Server, 버전 1803<br>17134 빌드 |지원 `process` 또는 `hyperv` 격리|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows 10 Fall Creators Update<br>빌드 16299.* |지원되지 않음|
-|Windows Server, 버전 1803<br>17134 빌드 |Windows Server 버전 1709<br>빌드 16299.* |지원되지 않음|
-|Windows Server, 버전 1803<br>17134 빌드 |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows Server, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows 10 Fall Creators Update<br>빌드 16299.* |격리만 `hyperv` 지원|
-|Windows Server 버전 1709<br>빌드 16299.* |Windows Server 버전 1709<br>빌드 16299.* |지원 `process` 또는 `hyperv` 격리|
-|Windows Server 버전 1709<br>빌드 16299.* |WindowsServer 2016<br>빌드: 14393.* |지원되지 않음|
-|WindowsServer 2016<br>빌드: 14393.* |Windows Server, 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows 10 버전 1903<br>18362 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1809<br>17763 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2019<br>17763 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows 10 Fall Creators Update<br>빌드 16299.* |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows 10, 버전 1803<br>17134 빌드 |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |Windows Server 버전 1709<br>빌드 16299.* |격리만 `hyperv` 지원|
-|WindowsServer 2016<br>빌드: 14393.* |WindowsServer 2016<br>빌드: 14393.* |지원 `process` 또는 `hyperv` 격리|
+## <a name="windows-server-version-1903-host-os-compatibility"></a>Windows Server, 버전 1903 host OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|예|예|
+|WindowsServer 2019|예|아니오|
+|Windows Server, 버전 1803|예|아니오|
+|Windows Server, 버전 1709|예|아니오|
+|WindowsServer 2016|예|아니오|
+
+## <a name="windows-server-2019-host-os-compatibility"></a>Windows Server 2019 호스트 OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|아니요|아니요|
+|WindowsServer 2019|예|예|
+|Windows Server, 버전 1803|예|아니오|
+|Windows Server, 버전 1709|예|아니오|
+|WindowsServer 2016|예|아니오|
+
+## <a name="windows-server-version-1803-host-os-compatibility"></a>Windows Server, 버전 1803 host OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|아니요|아니요|
+|WindowsServer 2019|아니요|아니요|
+|Windows Server, 버전 1803|예|예|
+|Windows Server, 버전 1709|예|아니오|
+|WindowsServer 2016|예|아니오|
+
+## <a name="windows-server-version-1709-host-os-compatibility"></a>Windows Server, 버전 1709 host OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|아니요|아니요|
+|WindowsServer 2019|아니요|아니요|
+|Windows Server, 버전 1803|아니요|아니요|
+|Windows Server, 버전 1709|예|예|
+|WindowsServer 2016|예|아니오|
+
+## <a name="windows-10-version-1903-host-os-compatibility"></a>Windows 10 버전 1903 호스트 OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|아니요|아니요|
+|WindowsServer 2019|아니요|아니요|
+|Windows Server, 버전 1803|아니요|아니요|
+|Windows Server 버전 1709|아니요|아니요|
+|WindowsServer 2016|예|예|
+
+## <a name="windows-10-version-1809-host-os-compatibility"></a>Windows 10 버전 1809 호스트 OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|아니요|아니요|
+|WindowsServer 2019|예|아니오|
+|Windows Server, 버전 1803|예|아니오|
+|Windows Server, 버전 1709|예|아니오|
+|WindowsServer 2016|예|아니오|
+
+## <a name="windows-10-version-1803-host-os-compatibility"></a>Windows 10 버전 1803 호스트 OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows 서비스 버전 1903|아니요|아니요|
+|WindowsServer 2019|아니요|아니요|
+|Windows Server, 버전 1803|예|아니오||
+|Windows Server, 버전 1709|예|아니오|
+|WindowsServer 2016|예|아니오|
+
+## <a name="windows-10-fall-creators-update-host-os-compatibility"></a>Windows 10 낙하 작성자 업데이트 호스트 OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1903|아니요|아니요|
+|WindowsServer 2019|아니요|아니요|
+|Windows Server, 버전 1803|아니요|아니요|
+|Windows Server, 버전 1709|예|아니오|
+|WindowsServer 2016|예|아니오|
 
 ## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 이미지 버전과 일치 하는 컨테이너 호스트 버전
 
@@ -163,7 +195,7 @@ FROM mcr.microsoft.com/windows/nanoserver:10.0.17763.437
 ...
 ```
 
-Windows Server 2019 및 Windows Server 2016을 기반으로 하는 서버 핵심 기본 이미지는 [장기 서비스 채널 (LTSC)](https://docs.microsoft.com/en-us/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. Windows Server 2019을 서버 핵심 이미지의 컨테이너 OS로 사용 하 고 최신 패치를 설치 하려는 경우 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
+Windows Server 2019 및 Windows Server 2016을 기반으로 하는 서버 핵심 기본 이미지는 [장기 서비스 채널 (LTSC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. Windows Server 2019을 서버 핵심 이미지의 컨테이너 OS로 사용 하 고 최신 패치를 설치 하려는 경우 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
 
 ``` dockerfile
 FROM mcr.microsoft.com/windows/servercore:ltsc2019

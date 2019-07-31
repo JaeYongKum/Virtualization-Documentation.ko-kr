@@ -7,12 +7,12 @@ ms.date: 04/07/2017
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 1ef8f18c-3d76-4c06-87e4-11d8d4e31aea
-ms.openlocfilehash: b0bbca7bcb4c8c05c50ca68965637a6162a0ab85
-ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
+ms.openlocfilehash: 89a36ee87bce1da18852f0ebff248e239165eb7d
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "9681003"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9883016"
 ---
 # <a name="make-your-own-integration-services"></a>고유한 통합 서비스 만들기
 
@@ -91,9 +91,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\GuestCommunicationServices\
     999E53D4-3D5C-4C3E-8779-BED06EC056E1\
-        ElementName REG_SZ  VM Session Service
+        ElementName    REG_SZ    VM Session Service
     YourGUID\
-        ElementName REG_SZ  Your Service Friendly Name
+        ElementName    REG_SZ    Your Service Friendly Name
 ```
 
 > **참고:** Linux 게스트용 서비스 GUID는 GUID가 아니라 `svm_cid`및 `svm_port`를 통해 주소 지정이 되는 VSOCK 프로토콜을 사용합니다. Windows에서 이러한 비일관성을 해결하기 위해 잘 알려진 GUID가 호스트의 서비스 플랫폼으로 사용되고, 이는 게스트에서 포트로 변환됩니다. 서비스 GUID를 사용자 지정하려면 첫 번째 "00000000"을 원하는 포트 번호로 변경하면 됩니다. 예를 들어 "00000ac9"는 포트 2761입니다.

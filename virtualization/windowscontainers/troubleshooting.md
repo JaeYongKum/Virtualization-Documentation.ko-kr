@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ebd79cd3-5fdd-458d-8dc8-fc96408958b5
-ms.openlocfilehash: dfa558f3b17362b6f9af429842282309430e1da3
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 652b1a8e0ab12ac67dd2754051e36c523e3de509
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620941"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9882946"
 ---
 # <a name="troubleshooting"></a>문제 해결
 
@@ -28,7 +28,7 @@ Invoke-WebRequest https://aka.ms/Debug-ContainerHost.ps1 -UseBasicParsing | Invo
 
 
 ## <a name="finding-logs"></a>로그 찾기
-Windows 컨테이너를 관리 하는 데 사용 되는 서비스를 여러 개 있습니다. 다음 섹션에서는 각 서비스에 대한 로그를 확인할 수 있는 위치를 보여 줍니다.
+Windows 컨테이너를 관리 하는 데 사용 되는 서비스는 여러 개 있습니다. 다음 섹션에서는 각 서비스에 대한 로그를 확인할 수 있는 위치를 보여 줍니다.
 
 # <a name="docker-engine"></a>Docker 엔진
 Docker 엔진은 파일 대신 Windows '응용 프로그램' 이벤트 로그에 기록합니다. 이러한 로그는 Windows PowerShell을 사용하여 쉽게 읽고 정렬하고 필터링할 수 있습니다.
@@ -71,7 +71,7 @@ SERVICE_NAME: docker
 - 각 "를 \로 이스케이프
 - 전체 명령 "로 묶기
 
-그런 다음 새 문자열 다음에 오는 `sc.exe config docker binpath= `을(를) 실행합니다. 예를 들면 다음과 같습니다. 
+그런 다음 새 문자열 다음에 오는 `sc.exe config docker binpath=`을(를) 실행합니다. 예를 들면 다음과 같습니다. 
 ```
 sc.exe config docker binpath= "\"C:\Program Files\Docker\dockerd.exe\" --run-service -D"
 ```
@@ -91,9 +91,9 @@ sc.exe stop docker
 <path\to\>dockerd.exe -D > daemon.log 2>&1
 ```
 
-## <a name="obtaining-stack-dump"></a>스택 덤프 가져오기
+## <a name="obtaining-stack-dump"></a>스택 덤프를 가져옵니다.
 
-일반적으로 이것이 Microsoft 지원 또는 docker 개발자가 명시적으로 요청 하는 경우에 유용 합니다. Docker가 멈춘 것으로 표시 되는 상황을 진단 지원 하기 위해 사용할 수 있습니다. 
+일반적으로이는 Microsoft 지원 또는 docker 개발자가 명시적으로 요청 하는 경우에만 유용 합니다. 이는 docker가 멈춘 것 처럼 보이는 상황을 진단 하는 데 사용 될 수 있습니다. 
 
 [docker-signal.exe](https://github.com/jhowardmsft/docker-signal)를 다운로드하세요.
 
@@ -104,11 +104,11 @@ Get-Process dockerd
 docker-signal -pid=<id>
 ```
 
-출력 파일을 찾을 수는 데이터 루트에 docker 디렉터리에서 실행 되 고 있습니다. 기본 디렉터리는 `C:\ProgramData\Docker`입니다. 실제 디렉터리는 `docker info -f "{{.DockerRootDir}}"` 명령을 실행하여 확인할 수 있습니다.
+출력 파일은 docker가 실행 되는 데이터 루트 디렉터리에 위치 하 게 됩니다. 기본 디렉터리는 `C:\ProgramData\Docker`입니다. 실제 디렉터리는 `docker info -f "{{.DockerRootDir}}"` 명령을 실행하여 확인할 수 있습니다.
 
-파일이 있을 `goroutine-stacks-<timestamp>.log`.
+이 파일은 `goroutine-stacks-<timestamp>.log`입니다.
 
-`goroutine-stacks*.log` 개인 정보가 포함 되지 않습니다.
+개인 정보 `goroutine-stacks*.log` 는 포함 하지 않는 참고 사항입니다.
 
 
 # <a name="host-compute-service"></a>호스트 계산 서비스
@@ -131,12 +131,12 @@ Hyper-V 계산에 분석/디버그 로그를 사용하려면 로그를 `hcslog.e
 ```PowerShell
 # Enable the analytic logs
 wevtutil.exe sl Microsoft-Windows-Hyper-V-Compute-Analytic /e:true /q:true
-     
+
 # <reproduce your issue>
-     
+
 # Export to an evtx
 wevtutil.exe epl Microsoft-Windows-Hyper-V-Compute-Analytic <hcslog.evtx>
-     
+
 # Disable
 wevtutil.exe sl Microsoft-Windows-Hyper-V-Compute-Analytic /e:false /q:true
 ```

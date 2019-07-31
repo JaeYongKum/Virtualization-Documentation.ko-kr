@@ -1,53 +1,50 @@
 ---
-title: Windows의 컨테이너에서 장치
-description: Windows의 컨테이너에 대 한 장치 지원은 어떤
+title: Windows 용 컨테이너의 장치
+description: Windows의 컨테이너에 대해 어떤 장치 지원이 존재 함
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: feff730ed21c439312cda65c7b5ccc1a6cf5ae86
-ms.sourcegitcommit: 2b456022ee666863ef53082580ac1d432de86939
+ms.openlocfilehash: ee9c5da5ef87dceb3374977670da2ea50ea87382
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "9657361"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9883166"
 ---
-# <a name="devices-in-containers-on-windows"></a>Windows의 컨테이너에서 장치
+# <a name="devices-in-containers-on-windows"></a>Windows 용 컨테이너의 장치
 
-기본적으로 Windows 컨테이너 호스트 디바이스--Linux 컨테이너와 마찬가지로 최소한의 액세스를 제공 됩니다. 가지 특정 워크 로드 것이 유용한-또는 명령적-액세스 하 고 호스트 하드웨어 장치와 통신 합니다. 이 가이드에서는 컨테이너에서 지원 되는 어떤 디바이스 및 시작 하는 방법을 설명 합니다.
-
-> [!IMPORTANT]
-> 이 기능을 지 원하는 Docker 버전이 필요 합니다 `--device` Windows 컨테이너에 대 한 명령줄 옵션입니다. 공식 Docker 지원 예정 된 다음 Docker EE 엔진 19.03 릴리스에 대 한 합니다. 그 때까지 Docker에 대 한 [업스트림 소스](https://master.dockerproject.org/) 에 필요한 비트 포함 되어 있습니다.
+기본적으로 Windows 컨테이너에는 Linux 컨테이너와 같이 호스트 장치에 대 한 최소 액세스 권한이 부여 됩니다. 도움이 되는 특정 작업 부하와 호스트 하드웨어 장치에 액세스 하 고 통신 하는 데에는 필수적입니다. 이 가이드에서는 컨테이너에서 지원 되는 장치와 시작 하는 방법에 대해 설명 합니다.
 
 ## <a name="requirements"></a>요구 사항
 
-이 기능이 제대로 작동 하도록 환경에는 다음 요구 사항을 충족 해야 합니다.
-- Windows 10, 버전 1809 이상 또는 Windows Server 2019 컨테이너 호스트를 실행 해야 합니다.
-- 컨테이너 기본 이미지 버전 1809 이상 이어야 합니다.
-- 컨테이너는 격리 프로세스 모드에서 실행 되는 Windows 컨테이너 이어야 합니다.
-- 컨테이너 호스트 19.03 또는 최신 Docker 엔진을 실행 되어야 합니다.
+이 기능이 작동 하려면 환경이 다음 요구 사항을 충족 해야 합니다.
+- 컨테이너 호스트는 Windows Server 2019 또는 Windows 10, 버전 1809 이상을 실행 중 이어야 합니다.
+- 컨테이너 기본 이미지 버전은 1809 이상 이어야 합니다.
+- 컨테이너는 프로세스 격리 모드에서 실행 되는 Windows 컨테이너 여야 합니다.
+- 컨테이너 호스트는 Docker 엔진 19.03 이상 버전을 실행 중 이어야 합니다.
 
-## <a name="run-a-container-with-a-device"></a>장치를 사용 하 여 컨테이너를 실행 합니다.
+## <a name="run-a-container-with-a-device"></a>장치를 사용 하 여 컨테이너 실행
 
-장치를 사용 하 여 컨테이너를 시작 하려면 다음 명령을 사용 합니다.
+장치에서 컨테이너를 시작 하려면 다음 명령을 사용 합니다.
 
 ```shell
 docker run --isolation=process --device="class/{interface class GUID}" mcr.microsoft.com/windows/servercore:1809
 ```
 
-바꾸어야 합니다 `{interface class guid}` 섹션 아래에서 찾을 수 있는 적절 한 [장치 인터페이스 클래스 guid입니다](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes).
+는 `{interface class guid}` 다음 섹션에서 찾을 수 있는 적절 한 [디바이스 인터페이스 클래스 GUID](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)로 바꿔야 합니다.
 
-여러 장치를 사용 하 여 컨테이너를 시작 하려면 다음 명령을 사용 하 고 문자열을 함께 여러 `--device` 인수:
+여러 디바이스를 사용 하 여 컨테이너를 시작 하려면 다음 명령을 사용 하 고 여러 `--device` 인수를 문자열로 결합 합니다.
 
 ```shell
 docker run --isolation=process --device="class/{interface class GUID}" --device="class/{interface class GUID}" mcr.microsoft.com/windows/servercore:1809
 ```
 
-Windows에서는 모든 장치 목록을 구현 하는 인터페이스 클래스를 선언 합니다. 이 명령을, Docker에 전달 하 여 요청 된 클래스 구현으로 식별 하는 모든 장치 컨테이너에 연결 됩니다 수는 보장 됩니다.
+Windows에서 모든 장치는 구현 하는 인터페이스 클래스 목록을 선언 합니다. 이 명령을 Docker에 전달 하면 요청 된 클래스를 구현 하는 것으로 식별 되는 모든 장치를 컨테이너에 배관 하 게 됩니다.
 
-이것은 의미 **호스트에서 장치를 할당할 수** 있습니다. 대신, 호스트 컨테이너와 공유 됩니다. 마찬가지로, 클래스 GUID를 지정 하는 때문에 해당 GUID를 구현 하는 _모든_ 장치 컨테이너와 공유 되지 것입니다.
+이는 사용자가 호스트에서 장치를 멀리 떨어진 곳에 할당 **하지** 않았다는 의미입니다. 대신 호스트가 컨테이너와 공유 합니다. 마찬가지로, 클래스 GUID를 지정 하는 것 이기 때문에 해당 GUID를 구현 하는 _모든_ 장치가 컨테이너와 공유 됩니다.
 
-## <a name="what-devices-are-supported"></a>어떤 장치는 지원
+## <a name="what-devices-are-supported"></a>지원 되는 장치
 
-다음 장치 (및 해당 장치 클래스 Guid 인터페이스)는 현재 지원 합니다.
+다음 장치 및 해당 디바이스 인터페이스 클래스 Guid가 현재 지원 됩니다.
   
 <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
 <thead>
@@ -75,18 +72,18 @@ Windows에서는 모든 장치 목록을 구현 하는 인터페이스 클래스
 </tr>
 <tr valign="top">
 <td><center>DirectX GPU 가속</center></td>
-<td><center><a href="https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/gpu-acceleration">GPU 가속</a> 문서를 참조 하세요.</center></td>
+<td><center><a href="https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/gpu-acceleration">GPU 가속</a> 문서 참조</center></td>
 </tr>
 </tbody>
 </table>
 
 > [!TIP]
-> 위에 나열 된 장치는 현재 지원 되는 Windows 컨테이너에 _만_ 장치입니다. 다른 클래스 Guid를 전달 하는 컨테이너 시작 실패 발생 합니다.
+> 위에 나열 된 장치는 현재 __ Windows 컨테이너에서 지원 되는 장치입니다. 다른 클래스 Guid를 전달 하려고 하면 컨테이너가 시작 하지 못할 수 있습니다.
 
-## <a name="hyper-v-isolated-windows-container-support"></a>V-격리 하이퍼 Windows 컨테이너 지원
+## <a name="hyper-v-isolated-windows-container-support"></a>Hyper-v-격리 된 Windows 컨테이너 지원
 
-장치 할당 및 장치 공유 하이퍼 V 격리 Windows 컨테이너에서 워크 로드에 대 한 현재 지원 되지 않습니다.
+현재 Hyper-v 격리 Windows 컨테이너의 작업 부하에 대 한 장치 할당 및 장치 공유는 지원 되지 않습니다.
 
-## <a name="hyper-v-isolated-linux-container-support"></a>V-격리 하이퍼 Linux 컨테이너 지원
+## <a name="hyper-v-isolated-linux-container-support"></a>Hyper-v-isolated Linux 컨테이너 지원
 
-장치 할당 및 장치 공유 하이퍼 V 격리 Linux 컨테이너에서 워크 로드에 대 한 현재 지원 되지 않습니다.
+현재 Hyper-v 격리 Linux 컨테이너의 작업 부하에 대 한 장치 할당 및 장치 공유는 지원 되지 않습니다.

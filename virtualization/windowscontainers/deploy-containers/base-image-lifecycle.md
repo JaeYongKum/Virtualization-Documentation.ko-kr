@@ -8,12 +8,12 @@ ms.date: 06/17/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: c26f4b225287fbc25566e36376eb8cd604d45a68
-ms.sourcegitcommit: 9cd1aa792a417e71192c7aa39e409ae6ca0bc710
+ms.openlocfilehash: d3a8240dbba8af3c74ce5d185620e129d103ef81
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "9788556"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9883186"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
 
@@ -35,4 +35,4 @@ Windows 컨테이너 기반 이미지는 Windows Server의 반기 채널 릴리�
 |Server Core                      |장기간        |1607   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
 |Nano 서버                      |반기      |1607   |14393   |2016/10/15  |10/09/2018                 |해당 없음                  |
 
-서비스 요구 사항 및 기타 추가 정보는 [Windows 수명 주기 FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products), [windows Server 릴리스 정보](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)및 [windows 기반 OS 이미지 Docker 허브 리포지토리](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조 하세요.
+서비스 요구 사항 및 기타 추가 정보는 [Windows 수명 주기 FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products), [windows Server 릴리스 정보](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)및 [windows 기반 OS 이미지 Docker 허브 리포지토리](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조 하세요.

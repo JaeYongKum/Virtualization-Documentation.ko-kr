@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1f8a691c-ca75-42da-8ad8-a35611ad70ec
-ms.openlocfilehash: ea6fb4471cf337ff17bb1f936caea192bccaf404
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: e69775c15359645f3659c9bee3562733415228d5
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9621161"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9882886"
 ---
 # <a name="set-up-a-nat-network"></a>NAT 네트워크 설정
 
@@ -148,7 +148,7 @@ PS C:\> Get-NetNat | Remove-NetNAT (again, this will remove the NAT but keep the
 PS C:\> New-NetNat -Name SharedNAT -InternalIPInterfaceAddressPrefix <shared prefix>
 PS C:\> Start-Service docker
 ```
-Docker/HNS Windows 컨테이너에 Ip 할당 및 관리자 두 집합에서 Vm에 Ip에 할당 됩니다.
+Docker/HNS는 Ip를 Windows 컨테이너에 할당 하 고 관리자는 2의 차이 집합에서 Vm에 Ip를 할당 합니다.
 
 사용자는 Docker 엔진이 실행되는 Windows 컨테이너 기능을 설치했으며 NAT 네트워크에 VM을 연결하려고 합니다.
 ```
@@ -162,7 +162,7 @@ PS C:\> New-NetNat -Name SharedNAT -InternalIPInterfaceAddressPrefix <shared pre
 PS C:\> New-VirtualSwitch -Type internal (attach VMs to this new vSwitch)
 PS C:\> Start-Service docker
 ```
-Docker/HNS Windows 컨테이너에 Ip 할당 및 관리자 두 집합에서 Vm에 Ip에 할당 됩니다.
+Docker/HNS는 Ip를 Windows 컨테이너에 할당 하 고 관리자는 2의 차이 집합에서 Vm에 Ip를 할당 합니다.
 
 결과적으로 두 개의 내부 VM 스위치와 이러한 스위치 간에 공유되는 하나의 NetNat이 필요합니다.
 

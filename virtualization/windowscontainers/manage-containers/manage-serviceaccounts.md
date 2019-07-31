@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 77eadf9c1f842ab679b23813cbdd305c2f2de7e9
-ms.sourcegitcommit: a5ee3e35eb272c77dd61f5e5384aab26a26fab76
+ms.openlocfilehash: b908a35f63b2f25da3fb19c0f96b55fe3e513350
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "9770238"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9883176"
 ---
 # <a name="group-managed-service-accounts-for-windows-containers"></a>Windows 컨테이너에 대 한 그룹 관리 서비스 계정
 
@@ -103,7 +103,7 @@ GMSA의 이름을 결정 했으면 PowerShell에서 다음 cmdlet을 실행 하 
 # To install the AD module on older versions of Windows 10, see https://aka.ms/rsat
 
 # Create the security group
-New-ADGroup -Name "WebApp01 Authorized Hosts" -SamAccountName "WebApp01Hosts" -Scope DomainLocal
+New-ADGroup -Name "WebApp01 Authorized Hosts" -SamAccountName "WebApp01Hosts" -GroupScope DomainLocal
 
 # Create the gMSA
 New-ADServiceAccount -Name "WebApp01" -DnsHostName "WebApp01.contoso.com" -ServicePrincipalNames "host/WebApp01", "host/WebApp01.contoso.com" -PrincipalsAllowedToRetrieveManagedPassword "WebApp01Hosts"
@@ -470,7 +470,7 @@ GMSA를 사용 하 여 컨테이너를 실행할 때 오류가 발생 하는 경
 | TCP 636 | LDAP SSL |
 
 컨테이너가 도메인 컨트롤러로 보내는 트래픽 유형에 따라 추가 포트에 대 한 액세스를 허용 해야 할 수 있습니다.
-Active directory에 사용 되는 전체 포트 목록은 active [directory 및 Active Directory 도메인 서비스 포트 요구 사항을](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) 참조 하세요.
+Active directory에 사용 되는 전체 포트 목록은 active [directory 및 Active Directory 도메인 서비스 포트 요구 사항을](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) 참조 하세요.
 
 #### <a name="check-the-container"></a>컨테이너 확인
 

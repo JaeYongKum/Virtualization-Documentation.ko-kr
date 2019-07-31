@@ -7,12 +7,12 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 66723f33-b12c-49d1-82cf-71ba9d6087e9
-ms.openlocfilehash: 7882e89368bb88390c2efa93c3f2a8f04bb7a37a
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 94ac197f5bc660e52d215fa132eae78f521e1c30
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620781"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9882896"
 ---
 # <a name="create-virtual-machine-with-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
 
@@ -30,7 +30,7 @@ ms.locfileid: "9620781"
   > **참고:** 가상 컴퓨터 내부에 배포될 게스트 운영 체제에 지정되는 컴퓨터 이름이 아니라 Hyper-V에서 가상 컴퓨터에 사용하는 이름입니다.
 
 1. **c:\virtualmachine**과 같이 가상 컴퓨터 파일이 저장될 위치를 선택합니다. 기본 위치를 적용할 수도 있습니다. 작업이 끝나면 **다음**을 클릭합니다.
-    
+
   ![](media/new_vm_upd.png)
 
 1. 컴퓨터에 대해 생성을 선택하고 **다음**을 클릭합니다.  

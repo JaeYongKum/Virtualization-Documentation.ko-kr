@@ -3,12 +3,12 @@ title: Windows Server 컨테이너 저장소
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
 keywords: 컨테이너, 볼륨, 저장소, 마운트, 바인딩 마운트
 author: patricklang
-ms.openlocfilehash: 20179f09260b6ae5de802c2372958356f8de3aee
-ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
+ms.openlocfilehash: bddfb3a3510a6af674be73349a7e422434c1e0f4
+ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "9680943"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "9882976"
 ---
 # <a name="overview"></a>개요
 
@@ -40,7 +40,7 @@ ms.locfileid: "9680943"
 실행 중인 컨테이너는 트랜잭션을 제외하고 대부분의 NTFS 작업을 사용할 수 있습니다. 이에는 ACL 설정이 포함되며 컨테이너 내에 있는 모든 ACL을 확인합니다. 컨테이너 내에서 여러 사용자로 프로세스를 실행하려면 `RUN net user /create ...`로 `Dockerfile` 내에 사용자를 만들고, ACL 파일을 설정한 다음 프로세스를 구성하면 [Dockerfile USER 지시문](https://docs.docker.com/engine/reference/builder/#user)을 사용하여 해당 사용자로 실행할 수 있습니다.
 
 
-##  <a name="image-size"></a>이미지 크기
+## <a name="image-size"></a>이미지 크기
 Windows 응용 프로그램의 일반적인 패턴은 새 파일을 설치하거나 만들기 전에 또는 임시 파일을 정리하기 위한 트리거로서 사용 가능한 디스크 공간의 크기를 쿼리하는 것입니다.  응용 프로그램 호환성의 극대화를 목표로 Windows 컨테이너에 있는 C: 드라이브는 20GB의 사용 가능한 가상 크기를 나타냅니다.  일부 사용자는 이 기본값을 다시 정의하여 사용 가능한 공간을 더 적거나 큰 값으로 구성하고자 할 수 있으며 "storage-opt" 구성 내에서 "size" 옵션을 통해 이를 수행할 수 있습니다.
 
 ### <a name="examples"></a>예
