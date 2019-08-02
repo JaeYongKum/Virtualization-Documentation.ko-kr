@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: bdf1fd78bbbebcad3562872d9e71c961be6c64eb
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: a0b24782a0e511dfc8b6cf1a0c0bc24882ff977a
+ms.sourcegitcommit: 42cb47ba4f3e22163869d094bd0c9cff415a43b0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9883006"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "9884994"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -68,6 +68,12 @@ Windows Server 버전 1903의 사용자는 다음 레지스트리 위치로 이�
 \\Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vmsmp\parameters\NicList
 ```
 
+### <a name="containers-on-my-flannel-host-gw-deployment-on-azure-cannot-reach-the-internet"></a>Azure에서 내 Flannel host-gw 배포의 컨테이너가 인터넷에 액세스할 수 없음 ###
+Azure의 호스트-gw 모드에서 Flannel를 배포 하는 경우 패킷이 Azure 실제 호스트 vSwitch를 통과 해야 합니다. 사용자는 노드에 할당 된 각 서브넷에 대해 "가상 기기" 유형의 [사용자 정의 경로](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#user-defined) 를 프로그래밍 해야 합니다. 이 작업은 Azure portal ( [여기](https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal)참조) 또는 `az` azure CLI를 통해 수행할 수 있습니다. 다음은 IP 10.0.0.4 및 각 pod 서브넷 10.244.0.0/24를 사용 하는 노드에 대 한 az 명령을 사용 하는 이름 "MyRoute"를 사용 하는 예제 1입니다.
+```
+az network route-table create --resource-group <my_resource_group> --name BridgeRoute 
+az network route-table route create  --resource-group <my_resource_group> --address-prefix 10.244.0.0/24 --route-table-name BridgeRoute  --name MyRoute --next-hop-type VirtualAppliance --next-hop-ip-address 10.0.0.4 
+```
 
 ### <a name="my-windows-pods-cannot-ping-external-resources"></a>내 Windows pods에서 외부 리소스를 ping 할 수 없음 ###
 Windows pods에는 지금 ICMP 프로토콜에 대 한 아웃 바운드 규칙이 프로그래밍 되어 있지 않습니다. 그러나 TCP/UDP는 지원 됩니다. 클러스터 외부의 리소스에 대 한 연결을 보여 줄 때 해당 `ping <IP>` `curl <IP>` 명령으로 대체 하세요.
