@@ -1,6 +1,6 @@
 ---
-title: Windows 설명서의 컨테이너
-description: windows 컨테이너를 실행 하는 것에 대 한 설명서
+title: Windows 문서의 컨테이너
+description: Windows에서 컨테이너를 실행 하는 방법에 대 한 설명서
 keywords: Docker, 컨테이너
 author: cwilhit
 ms.date: 05/02/2016
@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 74c9d604-0915-4d89-bc69-0263b76bc66b
-ms.openlocfilehash: 9ee2a0adad762aa3cee53f3b44210976259b693f
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 771a4ef644525334e9135b8605da74503c16f21b
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620701"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998770"
 ---
-# <a name="containers-on-windows-documentation"></a>Windows 설명서의 컨테이너
+# <a name="containers-on-windows-documentation"></a>Windows 문서의 컨테이너
 
-Windows 컨테이너는 여러 개의 격리 된 응용 프로그램을 단일 시스템에서 실행할 수 있는 운영 체제 수준 가상화를 제공 합니다. 이 문서 집합은 관리 작업에서 빠른 시작 가이드, 배포 가이드 및 기술 세부 정보를 제공합니다.
+Windows 컨테이너는 여러 개의 격리 된 응용 프로그램을 단일 시스템에서 실행할 수 있는 운영 체제 수준의 가상화를 제공 합니다. 이 문서 집합은 관리 작업에서 빠른 시작 가이드, 배포 가이드 및 기술 세부 정보를 제공합니다.
 
 ## <a name="getting-started"></a>시작
 컨테이너에 대해 알아보고 직접 사용해 보세요.
@@ -26,7 +26,7 @@ Windows 컨테이너는 여러 개의 격리 된 응용 프로그램을 단일 �
 * [Windows 10에서 컨테이너 사용](quick-start/quick-start-windows-10.md)
 
 ## <a name="deployment"></a>배포
-Windows Server 2019의 Windows 컨테이너를 배포 하는 방법을 알아봅니다
+Windows Server 2019에서 Windows 컨테이너를 배포 하는 방법 알아보기
 
 * [시스템 요구 사항](deploy-containers/system-requirements.md)
 * [컨테이너 호스트 배포](deploy-containers/deploy-containers-on-server.md)
@@ -40,7 +40,7 @@ Windows에서 Docker를 관리하는 방법을 알아보세요.
 * [컨테이너 네트워킹](container-networking/architecture.md)
 
 ## <a name="watch"></a>보기
-데모 및 Windows 컨테이너 팀의 인터뷰에 관심이 있으십니까?
+Windows 컨테이너 팀의 데모와 인터뷰에 관심이 있으십니까?
 * [컨테이너 채널](https://channel9.msdn.com/Blogs/containers)
 
 ## <a name="community"></a>커뮤니티

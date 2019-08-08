@@ -11,7 +11,7 @@
 - Windows 참가자 프로그램의 최신 Windows Server 및/또는 Windows 참가자 프로그램의 최신 Windows 10 빌드를 실행하는 컴퓨터 시스템(실제 또는 가상) 하나.
 
 > [!IMPORTANT]
-> 아래에 설명 된 기본 이미지를 사용 하 여 Windows Insider Preview 프로그램의 Windows 10 빌드 또는 Windows Server Insider Preview 프로그램의 Windows Server의 빌드를 사용 해야 합니다. 두 빌드 중 하나를 사용하지 않을 경우 이러한 기본 이미지를 사용하면 컨테이너가 시작되지 않는 오류가 발생합니다.
+> Windows Insider preview 프로그램에서 windows server 참가자 미리 보기 프로그램 또는 windows 10의 빌드를 사용 하 여 아래 설명 된 기본 이미지를 사용 해야 합니다. 두 빌드 중 하나를 사용하지 않을 경우 이러한 기본 이미지를 사용하면 컨테이너가 시작되지 않는 오류가 발생합니다.
 
 ## <a name="install-docker-enterprise-edition-ee"></a>Docker Enterprise Edition(EE) 설치
 
@@ -20,7 +20,7 @@ Windows 컨테이너를 사용하려면 Docker EE가 필요합니다. Docker EE�
 Docker EE를 설치하기 위해 OneGet provider PowerShell module(OneGet 공급자 PowerShell 모듈)을 사용합니다. 공급자는 컴퓨터에서 컨테이너 기능을 사용하도록 설정하고 Docker EE를 설치합니다. 그러면 컴퓨터를 다시 부팅해야 합니다. 관리자 권한으로 PowerShell 세션을 열고 다음 명령을 실행합니다.
 
 > [!NOTE]
-> Windows Server 참가자 빌드를 사용 하 여 Docker EE를 설치 하려면 비 참가자 빌드에 사용 되는 것과 다른 OneGet 공급자가 필요 합니다. Docker EE와 DockerMsftProvider OneGet 공급자가 이미 설치된 경우 계속하기 전에 이를 제거합니다.
+> Windows Server 참가자 빌드에 Docker EE를 설치 하려면 비 참가자 빌드에 사용 된 것과 다른 OneGet 공급자가 필요 합니다. Docker EE와 DockerMsftProvider OneGet 공급자가 이미 설치된 경우 계속하기 전에 이를 제거합니다.
 
 ```powershell
 Stop-Service docker
@@ -70,9 +70,9 @@ docker pull mcr.microsoft.com/windows/servercore/insider
 ```
 
 > [!IMPORTANT]
-> Windows 컨테이너 OS 이미지 [EULA](../EULA.md ) 및 Windows 참가자 프로그램 [사용 약관을](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)읽어 보십시오.
+> Windows 컨테이너 OS 이미지 [EULA](../EULA.md ) 및 windows 참가자 프로그램 [사용 약관](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [빌드 및 샘플 응용 프로그램 실행](./Nano-RS3-.NET-Core-and-PS.md)
+> [샘플 응용 프로그램 빌드 및 실행](./Nano-RS3-.NET-Core-and-PS.md)

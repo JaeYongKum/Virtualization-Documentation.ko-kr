@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9238389-7028-4015-8140-27253b156f37
-ms.openlocfilehash: c7a6462b331f469148eb4cf5a0a2740c9929fa29
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 1348b9923d9de1314818f13414abdacee2cb9735
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576804"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998610"
 ---
 # <a name="create-a-custom-virtual-machine-gallery"></a>사용자 지정 가상 컴퓨터 갤러리 만들기
 
@@ -103,7 +103,7 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 
 그리고 물론 가상 컴퓨터(.iso 또는.vhdx)도 포함됩니다.
 
-해시를 생성 하려면 다음 powershell 명령을 사용할 수 있습니다.
+다음과 같은 powershell 명령을 사용 하 여 해시를 생성할 수 있습니다.
 
   ``` PowerShell
   Get-FileHash -Path .\TMLogo.jpg -Algorithm SHA256

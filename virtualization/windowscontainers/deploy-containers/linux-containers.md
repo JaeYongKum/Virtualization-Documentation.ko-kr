@@ -1,6 +1,6 @@
 ---
 title: Windows의 Linux 컨테이너
-description: Hyper-v를 사용 하 여 기본 있는 경우에 따라 Windows에서 Linux 컨테이너를 실행 하는 다양 한 방법을 알아봅니다.
+description: Windows에서 Hyper-v를 사용 하 여 기본으로 Linux 컨테이너를 실행할 수 있는 다양 한 방법에 대해 알아봅니다.
 keywords: LCOW, linux 컨테이너, docker, 컨테이너
 author: scooley
 ms.date: 11/02/2018
@@ -8,62 +8,62 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: edfd11c8-ee99-42d8-9878-efc126fe1826
-ms.openlocfilehash: 8597a93f035f5e451df8176d1563299120c95cb8
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 0426b14c423c06a0f12ea91529ce794f7a972f47
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9578424"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998480"
 ---
 # <a name="linux-containers-on-windows"></a>Windows의 Linux 컨테이너
 
-Linux 컨테이너 전체 컨테이너 생태계의 거 대 한 %를 차지 하 고는 개발자 환경과 프로덕션 환경에 기본적인 요소입니다.  하지만 컨테이너를 컨테이너 호스트와 커널을 공유 하기 때문 Windows에서 직접 Linux 컨테이너를 실행할 수 없는[*](linux-containers.md#other-options-we-considered).  가상화 그림에 제공 되는 위치입니다.
+Linux 컨테이너는 전체 컨테이너 에코 시스템의 많은 비율을 구성 하며 개발자 환경 및 프로덕션 환경 모두에 대 한 기본입니다.  컨테이너는 컨테이너 호스트와 커널을 공유 하므로 Windows에서 직접 Linux 컨테이너를 실행 하는 것은 옵션이[*](linux-containers.md#other-options-we-considered)아닙니다.  이는 가상화가 그림에 제공 되는 위치입니다.
 
-지금은 Windows 용 Docker 및 하이퍼 사항 Linux 컨테이너를 실행 하는 방법은 두 가지가 있습니다
+이제 Windows 및 Hyper-v 용 Docker를 사용 하 여 Linux 컨테이너를 실행 하는 두 가지 방법이 있습니다.
 
-1. -전체 Linux VM에서 Linux 컨테이너를 실행할 어떤 Docker 일반적으로 전환한입니다.
-1. Windows 용 Docker의에서 새로운 옵션으로이 Linux 컨테이너 (LCOW)- [Hyper-v 격리](../manage-containers/hyperv-container.md) 를 사용 하 여 실행 합니다.
+1. 전체 Linux VM에서 Linux 컨테이너를 실행 하는 것은 일반적으로 현재는 Docker입니다.
+1. Linux 컨테이너를 [hyper-v 격리](../manage-containers/hyperv-container.md) (LCOW)로 실행-Windows 용 Docker의 새로운 옵션입니다.
 
-이 문서에서는 각 방법을 작동, 어떤 솔루션을 선택 하는 경우에 대 한 지침을 제공 및 진행 중인 작업을 공유 하는 방법을 설명 합니다.
+이 문서에서는 각 접근 방식의 작동 방식에 대해 설명 하 고 진행 중인 솔루션 및 공유를 선택 하는 경우에 대 한 지침을 제공 합니다.
 
-## <a name="linux-containers-in-a-moby-vm"></a>Moby VM에서 Linux 컨테이너
+## <a name="linux-containers-in-a-moby-vm"></a>Moby VM의 Linux 컨테이너
 
-Linux VM에서 Linux 컨테이너를 실행 하려면 [Docker의 get 시작 가이드](https://docs.docker.com/docker-for-windows/)의 지침을 따릅니다.
+Linux VM에서 Linux 컨테이너를 실행 하려면 [Docker의 시작 가이드](https://docs.docker.com/docker-for-windows/)에 나와 있는 지침을 따르세요.
 
-Docker Windows에서 Linux 컨테이너를 실행할 수 있었던 처음 출시 이후 데스크톱 2016에서 (Hyper-v 격리 또는 LCOW 결말이) 전에 [LinuxKit](https://github.com/linuxkit/linuxkit) 를 사용 하 여 기반 가상 컴퓨터에서 Hyper-v를 실행 합니다.
+Docker는 Hyper-v에서 실행 되는 [LinuxKit](https://github.com/linuxkit/linuxkit) 기반 가상 컴퓨터를 사용 하 여 2016 (hyper-v 격리 또는 LCOW 사용 가능)에서 처음 릴리스된 이후 Windows 데스크톱에서 Linux 컨테이너를 실행할 수 있습니다.
 
-이 모델에서는 Linux VM에 Docker 디먼에 Docker 클라이언트 호출 하지만 Windows 바탕 화면에서 실행 됩니다.
+이 모델에서는 Docker 클라이언트가 Windows 데스크톱에서 실행 되지만 Linux VM에서 Docker 데몬을 호출 합니다.
 
-![컨테이너 호스트와 Moby VM](media/MobyVM.png)
+![Moby VM을 컨테이너 호스트로](media/MobyVM.png)
 
-이 모델에서는 모든 Linux 컨테이너 단일 Linux 기반 컨테이너 호스트 및 모든 Linux 컨테이너를 공유:
+이 모델에서 모든 Linux 컨테이너는 단일 Linux 기반 컨테이너 호스트 및 모든 Linux 컨테이너를 공유 합니다.
 
-* Windows 호스트 하지 하지만 서로 및 Moby VM을 사용 하 여 커널을 공유 합니다.
-* 일관 된 저장소 있고 속성 (Linux VM에서 실행 중인) 이후 Linux에서 실행 되는 Linux 컨테이너를 사용 하 여 네트워킹 합니다.
+* Windows 호스트와 함께 커널을 공유 하 고 다른 Moby VM과 공유할 수 있습니다.
+* Linux VM에서 실행 되는 linux 컨테이너를 사용 하 여 저장소 및 네트워킹 속성의 일관성을 유지 합니다.
 
-Linux 컨테이너 호스트 (Moby VM)가 Docker 디먼 및 모든 Docker 디먼의 종속성을 실행 해야 의미 하기도 합니다.
+또한, Linux 컨테이너 호스트 (Moby VM)는 Docker 데몬 및 모든 Docker 데몬 종속성을 실행 해야 합니다.
 
-Moby VM을 사용 하 여 실행 중인 경우을 보려면 확인 Hyper-v 관리자를 실행 하 여 또는 Hyper-v 관리자 UI를 사용 하 여 Moby VM에 대 한 `Get-VM` 관리자 권한 PowerShell 창에 있습니다.
+Moby VM으로 실행 중인지 확인 하려면 Hyper-v 관리자 UI를 사용 하거나 관리자 권한 PowerShell 창에서 실행 `Get-VM` 하 여 moby vm에 대 한 hyper-v 관리자를 확인 하세요.
 
-## <a name="linux-containers-with-hyper-v-isolation"></a>Hyper-v 격리를 사용 하 여 Linux 컨테이너
+## <a name="linux-containers-with-hyper-v-isolation"></a>Linux 컨테이너-V 격리
 
-[이 get 시작 가이드](../quick-start/quick-start-windows-10.md) 의 Linux 컨테이너 지침에 따라 LCOW를 실행 하려면
+LCOW을 시도 하려면 [이 시작 가이드](../quick-start/quick-start-windows-10.md) 의 Linux 컨테이너 지침을 따르세요.
 
-Hyper-v 격리를 사용 하 여 Linux 컨테이너는 컨테이너를 실행 하려면 충분 한 OS 사용 하 여 최적화 된 Linux VM에서 각 Linux 컨테이너 (LCOW)를 실행 합니다.  Moby VM 접근 방식을 달리 각 LCOW 자체 커널 및 VM 샌드박스 자체에 있습니다.  하 게도 관리 Docker windows에서 직접 합니다.
+Hyper-v 격리를 사용 하는 linux 컨테이너는 최적화 된 Linux VM에서 컨테이너를 실행할 수 있을 만큼 충분 한 OS를 통해 각 Linux 컨테이너 (LCOW)를 실행 합니다.  Moby VM 방식과 대조적으로 각 LCOW에는 고유한 커널과 VM 샌드박스가 있습니다.  또한 Windows의 Docker에서 직접 관리 합니다.
 
-![Hyper-v 격리 (LCOW)를 사용 하 여 Linux 컨테이너](media/lcow-approach.png)
+![Linux 컨테이너 (Hyper-v 격리) (LCOW)](media/lcow-approach.png)
 
-컨테이너 관리 Moby VM 방식과 LCOW 간의 차이점에 대해 자세히 살펴보고에서 LCOW 모델 컨테이너 관리 Windows에 유지 하 고 GRPC 및 containerd을 통해 발생 하는 각 LCOW 관리.  이 즉, Linux 배포판 컨테이너 LCOW에 대 한 사용 하 여 훨씬 더 작은 인벤토리를 가질 수 있습니다.  오른쪽 이제 사용 하 고 LinuxKit 최적화 된 배포판 컨테이너를 사용 하지만 다른 프로젝트 Kata 같은 유사한 맞게 최적화 Linux 배포판 (지우기 Linux)도 빌드하는 합니다.
+LCOW 모델 컨테이너 관리는 Moby VM 방식과 LCOW 간에 컨테이너 관리가 어떻게 달라 지는 방식에 대해 자세히 살펴보고 각 LCOW 관리는 GRPC 및 containerd를 통해 수행 됩니다.  이는 LCOW에 사용 되는 Linux distro 컨테이너의 재고가 훨씬 작을 수 있다는 것을 의미 합니다.  이제 최적화 된 distro 컨테이너에 대 한 LinuxKit를 사용 하 고 있지만 Kata 같은 다른 프로젝트는 비슷한 고도로 조정 된 Linux distros (Linux 지우기)도 구축 됩니다.
 
-각 LCOW에 대해 자세히 다음과 같습니다.
+각 LCOW에 대해 자세히 살펴봅니다.
 
 ![LCOW 아키텍처](media/lcow.png)
 
-이동 LCOW 실행 중인 경우를 보려면 `C:\Program Files\Linux Containers`. Docker LCOW를 사용 하도록 구성 된, 여기에서 Hyper-v 격리에서 실행 되는 각 컨테이너에서 실행 되는 최소 LinuxKit 배포판 포함 하는 몇 가지 파일 됩니다.  최적화 된 VM 구성 요소 100MB 미만, Moby VM에서 LinuxKit 이미지 보다 훨씬 더 작은 인지 확인 합니다.
+LCOW를 실행 하 고 있는지 확인 하려면으로 `C:\Program Files\Linux Containers`이동 합니다. Docker가 LCOW를 사용 하도록 구성 된 경우 여기에 몇 가지 파일이 있으며, 여기에는 Hyper-v 격리에서 실행 되는 각 컨테이너에서 실행 되는 최소 LinuxKit distro 포함 됩니다.  최적화 된 VM 구성 요소는 Moby VM의 LinuxKit image 보다 훨씬 작은 100 MB 미만입니다.
 
 ### <a name="work-in-progress"></a>작업 진행 중
 
-LCOW는 적극적으로 개발 중입니다. [GitHub](https://github.com/moby/moby/issues/33850) 에서 Moby 프로젝트의 현재 진행 상황은 트랙
+LCOW는 활성 개발 아래에 있습니다. [GitHub](https://github.com/moby/moby/issues/33850) 에서 Moby 프로젝트의 진행 중인 진행률 추적
 
 #### <a name="bind-mounts"></a>마운트 바인딩
 
@@ -85,7 +85,7 @@ LCOW는 적극적으로 개발 중입니다. [GitHub](https://github.com/moby/mo
 * GetAttr – Nlink 개수가 항상 2개로 보고됩니다.
 * Open – ReadWrite, WriteOnly, 및 ReadOnly 플래그만 구현됩니다.
 
-이러한 응용 프로그램 모두는 볼륨 매핑이 요구를 시작 하거나 올바르게 실행 됩니다.
+이러한 응용 프로그램에는 모두 볼륨 매핑이 필요 하며, 제대로 시작 되거나 실행 되지 않습니다.
 
 * MySQL
 * PostgreSQL
@@ -96,33 +96,33 @@ LCOW는 적극적으로 개발 중입니다. [GitHub](https://github.com/moby/mo
 
 ### <a name="extra-information"></a>추가 정보
 
-[LCOW를 설명 하는 docker 블로그](https://blog.docker.com/2017/11/docker-for-windows-17-11/)
+[LCOW를 설명 하는 Docker 블로그](https://blog.docker.com/2017/11/docker-for-windows-17-11/)
 
 [Linux 컨테이너 비디오](https://sec.ch9.ms/ch9/1e5a/08ff93f2-987e-4f8d-8036-2570dcac1e5a/LinuxContainer.mp4)
 
-[LinuxKit LCOW 커널 및 빌드 지침](https://github.com/linuxkit/lcow)
+[LinuxKit LCOW-커널 및 빌드 지침](https://github.com/linuxkit/lcow)
 
 ## <a name="when-to-use-moby-vm-vs-lcow"></a>Moby VM vs LCOW를 사용 하는 경우
 
 ### <a name="when-to-use-moby-vm"></a>Moby VM을 사용 하는 경우
 
-오른쪽 이제 권장 하는 사람들이 Linux 컨테이너를 실행 하는 Moby VM 방법:
+지금 바로 다음의 사용자에 게 Linux 컨테이너를 실행 하는 Moby VM 메서드를 제공 하는 것이 좋습니다.
 
-- 안정적인 컨테이너 환경이 합니다.  Windows 용 Docker 기본값입니다.
-- Windows 또는 Linux 컨테이너 거의 둘 다 동시에 실행 합니다.
-- 복잡 한 사용자 지정 네트워킹 요구 사항 Linux 컨테이너 간에 또는 합니다.
-- Linux 컨테이너 간에 커널 격리 (Hyper-v 격리) 필요 하지 마십시오.
+- 안정적인 컨테이너 환경을 원하는 경우  이것은 Windows 기본값에 대 한 Docker입니다.
+- Windows 또는 Linux 컨테이너를 실행 하지만 동시에는 거의 작동 하지 않습니다.
+- Linux 컨테이너 간에 복잡 하거나 사용자 지정 네트워킹 요구 사항이 있습니다.
+- Linux 컨테이너 간에는 커널 격리 (Hyper-v 격리)가 필요 하지 않습니다.
 
 ### <a name="when-to-use-lcow"></a>LCOW를 사용 하는 경우
 
-오른쪽 이제 권장 하는 사람들이 LCOW:
+지금 바로 다음 사용자에 게 LCOW 것을 권장 합니다.
 
-- 테스트는 최신 기술을 하려고 합니다.
-- 이와 동시에 Windows 및 Linux 컨테이너를 실행 합니다.
-- Linux 컨테이너 간에 커널 격리 (Hyper-v 격리) 필요 합니다.
+- 최신 기술을 테스트 하고자 합니다.
+- 한 번에 Windows 및 Linux 컨테이너를 실행 합니다.
+- Linux 컨테이너 간에는 커널 격리 (Hyper-v 격리)가 필요 합니다.
 
-## <a name="other-options-we-considered"></a>다른 옵션을 처리 하는 것
+## <a name="other-options-we-considered"></a>고려 하는 다른 옵션
 
-Windows에서 Linux 컨테이너를 실행 하는 방법을 찾을 예정, WSL 것으로 간주 했습니다. 궁극적으로 Windows에서 Linux 컨테이너는 Linux에서 Linux 컨테이너와 일치 하는 가상화 기반 방법을 선택 했습니다. Hyper-v를 사용 하 여 하기도 LCOW 더 안전 합니다. 나중에 다시 평가 수 있지만 지금은 LCOW는 Hyper-v를 사용 하 여 계속 합니다.
+Windows에서 Linux 컨테이너를 실행 하는 방법을 살펴보면 WSL로 간주 됩니다. 궁극적으로 Windows의 Linux 컨테이너가 Linux의 Linux 컨테이너와 일관성을 유지 하도록 가상화 기반 접근 방식을 선택 했습니다. Hyper-v를 사용 하면 LCOW 더욱 안전 해 집니다. 나중에 다시 평가할 수 있지만 지금은 LCOW에서 Hyper-v를 사용 합니다.
 
-생각을 설정한 경우 GitHub 또는 UserVoice 통해 피드백을 보내 합니다.  특히 참조 하려는 특정 환경에 대 한 피드백 해 주셔서 감사 합니다.
+생각이 있으면 GitHub 또는 UserVoice를 통해 피드백을 보내 주세요.  관심 있는 특정 환경에 대 한 사용자 의견을 확인 하세요.

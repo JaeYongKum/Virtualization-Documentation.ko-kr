@@ -8,17 +8,17 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: ac0088995dfbda73351d39a494435c431e0939e7
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: cff56843a0eeb48ca5d19b694eb8eb4e758002aa
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576334"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998460"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
 >[!IMPORTANT]
->일반 docker 네트워킹 명령, 옵션 및 syntax.* * * [지원 되지 않는 기능과 네트워크 옵션](#unsupported-features-and-network-options), 모든 Docker 네트워킹 명령은에 설명 된 경우를 제외한에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요 Linux에서와 동일한 구문을 사용 하 여 Windows에서 지원 합니다. 그러나 Windows 및 Linux 네트워크 스택이 서로 하며 이와 같이 찾을 수 있습니다 (예: ifconfig) 일부 Linux 네트워크 명령은 Windows에서 지원 되지 않습니다.
+>일반 docker 네트워킹 명령, 옵션, 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. * * * [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에서 설명 하는 경우를 제외 하 고 모든 Docker 네트워킹 명령은 Linux와 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르기 때문에 Windows에서는 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 확인할 수 있습니다.
 
 ## <a name="basic-networking-architecture"></a>기본 네트워킹 아키텍처
 
@@ -30,8 +30,8 @@ Docker 엔진은 처음으로 실행되면 내부 vSwitch와 `WinNAT`이라고 �
 
 ![텍스트](media/docker-network-ls.png)
 
-- **내부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 되어 있지 않습니다.
-- **외부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 됩니다.
+- **내부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 되지 않은 것입니다.
+- **외부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 되는 것입니다.
 
 ![텍스트](media/get-vmswitch.png)
 
@@ -64,13 +64,13 @@ HNS(호스트 네트워킹 서비스)와 HCS(호스트 계산 서비스)가 함�
 
 ## <a name="unsupported-features-and-network-options"></a>지원되지 않는 기능과 네트워크 옵션
 
-다음 네트워킹 옵션은 현재 **하지** Windows에서 지원 됩니다.
+다음 네트워킹 옵션은 현재 Windows에서 지원 **되지 않습니다** .
 
-- L2bridge, NAT 및 오버레이 네트워크에 연결 된 Windows 컨테이너 IPv6 스택을 통해 통신 하는 것을 지원 하지 않습니다.
-- IPsec 통해 통신 암호화 된 컨테이너입니다.
-- 컨테이너에 대 한 HTTP 프록시 지원 합니다.
-- Hyper-v 격리 된 상태에서 실행 중인에 끝점을 연결 (핫 애드).
-- 투명 네트워크 드라이버를 통해 Azure 가상화 인프라에 네트워킹.
+- L2bridge, NAT 및 오버레이 네트워크에 연결 된 Windows 컨테이너는 IPv6 스택을 통한 통신을 지원 하지 않습니다.
+- IPsec을 통한 암호화 된 컨테이너 통신
+- 컨테이너에 대 한 HTTP 프록시 지원.
+- Hyper-v 격리 (핫-추가)에서 실행 하도록 끝점을 연결 합니다.
+- 투명 한 네트워크 드라이버를 통해 가상화 된 Azure 인프라에 대 한 네트워킹.
 
 | 명령        | 지원 되지 않는 옵션   |
 |---------------|:--------------------:|

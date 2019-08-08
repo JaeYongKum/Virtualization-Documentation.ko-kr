@@ -8,22 +8,22 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
-ms.openlocfilehash: ea6b71200d3115ba3d156b2c133e1be2fa495261
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: ed96c7ba30c83906cd3245a279ab078229400d8d
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620921"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998730"
 ---
 # <a name="virtual-machine-automation-and-management-using-powershell"></a>PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
 
 PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설정에 상관 없이 Hyper-V 호스트의 Windows 10 또는 Windows Server 2016 가상 머신에서 임의의 PowerShell을 실행할 수 있습니다.
 
-PowerShell Direct를 실행할 수 있는 방법은 다음과 같습니다.
+다음은 PowerShell Direct를 실행할 수 있는 몇 가지 방법입니다.
 
-* [Enter-pssession cmdlet을 사용 하 여 대화형 세션](#create-and-exit-an-interactive-powershell-session)
-* [단일 명령 또는 스크립트를 실행 하는 일회용 섹션으로 Invoke-command cmdlet를 사용 하 여](#run-a-script-or-command-with-invoke-command)
-* [영구 세션 (빌드 14280 이상)-New-pssession을 사용 하 여 항목 복사 및 끊습니다 cmdlet](#copy-files-with-new-pssession-and-copy-item)
+* [Enter-PSSession cmdlet을 사용 하는 대화형 세션](#create-and-exit-an-interactive-powershell-session)
+* [Invoke 명령 cmdlet을 사용 하 여 단일 명령 또는 스크립트를 실행 하는 단일 사용 섹션](#run-a-script-or-command-with-invoke-command)
+* [새 PSSession, 복사 항목 및 Remove-PSSession cmdlet을 사용 하 여 persistant 세션 (빌드 14280 이상)으로](#copy-files-with-new-pssession-and-copy-item)
 
 ## <a name="requirements"></a>요구 사항
 **운영 체제 요구 사항:**

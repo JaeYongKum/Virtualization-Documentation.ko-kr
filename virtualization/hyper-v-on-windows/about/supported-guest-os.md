@@ -7,12 +7,12 @@ ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
-ms.openlocfilehash: e3255d236a3fbb5ac4d908143750b84e3db82ceb
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 25c72b910af15fc0b498a5b2abce72d32e6d1efd
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9621101"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9999040"
 ---
 # <a name="supported-windows-guests"></a>지원되는 Windows 게스트
 
@@ -37,8 +37,8 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 | Windows 10 | 32 |고급 세션 모드는 Windows 10 Home 버전에서 작동하지 않음 |
 | Windows8.1 | 32 | |
 | Windows8 | 32 ||
-| Windows 7 SP 1(서비스 팩 1) | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
-| Windows 7 | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
+| Windows 7 SP 1(서비스 팩 1) | 4(tcp/ipv4) | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
+| Windows 7 | 4(tcp/ipv4) | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows Vista SP2(서비스 팩 2) | 2 | Business/Enterprise/Ultimate(N 및 KN 버전 포함) |
 | - | | |
 | [Windows Server 반기 채널](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview) | 64 | |
@@ -47,8 +47,8 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 | WindowsServer 2012 R2 | 64 | |
 | Windows Server 2012 | 64 | |
 | Windows Server 2008 R2 SP 1(서비스 팩 1) | 64 | Datacenter/Enterprise/Standard/Web Edition. |
-| Windows Server 2008 SP 2(서비스 팩 2) | 4 | Datacenter/Enterprise/Standard/Web Edition(32비트/64비트). |
-| Windows Home Server2011 | 4 | |
+| Windows Server 2008 SP 2(서비스 팩 2) | 4(tcp/ipv4) | Datacenter/Enterprise/Standard/Web Edition(32비트/64비트). |
+| Windows Home Server2011 | 4(tcp/ipv4) | |
 | Windows Small Business Server 2011 | Essentials edition - 2, Standard edition - 4 | |
 
 > Windows 10은 Windows 8.1 및 Windows Server 2012 R2 Hyper-V 호스트에서 게스트 운영 체제로 실행할 수 있습니다.

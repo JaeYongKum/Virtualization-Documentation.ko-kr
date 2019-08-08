@@ -7,12 +7,12 @@ ms.date: 07/25/2017
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 9cfb5cb062259e906ce499423619ec7a5b814ac9
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 08efc1092777e5649ecce4d978b056a4df644564
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620841"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998230"
 ---
 # <a name="build-a-sample-app"></a>샘플 앱 빌드
 
@@ -66,7 +66,7 @@ FROM microsoft/aspnetcore-build:1.1 AS build-env
 WORKDIR /app
 ```
 
-다음으로 임시 컨테이너의 '/app' 디렉터리에 .csproj 파일을 복사합니다. 프로젝트에 필요한 패키지 참조 목록이.csproj 파일에 포함 되어 있으므로이 야기 합니다.
+다음으로 임시 컨테이너의 '/app' 디렉터리에 .csproj 파일을 복사합니다. .Csproj 파일에는 프로젝트 요구 사항에 대 한 패키지 참조 목록이 포함 되어 있기 때문에이 작업을 수행 합니다.
 
 이 파일을 복사하면 dotnet이 이 파일을 읽은 후 프로젝트에 필요한 모든 종속성과 도구를 가져옵니다.
 
@@ -128,7 +128,7 @@ docker run -d -p 5000:80 --name myapp myasp
 
 성공적으로 ASP.NET 웹앱을 가져오고, Docker를 사용하여 구성 및 빌드하고, 실행 중인 컨테이너에 배포했습니다. 하지만 수행 가능한 추가 단계가 더 남아 있습니다! 웹앱을 더 많은 구성 요소(웹 API를 실행하는 컨테이너, 프런트 엔드를 실행하는 컨테이너, SQL 서버를 실행하는 컨테이너)로 분할할 수 있습니다.
 
-컨테이너의 중단을가지고 했으므로 높 하 고 컨테이너 화 멋진 소프트웨어 빌드!
+이제 컨테이너의 작동이 중지 되었으므로,이 단계로 이동 하 여 멋진 containerized 소프트웨어를 만들어 보세요.
 
 > [!div class="nextstepaction"]
 > [더 많은 컨테이너 샘플 확인](../samples.md)

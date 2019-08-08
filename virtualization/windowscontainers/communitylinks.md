@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: cfbb2542-fead-48e7-8318-4da92a7b5b6f
-ms.openlocfilehash: 55b428894b22ded48ce9db8f24928924964ce96d
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 338dd0570f1a2e73295b2bacf2c4282b3fdd7956
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620891"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998490"
 ---
 # <a name="community-videos-and-blogs"></a>커뮤니티 비디오 및 블로그
 
@@ -21,7 +21,7 @@ ms.locfileid: "9620891"
 
 ## <a name="getting-started"></a>시작
 
-[실행 Linux 및 Windows 10의 Windows 컨테이너](https://stefanscherer.github.io/run-linux-and-windows-containers-on-windows-10/) -Stefan Scherer
+[Windows 10에서 Linux 및 windows 컨테이너 실행](https://stefanscherer.github.io/run-linux-and-windows-containers-on-windows-10/) -Stefan Scherer
 
 [Build and run your first Docker Windows Server container](https://blog.docker.com/2016/09/build-your-first-docker-windows-server-container/)(첫 번째 Docker Windows Server 컨테이너 빌드 및 실행) - Michael Friis
 
@@ -31,15 +31,15 @@ ms.locfileid: "9620891"
 
 [An Overview of .NET and Containers](https://blog.alexellis.io/docker-dotnet-containers/)(.NET 및 컨테이너 개요) - Alex Ellis
 
-[Windows 응용 프로그램 Dockerize 하는 방법: 5 단계](https://blog.sixeyed.com/how-to-dockerize-windows-applications/) -Elton Stoneman
+[Windows 응용 프로그램을 만드는 방법을 설명 하는 방법: 5 단계](https://blog.sixeyed.com/how-to-dockerize-windows-applications/) -Elton Stoneman
 
-[Docker 사용 하 여.NET Framework 앱을 현대화](https://www.pluralsight.com/courses/modernizing-dotnet-framework-apps-docker?clickid=UVL20JTFpzK6UDSX5n1b5zmyUkgWUPWOz3Pjwg0&irgwc=1&mpid=1197078&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1197078&aid=7010a000001xAKZAA2) -Elton Stoneman
+[Modernizing .Net Framework 앱-Docker](https://www.pluralsight.com/courses/modernizing-dotnet-framework-apps-docker?clickid=UVL20JTFpzK6UDSX5n1b5zmyUkgWUPWOz3Pjwg0&irgwc=1&mpid=1197078&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1197078&aid=7010a000001xAKZAA2) 톤 Stoneman
 
 [Docker with Microsoft SQL 2016 + ASP.NET](https://blog.alexellis.io/docker-does-sql2016-aspnet/)(Docker와 Microsoft SQL 2016 + ASP.NET 통합) - Alex Ellis
 
-[First look: Jenkins CI와 Windows 컨테이너 및 Docker](https://blog.alexellis.io/continuous-integration-docker-windows-containers/) -Alex Ellis
+[첫 번째 보기: Windows 컨테이너 및 Docker-정 Ellis를 사용 하 여 JENKINS CI](https://blog.alexellis.io/continuous-integration-docker-windows-containers/)
 
-[Windows에 대 한 Redis 패키징 컨테이너](https://blog.alexellis.io/packaging-windows-containers/) -Alex Ellis
+[Windows 컨테이너에 대 한 패키지 Redis](https://blog.alexellis.io/packaging-windows-containers/) -정 Ellis
 
 [3 Steps to MSBuild with Docker](https://blog.alexellis.io/3-steps-to-msbuild-with-docker/)(Docker로 MSBuild를 구현하는 3단계) - Alex Ellis
 
@@ -47,7 +47,7 @@ ms.locfileid: "9620891"
 
 [Use Docker Compose and Service Discovery on Windows to scale-out your multi-service container application](https://techcommunity.microsoft.com/t5/Containers/Use-Docker-Compose-and-Service-Discovery-on-Windows-to-scale-out/ba-p/382312)(Windows에서 Docker Compose 및 서비스 검색을 사용하여 다중 서비스 컨테이너 응용 프로그램 확장) - Kallie Bracken 및 Jason Messer
 
-[Docker를 사용 하 여 Windows 컨테이너에서 PowerShell 필요한 상태 구성](https://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/) -Nicholas Dille
+Docker-Nicholas Dille [를 사용 하는 Windows 컨테이너의 PowerShell 필요한 상태 구성](https://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/)
 
 [Windows 컨테이너에서 Neo4j 실행](https://glennsarti.github.io/blog/neo4j-nano-containers) -Glenn Sarti
 

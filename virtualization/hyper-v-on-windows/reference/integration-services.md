@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
-ms.openlocfilehash: 762b82f3714651ffb488f682581680c9526404a8
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 6568b68a77fc5506b58249caea44ec78e3e44de2
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9621211"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998940"
 ---
 # <a name="hyper-v-integration-services"></a>Hyper-V 통합 서비스
 
@@ -74,7 +74,7 @@ DemoVM  Running  Operating normally
 **Linux 디먼 이름:** hv_utils  
 **설명:** Hyper-V 호스트에서 가상 컴퓨터 종료를 요청할 수 있도록 허용합니다.  호스트는 언제나 가상 컴퓨터를 강제로 끌 수 있지만, 이는 종료를 선택하는 것이 아니라 전원 스위치를 누르는 것과 같습니다.  
 **추가됨:** Windows Server 2012, Windows 8  
-**영향:** **강력한 영향**  사용하지 않도록 설정하면 호스트는 가상 컴퓨터 내에서 종료를 트리거할 수 없습니다.  하드 전원 오프 데이터 손실이 나 데이터 손상을 일으킬 수 있는 모든 끄기가 됩니다.  
+**영향:** **강력한 영향**  사용하지 않도록 설정하면 호스트는 가상 컴퓨터 내에서 종료를 트리거할 수 없습니다.  모든 시스템 종료는 하드 전원이 꺼져 있어 데이터 손실 또는 데이터 손상이 발생할 수 있습니다.  
 
 
 ## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 시간 동기화 서비스

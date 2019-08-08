@@ -7,12 +7,12 @@ ms.date: 09/26/2016
 ms.topic: deployment-article
 ms.prod: windows-containers
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: d3df0631a8a61db16ad207f49163a7304c5db717
-ms.sourcegitcommit: a7f9ab96be359afb37783bbff873713770b93758
+ms.openlocfilehash: 5fc9b5c9135e87a0d3246952c35c9755e9ad209e
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "9681053"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998470"
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -21,72 +21,21 @@ ms.locfileid: "9681053"
 ## <a name="os-requirements"></a>OS 요구 사항
 
 - Windows 컨테이너 기능은 windows Server 2016 (Core 및 데스크톱 환경), Windows 10 Professional 및 Enterprise (기념일 Edition) 이상 에서만 사용할 수 있습니다.
-<<<<<<< HEAD
 - Hyper-v 격리를 실행 하기 전에 Hyper-v 역할을 설치 해야 합니다.
 - Windows Server 컨테이너 호스트에서는 Windows가 c:\에 설치되어야 합니다. Hyper-v 격리 컨테이너만 배포 하는 경우에는이 제한이 적용 되지 않습니다.
-=======
-- Hyper-v 격리를 사용 하 여 컨테이너를 실행 하기 전에 Hyper-v 역할을 설치 해야 합니다.
-- Windows Server 컨테이너 호스트에서는 Windows가 c:\에 설치되어야 합니다. Hyper-V 컨테이너만 배포할 경우 이 제한이 적용되지 않습니다.
->>>>>>> 원본/마스터
 
 ## <a name="virtualized-container-hosts"></a>가상화 된 컨테이너 호스트
 
-<<<<<<< 헤드 Windows 컨테이너 호스트가 Hyper-v 가상 머신에서 실행 되며 Hyper-v 격리를 호스트 하는 경우에는 중첩 가상화를 사용 해야 합니다. 중첩 가상화에는 다음과 같은 요구 사항이 있습니다. = = = = = = = Hyper-v 가상 머신에서 Windows 컨테이너 호스트를 실행 하는 경우에도 Hyper-v 격리를 사용 하 여 컨테이너를 호스팅 하는 경우에는 중첩 가상화를 사용 해야 합니다. 중첩된 가상화에는 다음과 같은 요구 사항이 있습니다.
->>>>>>> 원본/마스터
+Hyper-v 가상 머신에서 Windows 컨테이너 호스트를 실행 하 고 Hyper-v 격리를 호스트 하는 경우에는 중첩 가상화를 사용 해야 합니다. 중첩된 가상화에는 다음과 같은 요구 사항이 있습니다.
 
 - 가상화된 Hyper-V 호스트에 사용할 수 있는 4GB 이상의 RAM.
 - 호스트 시스템의 windows server 2019, Windows Server 버전 1803, Windows Server 버전 1709, windows Server 2016 또는 windows 10에서 가상 컴퓨터의 Windows Server (Full, Core)를 표시 합니다.
 - Intel VT-x가 포함된 프로세서.(이 기능은 현재 Intel 프로세서에 대해서만 사용할 수 있습니다)
-<<<<<<< HEAD
 - 또한 컨테이너 호스트 VM에는 두 개 이상의 가상 프로세서가 필요 합니다.
 
 ## <a name="supported-base-images"></a>지원 되는 기본 이미지
 
-<a name="windows-containers-are-offered-with-four-container-base-images-windows-server-core-nano-server-windows-and-iot-core-not-all-configurations-support-both-os-images-this-table-details-the-supported-configurations"></a>Windows 컨테이너는 Windows Server Core, Nano 서버, Windows, IoT Core 등 네 가지 컨테이너 기본 이미지와 함께 제공 됩니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
-=======
-- 또한 컨테이너 호스트 VM에는 적어도 2개의 가상 프로세서가 필요합니다.
-
-## <a name="supported-base-images"></a>지원되는 기본 이미지
-
 Windows 컨테이너는 Windows Server Core, Nano 서버, Windows, IoT Core 등 네 가지 컨테이너 기본 이미지와 함께 제공 됩니다. 일부 구성은 두 개의 OS 이미지를 모두 지원하지 않습니다. 이 테이블은 지원되는 구성을 자세히 설명합니다.
-
-<table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
-<thead>
-<tr valign="top">
-<th><center>호스트 운영 체제</center></th>
-<th><center>Windows Server 컨테이너</center></th>
-<th><center>Hyper-V 격리</center></th>
-</tr>
-</thead>
-<tbody>
-<tr valign="top">
-<td><center>Windows Server 2016/2019 (Standard 또는 Datacenter)</center></td>
-<td><center>Server Core, Nano 서버, Windows</center></td>
-<td><center>Server Core, Nano 서버, Windows</center></td>
-</tr>
-<tr valign="top">
-<td><center>Nano Server<a href="#warn-1">*</a></center></td>
-<td><center> Nano 서버</center></td>
-<td><center>Server Core, Nano 서버, Windows</center></td>
-</tr>
-<tr valign="top">
-<td><center>Windows 10 Pro/Enterprise</center></td>
-<td><center>창을<a href="#warn-2">**</a></center></td>
-<td><center>Server Core, Nano 서버, Windows</center></td>
-</tr>
-<tr valign="top">
-<td><center>IoT Core</center></td>
-<td><center>IoT Core</center></td>
-<td><center>사용할 수 없음</center></td>
-</tr>
-</tbody>
-</table>
-
-> [!Warning]  
-> <span id="warn-1">* Windows Server부터 버전 1709 Nano 서버를 더 이상 컨테이너 호스트로 사용할 수 없습니다.</span>
-
-> <span id="warn-2">* * Windows 10 10 월 2018 업데이트가 필요 하며,이를 통해 `--isolation=process` `docker run`컨테이너를 실행할 때 플래그를 사용 하 여 프로세스 격리를 직접 요청 합니다.</span>
->>>>>>> 원본/마스터
 
 |호스트 운영 체제|Windows 컨테이너|Hyper-V 격리|
 |---------------------|-----------------|-----------------|

@@ -8,25 +8,25 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-ms.openlocfilehash: db360bdd2b62667ab017549b3c179d11278abc19
-ms.sourcegitcommit: 34d8b2ca5eebcbdb6958560b1f4250763bee5b48
+ms.openlocfilehash: 93c56dba88715df41cab054cda676879b275380b
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "9620801"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9999210"
 ---
 # <a name="automating-builds-and-saving-images"></a>빌드 자동화 및 이미지 저장
 
-이전 Windows Server 빠른 시작에서는 미리 만든 .Net Core 샘플에서 Windows 컨테이너를 만들었습니다. 이 연습에서는 Dockerfile에서 사용자 고유의 컨테이너 이미지를 작성 하 고 Docker 허브 공개 레지스트리에 컨테이너 이미지를 저장 하는 방법을 보여 줍니다.
+이전 Windows Server 빠른 시작에서는 미리 만든 .Net Core 샘플에서 Windows 컨테이너를 만들었습니다. 이 연습에서는 Dockerfile에서 컨테이너 이미지를 작성 하 고 Docker 허브 공용 레지스트리에 컨테이너 이미지를 저장 하는 방법을 보여 줍니다.
 
-이 빠른 시작은 Windows Server 2019 또는 Windows Server 2016에서 Windows Server 컨테이너와 관련이 및 Windows Server Core 컨테이너 기본 이미지를 사용 합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
+이 빠른 시작은 windows server 2019 또는 Windows Server 2016의 Windows Server 컨테이너에만 해당 되며 Windows Server Core 컨테이너 기본 이미지를 사용 합니다. 추가 빠른 시작 설명서는 이 페이지 왼쪽에 있는 목차에서 확인할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
 다음 요구 사항을 충족 하는지 확인 하세요.
 
-- 한 대의 컴퓨터 시스템 (물리적 또는 가상) 실행 중인 Windows Server 2019 또는 Windows Server 2016입니다.
-- Windows 컨테이너 기능 및 Docker로이 시스템을 구성 합니다. 이러한 단계에 연습에서는 [Windows Server의 Windows 컨테이너](./quick-start-windows-server.md)를 참조 하세요.
+- Windows Server 2019 또는 Windows Server 2016를 실행 하는 컴퓨터 시스템 (물리적 또는 가상) 1 개.
+- Windows 컨테이너 기능 및 Docker를 사용 하 여이 시스템을 구성 합니다. 이러한 단계에 대 한 연습은 [Windows Server의 windows 컨테이너](./quick-start-windows-server.md)를 참조 하세요.
 - Docker ID는 Docker 허브에 컨테이너 이미지를 푸시하기 위해 사용됩니다. Docker ID가 없는 경우 [Docker Cloud](https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
 
 ## <a name="container-image---dockerfile"></a>컨테이너 이미지-Dockerfile
@@ -93,7 +93,7 @@ CONTAINER ID   IMAGE            COMMAND               CREATED              STATU
 c1dc6c1387b9   iis-dockerfile   "ping -t localhost"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp   cranky_brown
 ```
 
-컨테이너를 중지 합니다.
+컨테이너 중지.
 
 ```console
 docker stop <container name>
@@ -105,7 +105,7 @@ docker stop <container name>
 docker rm -f <container name>
 ```
 
-## <a name="docker-push"></a>Docker Push
+## <a name="docker-push"></a>Docker 푸시
 
 Docker 컨테이너 이미지는 컨테이너 레지스트리에 저장할 수 있습니다. 이미지를 레지스트리에 저장하면 나중에 사용하기 위해 여러 컨테이너 호스트에서 검색할 수 있습니다. Docker는 [Docker Hub](https://hub.docker.com/)(Docker 허브)에 컨테이너 이미지를 저장하기 위한 공개 레지스트리를 제공합니다.
 
@@ -130,7 +130,7 @@ Login Succeeded
 docker push <user>/iis-dockerfile
 ```
 
-Docker 허브 최대 각 계층을 보이지 않게 하는 Docker를으로 docker 다른 레지스트리 (외부 계층) 또는 Docker 허브에 이미 존재 하는 계층을 건너뜁니다.  예를 들어 Microsoft 컨테이너 레지스트리 또는 개인 회사 레지스트리에서 계층에서 호스팅되는 최신 버전의 Windows Server Core, 및 Docker 허브로 푸시되 지 합니다.
+Docker는 docker 허브 까지의 각 계층을 건너뛰며, docker는 Docker 허브에 이미 존재 하는 레이어 또는 기타 레지스트리 (외래 레이어)를 건너뜁니다.  예를 들어 Microsoft 컨테이너 레지스트리에서 호스트 되는 최신 버전의 Windows Server Core 또는 개인 회사 레지스트리의 계층은 건너뛰어 Docker 허브로 푸시 되지 않습니다.
 
 이제 `docker pull`을 사용하여 Docker 허브의 컨테이너 이미지를 Windows 컨테이너 호스트에 다운로드할 수 있습니다. 이 자습서에서는 기존 이미지를 삭제한 다음 Docker 허브에서 끌어옵니다. 
 

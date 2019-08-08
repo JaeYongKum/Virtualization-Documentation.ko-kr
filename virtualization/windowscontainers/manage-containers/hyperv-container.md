@@ -1,6 +1,6 @@
 ---
 title: Hyper-V 격리
-description: Hyper-v 격리 프로세스 격리 된 컨테이너에서 어떻게 다른 지 설명은 합니다.
+description: Hyper-v 격리가 프로세스 격리 컨테이너와 어떻게 다른 지를 Explaination.
 keywords: Docker, 컨테이너
 author: scooley
 ms.date: 09/13/2018
@@ -8,26 +8,26 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
-ms.openlocfilehash: 2ff2d1204e1f973d49af5e1d4441e4eacd946101
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.openlocfilehash: 092312848173102bec5a791f2c48fe8166e70d5f
+ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9576904"
+ms.lasthandoff: 08/07/2019
+ms.locfileid: "9998330"
 ---
 # <a name="hyper-v-isolation"></a>Hyper-V 격리
 
-Windows 컨테이너 기술은 두 가지 수준의 격리 컨테이너, 프로세스 및 Hyper-v 격리를 포함합니다. 두 유형 모두 생성, 관리, 작동은 동일 합니다. 또한 동일한 컨테이너 이미지를 만들고 사용합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 다른 모든 컨테이너 간에 만들어지는 격리의 수준입니다.
+Windows 컨테이너 기술에는 컨테이너, 프로세스 및 Hyper-v 격리에 대 한 두 가지 고유한 격리 수준이 포함 됩니다. 두 형식 모두 동일한 방식으로 생성, 관리 및 작동 합니다. 또한 동일한 컨테이너 이미지를 만들고 사용합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 다른 모든 컨테이너 간에 만들어지는 격리의 수준입니다.
 
-**프로세스 격리** – 여러 컨테이너 인스턴스를 격리를 사용 하 여 호스트에서 동시에 실행할 수를 통해 제공 네임 스페이스, 리소스 제어 및 프로세스 격리 기술을.  컨테이너는 호스트와도 서로 동일한 커널을 공유 합니다.  이 값은 대략 동일한 linux 컨테이너를 실행 하는 방법입니다.
+**프로세스 격리** – 네임 스페이스, 리소스 컨트롤, 프로세스 격리 기술을 통해 제공 되는 격리를 사용 하 여 호스트에서 여러 컨테이너 인스턴스가 동시에 실행 될 수 있습니다.  컨테이너는 동일한 커널을 호스트와 함께 공유 합니다.  이는 대략 Linux에서 컨테이너를 실행 하는 방법과 같습니다.
 
-**Hyper-v 격리** – 각 컨테이너 특별 한 가상 컴퓨터 내에서 실행 되는 반면, 여러 컨테이너 인스턴스를 호스트에서 동시에 실행할 수 있습니다. 각 컨테이너 뿐만 아니라 컨테이너 호스트 사이 커널 수준 격리가 제공 됩니다.
+**Hyper-v 격리** – 여러 컨테이너 인스턴스가 호스트에서 동시에 실행 될 수 있지만, 각 컨테이너는 특별 한 가상 컴퓨터 내에서 실행 됩니다. 이를 통해 컨테이너 호스트와 각 컨테이너 간의 커널 수준 격리를 제공할 수도 있습니다.
 
 ## <a name="hyper-v-isolation-examples"></a>Hyper-v 격리 예제
 
 ### <a name="create-container"></a>컨테이너 만들기
 
-Docker로 Hyper-v 격리 된 컨테이너를 관리 하는 것은 Windows Server 컨테이너 관리와 거의 동일 합니다. Hyper-v 격리를 사용 하 여 컨테이너를 만드는 철저 한 Docker를 사용 하는 `--isolation` 매개 변수를 설정 `--isolation=hyperv`.
+Docker를 사용 하 여 Hyper-v 격리 컨테이너를 관리 하는 것은 Windows Server 컨테이너 관리와 거의 동일 합니다. Hyper-v 격리 정밀 Docker를 사용 하 여 컨테이너를 만들려면 `--isolation` 매개 변수를 사용 하 여 `--isolation=hyperv`설정 합니다.
 
 ``` cmd
 docker run -it --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 cmd
@@ -35,9 +35,9 @@ docker run -it --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 cmd
 
 ### <a name="isolation-explanation"></a>격리 설명
 
-이 예제에서는 Windows Server 및 Hyper-v 격리 간의 격리 기능 차이 보여 줍니다.
+이 예제에서는 Windows Server와 Hyper-v 격리 간의 격리 기능 차이를 보여 줍니다.
 
-여기에서는 프로세스 격리 된 컨테이너를 배포 하 고 장기 실행 ping 프로세스를 호스트 합니다.
+여기에서 격리 된 프로세스 컨테이너는 배포 되 고 있으며 장기 실행 ping 프로세스를 호스트 합니다.
 
 ``` cmd
 docker run -d mcr.microsoft.com/windows/servercore:1809 ping localhost -t
@@ -61,7 +61,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
      67       5      820       3836 ...71     0.03   3964   3 PING
 ```
 
-반대로이 예제에서는 ping 프로세스에 Hyper-v 격리 된 컨테이너를 시작 합니다.
+이 예제에서는 또한 ping 프로세스를 사용 하 여 Hyper-v 격리 컨테이너를 시작 합니다.
 
 ```
 docker run -d --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 ping -t localhost

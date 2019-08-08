@@ -16,7 +16,7 @@
 ## [가상 스위치 만들기](quick-start/connect-to-network.md)
 ## [통합 서비스 빌드](user-guide/make-integration-service.md)
 ## [Hyper-V WMI 이식](user-guide/refactor-wmiv1-to-wmiv2.md)
-## [Azure 가상 네트워크에서 중첩 된 Vm](user-guide/nested-virtualization-azure-virtual-network.md) 
+## [Azure 가상 네트워크의 중첩 Vm](user-guide/nested-virtualization-azure-virtual-network.md) 
 
 # 참고자료
 ## [Hyper-V 요구 사항](reference/hyper-v-requirements.md)
@@ -25,7 +25,7 @@
 ## [Hyper-V 통합 서비스](reference/integration-services.md)
 ## [Hyper-V 아키텍처](reference/hyper-v-architecture.md)
 ## [하이퍼바이저 사양](reference/tlfs.md)
-## [Hyper-v 백업 방법](reference/HyperVBackupApproaches.md)
+## [Hyper-v 백업 접근 방법](reference/HyperVBackupApproaches.md)
 
 # 커뮤니티 및 지원
 ## [Hyper-V 포럼](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverhyperv)
