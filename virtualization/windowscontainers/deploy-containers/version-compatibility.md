@@ -3,18 +3,21 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 019dafe855e0fba696db4618a862ec086d435005
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: 84c78947284e18dac347bc04b1ea5fcd96e3a814
+ms.sourcegitcommit: c9062b2c75838fcac64e8cd9bcc75d2f1a324d76
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9882996"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "10008659"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
 Windows server 2016 및 Windows 10 기념일 업데이트 (버전 14393)는 Windows Server 컨테이너를 빌드하고 실행할 수 있는 첫 번째 Windows 릴리스 였습니다. 이러한 버전을 사용하여 빌드된 컨테이너는 Windows Server 버전 1709와 같은 최신 릴리스에서 실행할 수 있지만 실행을 시작하기 전에 알아야 할 몇 가지 사항이 있습니다.
 
 Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미칠 수 있는 사항을 몇 가지 변경해야만 했습니다. 이전 컨테이너는 [hyper-v 격리](../manage-containers/hyperv-container.md)를 사용 하 여 최신 호스트에서 동일 하 게 실행 되며 동일한 (이전) 커널 버전을 사용 합니다. 그러나 최신 Windows 빌드를 기반으로 컨테이너를 실행 하려는 경우 새 호스트 빌드에서만 실행할 수 있습니다.
+
+>[!NOTE]
+> \ * Windows Server의 버전 1709은 더 이상 지원 되지 않습니다. 자세한 내용은 [기본 이미지 서비스 주기](base-image-lifecycle.md)를 참조 하세요.
 
 ## <a name="windows-server-version-1903-host-os-compatibility"></a>Windows Server, 버전 1903 host OS 호환성
 
@@ -23,7 +26,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1903|예|예|
 |WindowsServer 2019|예|아니오|
 |Windows Server, 버전 1803|예|아니오|
-|Windows Server, 버전 1709|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
 |WindowsServer 2016|예|아니오|
 
 ## <a name="windows-server-2019-host-os-compatibility"></a>Windows Server 2019 호스트 OS 호환성
@@ -33,7 +36,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1903|아니요|아니요|
 |WindowsServer 2019|예|예|
 |Windows Server, 버전 1803|예|아니오|
-|Windows Server, 버전 1709|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
 |WindowsServer 2016|예|아니오|
 
 ## <a name="windows-server-version-1803-host-os-compatibility"></a>Windows Server, 버전 1803 host OS 호환성
@@ -43,18 +46,28 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1903|아니요|아니요|
 |WindowsServer 2019|아니요|아니요|
 |Windows Server, 버전 1803|예|예|
-|Windows Server, 버전 1709|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
 |WindowsServer 2016|예|아니오|
 
-## <a name="windows-server-version-1709-host-os-compatibility"></a>Windows Server, 버전 1709 host OS 호환성
+## <a name="windows-server-version-1709-host-os-compatibility"></a>Windows Server, 버전 1709 호스트 OS 호환성 *
 
 |컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
 |---|:---:|:---:|
 |Windows Server, 버전 1903|아니요|아니요|
 |WindowsServer 2019|아니요|아니요|
 |Windows Server, 버전 1803|아니요|아니요|
-|Windows Server, 버전 1709|예|예|
+|Windows Server, version 1709 *|예|예|
 |WindowsServer 2016|예|아니오|
+
+## <a name="windows-server-2016-host-os-compatibility"></a>Windows Server 2016 호스트 OS 호환성
+
+|컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server 2019, 버전 1903|아니요|아니요|
+|WindowsServer 2019|아니요|아니요|
+|Windows Server, 버전 1803|아니요|아니요|
+|Windows Server, version 1709 *|아니요|아니요|
+|WindowsServer 2016|예|예|
 
 ## <a name="windows-10-version-1903-host-os-compatibility"></a>Windows 10 버전 1903 호스트 OS 호환성
 
@@ -63,7 +76,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1903|아니요|아니요|
 |WindowsServer 2019|아니요|아니요|
 |Windows Server, 버전 1803|아니요|아니요|
-|Windows Server 버전 1709|아니요|아니요|
+|Windows Server, version 1709 *|아니요|아니요|
 |WindowsServer 2016|예|예|
 
 ## <a name="windows-10-version-1809-host-os-compatibility"></a>Windows 10 버전 1809 호스트 OS 호환성
@@ -73,7 +86,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1903|아니요|아니요|
 |WindowsServer 2019|예|아니오|
 |Windows Server, 버전 1803|예|아니오|
-|Windows Server, 버전 1709|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
 |WindowsServer 2016|예|아니오|
 
 ## <a name="windows-10-version-1803-host-os-compatibility"></a>Windows 10 버전 1803 호스트 OS 호환성
@@ -83,7 +96,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows 서비스 버전 1903|아니요|아니요|
 |WindowsServer 2019|아니요|아니요|
 |Windows Server, 버전 1803|예|아니오||
-|Windows Server, 버전 1709|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
 |WindowsServer 2016|예|아니오|
 
 ## <a name="windows-10-fall-creators-update-host-os-compatibility"></a>Windows 10 낙하 작성자 업데이트 호스트 OS 호환성
@@ -93,7 +106,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1903|아니요|아니요|
 |WindowsServer 2019|아니요|아니요|
 |Windows Server, 버전 1803|아니요|아니요|
-|Windows Server, 버전 1709|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
 |WindowsServer 2016|예|아니오|
 
 ## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 이미지 버전과 일치 하는 컨테이너 호스트 버전
