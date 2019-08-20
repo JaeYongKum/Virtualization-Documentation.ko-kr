@@ -3,23 +3,19 @@ title: Windows 10의 windows 및 Linux 컨테이너
 description: 컨테이너 배포 빠른 시작
 keywords: docker, 컨테이너, LCOW
 author: taylorb-microsoft
-ms.date: 11/8/2018
+ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 094d7adde67b243a4bcadb1580e239d2175562c7
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: aa7a20d914fdb65597c0f31ef6d53b91f6497be4
+ms.sourcegitcommit: 2f8fd4b2e7113fbb7c323d89f3c72df5e1a4437e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998190"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "10044963"
 ---
 # <a name="windows-containers-on-windows-10"></a>Windows 10의 Windows 컨테이너
-
-> [!div class="op_single_selector"]
-> - [Windows의 Linux 컨테이너](quick-start-windows-10-linux.md)
-> - [Windows의 windows 컨테이너](quick-start-windows-10.md)
 
 이 연습에서는 Windows 10에서 Windows 컨테이너를 만들고 실행 하는 과정을 안내 합니다.
 
@@ -61,6 +57,9 @@ Windows 컨테이너는 기본 이미지로 만듭니다. 다음 명령은 Nano 
 ```console
 docker pull mcr.microsoft.com/windows/nanoserver:1809
 ```
+
+> [!NOTE]
+> 오류 메시지가 표시 되 `no matching manifest for unknown in the manifest list entries`는 경우 Linux 컨테이너를 가져올 필요가 없는지 확인 하세요.
 
 이미지를 가져온 후 `docker images` 명령을 실행하면 설치된 이미지(여기서는 Nano Server 이미지) 목록이 반환됩니다.
 

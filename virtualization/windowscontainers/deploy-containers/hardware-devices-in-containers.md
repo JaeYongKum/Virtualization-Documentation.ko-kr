@@ -3,12 +3,12 @@ title: Windows 용 컨테이너의 장치
 description: Windows의 컨테이너에 대해 어떤 장치 지원이 존재 함
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: ee9c5da5ef87dceb3374977670da2ea50ea87382
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: 1ad63c158a42f116882c949b242274dde8d893fc
+ms.sourcegitcommit: 2f8fd4b2e7113fbb7c323d89f3c72df5e1a4437e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9883166"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "10045033"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows 용 컨테이너의 장치
 
@@ -77,13 +77,13 @@ Windows에서 모든 장치는 구현 하는 인터페이스 클래스 목록을
 </tbody>
 </table>
 
-> [!TIP]
-> 위에 나열 된 장치는 현재 __ Windows 컨테이너에서 지원 되는 장치입니다. 다른 클래스 Guid를 전달 하려고 하면 컨테이너가 시작 하지 못할 수 있습니다.
+> [!IMPORTANT]
+> 장치 지원은 드라이버에 따라 다릅니다. 위의 표에 정의 되지 않은 클래스 Guid를 전달 하려고 하면 정의 되지 않은 동작이 발생할 수 있습니다.
 
 ## <a name="hyper-v-isolated-windows-container-support"></a>Hyper-v-격리 된 Windows 컨테이너 지원
 
-현재 Hyper-v 격리 Windows 컨테이너의 작업 부하에 대 한 장치 할당 및 장치 공유는 지원 되지 않습니다.
+Hyper-v-격리 된 Windows 컨테이너의 작업 부하에 대 한 장치 할당 및 장치 공유는 현재 지원 되지 않습니다.
 
 ## <a name="hyper-v-isolated-linux-container-support"></a>Hyper-v-isolated Linux 컨테이너 지원
 
-현재 Hyper-v 격리 Linux 컨테이너의 작업 부하에 대 한 장치 할당 및 장치 공유는 지원 되지 않습니다.
+Hyper-v-isolated Linux 컨테이너의 작업 부하에 대 한 장치 할당 및 장치 공유는 현재 지원 되지 않습니다.
