@@ -7,12 +7,12 @@ ms.date: 07/25/2017
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 08efc1092777e5649ecce4d978b056a4df644564
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 7ffc16e9d5b7c4b4a935a06c012b1d28b5e70f1a
+ms.sourcegitcommit: 27e9cd37beaf11e444767699886e5fdea5e1a2d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998230"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "10058488"
 ---
 # <a name="build-a-sample-app"></a>샘플 앱 빌드
 
@@ -59,7 +59,8 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 
 첫 번째 선 그룹은 컨테이너를 빌드하는 데 사용할 기반이 되는 기본 이미지를 선언합니다. 로컬 시스템에 이 이미지가 없으면 docker가 자동으로 이미지를 가져오려고 시도합니다. Aspnetcore 빌드는 기본적으로 프로젝트를 컴파일하기 위한 종속성이 함께 패키징됩니다. 그런 다음 컨테이너의 작업 디렉터리를 '/app'으로 변경합니다. 그러면 dockerfile의 모든 확인 명령이 여기서 실행됩니다.
 
-_참고_: 우리 목적은 프로젝트를 빌드하는 것이고 우리가 만드는 첫 번째 컨테이너는 이 목적에만 사용되는 임시 컨테이너로, 작업이 끝나면 삭제할 것입니다.
+>[!NOTE]
+>프로젝트를 빌드해야 하기 때문에 만드는 첫 번째 컨테이너는 해당 작업을 수행 하는 데 사용할 임시 컨테이너 이며 끝에서 삭제 합니다.
 
 ```Dockerfile
 FROM microsoft/aspnetcore-build:1.1 AS build-env
@@ -84,7 +85,8 @@ RUN dotnet publish -c Release -o out
 
 프로젝트가 성공적으로 컴파일될 것입니다. 이제 최종 컨테이너를 빌드해야 합니다. 우리 응용 프로그램은 ASP.NET이므로 라이브러리를 원본으로 사용하여 이미지를 지정합니다. 그런 다음 임시 컨테이너의 출력 디렉터리에 들어 있는 모든 파일을 최종 컨테이너에 복사합니다. 실행할 때 컴파일한 새 .dll을 사용하여 실행되도록 컨테이너를 구성합니다.
 
-_참고_: 이 최종 컨테이너에 사용되는 기본 이미지는 위의 ```FROM``` 명령과 비슷하지만 ASP.NET 앱을 _빌드_할 수 있는 라이브러리가 없고 실행할 수만 있다는 차이가 있습니다.
+>[!NOTE]
+>이 최종 컨테이너의 기본 이미지는 비슷하지만 위 명령과는 ```FROM``` 다른 ASP.NET 앱을 _빌드할_ 수 있는 라이브러리는 실행 중이 아닙니다.
 
 ```Dockerfile
 FROM microsoft/aspnetcore:1.1
@@ -99,7 +101,8 @@ ENTRYPOINT ["dotnet", "MvcMovie.dll"]
 
 dockerfile이 작성되었으니, 앱을 빌드한 다음 컨테이너를 실행하라고 docker에 알려주기만 하면 됩니다. 게시할 포트를 지정하고 컨테이너에 "myapp"이라는 태그를 지정합니다. powershell에서 다음 명령을 실행합니다.
 
-_참고_: 사용자의 PowerShell 콘솔의 현재 작업 디렉터리는 위에서 만든 dockerfile이 있는 디렉터리여야 합니다.
+>[!NOTE]
+>PowerShell 콘솔의 현재 작업 디렉터리는 위에 생성 된 dockerfile이 있는 디렉터리 여야 합니다.
 
 ```Powershell
 docker build -t myasp .
@@ -120,7 +123,7 @@ docker run -d -p 5000:80 --name myapp myasp
 
 원하는 웹 브라우저에 이 IP 주소를 입력하면 컨테이너에서 성공적으로 실행되고 있다는 응용 프로그램의 메시지가 표시됩니다!
 
-<center style="margin: 25px">![](media/SampleAppScreenshot.png)</center>
+>![](media/SampleAppScreenshot.png)
 
 탐색 모음에서 "MvcMovie"를 클릭하면 동영상 항목을 입력, 편집 및 삭제할 수 있는 웹 페이지로 이동됩니다.
 

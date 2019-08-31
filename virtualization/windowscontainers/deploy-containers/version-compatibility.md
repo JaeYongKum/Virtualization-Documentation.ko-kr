@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 84c78947284e18dac347bc04b1ea5fcd96e3a814
-ms.sourcegitcommit: c9062b2c75838fcac64e8cd9bcc75d2f1a324d76
+ms.openlocfilehash: 5fe1cca67c330cb59362e82762651d719708b526
+ms.sourcegitcommit: 27e9cd37beaf11e444767699886e5fdea5e1a2d0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "10008659"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "10058508"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -73,11 +73,11 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 OS|' Hyper-v 격리 지원 '|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1903|아니요|아니요|
-|WindowsServer 2019|아니요|아니요|
-|Windows Server, 버전 1803|아니요|아니요|
-|Windows Server, version 1709 *|아니요|아니요|
-|WindowsServer 2016|예|예|
+|Windows Server, 버전 1903|예|아니오|
+|WindowsServer 2019|예|아니오|
+|Windows Server, 버전 1803|예|아니오|
+|Windows Server, version 1709 *|예|아니오|
+|WindowsServer 2016|예|아니오|
 
 ## <a name="windows-10-version-1809-host-os-compatibility"></a>Windows 10 버전 1809 호스트 OS 호환성
 
