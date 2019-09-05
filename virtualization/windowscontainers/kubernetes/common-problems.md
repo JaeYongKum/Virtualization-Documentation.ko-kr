@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: a0b24782a0e511dfc8b6cf1a0c0bc24882ff977a
-ms.sourcegitcommit: 42cb47ba4f3e22163869d094bd0c9cff415a43b0
+ms.openlocfilehash: b6e4e648ff050e13a0930f2834949867e44ce895
+ms.sourcegitcommit: d252f356a3de98f224e1550536810dfc75345303
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "9884994"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "10069937"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -43,6 +43,9 @@ nssm set <Service Name> AppStderr C:\k\mysvc.log
 자세한 내용은 공식 [nssm 사용](https://nssm.cc/usage) 문서를 참조 하세요.
 
 ## <a name="common-networking-errors"></a>일반적인 네트워킹 오류 ##
+
+### <a name="hostport-publishing-is-not-working"></a>HostPort 게시가 작동 하지 않음 ###
+현재이 필드는 Windows CNI 플러그 인으로 허용 `containers.ports.hostPort` 되지 않으므로 Kubernetes 필드를 사용 하 여 포트를 게시할 수 없습니다. 노드의 포트를 게시 하는 시간 동안 NodePort 게시를 사용 하세요.
 
 ### <a name="i-am-seeing-errors-such-as-hnscall-failed-in-win32-the-wrong-diskette-is-in-the-drive"></a>"HnsCall에 오류가 발생 했습니다: 잘못 된 디스켓이 드라이브에 있습니다." 등의 오류를 보고 있습니다. ###
 이 오류는 이전 HNS 개체를 해제 하지 않고 HNS에서 변경 내용을 적용 하거나 새 Windows 업데이트를 설치할 때 HNS 개체를 사용자 지정 하 여 수정할 때 발생할 수 있습니다. 이는 업데이트 전에 이전에 만든 HNS 개체가 현재 설치 된 HNS 버전과 호환 되지 않음을 나타냅니다.
