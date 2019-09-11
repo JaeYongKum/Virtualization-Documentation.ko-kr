@@ -41,7 +41,12 @@
 ### [Docker swarm](manage-containers/swarm-mode.md)
 ### [Windows Docker 호스트의 원격 관리](management/manage_remotehost.md)
 ## 작업량
-### [그룹 관리 서비스 계정](manage-containers/manage-serviceaccounts.md)
+### 그룹 관리 서비스 계정
+#### [gMSA를 만듭니다.](manage-containers/manage-serviceaccounts.md)
+#### [앱을 구성 하 여 gMSA 사용](manage-containers/gmsa-configure-app.md)
+#### [GMSA를 사용 하 여 컨테이너 실행](manage-containers/gmsa-run-container.md)
+#### [GMSA를 사용 하 여 컨테이너 조정](manage-containers/gmsa-orchestrate-containers.md)
+#### [GMSAs 문제 해결](manage-containers/gmsa-troubleshooting.md)
 ### [프린터 서비스](deploy-containers/print-spooler.md)
 ## 네트워킹
 ### [개요](container-networking/architecture.md)
