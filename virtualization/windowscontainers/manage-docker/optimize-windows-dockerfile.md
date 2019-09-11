@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
-ms.openlocfilehash: 056ab87189e8e423df5758be0f622a43b92c9056
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: ae633c7ba5d9672335addcc582988fc47c13ed79
+ms.sourcegitcommit: f3b6b470dd9cde8e8cac7b13e7e7d8bf2a39aa34
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9882956"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "10077454"
 ---
 # <a name="optimize-windows-dockerfiles"></a>Windows Dockerfile 최적화
 
@@ -23,12 +23,12 @@ Docker 빌드 프로세스와 결과 Docker 이미지를 최적화 하는 방법
 
 Docker 빌드를 최적화 하려면 먼저 Docker 빌드가 작동 하는 방법을 알고 있어야 합니다. Docker 빌드 프로세스 중에는 Dockerfile이 사용되며, 실행 가능한 각 명령이 고유한 임시 컨테이너에서 하나씩 실행됩니다. 결과로 실행 가능한 각 명령에 대한 새로운 이미지 계층이 생성됩니다.
 
-예를 들어 다음 예제 Dockerfile은 `windowsservercore` 기본 OS 이미지를 사용 하 여 IIS를 설치한 다음 간단한 웹 사이트를 만듭니다.
+예를 들어 다음 예제 Dockerfile은 `mcr.microsoft.com/windows/servercore:ltsc2019` 기본 OS 이미지를 사용 하 여 IIS를 설치한 다음 간단한 웹 사이트를 만듭니다.
 
 ```dockerfile
 # Sample Dockerfile
 
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 RUN dism /online /enable-feature /all /featurename:iis-webserver /NoRestart
 RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 CMD [ "cmd" ]
@@ -67,7 +67,7 @@ Dockerfile 모범 사례에 대 한 자세한 내용은 [Docker.com에서 Docker
 다음의 그룹화 되지 않은 예제 Dockerfile은 Windows 용 Python을 다운로드 하 고 설치 하 고 설치가 완료 되 면 다운로드 된 설치 파일을 제거 합니다. 이 Dockerfile에서 각 동작에는 고유한 `RUN` 명령이 제공 됩니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell.exe -Command Invoke-WebRequest "https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe" -OutFile c:\python-3.5.1.exe
 RUN powershell.exe -Command Start-Process c:\python-3.5.1.exe -ArgumentList '/quiet InstallAllUsers=1 PrependPath=1' -Wait
@@ -88,7 +88,7 @@ a395ca26777f        15 seconds ago      cmd /S /C powershell.exe -Command Remove
 두 번째 예제는 똑같은 작업을 수행 하는 Dockerfile입니다. 그러나 모든 관련 작업은 단일 `RUN` 명령으로 그룹화 되었습니다. `RUN` 명령의 각 단계는 Dockerfile의 새 줄에 있으며 ' \\ ' 문자는 줄 바꿈에 사용 됩니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell.exe -Command \
   $ErrorActionPreference = 'Stop'; \
@@ -113,7 +113,7 @@ Dockerfile (예: 설치 관리자)에 파일이 있는 경우 해당 파일을 �
 다음 예제 Dockerfile에서 Python 패키지를 다운로드 하 고 실행 한 다음 제거 합니다. 모든 작업이 하나의 `RUN` 작업에서 완료되고 단일 이미지 계층이 생성됩니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell.exe -Command \
   $ErrorActionPreference = 'Stop'; \
@@ -131,7 +131,7 @@ RUN powershell.exe -Command \
 다음 예제에서는 Apache와 Visual Studio 재배포 패키지를 모두 다운로드 하 고 설치 하 고 더 이상 필요 하지 않은 파일을 제거 하 여 정리 합니다. 이 작업은 모두 단일 `RUN` 명령으로 수행 됩니다. 이러한 작업 중 하나라도 업데이트 되 면 모든 작업이 다시 실행 됩니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell -Command \
 
@@ -167,7 +167,7 @@ IMAGE               CREATED             CREATED BY                              
 비교 하 여 세 가지 `RUN` 명령으로 분할 된 동일한 작업을 수행 합니다. 이 경우 각 `RUN` 명령은 컨테이너 이미지 계층에 캐시 되며, 이후 Dockerfile 빌드에서 변경 된 항목만 다시 실행 해야 합니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell -Command \
     $ErrorActionPreference = 'Stop'; \
@@ -209,7 +209,7 @@ Dockerfile은 위에서 아래로 처리되며, 각 명령은 캐시된 계층�
 다음 예제에서는 Dockerfile 명령 순서가 캐싱 효율성에 미치는 영향을 보여 줍니다. 이 간단한 예제 Dockerfile에는 네 개의 번호 폴더가 있습니다.  
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN mkdir test-1
 RUN mkdir test-2
@@ -233,7 +233,7 @@ afba1a3def0a        38 seconds ago       cmd /S /C mkdir test-4   42.46 MB
 이제 세 번째 `RUN` 명령이 새 파일로 변경 된 다음 Dockerfile이 약간 수정 되었습니다. 이 Dockerfile에 대해 Docker 빌드가 실행되면 마지막 예제의 명령과 동일한 처음 세 명령은 캐시된 이미지 계층을 사용합니다. 그러나 변경 `RUN` 된 명령이 캐싱되지 않기 때문에 변경 된 명령 및 모든 후속 명령에 대해 새 레이어가 만들어집니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN mkdir test-1
 RUN mkdir test-2
@@ -265,7 +265,7 @@ Dockerfile 명령은 대/소문자를 구분 하지 않지만, 대문자를 사�
 ```dockerfile
 # Sample Dockerfile
 
-from windowsservercore
+from mcr.microsoft.com/windows/servercore:ltsc2019
 run dism /online /enable-feature /all /featurename:iis-webserver /NoRestart
 run echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 cmd [ "cmd" ]
@@ -276,7 +276,7 @@ cmd [ "cmd" ]
 ```dockerfile
 # Sample Dockerfile
 
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 RUN dism /online /enable-feature /all /featurename:iis-webserver /NoRestart
 RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
 CMD [ "cmd" ]
@@ -287,7 +287,7 @@ CMD [ "cmd" ]
 길이가 길고 복잡 한 작업은 백슬래시 `\` 문자를 통해 여러 줄로 나눌 수 있습니다. 다음 Dockerfile에서는 Visual Studio 재배포 가능 패키지를 설치하고 설치 관리자 파일을 제거한 다음 구성 파일을 만듭니다. 이러한 세 작업을 모두 한 줄에 지정합니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell -Command c:\vcredist_x86.exe /quiet ; Remove-Item c:\vcredist_x86.exe -Force ; New-Item c:\config.ini
 ```
@@ -295,7 +295,7 @@ RUN powershell -Command c:\vcredist_x86.exe /quiet ; Remove-Item c:\vcredist_x86
 명령을 백슬래시로 구분 하 여 한 `RUN` 명령의 각 작업이 별도의 줄에 지정 되도록 할 수 있습니다.
 
 ```dockerfile
-FROM windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 RUN powershell -Command \
     $ErrorActionPreference = 'Stop'; \

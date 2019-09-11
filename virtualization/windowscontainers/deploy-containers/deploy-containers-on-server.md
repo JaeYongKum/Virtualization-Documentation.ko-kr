@@ -3,17 +3,17 @@ title: Windows Server에 Windows 컨테이너 배포
 description: Windows Server에 Windows 컨테이너 배포
 keywords: Docker, 컨테이너
 author: taylorb-microsoft
-ms.date: 09/26/2016
+ms.date: 09/09/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
-ms.openlocfilehash: e045539b189eb8cd1594da0784ab0c88e848c948
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 6e3996af36b4a710f9a12b3a1371138b053a43d8
+ms.sourcegitcommit: f3b6b470dd9cde8e8cac7b13e7e7d8bf2a39aa34
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998780"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "10077504"
 ---
 # <a name="container-host-deployment-windows-server"></a>컨테이너 호스트 배포: Windows Server
 
@@ -97,13 +97,13 @@ docker pull mcr.microsoft.com/windows/nanoserver:1809
 Windows Server Core 기본 이미지를 설치하려면 다음을 실행합니다.
 
 ```PowerShell
-docker pull microsoft/windowsservercore
+docker pull mcr.microsoft.com/windows/servercore:1607
 ```
 
 Nano Server 기본 이미지를 설치하려면 다음을 실행합니다.
 
 ```PowerShell
-docker pull microsoft/nanoserver
+docker pull mcr.microsoft.com/windows/nanoserver:1803
 ```
 
 > 여기에 나와 있는 Windows 컨테이너 OS 이미지 EULA ( [eula](../images-eula.md))를 참조 하세요.
