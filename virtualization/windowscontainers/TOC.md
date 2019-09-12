@@ -38,6 +38,11 @@
 ### [첫 번째 LCOW 컨테이너를 실행 합니다.](quick-start/quick-start-windows-10-linux.md)
 
 # 개념
+## Windows 컨테이너 Essentials
+### [자원 컨트롤](manage-containers/resource-controls.md)
+### [Hyper-V 격리](manage-containers/hyperv-container.md)
+### [버전 호환성](deploy-containers/version-compatibility.md)
+### [컨테이너 기본 이미지](manage-containers/container-base-images.md)
 ## Docker
 ### [Windows의 Docker 엔진](manage-docker/configure-docker-daemon.md)
 ### [Docker swarm](manage-containers/swarm-mode.md)
@@ -60,11 +65,8 @@
 ## 장치
 ### [하드웨어 장치](deploy-containers/hardware-devices-in-containers.md)
 ### [GPU 가속](deploy-containers/gpu-acceleration.md)
-## [자원 컨트롤](manage-containers/resource-controls.md)
-## [Hyper-V 격리](manage-containers/hyperv-container.md)
 
 # 참조
-## [버전 호환성](deploy-containers/version-compatibility.md)
 ## [기본 이미지 서비스 수명 주기](deploy-containers/base-image-lifecycle.md)
 ## [바이러스 백신 최적화](https://docs.microsoft.com/windows-hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
