@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
-ms.openlocfilehash: 953dfaf71170de656f4e6ba5e91d524708d5a12a
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: c84a6652b5918238ee8ef6e1fa7a9b2aa596aefd
+ms.sourcegitcommit: 868a64eb97c6ff06bada8403c6179185bf96675f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998220"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "10129263"
 ---
 # <a name="docker-engine-on-windows"></a>Windows의 Docker 엔진
 
@@ -21,14 +21,13 @@ Docker 엔진과 클라이언트는 Windows에 포함 되지 않으며 개별적
 
 ## <a name="install-docker"></a>Docker 설치
 
-Windows 컨테이너 사용을 위해서는 Docker가 필요 합니다. Docker는 Docker 엔진(dockerd.exe) 및 Docker 클라이언트(docker.exe)로 구성됩니다. 모든 기능을 설치 하는 가장 쉬운 방법은 빠른 시작 가이드를 사용 하 여 모든 작업을 설정 하 고 첫 번째 컨테이너를 실행 하는 데 도움이 됩니다.
+Windows 컨테이너 사용을 위해서는 Docker가 필요 합니다. Docker는 Docker 엔진(dockerd.exe) 및 Docker 클라이언트(docker.exe)로 구성됩니다. 모든 기능을 설치 하는 가장 쉬운 방법은 빠른 시작 가이드를 사용 하 여 모든 작업을 설정 하 고 첫 번째 컨테이너를 실행 하는 데 도움을 드립니다.
 
-- [Windows Server 2019의 windows 컨테이너](../quick-start/quick-start-windows-server.md)
-- [Windows 10의 windows 컨테이너](../quick-start/quick-start-windows-10.md)
+- [Docker 설치](../quick-start/set-up-environment.md)
 
 스크립팅된 설치의 경우 [스크립트를 사용 하 여 DOCKER EE 설치](https://docs.docker.com/install/windows/docker-ee/#use-a-script-to-install-docker-ee)를 참조 하세요.
 
-Docker를 사용할 수 있으려면 먼저 컨테이너 이미지를 설치 해야 합니다. 자세한 내용은 [이미지 사용에 대 한 빠른 시작 가이드](../quick-start/quick-start-images.md)를 참조 하세요.
+Docker를 사용할 수 있으려면 먼저 컨테이너 이미지를 설치 해야 합니다. 자세한 내용은 [컨테이너 기본 이미지에 대 한 문서](../manage-containers/container-base-images.md)를 참조 하세요.
 
 ## <a name="configure-docker-with-a-configuration-file"></a>구성 파일을 사용 하 여 Docker 구성
 

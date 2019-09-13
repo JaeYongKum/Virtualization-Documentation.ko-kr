@@ -6,15 +6,9 @@
 ## [FAQ](about/faq.md)
 
 # 시작
-## Windows 10
-### [첫 번째 WCOW 컨테이너를 실행 합니다.](quick-start/quick-start-windows-10.md)
-### [샘플 앱 빌드](quick-start/building-sample-app.md)
-## Windows Server
-### [첫 번째 Windows Server 컨테이너를 실행 합니다.](quick-start/quick-start-windows-server.md)
-### [컨테이너 빌드 자동화](quick-start/quick-start-images.md)
-## Windows 참가자
-### [참가자 이미지 사용](quick-start/Using-Insider-Container-Images.md)
-### [응용 프로그램 빌드 및 실행](quick-start/Nano-RS3-.NET-Core-and-PS.md)
+## [환경 설정](quick-start/set-up-environment.md)
+## [첫 번째 컨테이너 실행](quick-start/run-your-first-container.md)
+## [샘플 앱 Containerize](quick-start/building-sample-app.md)
 
 # 자습서
 ## Windows 컨테이너 빌드

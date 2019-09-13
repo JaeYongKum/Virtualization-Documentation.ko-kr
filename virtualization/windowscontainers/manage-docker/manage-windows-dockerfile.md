@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
-ms.openlocfilehash: f23fe8c5e5ad9dc3257f8b99d239b5fc97607add
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 9fef74c029dc3efc220b1f9924d2695cdbaa61be
+ms.sourcegitcommit: 868a64eb97c6ff06bada8403c6179185bf96675f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998240"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "10129303"
 ---
 # <a name="dockerfile-on-windows"></a>Windows의 Dockerfile
 
@@ -31,7 +31,7 @@ Docker 빌드는 Dockerfile을 사용 하 고 이미지 생성 프로세스를 �
 
 이 항목에서는 Windows 컨테이너에서 Dockerfiles를 사용 하 고, 기본 구문을 이해 하 고, 가장 일반적인 Dockerfiles 명령에 대 한 설명을 보여 줍니다.
 
-이 문서에서는 컨테이너 이미지와 컨테이너 이미지 레이어의 개념에 대해 설명 합니다. 이미지 및 이미지 계층화에 대해 자세히 알아보려면 [이미지에](../quick-start/quick-start-images.md)대 한 빠른 시작 가이드를 참조 하세요.
+이 문서에서는 컨테이너 이미지와 컨테이너 이미지 레이어의 개념에 대해 설명 합니다. 이미지 및 이미지 층에 대해 자세히 알아보려면 [컨테이너 기본 이미지](../manage-containers/container-base-images.md)를 참조 하세요.
 
 Dockerfiles를 살펴보려면 [Dockerfiles 참조](https://docs.docker.com/engine/reference/builder/)를 참조 하세요.
 
@@ -69,7 +69,7 @@ Dockerfile 명령어는 컨테이너 이미지를 만드는 데 필요한 지침
 
 ### <a name="from"></a>FROM
 
-`FROM` 명령은 새 이미지 만들기 프로세스 중에 사용될 컨테이너 이미지를 설정합니다. 예를 들어 `FROM microsoft/windowsservercore` 명령을 사용하면 결과 이미지가 Windows Server Core 기본 OS 이미지에서 파생되며 이 이미지에 대해 종속성이 있습니다. 지정된 이미지가 Docker 빌드 프로세스가 실행되는 시스템에 없는 경우 Docker 엔진은 공용 또는 개인 이미지 레지스트리에서 이미지를 다운로드하려고 합니다.
+`FROM` 명령은 새 이미지 만들기 프로세스 중에 사용될 컨테이너 이미지를 설정합니다. 예를 들어 `FROM mcr.microsoft.com/windows/servercore` 명령을 사용하면 결과 이미지가 Windows Server Core 기본 OS 이미지에서 파생되며 이 이미지에 대해 종속성이 있습니다. 지정된 이미지가 Docker 빌드 프로세스가 실행되는 시스템에 없는 경우 Docker 엔진은 공용 또는 개인 이미지 레지스트리에서 이미지를 다운로드하려고 합니다.
 
 FROM 명령의 형식은 다음과 같습니다.
 

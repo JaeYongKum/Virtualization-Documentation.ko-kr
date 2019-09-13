@@ -7,30 +7,20 @@ ms.date: 09/10/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: f5a51fd1211868195126f06d917c0bef6e496c3d
-ms.sourcegitcommit: f3b6b470dd9cde8e8cac7b13e7e7d8bf2a39aa34
+ms.openlocfilehash: 8165d9c7ee3744fae31711e28be028208140813e
+ms.sourcegitcommit: 868a64eb97c6ff06bada8403c6179185bf96675f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "10077474"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "10129273"
 ---
 # <a name="containerize-a-net-core-app"></a>Containerize .NET Core 앱
 
-
-이 퀵 스타트에서는 간단한 .NET 핵심 응용 프로그램을 containerize 하는 방법에 대해 설명 합니다. 너는 할 거야:
-
-> [!div class="checklist"]
-> * GitHub에서 샘플 앱 원본 복제
-> * 앱 원본을 사용 하 여 컨테이너 이미지를 만드는 dockerfile을 만듭니다.
-> * 로컬 Docker 환경에서 containerized .NET core 앱 테스트
-
-## <a name="before-you-begin"></a>시작하기 전에
-
-이 퀵 스타트는 개발 환경이 이미 컨테이너 사용을 위해 구성 되었다고 가정 합니다. 컨테이너에 대해 구성 된 환경이 없는 경우 시작 하는 방법에 대 한 자세한 내용은 [Windows 10 빠른 시작](./quick-start-windows-10.md) 을 참조 하세요.
+이 세그먼트는 개발 환경이 이미 컨테이너 사용을 위해 구성 되었다고 가정 합니다. 컨테이너에 대해 구성 된 환경이 없다면 "[환경 설정](./set-up-environment.md)"을 방문 하 여 시작 하는 방법을 알아보세요.
 
 컴퓨터에 Git 소스 제어 시스템이 설치 되어 있어야 합니다. 사용할 수 있는 내용: [Git](https://git-scm.com/download)
 
-## <a name="getting-started"></a>시작하기
+## <a name="clone-the-sample-code"></a>샘플 코드 복제
 
 모든 컨테이너 샘플 소스 코드는 이라는 `windows-container-samples`폴더의 [가상화 문서](https://github.com/MicrosoftDocs/Virtualization-Documentation) git 리포지토리 아래에 보관 됩니다. 이 git 리포지토리를 curent 작업 디렉터리로 복제 합니다.
 
