@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-ms.openlocfilehash: 93c56dba88715df41cab054cda676879b275380b
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 01e687cfa2fd479eb87e5639581e1552ed801aef
+ms.sourcegitcommit: 9100d2218c160bbe9fbf24f3524c8ff5e3dd826c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9999210"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "10135336"
 ---
 # <a name="automating-builds-and-saving-images"></a>빌드 자동화 및 이미지 저장
 
@@ -159,4 +159,4 @@ docker pull <user>/iis-dockerfile
 샘플 ASP.NET 응용 프로그램을 패키징하는 방법을 살펴보려면 아래에 링크된 Windows 10 자습서를 방문하세요.
 
 > [!div class="nextstepaction"]
-> [Windows 10의 컨테이너](./quick-start-windows-10.md)
+> [Windows 10의 컨테이너](./set-up-environment.md?tabs=Windows-10-Client)

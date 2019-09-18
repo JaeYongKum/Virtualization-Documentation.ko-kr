@@ -3,17 +3,17 @@ title: Windows의 Linux 컨테이너
 description: Windows에서 Hyper-v를 사용 하 여 기본으로 Linux 컨테이너를 실행할 수 있는 다양 한 방법에 대해 알아봅니다.
 keywords: LCOW, linux 컨테이너, docker, 컨테이너
 author: scooley
-ms.date: 11/02/2018
+ms.date: 09/17/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: edfd11c8-ee99-42d8-9878-efc126fe1826
-ms.openlocfilehash: 0426b14c423c06a0f12ea91529ce794f7a972f47
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 14445f3e9d292dbdab28986e772d0c045fca1586
+ms.sourcegitcommit: 9100d2218c160bbe9fbf24f3524c8ff5e3dd826c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998480"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "10135326"
 ---
 # <a name="linux-containers-on-windows"></a>Windows의 Linux 컨테이너
 
@@ -21,8 +21,8 @@ Linux 컨테이너는 전체 컨테이너 에코 시스템의 많은 비율을 �
 
 이제 Windows 및 Hyper-v 용 Docker를 사용 하 여 Linux 컨테이너를 실행 하는 두 가지 방법이 있습니다.
 
-1. 전체 Linux VM에서 Linux 컨테이너를 실행 하는 것은 일반적으로 현재는 Docker입니다.
-1. Linux 컨테이너를 [hyper-v 격리](../manage-containers/hyperv-container.md) (LCOW)로 실행-Windows 용 Docker의 새로운 옵션입니다.
+- 전체 Linux VM에서 Linux 컨테이너를 실행 하는 것은 일반적으로 현재는 Docker입니다.
+- Linux 컨테이너를 [hyper-v 격리](../manage-containers/hyperv-container.md) (LCOW)로 실행-Windows 용 Docker의 새로운 옵션입니다.
 
 이 문서에서는 각 접근 방식의 작동 방식에 대해 설명 하 고 진행 중인 솔루션 및 공유를 선택 하는 경우에 대 한 지침을 제공 합니다.
 
@@ -30,7 +30,7 @@ Linux 컨테이너는 전체 컨테이너 에코 시스템의 많은 비율을 �
 
 Linux VM에서 Linux 컨테이너를 실행 하려면 [Docker의 시작 가이드](https://docs.docker.com/docker-for-windows/)에 나와 있는 지침을 따르세요.
 
-Docker는 Hyper-v에서 실행 되는 [LinuxKit](https://github.com/linuxkit/linuxkit) 기반 가상 컴퓨터를 사용 하 여 2016 (hyper-v 격리 또는 LCOW 사용 가능)에서 처음 릴리스된 이후 Windows 데스크톱에서 Linux 컨테이너를 실행할 수 있습니다.
+Docker는 Hyper-v에서 실행 되는 [LinuxKit](https://github.com/linuxkit/linuxkit) 기반 가상 컴퓨터를 사용 하 여 2016 (Windows에서 hyper-v 격리 또는 Linux 컨테이너를 사용할 수 있음)에서 처음 릴리스된 이후 windows 데스크톱에서 Linux 컨테이너를 실행할 수 있습니다.
 
 이 모델에서는 Docker 클라이언트가 Windows 데스크톱에서 실행 되지만 Linux VM에서 Docker 데몬을 호출 합니다.
 
@@ -47,9 +47,9 @@ Moby VM으로 실행 중인지 확인 하려면 Hyper-v 관리자 UI를 사용 �
 
 ## <a name="linux-containers-with-hyper-v-isolation"></a>Linux 컨테이너-V 격리
 
-LCOW을 시도 하려면 [이 시작 가이드](../quick-start/quick-start-windows-10.md) 의 Linux 컨테이너 지침을 따르세요.
+Windows에서 Linux 컨테이너 (LCOW)를 체험 하려면 [windows 10의 linux](../quick-start/quick-start-windows-10-linux.md)컨테이너에서 linux 컨테이너 지침을 따르세요.
 
-Hyper-v 격리를 사용 하는 linux 컨테이너는 최적화 된 Linux VM에서 컨테이너를 실행할 수 있을 만큼 충분 한 OS를 통해 각 Linux 컨테이너 (LCOW)를 실행 합니다.  Moby VM 방식과 대조적으로 각 LCOW에는 고유한 커널과 VM 샌드박스가 있습니다.  또한 Windows의 Docker에서 직접 관리 합니다.
+Hyper-v 격리를 사용 하는 linux 컨테이너는 컨테이너를 실행할 수 있을 만큼 충분 한 OS를 사용 하 여 최적화 된 Linux VM에서 각 Linux 컨테이너를 실행 합니다. Moby VM 방식과 대조적으로 각 Linux 컨테이너에는 고유한 커널과 VM 샌드박스가 있습니다. 또한 Windows의 Docker에서 직접 관리 합니다.
 
 ![Linux 컨테이너 (Hyper-v 격리) (LCOW)](media/lcow-approach.png)
 
