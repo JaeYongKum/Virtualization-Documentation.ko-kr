@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: dbe0e629428bbd8ecfe3ec01bb1a69e3c9c3e231
-ms.sourcegitcommit: 9100d2218c160bbe9fbf24f3524c8ff5e3dd826c
+ms.openlocfilehash: 55fc032613b901ef1f5f9cf989891ceef99aac36
+ms.sourcegitcommit: 668d0c0a81e6d74d75a655be5a47c2bbc5e268de
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "10135346"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "10138514"
 ---
 # <a name="about-windows-containers"></a>Windows 컨테이너 정보
 
@@ -81,8 +81,4 @@ Windows에서 Hyper-v 격리 여부에 관계 없이 컨테이너를 실행 하�
 
 ## <a name="try-windows-server-containers"></a>Windows Server 컨테이너 체험
 
-컨테이너의 놀라운 성능을 활용할 준비가 되었나요? 다음 문서는 시작 하는 데 도움이 됩니다.
-
-Windows Server에서 컨테이너를 설정 하려면 [Windows server 빠른](../quick-start/quick-start-windows-server.md)시작을 참조 하세요.
-
-Windows 10에서 컨테이너를 설정 하려면 [시작: 컨테이너에 대 한 환경 구성을](../quick-start/set-up-environment.md?tabs=Windows-10-Client)참조 하세요.
+Windows Server 또는 Windows 10에서 컨테이너를 시작 하려면 [시작: 컨테이너에 대 한 환경 구성](../quick-start/set-up-environment.md)을 참조 하세요.

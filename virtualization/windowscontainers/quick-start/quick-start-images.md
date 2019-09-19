@@ -8,14 +8,14 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 479e05b1-2642-47c7-9db4-d2a23592d29f
-ms.openlocfilehash: 01e687cfa2fd479eb87e5639581e1552ed801aef
-ms.sourcegitcommit: 9100d2218c160bbe9fbf24f3524c8ff5e3dd826c
+ms.openlocfilehash: 99b324c8cae5c8c8ed887b6e39d6818d9eddba15
+ms.sourcegitcommit: 668d0c0a81e6d74d75a655be5a47c2bbc5e268de
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "10135336"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "10138504"
 ---
-# <a name="automating-builds-and-saving-images"></a>빌드 자동화 및 이미지 저장
+# <a name="automating-builds-and-saving-images"></a>빌드 및 이미지 저장 자동화
 
 이전 Windows Server 빠른 시작에서는 미리 만든 .Net Core 샘플에서 Windows 컨테이너를 만들었습니다. 이 연습에서는 Dockerfile에서 컨테이너 이미지를 작성 하 고 Docker 허브 공용 레지스트리에 컨테이너 이미지를 저장 하는 방법을 보여 줍니다.
 
@@ -26,7 +26,7 @@ ms.locfileid: "10135336"
 다음 요구 사항을 충족 하는지 확인 하세요.
 
 - Windows Server 2019 또는 Windows Server 2016를 실행 하는 컴퓨터 시스템 (물리적 또는 가상) 1 개.
-- Windows 컨테이너 기능 및 Docker를 사용 하 여이 시스템을 구성 합니다. 이러한 단계에 대 한 연습은 [Windows Server의 windows 컨테이너](./quick-start-windows-server.md)를 참조 하세요.
+- Windows 컨테이너 기능 및 Docker를 사용 하 여이 시스템을 구성 합니다. 이 단계에 대 한 연습은 [시작: 컨테이너에 대 한 환경 구성을](../quick-start/set-up-environment.md)참조 하세요.
 - Docker ID는 Docker 허브에 컨테이너 이미지를 푸시하기 위해 사용됩니다. Docker ID가 없는 경우 [Docker Cloud](https://cloud.docker.com/)(Docker 클라우드)에서 하나 등록하세요.
 
 ## <a name="container-image---dockerfile"></a>컨테이너 이미지-Dockerfile
@@ -159,4 +159,4 @@ docker pull <user>/iis-dockerfile
 샘플 ASP.NET 응용 프로그램을 패키징하는 방법을 살펴보려면 아래에 링크된 Windows 10 자습서를 방문하세요.
 
 > [!div class="nextstepaction"]
-> [Windows 10의 컨테이너](./set-up-environment.md?tabs=Windows-10-Client)
+> [Windows 10의 컨테이너](set-up-environment.md?tabs=Windows-10-Client)
