@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 532195c6-564b-4954-97c2-5a5795368c09
-ms.openlocfilehash: 749251e67b4e2eaffba8e43638fe4f596b31bba5
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: 0139f51e909149dde59f4030c6571aee82fed27e
+ms.sourcegitcommit: 62fff5436770151a28b6fea2be3a8818564f3867
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9882906"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "10147246"
 ---
 # <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
@@ -22,7 +22,7 @@ ms.locfileid: "9882906"
 
 ## <a name="connect-virtual-machines-to-the-internet"></a>가상 컴퓨터를 인터넷에 연결
 
-Hyper-V에는 외부, 내부, 개인의 세 가지 가상 스위치 유형이 있습니다. 컴퓨터의 네트워크를 여기에서 실행 중인 가상 컴퓨터와 공유하려면 외부 스위치를 만듭니다.
+Hyper-V에는 외부, 내부, 개인의 세 가지 가상 스위치 유형이 있습니다. 외부 스위치를 만들어 컴퓨터의 네트워크를 실행 중인 가상 컴퓨터와 공유 합니다.
 
 이 연습은 외부 가상 스위치를 만드는 과정을 안내합니다. 완료되면 Hyper-V 호스트가 가상 컴퓨터를 컴퓨터의 네트워크 연결을 통해 인터넷에 연결할 수 있는 가상 스위치를 가지게 됩니다. 
 

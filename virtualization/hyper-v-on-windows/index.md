@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 05269ce0-a54f-4ad8-af75-2ecf5142b866
-ms.openlocfilehash: daecf2701972a00f4587b409c2271a23a70684ab
-ms.sourcegitcommit: 66f6cba600432f8fac1c214f357b27eb783cb1ff
+ms.openlocfilehash: 0621a06832844b0350b33c763f0546afa9b596e6
+ms.sourcegitcommit: 62fff5436770151a28b6fea2be3a8818564f3867
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "9794590"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "10147306"
 ---
 # <a name="hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 
 
@@ -25,15 +25,15 @@ ms.locfileid: "9794590"
 다음 문서는 Windows의 Hyper-V에 대한 소개 및 정보를 제공합니다.
 
 * [Hyper-V 소개](./about/index.md)
-* [지원되는 게스트 운영 체제](about\supported-guest-os.md)
+* [지원되는 게스트 운영 체제](about/supported-guest-os.md)
 
 ## <a name="get-started-with-hyper-v"></a>Hyper-V 시작
 다음 문서는 Windows 10의 Hyper-V에 대한 신속한 소개를 제공합니다.
 
-* [Hyper-V 설치](quick-start\enable-hyper-v.md)
-* [가상 컴퓨터 만들기](quick-start\create-virtual-machine.md)
-* [가상 스위치 만들기](quick-start\connect-to-network.md)
-* [Hyper-V 및 PowerShell](quick-start\try-hyper-v-powershell.md)
+* [Hyper-V 설치](quick-start/enable-hyper-v.md)
+* [가상 컴퓨터 만들기](quick-start/create-virtual-machine.md)
+* [가상 스위치 만들기](quick-start/connect-to-network.md)
+* [Hyper-V 및 PowerShell](quick-start/try-hyper-v-powershell.md)
 
 ## <a name="connect-with-community-and-support"></a>커뮤니티 및 지원에 연결
 추가 기술 지원 및 커뮤니티 리소스입니다.

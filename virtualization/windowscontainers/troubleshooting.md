@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ebd79cd3-5fdd-458d-8dc8-fc96408958b5
-ms.openlocfilehash: 652b1a8e0ab12ac67dd2754051e36c523e3de509
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: 16d2794688d60757ef1321d687f6a987ccf0b581
+ms.sourcegitcommit: 62fff5436770151a28b6fea2be3a8818564f3867
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9882946"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "10147236"
 ---
 # <a name="troubleshooting"></a>문제 해결
 
@@ -99,9 +99,7 @@ sc.exe stop docker
 
 사용량:
 ```PowerShell
-Get-Process dockerd
-# Note the process ID in the `Id` column
-docker-signal -pid=<id>
+docker-signal --pid=$((Get-Process dockerd).Id)
 ```
 
 출력 파일은 docker가 실행 되는 데이터 루트 디렉터리에 위치 하 게 됩니다. 기본 디렉터리는 `C:\ProgramData\Docker`입니다. 실제 디렉터리는 `docker info -f "{{.DockerRootDir}}"` 명령을 실행하여 확인할 수 있습니다.
