@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 25de368c-5a10-40a4-b4aa-ac8c9a9ca022
-ms.openlocfilehash: 0aa93b721ab1279cb789e3a18cad04bb668d2644
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: af12aff787cf178ff80d5db15cc926266816882f
+ms.sourcegitcommit: 579349d7bc6a7dbf68445339c468ad8d2b87d7de
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998520"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "10152734"
 ---
 # <a name="frequently-asked-questions-about-containers"></a>컨테이너에 대 한 자주 묻는 질문
 
@@ -46,7 +46,7 @@ Windows 10 10 월 2018 업데이트부터 프로세스 격리를 사용 하 여 
 이 방법으로 Windows 컨테이너를 실행 하려면 호스트가 Windows 10 build 17763 +를 실행 하 고 있는지, 그리고 엔진 18.09 이상이 포함 된 Docker 버전을 사용 하 고 있는 지 확인 해야 합니다.
 
 > [!WARNING]
-> 이 기능은 개발/테스트 용도로만 사용할 수 있습니다. Windows Server를 프로덕션 배포의 호스트로 계속 사용 해야 합니다. 이 기능을 사용 하 여 호스트 및 컨테이너 버전 태그가 일치 하도록 해야 하며 그렇지 않으면 컨테이너가 시작 되지 않거나 정의 되지 않은 동작이 발생할 수 있습니다.
+> 이 기능은 개발 및 테스트 용도로만 사용할 수 있습니다. Windows Server를 프로덕션 배포의 호스트로 계속 사용 해야 합니다. 이 기능을 사용 하 여 호스트 및 컨테이너 버전 태그가 일치 하도록 해야 하며 그렇지 않으면 컨테이너가 시작 되지 않거나 정의 되지 않은 동작이 발생할 수 있습니다.
 
 ## <a name="how-do-i-make-my-container-images-available-on-air-gapped-machines"></a>Gapped 컴퓨터에서 컨테이너 이미지를 사용할 수 있게 하는 방법은 무엇 인가요?
 
