@@ -1,46 +1,66 @@
 ---
-title: Hyper-V 격리
-description: Hyper-v 격리가 프로세스 격리 컨테이너와 어떻게 다른 지를 Explaination.
+title: 격리 모드
+description: Hyper-v 격리가 프로세스 격리 컨테이너와 어떻게 다른 지에 대 한 설명입니다.
 keywords: Docker, 컨테이너
-author: scooley
-ms.date: 09/13/2018
+author: crwilhit
+ms.date: 09/26/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
-ms.openlocfilehash: 092312848173102bec5a791f2c48fe8166e70d5f
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: fa95ffe1c699a2c837076fcc1b662f6b792b7dfb
+ms.sourcegitcommit: e9dda81f1f68359ece9ef132a184a30880bcdb1b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998330"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "10161730"
 ---
-# <a name="hyper-v-isolation"></a>Hyper-V 격리
+# <a name="isolation-modes"></a>격리 모드
 
-Windows 컨테이너 기술에는 컨테이너, 프로세스 및 Hyper-v 격리에 대 한 두 가지 고유한 격리 수준이 포함 됩니다. 두 형식 모두 동일한 방식으로 생성, 관리 및 작동 합니다. 또한 동일한 컨테이너 이미지를 만들고 사용합니다. 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행되는 다른 모든 컨테이너 간에 만들어지는 격리의 수준입니다.
+Windows 컨테이너는 두 가지 독립 런타임 격리 `process` 모드인 `Hyper-V` 격리를 제공 합니다. 두 격리 모드에서 모두 실행 되는 컨테이너는 동일 하 게 생성, 관리 및 작동 합니다. 또한 동일한 컨테이너 이미지를 만들고 사용합니다. 격리 모드의 차이점은 컨테이너, 호스트 운영 체제 및 해당 호스트에서 실행 되는 다른 모든 컨테이너 간에 만들어지는 격리의 정도입니다.
 
-**프로세스 격리** – 네임 스페이스, 리소스 컨트롤, 프로세스 격리 기술을 통해 제공 되는 격리를 사용 하 여 호스트에서 여러 컨테이너 인스턴스가 동시에 실행 될 수 있습니다.  컨테이너는 동일한 커널을 호스트와 함께 공유 합니다.  이는 대략 Linux에서 컨테이너를 실행 하는 방법과 같습니다.
+## <a name="process-isolation"></a>프로세스 격리
 
-**Hyper-v 격리** – 여러 컨테이너 인스턴스가 호스트에서 동시에 실행 될 수 있지만, 각 컨테이너는 특별 한 가상 컴퓨터 내에서 실행 됩니다. 이를 통해 컨테이너 호스트와 각 컨테이너 간의 커널 수준 격리를 제공할 수도 있습니다.
+컨테이너에 대 한 "전통적인" 격리 모드 이며 [Windows 컨테이너 개요](../about/index.md)에 설명 되어 있습니다. 프로세스 격리를 사용 하면 네임 스페이스, 리소스 컨트롤 및 프로세스 격리 기술을 통해 제공 되는 격리를 사용 하 여 지정 된 호스트에서 여러 컨테이너 인스턴스가 동시에 실행 됩니다. 이 모드에서 실행 하는 경우 컨테이너는 동일한 커널을 호스트와 함께 함께 공유 합니다.  이것은 약 Linux 컨테이너가 실행 되는 방법과 같습니다.
 
-## <a name="hyper-v-isolation-examples"></a>Hyper-v 격리 예제
+![](media/container-arch-process.png)
+
+## <a name="hyper-v-isolation"></a>Hyper-V 격리
+이 격리 모드는 호스트와 컨테이너 버전 간의 향상 된 보안 및 광범위 한 호환성을 제공 합니다. Hyper-v 격리를 사용 하면 여러 컨테이너 인스턴스가 호스트에서 동시에 실행 됩니다. 그러나 각 컨테이너는 고도로 최적화 된 가상 컴퓨터 내에서 실행 되며 사실상 자체 커널을 가져옵니다. 가상 컴퓨터의 현재 상태는 각 컨테이너와 컨테이너 호스트 간에 하드웨어 수준 격리를 제공 합니다.
+
+![](media/container-arch-hyperv.png)
+
+## <a name="isolation-examples"></a>격리 예제
 
 ### <a name="create-container"></a>컨테이너 만들기
 
-Docker를 사용 하 여 Hyper-v 격리 컨테이너를 관리 하는 것은 Windows Server 컨테이너 관리와 거의 동일 합니다. Hyper-v 격리 정밀 Docker를 사용 하 여 컨테이너를 만들려면 `--isolation` 매개 변수를 사용 하 여 `--isolation=hyperv`설정 합니다.
+Docker를 사용 하 여 Hyper-v 격리 컨테이너를 관리 하는 것은 프로세스 격리 컨테이너 관리와 거의 동일 합니다. Hyper-v 격리 정밀 Docker를 사용 하 여 컨테이너를 만들려면 `--isolation` 매개 변수를 사용 하 여 `--isolation=hyperv`설정 합니다.
 
-``` cmd
-docker run -it --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 cmd
+```cmd
+docker run -it --isolation=hyperv mcr.microsoft.com/windows/servercore:ltsc2019 cmd
 ```
+
+프로세스 격리 철저 Docker를 사용 하 여 컨테이너를 만들려면 `--isolation` 매개 변수를 사용 `--isolation=process`하 여 설정 합니다.
+
+```cmd
+docker run -it --isolation=process mcr.microsoft.com/windows/servercore:ltsc2019 cmd
+```
+
+Windows Server에서 실행 되는 windows 컨테이너는 프로세스 격리를 사용 하 여 실행 하도록 기본 설정 됩니다. Windows 10 Pro 및 Enterprise default에서 실행 되는 windows 컨테이너는 Hyper-v 격리를 사용 하 여 실행 됩니다. Windows 10 10 월 2018 업데이트부터 시작 하 여 Windows 10 Pro 또는 Enterprise 호스트를 실행 하는 사용자가 프로세스 격리를 통해 Windows 컨테이너를 실행할 수 있습니다. 사용자는 플래그를 `--isolation=process` 사용 하 여 프로세스 격리를 직접 요청 해야 합니다.
+
+> [!WARNING]
+> Windows 10 Pro 및 Enterprise에서 프로세스 격리를 사용 하 여 실행 하는 것은 개발/테스트를 위한 것입니다. 호스트는 Windows 10 build 17763 +를 실행 해야 하며, 엔진 18.09 이상으로 Docker 버전이 있어야 합니다.
+> 
+> Windows Server를 프로덕션 배포의 호스트로 계속 사용 해야 합니다. Windows 10 Pro 및 Enterprise에서이 기능을 사용 하 여 호스트 및 컨테이너 버전 태그가 일치 하도록 해야 하며 그렇지 않으면 컨테이너가 시작 되지 않거나 정의 되지 않은 동작이 발생할 수 있습니다.
 
 ### <a name="isolation-explanation"></a>격리 설명
 
-이 예제에서는 Windows Server와 Hyper-v 격리 간의 격리 기능 차이를 보여 줍니다.
+이 예제에서는 프로세스와 Hyper-v 격리 간의 격리 기능 차이를 보여 줍니다.
 
-여기에서 격리 된 프로세스 컨테이너는 배포 되 고 있으며 장기 실행 ping 프로세스를 호스트 합니다.
+여기에서 프로세스 격리 컨테이너를 배포 하 고 장기 실행 ping 프로세스를 호스트할 수 있습니다.
 
 ``` cmd
-docker run -d mcr.microsoft.com/windows/servercore:1809 ping localhost -t
+docker run -d mcr.microsoft.com/windows/servercore:ltsc2019 ping localhost -t
 ```
 
 `docker top` 명령을 사용하여 컨테이너 내부에 표시된 대로 ping 프로세스를 반환합니다. 이 예제의 프로세스에서는 ID 3964를 사용합니다.
@@ -61,10 +81,10 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  SI ProcessName
      67       5      820       3836 ...71     0.03   3964   3 PING
 ```
 
-이 예제에서는 또한 ping 프로세스를 사용 하 여 Hyper-v 격리 컨테이너를 시작 합니다.
+반대로이 예제에서는 ping 프로세스를 사용 하 여 Hyper-v를 기반으로 하는 컨테이너를 시작 합니다.
 
 ```
-docker run -d --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 ping -t localhost
+docker run -d --isolation=hyperv mcr.microsoft.com/windows/servercore:ltsc2019 ping localhost -t
 ```
 
 마찬가지로 `docker top`을 사용하여 컨테이너에서 실행 중인 프로세스를 반환할 수 있습니다.
@@ -75,7 +95,7 @@ docker top 5d5611e38b31a41879d37a94468a1e11dc1086dcd009e2640d36023aa1663e62
 1732 ping
 ```
 
-그러나 컨테이너 호스트에서 프로세스를 검색하면 ping 프로세스가 검색되지 않고 오류가 throw됩니다.
+그러나 컨테이너 호스트에서 프로세스를 검색할 때 ping 프로세스가 발견 되지 않고 오류가 발생 합니다.
 
 ```
 get-process -Name ping

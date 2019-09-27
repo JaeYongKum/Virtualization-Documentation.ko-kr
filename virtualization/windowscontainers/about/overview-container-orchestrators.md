@@ -1,5 +1,5 @@
 ---
-title: Windows 컨테이너 orchestrators 정보
+title: Windows 컨테이너 오케스트레이션 개요
 description: Windows 컨테이너 orchestrators에 대해 자세히 알아보세요.
 keywords: Docker, 컨테이너
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.date: 05/22/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 1ccf63b0ae55501ba32f8bdd61994e7f8006b5e6
-ms.sourcegitcommit: daf1d2b5879c382404fc4d59f1c35c88650e20f7
+ms.openlocfilehash: 99a3b47a9d80e21c246fb3b4f61d650557eb37fa
+ms.sourcegitcommit: e9dda81f1f68359ece9ef132a184a30880bcdb1b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "9674888"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "10161790"
 ---
-# <a name="about-windows-container-orchestrators"></a>Windows 컨테이너 orchestrators 정보
+# <a name="windows-container-orchestration-overview"></a>Windows 컨테이너 오케스트레이션 개요
 
 컨테이너는 크기와 응용 프로그램 방향 때문에 민첩 한 배달 환경 및 microservice 기반 아키텍처에 완벽 합니다. 그러나 컨테이너와 마이크로 서버를 사용 하는 환경에는 수백 또는 수천 개의 구성 요소를 포함 하 여 추적할 수 있습니다. 수십 개 이상의 가상 컴퓨터 또는 물리적 서버를 수동으로 관리할 수 있지만 자동화를 사용 하지 않고 프로덕션 크기 컨테이너 환경을 제대로 관리할 방법이 없습니다. 이 작업은 다양 한 컨테이너를 자동화 하 고 관리 하며 서로 상호 작용 하는 방식에 대 한 orchestrator에 속해야 합니다.
 
