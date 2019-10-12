@@ -2,18 +2,18 @@
 title: GMSAs Windows 컨테이너 문제 해결
 description: Windows 컨테이너에 대 한 gMSAs (그룹 관리 서비스 계정)를 해결 하는 방법을 설명 합니다.
 keywords: docker, 컨테이너, active directory, gmsa, 그룹 관리 서비스 계정, 그룹 관리 서비스 계정, 문제 해결, 문제 해결
-author: Heidilohr
-ms.date: 09/10/2019
+author: rpsqrd
+ms.date: 10/03/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 00a0d9b1367da55b7669fc26a3eca303272967ab
-ms.sourcegitcommit: 5d4b6823b82838cb3b574da3cd98315cdbb95ce2
+ms.openlocfilehash: 89f255e307c2a48fd743d5abd1a49bba7703aaf3
+ms.sourcegitcommit: 22dcc1400dff44fb85591adf0fc443360ea92856
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "10079743"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "10209853"
 ---
 # <a name="troubleshoot-gmsas-for-windows-containers"></a>GMSAs Windows 컨테이너 문제 해결
 
@@ -142,9 +142,43 @@ Active directory에 사용 되는 전체 포트 목록은 active [directory 및 
 
     GMSA을 사용할 수 있고 `NERR_SUCCESS` 네트워크 연결을 통해 컨테이너가 도메인과 통신할 수 있는지에 따라 신뢰 확인이 반환 됩니다. 실패 하는 경우 호스트와 컨테이너의 네트워크 구성을 확인 합니다. 둘 다 도메인 컨트롤러와 통신할 수 있어야 합니다.
 
-4. 앱이 gMSA를 [사용 하도록 구성](gmsa-configure-app.md)되어 있는지 확인 합니다. GMSA를 사용 하는 경우 컨테이너 내부의 사용자 계정이 변경 되지 않습니다. 대신 시스템 계정은 다른 네트워크 리소스와 통신 하는 경우 gMSA를 사용 합니다. 즉, gMSA id를 활용 하려면 앱이 네트워크 서비스 또는 로컬 시스템으로 실행 되어야 합니다.
+4. 컨테이너가 올바른 TGT (Kerberos 티켓 허용 티켓)를 얻을 수 있는지 확인 합니다.
+
+    ```powershell
+    klist get krbtgt
+    ```
+
+    이 명령은 "krbtgt에 대 한 티켓이 성공적으로 검색 되었습니다."를 반환 하 고 티켓을 검색 하는 데 사용 되는 도메인 컨트롤러를 나열 해야 합니다. TGT를 가져올 수 있지만 `nltest` 이전 단계에서 실패 하는 경우 gMSA 계정이 잘못 구성 되었음을 나타내는 것일 수 있습니다. 자세한 내용은 [gMSA 계정 확인](#check-the-gmsa-account) 을 참조 하세요.
+
+    컨테이너 내에서 TGT를 받을 수 없는 경우 DNS 또는 네트워크 연결 문제를 나타낼 수 있습니다. 컨테이너가 도메인 DNS 이름을 사용 하 여 도메인 컨트롤러를 확인 하 고 컨테이너에서 도메인 컨트롤러를 라우팅할 수 있는지 확인 합니다.
+
+5. 앱이 gMSA를 [사용 하도록 구성](gmsa-configure-app.md)되어 있는지 확인 합니다. GMSA를 사용 하는 경우 컨테이너 내부의 사용자 계정이 변경 되지 않습니다. 대신 시스템 계정은 다른 네트워크 리소스와 통신 하는 경우 gMSA를 사용 합니다. 즉, gMSA id를 활용 하려면 앱이 네트워크 서비스 또는 로컬 시스템으로 실행 되어야 합니다.
 
     > [!TIP]
     > 컨테이너에서 현재 `whoami` 사용자 컨텍스트를 식별 하기 위해 다른 도구를 실행 하거나 사용 하는 경우 gMSA 이름이 표시 되지 않습니다. 이는 도메인 id 대신 로컬 사용자로 항상 컨테이너에 로그인 하기 때문입니다. GMSA는 네트워크 리소스와 통신 하는 경우 컴퓨터 계정에서 사용 되며,이 경우 앱을 네트워크 서비스 또는 로컬 시스템으로 실행 해야 합니다.
 
-5. 마지막으로, 컨테이너가 올바르게 구성 된 것 처럼 보이지만 사용자 또는 다른 서비스가 containerized 앱에 자동으로 인증할 수 없는 경우 gMSA 계정에서 Spn을 확인 하세요. 클라이언트는 응용 프로그램에 도달 하는 이름으로 gMSA 계정을 찾습니다. 예를 들어 클라이언트가 부하 분산 장치 또는 `host` 다른 DNS 이름을 통해 앱에 연결 하는 경우 gMSA에 대 한 추가 spn이 필요할 수 있습니다.
+### <a name="check-the-gmsa-account"></a>GMSA 계정 확인
+
+1. 컨테이너가 올바르게 구성 된 것 처럼 보이지만 사용자 또는 다른 서비스가 containerized 앱에 자동으로 인증할 수 없는 경우 gMSA 계정에서 Spn을 확인 하세요. 클라이언트는 응용 프로그램에 도달 하는 이름으로 gMSA 계정을 찾습니다. 예를 들어 클라이언트가 부하 분산 장치 또는 `host` 다른 DNS 이름을 통해 앱에 연결 하는 경우 gMSA에 대 한 추가 spn이 필요할 수 있습니다.
+
+2. GMSA 및 컨테이너 호스트가 동일한 Active Directory 도메인에 속해 있는지 확인 합니다. GMSA가 다른 도메인에 속해 있으면 컨테이너 호스트가 gMSA 암호를 검색할 수 없습니다.
+
+3. 도메인에 gMSA와 동일한 이름을 가진 계정이 하나만 있는지 확인 합니다. gMSA 개체에는 해당 SAM 계정 이름에 달러 기호 ($)가 추가 되므로, gMSA에 "내 계정 $" 이라는 이름을 지정 하 고 관련 없는 사용자 계정에 "내 계정" 라는 이름을 지정할 수 있습니다. 이로 인해 도메인 컨트롤러나 응용 프로그램이 gMSA를 이름으로 조회 해야 하는 경우 문제가 발생할 수 있습니다. 다음 명령을 사용 하 여 유사한 이름의 개체에 대해 광고를 검색할 수 있습니다.
+
+    ```powershell
+    # Replace "GMSANAMEHERE" with your gMSA account name (no trailing dollar sign)
+    Get-ADObject -Filter 'sAMAccountName -like "GMSANAMEHERE*"'
+    ```
+
+4. GMSA 계정에서 무제한 위임을 사용 하도록 설정한 경우 [UserAccountControl 특성](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) 에 `WORKSTATION_TRUST_ACCOUNT` 플래그가 설정 되어 있는지 확인 합니다. 이 플래그는 앱에서 SID에 대 한 이름을 확인 하거나 그 반대의 경우와 같이 도메인 컨트롤러와 통신 하기 위해 컨테이너의 NETLOGON에 필요 합니다. 다음 명령을 사용 하 여 플래그가 올바르게 구성 되어 있는지 확인할 수 있습니다.
+
+    ```powershell
+    $gMSA = Get-ADServiceAccount -Identity 'yourGmsaName' -Properties UserAccountControl
+    ($gMSA.UserAccountControl -band 0x1000) -eq 0x1000
+    ```
+
+    위의 명령이 반환 `False`되는 경우 다음을 사용 하 여 GMSA `WORKSTATION_TRUST_ACCOUNT` 계정의 UserAccountControl 속성에 플래그를 추가 합니다. 이 명령은 또한 UserAccountControl 속성의 `NORMAL_ACCOUNT`, `INTERDOMAIN_TRUST_ACCOUNT`및 `SERVER_TRUST_ACCOUNT` 플래그를 지웁니다.
+
+    ```powershell
+    Set-ADObject -Identity $gMSA -Replace @{ userAccountControl = ($gmsa.userAccountControl -band 0x7FFFC5FF) -bor 0x1000 }
+    ```

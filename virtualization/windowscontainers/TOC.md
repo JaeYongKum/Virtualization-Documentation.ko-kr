@@ -14,19 +14,15 @@
 ## Windows 컨테이너 빌드
 ### [Dockerfile 작성](manage-docker/manage-windows-dockerfile.md)
 ### [Dockerfile 최적화](manage-docker/optimize-windows-dockerfile.md)
-## Windows의 Kubernetes
-### [Windows의 Kubernetes](kubernetes/getting-started-kubernetes-windows.md)
-### [Kubernetes 마스터 만들기](kubernetes/creating-a-linux-master.md)
-### [네트워크 솔루션 선택](kubernetes/network-topologies.md)
-### [Windows 작업자 참가](kubernetes/joining-windows-workers.md)
-### [Linux 직원 가입](kubernetes/joining-linux-workers.md)
-### [Kubernetes 리소스 배포](kubernetes/deploying-resources.md)
-### [문제 해결](kubernetes/common-problems.md)
-### [Kubernetes의 Windows 서비스](kubernetes/kube-windows-services.md)
-### [Kubernetes 이진 컴파일](kubernetes/compiling-kubernetes-binaries.md)
-## Windows의 서비스 패브릭
+## Azure Kubernetes 서비스에서 실행
+### [AKS에서 Windows 컨테이너 클러스터 만들기](/azure/aks/windows-container-cli)
+### [현재 제한 사항](/azure/aks/windows-node-limitations)
+## Service Fabric에서 실행
 ### [첫 번째 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers)
 ### [Windows 컨테이너에서 .NET 응용 프로그램 배포](/azure/service-fabric/service-fabric-host-app-in-a-container)
+## Azure 앱 서비스에서 실행
+### [Azure App Service 빠른 시작](/azure/app-service/app-service-web-get-started-windows-container)
+### [Windows 컨테이너 및 Azure App Service를 사용 하 여 ASP.NET 앱 마이그레이션](/azure/app-service/app-service-web-tutorial-windows-containers-custom-fonts)
 ## Windows의 Linux 컨테이너
 ### [개요](deploy-containers/linux-containers.md)
 ### [첫 번째 LCOW 컨테이너를 실행 합니다.](quick-start/quick-start-windows-10-linux.md)
@@ -39,10 +35,24 @@
 ### [자원 컨트롤](manage-containers/resource-controls.md)
 ## Docker
 ### [Windows의 Docker 엔진](manage-docker/configure-docker-daemon.md)
-### [Docker swarm](manage-containers/swarm-mode.md)
 ### [Windows Docker 호스트의 원격 관리](management/manage_remotehost.md)
 ## 컨테이너 오케스트레이션
 ### [개요](about/overview-container-orchestrators.md)
+### Windows의 Kubernetes
+#### [Windows의 Kubernetes](kubernetes/getting-started-kubernetes-windows.md)
+#### [Kubernetes 마스터 만들기](kubernetes/creating-a-linux-master.md)
+#### [네트워크 솔루션 선택](kubernetes/network-topologies.md)
+#### [Windows 작업자 참가](kubernetes/joining-windows-workers.md)
+#### [Linux 직원 가입](kubernetes/joining-linux-workers.md)
+#### [Kubernetes 리소스 배포](kubernetes/deploying-resources.md)
+#### [문제 해결](kubernetes/common-problems.md)
+#### [Kubernetes의 Windows 서비스](kubernetes/kube-windows-services.md)
+#### [Kubernetes 이진 컴파일](kubernetes/compiling-kubernetes-binaries.md)
+### 서비스 패브릭
+#### [서비스 패브릭 및 컨테이너](/azure/service-fabric/service-fabric-containers-overview)
+#### [자원 관리](/azure/service-fabric/service-fabric-resource-governance)
+### Docker Swarm
+#### [Swarm 모드](manage-containers/swarm-mode.md)
 ## 작업량
 ### 그룹 관리 서비스 계정
 #### [gMSA를 만듭니다.](manage-containers/manage-serviceaccounts.md)
@@ -58,6 +68,7 @@
 ### [고급 네트워킹 옵션 구성](container-networking/advanced.md)
 ## 저장소
 ### [개요](manage-containers/container-storage.md)
+### [영구 저장소](manage-containers/persistent-storage.md)
 ## 장치
 ### [하드웨어 장치](deploy-containers/hardware-devices-in-containers.md)
 ### [GPU 가속](deploy-containers/gpu-acceleration.md)

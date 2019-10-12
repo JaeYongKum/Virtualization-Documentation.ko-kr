@@ -2,18 +2,18 @@
 title: GMSA를 사용 하 여 컨테이너 실행
 description: GMSA (그룹 관리 서비스 계정)를 사용 하 여 Windows 컨테이너를 실행 하는 방법
 keywords: docker, 컨테이너, active directory, gmsa, 그룹 관리 서비스 계정, 그룹 관리 서비스 계정
-author: Heidilohr
+author: rpsqrd
 ms.date: 09/10/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: b9c0406b5fe9527d88365dabf0cfd10114c34c74
-ms.sourcegitcommit: 5d4b6823b82838cb3b574da3cd98315cdbb95ce2
+ms.openlocfilehash: 52625517748356251aa41115caebd7801ec3cdaf
+ms.sourcegitcommit: 22dcc1400dff44fb85591adf0fc443360ea92856
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "10079734"
+ms.lasthandoff: 10/12/2019
+ms.locfileid: "10209866"
 ---
 # <a name="run-a-container-with-a-gmsa"></a>GMSA를 사용 하 여 컨테이너 실행
 
