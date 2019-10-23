@@ -11,7 +11,7 @@
 - Windows 참가자 프로그램의 최신 Windows Server 및/또는 Windows 참가자 프로그램의 최신 Windows 10 빌드를 실행하는 컴퓨터 시스템(실제 또는 가상) 하나.
 
 > [!IMPORTANT]
-> Windows Insider preview 프로그램에서 windows server 참가자 미리 보기 프로그램 또는 windows 10의 빌드를 사용 하 여 아래 설명 된 기본 이미지를 사용 해야 합니다. 두 빌드 중 하나를 사용하지 않을 경우 이러한 기본 이미지를 사용하면 컨테이너가 시작되지 않는 오류가 발생합니다.
+> Windows에서는 컨테이너 OS 버전과 일치 하는 호스트 OS 버전이 필요 합니다. 최신 Windows 빌드를 기반으로 컨테이너를 실행 하려면 해당 호스트 빌드가 있는지 확인 합니다. 그렇지 않으면 Hyper-v 격리를 사용 하 여 새 호스트 빌드에서 이전 컨테이너를 실행할 수 있습니다. 컨테이너 문서에서 Windows 컨테이너 버전 호환성에 대 한 자세한 내용을 확인할 수 있습니다.
 
 ## <a name="install-docker-enterprise-edition-ee"></a>Docker Enterprise Edition(EE) 설치
 
@@ -48,25 +48,33 @@ Restart-Computer -Force
 
 ## <a name="install-base-container-image"></a>기본 컨테이너 이미지 설치
 
-Windows 컨테이너를 사용하려면 기본 이미지를 설치해야 합니다. Windows 참가자 프로그램에 가입하면 기본 이미지에 대해 최신 빌드를 테스트할 수도 있습니다. 참가자 기본 이미지를 사용하면 Windows Server 기반의 기본 이미지 4개가 제공됩니다. 아래 표에서 각 이미지의 용도를 확인하세요.
+Windows 컨테이너를 사용하려면 기본 이미지를 설치해야 합니다. Windows 참가자 프로그램에 가입하면 기본 이미지에 대해 최신 빌드를 테스트할 수도 있습니다. 참가자 기본 이미지를 사용 하는 경우에는 이제 Windows Server를 기반으로 사용 가능한 기본 이미지가 6 개 있습니다. 아래 표에서 각 이미지의 용도를 확인하세요.
 
 | 기본 OS 이미지                       | 용도                      |
 |-------------------------------------|----------------------------|
 | mcr.microsoft.com/windows/servercore         | 프로덕션 및 개발 |
 | mcr.microsoft.com/windows/nanoserver              | 프로덕션 및 개발 |
+| mcr.microsoft.com/windows/              | 프로덕션 및 개발 |
 | mcr.microsoft.com/windows/servercore/insider | 개발 전용           |
 | mcr.microsoft.com/windows/nanoserver/insider        | 개발 전용           |
+| mcr.microsoft.com/windows/insider        | 개발 전용           |
 
-Nano 서버 참가자 기본 이미지를 가져오려면 다음을 실행합니다.
+Server Core Insider base 이미지를 꺼내려면 [서버 Core Insider Docker 허브 리포지토리의](https://hub.docker.com/_/microsoft-windows-servercore-insider) 주요 태그를 참조 하 여 다음 형식을 사용 합니다.
 
 ```console
-docker pull mcr.microsoft.com/nanoserver/insider
+docker pull mcr.microsoft.com/windows/servercore/insider:10.0.{build}.{revision}
 ```
 
-Windows Server Core 참가자 기본 이미지를 가져오려면 다음을 실행합니다.
+Nano 서버 참가자 기본 이미지를 꺼내려면 [Nano 서버 참가자](https://store.docker.com/_/microsoft-windows-nanoserver-insider) 의 주요 태그 (s)를 참조 하세요. 다음 형식을 사용 합니다.
 
 ```console
-docker pull mcr.microsoft.com/windows/servercore/insider
+docker pull mcr.microsoft.com/windows/nanoserver/insider:10.0.{build}.{revision}
+```
+
+Windows 참가자 기본 이미지를 꺼내려면 [Windows 참가자 Docker 허브 리포지토리의](https://store.docker.com/_/microsoft-windows-insider) 주요 태그를 참조 하 여 다음 형식을 사용 합니다.
+
+```console
+docker pull mcr.microsoft.com/windows/insider:10.0.{build}.{revision}
 ```
 
 > [!IMPORTANT]

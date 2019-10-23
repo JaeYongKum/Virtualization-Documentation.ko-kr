@@ -2,6 +2,7 @@
 
 # 개요
 ## [Windows 컨테이너 정보](about/index.md)
+## [컨테이너와 Vm 비교](about/containers-vs-vm.md)
 ## [시스템 요구 사항](deploy-containers/system-requirements.md)
 ## [FAQ](about/faq.md)
 
@@ -26,6 +27,8 @@
 ## Windows의 Linux 컨테이너
 ### [개요](deploy-containers/linux-containers.md)
 ### [첫 번째 LCOW 컨테이너를 실행 합니다.](quick-start/quick-start-windows-10-linux.md)
+## Windows 참가자 프로그램에서 컨테이너 사용
+### [개요](deploy-containers/insider-overview.md)
 
 # 개념
 ## Windows 컨테이너 Essentials

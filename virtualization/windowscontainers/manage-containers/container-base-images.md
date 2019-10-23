@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: f5dcaf4958828b1bcf31a96e5fb70eda0508eb96
-ms.sourcegitcommit: e9dda81f1f68359ece9ef132a184a30880bcdb1b
+ms.openlocfilehash: 2a69fbace51589cce08476bd68fdb5c34a7907e6
+ms.sourcegitcommit: d0411b05d1ef7328a770766b84fd0743f9d9c237
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "10161750"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "10254273"
 ---
 # <a name="container-base-images"></a>컨테이너 기본 이미지
 
@@ -124,9 +124,21 @@ MCR에는 고유한 카탈로그 환경이 없으며, Docker 허브와 같은 �
 - **.NET Core를 기반으로 하는 Windows 앱을 빌드 하 고 있나요?** 이 질문에 대 한 답변이 예 인 경우 목표 `Nanoserver`를 세워야 합니다.
 - **IoT 응용 프로그램을 작성 하 고 있나요?** 이 질문에 대 한 답변이 예 인 경우 목표 `IoT Core`를 세워야 합니다.
 - **Windows Server Core 컨테이너 이미지에 앱에 필요한 종속성이 누락 되어 있습니까?** 이 질문에 대 한 대답이 예 인 경우 목표 `Windows`를 시도해 야 합니다. 이 이미지는 다른 기본 이미지 보다 훨씬 크기는 하지만, 많은 핵심 Windows 라이브러리 (예: GDI 라이브러리)를 전달 합니다.
+- **Windows 참가자 인가요?** 예를 들어 참가자 버전의 이미지를 사용 하는 것이 좋습니다. 아래의 "Windows 참가자를 위한 기본 이미지"를 참조 하세요.
 
 > [!TIP]
 > 대부분의 Windows 사용자는 .NET에 종속성이 있는 응용 프로그램을 containerize 합니다. 여기에 설명 된 4 개의 기본 이미지 외에도 Microsoft는 [.net framework](https://hub.docker.com/_/microsoft-dotnet-framework) 이미지 및 [ASP .net](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/) 이미지와 같은 인기 microsoft 프레임 워크로 미리 구성 된 여러 Windows 컨테이너 이미지를 게시 합니다.
+
+### <a name="base-images-for-windows-insiders"></a>Windows 참가자 용 기본 이미지
+
+Microsoft는 각 컨테이너 기본 이미지의 "참가자" 버전을 제공 합니다. 이러한 참가자 컨테이너 이미지에는 컨테이너 이미지에 대 한 최신의 가장 큰 기능 개발이 수반 됩니다. Windows의 참가자 버전 (Windows 참가자 또는 Windows Server 참가자) 인 호스트를 실행 하는 경우 이러한 이미지를 사용 하는 것이 좋습니다. 이 참가자 이미지는 Docker 허브에서 사용할 수 있습니다.
+
+- [mcr.microsoft.com/windows/servercore/insider](https://hub.docker.com/_/microsoft-windows-servercore-insider)
+- [mcr.microsoft.com/windows/nanoserver/insider](https://hub.docker.com/_/microsoft-windows-nanoserver-insider)
+- [mcr.microsoft.com/windows/iotcore/insider](https://hub.docker.com/_/microsoft-windows-iotcore-insider)
+- [mcr.microsoft.com/windows/insider](https://hub.docker.com/_/microsoft-windows-insider)
+
+자세한 내용은 [Windows 참가자 프로그램에서 컨테이너 사용](../deploy-containers/insider-overview.md) 을 참조 하세요.
 
 ### <a name="windows-server-core-vs-nanoserver"></a>Windows Server Core vs Nanoserver
 
