@@ -7,12 +7,12 @@ ms.date: 09/10/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 8165d9c7ee3744fae31711e28be028208140813e
-ms.sourcegitcommit: 868a64eb97c6ff06bada8403c6179185bf96675f
+ms.openlocfilehash: cf8a14002e962242c34e9a10086120e6942d382b
+ms.sourcegitcommit: 6080b2c5053720490d374f6fb0daa870d5ddd4e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "10129273"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "10257777"
 ---
 # <a name="containerize-a-net-core-app"></a>Containerize .NET Core 앱
 
@@ -28,11 +28,14 @@ ms.locfileid: "10129273"
 git clone https://github.com/MicrosoftDocs/Virtualization-Documentation.git
 ```
 
-아래 `<directory where clone occured>\Virtualization-Documentation\windows-container-samples\asp-net-getting-started` 에 있는 샘플 디렉터리로 이동 하 여 Dockerfile을 만듭니다. [Dockerfile](https://docs.docker.com/engine/reference/builder/) 은 컨테이너를 구성 해야 하는 방법에 대 한 컨테이너 엔진에 지시 하는 지침 목록 (예: 메이크파일)입니다.
+아래 `Virtualization-Documentation\windows-container-samples\asp-net-getting-started` 에 있는 샘플 디렉터리로 이동 하 여 Dockerfile을 만듭니다. [Dockerfile](https://docs.docker.com/engine/reference/builder/) 은 컨테이너를 구성 해야 하는 방법에 대 한 컨테이너 엔진에 지시 하는 지침 목록 (예: 메이크파일)입니다.
 
 ```Powershell
-#Create the dockerfile for our project
-New-Item -name dockerfile -type file
+# navigate into the sample directory
+Set-Location -Path Virtualization-Documentation\windows-container-samples\asp-net-getting-started
+
+# create the Dockerfile for our project
+New-Item -Name Dockerfile -ItemType file
 ```
 
 ## <a name="write-the-dockerfile"></a>Dockerfile 작성
