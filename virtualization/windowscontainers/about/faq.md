@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 25de368c-5a10-40a4-b4aa-ac8c9a9ca022
-ms.openlocfilehash: 19ff54ec032d61b24aea9fec4f14e8fce301d33a
-ms.sourcegitcommit: 347d7c9d34f4c1d2473eb6c94c8ad6187318a037
+ms.openlocfilehash: aeb2b5dd0d9df95ee417b3a160d10d4991304689
+ms.sourcegitcommit: 4b37076f988608b6bf1270497c24325993ef41d3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "10257955"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "10264364"
 ---
 # <a name="frequently-asked-questions-about-containers"></a>컨테이너에 대 한 자주 묻는 질문
 
@@ -40,9 +40,12 @@ Windows 컨테이너 이미지 [EULA](../images-eula.md) 는 유효한 라이선
 |Windows Server Standard                                         |제한 없음                                          |2                                                  |
 |Windows Server Datacenter                                       |제한 없음                                          |제한 없음                                          |
 |Windows 10 Pro 및 Enterprise                                   |무제한 *(테스트 또는 개발 목적 으로만 사용 가능)*|무제한 *(테스트 또는 개발 목적 으로만 사용 가능)*|
-|Windows 10 IoT Core 및 Enterprise)                             |무제한 *(테스트 또는 개발 목적 으로만 사용 가능)*|무제한 *(테스트 또는 개발 목적 으로만 사용 가능)*|
+|Windows 10 IoT Core 및 Enterprise                             |아무런                                         |아무런                                          |
 
-Windows Server 컨테이너 이미지 사용은 해당 [버전](/windows-server/get-started-19/editions-comparison-19.md)에 대해 지원 되는 가상화 게스트의 수를 읽어 결정 됩니다. Windows의 IoT edition에서 컨테이너의 프로덕션 사용은 추가 라이선스 제한 사항에 따라 달라 집니다. [컨테이너 이미지 사용권 계약서](../images-eula.md) 를 읽고 허용 되는 항목과 그렇지 않은 항목을 정확 하 게 파악 하십시오.
+Windows Server 컨테이너 이미지 사용은 해당 [버전](/windows-server/get-started-19/editions-comparison-19.md)에 대해 지원 되는 가상화 게스트의 수를 읽어 결정 됩니다. <br/>
+
+>[!NOTE]
+>\ * Windows 10 Core 런타임 이미지 또는 Windows 10 IoT Enterprise 디바이스 라이선스 ("Windows IoT 상업용 계약")에 대 한 Microsoft 상업용 사용 약관에 동의한 경우에 따라 설치 된 IoT 버전의 컨테이너에 대 한 제품 사용이 달라 집니다. Windows IoT 상업용 규약의 추가 약관은 프로덕션 환경에서 컨테이너 이미지 사용에 적용 됩니다. [컨테이너 이미지 사용권 계약서](../images-eula.md) 를 읽고 허용 되는 항목과 그렇지 않은 항목을 정확 하 게 파악 하십시오.
 
 ## <a name="as-a-developer-do-i-have-to-rewrite-my-app-for-each-type-of-container"></a>개발자는 각 유형의 컨테이너에 대해 앱을 다시 작성 해야 하나요?
 
