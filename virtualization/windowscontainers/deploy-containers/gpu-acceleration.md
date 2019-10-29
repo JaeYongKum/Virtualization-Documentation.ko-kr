@@ -3,12 +3,12 @@ title: Windows 컨테이너의 GPU 가속
 description: Windows 컨테이너에 있는 GPU 가속 수준
 keywords: docker, 컨테이너, 장치, 하드웨어
 author: cwilhit
-ms.openlocfilehash: c6746b45caece9802134831eb6cb3da885957ac5
-ms.sourcegitcommit: 2f8fd4b2e7113fbb7c323d89f3c72df5e1a4437e
+ms.openlocfilehash: 8f63c74d7839385e21206188263b9e5d08e7eb60
+ms.sourcegitcommit: da762ce138467e50dce22d5086ad407138b38e48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "10045043"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "10261862"
 ---
 # <a name="gpu-acceleration-in-windows-containers"></a>Windows 컨테이너의 GPU 가속
 
@@ -24,7 +24,7 @@ Gpu는 기존 렌더링 및 시뮬레이션에서 기계 학습 교육 및 유�
 이 기능이 작동 하려면 환경이 다음 요구 사항을 충족 해야 합니다.
 
 - 컨테이너 호스트는 Windows Server 2019 또는 Windows 10, 버전 1809 이상을 실행 중 이어야 합니다.
-- 컨테이너 기본 이미지는 [mcr.microsoft.com/windows:1809](https://hub.docker.com/_/microsoft-windowsfamily-windows) 또는 최신 이어야 합니다. Windows Server Core 및 Nano 서버 컨테이너 이미지는 현재 지원 되지 않습니다.
+- 컨테이너 기본 이미지는 [mcr.microsoft.com/windows:1809](https://hub.docker.com/_/microsoft-windows) 또는 최신 이어야 합니다. Windows Server Core 및 Nano 서버 컨테이너 이미지는 현재 지원 되지 않습니다.
 - 컨테이너 호스트는 Docker 엔진 19.03 이상 버전을 실행 중 이어야 합니다.
 - 컨테이너 호스트에는 GPU가 실행 중인 디스플레이 드라이버 버전 WDDM 2.5 이상이 있어야 합니다.
 

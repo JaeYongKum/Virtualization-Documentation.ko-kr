@@ -7,12 +7,12 @@ ms.date: 09/10/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: cf8a14002e962242c34e9a10086120e6942d382b
-ms.sourcegitcommit: 6080b2c5053720490d374f6fb0daa870d5ddd4e8
+ms.openlocfilehash: db3caea3f7911ec6641930302198f976bd61240d
+ms.sourcegitcommit: da762ce138467e50dce22d5086ad407138b38e48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "10257777"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "10261832"
 ---
 # <a name="containerize-a-net-core-app"></a>Containerize .NET Core 앱
 
@@ -121,7 +121,7 @@ docker run -d -p 5000:80 --name myapp my-asp-app
 * `--name myapp` 런타임에 Docker에 의해 할당 된 contaienr ID를 조회 하는 대신이 컨테이너에 편리한 이름을 제공 하도록 Docker에 지시 합니다.
 * `my-asp-app` 는 Docker를 실행할 이미지입니다. 이 컨테이너 이미지는 `docker build` 프로세스의 culmination으로 생성 됩니다.
 
-웹 브라우저 웹 브라우저를 열고 containerized 응용 프로그램 `https://localhost:5000` 에서 마지막으로 이동 합니다.
+웹 브라우저 웹 브라우저를 열고 containerized 응용 프로그램 `http://localhost:5000` 에서 마지막으로 이동 합니다.
 
 >![](media/SampleAppScreenshot.png)
 
