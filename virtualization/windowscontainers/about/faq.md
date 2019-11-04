@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 25de368c-5a10-40a4-b4aa-ac8c9a9ca022
-ms.openlocfilehash: aeb2b5dd0d9df95ee417b3a160d10d4991304689
-ms.sourcegitcommit: 4b37076f988608b6bf1270497c24325993ef41d3
+ms.openlocfilehash: 405b2abc43a4ae2c546de351679deb755e4a9317
+ms.sourcegitcommit: 64573b539438de6ec5564b2949642ef12e55fc62
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "10264364"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "10274070"
 ---
 # <a name="frequently-asked-questions-about-containers"></a>컨테이너에 대 한 자주 묻는 질문
 
@@ -55,14 +55,14 @@ Windows Server 컨테이너 이미지 사용은 해당 [버전](/windows-server/
 
 Windows Server 컨테이너는 낮은 회전 시간과 더 빠른 런타임 성능 (예: 중첩 된 구성과 비교) 등의 속도를 높이기 위해 더 나은 밀도와 성능을 제공 합니다. Hyper-v 격리는 해당 이름에 적용 되며, 한 컨테이너에서 실행 되는 코드가 호스트 운영 체제 또는 동일한 호스트에서 실행 되는 다른 컨테이너에 영향을 줄 수 없도록 하는 격리를 제공 합니다. 이는 SaaS 응용 프로그램 및 계산 호스팅을 포함 하 여 신뢰할 수 없는 코드 호스팅을 위한 요구 사항이 있는 다중 테 넌 트 시나리오에 유용 합니다.
 
-## <a name="can-i-run-windows-containers-in-process-isolated-mode-on-windows-10-enterprise-or-professional"></a>Windows 10 Enterprise 또는 Professional에서 Windows 컨테이너를 프로세스 격리 모드로 실행할 수 있나요?
+## <a name="can-i-run-windows-containers-in-process-isolated-mode-on-windows-10"></a>Windows 10의 프로세스 격리 모드에서 Windows 컨테이너를 실행할 수 있나요?
 
-Windows 10 10 월 2018 업데이트부터 프로세스 격리를 사용 하 여 Windows 컨테이너를 실행할 수 있지만, 먼저 컨테이너를 실행할 때 플래그를 `--isolation=process` 사용 하 여 프로세스 격리를 직접 요청 해야 `docker run`합니다.
+Windows 10 10 월 2018 업데이트부터 프로세스 격리를 사용 하 여 Windows 컨테이너를 실행할 수 있지만, 먼저 컨테이너를 실행할 때 플래그를 `--isolation=process` 사용 하 여 프로세스 격리를 직접 요청 해야 `docker run`합니다. 프로세스-격리는 Windows 10 Pro, Windows 10 Enterprise, Windows 10 IoT Core 및 Windows 10 IoT Enterprise에서 호환 됩니다.
 
 이 방법으로 Windows 컨테이너를 실행 하려면 호스트가 Windows 10 build 17763 +를 실행 하 고 있는지, 그리고 엔진 18.09 이상이 포함 된 Docker 버전을 사용 하 고 있는 지 확인 해야 합니다.
 
 > [!WARNING]
-> 이 기능은 개발 및 테스트 용도로만 사용할 수 있습니다. Windows Server를 프로덕션 배포의 호스트로 계속 사용 해야 합니다. 이 기능을 사용 하 여 호스트 및 컨테이너 버전 태그가 일치 하도록 해야 하며 그렇지 않으면 컨테이너가 시작 되지 않거나 정의 되지 않은 동작이 발생할 수 있습니다.
+> IoT Core 및 IoT Enterprise 호스트 외에 (추가 약관을 적용 한 후)이 기능은 개발 및 테스트에만 사용 됩니다. Windows Server를 프로덕션 배포의 호스트로 계속 사용 해야 합니다. 이 기능을 사용 하 여 호스트 및 컨테이너 버전 태그가 일치 하도록 해야 하며 그렇지 않으면 컨테이너가 시작 되지 않거나 정의 되지 않은 동작이 발생할 수 있습니다.
 
 ## <a name="how-do-i-make-my-container-images-available-on-air-gapped-machines"></a>Gapped 컴퓨터에서 컨테이너 이미지를 사용할 수 있게 하는 방법은 무엇 인가요?
 
