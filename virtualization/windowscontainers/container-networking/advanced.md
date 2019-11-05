@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 6480f0657d7def8d6da69bfc52ace81d08b0add4
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: deea1bfbcd3032f52a6912eb0c36ba467d8b9a9c
+ms.sourcegitcommit: b38f6abb399c87c57e1bb146f3dbcdaefd991245
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998811"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "10276496"
 ---
 # <a name="advanced-network-options-in-windows"></a>Windows의 고급 네트워크 옵션
 
@@ -162,7 +162,6 @@ l2bridge 드라이버를 사용하여 만든 컨테이너 네트워크에서는 
 
 #### <a name="ip-assignment-on-stopped-vs-running-containers"></a>중지된 컨테이너 및 실행 중인 컨테이너에 IP 할당
 고정 IP 할당은 컨테이너의 네트워크 어댑터에서 직접 수행되며, 컨테이너가 중지됨 상태인 경우에만 수행해야 합니다. Windows Server 2016에서는 컨테이너가 실행되는 동안 컨테이너 네트워크 어댑터의 핫 애드 또는 네트워크 스택 변경이 지원되지 않습니다.
-> 참고: 이제 플랫폼에서 "핫 애드"를 지원하므로 이 동작은 Windows 10 크리에이터스 업데이트에서 변경됩니다. 이 [미해결 Docker pull 요청](https://github.com/docker/libnetwork/pull/1661)이 병합되면 이 기능을 통해 E2E를 사용할 수 있습니다.
 
 #### <a name="existing-vswitch-not-visible-to-docker-can-block-transparent-network-creation"></a>기존 vSwitch(Docker에서 보이지 않음)가 투명 네트워크 생성을 차단할 수 있음
 투명 네트워크를 만드는 중 오류가 발생하는 경우 Docker에서 자동으로 검색되지 않고 투명 네트워크가 컨테이너 호스트의 외부 네트워크 어댑터에 바인딩되지 못하게 방해하는 외부 vSwitch가 시스템에 있는 것일 수 있습니다. 
