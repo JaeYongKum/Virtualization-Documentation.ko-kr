@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: cff56843a0eeb48ca5d19b694eb8eb4e758002aa
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 8d2ddb80aa05b511dbc8c9532654b18956e340da
+ms.sourcegitcommit: 7fd95333bd7fd2ef3627b0b5c558067e0bd0e09f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998460"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "10276518"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
@@ -58,7 +58,7 @@ HNS(호스트 네트워킹 서비스)와 HCS(호스트 계산 서비스)가 함�
 - 기본 NAT 네트워크: HNS는 해당되는 Windows 방화벽 허용 규칙에 따라 WinNAT 포트 전달 규칙/매핑을 생성합니다.
 - 다른 모든 네트워크: HNS는 정책 생성을 위해 가상 필터링 플랫폼(VFP)을 이용합니다.
     - 여기에는 부하 분산, ACL, 캡슐화 등이 포함되어 있습니다.
-    - **곧 게시될** Microsoft의 HNS API 및 스키마를 찾아보세요.
+    - [여기](https://docs.microsoft.com/en-us/windows-server/networking/technologies/hcn/hcn-top) 에 게시 된 HNS api 및 스키마를 찾습니다.
 
 ![텍스트](media/HNS-Management-Stack.png)
 
