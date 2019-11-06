@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 5ceb9626-7c48-4d42-81f8-9c936595ad85
-ms.openlocfilehash: 088bc844790d94d30f6b4b05c5cd189392f47e66
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 560e9ffc92728628268d7d557b8fa8428316c8ec
+ms.sourcegitcommit: 551b783410ba49b4d439e3da084986cceffcb7e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998280"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "10278965"
 ---
 # <a name="getting-started-with-swarm-mode"></a>Swarm 모드 시작 
 
@@ -112,7 +112,7 @@ C:\> docker service create --name=<SERVICENAME> --endpoint-mode dnsrr --network=
 여기서 \<SERVICENAME\>은 서비스에 지정하려는 이름입니다. 이 이름은 Docker의 네이티브 DNS 서버를 사용하는 서비스 검색을 통해 서비스를 참조하는 데 사용됩니다. \<NETWORKNAME\>은 이 서비스를 연결하려는 네트워크의 이름입니다(예: "myOverlayNet"). \<CONTAINERIMAGE\>는 서비스를 정의할 컨테이너 이미지의 이름입니다.
 
 >[!NOTE]
->이 명령의 `--endpoint-mode dnsrr`두 번째 인수는 DNS 라운드 로빈 정책을 사용 하 여 서비스 컨테이너 끝점 간에 네트워크 트래픽을 분산 하는 Docker 엔진을 지정 하는 데 필요 합니다. 현재 Windows에서 지원되는 부하 분산 전략은 DNS 라운드 로빈뿐입니다. Windows Docker 호스트에 대한 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/)는 아직 지원되지 않지만 곧 제공될 예정입니다. 오늘날의 대체 부하 분산 전략을 찾고 있는 사용자는 NGINX와 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 부하를 분산할 컨테이너 호스트 포트를 노출할 수 있습니다.
+>이 명령의 `--endpoint-mode dnsrr`두 번째 인수는 DNS 라운드 로빈 정책을 사용 하 여 서비스 컨테이너 끝점 간에 네트워크 트래픽을 분산 하는 Docker 엔진을 지정 하는 데 필요 합니다. 현재, Windows Server 2016에서 지원 되는 유일한 부하 분산 전략은 DNS 라운드 로빈입니다. Windows docker 호스트에 대 한 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 는 windows server 2019 이상에서 지원 되지만 windows server 2016에서는 사용할 수 없습니다. Windows Server 2016에서 다른 부하 분산 전략을 검색 하는 사용자는 외부 부하 분산 장치 (예: NGINX)를 설정 하 고 Swarm의 [게시 포트 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish) 를 사용 하 여 트래픽 균형을 유지 하기 위해 컨테이너 호스트 포트를 표시할 수 있습니다.
 
 ## <a name="scaling-a-service"></a>서비스 확장
 서비스가 Swarm 클러스터에 배포되면 해당 서비스를 구성하는 컨테이너 인스턴스가 클러스터 전체에 배포됩니다. 기본적으로 서비스를 지원하는 컨테이너 인스턴스 수(서비스의 “복제본” 또는 “작업” 수)는 1개입니다. 그러나 `docker service create` 명령에 `--replicas` 옵션을 사용하거나 서비스를 만든 다음 확장하여 여러 작업을 포함하는 서비스를 만들 수 있습니다.
@@ -224,10 +224,13 @@ C:\> docker service create --name=linux_s1 --endpoint-mode dnsrr --network testo
 ## <a name="limitations"></a>제한 사항
 현재 Windows의 Swarm 모드에는 다음과 같은 제한 사항이 있습니다.
 - 데이터 평면 암호화가 지원되지 않습니다(예: `--opt encrypted` 옵션을 사용하는 컨테이너 간 트래픽).
-- Windows Docker 호스트에 대한 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/)는 아직 지원되지 않지만 곧 제공될 예정입니다. 오늘날의 대체 부하 분산 전략을 찾고 있는 사용자는 NGINX와 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 부하를 분산할 컨테이너 호스트 포트를 노출할 수 있습니다. 여기에 대한 자세한 내용은 아래를 참조하세요.
+- Windows docker 호스트의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 는 windows server 2016에서 지원 되지 않지만 windows server 2019에서는 가능 합니다. 오늘날의 대체 부하 분산 전략을 찾고 있는 사용자는 NGINX와 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 부하를 분산할 컨테이너 호스트 포트를 노출할 수 있습니다. 여기에 대한 자세한 내용은 아래를 참조하세요.
+
+ >[!NOTE]
+>Docker Swarm 라우팅 메시를 설정 하는 방법에 대 한 자세한 내용은이 [블로그 게시물](https://docs.microsoft.com/en-us/virtualization/community/team-blog/2017/20170926-docker-s-routing-mesh-available-with-windows-server-version-1709) 을 참조 하세요.
 
 ## <a name="publish-ports-for-service-endpoints"></a>서비스 끝점에 대한 포트 게시
-Docker Swarm의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 기능은 아직 Windows에서 지원되지 않지만 서비스 끝점에 대한 포트를 게시하려는 사용자는 포트 게시 모드를 사용하여 게시할 수 있습니다. 
+ 해당 서비스 끝점에 대 한 포트 게시를 찾는 사용자는 지금까지 게시 포트 모드 또는 Docker Swarm의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 기능을 사용 하 여이 작업을 수행할 수 있습니다. 
 
 서비스를 정의하는 각 작업/컨테이너 끝점에 대한 호스트 포트를 게시하려면 `--publish mode=host,target=<CONTAINERPORT>` 인수를 `docker service create` 명령에 사용합니다.
 
