@@ -8,12 +8,12 @@ ms.date: 06/17/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: d3a8240dbba8af3c74ce5d185620e129d103ef81
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.openlocfilehash: bb5e5fabadde421de9d420edd2fc921457432930
+ms.sourcegitcommit: e61db4d98d9476a622e6cc8877650d9e7a6b4dd9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9883186"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "10288141"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
 
@@ -27,6 +27,7 @@ Windows 컨테이너 기반 이미지는 Windows Server의 반기 채널 릴리�
 
 |기본 이미지                       |서비스 채널|버전|OS 빌드|가용성|일반 지원 종료 날짜|연장 지원 날짜|
 |---------------------------------|-----------------|-------|--------|------------|---------------------------|---------------------|
+|Server Core, Nano 서버, Windows|반기      |1909   |18363   |2019/11/12  |05/11/2021                 |해당 없음                  |
 |Server Core, Nano 서버, Windows|반기      |1903   |18362   |05/21/2019  |12/08/2020                 |해당 없음                  |
 |Server Core                      |장기간        |1809   |17763   |2018/11/13  |2024/01/09                 |2029/01/09           |
 |Server Core, Nano 서버, Windows|반기      |1809   |17763   |2018/11/13  |05/12/2020                 |해당 없음                  |
