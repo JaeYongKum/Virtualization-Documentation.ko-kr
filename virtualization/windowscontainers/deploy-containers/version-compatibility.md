@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 74e708969a33b9d98b627165a9a47b8017ce2129
-ms.sourcegitcommit: 604323c8815860679cd13e96b2f533b7a0e83c23
+ms.openlocfilehash: 1f068cd011b2172e75c240d566473ccab25d984a
+ms.sourcegitcommit: 48ede8f27e089926b5b867037f31d14500af84ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "10286527"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "10296033"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -62,6 +62,15 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 <!-- start tab view -->
 
+# [<a name="windows-10-version-1909"></a>Windows 10 버전 1909](#tab/windows-10-1909)
+
+|컨테이너 기본 이미지 OS 버전|' Hyper-v 격리 지원 '|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 1909|&#10004;|&#10060;|
+|Windows Server, 버전 1903|&#10004;|&#10060;|
+|WindowsServer 2019|&#10004;|&#10060;|
+|WindowsServer 2016|&#10004;|&#10060;|
+
 # [<a name="windows-10-version-1903"></a>Windows 10 버전 1903](#tab/windows-10-1903)
 
 |컨테이너 기본 이미지 OS 버전|' Hyper-v 격리 지원 '|프로세스 격리 지원|
@@ -69,7 +78,6 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
 |WindowsServer 2019|&#10004;|&#10060;|
-|Windows Server, 버전 1803|&#10004;|&#10060;|
 |WindowsServer 2016|&#10004;|&#10060;|
 
 # [<a name="windows-10-version-1809"></a>Windows 10, 버전 1809](#tab/windows-10-1809)
@@ -79,15 +87,6 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
 |WindowsServer 2019|&#10004;|&#10060;|
-|WindowsServer 2016|&#10004;|&#10060;|
-
-# [<a name="windows-10-version-1803"></a>Windows 10, 버전 1803](#tab/windows-10-1803)
-
-|컨테이너 기본 이미지 OS 버전|' Hyper-v 격리 지원 '|프로세스 격리 지원|
-|---|:---:|:---:|
-|Windows Server, 버전 1909|&#10060;|&#10060;|
-|Windows Server, 버전 1903|&#10060;|&#10060;|
-|WindowsServer 2019|&#10060;|&#10060;|
 |WindowsServer 2016|&#10004;|&#10060;|
 
 ---
