@@ -49,7 +49,7 @@
 #### [Linux 직원 가입](kubernetes/joining-linux-workers.md)
 #### [Kubernetes 리소스 배포](kubernetes/deploying-resources.md)
 #### [문제 해결](kubernetes/common-problems.md)
-#### [Kubernetes의 Windows 서비스](kubernetes/kube-windows-services.md)
+#### [Windows 서비스로 Kubernetes](kubernetes/kube-windows-services.md)
 #### [Kubernetes 이진 컴파일](kubernetes/compiling-kubernetes-binaries.md)
 ### 서비스 패브릭
 #### [서비스 패브릭 및 컨테이너](/azure/service-fabric/service-fabric-containers-overview)
