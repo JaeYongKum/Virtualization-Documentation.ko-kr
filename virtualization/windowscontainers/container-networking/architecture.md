@@ -8,17 +8,17 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 8d2ddb80aa05b511dbc8c9532654b18956e340da
-ms.sourcegitcommit: 7fd95333bd7fd2ef3627b0b5c558067e0bd0e09f
+ms.openlocfilehash: e9d4a9ac88c6853ce019a2469ee80688490b8fdf
+ms.sourcegitcommit: bb4ec1f05921f982c00bdb3ace6d9bc1d5355296
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "10276518"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "10297244"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
 >[!IMPORTANT]
->일반 docker 네트워킹 명령, 옵션, 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. * * * [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에서 설명 하는 경우를 제외 하 고 모든 Docker 네트워킹 명령은 Linux와 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르기 때문에 Windows에서는 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 확인할 수 있습니다.
+>일반 docker 네트워킹 명령, 옵션, 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. * * * [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에서 설명 하는 경우를 제외 하 고, 모든 Docker 네트워킹 명령은 Linux에서와 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르기 때문에 Windows에서는 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 확인할 수 있습니다.
 
 ## <a name="basic-networking-architecture"></a>기본 네트워킹 아키텍처
 
@@ -69,7 +69,7 @@ HNS(호스트 네트워킹 서비스)와 HCS(호스트 계산 서비스)가 함�
 - L2bridge, NAT 및 오버레이 네트워크에 연결 된 Windows 컨테이너는 IPv6 스택을 통한 통신을 지원 하지 않습니다.
 - IPsec을 통한 암호화 된 컨테이너 통신
 - 컨테이너에 대 한 HTTP 프록시 지원.
-- Hyper-v 격리 (핫-추가)에서 실행 하도록 끝점을 연결 합니다.
+- [호스트 모드](https://docs.docker.com/ee/ucp/interlock/config/host-mode-networking/) 네트워킹 
 - 투명 한 네트워크 드라이버를 통해 가상화 된 Azure 인프라에 대 한 네트워킹.
 
 | 명령        | 지원 되지 않는 옵션   |

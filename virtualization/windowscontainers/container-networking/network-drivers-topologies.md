@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: f044cf6f9d0457dd4cc9b444dcbeebc97f22f17b
-ms.sourcegitcommit: bea2c90f31a38fc7fda356619f0dd812f79d008f
+ms.openlocfilehash: 46eefb03f8f5a53333f5e7eca7074ab34e72a767
+ms.sourcegitcommit: bb4ec1f05921f982c00bdb3ace6d9bc1d5355296
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "9685290"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "10297254"
 ---
 # <a name="windows-container-network-drivers"></a>Windows 컨테이너 네트워크 드라이버  
 
@@ -33,20 +33,26 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
   
   > 필요:이 모드를 가상화 시나리오 (컨테이너 호스트가 VM)에서 사용 하는 경우 _MAC 주소 스푸핑이 필요_합니다.
 
-- **overlay** - Docker 엔진이 [Swarm 모드](../manage-containers/swarm-mode.md)에서 실행 중일 때, 오버레이 네트워크에 연결된 컨테이너는 여러 컨테이너 호스트에서 동일한 네트워크에 연결된 다른 컨테이너들과 통신이 가능합니다. Swarm 클러스터에 만들어지는 각 오버레이 네트워크는 개인 IP 접두사에 의해 정의된 자체 IP 서브넷으로 만들어집니다. 오버레이 네트워크 드라이버는 VXLAN 캡슐화를 사용합니다. **적합한 네트워크 제어 평면(Flannel 또는 OVN)을 사용할 때 Kubernetes에서도 사용할 수 있습니다.**
+- **overlay** - Docker 엔진이 [Swarm 모드](../manage-containers/swarm-mode.md)에서 실행 중일 때, 오버레이 네트워크에 연결된 컨테이너는 여러 컨테이너 호스트에서 동일한 네트워크에 연결된 다른 컨테이너들과 통신이 가능합니다. Swarm 클러스터에 만들어지는 각 오버레이 네트워크는 개인 IP 접두사에 의해 정의된 자체 IP 서브넷으로 만들어집니다. 오버레이 네트워크 드라이버는 VXLAN 캡슐화를 사용합니다. **적합 한 네트워크 제어 평면 (예: Flannel)을 사용 하는 경우 Kubernetes와 함께 사용할 수 있습니다.**
   > 필요: 사용자의 환경이 오버레이 네트워크를 만들기 위해 이러한 필수 [구성 요소](https://docs.docker.com/network/overlay/#operations-for-all-overlay-networks) 를 충족 하는지 확인 합니다.
 
-  > 필요: [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217), Windows 10 크리에이터 업데이트 또는 이후 릴리스를 사용 하는 windows Server 2016이 필요 합니다.
+  > 필요: Windows Server 2019에서는 [KB4489899](https://support.microsoft.com/help/4489899)필요 합니다.
+
+  > 필요: Windows Server 2016에서는 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217)필요 합니다.
 
   >[!NOTE]
-  >Windows Server 2019에서 Docker EE 18.03 이상을 실행 하는 경우 Docker Swarm에서 만든 네트워크 오버레이는 아웃 바운드 연결을 위해 VFP NAT 규칙을 강화 합니다. 즉, 지정 된 컨테이너는 ata에서 1 개의 IP 주소를 받습니다. 또한이는 디버깅 상황에서 TCP/UDP 옵션 `ping` 을 `Test-NetConnection` 사용 하 여 or 등의 ICMP 기반 도구를 구성 하는 것을 의미 합니다.
+  >Windows Server 2019에서 Docker Swarm에서 생성 된 네트워크 오버레이는 아웃 바운드 연결을 위해 VFP NAT 규칙을 강화 합니다. 즉, 주어진 컨테이너는 1 개의 IP 주소를 받습니다. 또한이는 디버깅 상황에서 TCP/UDP 옵션 `ping` 을 `Test-NetConnection` 사용 하 여 or 등의 ICMP 기반 도구를 구성 하는 것을 의미 합니다.
 
-- **l2bridge** - 'l2bridge' 드라이버를 사용하여 만든 네트워크에 연결된 컨테이너는 컨테이너 호스트와 동일한 IP 서브넷에 있게 될 것이며, *외부* Hyper-V 스위치를 통해 실제 네트워크에 연결됩니다. IP 주소는 컨테이너 호스트와 동일한 접두사에서 정적으로 할당해야 합니다. 호스트의 모든 컨테이너 끝점은 수신 및 송신 시 계층 2 주소 변환(MAC 다시 쓰기) 작업으로 인해 호스트와 동일한 MAC 주소를 갖게 됩니다.
+- **l2bridge** -네트워킹 모드 `transparent` 와 유사 하 게, ' l2bridge ' 드라이버로 만든 네트워크에 연결 된 컨테이너는 *외부* hyper-v 스위치를 통해 실제 네트워크에 연결 됩니다. L2bridge의 차이점은 컨테이너 끝점에는 수신 및 송신에 대 한 계층-2 주소 변환 (MAC 다시 쓰기) 작업으로 인해 호스트와 동일한 MAC 주소가 부여 됩니다. 클러스터링 시나리오에서는 수명이 짧은 수명의 컨테이너의 MAC 주소를 배워야 하는 스위치에 대 한 스트레스를 완화 하는 데 도움이 됩니다. L2bridge 네트워크는 두 가지 방법으로 구성할 수 있습니다.
+  1. L2bridge 네트워크는 컨테이너 호스트와 동일한 IP 서브넷으로 구성 됩니다.
+  2. L2bridge 네트워크가 새 사용자 지정 IP 서브넷으로 구성 되어 있습니다.
+  
+  구성 2 사용자는 게이트웨이 역할을 하는 호스트 네트워크 구획에 끝점을 추가 하 고 지정 된 접두사에 대 한 라우팅 기능을 구성 해야 합니다. 
   > 필요: Windows Server 2016, Windows 10 크리에이터 업데이트 또는 이후 릴리스가 필요 합니다.
 
   > 필요: 외부 연결에 대 한 [OutboundNAT 정책](./advanced.md#specify-outboundnat-policy-for-a-network) .
 
-- **l2tunnel** - 그러나 l2bridge와 유사하게 _이 드라이버는 Microsoft 클라우드 스택에서만 사용해야 합니다_. 컨테이너에서 제공한 패킷은 SDN 정책이 적용되는 가상화 호스트로 전송됩니다.
+- **l2tunnel** -l2bridge와 유사 하지만 _이 드라이버는 Microsoft 클라우드 스택 (Azure) 에서만 사용 해야 합니다_. 컨테이너에서 제공한 패킷은 SDN 정책이 적용되는 가상화 호스트로 전송됩니다.
 
 
 ## <a name="network-topologies-and-ipam"></a>네트워크 토폴로지 및 IPAM
@@ -55,12 +61,12 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
 
 ### <a name="networking-modesdocker-drivers"></a>네트워킹 모드/Docker 드라이버
 
-  | Docker Windows 네트워크 드라이버 | 일반적인 os | 컨테이너 간 (단일 노드) | 컨테이너 대 외부 (단일 노드 + 다중 노드) | 컨테이너 간 (다중 노드) |
+  | Docker Windows 네트워크 드라이버 | 일반적인 용도 | 컨테이너 간 (단일 노드) | 컨테이너 대 외부 (단일 노드 + 다중 노드) | 컨테이너 간 (다중 노드) |
   |-------------------------------|:------------:|:------------------------------------:|:------------------------------------------------:|:-----------------------------------:|
   | **NAT(기본)** | 개발자에게 적합 | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li> 교차 서브넷: 지원 되지 않음 (하나의 NAT 내부 접두사)</li></ul> | 관리 vNIC를 통해 라우트(WinNAT에 바인딩) | 직접 지원 되지 않음: 호스트 통한 포트 노출이 필요 |
   | **transparent** | 개발자나 소규모 배포에 적합 | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li>크로스 서브넷: 컨테이너 호스트를 통해 라우트</li></ul> | 컨테이너 호스트를 라우트 되어 (물리적) 네트워크 어댑터에 직접 액세스 | 컨테이너 호스트를 라우트 되어 (물리적) 네트워크 어댑터에 직접 액세스 |
-  | **오버레이** | 다중 노드에 적합 합니다. Kubernetes에서 사용 가능한 Docker Swarm에 필요 합니다. | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li>크로스 서브넷: 네트워크 트래픽이 관리 vNIC를 통해 캡슐화 및 라우트</li></ul> | 직접 지원되지 않음 - NAT 네트워크에 연결된 두 번째 컨테이너 끝점이 필요 | 동일 서브넷/크로스 서브넷: VXLAN을 사용해 네트워크 트래픽이 캡슐화되고 관리 vNIC를 통해 라우트 |
-  | **L2Bridge** | Kubernetes 및 Microsoft SDN에 사용 | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li> 크로스 서브넷: 수신 및 송신 시 컨테이너 MAC 주소가 재작성되어 라우트</li></ul> | 수신 및 송신 시 컨테이너 MAC 주소가 재작성되어 라우트 | <ul><li>동일 서브넷: 브리지된 연결</li><li>교차 서브넷: 관리 vNIC를 통해 WSv1709 이상에서 라우팅</li></ul> |
+  | **오버레이** | 다중 노드에 적합 합니다. Kubernetes에서 사용 가능한 Docker Swarm에 필요 합니다. | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li>크로스 서브넷: 네트워크 트래픽이 관리 vNIC를 통해 캡슐화 및 라우트</li></ul> | 직접 지원 되지 않음-windows server 2016 또는 VFP NAT 2019 규칙의 NAT 네트워크에 두 번째 컨테이너 끝점을 연결 해야 합니다.  | 동일 서브넷/크로스 서브넷: VXLAN을 사용해 네트워크 트래픽이 캡슐화되고 관리 vNIC를 통해 라우트 |
+  | **L2Bridge** | Kubernetes 및 Microsoft SDN에 사용 | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li> 크로스 서브넷: 수신 및 송신 시 컨테이너 MAC 주소가 재작성되어 라우트</li></ul> | 수신 및 송신 시 컨테이너 MAC 주소가 재작성되어 라우트 | <ul><li>동일 서브넷: 브리지된 연결</li><li>교차 서브넷: 관리 vNIC를 통해 WSv1809 이상에서 라우팅</li></ul> |
   | **L2Tunnel**| Azure에만 해당 | 동일/크로스 서브넷: 정책이 적용되는 물리적 호스트의 Hyper-V 가상 스위치에 고정 | 트래픽은 Azure 가상 네트워크 게이트웨이를 반드시 통해야 함 | 동일/크로스 서브넷: 정책이 적용되는 물리적 호스트의 Hyper-V 가상 스위치에 고정 |
 
 ### <a name="ipam"></a>IPAM
