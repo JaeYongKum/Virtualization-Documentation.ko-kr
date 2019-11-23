@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: b6e4e648ff050e13a0930f2834949867e44ce895
-ms.sourcegitcommit: d252f356a3de98f224e1550536810dfc75345303
+ms.openlocfilehash: 8bebc83e03fe919f6af3968b0e0463ab3c6bb987
+ms.sourcegitcommit: 6b925368d122ba600d7d4c73bd240cdcb915cccd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "10069937"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "10305727"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -43,6 +43,19 @@ nssm set <Service Name> AppStderr C:\k\mysvc.log
 자세한 내용은 공식 [nssm 사용](https://nssm.cc/usage) 문서를 참조 하세요.
 
 ## <a name="common-networking-errors"></a>일반적인 네트워킹 오류 ##
+
+### <a name="load-balancers-are-plumbed-inconsistently-across-the-cluster-nodes"></a>부하 분산 장치가 클러스터 노드에 일관 되지 않게 배관 됨 ###
+(기본값) kube 구성에서 100 + 부하 분산 장치를 포함 하는 클러스터는 모든 (비 DSR) 부하 분산 장치에 대 한 각 노드에 예약 된 포트 수가 많아 사용 가능한 임시 (동적) 포트 수가 부족 하 여 실행 될 수 있습니다. 다음과 같은 kube 프록시에서 오류가 발생할 수 있습니다.
+```
+Policy creation failed: hcnCreateLoadBalancer failed in Win32: The specified port already exists.
+```
+
+사용자는 [CollectLogs](https://github.com/microsoft/SDN/blob/master/Kubernetes/windows/debug/collectlogs.ps1) 스크립트를 실행 하 고 파일을 `*portrange.txt` 컨설팅 하 여이 문제를 확인할 수 있습니다. Heuristical 요약도에서 `reservedports.txt`생성 됩니다.
+
+이 문제를 해결 하려면 다음과 같은 몇 가지 단계를 수행 하면 됩니다.
+1.  영구 솔루션의 경우 kube 부하 분산을 [DSR 모드로](https://techcommunity.microsoft.com/t5/Networking-Blog/Direct-Server-Return-DSR-in-a-nutshell/ba-p/693710)설정 해야 합니다. 불행 하 게도, DSR 모드는 최신 [Windows Server 참가자 빌드 18945](https://blogs.windows.com/windowsexperience/2019/07/30/announcing-windows-server-vnext-insider-preview-build-18945/#o1bs7T2DGPFpf7HM.97) (또는 그 이상) 에서만 완벽 하 게 구현 되었습니다.
+2. 해결 방법으로 사용자는 등 `netsh int ipv4 dynamicportrange TCP <start_range> <end_range>`의 명령을 사용 하 여 사용 가능한 임시 포트의 기본 Windows 구성을 늘릴 수도 있습니다. *경고:* 기본 동적 포트 범위를 재정의 하는 경우 비 임시 범위에서 사용 가능한 TCP 포트를 사용 하는 호스트의 다른 프로세스/서비스에 영향을 미칠 수 있으므로이 범위를 신중 하 게 선택 해야 합니다.
+3. 또한, Q1 2020에서 누적 업데이트를 통해 출시 되도록 예약 된 지능형 포트 풀 공유를 사용 하 여 비 DSR 모드 로드 균형 조정기에 대 한 확장성 향상에 대해 작업 하 고 있습니다.
 
 ### <a name="hostport-publishing-is-not-working"></a>HostPort 게시가 작동 하지 않음 ###
 현재이 필드는 Windows CNI 플러그 인으로 허용 `containers.ports.hostPort` 되지 않으므로 Kubernetes 필드를 사용 하 여 포트를 게시할 수 없습니다. 노드의 포트를 게시 하는 시간 동안 NodePort 게시를 사용 하세요.
