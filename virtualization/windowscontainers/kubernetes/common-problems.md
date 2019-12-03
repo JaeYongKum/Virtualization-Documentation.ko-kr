@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: 54396f4b350fa7dfe59e073601f41b0a73f06dca
-ms.sourcegitcommit: 76dce6463e820420073dda2dbad822ca4a6241ef
+ms.openlocfilehash: 471731ec50c7c03816a956bd7aae859ad218be6d
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "10307266"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "10332364"
 ---
 # Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -45,7 +45,7 @@ nssm set <Service Name> AppStderr C:\k\mysvc.log
 ## 일반적인 네트워킹 오류 ##
 
 ### 부하 분산 장치가 클러스터 노드에 일관 되지 않게 배관 됨 ###
-(기본값) kube-프록시 구성에서는 100 + 부하 분산 장치를 포함 하는 클러스터에 사용 가능한 임시 TCP 포트가 없을 수 있습니다 (예를 들어, 모든 (비 DSR) 부하 분산 장치에 대해 각 노드에 예약 된 포트 수가 많아 일반적으로 포트 49152 ~ 65535을 다루는 동적 포트 범위입니다. 다음과 같은 kube 프록시에서 오류가 발생할 수 있습니다.
+Windows에서 kube-proxy는 클러스터의 모든 Kubernetes 서비스에 대해 HNS 부하 분산 장치를 만듭니다. (기본값) kube-프록시 구성에서는 많은 (일반적으로 100 개 +) 부하 분산 장치를 포함 하는 클러스터의 노드가 사용할 수 있는 임시 TCP 포트 (예, 동적 포트 범위 (기본적으로 포트 49152 ~ 65535)를 포함 합니다. 이는 모든 (DSR이 아닌) 부하 분산 장치에 대해 각 노드에 예약 된 포트 수가 많아 발생 하는 것입니다. 이 문제는 다음과 같은 kube 프록시에 오류가 발생할 수 있습니다.
 ```
 Policy creation failed: hcnCreateLoadBalancer failed in Win32: The specified port already exists.
 ```
@@ -55,9 +55,9 @@ Policy creation failed: hcnCreateLoadBalancer failed in Win32: The specified por
 또한 `CollectLogs.ps1` 이는 HNS 할당 논리를 모방 하 여 임시 TCP 포트 범위에서 포트 풀 할당을 테스트 하 고 성공/실패를 `reservedports.txt`보고 합니다. 이 스크립트는 10 개의 64 범위 (HNS 동작을 에뮬레이트하기 위해)를 예약 하 고 예약 성공 & 오류 수를 계산한 다음 할당 된 포트 범위를 해제 합니다. 10 보다 작은 성공 값은 임시 풀이 사용 가능한 공간이 부족 함을 나타냅니다. Heuristical에서 `reservedports.txt`대략적으로 사용할 수 있는 64 블록 포트 예약이 몇 개 있는지도 요약 됩니다.
 
 이 문제를 해결 하려면 다음과 같은 몇 가지 단계를 수행 하면 됩니다.
-1.  영구 솔루션의 경우 kube 부하 분산을 [DSR 모드로](https://techcommunity.microsoft.com/t5/Networking-Blog/Direct-Server-Return-DSR-in-a-nutshell/ba-p/693710)설정 해야 합니다. 불행 하 게도, DSR 모드는 최신 [Windows Server 참가자 빌드 18945](https://blogs.windows.com/windowsexperience/2019/07/30/announcing-windows-server-vnext-insider-preview-build-18945/#o1bs7T2DGPFpf7HM.97) (또는 그 이상) 에서만 완벽 하 게 구현 되었습니다.
+1.  영구 솔루션의 경우 kube 부하 분산을 [DSR 모드로](https://techcommunity.microsoft.com/t5/Networking-Blog/Direct-Server-Return-DSR-in-a-nutshell/ba-p/693710)설정 해야 합니다. DSR 모드는 완전히 구현 되 고 최신 [Windows Server 참가자 빌드 18945](https://blogs.windows.com/windowsexperience/2019/07/30/announcing-windows-server-vnext-insider-preview-build-18945/#o1bs7T2DGPFpf7HM.97) (또는 그 이상) 에서만 사용할 수 있습니다.
 2. 해결 방법으로 사용자는 등 `netsh int ipv4 set dynamicportrange TCP <start_port> <port_count>`의 명령을 사용 하 여 사용 가능한 임시 포트의 기본 Windows 구성을 늘릴 수도 있습니다. *경고:* 기본 동적 포트 범위를 재정의 하는 경우 비 임시 범위에서 사용 가능한 TCP 포트를 사용 하는 호스트의 다른 프로세스/서비스에 영향을 미칠 수 있으므로이 범위를 신중 하 게 선택 해야 합니다.
-3. 또한, Q1 2020에서 누적 업데이트를 통해 출시 되도록 예약 된 지능형 포트 풀 공유를 사용 하 여 비 DSR 모드 로드 균형 조정기에 대 한 확장성 향상에 대해 작업 하 고 있습니다.
+3. Q1 2020에서 누적 업데이트를 통해 출시 하도록 예약 된 지능형 포트 풀 공유를 사용 하 여 비 DSR 모드 로드 균형 조정기에 확장성이 향상 되었습니다.
 
 ### HostPort 게시가 작동 하지 않음 ###
 현재이 필드는 Windows CNI 플러그 인으로 허용 `containers.ports.hostPort` 되지 않으므로 Kubernetes 필드를 사용 하 여 포트를 게시할 수 없습니다. 노드의 포트를 게시 하는 시간 동안 NodePort 게시를 사용 하세요.
