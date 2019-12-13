@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: cfbb2542-fead-48e7-8318-4da92a7b5b6f
-ms.openlocfilehash: 338dd0570f1a2e73295b2bacf2c4282b3fdd7956
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 55b428894b22ded48ce9db8f24928924964ce96d
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998490"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74910083"
 ---
 # <a name="community-videos-and-blogs"></a>커뮤니티 비디오 및 블로그
 
@@ -31,15 +31,15 @@ ms.locfileid: "9998490"
 
 [An Overview of .NET and Containers](https://blog.alexellis.io/docker-dotnet-containers/)(.NET 및 컨테이너 개요) - Alex Ellis
 
-[Windows 응용 프로그램을 만드는 방법을 설명 하는 방법: 5 단계](https://blog.sixeyed.com/how-to-dockerize-windows-applications/) -Elton Stoneman
+[Windows 응용 프로그램을 설명 하는 방법: 5 단계](https://blog.sixeyed.com/how-to-dockerize-windows-applications/) -Elton Stoneman
 
-[Modernizing .Net Framework 앱-Docker](https://www.pluralsight.com/courses/modernizing-dotnet-framework-apps-docker?clickid=UVL20JTFpzK6UDSX5n1b5zmyUkgWUPWOz3Pjwg0&irgwc=1&mpid=1197078&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1197078&aid=7010a000001xAKZAA2) 톤 Stoneman
+[Docker를 사용 하는 현대화 .NET Framework 앱](https://www.pluralsight.com/courses/modernizing-dotnet-framework-apps-docker?clickid=UVL20JTFpzK6UDSX5n1b5zmyUkgWUPWOz3Pjwg0&irgwc=1&mpid=1197078&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=1197078&aid=7010a000001xAKZAA2) -Elton Stoneman
 
 [Docker with Microsoft SQL 2016 + ASP.NET](https://blog.alexellis.io/docker-does-sql2016-aspnet/)(Docker와 Microsoft SQL 2016 + ASP.NET 통합) - Alex Ellis
 
-[첫 번째 보기: Windows 컨테이너 및 Docker-정 Ellis를 사용 하 여 JENKINS CI](https://blog.alexellis.io/continuous-integration-docker-windows-containers/)
+[먼저 보기: Windows 컨테이너 및 Docker를 사용 하 여 JENKINS CI](https://blog.alexellis.io/continuous-integration-docker-windows-containers/) Alex Ellis
 
-[Windows 컨테이너에 대 한 패키지 Redis](https://blog.alexellis.io/packaging-windows-containers/) -정 Ellis
+[Windows 컨테이너에 대 한 Redis 패키징](https://blog.alexellis.io/packaging-windows-containers/) -Alex Ellis
 
 [3 Steps to MSBuild with Docker](https://blog.alexellis.io/3-steps-to-msbuild-with-docker/)(Docker로 MSBuild를 구현하는 3단계) - Alex Ellis
 
@@ -47,7 +47,7 @@ ms.locfileid: "9998490"
 
 [Use Docker Compose and Service Discovery on Windows to scale-out your multi-service container application](https://techcommunity.microsoft.com/t5/Containers/Use-Docker-Compose-and-Service-Discovery-on-Windows-to-scale-out/ba-p/382312)(Windows에서 Docker Compose 및 서비스 검색을 사용하여 다중 서비스 컨테이너 응용 프로그램 확장) - Kallie Bracken 및 Jason Messer
 
-Docker-Nicholas Dille [를 사용 하는 Windows 컨테이너의 PowerShell 필요한 상태 구성](https://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/)
+[Docker를 사용 하 여 Windows 컨테이너의 PowerShell 필요한 상태 구성](https://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/) 있는 nicholas Dille
 
 [Windows 컨테이너에서 Neo4j 실행](https://glennsarti.github.io/blog/neo4j-nano-containers) -Glenn Sarti
 

@@ -1,19 +1,19 @@
 ---
 title: Hyper-V의 시험판 기능 체험
 description: Hyper-V의 시험판 기능 체험
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 426c87cc-fa50-4b8d-934e-0b653d7dea7d
-ms.openlocfilehash: 725466f657ae8fc4f14813822e90657e12d26fa6
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 8f1c1b96fe88f46a24b8ebb46d4f387c9717f6ba
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998930"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911163"
 ---
 # <a name="try-pre-release-features-for-hyper-v"></a>Hyper-V의 시험판 기능 체험
 

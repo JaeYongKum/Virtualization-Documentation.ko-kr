@@ -9,11 +9,11 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 532195c6-564b-4954-97c2-5a5795368c09
 ms.openlocfilehash: 0139f51e909149dde59f4030c6571aee82fed27e
-ms.sourcegitcommit: 62fff5436770151a28b6fea2be3a8818564f3867
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "10147246"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909483"
 ---
 # <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
@@ -22,7 +22,7 @@ ms.locfileid: "10147246"
 
 ## <a name="connect-virtual-machines-to-the-internet"></a>가상 컴퓨터를 인터넷에 연결
 
-Hyper-V에는 외부, 내부, 개인의 세 가지 가상 스위치 유형이 있습니다. 외부 스위치를 만들어 컴퓨터의 네트워크를 실행 중인 가상 컴퓨터와 공유 합니다.
+Hyper-V에는 외부, 내부, 프라이빗의 세 가지 가상 스위치 유형이 있습니다. 외부 스위치를 만들어 컴퓨터의 네트워크를 실행 되는 가상 컴퓨터와 공유 합니다.
 
 이 연습은 외부 가상 스위치를 만드는 과정을 안내합니다. 완료되면 Hyper-V 호스트가 가상 컴퓨터를 컴퓨터의 네트워크 연결을 통해 인터넷에 연결할 수 있는 가상 스위치를 가지게 됩니다. 
 
@@ -97,10 +97,10 @@ NAT 네트워크를 설정하고 가상 컴퓨터에 연결하려면 [NAT 네트
 
 ### <a name="the-two-switch-approach"></a>두 스위치 접근 방식
 
-랩톱에서 Windows 10 Hyper-v를 실행 중이 고 무선 네트워킹과 유선 네트워크 간을 자주 전환 하는 경우 이더넷 및 무선 네트워크 카드에 대 한 가상 스위치를 만들 수 있습니다.  랩톱을 네트워크에 연결 하는 방법에 따라 이러한 스위치 간에 가상 컴퓨터를 변경할 수 있습니다. 가상 컴퓨터는 유선 및 무선을 자동으로 전환 하지 않습니다. 
+랩톱에서 Windows 10 Hyper-v를 실행 하 고 무선 네트워킹과 유선 네트워크 간에 자주 전환 하는 경우 이더넷 및 무선 네트워크 카드에 대 한 가상 스위치를 만들 수 있습니다.  랩톱을 네트워크에 연결 하는 방법에 따라 이러한 스위치 사이에 가상 컴퓨터를 변경할 수 있습니다. 가상 머신은 유선 및 무선을 자동으로 전환 하지 않습니다. 
 
 >[!IMPORTANT]
->두 스위치 접근 방법은 무선 카드를 통해 외부 vSwitch를 지원 하지 않으므로 테스트 목적 으로만 사용 해야 합니다.
+>두 스위치 방식은 무선 카드에서 외부 vSwitch를 지원 하지 않으며 테스트 목적 으로만 사용 해야 합니다.
 
 ## <a name="next-step---create-a-virtual-machine"></a>다음 단계 - 가상 컴퓨터 만들기
 [Windows 가상 컴퓨터 만들기](create-virtual-machine.md)

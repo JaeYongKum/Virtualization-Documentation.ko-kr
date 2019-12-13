@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 0cc1b621-1a92-4512-8716-956d7a8fe495
-ms.openlocfilehash: 2e1fec6aa7149c801b1c72a0f8a346ca879015c2
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: b975c593bd5c736ec3e7e1e21b76b2f6a2c8f8a4
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998200"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909653"
 ---
 # <a name="remote-management-of-a-windows-docker-host"></a>Windows Docker 호스트의 원격 관리
 
@@ -23,7 +23,7 @@ ms.locfileid: "9998200"
 
 * [dockertls](https://hub.docker.com/r/stefanscherer/dockertls-windows/)를 사용하여 서버에 인증서를 만듭니다. IP 주소로 인증서를 만들 경우 IP 주소가 바뀔 때 인증서를 다시 만들 필요가 없도록 정적 IP 사용을 고려할 수 있습니다.
 
-* Docker 서비스 다시 시작 `Restart-Service Docker`
+* Docker 서비스를 다시 시작 `Restart-Service Docker`
 * 인바운드 트래픽을 허용하는 NSG 규칙을 만들어 포트 Docker의 TLS 포트 2375 및 2376을 사용할 수 있게 합니다. 보안 연결의 경우 2376만 허용해야 합니다.  
   포털에 NSG 구성이 다음과 같이 표시되어야 합니다.  
   ![NGS](media/nsg.png)  
@@ -33,7 +33,7 @@ ms.locfileid: "9998200"
 New-NetFirewallRule -DisplayName 'Docker SSL Inbound' -Profile @('Domain', 'Public', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort 2376
 ```
 * 컴퓨터에 있는 사용자의 Docker 폴더(예: `c:\users\chris\.docker`)에서 로컬 컴퓨터로 `ca.pem`, 'cert.pem' 및 'key.pem' 파일을 복사합니다. 예를 들어, RDP 세션에서 파일을 복사하여 붙여 넣을 수 있습니다(Ctrl+C, Ctrl+V). 
-* 원격 Docker 호스트에 연결할 수 있는지 확인합니다. 실행
+* 원격 Docker 호스트에 연결할 수 있는지 확인합니다. 를 실행합니다.
 ```
 docker -D -H tcp://wsdockerhost.southcentralus.cloudapp.azure.com:2376 --tlsverify --tlscacert=c:\
 users\foo\.docker\client\ca.pem --tlscert=c:\users\foo\.docker\client\cert.pem --tlskey=c:\users\foo\.doc

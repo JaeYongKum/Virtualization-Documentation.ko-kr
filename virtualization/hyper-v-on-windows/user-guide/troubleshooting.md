@@ -1,19 +1,19 @@
 ---
 title: Windows 10에서 Hyper-V 문제 해결
 description: Windows 10에서 Hyper-V 문제 해결
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: f0ec8eb4-ffc4-4bf1-9a19-7a8c3975b359
-ms.openlocfilehash: bdb9feeb2452f2784a3b814e85dc72f3b967a9d3
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 03bbb4494bbbd790f16c4b6afef387905f7c6c83
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998870"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74910893"
 ---
 # <a name="troubleshoot-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V 문제 해결
 
@@ -29,7 +29,7 @@ VMConnect를 닫았다가 다시 열어 올바른 유형의 검사점을 적용�
 
 ## <a name="when-i-try-to-create-a-virtual-hard-disk-on-a-flash-drive-an-error-message-is-displayed"></a>플래시 드라이브에서 가상 하드 디스크를 만들려고 할 때 오류 메시지가 표시됩니다.
 이러한 파일 시스템은 액세스 제어 목록(ACL)을 제공하지 않으며 4GB보다 큰 파일을 지원하지 않으므로 Hyper-V는 FAT/FAT32 포맷된 디스크 드라이브를 지원하지 않습니다. ExFAT 포맷된 디스크는 제한된 ACL 기능만을 제공하므로 보안상의 이유로 지원되지 않습니다.
-PowerShell에 표시된 오류 메시지는 "시스템을 만들지 못했습니다 '\[path to VHD\]': 파일 시스템 제한으로 인해 요청한 작업을 완료할 수 없습니다(0x80070299)."입니다.
+PowerShell에 표시된 오류 메시지는 "시스템에서 '\[VHD에 대한 경로\]'를 만들지 못했습니다. 파일 시스템 제한으로 인해 요청한 작업을 완료할 수 없습니다(0x80070299)."입니다.
 
 NTFS 포맷 드라이브를 사용하세요. 
 

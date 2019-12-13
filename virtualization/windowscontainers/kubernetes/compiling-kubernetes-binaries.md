@@ -8,19 +8,19 @@ ms.prod: containers
 description: 원본에서 Kubernetes 바이너리를 컴파일 및 크로스 컴파일합니다.
 keywords: kubernetes, 1.12, linux, 컴파일
 ms.openlocfilehash: 40bf7e65a8910cdab095abb269aa0a92508189cd
-ms.sourcegitcommit: 0deb653de8a14b32a1cfe3e1d73e5d3f31bbe83b
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "9574824"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909873"
 ---
 # <a name="compiling-kubernetes-binaries"></a>Kubernetes 바이너리 컴파일 #
 Kubernetes 컴파일에는 Go 환경 작업이 필요합니다. 이 페이지는 Linux 바이너리를 컴파일하고 Windows 바이너리를 크로스 컴파일하는 여러 방법에 대해 다룹니다.
 > [!NOTE] 
-> 이 페이지는 완전히 자유 번째이자 유일한 관심이 Kubernetes 개발자에 게 최신 & 가장 큰 소스 코드를 사용 하 여 실험을 포함 합니다.
+> 이 페이지는 완전히 자발적 이며 최신 & 가장 많은 소스 코드로 시험해 보려는 관심이 있는 Kubernetes 개발자 에게만 포함 되어 있습니다.
 
 > [!tip]
-> 구독할 수 최신 개발에 대 한 알림을 받도록 [@kubernetes-announce](https://groups.google.com/forum/#!forum/kubernetes-announce).
+> 최신 개발에 대 한 알림을 받으려면 [@kubernetes-announce](https://groups.google.com/forum/#!forum/kubernetes-announce)를 구독할 수 있습니다.
 
 ## <a name="installing-go"></a>Go 설치 ##
 편의를 위해 임시 사용자 지정 위치에 Go를 설치합니다.
@@ -51,7 +51,7 @@ export PATH="$GOROOT/bin:$PATH"
 > [!Tip]  
 > "권한이 거부되었습니다" 오류가 발생한 경우 먼저 [`acs-engine`](https://github.com/Azure/acs-engine/blob/master/scripts/build-windows-k8s.sh#L176)의 메모에 따라 Linux `kubelet`을 빌드하여 이를 해결할 수 있습니다.
 >  
-> _Kubernetes Windows 빌드 시스템에서 버그처럼 보이는 것으로 인해 `_output/bin/deepcopy-gen`을 생성하기 위해 먼저 Linux 바이너리를 빌드해야 합니다. 이를 수행하지 않고 Windows에 빌드하면 빈 `deepcopy-gen`가 생성됩니다._
+> _Kubernetes Windows 빌드 시스템에서 버그로 표시 되는 것으로 인해 먼저 `_output/bin/deepcopy-gen`를 생성 하는 Linux 이진 파일을 빌드해야 합니다. Windows w/o로 빌드하면 빈 `deepcopy-gen`생성 됩니다._
 
 먼저 Kubernetes 리포지토리를 검색합니다.
 

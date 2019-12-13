@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9238389-7028-4015-8140-27253b156f37
-ms.openlocfilehash: 1348b9923d9de1314818f13414abdacee2cb9735
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: c7a6462b331f469148eb4cf5a0a2740c9929fa29
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998610"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911063"
 ---
 # <a name="create-a-custom-virtual-machine-gallery"></a>사용자 지정 가상 컴퓨터 갤러리 만들기
 
@@ -43,7 +43,7 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 
 값 이름: `GalleryLocations`
 
-유형: `REG_MULTI_SZ`
+형식: `REG_MULTI_SZ`
 
 ## <a name="create-gallery-compatible-virtual-machines"></a>갤러리와 호환되는 가상 컴퓨터 만들기
 
@@ -61,12 +61,12 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 가상 컴퓨터 이미지의 유효성을 검사하려면 부팅하고 실행합니다.
 
 1. VM 갤러리(Hyper-V 빨리 만들기)를 열고 **로컬 설치 원본**을 선택합니다.
-  ![로컬 설치 원본을 사용하기 위한 단추](media/use-local-source.png)
+  ![단추를 클릭 하 여 로컬 설치 원본을 사용](media/use-local-source.png)
 1. **설치 원본 변경**을 선택합니다.
-  ![로컬 설치 원본을 사용하기 위한 단추](media/change-source.png)
+  ![단추를 클릭 하 여 로컬 설치 원본을 사용](media/change-source.png)
 1. 갤러리에 사용될 .iso 또는 .vhdx를 선택합니다.
-1. 이미지가 Linux 이미지 경우 보안 부팅 옵션을 선택 취소합니다.
-  ![로컬 설치 원본을 사용하기 위한 단추](media/toggle-secure-boot.png)
+1. 이미지가 Linux 이미지인 경우 보안 부팅 옵션을 선택 취소합니다.
+  ![단추를 클릭 하 여 로컬 설치 원본을 사용](media/toggle-secure-boot.png)
 1. 가상 컴퓨터를 만듭니다.  가상 컴퓨터가 제대로 부팅되면 갤러리를 사용할 준비가 됩니다.
 
 ## <a name="build-a-new-gallery-source"></a>새 갤러리 원본 빌드
@@ -98,12 +98,12 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 ![레이블이 지정된 갤러리 사진 위치](media/gallery-pictures.png)
 
 * **로고** - 필수 항목
-* 심볼
-* 섬네일
+* symbol
+* 썸네일
 
 그리고 물론 가상 컴퓨터(.iso 또는.vhdx)도 포함됩니다.
 
-다음과 같은 powershell 명령을 사용 하 여 해시를 생성할 수 있습니다.
+다음 powershell 명령을 사용 하 여 해시를 생성할 수 있습니다.
 
   ``` PowerShell
   Get-FileHash -Path .\TMLogo.jpg -Algorithm SHA256
@@ -118,7 +118,7 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 VM 갤러리에 사용자 지정 갤러리 원본을 추가하는 가장 쉬운 방법은 regedit에 추가하는 것입니다.
 
 1. **regedit.exe**를 엽니다.
-1. 다음으로 이동합니다. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\`
+1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\`로 이동합니다.
 1. `GalleryLocations` 항목을 찾습니다.
 
     이미 존재하는 경우에는 **편집** 메뉴로 이동하여 **수정**합니다.

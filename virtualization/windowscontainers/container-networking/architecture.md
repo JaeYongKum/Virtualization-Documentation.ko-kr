@@ -9,31 +9,31 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
 ms.openlocfilehash: e9d4a9ac88c6853ce019a2469ee80688490b8fdf
-ms.sourcegitcommit: bb4ec1f05921f982c00bdb3ace6d9bc1d5355296
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "10297244"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74910703"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
 >[!IMPORTANT]
->일반 docker 네트워킹 명령, 옵션, 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. * * * [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에서 설명 하는 경우를 제외 하 고, 모든 Docker 네트워킹 명령은 Linux에서와 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르기 때문에 Windows에서는 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 확인할 수 있습니다.
+>일반 docker 네트워킹 명령, 옵션 및 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. * * * [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에 설명 된 경우를 제외 하 고 모든 docker 네트워킹 명령은 Linux의 구문과 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르며 Windows에서 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 알 수 있습니다.
 
 ## <a name="basic-networking-architecture"></a>기본 네트워킹 아키텍처
 
 이 항목에서는 Docker가 Windows에서 호스트 네트워크를 만들고 관리하는 방식에 대해 개략적으로 설명합니다. Windows 컨테이너는 네트워킹에 있어서 가상 컴퓨터와 유사하게 작동합니다. 각 컨테이너에는 Hyper-V 가상 스위치(vSwitch)에 연결되는 가상 네트워크 어댑터(vNIC)가 있습니다. Windows는 Docker를 통해 만들 수 있는 5가지 [네트워킹 드라이버 또는 모드](./network-drivers-topologies.md)인 *nat*, *overlay*, *transparent*, *l2bridge*, *l2tunnel*을 지원합니다. 실제 네트워크 인프라와 단일 및 다중 호스트 네트워킹 요구 사항에 따라 가장 적합한 네트워크 드라이버를 선택해야 합니다.
 
-![텍스트](media/windowsnetworkstack-simple.png)
+![text](media/windowsnetworkstack-simple.png)
 
 Docker 엔진은 처음으로 실행되면 내부 vSwitch와 `WinNAT`이라고 하는 Windows 구성 요소를 사용하는 기본 NAT 네트워크 'nat'를 만듭니다. 호스트에 PowerShell 또는 Hyper-V 관리자를 통해 만든 기존 외부 vSwitch가 있는 경우 이러한 외부 스위치 역시 *transparent* 네트워크 드라이버를 사용하여 Docker에 제공되며 ``docker network ls`` 명령을 실행할 때 볼 수 있습니다.  
 
-![텍스트](media/docker-network-ls.png)
+![text](media/docker-network-ls.png)
 
-- **내부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 되지 않은 것입니다.
-- **외부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 되는 것입니다.
+- **내부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 되지 않는 항목입니다.
+- **외부** vSwitch는 컨테이너 호스트의 네트워크 어댑터에 직접 연결 된 vSwitch입니다.
 
-![텍스트](media/get-vmswitch.png)
+![text](media/get-vmswitch.png)
 
 'nat' 네트워크는 Windows에서 실행되는 컨테이너의 기본 네트워크입니다. 특정 네트워크 구성을 구현하는 플래그 또는 인수 없이 Windows에서 실행되는 모든 컨테이너는 기본 'nat' 네트워크에 연결되고, 'nat' 네트워크 내부 접두사 IP 범위의 IP 주소가 자동으로 할당합니다. 'nat'에 사용되는 기본 내부 IP 접두사는 172.16.0.0/16입니다. 
 
@@ -60,17 +60,17 @@ HNS(호스트 네트워킹 서비스)와 HCS(호스트 계산 서비스)가 함�
     - 여기에는 부하 분산, ACL, 캡슐화 등이 포함되어 있습니다.
     - [여기](https://docs.microsoft.com/en-us/windows-server/networking/technologies/hcn/hcn-top) 에 게시 된 HNS api 및 스키마를 찾습니다.
 
-![텍스트](media/HNS-Management-Stack.png)
+![text](media/HNS-Management-Stack.png)
 
 ## <a name="unsupported-features-and-network-options"></a>지원되지 않는 기능과 네트워크 옵션
 
 다음 네트워킹 옵션은 현재 Windows에서 지원 **되지 않습니다** .
 
 - L2bridge, NAT 및 오버레이 네트워크에 연결 된 Windows 컨테이너는 IPv6 스택을 통한 통신을 지원 하지 않습니다.
-- IPsec을 통한 암호화 된 컨테이너 통신
+- IPsec을 통해 암호화 된 컨테이너 통신.
 - 컨테이너에 대 한 HTTP 프록시 지원.
 - [호스트 모드](https://docs.docker.com/ee/ucp/interlock/config/host-mode-networking/) 네트워킹 
-- 투명 한 네트워크 드라이버를 통해 가상화 된 Azure 인프라에 대 한 네트워킹.
+- 투명 한 네트워크 드라이버를 통해 가상화 된 Azure 인프라에서 네트워킹.
 
 | 명령        | 지원 되지 않는 옵션   |
 |---------------|:--------------------:|

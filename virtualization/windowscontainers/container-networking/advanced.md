@@ -9,11 +9,11 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
 ms.openlocfilehash: deea1bfbcd3032f52a6912eb0c36ba467d8b9a9c
-ms.sourcegitcommit: b38f6abb399c87c57e1bb146f3dbcdaefd991245
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "10276496"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74910713"
 ---
 # <a name="advanced-network-options-in-windows"></a>Windows의 고급 네트워크 옵션
 
@@ -44,15 +44,15 @@ C:\> docker network create -d transparent -o com.docker.network.windowsshim.vlan
 
 ## <a name="specify-outboundnat-policy-for-a-network"></a>네트워크에 대 한 OutboundNAT 정책 지정
 
-> L2bridge 네트워크에 적용
+> L2bridge 네트워크에 적용 됩니다.
 
-일반적으로 컨테이너 네트워크 `l2bridge` `docker network create`를 만드는 경우 컨테이너 끝점에는 HNS OutboundNAT 정책이 적용 되지 않으므로 컨테이너에서 외부 환경에 연결할 수 없습니다. 네트워크를 만드는 경우 OutboundNAT HNS 정책을 적용 하는 `-o com.docker.network.windowsshim.enable_outboundnat=<true|false>` 옵션을 사용 하 여 컨테이너에 대 한 액세스를 제공할 수 있습니다.
+일반적으로 `docker network create`를 사용 하 여 `l2bridge` 컨테이너 네트워크를 만들 때 컨테이너 끝점에는 HNS OutboundNAT 정책이 적용 되지 않으므로 컨테이너가 외부 세계에 도달할 수 없습니다. 네트워크를 만드는 경우에는 `-o com.docker.network.windowsshim.enable_outboundnat=<true|false>` 옵션을 사용 하 여 컨테이너에 외부 세계에 대 한 액세스를 제공 하는 OutboundNAT HNS 정책을 적용할 수 있습니다.
 
 ```
 C:\> docker network create -d l2bridge -o com.docker.network.windowsshim.enable_outboundnat=true MyL2BridgeNetwork
 ```
 
-대상 집합 (예: 컨테이너에 대 한 컨테이너 연결이 필요한 경우)이 있는 경우 NAT'ing를 발생 시 되는 것을 원하지 않는 경우 예외 항목을 지정 해야 합니다.
+NAT'ing 발생 하지 않으려는 대상 집합 (예: 컨테이너 간 연결이 필요한 경우)이 있는 경우에는 예외 항목을 지정 해야 합니다.
 
 ```
 C:\> docker network create -d l2bridge -o com.docker.network.windowsshim.enable_outboundnat=true -o com.docker.network.windowsshim.outboundnat_exceptions=10.244.10.0/24
@@ -178,7 +178,7 @@ l2bridge 드라이버를 사용하여 만든 컨테이너 네트워크에서는 
 PS C:\> restart-service hns
 PS C:\> restart-service docker
 ```
-* 또 다른 방법으로는 '-o com.docker.network.windowsshim.interface' 옵션을 사용하여 투명 네트워크의 외부 vSwitch를 컨테이너 호스트에서 아직 사용하지 않는 특정 네트워크 어댑터(대역 외에서 생성된 vSwitch에서 사용하는 것 외의 네트워크 어댑터)에 바인딩하는 것입니다. '-O ' 옵션은이 문서의 [단일 컨테이너 호스트 섹션에 여러 투명 네트워크 만들기](advanced.md#creating-multiple-transparent-networks-on-a-single-container-host) 에 자세히 설명 되어 있습니다.
+* 또 다른 방법으로는 '-o com.docker.network.windowsshim.interface' 옵션을 사용하여 투명 네트워크의 외부 vSwitch를 컨테이너 호스트에서 아직 사용하지 않는 특정 네트워크 어댑터(대역 외에서 생성된 vSwitch에서 사용하는 것 외의 네트워크 어댑터)에 바인딩하는 것입니다. '-O ' 옵션에 대 한 자세한 내용은이 문서의 [단일 컨테이너 호스트에서 여러 투명 네트워크 만들기](advanced.md#creating-multiple-transparent-networks-on-a-single-container-host) 섹션을 참조 하세요.
 
 
 ## <a name="windows-server-2016-work-arounds"></a>Windows Server 2016 해결 방법 
@@ -230,4 +230,4 @@ networks:
       - subnet: 172.16.3.0/24
 ```
 
-Docker Compose를 사용하여 컨테이너 네트워크 정의/구성에 대한 자세한 내용은 [Compose 파일 참조](https://docs.docker.com/compose/compose-file/)를 참조하세요.
+Docker Compose를 사용하여 컨테이너 네트워크 정의/구성에 대한 자세한 내용은 [Compose File reference](https://docs.docker.com/compose/compose-file/)(Compose 파일 참조)를 참조하세요.

@@ -7,28 +7,28 @@ ms.date: 04/07/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: f1e75efa-8745-4389-b8dc-91ca931fe5ae
-ms.openlocfilehash: 6035143bc1449bc4a8e9bb7a4484b4c5329e6d3c
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 970e92def02e5386d38a2e72d5ef921aa8321fdf
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998630"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911403"
 ---
 # <a name="create-a-virtual-machine-with-hyper-v"></a>Hyper-V를 사용하여 가상 컴퓨터 만들기
 
 가상 컴퓨터를 만들고 운영 체제를 설치합니다.
 
-지난 세 릴리스의 지침이 크게 변경 되어 가상 컴퓨터를 만들기 위한 새로운 도구를 작성 했습니다.
+Microsoft는 가상 머신을 만들기 위한 새로운 도구를 구축 하 여 지난 세 릴리스 동안이 지침이 크게 변경 되었습니다.
 
 올바른 명령 집합을 위한 운영 체제를 선택하세요.
 
-* [Windows 10이 v1709 크리에이터 업데이트 () 및 이후 버전](quick-create-virtual-machine.md#windows-10-fall-creators-update-windows-10-version-1709)
-* [Windows 10 크리에이터 업데이트 (v1703)](quick-create-virtual-machine.md#windows-10-creators-update-windows-10-version-1703)
+* [Windows 10 v1709 (Windows 10의 작성자 업데이트) 이상](quick-create-virtual-machine.md#windows-10-fall-creators-update-windows-10-version-1709)
+* [Windows 10 크리에이터 스 업데이트 (v1703)](quick-create-virtual-machine.md#windows-10-creators-update-windows-10-version-1703)
 * [Windows 10 기념일 업데이트 (v1607) 및 이전 버전](quick-create-virtual-machine.md#before-windows-10-creators-update-windows-10-version-1607-and-earlier)
 
 그럼 시작해 보겠습니다.
 
-## <a name="windows-10-fall-creators-update-windows-10-version-1709"></a>Windows 10 낙하 크리에이터 업데이트 (Windows 10 버전 1709)
+## <a name="windows-10-fall-creators-update-windows-10-version-1709"></a>Windows 10의 작성자 업데이트 (Windows 10 버전 1709)
 
 가을 크리에이터스 업데이트에서는 Hyper-V 관리자와 독립적으로 실행할 수 있는 가상 컴퓨터 갤러리를 포함하도록 빨리 만들기 기능이 확장되었습니다.
 
@@ -44,16 +44,16 @@ ms.locfileid: "9998630"
 
     1. 자체 이미지를 사용하여 가상 컴퓨터를 만들고 싶으면 **로컬 설치 원본** 선택합니다.
     1. **설치 원본 변경**을 선택합니다.
-      ![로컬 설치 원본을 사용하기 위한 단추](media/change-source.png)
+      ![단추를 클릭 하 여 로컬 설치 원본을 사용](media/change-source.png)
     1. 새 가상 컴퓨터로 전환하고 싶은 .iso 또는 .vhdx를 선택합니다.
     1. 이미지가 Linux 이미지인 경우 보안 부팅 옵션을 선택 취소합니다.
-      ![로컬 설치 원본을 사용하기 위한 단추](media/toggle-secure-boot.png)
+      ![단추를 클릭 하 여 로컬 설치 원본을 사용](media/toggle-secure-boot.png)
 
 1. "가상 컴퓨터 만들기"를 선택
 
-이제 되었습니다.  나머지 작업은 빨리 만들기가 처리합니다.
+간단하죠.  나머지 작업은 빨리 만들기가 처리합니다.
 
-## <a name="windows-10-creators-update-windows-10-version-1703"></a>Windows 10 크리에이터 업데이트 (Windows 10 버전 1703)
+## <a name="windows-10-creators-update-windows-10-version-1703"></a>Windows 10 크리에이터 스 업데이트 (Windows 10 버전 1703)
 
 ![UI 빨리 만들기의 스크린샷](media/quickcreatesteps_inked.jpg)
 
@@ -81,7 +81,7 @@ ms.locfileid: "9998630"
 
 > **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 컴퓨터 내에서 실행 중인 Windows에 대한 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.
 
-## <a name="before-windows-10-creators-update-windows-10-version-1607-and-earlier"></a>Windows 10 크리에이터 업데이트 이전 (Windows 10 버전 1607 이상)
+## <a name="before-windows-10-creators-update-windows-10-version-1607-and-earlier"></a>Windows 10 크리에이터 업데이트 이전 (Windows 10 버전 1607 및 이전 버전)
 
 Windows 10 크리에이터스 업데이트 이상을 실행하고 있지 않으면 다음 지침에 따라 새 가상 컴퓨터 마법사를 대신 사용합니다.
 

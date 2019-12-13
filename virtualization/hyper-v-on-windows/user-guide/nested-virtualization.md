@@ -1,19 +1,19 @@
 ---
 title: 중첩된 가상화
 description: 중첩된 가상화
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: johncslack
 ms.date: 12/18/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
-ms.openlocfilehash: f819ac04773188525af202d370ba271a2d93e259
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 625a9b36ff782c86065ef3d9124708e5716e066f
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998920"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74910933"
 ---
 # <a name="run-hyper-v-in-a-virtual-machine-with-nested-virtualization"></a>가상 컴퓨터에서 중첩된 가상화를 사용하여 Hyper-V 실행
 
@@ -66,7 +66,7 @@ Get-VMNetworkAdapter -VMName <VMName> | Set-VMNetworkAdapter -MacAddressSpoofing
 ```
 
 ### <a name="network-address-translation-nat"></a>NAT(네트워크 주소 변환)
-두 번째 옵션은 NAT(네트워크 주소 변환)를 사용합니다. 이 방법은 공용 클라우드 환경과 같이 MAC 주소 스푸핑이 가능하지 않은 경우에 적합합니다.
+두 번째 옵션은 NAT(네트워크 주소 변환)를 사용합니다. 이 방법은 퍼블릭 클라우드 환경과 같이 MAC 주소 스푸핑이 가능하지 않은 경우에 적합합니다.
 
 먼저 호스트 가상 컴퓨터("중간" VM)에서 가상 NAT 스위치를 만들어야 합니다. IP 주소는 예일 뿐이며 환경에 따라 다릅니다.
 

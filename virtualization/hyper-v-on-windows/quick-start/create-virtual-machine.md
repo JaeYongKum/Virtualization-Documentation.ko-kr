@@ -1,18 +1,18 @@
 ---
 title: Hyper-V를 사용하여 가상 컴퓨터 만들기
 description: Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 66723f33-b12c-49d1-82cf-71ba9d6087e9
 ms.openlocfilehash: 94ac197f5bc660e52d215fa132eae78f521e1c30
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9882896"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911653"
 ---
 # <a name="create-virtual-machine-with-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
 
@@ -24,7 +24,7 @@ ms.locfileid: "9882896"
 
 1. Hyper-V 관리자에서 **작업** > **새로 만들기** > **가상 컴퓨터**를 클릭하여 새 가상 컴퓨터 마법사를 표시합니다.
 
-1. '시작하기 전에' 콘텐츠를 검토하고 **다음**을 클릭합니다.
+1. '시작하기 전에' 내용을 검토하고 **다음**을 클릭합니다.
 
 1. 가상 컴퓨터에 이름을 지정합니다.
   > **참고:** 가상 컴퓨터 내부에 배포될 게스트 운영 체제에 지정되는 컴퓨터 이름이 아니라 Hyper-V에서 가상 컴퓨터에 사용하는 이름입니다.
@@ -41,7 +41,7 @@ ms.locfileid: "9882896"
 
 2. **시작 메모리** 값으로 **2048**MB를 선택하고 **동적 메모리 사용**을 선택된 상태로 유지합니다. **다음** 단추를 클릭합니다.
 
-  메모리는 Hyper-V 호스트 및 호스트에서 실행 중인 가상 컴퓨터 간에 공유됩니다. 단일 호스트에서 실행할 수 있는 가상 컴퓨터의 수는 사용 가능한 메모리에 따라 부분적으로 달라집니다. 동적 메모리를 사용하도록 가상 컴퓨터를 구성할 수 있습니다. 활성화하는 경우 동적 메모리는 실행 중인 가상 컴퓨터에서 사용되지 않은 메모리를 회수 합니다. 이렇게 하면 호스트에서 더 많은 가상 컴퓨터를 실행할 수 있습니다. 동적 메모리에 대한 자세한 내용은 [Hyper-V Dynamic Memory Overview(Hyper-V 동적 메모리 개요)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))를 참조하세요.
+  메모리는 Hyper-V 호스트 및 호스트에서 실행 중인 가상 컴퓨터 간에 공유됩니다. 단일 호스트에서 실행할 수 있는 가상 컴퓨터의 수는 사용 가능한 메모리에 따라 부분적으로 달라집니다. 동적 메모리를 사용하도록 가상 컴퓨터를 구성할 수 있습니다. 활성화하는 경우 동적 메모리는 실행 중인 가상 컴퓨터에서 사용되지 않은 메모리를 회수 합니다. 이렇게 하면 호스트에서 더 많은 가상 컴퓨터를 실행할 수 있습니다. 동적 메모리에 대한 자세한 내용은 [Hyper-V 동적 메모리 개요](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))를 참조하세요.
 
 3. 네트워킹 구성 마법사에서 가상 컴퓨터에 대한 가상 스위치를 선택하고 **다음**을 클릭합니다. 자세한 내용은 [가상 스위치 만들기](connect-to-network.md)를 참조하세요.
 
@@ -51,11 +51,11 @@ ms.locfileid: "9882896"
   
   ![](media/new_vhd_upd.png)
 
-1. 설치 옵션 마법사에서 **부팅 이미지 파일에서 운영 체제 설치**를 선택한 다음 운영 체제 .iso 파일을 선택합니다. 완료되면 **다음**을 클릭합니다.
+1. 설치 옵션 마법사에서 **부팅 가능 이미지 파일에서 운영 체제 설치**를 선택한 다음 운영 체제 .iso 파일을 선택합니다. 완료되면 **다음**을 클릭합니다.
 
   가상 컴퓨터를 만들 때 일부 운영 체제 설치 옵션을 구성할 수 있습니다. 다음 세 가지 옵션을 사용할 수 있습니다.
 
-  * **나중에 운영 체제 설치** – 이 옵션을 선택하면 가상 컴퓨터를 추가로 수정하지 않습니다.
+  * **나중에 운영 체제 설치** – 이 옵션을 선택하면 가상 컴퓨터에 수정 추가를 하지 않습니다.
 
   * **부팅 가능 이미지 파일에서 운영 체제 설치** – 물리적 컴퓨터의 실제 CD-ROM 드라이브에 CD를 삽입하는 것과 비슷합니다. 이 옵션을 구성하려면 .iso 이미지를 선택합니다. 이 이미지는 가상 컴퓨터의 가상 CD-ROM 드라이브에 탑재됩니다. 가상 컴퓨터의 부팅 순서는 CD-ROM 드라이브에서 먼저 부팅되도록 변경됩니다.
 

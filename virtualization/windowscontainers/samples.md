@@ -1,6 +1,6 @@
 ---
 title: Windows 컨테이너 샘플
-description: Windows 컨테이너를 사용 하 여 자주 사용 하는 프로젝트 및 코드 샘플에 대 한 링크를 찾습니다.
+description: Windows 컨테이너를 사용 하는 인기 있는 프로젝트 및 코드 샘플에 대 한 링크를 찾습니다.
 keywords: Docker, 컨테이너, windows, 샘플
 author: cwilhit
 ms.date: 12/19/2016
@@ -9,11 +9,11 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 5c6f6350-f8d6-4426-b53d-9fb09c2bf267
 ms.openlocfilehash: e68f99c095d3cc1e7bb3a08d48bef7e1f877b837
-ms.sourcegitcommit: 2f8fd4b2e7113fbb7c323d89f3c72df5e1a4437e
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "10044953"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909553"
 ---
 # <a name="windows-container-samples"></a>Windows 컨테이너 샘플
 
@@ -55,9 +55,9 @@ ms.locfileid: "10044953"
 
 [rails](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/rails)
 
-[ruby](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/ruby)
+[채워쓰기](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/ruby)
 
-[server-jre-8u51-windows-x64](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/server-jre-8u51-windows-x64)
+[서버-jre-8u51-windows-x64](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/server-jre-8u51-windows-x64)
 
 ## <a name="databases"></a>데이터베이스
 
@@ -73,7 +73,7 @@ sqlserver-express - [Docker 허브 이미지](https://hub.docker.com/r/microsoft
 
 ## <a name="infrastructure-and-ci-tools"></a>인프라와 CI 도구
 
-[PowerShellDSC_iis 10.0](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/PowerShellDSC_iis-10.0)
+[PowerShellDSC_iis-10.0](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/PowerShellDSC_iis-10.0)
 
 ## <a name="just-for-fun"></a>재미를 위한 내용
 

@@ -1,7 +1,7 @@
 ---
 title: Windows 10 Hyper-V 시스템 요구 사항
 description: Windows 10 Hyper-V 시스템 요구 사항
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: scooley
 ms.date: 05/02/2016
 ms.topic: article
@@ -9,15 +9,15 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6e5e6b01-7a9d-4123-8cc7-f986e10cd372
 ms.openlocfilehash: d4e3f7c1e94d0162ae9ee6251d9c6d8cc51bf1d3
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9883076"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911223"
 ---
 # <a name="windows-10-hyper-v-system-requirements"></a>Windows 10 Hyper-V 시스템 요구 사항
 
-Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 교육에서 사용할 수 있습니다. Hyper-V는 Intel 및 AMD의 최신 세대 64비트 프로세서에서 제공하는 SLAT(두 번째 수준 주소 변환)가 필요합니다.
+Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 교육용에서 사용할 수 있습니다. Hyper-V는 Intel 및 AMD의 최신 세대 64비트 프로세서에서 제공하는 SLAT(두 번째 수준 주소 변환)가 필요합니다.
 
 RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수 있고, 가상 컴퓨터 수가 늘면 더 많은 리소스가 필요합니다. 크게는 물리적 하드웨어에 따라 32개의 프로세서와 512GB RAM을 사용하는 대형 가상 컴퓨터를 만들 수도 있습니다.
 
@@ -33,9 +33,9 @@ RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수
 
 - Windows 10 Home
 - Windows 10 Mobile
-- Windows10 Mobile Enterprise
+- Windows 10 Mobile Enterprise
 
->Windows 10 Home edition은 Windows 10 Pro로 업그레이드할 수 있습니다. 그러려면 **설정** > **업데이트 및 보안** > **활성화**를 엽니다. 여기에서 스토어를 방문하고 업그레이드를 구입할 수 있습니다.
+>Windows 10 Home edition은 Windows 10 Pro로 업그레이드할 수 있습니다. 그러려면 **설정** > **업데이트 및 보안** > **활성화**를 엽니다. 여기서 스토어를 방문하고 업그레이드를 구입할 수 있습니다.
 
 ## <a name="hardware-requirements"></a>하드웨어 요구 사항
 

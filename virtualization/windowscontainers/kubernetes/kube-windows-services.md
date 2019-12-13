@@ -1,50 +1,50 @@
 ---
-title: Kubernetes를 Windows 서비스로 실행
+title: Windows 서비스로 Kubernetes 실행
 author: daschott
 ms.author: daschott
 ms.date: 02/12/2019
 ms.topic: get-started-article
 ms.prod: containers
-description: Windows 서비스로 Kubernetes 구성 요소를 실행 하는 방법.
+description: Windows 서비스로 Kubernetes 구성 요소를 실행 하는 방법
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5c18
 ms.openlocfilehash: cd5026a244b57b5c70d4abfe076839130315a4f5
-ms.sourcegitcommit: aaf115a9de929319cc893c29ba39654a96cf07e1
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "9623098"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909803"
 ---
-# <a name="kubernetes-components-as-windows-services"></a>Windows 서비스로 Kubernetes 구성 요소 
+# <a name="kubernetes-components-as-windows-services"></a>Windows 서비스로 구성 요소 Kubernetes 
 
-일부 사용자 프로세스 flanneld.exe, kubelet.exe, kube proxy.exe 또는 다른 사용자가 Windows 서비스로 실행을 같은 구성 하고자 할 수도 있습니다. 이렇게 하면 예기치 않은 프로세스 또는 노드 충돌 시 자동으로 다시 시작 프로세스와 같은 추가 내결함성을 혜택.
+일부 사용자는 Windows 서비스로 실행 되는 flanneld, kubelet, kube-proxy 등의 프로세스를 구성할 수 있습니다. 이로 인해 예기치 않은 프로세스나 노드 충돌 시 자동으로 다시 시작 하는 프로세스와 같은 추가적인 내결함성 이점이 있습니다.
 
 
 ## <a name="prerequisites"></a>필수 구성 요소
-1. [Nssm.exe](https://nssm.cc/download) 에 다운로드 했다고 합니다 `c:\k` 디렉터리
-2. 노드 클러스터에 가입 되어 있고 이전에 노드 [install.ps1](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/install.ps1) 또는 [start.ps1](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/start.ps1) 스크립트를 실행
+1. `c:\k` 디렉터리에 [nssm.exe](https://nssm.cc/download) 를 다운로드 했습니다.
+2. 클러스터에 노드를 조인 하 고 이전 노드에 [설치.](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/install.ps1) p s 1 또는 [시작.](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/start.ps1) p s 1 스크립트를 실행 합니다.
 
 ## <a name="registering-windows-services"></a>Windows 서비스 등록
-사용 하 여 nssm.exe는 등록 하는 [샘플 스크립트](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/register-svc.ps1) 를 실행할 수 있습니다 `kubelet`, `kube-proxy`, 및 `flanneld.exe` 백그라운드에서 Windows 서비스로 실행 하려면:
+`kubelet`, `kube-proxy`및 `flanneld.exe`를 등록 하는 nssm.exe를 사용 하 여 Windows 서비스를 백그라운드에서 실행 하는 [샘플 스크립트를](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/register-svc.ps1) 실행할 수 있습니다.
 
 ```
 C:\k\register-svc.ps1 -NetworkMode <Network mode> -ManagementIP <Windows Node IP> -ClusterCIDR <Cluster subnet> -KubeDnsServiceIP <Kube-dns Service IP> -LogDir <Directory to place logs>
 ```
 
-# [<a name="managementip"></a>ManagementIP](#tab/ManagementIP)
-Windows 노드에 할당 된 IP 주소입니다. 사용할 수 있습니다 `ipconfig` 검색 합니다.
+# <a name="managementiptabmanagementip"></a>[ManagementIP](#tab/ManagementIP)
+Windows 노드에 할당 된 IP 주소입니다. `ipconfig`를 사용 하 여 찾을 수 있습니다.
 
 |  |  | 
 |---------|---------|
 |매개 변수     | `-ManagementIP`        |
-|기본값    | n.A.        |
+|기본값    | N.a.        |
 
 
-# [<a name="networkmode"></a>NetworkMode](#tab/NetworkMode)
-네트워크 모드 `l2bridge` (flannel 호스트 gw) 또는 `overlay` (flannel vxlan) [네트워크 솔루션](./network-topologies.md)으로 선택 합니다.
+# <a name="networkmodetabnetworkmode"></a>[NetworkMode](#tab/NetworkMode)
+네트워크 [솔루션](./network-topologies.md)으로 선택 된 네트워크 모드 `l2bridge` (flannel gw) 또는 `overlay` (flannel vxlan)입니다.
 
 > [!Important] 
-> `overlay` 네트워킹 모드 (flannel vxlan) Kubernetes v1.14 바이너리 필요 이상.
+> `overlay` 네트워킹 모드 (flannel vxlan)에는 Kubernetes v 1.14 이진 이상이 필요 합니다.
 
 |  |  | 
 |---------|---------|
@@ -52,7 +52,7 @@ Windows 노드에 할당 된 IP 주소입니다. 사용할 수 있습니다 `ipc
 |기본값    | `l2bridge`        |
 
 
-# [<a name="clustercidr"></a>ClusterCIDR](#tab/ClusterCIDR)
+# <a name="clustercidrtabclustercidr"></a>[ClusterCIDR](#tab/ClusterCIDR)
 [클러스터 서브넷 범위](./getting-started-kubernetes-windows.md#cluster-subnet-def)입니다.
 
 |  |  | 
@@ -61,8 +61,8 @@ Windows 노드에 할당 된 IP 주소입니다. 사용할 수 있습니다 `ipc
 |기본값    | `10.244.0.0/16`        |
 
 
-# [<a name="kubednsserviceip"></a>KubeDnsServiceIP](#tab/KubeDnsServiceIP)
-[Kubernetes DNS 서비스 IP](./getting-started-kubernetes-windows.md#kube-dns-def)합니다.
+# <a name="kubednsserviceiptabkubednsserviceip"></a>[KubeDnsServiceIP](#tab/KubeDnsServiceIP)
+[KUBERNETES DNS 서비스 IP](./getting-started-kubernetes-windows.md#kube-dns-def)입니다.
 
 |  |  | 
 |---------|---------|
@@ -70,8 +70,8 @@ Windows 노드에 할당 된 IP 주소입니다. 사용할 수 있습니다 `ipc
 |기본값    | `10.96.0.10`        |
 
 
-# [<a name="logdir"></a>LogDir](#tab/LogDir)
-Kubelet 및 kube 프록시 로그는 해당 출력 파일로 리디렉션됩니다 있는 디렉터리입니다.
+# <a name="logdirtablogdir"></a>[LogDir](#tab/LogDir)
+Kubelet 및 kube 로그가 해당 출력 파일로 리디렉션되는 디렉터리입니다.
 
 |  |  | 
 |---------|---------|
@@ -82,15 +82,15 @@ Kubelet 및 kube 프록시 로그는 해당 출력 파일로 리디렉션됩니�
 
 
 > [!TIP] 
-> [문제 해결 섹션](./common-problems.md#i-have-problems-running-kubernetes-processes-as-windows-services) 을 참조 하십시오 문제가 있나요 해야 합니다
+> 문제가 발생 하는 경우 [문제 해결 섹션](./common-problems.md#i-have-problems-running-kubernetes-processes-as-windows-services) 을 참조 하세요.
 
 ## <a name="manual-approach"></a>수동 접근 방식
-해야는 [참조 되는 스크립트 위에](#registering-windows-services) 작동 하지 않으면이 섹션에서는 몇 가지 *샘플 명령을* 수동으로 단계별 이러한 서비스를 등록 하는 사용할 수 있는
+[위의 참조 된 스크립트가](#registering-windows-services) 제대로 작동 하지 않을 경우이 섹션에서는 이러한 서비스를 수동으로 단계별로 등록 하는 데 사용할 수 있는 몇 가지 *샘플 명령을* 제공 합니다.
 
 > [!TIP] 
-> [Kubelet 및 kube 프록시 이제 Windows 서비스로 실행할 수](https://kubernetes.io/docs/getting-started-guides/windows/#kubelet-and-kube-proxy-can-now-run-as-windows-services) 구성 하는 방법에 대 한 자세한 내용은 참조 `kubelet` 및 `kube-proxy` 을 통해 기본 Windows 서비스로 실행 `sc`.
+> `sc``kube-proxy` `kubelet`를 구성 하는 방법에 대 한 자세한 내용은 [Kubelet 및 kube-proxy를 Windows 서비스로 실행할 수 있습니다](https://kubernetes.io/docs/getting-started-guides/windows/#kubelet-and-kube-proxy-can-now-run-as-windows-services) .
 
-### <a name="register-flanneldexe"></a>Flanneld.exe 등록
+### <a name="register-flanneldexe"></a>Flanneld를 등록 합니다.
 ```
 nssm install flanneld C:\flannel\flanneld.exe
 nssm set flanneld AppParameters --kubeconfig-file=c:\k\config --iface=<ManagementIP> --ip-masq=1 --kube-subnet-mgr=1
@@ -99,7 +99,7 @@ nssm set flanneld AppDirectory C:\flannel
 nssm start flanneld
 ```
 
-### <a name="register-kubeletexe"></a>Kubelet.exe 등록
+### <a name="register-kubeletexe"></a>Kubelet를 등록 합니다.
 ```
 nssm install kubelet C:\k\kubelet.exe
 nssm set kubelet AppParameters --hostname-override=<hostname> --v=6 --pod-infra-container-image=kubeletwin/pause --resolv-conf="" --allow-privileged=true --enable-debugging-handlers --cluster-dns=<DNS-service-IP> --cluster-domain=cluster.local --kubeconfig=c:\k\config --hairpin-mode=promiscuous-bridge --image-pull-progress-deadline=20m --cgroups-per-qos=false  --log-dir=<log directory> --logtostderr=false --enforce-node-allocatable="" --network-plugin=cni --cni-bin-dir=c:\k\cni --cni-conf-dir=c:\k\cni\config
@@ -107,7 +107,7 @@ nssm set kubelet AppDirectory C:\k
 nssm start kubelet
 ```
 
-### <a name="register-kube-proxyexe-l2bridge--host-gw"></a>Kube proxy.exe 등록 (l2bridge / 호스트 gw)
+### <a name="register-kube-proxyexe-l2bridge--host-gw"></a>Kube-proxy (l2bridge/host-gw)를 등록 합니다.
 ```
 nssm install kube-proxy C:\k\kube-proxy.exe
 nssm set kube-proxy AppDirectory c:\k
@@ -117,7 +117,7 @@ nssm set kube-proxy DependOnService kubelet
 nssm start kube-proxy
 ```
 
-### <a name="register-kube-proxyexe-overlay--vxlan"></a>Kube proxy.exe 등록 (오버레이 / vxlan)
+### <a name="register-kube-proxyexe-overlay--vxlan"></a>Kube-proxy (오버레이/vxlan)를 등록 합니다.
 ```
 PS C:\k> nssm install kube-proxy C:\k\kube-proxy.exe
 PS C:\k> nssm set kube-proxy AppDirectory c:\k

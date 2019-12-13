@@ -1,19 +1,19 @@
 ---
 title: Windows 가상 컴퓨터와 장치 공유
 description: 장치를 Hyper-V 가상 컴퓨터(USB, 오디오, 마이크 및 탑재된 드라이브)와 공유하는 방법을 안내합니다.
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 ms.author: scooley
 ms.date: 10/20/2017
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d1aeb9cb-b18f-43cb-a568-46b33346a188
-ms.openlocfilehash: c891a723d43a9e6e0a0a8bc7bfc2b47a960732d1
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: 52d51fca03f454a311a123f20e5aeda9376fdc3d
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9998950"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911073"
 ---
 # <a name="share-devices-with-your-virtual-machine"></a>가상 컴퓨터와 장치 공유
 

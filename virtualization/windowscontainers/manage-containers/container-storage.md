@@ -4,25 +4,25 @@ description: Windows Server 컨테이너가 호스트 및 기타 저장소 유�
 keywords: 컨테이너, 볼륨, 저장소, 마운트, 바인딩 마운트
 author: cwilhit
 ms.openlocfilehash: fba08de884d59cc1b656895ec2b7078ba3975269
-ms.sourcegitcommit: 22dcc1400dff44fb85591adf0fc443360ea92856
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "10209753"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74910273"
 ---
 # <a name="container-storage-overview"></a>컨테이너 저장소 개요
 
 <!-- Great diagram would be great! -->
 
-이 항목에서는 컨테이너에서 Windows의 저장소를 사용 하는 다양 한 방법에 대해 간략하게 설명 합니다. 컨테이너는 저장소와 함께 사용할 때 가상 컴퓨터와 다르게 작동 합니다. 본질적으로 컨테이너는 그 내에서 실행 되는 앱이 호스트의 파일 시스템을 통해 작성 되는 것을 방지 하기 위해 빌드됩니다. 컨테이너는 기본적으로 "스크래치" 공간을 사용 하지만 Windows는 또한 저장소를 유지 하는 수단을 제공 합니다.
+이 항목에서는 컨테이너에서 Windows의 저장소를 사용 하는 다양 한 방법에 대 한 개요를 제공 합니다. 컨테이너는 저장소에 제공 되는 가상 컴퓨터와 다르게 동작 합니다. 기본적으로 컨테이너는 호스트에서 실행 되는 앱이 호스트의 파일 시스템에 대 한 상태를 기록 하지 않도록 빌드됩니다. 컨테이너는 기본적으로 "스크래치" 공간을 사용 하지만 Windows는 저장소를 유지할 수 있는 수단을 제공 합니다.
 
 ## <a name="scratch-space"></a>스크래치 공간
 
-기본적으로 Windows 컨테이너는 임시 저장소를 사용 합니다. 모든 컨테이너 I/o는 "스크래치 공간"에서 발생 하며 각 컨테이너는 자체적으로 스크래치를 가져옵니다. 파일 만들기 및 파일 쓰기는 스크래치 공간에서 캡처되고 호스트에는 이스케이프 되지 않습니다. 컨테이너 인스턴스가 중지 되 면 스크래치 공간에서 발생 한 모든 변경 내용이 종료 됩니다. 새 컨테이너 인스턴스가 시작 되 면 인스턴스에 대 한 새 스크래치 공간이 제공 됩니다.
+Windows 컨테이너는 기본적으로 사용 후 삭제 저장소를 사용 합니다. 모든 컨테이너 i/o는 "스크래치 공간"에서 발생 하며 각 컨테이너는 자체 스크래치를 가져옵니다. 파일 생성 및 파일 쓰기는 스크래치 공간에서 캡처되고 호스트로 이스케이프 되지 않습니다. 컨테이너 인스턴스가 중지 되 면 스크래치 공간에서 발생 한 모든 변경 사항이 throw 됩니다. 새 컨테이너 인스턴스가 시작 되 면 인스턴스에 대해 새로운 스크래치 공간이 제공 됩니다.
 
 ## <a name="layer-storage"></a>계층 저장소
 
-컨테이너 [개요](../about/index.md)에 설명 된 것 처럼 컨테이너 이미지는 일련의 레이어로 표시 되는 파일 번들입니다. 레이어 저장소는 컨테이너에 기본적으로 제공 되는 모든 파일입니다. 사용자가 `docker pull`한 다음 해당 컨테이너를 `docker run`할 때마다 동일합니다.
+컨테이너 [개요](../about/index.md)에 설명 된 대로 컨테이너 이미지는 일련의 계층으로 표현 되는 파일의 번들입니다. 계층 저장소는 컨테이너에 기본 제공 되는 모든 파일입니다. 사용자가 `docker pull`한 다음 해당 컨테이너를 `docker run`할 때마다 동일합니다.
 
 ### <a name="where-layers-are-stored-and-how-to-change-it"></a>계층이 저장되는 위치 및 이를 변경하는 방법
 
@@ -35,8 +35,8 @@ ms.locfileid: "10209753"
 
 - [docker images](https://docs.docker.com/engine/reference/commandline/images/)
 - [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/)
-- [docker Pull](https://docs.docker.com/engine/reference/commandline/pull/)
-- [docker load](https://docs.docker.com/engine/reference/commandline/load/)
+- [docker pull](https://docs.docker.com/engine/reference/commandline/pull/)
+- [docker 로드](https://docs.docker.com/engine/reference/commandline/load/)
 - [docker save](https://docs.docker.com/engine/reference/commandline/save/)
 
 ### <a name="supported-operations-in-layer-storage"></a>계층 저장소에서 지원되는 작업
@@ -45,13 +45,13 @@ ms.locfileid: "10209753"
 
 ## <a name="persistent-storage"></a>영구 저장소
 
-Windows 컨테이너는 bind 탑재 및 볼륨을 통해 영구 저장소를 제공 하는 메커니즘을 지원 합니다. 자세히 알아보려면 [컨테이너의 영구 저장소](./persistent-storage.md)를 참조 하세요.
+Windows 컨테이너는 바인드 탑재 및 볼륨을 통해 영구 저장소를 제공 하기 위한 메커니즘을 지원 합니다. 자세히 알아보려면 [컨테이너의 영구 저장소](./persistent-storage.md)를 참조 하세요.
 
-## <a name="storage-limits"></a>저장소 용량 한도
+## <a name="storage-limits"></a>저장소 제한
 
-Windows 응용 프로그램의 일반적인 패턴은 새 파일을 설치하거나 만들기 전에 또는 임시 파일을 정리하기 위한 트리거로서 사용 가능한 디스크 공간의 크기를 쿼리하는 것입니다.  응용 프로그램 호환성을 극대화할 목적으로 Windows 컨테이너의 C: 드라이브는 20GB의 가상 여유 크기를 나타냅니다.
+Windows 응용 프로그램의 일반적인 패턴은 새 파일을 설치하거나 만들기 전에 또는 임시 파일을 정리하기 위한 트리거로서 사용 가능한 디스크 공간의 크기를 쿼리하는 것입니다.  응용 프로그램 호환성을 최대화 하는 목표로 Windows 컨테이너의 C: 드라이브는 20GB의 가상 여유 크기를 나타냅니다.
 
-일부 사용자는이 기본값을 재정의 하 고 사용 가능한 공간을 더 작은 값 이나 더 큼으로 구성 하려고 할 수 있습니다. 이 작업은 "저장소 옵트인" 구성에서 "크기" 옵션을 통해 수행할 수 있습니다.
+일부 사용자는이 기본값을 재정의 하 고 사용 가능한 공간을 더 작거나 더 큰 값으로 구성할 수 있습니다. "저장소 옵트인" 구성 내에서 "크기" 옵션을 사용할 수 있습니다.
 
 ### <a name="examples"></a>예
 
@@ -66,4 +66,4 @@ Windows 응용 프로그램의 일반적인 패턴은 새 파일을 설치하거
 ```
 
 > [!TIP]
-> 이 메서드는 docker 빌드에도 적용 됩니다. Docker 구성 파일을 수정하는 것에 대한 자세한 내용은 [Docker 구성](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon#configure-docker-with-configuration-file) 설명서를 참조하세요.
+> 이 메서드는 docker 빌드에도 작동 합니다. Docker 구성 파일을 수정하는 것에 대한 자세한 내용은 [Docker 구성](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon#configure-docker-with-configuration-file) 설명서를 참조하세요.

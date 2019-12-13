@@ -1,31 +1,31 @@
 ---
 title: Windows 10에서 Hyper-V를 사용하도록 설정
 description: Windows 10에 Hyper-V 설치
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: scooley
 ms.date: 02/15/2019
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
-ms.openlocfilehash: bad59fcc65bf66ab3c6dc940a17111e46a9bc226
-ms.sourcegitcommit: cdf127747cfcb839a8abf50a173e628dcfee02db
+ms.openlocfilehash: e1b6b55b2e17ac4f0883078748d75f6d4b9fcafa
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "9999030"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909463"
 ---
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
 Windows 10에서 가상 컴퓨터를 만들 수 있도록 Hyper-V를 사용하도록 설정합니다.  
-Windows 10 제어판, PowerShell을 사용 하거나 DISM (배포 이미징 서비스 및 관리) 도구를 사용 하는 등 다양 한 방법으로 hyper-v를 사용할 수 있습니다. 이 문서에서는 각 옵션을 안내합니다.
+Hyper-v는 Windows 10 제어판, PowerShell을 사용 하거나 DISM (배포 이미지 서비스 및 관리 도구)을 사용 하는 등의 여러 가지 방법으로 사용 하도록 설정할 수 있습니다. 이 문서에서는 각 옵션을 안내합니다.
 
 > **참고:**  Hyper-V는 선택적 기능으로 Windows에서 기본 제공되기 때문에 Hyper-V 다운로드가 필요하지 않습니다.
 
 ## <a name="check-requirements"></a>요구 사항 확인
 
-* Windows 10 Enterprise, Pro 또는 교육
+* Windows 10 Enterprise, Pro 또는 교육용
 * 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
-* VM 모니터 모드 확장에 대 한 CPU 지원 (Intel Cpu의 VT-c).
+* VM 모니터 모드 확장(Intel CPU의 VT-c)에 대한 CPU 지원.
 * 최소 4GB의 메모리.
 
 Hyper-V 역할은 Windows 10 Home에는 **설치할 수 없습니다**.
@@ -82,4 +82,4 @@ DISM에 대한 자세한 내용은 [DISM 기술 참조](<https://docs.microsoft.
 
 ## <a name="make-virtual-machines"></a>가상 컴퓨터 만들기
 
-[첫 번째 가상 컴퓨터 만들기](quick-create-virtual-machine.md)
+[첫 번째 가상 머신 만들기](quick-create-virtual-machine.md)

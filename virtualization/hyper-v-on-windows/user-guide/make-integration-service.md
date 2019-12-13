@@ -8,11 +8,11 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 1ef8f18c-3d76-4c06-87e4-11d8d4e31aea
 ms.openlocfilehash: 89a36ee87bce1da18852f0ebff248e239165eb7d
-ms.sourcegitcommit: c4a3f88d1663dd19336bfd4ede0368cb18550ac7
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "9883016"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74911033"
 ---
 # <a name="make-your-own-integration-services"></a>고유한 통합 서비스 만들기
 
@@ -48,7 +48,7 @@ Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대�
 * [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) -- Visual Studio 2015(업데이트 3 포함) 이상에 미리 설치되어 있습니다.
 * 한 대 이상의 가상 컴퓨터와 함께 위의 호스트 운영 체제 중 하나를 실행하는 컴퓨터. -- 응용 프로그램 테스트용입니다.
 
-> **참고:** Hyper-v 소켓용 API는 Windows 10 기념 업데이트에서 공개적으로 사용할 수 있습니다. HVSocket을 사용 하는 응용 프로그램은 모든 Windows 10 호스트 및 게스트에서 실행 되지만 빌드 14290 보다 늦게 Windows SDK를 사용 하 여 개발할 수 있습니다.
+> **참고:** Hyper-v 소켓용 API는 Windows 10 기념일 업데이트에서 공개적으로 제공 됩니다. HVSocket를 사용 하는 응용 프로그램은 모든 Windows 10 호스트 및 게스트에서 실행 되지만 빌드 14290 이후의 Windows SDK로만 개발할 수 있습니다.
 
 ## <a name="register-a-new-application"></a>새 응용 프로그램 등록
 Hyper-V 소켓을 사용하려면 응용 프로그램을 Hyper-V 호스트의 레지스트리에 등록해야 합니다.
@@ -81,7 +81,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 
 서비스별 레지스트리 정보:
 * `Service GUID`
-    * `ElementName (REG_SZ)` -- 이 서비스의 친근한 이름
+    * `ElementName (REG_SZ)` - 이 서비스의 친근한 이름
 
 고유 서비스를 등록하려면 자체 GUID 및 친근한 이름을 사용하여 새 레지스트리 키를 만듭니다.
 
@@ -108,7 +108,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 > ```
 >
 
-> ** 팁: **  PowerShell에서 GUID를 생성하고 클립보드에 복사하려면 다음을 실행합니다.
+> **팁:**  PowerShell에서 GUID를 생성하고 클립보드에 복사하려면 다음을 실행합니다.
 >``` PowerShell
 >(New-Guid).Guid | clip.exe
 >```
@@ -206,7 +206,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 
 ### <a name="vmid-wildcards"></a>VMID 와일드카드
 
-| 이름 | GUID | 설명 |
+| Name(이름) | GUID | 설명 |
 |:-----|:-----|:-----|
 | HV_GUID_ZERO | 00000000-0000-0000-0000-000000000000 | 수신기를 이 VMID에 등록해야 모든 파티션으로부터의 연결을 수락할 수 있습니다. |
 | HV_GUID_WILDCARD | 00000000-0000-0000-0000-000000000000 | 수신기를 이 VMID에 등록해야 모든 파티션으로부터의 연결을 수락할 수 있습니다. |
@@ -216,7 +216,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 | HV_GUID_PARENT | a42e7cda-d03f-480c-9cc2-a4de20abb878 | 부모 주소입니다. 이 VMID 연결을 사용하면 커넥터와 동일한 부모 파티션에 연결합니다.* |
 
 
-\* `HV_GUID_PARENT` 가상 컴퓨터의 부모는 해당 호스트입니다.  컨테이너의 부모는 컨테이너의 호스트입니다.
+가상 컴퓨터의 부모 `HV_GUID_PARENT` \*는 호스트입니다.  컨테이너의 부모는 컨테이너의 호스트입니다.
 가상 컴퓨터에서 실행 중인 컨테이너로부터의 연결은 해당 컨테이너를 호스팅하는 VM에 연결합니다.
 이 VmId에서 수신은 다음으로부터의 연결을 수락합니다. (컨테이너 내): 컨테이너 호스트
 (VM 내: 컨테이너 호스트/컨테이너 없음): VM 호스트
@@ -227,6 +227,6 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 Socket() Bind() Connect() Send() Listen() Accept()
 
 ## <a name="useful-links"></a>유용한 링크
-[WinSock API 완료](https://docs.microsoft.com/windows/desktop/WinSock/winsock-functions)
+[전체 WinSock API](https://docs.microsoft.com/windows/desktop/WinSock/winsock-functions)
 
-[Hyper-V 통합 서비스 참조](../reference/integration-services.md)
+[Hyper-v Integration Services 참조](../reference/integration-services.md)

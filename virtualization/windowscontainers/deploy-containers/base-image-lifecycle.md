@@ -9,31 +9,31 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.openlocfilehash: bb5e5fabadde421de9d420edd2fc921457432930
-ms.sourcegitcommit: e61db4d98d9476a622e6cc8877650d9e7a6b4dd9
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "10288141"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909993"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
 
-Windows 컨테이너 기반 이미지는 Windows Server의 반기 채널 릴리스 또는 장기 서비스 채널 릴리스를 기반으로 합니다. 이 문서에서는 두 채널의 여러 버전의 기본 이미지에 대 한 지원이 얼마나 오래 지속 되는지 설명 합니다.
+Windows 컨테이너 기본 이미지는 Windows Server의 반기 채널 릴리스 또는 장기 서비스 채널 릴리스를 기반으로 합니다. 이 문서에서는 두 채널의 기본 이미지에 대 한 다양 한 버전에 대 한 지원이 얼마나 지속 될 지를 알려 줍니다.
 
-반기 채널은 각 릴리스에 대 한 eighteen의 서비스 timeline을 사용 하는 연간 2 개월 기능 업데이트 릴리스입니다. 이를 통해 고객은 응용 프로그램 (특히 컨테이너 및 마이크로 서비스를 기반으로 하는 시스템) 및 소프트웨어 정의 된 하이브리드 데이터 센터에서 새로운 운영 체제 기능을 더욱 빠르게 활용할 수 있습니다. 자세한 내용은 [Windows Server 반기 채널 개요](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)를 참조 하세요.
+반기 채널은 각 릴리스에 대 한 18 월간 서비스 타임 라인이 포함 된 두 번의 연간 기능 업데이트 릴리스입니다. 이렇게 하면 고객이 응용 프로그램 (특히 컨테이너 및 마이크로 서비스를 기반으로 하는 응용 프로그램) 및 소프트웨어 정의 하이브리드 데이터 센터에서 새 운영 체제 기능을 더 빠르게 활용할 수 있습니다. 자세한 내용은 [Windows Server 반기 채널 개요](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)를 참조 하세요.
 
-서버 코어 이미지의 경우 고객은 2 ~ 3 년 마다 Windows Server의 새 주요 버전을 릴리스 하는 장기 서비스 채널을 사용할 수도 있습니다. 장기 서비스 채널 릴리스는 5 년 이상의 기본 지원 및 5 년 연장 지원을 받습니다. 이 채널은 더 긴 서비스 옵션 및 기능 안정성을 필요로 하는 시스템에서 작동 합니다.
+Server Core 이미지의 경우 고객은 Windows Server의 새로운 주 버전을 2 ~ 3 년 마다 출시 하는 장기 서비스 채널을 사용할 수도 있습니다. 장기 서비스 채널 릴리스는 5 년간의 기본 지원과 5 년의 추가 지원 기능을 받습니다. 이 채널은 더 긴 서비스 옵션과 기능 안정성이 필요한 시스템에서 작동 합니다.
 
-다음 표에는 각 종류의 기본 이미지와 해당 서비스 채널이 나열 되어 있으며,이에 대 한 지원은 마지막으로 얼마나 오래 걸릴 수 있습니다.
+다음 표에서는 각 유형의 기본 이미지, 해당 서비스 채널 및 해당 지원의 지속 시간을 보여 줍니다.
 
-|기본 이미지                       |서비스 채널|버전|OS 빌드|가용성|일반 지원 종료 날짜|연장 지원 날짜|
+|Base image                       |서비스 채널|버전|OS 빌드|사용 가능한 시기|일반 지원 종료 날짜|지원 날짜 연장|
 |---------------------------------|-----------------|-------|--------|------------|---------------------------|---------------------|
-|Server Core, Nano 서버, Windows|반기      |1909   |18363   |2019/11/12  |05/11/2021                 |해당 없음                  |
-|Server Core, Nano 서버, Windows|반기      |1903   |18362   |05/21/2019  |12/08/2020                 |해당 없음                  |
-|Server Core                      |장기간        |1809   |17763   |2018/11/13  |2024/01/09                 |2029/01/09           |
-|Server Core, Nano 서버, Windows|반기      |1809   |17763   |2018/11/13  |05/12/2020                 |해당 없음                  |
-|Server Core, Nano 서버         |반기      |1803   |17134   |2018/04/30  |2019/11/12                 |해당 없음                  |
-|Server Core, Nano 서버         |반기      |1709   |16299   |2017/10/17  |2019/04/09                 |해당 없음                  |
-|Server Core                      |장기간        |1607   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
+|Server Core, Nano Server, Windows|반기      |1909   |18363   |2019/11/12  |2021/05/11                 |해당 없음                  |
+|Server Core, Nano Server, Windows|반기      |1903   |18362   |05/21/2019  |2020/12/08                 |해당 없음                  |
+|Server Core                      |장기        |1809   |17763   |2018/11/13  |2024/01/09                 |2029/01/09           |
+|Server Core, Nano Server, Windows|반기      |1809   |17763   |2018/11/13  |05/12/2020                 |해당 없음                  |
+|Server Core, Nano Server         |반기      |1803   |17134   |2018/04/30  |2019/11/12                 |해당 없음                  |
+|Server Core, Nano Server         |반기      |1709   |16299   |2017/10/17  |2019/04/09                 |해당 없음                  |
+|Server Core                      |장기        |1607   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
 |Nano 서버                      |반기      |1607   |14393   |2016/10/15  |10/09/2018                 |해당 없음                  |
 
-서비스 요구 사항 및 기타 추가 정보는 [Windows 수명 주기 FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products), [windows Server 릴리스 정보](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)및 [windows 기반 OS 이미지 Docker 허브 리포지토리](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조 하세요.
+서비스 요구 사항 및 기타 추가 정보는 [Windows 수명 주기 FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products), [windows Server 릴리스 정보](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)및 [windows 기본 OS 이미지 Docker 허브 리포지토리](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조 하세요.
