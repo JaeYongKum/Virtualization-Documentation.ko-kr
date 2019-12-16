@@ -1,24 +1,24 @@
 ---
 title: Windows 10의 Hyper-V 소개
 description: Hyper-V, 가상화 및 관련 기술을 소개합니다.
-keywords: windows 10, hyper-v
+keywords: windows 10, Hyper-V
 author: scooley
 ms.date: 06/25/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: eb2b827c-4a6c-4327-9354-50d14fee7ed8
 ms.openlocfilehash: b43c3b112700591f67fcd0247b5ebd88a9c53729
-ms.sourcegitcommit: 62fff5436770151a28b6fea2be3a8818564f3867
-ms.translationtype: MT
+ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "10147206"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74909363"
 ---
 # <a name="introduction-to-hyper-v-on-windows-10"></a>Windows 10의 Hyper-V 소개
 
-소프트웨어 개발자, IT 전문가, 기술 매니아 등 여러 운영 체제를 실행해야 하는 사용자가 많습니다. Hyper-V를 사용하면 Windows에서 가상 컴퓨터로 여러 운영 체제를 실행할 수 있습니다.
+많은 소프트웨어 개발자, IT 전문가 또는 기술 매니아들은 여러 운영 체제를 실행해야 합니다. Hyper-V를 사용하면 Windows에서 가상 머신으로 여러 운영 체제를 실행할 수 있습니다.
 
-![Windows를 실행 중인 가상 컴퓨터](media/HyperVNesting.png)
+![Windows를 실행 중인 가상 머신](media/HyperVNesting.png)
 
 Hyper-V는 특히 하드웨어 가상화를 제공합니다.  즉, 각 가상 컴퓨터가 가상 하드웨어에서 실행됩니다.  Hyper-V를 통해 가상 하드 드라이브, 가상 스위치 및 가상 컴퓨터에 추가할 수 있는 각종 가상 디바이스를 만들 수 있습니다.
 
@@ -34,17 +34,17 @@ Hyper-V는 특히 하드웨어 가상화를 제공합니다.  즉, 각 가상 �
 
 ## <a name="system-requirements"></a>시스템 요구 사항
 
-Hyper-v는 64 비트 버전의 Windows 10 Pro, Enterprise 및 교육용에서 사용할 수 있습니다. Home edition에서는 사용할 수 없습니다.
+Hyper-V는 Windows 10 Pro, Enterprise 및 Education 64비트 버전에서 사용할 수 있습니다. Home 버전에서는 사용할 수 없습니다.
 
-> **설정** > **업데이트 및 보안** > **활성화**를 열어 windows 10 Home edition에서 windows 10 Pro로 업그레이드 합니다. 여기에서 스토어를 방문하여 업그레이드를 구입할 수 있습니다.
+> **설정** > **업데이트 및 보안** > **정품 인증**을 열어 Windows 10 Home 버전을 Windows 10 Pro로 업그레이드하세요. 여기서 스토어를 방문하고 업그레이드를 구입할 수 있습니다.
 
-대부분의 컴퓨터는 Hyper-v를 실행 하지만 각 가상 컴퓨터는 완전히 별개의 운영 체제를 실행 합니다.  일반적으로 4GB RAM이 설치된 컴퓨터에서 가상 컴퓨터를 하나 이상 실행할 수 있지만 가상 컴퓨터를 추가하거나 게임, 동영상 편집, 디자인 소프트웨어 엔지니어링처럼 리소스를 많이 사용하는 소프트웨어를 설치하고 실행하려면 더 많은 리소스가 필요합니다.
+대부분의 컴퓨터는 Hyper-V를 실행하지만, 각 가상 머신은 완전히 별도의 운영 체제를 실행합니다.  일반적으로 4GB RAM이 설치된 컴퓨터에서 가상 컴퓨터를 하나 이상 실행할 수 있지만 가상 컴퓨터를 추가하거나 게임, 동영상 편집, 디자인 소프트웨어 엔지니어링처럼 리소스를 많이 사용하는 소프트웨어를 설치하고 실행하려면 더 많은 리소스가 필요합니다.
 
 Hyper-V 시스템 요구 사항 및 Hyper-V가 컴퓨터에서 실행되는지 확인하는 방법에 대한 자세한 내용은 [Hyper-V 요구 사항 참조](../reference/hyper-v-requirements.md)을 살펴보세요.
 
 ## <a name="operating-systems-you-can-run-in-a-virtual-machine"></a>가상 컴퓨터에서 실행할 수 있는 운영 체제
 
-Windows의 Hyper-V는 다양한 버전의 Linux, FreeBSD 및 Windows를 포함하여 가상 컴퓨터에서 여러 운영 체제를 지원합니다.
+Windows의 Hyper-V는 다양한 버전의 Linux, FreeBSD 및 Windows를 포함하여 가상 머신에서 여러 운영 체제를 지원합니다.
 
 참고로 VM에서 사용하는 모든 운영 체제에는 유효한 라이선스가 필요합니다.
 
@@ -71,7 +71,7 @@ Windows 10에서만 사용할 수 있는 Hyper-V 기능:
 
 ## <a name="limitations"></a>제한 사항
 
-특정 하드웨어에 종속된 프로그램은 가상 컴퓨터에서 제대로 작동하지 않습니다. 예를 들어 GPU를 통한 처리가 필요한 게임이나 응용 프로그램은 제대로 작동하지 않을 수 있습니다. 또한 라이브 뮤직 믹싱 응용 프로그램이나 고정밀 시간과 같이 10밀리초 미만의 타이머를 사용하는 응용 프로그램은 가상 컴퓨터에서 실행될 때 문제가 있을 수 있습니다.
+특정 하드웨어에 종속된 프로그램은 가상 머신에서 제대로 작동하지 않습니다. 예를 들어 GPU를 통한 처리가 필요한 게임이나 응용 프로그램은 제대로 작동하지 않을 수 있습니다. 또한 라이브 뮤직 믹싱 응용 프로그램이나 고정밀 시간과 같이 10밀리초 미만의 타이머를 사용하는 응용 프로그램은 가상 컴퓨터에서 실행될 때 문제가 있을 수 있습니다.
 
 또한 Hyper-V를 사용하도록 설정한 경우 대기 시간에 민감한 고정밀 응용 프로그램은 호스트에서 실행될 때도 문제가 있을 수 있습니다.  이는 가상화를 사용하도록 설정하면 호스트 OS도 게스트 운영 체제처럼 Hyper-V 가상화 계층 위에서 실행되기 때문입니다. 그러나 게스트와 달리 호스트 OS는 모든 하드웨어에 직접 액세스할 수 있다는 점에서 특별합니다. 즉, 하드웨어 요구 사항이 특별한 응용 프로그램도 호스트 OS에서 문제 없이 실행될 수 있다는 의미입니다.
 
