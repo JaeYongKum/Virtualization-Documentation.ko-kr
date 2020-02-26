@@ -1,6 +1,6 @@
 ---
-title: Windows 가상 컴퓨터와 장치 공유
-description: 장치를 Hyper-V 가상 컴퓨터(USB, 오디오, 마이크 및 탑재된 드라이브)와 공유하는 방법을 안내합니다.
+title: Windows 가상 컴퓨터와 디바이스 공유
+description: 디바이스를 Hyper-V 가상 컴퓨터(USB, 오디오, 마이크 및 탑재된 드라이브)와 공유하는 방법을 안내합니다.
 keywords: windows 10, Hyper-V
 ms.author: scooley
 ms.date: 10/20/2017
@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d1aeb9cb-b18f-43cb-a568-46b33346a188
-ms.openlocfilehash: 52d51fca03f454a311a123f20e5aeda9376fdc3d
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: c891a723d43a9e6e0a0a8bc7bfc2b47a960732d1
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74911073"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439590"
 ---
-# <a name="share-devices-with-your-virtual-machine"></a>가상 컴퓨터와 장치 공유
+# <a name="share-devices-with-your-virtual-machine"></a>가상 컴퓨터와 디바이스 공유
 
 > Windows 가상 컴퓨터에만 사용할 수 있습니다.
 
-고급 세션 모드를 사용하면 Hyper-V를 통해 RDP(원격 데스크톱 프로토콜)를 사용하여 가상 컴퓨터에 연결할 수 있습니다.  이렇게 하면 일반적인 가상 컴퓨터 보기 환경이 향상될 뿐만 아니라 RDP와 연결하면 가상 컴퓨터에서 장치를 컴퓨터와 공유할 수도 있습니다.  Windows 10에는 기본적으로 설정되어 있으므로 이미 RDP를 사용하여 Windows 가상 컴퓨터에 연결 중일 것입니다.  이 문서에서는 연결 설정 대화 상자의 장점과 숨겨진 옵션 몇 가지를 중점적으로 설명합니다.
+고급 세션 모드를 사용하면 Hyper-V를 통해 RDP(원격 데스크톱 프로토콜)를 사용하여 가상 컴퓨터에 연결할 수 있습니다.  이렇게 하면 일반적인 가상 컴퓨터 보기 환경이 향상될 뿐만 아니라 RDP와 연결하면 가상 컴퓨터에서 디바이스를 컴퓨터와 공유할 수도 있습니다.  Windows 10에는 기본적으로 설정되어 있으므로 이미 RDP를 사용하여 Windows 가상 컴퓨터에 연결 중일 것입니다.  이 문서에서는 연결 설정 대화 상자의 장점과 숨겨진 옵션 몇 가지를 중점적으로 설명합니다.
 
 RDP/고급 세션 모드:
 
@@ -27,23 +27,23 @@ RDP/고급 세션 모드:
 * 가상 컴퓨터 통합 향상
   * 공유 클립보드
   * 끌어서 놓기 및 복사/붙여넣기를 통해 파일 공유
-* 장치 공유 허용
+* 디바이스 공유 허용
   * 마이크/스피커
-  * USB 장치
+  * USB 디바이스
   * 데이터 디스크(C: 드라이브 포함)
   * 프린터
 
 이 문서에서는 세션 유형을 확인하고 고급 세션 모드로 들어가고 세션 설정을 구성하는 방법에 대해 설명합니다.
 
-## <a name="share-drives-and-devices"></a>드라이브 및 장치 공유
+## <a name="share-drives-and-devices"></a>드라이브 및 디바이스 공유
 
-고급 세션 모드의 장치 공유 기능은 가상 컴퓨터에 연결할 때 나타나는 눈에 잘 띄지 않는 이 연결 창 내부에 숨겨져 있습니다.
+고급 세션 모드의 디바이스 공유 기능은 가상 컴퓨터에 연결할 때 나타나는 눈에 잘 띄지 않는 이 연결 창 내부에 숨겨져 있습니다.
 
 ![](media/esm-default-view.png)
 
 기본적으로 고급 세션 모드를 사용하는 가상 컴퓨터는 클립보드 및 프린터를 공유합니다.  또한 기본적으로 가상 컴퓨터의 오디오를 컴퓨터 스피커에 다시 전달하도록 구성되어 있습니다.
 
-장치를 가상 컴퓨터와 공유하거나 기본 설정을 변경하려면 다음과 같이 하세요.
+디바이스를 가상 컴퓨터와 공유하거나 기본 설정을 변경하려면 다음과 같이 하세요.
 
 1. 기타 옵션 표시
 
@@ -53,19 +53,19 @@ RDP/고급 세션 모드:
 
   ![](media/esm-local-resources.png)
 
-### <a name="share-storage-and-usb-devices"></a>저장소 및 USB 장치 공유
+### <a name="share-storage-and-usb-devices"></a>스토리지 및 USB 장치 공유
 
-기본적으로 고급 세션 모드를 사용하는 가상 컴퓨터는 사용자가 가상 컴퓨터에서 더욱 안전한 로그인 도구를 사용할 수 있도록 프린터와 클립보드를 공유하고 가상 컴퓨터에 스마트카드 및 기타 보안 장치를 전달합니다.
+기본적으로 고급 세션 모드를 사용하는 가상 컴퓨터는 사용자가 가상 컴퓨터에서 더욱 안전한 로그인 도구를 사용할 수 있도록 프린터와 클립보드를 공유하고 가상 컴퓨터에 스마트카드 및 기타 보안 디바이스를 전달합니다.
 
-USB 장치 또는 사용자의 C: 드라이브와 같은 다른 장치를 공유하려면 "추가..." 메뉴를 선택하세요.  
+USB 디바이스 또는 사용자의 C: 드라이브와 같은 다른 디바이스를 공유하려면 "추가..." 메뉴를 선택하세요.  
 ![](media/esm-more-devices.png)
 
-이 메뉴에서 가상 컴퓨터와 공유할 장치를 선택할 수 있습니다.  시스템 드라이브(Windows C:)는 파일 공유 시 특히 유용합니다.  
+이 메뉴에서 가상 컴퓨터와 공유할 디바이스를 선택할 수 있습니다.  시스템 드라이브(Windows C:)는 파일 공유 시 특히 유용합니다.  
 ![](media/esm-drives-usb.png)
 
-### <a name="share-audio-devices-speakers-and-microphones"></a>오디오 장치(스피커 및 마이크) 공유
+### <a name="share-audio-devices-speakers-and-microphones"></a>오디오 디바이스(스피커 및 마이크) 공유
 
-가상 컴퓨터에서 오디오를 들을 수 있도록 고급 세션 모드를 사용하는 가상 컴퓨터는 기본적으로 오디오를 전달합니다.  가상 컴퓨터는 호스트 컴퓨터에서 현재 선택된 오디오 장치를 사용합니다.
+가상 컴퓨터에서 오디오를 들을 수 있도록 고급 세션 모드를 사용하는 가상 컴퓨터는 기본적으로 오디오를 전달합니다.  가상 컴퓨터는 호스트 컴퓨터에서 현재 선택된 오디오 디바이스를 사용합니다.
 
 이러한 설정을 변경하거나 가상 컴퓨터의 오디오를 녹음할 수 있도록 마이크 통과를 추가하려면 다음과 같이 하세요.
 
@@ -79,7 +79,7 @@ USB 장치 또는 사용자의 C: 드라이브와 같은 다른 장치를 공유
 
 ## <a name="re-launching-the-connection-settings"></a>연결 설정 다시 시작
 
-해상도 및 장치 공유 대화 상자가 나타나지 않으면 Windows 메뉴에서 또는 관리자 권한으로 명령줄을 실행하여 VMConnect를 별도로 다시 실행해 봅니다.  
+해상도 및 디바이스 공유 대화 상자가 나타나지 않으면 Windows 메뉴에서 또는 관리자 권한으로 명령줄을 실행하여 VMConnect를 별도로 다시 실행해 봅니다.  
 
 ``` Powershell
 vmconnect.exe

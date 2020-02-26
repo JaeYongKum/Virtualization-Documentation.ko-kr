@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 18930864-476a-40db-aa21-b03dfb4fda98
-ms.openlocfilehash: 762b82f3714651ffb488f682581680c9526404a8
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 6568b68a77fc5506b58249caea44ec78e3e44de2
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74911153"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439570"
 ---
 # <a name="hyper-v-integration-services"></a>Hyper-V 통합 서비스
 
@@ -27,18 +27,18 @@ ms.locfileid: "74911153"
 
 ## <a name="quick-reference"></a>빠른 참조
 
-| Name(이름) | Windows 서비스 이름 | Linux 디먼 이름 |  설명 | 사용하지 않을 때 VM에 미치는 영향 |
+| 이름 | Windows 서비스 이름 | Linux 디먼 이름 |  설명 | 사용하지 않을 때 VM에 미치는 영향 |
 |:---------|:---------|:---------|:---------|:---------|
 | [Hyper-v 하트 비트 서비스](#hyper-v-heartbeat-service) |  vmicheartbeat | hv_utils | 가상 컴퓨터가 제대로 실행되고 있는지 보고합니다. | 상황에 따라 다름 |
-| [Hyper-v 게스트 종료 서비스](#hyper-v-guest-shutdown-service) | vmicshutdown | hv_utils |  호스트에서 가상 컴퓨터 종료를 트리거하도록 허용합니다. | **높음** |
-| [Hyper-v 시간 동기화 서비스](#hyper-v-time-synchronization-service) | vmictimesync | hv_utils | 가상 컴퓨터의 시계를 호스트 컴퓨터의 시계와 동기화합니다. | **높음** |
-| [Hyper-v 데이터 교환 서비스 (KVP)](#hyper-v-data-exchange-service-kvp) | vmickvpexchange | hv_kvp_daemon | 가상 컴퓨터와 호스트 간에 기본 메타데이터를 교환하는 방법을 제공합니다. | 미디어 |
+| [Hyper-v 게스트 종료 서비스](#hyper-v-guest-shutdown-service) | vmicshutdown | hv_utils |  호스트에서 가상 컴퓨터 종료를 트리거하도록 허용합니다. | **최고** |
+| [Hyper-v 시간 동기화 서비스](#hyper-v-time-synchronization-service) | vmictimesync | hv_utils | 가상 컴퓨터의 시계를 호스트 컴퓨터의 시계와 동기화합니다. | **최고** |
+| [Hyper-v 데이터 교환 서비스 (KVP)](#hyper-v-data-exchange-service-kvp) | vmickvpexchange | hv_kvp_daemon | 가상 컴퓨터와 호스트 간에 기본 메타데이터를 교환하는 방법을 제공합니다. | 중간 |
 | [Hyper-v 볼륨 섀도 복사본 요청자](#hyper-v-volume-shadow-copy-requestor) | vmicvss | hv_vss_daemon | 볼륨 섀도 복사본 서비스에서 종료하지 않고 가상 컴퓨터를 백업하도록 허용합니다. | 상황에 따라 다름 |
 | [Hyper-V 게스트 서비스 인터페이스](#hyper-v-powershell-direct-service) | vmicguestinterface | hv_fcopy_daemon | 가상 컴퓨터에 파일을 복사하거나 가상 컴퓨터의 파일을 복사할 수 있는 Hyper-V 호스트에 대한 인터페이스를 제공합니다. | 낮음 |
 | [Hyper-v PowerShell Direct Service](#hyper-v-powershell-direct-service) | vmicvmsession | 사용할 수 없음 | 네트워크 연결 없이 PowerShell을 사용하여 가상 컴퓨터를 관리하는 방법을 제공합니다. | 낮음 |  
 
 
-## <a name="hyper-v-heartbeat-service"></a>Hyper-V 하트비트 서비스
+## <a name="hyper-v-heartbeat-service"></a>Hyper-v 하트 비트 서비스
 
 **Windows 서비스 이름:** vmicheartbeat  
 **Linux 디먼 이름:** hv_utils  
@@ -68,22 +68,22 @@ DemoVM  Running  Operating normally
 
 
 
-## <a name="hyper-v-guest-shutdown-service"></a>Hyper-V 게스트 종료 서비스
+## <a name="hyper-v-guest-shutdown-service"></a>Hyper-v 게스트 종료 서비스
 
 **Windows 서비스 이름:** vmicshutdown  
 **Linux 디먼 이름:** hv_utils  
 **설명:** Hyper-V 호스트에서 가상 컴퓨터 종료를 요청할 수 있도록 허용합니다.  호스트는 언제나 가상 컴퓨터를 강제로 끌 수 있지만, 이는 종료를 선택하는 것이 아니라 전원 스위치를 누르는 것과 같습니다.  
 **추가됨:** Windows Server 2012, Windows 8  
-**영향:** **강력한 영향** 사용하지 않도록 설정하면 호스트는 가상 머신 내에서 종료를 트리거할 수 없습니다.  모든 종료는 하드 꺼짐 이며이로 인해 데이터 손실이 나 데이터가 손상 될 수 있습니다.  
+**영향:** 사용 하지 않도록 설정 하 **는 경우 호스트** 는 가상 머신 내에서 친숙 한 종료를 트리거할 수 없습니다.  모든 종료는 하드 꺼짐 이며이로 인해 데이터 손실이 나 데이터가 손상 될 수 있습니다.  
 
 
-## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 시간 동기화 서비스
+## <a name="hyper-v-time-synchronization-service"></a>Hyper-v 시간 동기화 서비스
 
 **Windows 서비스 이름:** vmictimesync  
 **Linux 디먼 이름:** hv_utils  
 **설명:** 물리적 컴퓨터의 시스템 시계와 가상 컴퓨터의 시스템 시계를 동기화합니다.  
 **추가됨:** Windows Server 2012, Windows 8  
-**영향:** **강력한 영향** 사용하지 않도록 설정하면 가상 머신의 시계는 이상하게 작동합니다.  
+**영향:** 사용 하지 않도록 설정 하는 경우에는 가상 머신의 시계가 비정상적 **으로 저하 됩니다** .  
 
 
 ## <a name="hyper-v-data-exchange-service-kvp"></a>Hyper-V 데이터 교환 서비스(KVP)
@@ -105,7 +105,7 @@ DemoVM  Running  Operating normally
 * [키-값 쌍을 사용하여 Hyper-V의 호스트 및 게스트 간에 정보를 공유합니다](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn798287(v=ws.11)).  
 
 
-## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V 볼륨 섀도 복사본 요청자
+## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-v 볼륨 섀도 복사본 요청자
 
 **Windows 서비스 이름:** vmicvss  
 **Linux 디먼 이름:** hv_vss_daemon  
@@ -127,7 +127,7 @@ DemoVM  Running  Operating normally
 **영향:** 사용하도록 설정하면 호스트에서 `Copy-VMFile`을 사용하여 게스트에 파일을 복사하거나 게스트의 파일을 복사할 수 없습니다.  [Copy-VMFile cmdlet](https://docs.microsoft.com/powershell/module/hyper-v/copy-vmfile?view=win10-ps)에 대해 자세히 알아보세요.  
 
 **참고:**  
-기본적으로 사용하지 않도록 설정되어 있습니다.  [Copy-Item을 사용하는 PowerShell Direct](../user-guide/powershell-direct.md#copy-files-with-new-pssession-and-copy-item)를 참조하세요. 
+기본적으로 사용할 수 없게 설정되어 있습니다.  [Copy-Item을 사용하는 PowerShell Direct](../user-guide/powershell-direct.md#copy-files-with-new-pssession-and-copy-item)를 참조하세요. 
 
 
 ## <a name="hyper-v-powershell-direct-service"></a>Hyper-V PowerShell Direct 서비스

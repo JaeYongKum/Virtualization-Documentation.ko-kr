@@ -1,4 +1,4 @@
-# <a name="build-and-run-an-application-with-or-without-net-core-20-or-powershell-core-6"></a>.NET Core 2.0 또는 PowerShell Core 6를 사용하여 또는 사용하지 않고 응용 프로그램 빌드 및 실행
+# <a name="build-and-run-an-application-with-or-without-net-core-20-or-powershell-core-6"></a>.NET Core 2.0 또는 PowerShell Core 6를 사용하여 또는 사용하지 않고 애플리케이션 빌드 및 실행
 
 .NET Core와 PowerShell이 기본 Nano 서버 컨테이너 위에 추가 기능 계층형 컨테이너로 지원되기는 하지만 이 릴리스의 Nano 서버 기본 OS 컨테이너 이미지에서는 .NET Core와 PowerShell이 제거되었습니다.  
 
@@ -29,7 +29,7 @@ docker pull microsoft/nanoserver-insider-dotnet
 아래는 다단계 빌드를 사용하여 이러한 컨테이너 이미지를 만드는 방법에 대한 몇 가지 예입니다.
 
 ## <a name="deploy-apps-based-on-net-core-20"></a>.NET Core 2.0을 기반으로 앱 배포
-참가자 릴리스에서 .NET Core 2.0 컨테이너 이미지를 활용하여 .NET Core 앱을 실행할 수 있으며, .NET Core 응용 프로그램은 다른 곳에 빌드되고 개발자는 응용 프로그램을 컨테이너에서 실행하려 합니다.  .NET Core 컨테이너 이미지를 사용하여 .NET Core 응용 프로그램을 실행하는 방법에 대한 자세한 내용은 [.NET Core GitHub](https://github.com/dotnet/dotnet-docker-nightly)에서 확인할 수 있습니다.  컨테이너 내부에서 응용 프로그램을 개발하는 경우 .NET Core SDK를 대신 사용해야 합니다.  고급 사용자의 경우 .NET Core 2.0 버전, Dockerfile 및 [dotnet-docker-nightly](https://github.com/dotnet/dotnet-docker-nightly/tree/master/2.0)에 지정된 URL을 사용하여 고유의 .NET Core 2.0 컨테이너를 빌드할 수 있습니다. 이렇게 하려면 Windows Server Core 컨테이너를 사용하여 기능 다운로드 및 압축 해제를 수행할 수 있습니다.  Dockerfile 샘플은 [.NET Core 런타임 Dockerfile](https://github.com/dotnet/dotnet-docker-nightly/blob/master/2.0/runtime/nanoserver-insider/amd64/Dockerfile)과 같습니다.
+참가자 릴리스에서 .NET Core 2.0 컨테이너 이미지를 활용하여 .NET Core 앱을 실행할 수 있으며, .NET Core 애플리케이션은 다른 곳에 빌드되고 개발자는 애플리케이션을 컨테이너에서 실행하려 합니다.  .NET Core 컨테이너 이미지를 사용하여 .NET Core 응용 프로그램을 실행하는 방법에 대한 자세한 내용은 [.NET Core GitHub](https://github.com/dotnet/dotnet-docker-nightly)에서 확인할 수 있습니다.  컨테이너 내부에서 애플리케이션을 개발하는 경우 .NET Core SDK를 대신 사용해야 합니다.  고급 사용자의 경우 .NET Core 2.0 버전, Dockerfile 및 [dotnet-docker-nightly](https://github.com/dotnet/dotnet-docker-nightly/tree/master/2.0)에 지정된 URL을 사용하여 고유의 .NET Core 2.0 컨테이너를 빌드할 수 있습니다. 이렇게 하려면 Windows Server Core 컨테이너를 사용하여 기능 다운로드 및 압축 해제를 수행할 수 있습니다.  Dockerfile 샘플은 [.NET Core 런타임 Dockerfile](https://github.com/dotnet/dotnet-docker-nightly/blob/master/2.0/runtime/nanoserver-insider/amd64/Dockerfile)과 같습니다.
 
 
 이 Dockerfile을 사용하면 다음 명령을 사용하여 .NET Core 2.0 컨테이너를 빌드할 수 있습니다.

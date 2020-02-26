@@ -7,12 +7,12 @@ ms.date: 04/07/2018
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: f1e75efa-8745-4389-b8dc-91ca931fe5ae
-ms.openlocfilehash: 970e92def02e5386d38a2e72d5ef921aa8321fdf
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 6035143bc1449bc4a8e9bb7a4484b4c5329e6d3c
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74911403"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439630"
 ---
 # <a name="create-a-virtual-machine-with-hyper-v"></a>Hyper-V를 사용하여 가상 컴퓨터 만들기
 
@@ -51,7 +51,7 @@ Microsoft는 가상 머신을 만들기 위한 새로운 도구를 구축 하 �
 
 1. "가상 컴퓨터 만들기"를 선택
 
-간단하죠.  나머지 작업은 빨리 만들기가 처리합니다.
+정말 간단하죠.  나머지 작업은 빨리 만들기가 처리합니다.
 
 ## <a name="windows-10-creators-update-windows-10-version-1703"></a>Windows 10 크리에이터 스 업데이트 (Windows 10 버전 1703)
 

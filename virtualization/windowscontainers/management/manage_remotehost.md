@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 0cc1b621-1a92-4512-8716-956d7a8fe495
-ms.openlocfilehash: b975c593bd5c736ec3e7e1e21b76b2f6a2c8f8a4
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 2e1fec6aa7149c801b1c72a0f8a346ca879015c2
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909653"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439520"
 ---
 # <a name="remote-management-of-a-windows-docker-host"></a>Windows Docker 호스트의 원격 관리
 
@@ -32,8 +32,8 @@ ms.locfileid: "74909653"
 ```
 New-NetFirewallRule -DisplayName 'Docker SSL Inbound' -Profile @('Domain', 'Public', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort 2376
 ```
-* 컴퓨터에 있는 사용자의 Docker 폴더(예: `c:\users\chris\.docker`)에서 로컬 컴퓨터로 `ca.pem`, 'cert.pem' 및 'key.pem' 파일을 복사합니다. 예를 들어, RDP 세션에서 파일을 복사하여 붙여 넣을 수 있습니다(Ctrl+C, Ctrl+V). 
-* 원격 Docker 호스트에 연결할 수 있는지 확인합니다. 를 실행합니다.
+* 컴퓨터에 있는 사용자의 Docker 폴더(예: `ca.pem`)에서 로컬 컴퓨터로 `c:\users\chris\.docker`, 'cert.pem' 및 'key.pem' 파일을 복사합니다. 예를 들어, RDP 세션에서 파일을 복사하여 붙여 넣을 수 있습니다(Ctrl+C, Ctrl+V). 
+* 원격 Docker 호스트에 연결할 수 있는지 확인합니다. 실행
 ```
 docker -D -H tcp://wsdockerhost.southcentralus.cloudapp.azure.com:2376 --tlsverify --tlscacert=c:\
 users\foo\.docker\client\ca.pem --tlscert=c:\users\foo\.docker\client\cert.pem --tlskey=c:\users\foo\.doc

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: b39ec17ac04995e8e1ce8795b5721df7a291e31c
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: d5081104f1614a91d6441a5e879a439f1df1bf77
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910593"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439290"
 ---
 # <a name="network-isolation-and-security"></a>네트워크 격리 및 보안
 
@@ -21,7 +21,7 @@ ms.locfileid: "74910593"
 
 각 컨테이너 끝점은 자체 __네트워크 네임스페이스__에 배치됩니다. 관리 호스트 vNIC 및 호스트 네트워크 스택은 기본 네트워크 네임스페이스에 배치됩니다. 동일한 호스트의 컨테이너 간에 네트워크 격리를 적용 하기 위해 각 Windows Server 컨테이너에 대해 네트워크 네임 스페이스를 만들고 컨테이너에 대 한 네트워크 어댑터를 설치할 Hyper-v 격리 상태에서 컨테이너를 실행 합니다. Windows Server 컨테이너는 호스트 vNIC를 사용하여 가상 스위치에 연결합니다. Hyper-v 격리는 가상 VM NIC (유틸리티 VM에 노출 되지 않음)를 사용 하 여 가상 스위치에 연결 합니다.
 
-![text](media/network-compartment-visual.png)
+![텍스트](media/network-compartment-visual.png)
 
 ```powershell
 Get-NetCompartment
@@ -48,13 +48,13 @@ Hyper-v 격리에서 실행 되는 컨테이너에는 자체 격리 된 커널�
 
 * Windows 방화벽(유틸리티 VM에서 실행 중)과 VFP 모두에서 모두 허용이 기본 적용
 
-![text](media/windows-firewall-containers.png)
+![텍스트](media/windows-firewall-containers.png)
 
 ### <a name="kubernetes-pods"></a>Kubernetes pod
 
 [Kubernetes pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/)에서는 끝점이 연결 된 인프라 컨테이너가 먼저 생성 됩니다. 인프라 및 작업자 컨테이너를 포함 하 여 동일한 pod에 속한 컨테이너는 공통 네트워크 네임 스페이스 (동일한 IP 및 포트 공간)를 공유 합니다.
 
-![text](media/pod-network-compartment.png)
+![텍스트](media/pod-network-compartment.png)
 
 ### <a name="customizing-default-port-acls"></a>기본 포트 ACL 사용자 지정
 
@@ -67,6 +67,6 @@ Hyper-v 격리에서 실행 되는 컨테이너에는 자체 격리 된 커널�
 | -------------- |-------------------------- | ------------------- |
 | 투명 | Windows 방화벽 | X |
 | NAT | Windows 방화벽 | X |
-| L2Bridge | 둘 다 | VFP |
-| L2Tunnel | 둘 다 | VFP |
-| 오버레이  | 둘 다 | VFP |
+| L2Bridge | 모두 | VFP |
+| L2Tunnel | 모두 | VFP |
+| 오버레이  | 모두 | VFP |

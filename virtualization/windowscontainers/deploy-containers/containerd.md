@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: 74e22702aa4be30055b3f4f48c7fac926d793095
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 3107eb48dc9c75224b0c9dd9b436af6f0f451871
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909923"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439280"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -55,7 +55,7 @@ Runc와 runhcs의 기능적 차이점은 다음과 같습니다.
   * Windows 및 Linux [hyper-v 격리](../manage-containers/hyperv-container.md)
   * Windows 프로세스 컨테이너 (컨테이너 이미지는 컨테이너 호스트와 일치 해야 함)
 
-**사용:**
+**보려면**
 
 ``` cmd
 runhcs run [ -b bundle ] <container-id>

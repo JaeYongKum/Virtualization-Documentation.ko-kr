@@ -8,12 +8,12 @@ ms.prod: containers
 description: V 1.14를 사용 하 여 Windows 노드를 Kubernetes 클러스터에 조인 합니다.
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: c380f5dc10430a94959718a5ce92f311603db733
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 18734f102042ec951255061dcd82229e18d29a15
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910363"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439530"
 ---
 # <a name="kubernetes-on-windows"></a>Windows의 Kubernetes
 
@@ -32,16 +32,16 @@ ms.locfileid: "74910363"
 >[!TIP]
 >Azure에서 클러스터를 배포 하려는 경우 오픈 소스 AKS 도구를 사용 하 여이를 쉽게 수행할 수 있습니다. 자세히 알아보려면 단계별 [연습](https://github.com/Azure/aks-engine/blob/master/docs/topics/windows.md)을 참조 하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>필수 조건
 
-### <a name="plan-ip-addressing-for-your-cluster"></a>클러스터에 대한 IP 주소 지정 계획
+### <a name="plan-ip-addressing-for-your-cluster"></a>클러스터에 대 한 IP 주소 지정 계획
 
 <a name="definitions"></a>Kubernetes 클러스터가 pod 및 서비스에 대 한 새 서브넷을 도입할 때 환경의 다른 기존 네트워크와 충돌 하는 것이 없는지 확인 하는 것이 중요 합니다. Kubernetes를 성공적으로 배포 하기 위해 해제 해야 하는 모든 주소 공간은 다음과 같습니다.
 
-| 서브넷/주소 범위 | 설명 | 기본값 |
+| 서브넷/주소 범위 | 설명 | Default Value |
 | --------- | ------------- | ------------- |
 | <a name="service-subnet-def"></a>**서비스 서브넷** | Pod에서 네트워크 토폴로지에 대해 신경쓰지 하지 않고 uniformally에 액세스 하는 데 사용 되는, 라우팅할 수 없는 순수 가상 서브넷입니다. 노드에서 실행되는 `kube-proxy`에 의해 라우팅할 수 있는 주소 공간으로 또는 공간에서 변환됩니다. | "10.96.0.0/12" |
-| <a name="cluster-subnet-def"></a>**클러스터 서브넷** |  클러스터의 모든 pod에서 사용 하는 글로벌 서브넷입니다. 각 노드에는 pod에서 사용할 수 있는 더 작은/24 서브넷이 할당 됩니다. 클러스터에 사용 되는 모든 pod을 수용할 수 있도록 충분히 커야 합니다. ‘최소’ 서브넷 크기를 계산하려면: `(number of nodes) + (number of nodes * maximum pods per node that you configure)` <p/>노드 100 pod에 대 한 5 개 노드 클러스터에 대 한 예: `(5) + (5 *  100) = 505`.  | "10.244.0.0/16" |
+| <a name="cluster-subnet-def"></a>**클러스터 서브넷** |  클러스터의 모든 pod에서 사용 하는 글로벌 서브넷입니다. 각 노드에는 pod에서 사용할 수 있는 더 작은/24 서브넷이 할당 됩니다. 클러스터에 사용 되는 모든 pod을 수용할 수 있도록 충분히 커야 합니다. *최소* 서브넷 크기를 계산 하려면: `(number of nodes) + (number of nodes * maximum pods per node that you configure)` <p/>노드 100 pod에 대 한 5 개 노드 클러스터에 대 한 예: `(5) + (5 *  100) = 505`.  | "10.244.0.0/16" |
 | **Kubernetes DNS 서비스 IP** | 클러스터 서비스 검색 & DNS 확인에 사용 되는 "kube" 서비스의 IP 주소입니다. | "10.96.0.10" |
 
 > [!NOTE]

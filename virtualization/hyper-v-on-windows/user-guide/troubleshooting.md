@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: f0ec8eb4-ffc4-4bf1-9a19-7a8c3975b359
-ms.openlocfilehash: 03bbb4494bbbd790f16c4b6afef387905f7c6c83
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: bdb9feeb2452f2784a3b814e85dc72f3b967a9d3
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910893"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439330"
 ---
 # <a name="troubleshoot-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V 문제 해결
 
@@ -36,4 +36,4 @@ NTFS 포맷 드라이브를 사용하세요.
 ## <a name="i-get-this-message-when-i-try-to-install-hyper-v-cannot-be-installed-the-processor-does-not-support-second-level-address-translation-slat"></a>설치하려고 할 때 다음과 같은 메시지가 표시됩니다.: "Hyper-V를 설치할 수 없습니다. 프로세서는 두 번째 수준 주소 변환(SLAT)을 지원하지 않습니다."
 Hyper-V는 가상 컴퓨터를 실행하기 위해 SLAT가 필요합니다. 컴퓨터가 SLAT를 지원하지 않는 경우 가상 컴퓨터에 대한 호스트가 될 수 없습니다.
 
-관리 도구만 설치하려는 경우 **프로그램 및 기능** > **Windows 기능 사용/사용 안 함**에서 **Hyper-V 플랫폼**을 선택 취소합니다.
+관리 도구만 설치하려는 경우 **프로그램 및 기능**Windows 기능 사용/사용 안 함 > 에서 **Hyper-V 플랫폼**을 선택 취소합니다.

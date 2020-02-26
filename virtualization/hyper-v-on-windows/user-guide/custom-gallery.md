@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9238389-7028-4015-8140-27253b156f37
-ms.openlocfilehash: c7a6462b331f469148eb4cf5a0a2740c9929fa29
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 1348b9923d9de1314818f13414abdacee2cb9735
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74911063"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439718"
 ---
 # <a name="create-a-custom-virtual-machine-gallery"></a>사용자 지정 가상 컴퓨터 갤러리 만들기
 
@@ -99,7 +99,7 @@ Microsoft 및 Microsoft 파트너가 제공하는 이미지 집합이 있더라�
 
 * **로고** - 필수 항목
 * symbol
-* 썸네일
+* 섬네일
 
 그리고 물론 가상 컴퓨터(.iso 또는.vhdx)도 포함됩니다.
 

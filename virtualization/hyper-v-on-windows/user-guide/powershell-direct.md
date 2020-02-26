@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
-ms.openlocfilehash: ea6b71200d3115ba3d156b2c133e1be2fa495261
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: ed96c7ba30c83906cd3245a279ab078229400d8d
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910923"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439550"
 ---
 # <a name="virtual-machine-automation-and-management-using-powershell"></a>PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
 
@@ -173,7 +173,7 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
 PowerShell Direct를 통해 표시되는 작은 집합의 일반적인 오류 메시지가 있습니다.  다음은 가장 일반적인, 몇 가지 원인 및 문제를 진단하기 위한 도구입니다.
 
 ### <a name="-vmname-or--vmid-parameters-dont-exist"></a>-VMName 또는 -VMID 매개 변수가 없습니다.
-**문제:**  
+**문제의**  
 `Enter-PSSession`, `Invoke-Command`또는 `New-PSSession`에는 `-VMName` 또는 `-VMId` 매개 변수가 없습니다.
 
 **가능한 원인:**  

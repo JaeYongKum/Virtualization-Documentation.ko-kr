@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: 2a69fbace51589cce08476bd68fdb5c34a7907e6
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 9884cc0ae2d2f398d2dc2fb1997a70493a6de6c0
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909783"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76764175"
 ---
 # <a name="container-base-images"></a>컨테이너 기본 이미지
 
@@ -144,4 +144,4 @@ Microsoft에서는 각 컨테이너 기본 이미지의 "insider" 버전을 제�
 
 `Windows Server Core` 및 `Nanoserver`는 대상으로 하는 가장 일반적인 기본 이미지입니다. 이러한 이미지 간의 주요 차이점은 Nanoserver에 훨씬 더 작은 API 표면이 있다는 것입니다. PowerShell, WMI 및 Windows 서비스 스택은 Nanoserver 이미지에서 존재 하지 않습니다.
 
-Nanoserver는 .NET core 또는 기타 최신 오픈 소스 프레임 워크에 대 한 종속성이 있는 앱을 실행 하기에 충분 한 API 표면을 제공 하도록 빌드 되었습니다. 더 작은 APi 화면에 대 한 단점은 Nanoserver 이미지는 나머지 Windows 기반 이미지 보다 디스크 공간이 훨씬 더 작습니다. 적합하다고 판단될 경우 언제든지 Nano 서버 위에 계층을 추가할 수 있다는 점을 기억하세요. 관련 예제는 [NET Core Nano 서버 Dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/2.1/sdk/nanoserver-1803/amd64/Dockerfile)을 참조하세요.
+Nanoserver는 .NET core 또는 기타 최신 오픈 소스 프레임 워크에 대 한 종속성이 있는 앱을 실행 하기에 충분 한 API 표면을 제공 하도록 빌드 되었습니다. 더 작은 APi 화면에 대 한 단점은 Nanoserver 이미지는 나머지 Windows 기반 이미지 보다 디스크 공간이 훨씬 더 작습니다. 적합하다고 판단될 경우 언제든지 Nano 서버 위에 계층을 추가할 수 있다는 점을 기억하세요. 관련 예제는 [NET Core Nano 서버 Dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/2.1/sdk/nanoserver-1909/amd64/Dockerfile)을 참조하세요.

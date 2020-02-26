@@ -7,12 +7,12 @@ ms.date: 02/15/2019
 ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
-ms.openlocfilehash: e1b6b55b2e17ac4f0883078748d75f6d4b9fcafa
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: bad59fcc65bf66ab3c6dc940a17111e46a9bc226
+ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909463"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77439700"
 ---
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
@@ -25,7 +25,7 @@ Hyper-v는 Windows 10 제어판, PowerShell을 사용 하거나 DISM (배포 이
 
 * Windows 10 Enterprise, Pro 또는 교육용
 * 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
-* VM 모니터 모드 확장(Intel CPU의 VT-c)에 대한 CPU 지원.
+* VM 모니터 모드 확장에 대 한 CPU 지원 (Intel Cpu의 VT-c).
 * 최소 4GB의 메모리.
 
 Hyper-V 역할은 Windows 10 Home에는 **설치할 수 없습니다**.
@@ -50,13 +50,13 @@ Hyper-V 역할은 Windows 10 Home에는 **설치할 수 없습니다**.
 
 ## <a name="enable-hyper-v-with-cmd-and-dism"></a>CMD와 DISM을 사용하여 Hyper-V를 사용하도록 설정
 
-DISM(배포 이미지 서비스 및 관리) 도구를 사용하면 Windows와 Windows 이미지를 구성하는 데 도움이 됩니다.  DISM은 많은 응용 프로그램을 갖추고 있으며, 운영 체제가 실행 중인 동안 Windows 기능을 사용하도록 설정할 수 있습니다.
+DISM(배포 이미지 서비스 및 관리) 도구를 사용하면 Windows와 Windows 이미지를 구성하는 데 도움이 됩니다.  DISM은 많은 애플리케이션을 갖추고 있으며, 운영 체제가 실행 중인 동안 Windows 기능을 사용하도록 설정할 수 있습니다.
 
 DISM을 사용하여 Hyper-V 역할을 활성화하려면:
 
 1. 관리자 권한으로 PowerShell 또는 CMD 세션을 엽니다.
 
-1. 다음 명령을 입력합니다.
+1. 다음 명령을 입력합니다:
 
   ```powershell
   DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
