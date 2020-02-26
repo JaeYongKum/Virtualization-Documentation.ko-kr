@@ -257,7 +257,7 @@
 ### [Citrix Synergy 2010의 Microsoft: 데스크톱에서 클라우드로](team-blog/2010/20100513-microsoft-at-citrix-synergy-2010-from-the-desktop-to-the-cloud.md)
 ### [MMS 2010 랩: Hyper-V, System Center & HP 기반...](team-blog/2010/20100506-mms-2010-labs-powered-by-hyper-v-system-center-hp.md)
 ### [Linux 통합 서비스 v2.1 릴리스 후보를 지금 사용 가능](team-blog/2010/20100505-linux-integration-services-v2-1-release-candidate-now-available.md)
-### [IDC에서 서버 가상화 지역/국가 번호 업데이트: 여기에서 먼저 가상화](team-blog/2010/20100504-idc-updates-server-virtualization-market-numbers-virtualize-first-is-here.md)
+### [IDC에서 서버 가상화 지역/국가 번호 업데이트: 여기서 먼저 가상화](team-blog/2010/20100504-idc-updates-server-virtualization-market-numbers-virtualize-first-is-here.md)
 ### [Microsoft RemoteFX: 사용자 환경 격차 해소](team-blog/2010/20100424-microsoft-remotefx-closing-the-user-experience-gap.md)
 ### [다음 버전의 SCOM 및 SCVMM에 제공되는 새로운 기능](team-blog/2010/20100422-what-s-coming-up-with-the-next-versions-of-scom-and-scvmm.md)
 ### [Hyper-V에 동적 메모리 제공 예정 4부](team-blog/2010/20100421-dynamic-memory-coming-to-hyper-v-part-4.md)
