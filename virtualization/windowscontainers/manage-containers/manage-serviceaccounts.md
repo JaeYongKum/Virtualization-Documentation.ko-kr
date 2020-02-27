@@ -3,17 +3,17 @@ title: Windows 컨테이너에 대해 gMSAs 만들기
 description: Windows 컨테이너에 대해 gMSAs (그룹 관리 서비스 계정)를 만드는 방법
 keywords: docker, 컨테이너, active directory, gmsa, 그룹 관리 서비스 계정, 그룹 관리 서비스 계정
 author: rpsqrd
-ms.date: 09/10/2019
+ms.date: 01/03/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 9ed9029e534d56bfe1830281d0bfd3ddde0cee9e
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 36061cfc491dd9dd581d1e6bce92a29e4a6f217d
+ms.sourcegitcommit: 530712469552a1ef458883001ee748bab2c65ef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910253"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628938"
 ---
 # <a name="create-gmsas-for-windows-containers"></a>Windows 컨테이너에 대해 gMSAs 만들기
 
@@ -27,7 +27,7 @@ GMSA를 사용 하 여 컨테이너를 실행 하는 경우 컨테이너 호스�
 
 이 문서에서는 Windows 컨테이너에서 그룹 관리 서비스 계정을 사용 하 Active Directory를 시작 하는 방법을 설명 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>필수 조건
 
 그룹 관리 서비스 계정을 사용 하 여 Windows 컨테이너를 실행 하려면 다음이 필요 합니다.
 
@@ -82,9 +82,9 @@ GMSA를 만들 때 여러 컴퓨터에서 동시에 사용할 수 있는 공유 
 
 다음 표에서는 gMSA를 만드는 데 필요한 특성을 보여 줍니다.
 
-|gMSA 속성 | 필요한 값 | 예 |
+|gMSA 속성 | 필요한 값 | 예제 |
 |--------------|----------------|--------|
-|Name(이름) | 모든 유효한 계정 이름입니다. | `WebApp01` |
+|이름 | 모든 유효한 계정 이름입니다. | `WebApp01` |
 |DnsHostName | 계정 이름에 추가 된 도메인 이름입니다. | `WebApp01.contoso.com` |
 |ServicePrincipalNames | 호스트 SPN을 하나 이상 설정 하 고 필요에 따라 다른 프로토콜을 추가 합니다. | `'host/WebApp01', 'host/WebApp01.contoso.com'` |
 |PrincipalsAllowedToRetrieveManagedPassword | 컨테이너 호스트를 포함 하는 보안 그룹입니다. | `WebApp01Hosts` |
@@ -109,7 +109,7 @@ New-ADGroup -Name "WebApp01 Authorized Hosts" -SamAccountName "WebApp01Hosts" -G
 New-ADServiceAccount -Name "WebApp01" -DnsHostName "WebApp01.contoso.com" -ServicePrincipalNames "host/WebApp01", "host/WebApp01.contoso.com" -PrincipalsAllowedToRetrieveManagedPassword "WebApp01Hosts"
 
 # Add your container hosts to the security group
-Add-ADGroupMember -Identity "WebApp01Hosts" -Members "ContainerHost01", "ContainerHost02", "ContainerHost03"
+Add-ADGroupMember -Identity "WebApp01Hosts" -Members "ContainerHost01$", "ContainerHost02$", "ContainerHost03$"
 ```
 
 개발, 테스트 및 프로덕션 환경에 대 한 별도의 gMSA 계정을 만드는 것이 좋습니다.
@@ -164,13 +164,19 @@ Docker는 Docker 데이터 디렉터리의 **credentialspecs** 디렉터리에�
 
     기본적으로이 cmdlet은 제공 된 gMSA 이름을 컨테이너의 컴퓨터 계정으로 사용 하 여 자격 증명 사양을 만듭니다. 파일은 gMSA 도메인 및 파일 이름에 대 한 계정 이름을 사용 하 여 Docker CredentialSpecs 디렉터리에 저장 됩니다.
 
-    컨테이너에서 서비스 또는 프로세스를 보조 gMSA으로 실행 하는 경우 추가 gMSA 계정을 포함 하는 자격 증명 사양을 만들 수 있습니다. 이렇게 하려면 `-AdditionalAccounts` 매개 변수를 사용 합니다.
+    다른 디렉터리에 파일을 저장 하려면 `-Path` 매개 변수를 사용 합니다.
+
+    ```powershell
+    New-CredentialSpec -AccountName WebApp01 -Path "C:\MyFolder\WebApp01_CredSpec.json"
+    ```
+
+    컨테이너에서 서비스 또는 프로세스를 보조 gMSA으로 실행 하는 경우 추가 gMSA 계정을 포함 하는 자격 증명 사양을 만들 수도 있습니다. 이렇게 하려면 `-AdditionalAccounts` 매개 변수를 사용 합니다.
 
     ```powershell
     New-CredentialSpec -AccountName WebApp01 -AdditionalAccounts LogAgentSvc, OtherSvc
     ```
 
-    지원 되는 매개 변수의 전체 목록을 보려면 `Get-Help New-CredentialSpec`를 실행 합니다.
+    지원 되는 매개 변수의 전체 목록을 보려면 `Get-Help New-CredentialSpec -Full`를 실행 합니다.
 
 4. 다음 cmdlet을 사용 하 여 모든 자격 증명 사양 목록과 전체 경로를 표시할 수 있습니다.
 

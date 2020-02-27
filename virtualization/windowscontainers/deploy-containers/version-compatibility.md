@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 1f068cd011b2172e75c240d566473ccab25d984a
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 32d40997ffef47e4eae2d06303f45522623a5e54
+ms.sourcegitcommit: 530712469552a1ef458883001ee748bab2c65ef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910483"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628948"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -19,7 +19,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 ## <a name="windows-server-host-os-compatibility"></a>Windows Server 호스트 OS 호환성
 
 <!-- start tab view -->
-# <a name="windows-server-version-1909tabwindows-server-1909"></a>[Windows Server, 버전 1909](#tab/windows-server-1909)
+# <a name="windows-server-version-1909"></a>[Windows Server, 버전 1909](#tab/windows-server-1909)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -28,7 +28,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |시작|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-server-version-1903tabwindows-server-1903"></a>[Windows Server, 버전 1903](#tab/windows-server-1903)
+# <a name="windows-server-version-1903"></a>[Windows Server, 버전 1903](#tab/windows-server-1903)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -37,7 +37,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |시작|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-server-2019tabwindows-server-2019"></a>[Windows Server 2019](#tab/windows-server-2019)
+# <a name="windows-server-2019"></a>[Windows Server 2019](#tab/windows-server-2019)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -46,7 +46,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |시작|&#10004;|&#10004;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-server-2016tabwindows-server-2016"></a>[Windows Server 2016](#tab/windows-server-2016)
+# <a name="windows-server-2016"></a>[Windows Server 2016](#tab/windows-server-2016)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -62,7 +62,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 <!-- start tab view -->
 
-# <a name="windows-10-version-1909tabwindows-10-1909"></a>[Windows 10, 버전 1909](#tab/windows-10-1909)
+# <a name="windows-10-version-1909"></a>[Windows 10, 버전 1909](#tab/windows-10-1909)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -71,7 +71,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |시작|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-10-version-1903tabwindows-10-1903"></a>[Windows 10, 버전 1903](#tab/windows-10-1903)
+# <a name="windows-10-version-1903"></a>[Windows 10, 버전 1903](#tab/windows-10-1903)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -80,7 +80,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 |시작|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-10-version-1809tabwindows-10-1809"></a>[Windows 10, 버전 1809](#tab/windows-10-1809)
+# <a name="windows-10-version-1809"></a>[Windows 10, 버전 1809](#tab/windows-10-1809)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
@@ -104,15 +104,17 @@ Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유 하�
 
 #### <a name="revision-number-patching"></a>수정 번호 (패치)
 
-컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다른 경우 Windows Server 컨테이너를 시작 하지 못하도록 차단 되지 않습니다. 예를 들어 컨테이너 호스트가 버전 10.0.14393.1914 (KB4051033가 적용 된 Windows Server 2016)이 고 컨테이너 이미지가 버전 10.0.14393.1944 (KB4053579가 적용 된 Windows Server 2016) 인 경우에는 해당 수정이 적용 된 경우에도 이미지는 계속 시작 됩니다. 숫자는 다릅니다.
+Windows Server 2016 기반 컨테이너는 컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다를 때 시작 하지 못하도록 차단 됩니다. 예를 들어 컨테이너 호스트가 버전 10.0.14393 인 경우입니다. **1914** (Windows Server 2016 with KB4051033 적용 됨) 및 컨테이너 이미지는 버전 10.0.14393입니다. **1944** (Windows Server 2016 with KB4053579 적용 됨) 이미지는 시작 되지 않습니다.
 
-Windows Server 2016 기반 호스트 또는 이미지의 경우 컨테이너 이미지의 수정 버전은 지원 되는 구성에 있는 호스트와 일치 해야 합니다. 그러나 Windows Server 버전 1709 이상을 사용 하는 호스트 또는 이미지의 경우에는이 규칙이 적용 되지 않으며 호스트 및 컨테이너 이미지에 일치 하는 수정 버전이 필요 하지 않습니다. 최신 패치와 업데이트를 사용 하 여 시스템을 최신 상태로 유지 하는 것이 좋습니다.
+그러나 Windows Server 버전 1809 이상을 사용 하는 호스트 또는 이미지의 경우에는이 규칙이 적용 되지 않으며 호스트 및 컨테이너 이미지에 일치 하는 수정 버전이 필요 하지 않습니다. 
+
+최신 패치와 업데이트를 사용 하 여 시스템 (호스트 및 컨테이너)을 최신 상태로 유지 하 고 보안을 유지 하는 것이 좋습니다.
 
 #### <a name="practical-application"></a>실용적인 응용 프로그램
 
 예 1: 컨테이너 호스트에서 KB4041691가 적용 된 Windows Server 2016를 실행 하 고 있습니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너는 버전 10.0.14393.1770 컨테이너 기본 이미지를 기반으로 해야 합니다. 호스트 컨테이너에 KB4053579를 적용 하는 경우 호스트 컨테이너가 해당 이미지를 지원 하는지 확인 하기 위해 이미지도 업데이트 해야 합니다.
 
-예 2: 컨테이너 호스트에서 KB4043961가 적용 된 Windows Server 버전 1709을 실행 하 고 있습니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너는 Windows Server 버전 1709 (10.0.16299) 컨테이너 기본 이미지를 기반으로 해야 하지만 호스트 KB와 일치할 필요는 없습니다. KB4054517이 호스트에 적용 되는 경우 컨테이너 이미지는 계속 지원 되지만 잠재적인 보안 문제를 해결 하기 위해 업데이트 하는 것이 좋습니다.
+예 2: 컨테이너 호스트에서 KB4534273가 적용 된 Windows Server 버전 1809을 실행 하 고 있습니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너는 Windows Server 버전 1809 (10.0.17763) 컨테이너 기본 이미지를 기반으로 해야 하지만 호스트 KB와 일치할 필요는 없습니다. KB4534273이 호스트에 적용 되는 경우 컨테이너 이미지는 계속 지원 되지만 잠재적인 보안 문제를 해결 하기 위해 업데이트 하는 것이 좋습니다.
 
 #### <a name="querying-version"></a>버전 쿼리
 
@@ -129,7 +131,7 @@ Microsoft Windows [Version 10.0.16299.125]
 
 방법 2: 다음 레지스트리 키를 쿼리 합니다. HKEY_LOCAL_MACHINE \Software\Microsoft\Windows NT\CurrentVersion
 
-예를 들어 다음과 같은 가치를 제공해야 합니다.
+예를 들면 다음과 같습니다.
 
 ```batch
 C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
@@ -241,7 +243,7 @@ y5blbdum70zoh1f6uhx5nxsfv    \_ angry_liskov.1   microsoft/iis:windowsservercore
 
 ### <a name="fix---update-the-service-to-use-a-matching-version"></a>수전 - 일치하는 버전을 사용하도록 서비스 업데이트
 
-Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 만들지 않은 이미지를 사용 하는 서비스를 포함 하는 작성 파일이 있는 경우 참조를 적절 하 게 업데이트 하는 것이 좋습니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 만들지 않은 이미지를 사용 하는 서비스를 포함 하는 작성 파일이 있는 경우 참조를 적절 하 게 업데이트 하는 것이 좋습니다. 예를 들면 다음과 같습니다.
 
 ``` yaml
 version: '3'
@@ -271,7 +273,7 @@ services:
 
 이렇게 하려면 Docker 서비스 구성을 변경한 다음 Docker 엔진을 다시 시작해야 합니다.
 
-1. `C:\ProgramData\docker\config\daemon.json` 편집
+1. 편집 `C:\ProgramData\docker\config\daemon.json`
 2. `"exec-opts":["isolation=hyperv"]` 줄 추가
 
     >[!NOTE]
@@ -489,7 +491,7 @@ System Info:
 
     이 예제에서 정보는 다음과 같습니다.
 
-    Name(이름)         | 버전
+    이름         | 버전
     -------------|--------------------------------------------------------
     38519acs9010 | 14393.1715.amd64fre.rs1_release_inmarket.170906-1810
     38519acs9011 | 16299.0.amd64fre.rs3_release.170922-1354
