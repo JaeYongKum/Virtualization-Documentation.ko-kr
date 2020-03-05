@@ -1,14 +1,14 @@
 ---
 title: 컨테이너 저장소 개요
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
-keywords: 컨테이너, 볼륨, 저장소, 마운트, 바인딩 마운트
+keywords: 컨테이너, 볼륨, 스토리지, 마운트, 바인딩 마운트
 author: cwilhit
-ms.openlocfilehash: fba08de884d59cc1b656895ec2b7078ba3975269
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: f758877f1131813fe4637a01c03b49d7a18a83c4
+ms.sourcegitcommit: db085db8a54664184a2f7cfa01d00598a1c66992
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910273"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78288675"
 ---
 # <a name="container-storage-overview"></a>컨테이너 저장소 개요
 
@@ -26,10 +26,10 @@ Windows 컨테이너는 기본적으로 사용 후 삭제 저장소를 사용 �
 
 ### <a name="where-layers-are-stored-and-how-to-change-it"></a>계층이 저장되는 위치 및 이를 변경하는 방법
 
-기본 설치에서 계층은 `C:\ProgramData\docker`에 저장되며 "image"와 "windowsfilter" 디렉터리에 분산됩니다. [Windows의 Docker 엔진](../manage-docker/configure-docker-daemon.md) 설명서에서와 같이 `docker-root` 구성을 사용하여 계층이 저장되는 위치를 변경할 수 있습니다.
+기본 설치에서 계층은 `C:\ProgramData\docker`에 저장되며 "image"와 "windowsfilter" 디렉터리에 분산됩니다. `docker-root`Windows의 Docker 엔진[ 설명서에서와 같이 ](../manage-docker/configure-docker-daemon.md) 구성을 사용하여 계층이 저장되는 위치를 변경할 수 있습니다.
 
 > [!NOTE]
-> 계층 저장소에 대해 NTFS만 지원됩니다. ReFS는 지원되지 않습니다.
+> 계층 스토리지에 대해 NTFS만 지원됩니다. ReFS는 지원되지 않습니다.
 
 계층 디렉터리에서 어떠한 파일도 수정해서는 안 됩니다. 다음과 같은 명령을 사용하여 신중하게 관리해야 합니다.
 
@@ -39,9 +39,9 @@ Windows 컨테이너는 기본적으로 사용 후 삭제 저장소를 사용 �
 - [docker 로드](https://docs.docker.com/engine/reference/commandline/load/)
 - [docker save](https://docs.docker.com/engine/reference/commandline/save/)
 
-### <a name="supported-operations-in-layer-storage"></a>계층 저장소에서 지원되는 작업
+### <a name="supported-operations-in-layer-storage"></a>계층 스토리지에서 지원되는 작업
 
-실행 중인 컨테이너는 트랜잭션을 제외하고 대부분의 NTFS 작업을 사용할 수 있습니다. 이에는 ACL 설정이 포함되며 컨테이너 내에 있는 모든 ACL을 확인합니다. 컨테이너 내에서 여러 사용자로 프로세스를 실행하려면 `RUN net user /create ...`로 `Dockerfile` 내에 사용자를 만들고, ACL 파일을 설정한 다음 프로세스를 구성하면 [Dockerfile USER 지시문](https://docs.docker.com/engine/reference/builder/#user)을 사용하여 해당 사용자로 실행할 수 있습니다.
+실행 중인 컨테이너는 트랜잭션을 제외하고 대부분의 NTFS 작업을 사용할 수 있습니다. 이에는 ACL 설정이 포함되며 컨테이너 내에 있는 모든 ACL을 확인합니다. 컨테이너 내에서 여러 사용자로 프로세스를 실행하려면 `Dockerfile`로 `RUN net user /create ...` 내에 사용자를 만들고, ACL 파일을 설정한 다음 프로세스를 구성하면 [Dockerfile USER 지시문](https://docs.docker.com/engine/reference/builder/#user)을 사용하여 해당 사용자로 실행할 수 있습니다.
 
 ## <a name="persistent-storage"></a>영구 저장소
 
@@ -49,7 +49,7 @@ Windows 컨테이너는 바인드 탑재 및 볼륨을 통해 영구 저장소�
 
 ## <a name="storage-limits"></a>저장소 제한
 
-Windows 응용 프로그램의 일반적인 패턴은 새 파일을 설치하거나 만들기 전에 또는 임시 파일을 정리하기 위한 트리거로서 사용 가능한 디스크 공간의 크기를 쿼리하는 것입니다.  응용 프로그램 호환성을 최대화 하는 목표로 Windows 컨테이너의 C: 드라이브는 20GB의 가상 여유 크기를 나타냅니다.
+Windows 애플리케이션의 일반적인 패턴은 새 파일을 설치하거나 만들기 전에 또는 임시 파일을 정리하기 위한 트리거로서 사용 가능한 디스크 공간의 크기를 쿼리하는 것입니다.  응용 프로그램 호환성을 최대화 하는 목표로 Windows 컨테이너의 C: 드라이브는 20GB의 가상 여유 크기를 나타냅니다.
 
 일부 사용자는이 기본값을 재정의 하 고 사용 가능한 공간을 더 작거나 더 큰 값으로 구성할 수 있습니다. "저장소 옵트인" 구성 내에서 "크기" 옵션을 사용할 수 있습니다.
 
@@ -60,7 +60,7 @@ Windows 응용 프로그램의 일반적인 패턴은 새 파일을 설치하거
 또는 docker 구성 파일을 직접 변경할 수 있습니다.
 
 ```Docker Configuration File
-"storage-opts": [
+"storage-opt": [
     "size=50GB"
   ]
 ```
