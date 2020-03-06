@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 46eefb03f8f5a53333f5e7eca7074ab34e72a767
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: cd16f496b85c0977af0d40142768833acadea0f4
+ms.sourcegitcommit: 6f505becbafb1e9785c67d6b0715c4c3af074116
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910073"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78338047"
 ---
 # <a name="windows-container-network-drivers"></a>Windows 컨테이너 네트워크 드라이버  
 
 Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용하는 것 외에도 사용자는 사용자 지정 컨테이너 네트워크를 정의할 수 있습니다. 사용자 정의 네트워크는 Docker CLI [`docker network create -d <NETWORK DRIVER TYPE> <NAME>`](https://docs.docker.com/engine/reference/commandline/network_create/) 명령을 사용 하 여 만들 수 있습니다. Windows에서 다음과 같은 유형의 네트워크 드라이버를 사용할 수 있습니다.
 
-- **nat** – 'nat' 드라이버를 통해 생성된 네트워크에 연결된 컨테이너는 *내부* Hyper-V 스위치에 연결되고 사용자 지정(``--subnet``) IP 접두사에서 IP 주소를 수신합니다. 컨테이너 호스트에서 컨테이너 끝점으로의 포트 전달/매핑이 지원됩니다.
+- **nat** – 'nat' 드라이버를 통해 생성된 네트워크에 연결된 컨테이너는 *내부* Hyper-V 스위치에 연결되고 사용자 지정(``--subnet``) IP 접두사에서 IP 주소를 수신합니다. 컨테이너 호스트에서 컨테이너 엔드포인트으로의 포트 전달/매핑이 지원됩니다.
   
   >[!NOTE]
   > Windows Server 2019 이상에서 만든 NAT 네트워크는 다시 부팅 후 더 이상 지속 되지 않습니다.
@@ -48,9 +48,8 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
   2. L2bridge 네트워크는 새로운 사용자 지정 IP 서브넷으로 구성 됩니다.
   
   구성 2에서 사용자는 게이트웨이 역할을 하는 호스트 네트워크 구획에 끝점을 추가 하 고 지정 된 접두사에 대 한 라우팅 기능을 구성 해야 합니다. 
-  > 필요: Windows Server 2016, Windows 10 크리에이터 스 업데이트 또는 이후 버전이 필요 합니다.
-
-  > 필요: 외부 연결에 대 한 [OutboundNAT 정책](./advanced.md#specify-outboundnat-policy-for-a-network) .
+  >[!TIP]
+  >L2bridge를 구성 하 고 설치 하는 방법에 대 한 자세한 내용은 [여기](https://techcommunity.microsoft.com/t5/networking-blog/l2bridge-container-networking/ba-p/1180923)에서 찾을 수 있습니다.
 
 - **l2tunnel** -l2bridge와 유사 하지만 _이 드라이버는 Microsoft 클라우드 Stack (Azure) 에서만 사용 해야_합니다. 컨테이너에서 제공한 패킷은 SDN 정책이 적용되는 가상화 호스트로 전송됩니다.
 
@@ -61,7 +60,7 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
 
 ### <a name="networking-modesdocker-drivers"></a>네트워킹 모드/Docker 드라이버
 
-  | Docker Windows 네트워크 드라이버 | 일반적인 사용 용도 | 컨테이너-컨테이너 (단일 노드) | 컨테이너-외부 (단일 노드 + 다중 노드) | 컨테이너 간 (다중 노드) |
+  | Docker Windows 네트워크 드라이버 | 일반적인 용도 | 컨테이너-컨테이너 (단일 노드) | 컨테이너-외부 (단일 노드 + 다중 노드) | 컨테이너 간 (다중 노드) |
   |-------------------------------|:------------:|:------------------------------------:|:------------------------------------------------:|:-----------------------------------:|
   | **NAT (기본값)** | 개발자에게 적합 | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li> 서브넷 간: 지원 되지 않음 (NAT 내부 접두사 하나만)</li></ul> | 관리 vNIC를 통해 라우트(WinNAT에 바인딩) | 직접 지원 되지 않음: 호스트 통한 포트 노출이 필요 |
   | **보이지** | 개발자나 소규모 배포에 적합 | <ul><li>동일 서브넷: Hyper-V 가상 스위치를 통해 브리지된 연결</li><li>크로스 서브넷: 컨테이너 호스트를 통해 라우트</li></ul> | 컨테이너 호스트를 라우트 되어 (물리적) 네트워크 어댑터에 직접 액세스 | 컨테이너 호스트를 라우트 되어 (물리적) 네트워크 어댑터에 직접 액세스 |
@@ -89,5 +88,5 @@ Windows에서 Docker를 사용하여 만든 기본 'nat' 네트워크를 활용�
 | :---: | :---------------     |  :---                |
 | nat | 예 | Docker EE에서 예 |  
 | overlay | 예 | 예, Docker EE 또는 kube |
-| transparent | 아니요 | 아니요 |
+| 투명 | 아니요 | 아니요 |
 | l2bridge | 아니요 | 예 (kube 사용)-dns |
