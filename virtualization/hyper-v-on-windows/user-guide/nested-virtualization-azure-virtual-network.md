@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 1ecb85a6-d938-4c30-a29b-d18bd007ba08
-ms.openlocfilehash: efd180c458457da1cea6b379e21ba3a37083d15a
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: b7944e34cab66df07df0ccc78947a774d775c9a7
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910963"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853947"
 ---
 # <a name="configure-nested-vms-to-communicate-with-resources-in-an-azure-virtual-network"></a>Azure 가상 네트워크의 리소스와 통신 하도록 중첩 된 Vm 구성
 
@@ -75,7 +75,7 @@ VM 이름, 리소스 그룹 등과 같은 개인 설정에 대 한 모든 구성
 
 ## <a name="create-the-second-network-interface"></a>두 번째 네트워크 인터페이스 만들기
 1. VM이 프로 비전을 완료 한 후 Azure Portal 내에서이로 이동 합니다.
-2. VM을 중지합니다.
+2. VM 중지
 3. 중지 되 면 설정 아래의 "네트워킹"으로 이동 합니다.
 4. "네트워크 인터페이스 연결"
 5. "네트워크 인터페이스 만들기"
@@ -91,7 +91,7 @@ VM 이름, 리소스 그룹 등과 같은 개인 설정에 대 한 모든 구성
 ## <a name="setting-up-hyper-v"></a>Hyper-v 설정
 1. 호스트에 원격으로
 2. 관리자 권한 PowerShell 프롬프트를 엽니다.
-3. 다음 명령을 실행합니다. `Install-WindowsFeature -Name Hyper-V -IncludeManagementTools -Restart`
+3. 다음 명령을 실행 `Install-WindowsFeature -Name Hyper-V -IncludeManagementTools -Restart`
 4. 호스트를 다시 시작 합니다.
 5. 나머지 설치를 계속 하려면 호스트에 다시 연결 하십시오.
 
@@ -124,7 +124,7 @@ VM 이름, 리소스 그룹 등과 같은 개인 설정에 대 한 모든 구성
 3. 마법사에서 "다음"을 선택 하 고, "사용자 지정 구성"의 방사형 단추를 선택한 후 "다음"을 선택 합니다.
 4. "NAT" 및 "LAN 라우팅"을 확인 한 후 "다음"을 선택 하 고 "마침"을 선택 합니다. 서비스를 시작 하 라는 메시지가 표시 되 면이 작업을 수행 합니다.
 5. 이제 "IPv4" 노드로 이동 하 여 "NAT" 노드를 사용할 수 있도록 확장 합니다.
-6. "NAT"를 마우스 오른쪽 단추로 클릭 하 고 "새 인터페이스 ..."를 선택 합니다. "이더넷"을 선택 하 고 "10.0.0.4"의 IP를 사용 하는 첫 번째 NIC 여야 합니다.
+6. "NAT"를 마우스 오른쪽 단추로 클릭 하 고 "새 인터페이스 ..."를 선택 합니다. "이더넷"을 선택 하 고 "10.0.0.4"의 IP를 사용 하는 첫 번째 NIC 여야 하며, 공용 인터페이스를 선택 하 여 인터넷에 연결 하 고이 인터페이스에서 NAT를 사용 하도록 설정 합니다. 
 7. 이제 몇 가지 고정 경로를 만들어 LAN 트래픽이 두 번째 NIC를 강제로 실행 해야 합니다. "IPv4" 아래의 "고정 경로" 노드로 이동 하 여이 작업을 수행 합니다.
 8. 이 경우 다음 경로를 만듭니다.
     * 경로 1
@@ -147,20 +147,20 @@ VM 이름, 리소스 그룹 등과 같은 개인 설정에 대 한 모든 구성
 
 Azure 내에서 경로를 만들고 관리 하는 방법에 대 한 자세한 내용은 [이 문서](https://docs.microsoft.com/azure/virtual-network/tutorial-create-route-table-portal) 를 참조 하세요.
 
-1. [https://test-cors.org](https://portal.azure.com ) 로 이동합니다.
+1. https://portal.azure.com으로 이동합니다.
 2. 왼쪽 위 모서리에서 "리소스 만들기"를 선택 합니다.
 3. 검색 필드에 "경로 테이블"을 입력 하 고 enter 키를 누릅니다.
 4. 상위 결과가 경로 테이블이 되 면이를 선택 하 고 "만들기"를 선택 합니다.
 5. 경로 테이블의 이름을 지정 합니다. 여기서는 이름에 "경로를 중첩-Vm"으로 지정 합니다.
 6. Hyper-v 호스트가 상주 하는 것과 동일한 구독을 선택 했는지 확인 합니다.
 7. 새 리소스 그룹을 만들거나 기존 리소스 그룹을 선택 하 고, 경로 테이블을 만드는 지역이 Hyper-v 호스트와 동일한 지역에 있는지를 확인할 수 있습니다.
-8. "만들기"를 선택합니다.
+8. "만들기"를 선택 합니다.
 
 ## <a name="configuring-the-route-table"></a>경로 테이블 구성
 
 1. 방금 만든 경로 테이블로 이동 합니다. 포털의 위쪽 가운데에 있는 검색 표시줄에서 경로 테이블의 이름을 검색 하 여이 작업을 수행할 수 있습니다.
 2. 경로 테이블을 선택한 후 블레이드 내에서 "경로"로 이동 합니다.
-3. "추가"를 선택합니다.
+3. "추가"를 선택 합니다.
 4. 경로에 이름을 지정 하 고, "중첩 Vm"을 사용 했습니다.
 5. 주소 접두사의 경우 "부동" 서브넷에 대 한 IP 범위를 입력 합니다. 이 경우 10.0.2.0/24입니다.
 6. "다음 홉 유형"에서 "가상 어플라이언스"를 선택 하 고 Hyper-v 호스트 두 번째 NIC의 IP 주소 (10.0.1.4)를 입력 한 다음 "확인"을 선택 합니다.

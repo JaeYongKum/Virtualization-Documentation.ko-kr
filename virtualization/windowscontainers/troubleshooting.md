@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ebd79cd3-5fdd-458d-8dc8-fc96408958b5
-ms.openlocfilehash: 1de86a2492ca899dc3fb932e0d57927fa4000fd0
-ms.sourcegitcommit: 15b5ab92b7b8e96c180767945fdbb2963c3f6f88
+ms.openlocfilehash: 549209c40c2332bdc197375ce4e501467280fa18
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74911713"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853888"
 ---
 # <a name="troubleshooting"></a>문제 해결
 
@@ -90,7 +90,7 @@ Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-3
 Docker 엔진에서 디버그 수준 로깅을 사용하도록 설정할 수도 있습니다. 그러면 일반 로그에 정보가 부족한 경우의 문제 해결에 유용할 수 있습니다.
 
 먼저 관리자 권한 명령 프롬프트를 연 다음 `sc.exe qc docker`를 실행하여 Docker 서비스에 대한 현재 명령줄을 가져옵니다.
-예제:
+예:
 ```
 C:\> sc.exe qc docker
 [SC] QueryServiceConfig SUCCESS
@@ -112,7 +112,7 @@ SERVICE_NAME: docker
 - 각 "를 \로 이스케이프
 - 전체 명령 "로 묶기
 
-그런 다음 새 문자열 다음에 오는 `sc.exe config docker binpath=`을(를) 실행합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다. 
+그런 다음 새 문자열 다음에 오는 `sc.exe config docker binpath=`을(를) 실행합니다. 예를 들면 다음과 같습니다. 
 ```
 sc.exe config docker binpath= "\"C:\Program Files\Docker\dockerd.exe\" --run-service -D"
 ```
@@ -136,7 +136,7 @@ sc.exe stop docker
 
 일반적으로 Microsoft 지원 또는 docker 개발자가 명시적으로 요청한 경우에만 유용 합니다. Docker가 멈춘 것 처럼 보이는 상황을 진단 하는 데 사용할 수 있습니다. 
 
-[docker-signal.exe](https://github.com/jhowardmsft/docker-signal)를 다운로드하세요.
+[docker-signal.exe](https://github.com/moby/docker-signal)를 다운로드하세요.
 
 사용량:
 ```PowerShell
@@ -155,9 +155,9 @@ Docker 엔진은 Windows 관련 호스트 컨테이너 서비스를 사용합니
 - Microsoft-Windows-Hyper-V-Compute-Admin
 - Microsoft-Windows-Hyper-V-Compute-Operational
 
-이 로그는 이벤트 뷰어에서 볼 수 있고 PowerShell에서 쿼리할 수도 있습니다.
+이러한 항목은 이벤트 뷰어 표시 되며 PowerShell을 사용 하 여 쿼리할 수도 있습니다.
 
-예를 들어 다음과 같은 가치를 제공해야 합니다.
+예를 들면 다음과 같습니다.
 ```PowerShell
 Get-WinEvent -LogName Microsoft-Windows-Hyper-V-Compute-Admin
 Get-WinEvent -LogName Microsoft-Windows-Hyper-V-Compute-Operational 

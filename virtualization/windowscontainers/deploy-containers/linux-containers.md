@@ -1,21 +1,21 @@
 ---
-title: Windows의 Linux 컨테이너
-description: Hyper-v를 사용 하 여 네이티브 인 것 처럼 Windows에서 Linux 컨테이너를 실행할 수 있는 다양 한 방법에 대해 알아봅니다.
-keywords: LCOW, linux 컨테이너, docker, 컨테이너
+title: Windows 10의 Linux 컨테이너
+description: Hyper-v를 사용 하 여 네이티브 인 것 처럼 Windows 10에서 Linux 컨테이너를 실행할 수 있는 다양 한 방법에 대해 알아봅니다.
+keywords: LCOW, linux 컨테이너, docker, 컨테이너, windows 10
 author: scooley
 ms.date: 09/17/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: edfd11c8-ee99-42d8-9878-efc126fe1826
-ms.openlocfilehash: 14445f3e9d292dbdab28986e772d0c045fca1586
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 843bd0ab7ccf3a227482ba3a3d2677e36b395b29
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910573"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78854017"
 ---
-# <a name="linux-containers-on-windows"></a>Windows의 Linux 컨테이너
+# <a name="linux-containers-on-windows-10"></a>Windows 10의 Linux 컨테이너
 
 Linux 컨테이너는 전반적인 컨테이너 에코 시스템의 매우 큰 비율을 구성 하며 개발자 환경 및 프로덕션 환경 모두에 대 한 기본입니다.  컨테이너는 컨테이너 호스트와 커널을 공유 하므로 Windows에서 직접 Linux 컨테이너를 실행 하는 것은[*](linux-containers.md#other-options-we-considered)옵션이 아닙니다.  여기서는 가상화가 그림에 제공 됩니다.
 
@@ -23,6 +23,8 @@ Linux 컨테이너는 전반적인 컨테이너 에코 시스템의 매우 큰 �
 
 - 전체 Linux VM에서 Linux 컨테이너를 실행 합니다 .이는 일반적으로 일반적으로 수행 하는 Docker입니다.
 - [Hyper-v 격리](../manage-containers/hyperv-container.md) 를 사용 하 여 Linux 컨테이너 실행 (LCOW)-Windows용 Docker의 새로운 옵션입니다.
+
+> _Windows Server OS에서 Linux 컨테이너를 실행 하는 것은 현재 실험적 단계에 있습니다. 이를 시도 하려면 Docker EE 프로그램의 추가 라이선스가 필요 합니다. **이 문서의 나머지 부분에서는 Windows 10에만 적용 됩니다**._
 
 이 문서에서는 각 방법의 작동 방식에 대해 간략하게 설명 하 고 진행 중인 솔루션 및 공유 작업을 선택 하는 시기에 대 한 지침을 제공 합니다.
 
@@ -47,7 +49,7 @@ Moby VM을 사용 하 여 실행 하 고 있는지 확인 하려면 Hyper-v 관�
 
 ## <a name="linux-containers-with-hyper-v-isolation"></a>Hyper-v 격리를 사용 하는 Linux 컨테이너
 
-Windows에서 Linux 컨테이너 (LCOW)를 시도 하려면 [windows 10에서](../quick-start/quick-start-windows-10-linux.md)linux 컨테이너의 linux 컨테이너 지침을 따릅니다.
+Windows 10에서 Linux 컨테이너 (LCOW10)를 시도 하려면 [windows 10에서](../quick-start/quick-start-windows-10-linux.md)linux 컨테이너의 linux 컨테이너 지침을 따릅니다. 
 
 Hyper-v 격리를 사용 하는 linux 컨테이너는 컨테이너를 실행 하는 데 충분 한 OS를 사용 하 여 최적화 된 Linux VM에서 각 Linux 컨테이너를 실행 합니다. Moby VM 방식과 달리 각 Linux 컨테이너에는 고유한 커널 및 자체 VM 샌드박스가 있습니다. 또한 Windows의 Docker에서 직접 관리 됩니다.
 
@@ -74,10 +76,10 @@ LCOW가 활성 개발 중입니다. [GitHub](https://github.com/moby/moby/issues
 * MkNod
 * XAttrWalk
 * XAttrCreate
-* Lock
+* 잠금
 * Getlock
 * Auth
-* Flush
+* 플러시
 * INotify
 
 완전히 구현되지 않는 다음과 같은 사항도 있습니다.

@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 32d40997ffef47e4eae2d06303f45522623a5e54
-ms.sourcegitcommit: 530712469552a1ef458883001ee748bab2c65ef7
+ms.openlocfilehash: 326a56789d07f601beceebed01fdc3d49bc7471e
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628948"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853867"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -137,7 +137,7 @@ Microsoft Windows [Version 10.0.16299.125]
 C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
 ```
 
-```batch
+```powershell
 Windows PowerShell
 Copyright (C) 2016 Microsoft Corporation. All rights reserved.
 
@@ -174,28 +174,28 @@ docker: Error response from daemon: container b81ed896222eb87906ccab1c3dd2fc4932
 
 컨테이너에 사용 해야 하는 버전을 알아야 합니다. 예를 들어 Windows Server 버전 1809을 컨테이너 OS로 사용 하 고 최신 패치를 사용 하려는 경우 다음과 같이 원하는 기본 OS 컨테이너 이미지의 버전을 지정할 때 `1809` 태그를 사용 해야 합니다.
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809
 ...
 ```
 
 그러나 Windows Server 버전 1809의 특정 패치를 원하는 경우 태그에 KB 번호를 지정할 수 있습니다. 예를 들어 KB4493509가 적용 된 Windows Server 버전 1809에서 Nano Server 기본 OS 컨테이너 이미지를 가져오려면 다음과 같이 지정 합니다.
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809-KB4493509
 ...
 ```
 
 태그에서 OS 버전을 지정 하 여 이전에 사용한 스키마로 필요한 정확한 패치를 지정할 수도 있습니다.
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:10.0.17763.437
 ...
 ```
 
 Windows Server 2019 및 Windows Server 2016을 기반으로 하는 Server Core 기본 이미지는 [장기 서비스 채널 (LTSC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. 예를 들어 Windows Server 2019을 Server Core 이미지의 컨테이너 OS로 만들고 최신 패치를 포함 하려면 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
 ...
 ```

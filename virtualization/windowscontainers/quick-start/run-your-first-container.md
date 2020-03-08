@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: a664b5b8eb87adffdf7eba3ffca9f4194128df80
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 551d405d836cfb16b587ef78bc2d5f5abbd8648f
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909573"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853817"
 ---
 # <a name="get-started-run-your-first-windows-container"></a>시작 하기: 첫 번째 Windows 컨테이너를 실행 합니다.
 

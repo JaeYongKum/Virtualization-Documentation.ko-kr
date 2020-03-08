@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
-ms.openlocfilehash: fa95ffe1c699a2c837076fcc1b662f6b792b7dfb
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 362805fa230f461414ccc53643644f6c1b3474a8
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909753"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853957"
 ---
 # <a name="isolation-modes"></a>격리 모드
 
@@ -40,7 +40,7 @@ Docker를 사용 하 여 Hyper-v 격리 컨테이너를 관리 하는 것은 프
 docker run -it --isolation=hyperv mcr.microsoft.com/windows/servercore:ltsc2019 cmd
 ```
 
-프로세스 격리 철저 Docker를 사용 하 여 컨테이너를 만들려면 `--isolation` 매개 변수를 사용 하 여 `--isolation=process`를 설정 합니다.
+Docker를 통해 프로세스 격리를 사용 하 여 컨테이너를 만들려면 `--isolation` 매개 변수를 사용 하 여 `--isolation=process`를 설정 합니다.
 
 ```cmd
 docker run -it --isolation=process mcr.microsoft.com/windows/servercore:ltsc2019 cmd

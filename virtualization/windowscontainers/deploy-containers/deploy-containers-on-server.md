@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
-ms.openlocfilehash: 6e3996af36b4a710f9a12b3a1371138b053a43d8
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 9899a2d76bfa1fe312e3bd983f60d09d77c272e9
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909903"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853915"
 ---
 # <a name="container-host-deployment-windows-server"></a>컨테이너 호스트 배포: Windows Server
 
@@ -76,7 +76,8 @@ Install-Package -Name docker -ProviderName DockerMsftProvider -Update -Force -Re
 
 Windows 컨테이너를 사용하려면 기본 이미지를 설치해야 합니다. 기본 이미지는 컨테이너 운영 체제로 Windows Server Core 또는 Nano Server에서 사용할 수 있습니다. Docker 컨테이너 이미지에 대한 자세한 내용은 [Build your own images on docker.com](https://docs.docker.com/engine/tutorials/dockerimages/)(docker.com에서 고유한 이미지 만들기)을 참조하세요.
 
-Windows Server 2019 출시 시 Microsoft에서 제공 하는 컨테이너 이미지는 Microsoft Container Registry 라는 새 레지스트리로 이동 됩니다. Microsoft에서 게시 하는 컨테이너 이미지는 Docker 허브를 통해 계속 검색 해야 합니다. Windows Server 2019 이상에서 게시 된 새 컨테이너 이미지의 경우 MCR에서 해당 이미지를 가져와야 합니다. Windows Server 2019 이전에 게시 된 이전 컨테이너 이미지의 경우 Docker의 레지스트리에서 계속 가져와야 합니다.
+> [!TIP]
+> 2018 년 5 월부터 일관 되 고 신뢰할 수 있는 구매 환경을 제공 하 여 대부분의 Microsoft 원본 컨테이너 이미지는 Microsoft Container Registry _mcr.microsoft.com_에서 제공 되지만 [_Docker 허브_](https://hub.docker.com/publishers/microsoftowner)를 통해 현재 검색 프로세스를 유지 관리 합니다.
 
 ### <a name="windows-server-2019-and-newer"></a>Windows Server 2019 이상
 
@@ -112,7 +113,7 @@ docker pull mcr.microsoft.com/windows/nanoserver:1803
 
 Hyper-v 격리를 실행 하려면 Hyper-v 역할이 있어야 합니다. Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 Hyper-V 역할을 설치하기 전에 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)를 참조하세요.
 
-### <a name="nested-virtualization"></a>중첩된 가상화
+### <a name="nested-virtualization"></a>중첩 된 가상화
 
 다음 스크립트는 컨테이너 호스트에 대한 중첩된 가상화를 구성합니다. 이 스크립트는 부모 Hyper-V 컴퓨터에서 실행됩니다. 이 스크립트를 실행할 때 컨테이너 호스트 가상 컴퓨터가 꺼져 있는지 확인하세요.
 

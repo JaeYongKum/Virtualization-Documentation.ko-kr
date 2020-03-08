@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 6e5e6b01-7a9d-4123-8cc7-f986e10cd372
-ms.openlocfilehash: d3375cd912097f85f0a350b8f329c008323cab37
-ms.sourcegitcommit: cea415924b7b6a690d0ba9ff31beed30e9c187d2
+ms.openlocfilehash: ebc9be132f05c20eb8daf9b5e6713b9258012305
+ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "76750194"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853994"
 ---
 # <a name="windows-10-hyper-v-system-requirements"></a>Windows 10 Hyper-V 시스템 요구 사항
 
@@ -51,12 +51,23 @@ RAM이 4GB인 호스트에서 3~4개의 기본 가상 컴퓨터를 실행할 수
 
 ## <a name="verify-hardware-compatibility"></a>하드웨어 호환성 확인
 
-호환성을 확인하려면 PowerShell 또는 명령 프롬프트(cmd.exe)를 열고 **systeminfo**를 입력합니다. 나열된 모든 Hyper-V 요구 사항의 값이 **예**인 경우 시스템에서 Hyper-V 역할을 실행할 수 있습니다. 항목이 **아니요**를 반환하는 경우 이 문서에 나열된 요구 사항을 확인하고 가능한 경우 조정합니다.
+위의 운영 체제 및 하드웨어 요구 사항을 확인 한 후 PowerShell 세션 또는 명령 프롬프트 (cmd.exe) 창을 열고, **systeminfo**를 입력 한 다음 Hyper-v 요구 사항 섹션을 확인 하 여 Windows에서 하드웨어 호환성을 확인 합니다. 나열된 모든 Hyper-V 요구 사항의 값이 **예**인 경우 시스템에서 Hyper-V 역할을 실행할 수 있습니다. 항목이 **아니요**를 반환하는 경우 이 문서에 나열된 요구 사항을 확인하고 가능한 경우 조정합니다.
 
 ![](media/SystemInfo-upd.png)
 
-기존 Hyper-V 호스트에서 **systeminfo**를 실행하는 경우 Hyper-V 요구 사항 섹션을 읽습니다.
+## <a name="final-check"></a>최종 확인
 
-```
-Hyper-V Requirements: A hypervisor has been detected. Features required for Hyper-V will not be displayed.
-```
+모든 OS, 하드웨어 및 호환성 요구 사항이 충족 되 면 제어판의 **hyper-v** 가 표시 됩니다 **. Windows 기능을 설정 하거나 해제** 하 고 두 가지 옵션을 사용할 수 있습니다.
+
+1. Hyper-v 플랫폼
+1. Hyper-V 관리 도구
+
+![](media/hyper_v_feature_screenshot.png)
+
+> [!NOTE] 제어판에서 **hyper-v** 대신 **windows 하이퍼바이저 플랫폼** 을 사용 하는 경우 **Windows 기능 사용 >/사용 안 함** 이 hyper-v와 호환 되지 않을 수 있습니다. 그런 다음, 위의 요구 사항을 교차 검사 합니다.
+>
+>기존 Hyper-V 호스트에서 **systeminfo**를 실행하는 경우 Hyper-V 요구 사항 섹션을 읽습니다.
+>
+>```
+>Hyper-V Requirements: A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+>```
