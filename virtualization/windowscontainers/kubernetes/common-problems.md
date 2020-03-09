@@ -8,11 +8,11 @@ ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
 ms.openlocfilehash: 471731ec50c7c03816a956bd7aae859ad218be6d
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.sourcegitcommit: 6f505becbafb1e9785c67d6b0715c4c3af074116
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910453"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78338064"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -101,7 +101,7 @@ Windows pod에는 현재 ICMP 프로토콜에 대해 프로그래밍 된 아웃 
 
 여전히 문제가 발생 하는 경우에는 일반적으로 [cni](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf) 의 네트워크 구성으로 인해 몇 가지 주의가 필요 합니다. 언제 든 지이 정적 파일을 편집할 수 있으며, 구성은 새로 만든 Kubernetes 리소스에 적용 됩니다.
 
-왜 그럴까요?
+이유
 Kubernetes 네트워킹 요구 사항 ( [Kubernetes 모델](https://kubernetes.io/docs/concepts/cluster-administration/networking/)참조) 중 하나는 내부적으로 NAT 없이 클러스터 통신을 수행 하는 것입니다. 이러한 요구 사항을 충족 하기 위해 아웃 바운드 NAT가 발생 하지 않도록 하는 모든 통신에 대 한 [예외](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf#L20) 를 발생 시킬 수 있습니다. 그러나이는 쿼리를 시도 하는 외부 IP를 제외 해야 한다는 의미 이기도 합니다. 그 다음에만 Windows pod에서 시작 된 트래픽이 외부 세계의 응답을 수신 하기 위해 올바르게 SNAT'ed 됩니다. 이와 관련 하 여 `cni.conf`의 예외는 다음과 같이 표시 되어야 합니다.
 ```conf
 "ExceptionList": [
