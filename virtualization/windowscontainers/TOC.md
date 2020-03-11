@@ -35,6 +35,7 @@
 ### [컨테이너 기본 이미지](manage-containers/container-base-images.md)
 ### [격리 모드](manage-containers/hyperv-container.md)
 ### [버전 호환성](deploy-containers/version-compatibility.md)
+### [컨테이너 업데이트](deploy-containers/update-containers.md)
 ### [리소스 컨트롤](manage-containers/resource-controls.md)
 ## Docker
 ### [Windows의 Docker 엔진](manage-docker/configure-docker-daemon.md)
@@ -57,7 +58,7 @@
 ### Docker Swarm
 #### [Swarm 모드](manage-containers/swarm-mode.md)
 ## 작업
-### 그룹 관리 서비스 계정
+### Group Managed Service Accounts
 #### [gMSA 만들기](manage-containers/manage-serviceaccounts.md)
 #### [gMSA를 사용하도록 앱 구성](manage-containers/gmsa-configure-app.md)
 #### [gMSA를 사용하여 컨테이너 실행](manage-containers/gmsa-run-container.md)
@@ -69,14 +70,14 @@
 ### [네트워크 토폴로지 및 드라이버](container-networking/network-drivers-topologies.md)
 ### [네트워크 격리 및 보안](container-networking/network-isolation-security.md)
 ### [고급 네트워킹 옵션 구성](container-networking/advanced.md)
-## 저장 공간
+## 스토리지
 ### [개요](manage-containers/container-storage.md)
 ### [영구 스토리지](manage-containers/persistent-storage.md)
-## 장치
+## 디바이스
 ### [하드웨어 디바이스](deploy-containers/hardware-devices-in-containers.md)
 ### [GPU 가속](deploy-containers/gpu-acceleration.md)
 
-# 참고자료
+# 참조
 ## [기본 이미지 서비스 수명 주기](deploy-containers/base-image-lifecycle.md)
 ## [바이러스 백신 최적화](https://docs.microsoft.com/windows-hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
