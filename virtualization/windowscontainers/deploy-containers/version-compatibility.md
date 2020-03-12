@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 326a56789d07f601beceebed01fdc3d49bc7471e
-ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
+ms.openlocfilehash: 917c07e13d6a0ec5b5e73213da4dc4f04ec0d9bb
+ms.sourcegitcommit: 8eedfdc1fda9d0abb36e28dc2b5fb39891777364
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853867"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79027861"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -104,11 +104,16 @@ Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유 하�
 
 #### <a name="revision-number-patching"></a>수정 번호 (패치)
 
-Windows Server 2016 기반 컨테이너는 컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다를 때 시작 하지 못하도록 차단 됩니다. 예를 들어 컨테이너 호스트가 버전 10.0.14393 인 경우입니다. **1914** (Windows Server 2016 with KB4051033 적용 됨) 및 컨테이너 이미지는 버전 10.0.14393입니다. **1944** (Windows Server 2016 with KB4053579 적용 됨) 이미지는 시작 되지 않습니다.
+Windows Server 컨테이너는 현재 Windows Server 2016 기반 컨테이너가 컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다른 시스템에서 실행 되는 시나리오를 지원 하지 않습니다. 예를 들어 컨테이너 호스트가 버전 10.0.14393 인 경우입니다. **1914** (Windows Server 2016 with KB4051033 적용 됨) 및 컨테이너 이미지는 버전 10.0.14393입니다. **1944** (Windows Server 2016 with KB4053579 적용 됨) 이미지를 시작할 수 없습니다.
 
-그러나 Windows Server 버전 1809 이상을 사용 하는 호스트 또는 이미지의 경우에는이 규칙이 적용 되지 않으며 호스트 및 컨테이너 이미지에 일치 하는 수정 버전이 필요 하지 않습니다. 
+그러나 Windows Server 버전 1809 이상을 사용 하는 호스트 또는 이미지의 경우에는이 규칙이 적용 되지 않으며 호스트 및 컨테이너 이미지에 일치 하는 수정 버전이 필요 하지 않습니다.
 
 최신 패치와 업데이트를 사용 하 여 시스템 (호스트 및 컨테이너)을 최신 상태로 유지 하 고 보안을 유지 하는 것이 좋습니다.
+
+>[!NOTE]
+>Windows Server 컨테이너를 사용 하는 경우 2020 보안 업데이트 릴리스 ("2B" 라고도 함) 또는 이후 월간 보안 업데이트 릴리스가 있는 경우 문제가 발생할 수 있습니다. 자세한 내용은 [이 문서](https://support.microsoft.com/help/4542617/you-might-encounter-issues-when-using-windows-server-containers-with-t) 를 참조 하세요.  
+>
+>보안 및 호환성을 유지 하기 위해 최신 패치와 업데이트를 사용 하 여 호스트와 컨테이너를 모두 업데이트 하는 것이 좋습니다. Windows 컨테이너를 업데이트 하는 방법에 대 한 중요 지침은 [Windows Server 컨테이너 업데이트](update-containers.md)를 참조 하세요.
 
 #### <a name="practical-application"></a>실용적인 응용 프로그램
 
@@ -131,7 +136,7 @@ Microsoft Windows [Version 10.0.16299.125]
 
 방법 2: 다음 레지스트리 키를 쿼리 합니다. HKEY_LOCAL_MACHINE \Software\Microsoft\Windows NT\CurrentVersion
 
-예를 들면 다음과 같습니다.
+예를 들어:
 
 ```batch
 C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
@@ -243,7 +248,7 @@ y5blbdum70zoh1f6uhx5nxsfv    \_ angry_liskov.1   microsoft/iis:windowsservercore
 
 ### <a name="fix---update-the-service-to-use-a-matching-version"></a>수전 - 일치하는 버전을 사용하도록 서비스 업데이트
 
-Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 만들지 않은 이미지를 사용 하는 서비스를 포함 하는 작성 파일이 있는 경우 참조를 적절 하 게 업데이트 하는 것이 좋습니다. 예를 들면 다음과 같습니다.
+Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 만들지 않은 이미지를 사용 하는 서비스를 포함 하는 작성 파일이 있는 경우 참조를 적절 하 게 업데이트 하는 것이 좋습니다. 예를 들어:
 
 ``` yaml
 version: '3'
