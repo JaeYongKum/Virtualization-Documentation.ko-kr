@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포하고 Windows 노드를 가입할 때 발생하는 일반적인 문제에 대한 해결 방법입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: 471731ec50c7c03816a956bd7aae859ad218be6d
-ms.sourcegitcommit: 6f505becbafb1e9785c67d6b0715c4c3af074116
+ms.openlocfilehash: 19b467b657708627dcb6ca93b64fa292d3db8de8
+ms.sourcegitcommit: 8eedfdc1fda9d0abb36e28dc2b5fb39891777364
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78338064"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402924"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포 관련 몇 가지 일반적인 문제를 안내합니다.
@@ -112,7 +112,10 @@ Kubernetes 네트워킹 요구 사항 ( [Kubernetes 모델](https://kubernetes.i
 ```
 
 ### <a name="my-windows-node-cannot-access-a-nodeport-service"></a>Windows 노드가 NodePort 서비스에 액세스할 수 없습니다. ###
-노드 자체에서 로컬 NodePort 액세스는 실패 합니다. 이것은 알려진 제한 사항입니다. NodePort 액세스는 다른 노드나 외부 클라이언트에서 작동 합니다.
+Windows Server 2019에 대 한 디자인 제한으로 인해 노드 자체의 로컬 NodePort 액세스는 실패 합니다. NodePort 액세스는 다른 노드나 외부 클라이언트에서 작동 합니다.
+
+### <a name="my-windows-node-stops-routing-thourgh-nodeports-after-i-scaled-down-my-pods"></a>내 Windows 노드가 pod을 확장 한 후 thourgh NodePorts 라우팅을 중지 합니다. ###
+디자인 제한으로 인해 NodePort 전달이 작동 하려면 Windows 노드에서 하나 이상의 pod를 실행 해야 합니다.
 
 ### <a name="after-some-time-vnics-and-hns-endpoints-of-containers-are-being-deleted"></a>잠시 후 컨테이너의 vNICs 및 HNS 끝점을 삭제 하 고 있습니다. ###
 `hostname-override` 매개 변수가 [kube](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)에 전달 되지 않은 경우이 문제가 발생할 수 있습니다. 이 문제를 해결 하려면 다음과 같이 사용자가 호스트 이름을 kube에 전달 해야 합니다.
