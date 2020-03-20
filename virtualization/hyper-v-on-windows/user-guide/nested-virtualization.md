@@ -10,7 +10,7 @@ ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
 ms.openlocfilehash: f819ac04773188525af202d370ba271a2d93e259
 ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/18/2020
 ms.locfileid: "77439350"
@@ -21,7 +21,7 @@ ms.locfileid: "77439350"
 
 ![](./media/HyperVNesting.png)
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 * Hyper-V 호스트 및 게스트는 Windows Server 2016/Windows 10 1주년 업데이트 이상이어야 합니다.
 * VM 구성 버전 8.0 이상.
@@ -31,13 +31,13 @@ ms.locfileid: "77439350"
 
 ## <a name="configure-nested-virtualization"></a>중첩된 가상화 구성
 
-1. 가상 컴퓨터 만들기 필요한 OS 및 VM 버전은 위의 필수 조건을 참조하세요.
+1. 가상 컴퓨터를 만듭니다. 필요한 OS 및 VM 버전은 위의 필수 조건을 참조하세요.
 2. 가상 컴퓨터가 꺼짐 상태일 때 물리적 Hyper-V 호스트에서 다음 명령을 실행합니다. 그러면 가상 컴퓨터에서 중첩된 가상화를 사용할 수 있습니다.
 
 ```
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
-3. 가상 컴퓨터를 시작합니다.
+3. 가상 머신을 시작합니다.
 4. 물리적 서버에서 하는 것처럼 가상 컴퓨터 내에 Hyper-V를 설치합니다. Hyper-V 설치에 대한 자세한 내용은 [Hyper-V 설치](../quick-start/enable-hyper-v.md)를 참조하세요.
 
 ## <a name="disable-nested-virtualization"></a>중첩된 가상화 사용 안 함
@@ -94,7 +94,7 @@ Netsh interface ip add dnsserver “Ethernet” address=<my DNS server>
 
 중첩된 가상화를 통해 이 하드웨어 지원을 게스트 가상 컴퓨터에서 사용할 수 있습니다.
 
-아래 다이어그램은 중첩 없이 Hyper-V를 보여 줍니다.  Hyper-V 하이퍼바이저는 하드웨어 가상화 기능(주황색 화살표)을 전체 제어하며 이 기능들을 게스트 운영 체제에 노출하지 않습니다.
+아래 다이어그램은 중첩 없는 Hyper-V를 보여 줍니다.  Hyper-V 하이퍼바이저는 하드웨어 가상화 기능(주황색 화살표)을 전체 제어하며 이 기능들을 게스트 운영 체제에 노출하지 않습니다.
 
 ![](./media/HVNoNesting.PNG)
 

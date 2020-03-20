@@ -9,7 +9,7 @@ ms.prod: windows-10-hyperv
 ms.assetid: 752dc760-a33c-41bb-902c-3bb2ecd9ac86
 ms.openlocfilehash: bad59fcc65bf66ab3c6dc940a17111e46a9bc226
 ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/18/2020
 ms.locfileid: "77439700"
@@ -17,20 +17,20 @@ ms.locfileid: "77439700"
 # <a name="install-hyper-v-on-windows-10"></a>Windows 10에 Hyper-V 설치
 
 Windows 10에서 가상 컴퓨터를 만들 수 있도록 Hyper-V를 사용하도록 설정합니다.  
-Hyper-v는 Windows 10 제어판, PowerShell을 사용 하거나 DISM (배포 이미지 서비스 및 관리 도구)을 사용 하는 등의 여러 가지 방법으로 사용 하도록 설정할 수 있습니다. 이 문서에서는 각 옵션을 안내합니다.
+Windows 10 제어판, PowerShell 또는 DISM(Deployment Imaging Servicing and Management) 도구를 사용하는 방법을 포함하여 여러 가지 방법으로 Hyper-V를 사용하도록 설정할 수 있습니다. 이 문서에서는 각 옵션을 안내합니다.
 
-> **참고:**  Hyper-V는 선택적 기능으로 Windows에서 기본 제공되기 때문에 Hyper-V 다운로드가 필요하지 않습니다.
+> **참고:**  Hyper-V는 Windows에서 선택적 기능으로 기본 제공되므로 Hyper-V를 다운로드할 필요가 없습니다.
 
 ## <a name="check-requirements"></a>요구 사항 확인
 
-* Windows 10 Enterprise, Pro 또는 교육용
+* Windows 10 Enterprise, Pro 또는 Education
 * 두 번째 수준 주소 변환(SLAT)을 사용하는 64비트 프로세서.
-* VM 모니터 모드 확장에 대 한 CPU 지원 (Intel Cpu의 VT-c).
+* VM 모니터 모드 확장(Intel CPU의 VT-c)을 지원하는 CPU.
 * 최소 4GB의 메모리.
 
 Hyper-V 역할은 Windows 10 Home에는 **설치할 수 없습니다**.
 
-**설정** > **업데이트 및 보안** > **활성화**를 열어 windows 10 Home edition에서 windows 10 Pro로 업그레이드 합니다.
+**설정** > **업데이트 및 보안** > **정품 인증**을 열어 Windows 10 Home 버전을 Windows 10 Pro로 업그레이드하세요.
 
 자세한 내용과 문제 해결은 [Windows 10 Hyper-V 시스템 요구 사항](../reference/hyper-v-requirements.md)을 참조하세요.
 
@@ -56,7 +56,7 @@ DISM을 사용하여 Hyper-V 역할을 활성화하려면:
 
 1. 관리자 권한으로 PowerShell 또는 CMD 세션을 엽니다.
 
-1. 다음 명령을 입력합니다:
+1. 다음 명령을 입력합니다.
 
   ```powershell
   DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
@@ -70,7 +70,7 @@ DISM에 대한 자세한 내용은 [DISM 기술 참조](<https://docs.microsoft.
 
 1. Windows 단추를 마우스 오른쪽 단추로 클릭하고 '앱 및 기능'을 선택합니다.
 
-2. 관련 설정에서 오른쪽에 있는 **프로그램 및 기능** 을 선택 합니다. 
+2. 오른쪽의 관련 설정에서 **프로그램 및 기능**를 선택합니다. 
 
 3. **Windows 기능 사용/사용 안 함**을 선택합니다.
 

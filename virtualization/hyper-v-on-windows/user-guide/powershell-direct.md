@@ -10,7 +10,7 @@ ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
 ms.openlocfilehash: ed96c7ba30c83906cd3245a279ab078229400d8d
 ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/18/2020
 ms.locfileid: "77439550"
@@ -19,11 +19,11 @@ ms.locfileid: "77439550"
 
 PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설정에 상관 없이 Hyper-V 호스트의 Windows 10 또는 Windows Server 2016 가상 머신에서 임의의 PowerShell을 실행할 수 있습니다.
 
-PowerShell Direct를 실행 하는 몇 가지 방법은 다음과 같습니다.
+다음과 같은 몇 가지 방법으로 PowerShell Direct를 실행할 수 있습니다.
 
-* [Enter-PSSession cmdlet을 사용 하 여 대화형 세션으로](#create-and-exit-an-interactive-powershell-session)
-* [단일 사용 섹션으로 서 명령 cmdlet을 사용 하 여 단일 명령 또는 스크립트를 실행 합니다.](#run-a-script-or-command-with-invoke-command)
-* [새 pssession, 복사 항목 및 Remove pssession cmdlet을 사용 하 여 영구적인 세션 (빌드 14280 이상)](#copy-files-with-new-pssession-and-copy-item)
+* [Enter-PSSession cmdlet을 사용하여 대화형 세션으로](#create-and-exit-an-interactive-powershell-session)
+* [Invoke-Command cmdlet을 사용하여 단일 명령 또는 스크립트를 실행하는 단일 사용 섹션으로](#run-a-script-or-command-with-invoke-command)
+* [New-PSSession, Copy-Item 및 Remove-PSSession cmdlet을 사용하여 영구 세션으로(빌드 14280 이상)](#copy-files-with-new-pssession-and-copy-item)
 
 ## <a name="requirements"></a>요구 사항
 **운영 체제 요구 사항:**
@@ -46,7 +46,7 @@ PowerShell Direct를 실행 하는 몇 가지 방법은 다음과 같습니다.
 
 세션이 시작되면 입력한 명령이 가상 컴퓨터 자체의 PowerShell 세션에 직접 입력한 것처럼 가상 컴퓨터에서 실행됩니다.
 
-**대화형 세션을 시작 하려면:**
+**대화형 세션을 시작하는 방법은 다음과 같습니다.**
 
 1. Hyper-V 호스트에서 관리자 권한으로 PowerShell을 엽니다.
 
@@ -75,7 +75,7 @@ PowerShell Direct를 실행 하는 몇 가지 방법은 다음과 같습니다.
    Exit-PSSession 
    ``` 
 
-> 참고: 세션이 연결되지 않으면 [문제 해결](#troubleshooting)에서 잠재적 원인을 확인하세요. 
+> 참고:  세션이 연결되지 않으면 [문제 해결](#troubleshooting)에서 잠재적 원인을 확인하세요. 
 
 이러한 cmdlet에 대한 자세한 내용은 [Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession?view=powershell-5.1) 및 [Exit-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession?view=powershell-5.1)을 참조하세요. 
 
@@ -85,7 +85,7 @@ PowerShell Direct를 실행 하는 몇 가지 방법은 다음과 같습니다.
 
 Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하나의 명령이나 하나의 스크립트를 실행해야 하지만 그 후에는 가상 컴퓨터와 계속 상호 작용할 필요가 없는 경우에 매우 적합합니다.
 
-**단일 명령을 실행 하려면 다음을 수행 합니다.**
+**단일 명령을 실행하는 방법은 다음과 같습니다.**
 
 1. Hyper-V 호스트에서 관리자 권한으로 PowerShell을 엽니다.
 
@@ -101,7 +101,7 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
    명령이 가상 컴퓨터에서 실행되고 콘솔에 출력이 있을 경우 콘솔로 인쇄됩니다.  명령이 실행되는 즉시 연결이 자동으로 닫힙니다.
    
    
-**스크립트를 실행 하려면 다음을 수행 합니다.**
+**스크립트를 실행하는 방법은 다음과 같습니다.**
 
 1. Hyper-V 호스트에서 관리자 권한으로 PowerShell을 엽니다.
 
@@ -128,7 +128,7 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
 
 세션은 동일한 토큰별로 상태를 저장합니다.  영구 세션은 계속 유지되므로 세션에서 만들거나 세션에 전달된 모든 변수가 여러 호출에서 그대로 유지됩니다. 영구 세션 작업에는 많은 도구를 사용할 수 있습니다.  이 예제에서는 [New-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/New-PSSession?view=powershell-5.1) 및 [Copy-Item](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Copy-Item?view=powershell-5.1)을 사용하여 호스트에서 가상 컴퓨터로, 가상 컴퓨터에서 호스트로 데이터를 이동합니다.
 
-**세션을 만들려면 다음 파일을 복사 합니다.**  
+**세션을 만든 후 파일을 복사하는 방법은 다음과 같습니다.**  
 
 1. Hyper-V 호스트에서 관리자 권한으로 PowerShell을 엽니다.
 
@@ -173,8 +173,8 @@ Invoke-Command를 사용하는 PowerShell Direct는 가상 컴퓨터에서 하�
 PowerShell Direct를 통해 표시되는 작은 집합의 일반적인 오류 메시지가 있습니다.  다음은 가장 일반적인, 몇 가지 원인 및 문제를 진단하기 위한 도구입니다.
 
 ### <a name="-vmname-or--vmid-parameters-dont-exist"></a>-VMName 또는 -VMID 매개 변수가 없습니다.
-**문제의**  
-`Enter-PSSession`, `Invoke-Command`또는 `New-PSSession`에는 `-VMName` 또는 `-VMId` 매개 변수가 없습니다.
+**문제:**  
+`Enter-PSSession`, `Invoke-Command` 또는 `New-PSSession`에 `-VMName` 또는 `-VMId` 매개 변수가 없습니다.
 
 **가능한 원인:**  
 가장 가능성이 높은 문제는 PowerShell Direct가 호스트 운영 체제에서 지원되지 않는다는 것입니다.
@@ -194,7 +194,7 @@ $PSVersionTable.PSVersion
 ```
 
 
-### <a name="error-a-remote-session-might-have-ended"></a>오류: 원격 세션이 종료됐을 수 있습니다.
+### <a name="error-a-remote-session-might-have-ended"></a>오류: 원격 세션이 종료된 것일 수 있습니다.
 > **참고:**  
 호스트 빌드 10240과 12400 사이의 Enter-PSSession에 대해 아래의 모든 오류가 " 원격 세션이 종료되었을 수 있습니다."로 보고되었습니다.
 
@@ -219,7 +219,7 @@ New-PSSession : An error has occurred which Windows PowerShell cannot handle. A 
 ```
 
 **가능한 원인:**
-* 위에 나열 된 이유 중 하나는 모두 `New-PSSession`에 동일 하 게 적용 됩니다.  
+* 위에 나열된 원인 중 하나. 모든 원인이 `New-PSSession`에 동일하게 적용됩니다.  
 * `-Credential`을 사용하여 자격 증명을 명시적으로 전달해야 하는 현재 빌드의 버그입니다.  이런 경우 전체 서비스가 게스트 운영 체제에서 중단되므로 다시 시작해야 합니다.  Enter-PSSession에서 세션을 계속 사용할 수 있는지 확인할 수 있습니다.
 
 자격 증명 문제를 해결하려면 VMConnect를 사용하여 가상 컴퓨터에 로그인하고 PowerShell을 연 후 다음 PowerShell을 사용하여 vmicvmsession 서비스를 다시 시작합니다.
@@ -228,14 +228,14 @@ New-PSSession : An error has occurred which Windows PowerShell cannot handle. A 
 Restart-Service -Name vmicvmsession
 ```
 
-### <a name="error-parameter-set-cannot-be-resolved"></a>오류: 매개 변수 집합을 확인할 수 없습니다.
+### <a name="error-parameter-set-cannot-be-resolved"></a>오류: 매개 변수 세트를 확인할 수 없습니다.
 **오류 메시지:**  
 ``` 
 Enter-PSSession : Parameter set cannot be resolved using the specified named parameters.
 ```
 
 **가능한 원인:**  
-* 가상 컴퓨터에 연결 하는 경우에는 `-RunAsAdministrator` 지원 되지 않습니다.
+* 가상 머신에 연결할 때 `-RunAsAdministrator`가 지원되지 않습니다.
      
   Windows 컨테이너에 연결할 경우에는 `-RunAsAdministrator` 플래그에서 명시적 자격 증명 없이 관리자 연결을 허용합니다.  가상 컴퓨터는 호스트에 암시적 관리자 액세스 권한을 제공하지 않으므로 자격 증명을 명시적으로 입력해야 합니다.
 
@@ -253,9 +253,9 @@ Enter-PSSession : The credential is invalid.
 * 게스트 자격 증명의 유효성을 검사할 수 없습니다.
   * 제공된 자격 증명이 잘못되었습니다.
   * 게스트에 사용자 계정이 없습니다.(OS가 이전에 부팅되지 않았습니다)
-  * 관리자 권한으로 연결하는 경우: 관리자가 활성 사용자로 설정되지 않았습니다.  [여기](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825104(v=win.10)>)에서 자세한 내용을 알아보세요.
+  * 관리자로 연결하는 경우:  관리자가 활성 사용자로 설정되지 않았습니다.  [여기](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825104(v=win.10)>)에서 자세한 내용을 알아보세요.
   
-### <a name="error-the-input-vmname-parameter-does-not-resolve-to-any-virtual-machine"></a>오류: 입력 VMName 매개 변수가 가상 컴퓨터로 확인되지 않습니다.
+### <a name="error-the-input-vmname-parameter-does-not-resolve-to-any-virtual-machine"></a>오류: 입력 VMName 매개 변수가 가상 머신으로 확인되지 않습니다.
 
 **오류 메시지:**  
 ```

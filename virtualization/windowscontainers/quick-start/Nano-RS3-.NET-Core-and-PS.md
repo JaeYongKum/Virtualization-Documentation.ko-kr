@@ -10,7 +10,7 @@ Dockerfile에서 컨테이너를 빌드하려면 docker build를 사용하고, �
 docker run microsoft/nanoserver-insider cmd /c echo Hello World!
 ```
 
-[Windows의 Dockerfile](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)과 FROM, RUN, COPY, ADD, CMD 등의 Dockerfile 구문을 사용하여 좀 더 복잡한 응용 프로그램을 빌드할 수 있습니다. 특정 명령은 이 기본 이미지에서 즉시 실행할 수 없지만, 이제는 응용 프로그램 작동에 필요한 것만 포함되어 있는 컨테이너 이미지를 만들 수 있습니다.
+[Windows의 Dockerfile](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)과 FROM, RUN, COPY, ADD, CMD 등의 Dockerfile 구문을 사용하여 보다 복잡한 애플리케이션을 빌드할 수 있습니다.  이 기본 이미지에서 바로 특정 명령을 실행할 수는 없지만, 이제 애플리케이션이 작동하는 데 필요한 것들만 포함하는 컨테이너 이미지를 만들 수 있습니다.
 
 기본 Nano 서버 컨테이너 OS 이미지에서 .NET Core와 PowerShell을 사용할 수 없게 되면서, 압축된 zip 형식의 콘텐츠가 포함된 컨테이너를 어떻게 빌드할 것인지에 대한 과제가 생겼습니다. Docker 17.05에 제공되는 [다단계 빌드](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) 기능을 사용하면 다른 컨테이너에서 PowerShell을 활용하여 콘텐츠 압축을 풀고 Nano 컨테이너에 복사할 수 있습니다. 이 방법을 사용하여 .NET Core 컨테이너와 PowerShell 컨테이너를 만들 수 있습니다. 
 

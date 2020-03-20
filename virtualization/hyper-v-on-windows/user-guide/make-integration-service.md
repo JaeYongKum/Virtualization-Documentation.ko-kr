@@ -9,14 +9,14 @@ ms.prod: windows-10-hyperv
 ms.assetid: 1ef8f18c-3d76-4c06-87e4-11d8d4e31aea
 ms.openlocfilehash: 89a36ee87bce1da18852f0ebff248e239165eb7d
 ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 12/04/2019
 ms.locfileid: "74911033"
 ---
 # <a name="make-your-own-integration-services"></a>고유한 통합 서비스 만들기
 
-Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대한 새로운 주소 집합과 특수 끝점을 제공하는 Windows 소켓인 Hyper-V 소켓을 사용하여 Hyper-V 호스트 및 해당 가상 컴퓨터와 통신하는 응용 프로그램을 만들 수 있습니다.  Hyper-V 소켓을 통한 통신은 모두 네트워킹을 사용하지 않고 실행되며 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다. Hyper-V 소켓을 사용하는 응용 프로그램은 Hyper-V의 통합 서비스와 비슷합니다.
+Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대한 새로운 주소 집합과 특수 엔드포인트을 제공하는 Windows 소켓인 Hyper-V 소켓을 사용하여 Hyper-V 호스트 및 해당 가상 컴퓨터와 통신하는 응용 프로그램을 만들 수 있습니다.  Hyper-V 소켓을 통한 통신은 모두 네트워킹을 사용하지 않고 실행되며 모든 데이터가 동일한 물리적 메모리에 머물게 됩니다. Hyper-V 소켓을 사용하는 응용 프로그램은 Hyper-V의 통합 서비스와 비슷합니다.
 
 이 문서에서는 Hyper-V 소켓에 구축되는 간단한 프로그램을 만드는 방법을 안내합니다.
 
@@ -46,18 +46,18 @@ Windows 10 1주년 업데이트부터 누구나 대상 가상 컴퓨터에 대�
 요구 사항:
 * C/C++ 컴파일러.  없으면 [Visual Studio 커뮤니티](https://aka.ms/vs)를 확인하세요.
 * [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) -- Visual Studio 2015(업데이트 3 포함) 이상에 미리 설치되어 있습니다.
-* 한 대 이상의 가상 컴퓨터와 함께 위의 호스트 운영 체제 중 하나를 실행하는 컴퓨터. -- 응용 프로그램 테스트용입니다.
+* 한 대 이상의 가상 컴퓨터와 함께 위의 호스트 운영 체제 중 하나를 실행하는 컴퓨터. -- 애플리케이션 테스트용입니다.
 
-> **참고:** Hyper-v 소켓용 API는 Windows 10 기념일 업데이트에서 공개적으로 제공 됩니다. HVSocket를 사용 하는 응용 프로그램은 모든 Windows 10 호스트 및 게스트에서 실행 되지만 빌드 14290 이후의 Windows SDK로만 개발할 수 있습니다.
+> **참고:** Hyper-V 소켓용 API는 Windows 10 1주년 업데이트에서 공개되었습니다. HVSocket을 사용하는 애플리케이션은 Windows 10 호스트와 게스트에서 실행되지만 빌드 14290 이후의 Windows SDK로만 개발할 수 있습니다.
 
-## <a name="register-a-new-application"></a>새 응용 프로그램 등록
-Hyper-V 소켓을 사용하려면 응용 프로그램을 Hyper-V 호스트의 레지스트리에 등록해야 합니다.
+## <a name="register-a-new-application"></a>새 애플리케이션 등록
+Hyper-V 소켓을 사용하려면 애플리케이션을 Hyper-V 호스트의 레지스트리에 등록해야 합니다.
 
 레지스트리에 서비스를 등록하면 다음이 가능합니다.
 *  WMI 관리를 통해 서비스 사용, 사용 안 함 및 사용 가능한 서비스 나열
 *  가상 컴퓨터와 직접 통신할 수 있는 권한
 
-다음 PowerShell은 이름이 "HV Socket Demo"인 새 응용 프로그램을 등록합니다.  관리자 권한으로 실행해야 합니다.  수동 지침은 다음과 같습니다.
+다음 PowerShell은 이름이 "HV Socket Demo"인 새 애플리케이션을 등록합니다.  관리자 권한으로 실행해야 합니다.  수동 지침은 다음과 같습니다.
 
 ``` PowerShell
 $friendlyName = "HV Socket Demo"
@@ -85,7 +85,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
 
 고유 서비스를 등록하려면 자체 GUID 및 친근한 이름을 사용하여 새 레지스트리 키를 만듭니다.
 
-친근한 이름이 새 응용 프로그램과 연결됩니다.  이 이름은 성능 카운터와 GUID가 적합하지 않은 다른 위치에 표시됩니다.
+친근한 이름이 새 애플리케이션과 연결됩니다.  이 이름은 성능 카운터와 GUID가 적합하지 않은 다른 위치에 표시됩니다.
 
 레지스트리 항목은 다음과 같이 표시됩니다.
 ```
@@ -96,7 +96,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\G
         ElementName    REG_SZ    Your Service Friendly Name
 ```
 
-> **참고:** Linux 게스트용 서비스 GUID는 GUID가 아니라 `svm_cid`및 `svm_port`를 통해 주소 지정이 되는 VSOCK 프로토콜을 사용합니다. Windows에서 이러한 비일관성을 해결하기 위해 잘 알려진 GUID가 호스트의 서비스 플랫폼으로 사용되고, 이는 게스트에서 포트로 변환됩니다. 서비스 GUID를 사용자 지정하려면 첫 번째 "00000000"을 원하는 포트 번호로 변경하면 됩니다. 예를 들어 "00000ac9"는 포트 2761입니다.
+> **참고:** Linux 게스트용 서비스 GUID는 GUID가 아니라 `svm_cid`및 `svm_port`를 통해 주소 지정이 되는 VSOCK 프로토콜을 사용합니다. Windows에서 이러한 비일관성을 해결하기 위해 잘 알려진 GUID가 호스트의 서비스 플랫폼으로 사용되고, 이후에 게스트에서 포트로 변환됩니다. 서비스 GUID를 사용자 지정하려면 첫 번째 "00000000"을 원하는 포트 번호로 변경하면 됩니다. 예: "00000ac9"는 포트 2761입니다.
 > ```C++
 > // Hyper-V Socket Linux guest VSOCK template GUID
 > struct __declspec(uuid("00000000-facb-11e6-bd58-64006a7986d3")) VSockTemplate{};
@@ -132,7 +132,7 @@ int socket(int domain, int type, int protocol);
 ```
 
 Hyper-V 소켓의 경우:
-* 주소 집합 - `AF_HYPERV`(Windows) 또는 `AF_VSOCK`(Linux 게스트)
+* 주소 패밀리 - `AF_HYPERV`(Windows) 또는 `AF_VSOCK`(Linux 게스트)
 * 유형 - `SOCK_STREAM`
 * 프로토콜 - `HV_PROTOCOL_RAW`(Windows) 또는 `0`(Linux 게스트)
 
@@ -165,9 +165,9 @@ int bind(int sockfd, const struct sockaddr *addr,
          socklen_t addrlen);
 ```
 
-호스트 컴퓨터의 IP 주소와 해당 호스트의 포트 번호로 구성된 표준 인터넷 프로토콜 주소 집합(`AF_INET`)의 소켓 주소와는 달리, `AF_HYPERV`는 위에서 정의한 가상 컴퓨터의 ID와 응용 프로그램 ID를 사용하여 연결을 수립합니다. Linux 게스트 `AF_VSOCK`에서의 바인딩에서 `svm_cid` 및 `svm_port`가 사용되는 경우입니다.
+호스트 컴퓨터의 IP 주소와 해당 호스트의 포트 번호로 구성된 표준 인터넷 프로토콜 주소 집합(`AF_INET`)의 소켓 주소와는 달리, `AF_HYPERV`는 위에서 정의한 가상 컴퓨터의 ID와 응용 프로그램 ID를 사용하여 연결을 수립합니다. Linux 게스트 `AF_VSOCK`의 바인딩에서 `svm_cid` 및 `svm_port`를 사용하는 경우.
 
-Hyper-V 소켓은 네트워킹 스택, TCP/IP, DNS 등에 종속되지 않으므로, 소켓 끝점에서 호스트 이름이 아니라 연결을 분명히 설명하는 비 IP 형식이 필요합니다.
+Hyper-V 소켓은 네트워킹 스택, TCP/IP, DNS 등에 종속되지 않으므로, 소켓 엔드포인트에서 호스트 이름이 아니라 연결을 분명히 설명하는 비 IP 형식이 필요합니다.
 
 Hyper-V 소켓의 소켓 주소 정의는 다음과 같습니다.
 
@@ -195,7 +195,7 @@ struct sockaddr_vm {
 };
 ```
 
-IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 의존합니다.
+IP 또는 호스트 이름 대신 AF_HYPERV 엔드포인트은 다음 두 GUID에 크게 의존합니다.
 * VM ID – VM마다 할당된 고유의 ID입니다.  VM ID는 다음 PowerShell 코드 조각을 사용하여 찾을 수 있습니다.
   ```PowerShell
   (Get-VM -Name $VMName).Id
@@ -206,7 +206,7 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 
 ### <a name="vmid-wildcards"></a>VMID 와일드카드
 
-| Name(이름) | GUID | 설명 |
+| 이름 | GUID | 설명 |
 |:-----|:-----|:-----|
 | HV_GUID_ZERO | 00000000-0000-0000-0000-000000000000 | 수신기를 이 VMID에 등록해야 모든 파티션으로부터의 연결을 수락할 수 있습니다. |
 | HV_GUID_WILDCARD | 00000000-0000-0000-0000-000000000000 | 수신기를 이 VMID에 등록해야 모든 파티션으로부터의 연결을 수락할 수 있습니다. |
@@ -216,11 +216,11 @@ IP 또는 호스트 이름 대신 AF_HYPERV 끝점은 다음 두 GUID에 크게 
 | HV_GUID_PARENT | a42e7cda-d03f-480c-9cc2-a4de20abb878 | 부모 주소입니다. 이 VMID 연결을 사용하면 커넥터와 동일한 부모 파티션에 연결합니다.* |
 
 
-가상 컴퓨터의 부모 `HV_GUID_PARENT` \*는 호스트입니다.  컨테이너의 부모는 컨테이너의 호스트입니다.
+\* `HV_GUID_PARENT` 가상 머신의 부모는 해당 호스트입니다.  컨테이너의 부모는 컨테이너의 호스트입니다.
 가상 컴퓨터에서 실행 중인 컨테이너로부터의 연결은 해당 컨테이너를 호스팅하는 VM에 연결합니다.
-이 VmId에서 수신은 다음으로부터의 연결을 수락합니다. (컨테이너 내): 컨테이너 호스트
-(VM 내: 컨테이너 호스트/컨테이너 없음): VM 호스트
-(VM 내부 아님: 컨테이너 호스트/컨테이너 없음): 지원 안 함
+이 VMID에서의 수신은 다음으로부터의 연결을 허용합니다. (컨테이너 내부): 컨테이너 호스트.
+(VM 내부: 컨테이너 호스트/컨테이너 없음): VM 호스트.
+(VM 내부 아님: 컨테이너 호스트/컨테이너 없음): 지원 안 됨
 
 ## <a name="supported-socket-commands"></a>지원되는 소켓 명령
 
@@ -229,4 +229,4 @@ Socket() Bind() Connect() Send() Listen() Accept()
 ## <a name="useful-links"></a>유용한 링크
 [전체 WinSock API](https://docs.microsoft.com/windows/desktop/WinSock/winsock-functions)
 
-[Hyper-v Integration Services 참조](../reference/integration-services.md)
+[Hyper-V 통합 서비스 참조](../reference/integration-services.md)

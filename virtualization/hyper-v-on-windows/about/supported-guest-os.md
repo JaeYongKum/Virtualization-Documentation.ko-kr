@@ -9,7 +9,7 @@ ms.prod: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
 ms.openlocfilehash: 25c72b910af15fc0b498a5b2abce72d32e6d1efd
 ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/18/2020
 ms.locfileid: "77439600"
@@ -36,7 +36,7 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 |:-----|:-----|:-----|
 | Windows 10 | 32 |고급 세션 모드는 Windows 10 Home 버전에서 작동하지 않음 |
 | Windows 8.1 | 32 | |
-| Windows 8 | 32 ||
+| Windows 8 | 32 ||
 | Windows 7 SP 1(서비스 팩 1) | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows 7 | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows Vista SP2(서비스 팩 2) | 2 | Business/Enterprise/Ultimate(N 및 KN 버전 포함) |
@@ -48,7 +48,7 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 | Windows Server 2012 | 64 | |
 | Windows Server 2008 R2 SP 1(서비스 팩 1) | 64 | Datacenter/Enterprise/Standard/Web Edition. |
 | Windows Server 2008 SP 2(서비스 팩 2) | 4 | Datacenter/Enterprise/Standard/Web Edition(32비트/64비트). |
-| Windows Home Server 2011 | 4 | |
+| Windows Home Server 2011 | 4 | |
 | Windows Small Business Server 2011 | Essentials edition - 2, Standard edition - 4 | |
 
 > Windows 10은 Windows 8.1 및 Windows Server 2012 R2 Hyper-V 호스트에서 게스트 운영 체제로 실행할 수 있습니다.
@@ -57,7 +57,7 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 
 | 게스트 운영 체제 |  |
 |:-----|:------|
-| [CentOS 및 Red Hat Enterprise Linux](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V) | |
+| [CentOS 및 Red Hat Enterprise Linux ](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V) | |
 | [Hyper-V의 Debian 가상 컴퓨터 ](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Debian-virtual-machines-on-Hyper-V) | |
 | [SUSE](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-SUSE-virtual-machines-on-Hyper-V) | |
 | [Oracle Linux](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Oracle-Linux-virtual-machines-on-Hyper-V)  | |
