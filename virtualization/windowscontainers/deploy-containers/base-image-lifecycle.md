@@ -8,14 +8,17 @@ ms.date: 06/17/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 27672f6a8e71989bfd47fe9810dfd429eedd9206
-ms.sourcegitcommit: 379eb650f6af90f5963e2fcf9de7196238fbe9fa
+ms.openlocfilehash: 2dcd228af0984b55162894555fa21f9e02dd1934
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77705688"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81395746"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
+
+> [!Note]  
+> Microsoft는 사용자와 조직이 비즈니스 연속성을 유지 하는 데 집중 하는 데 도움이 되는 다양 한 제품에 대 한 지원 및 서비스 날짜의 예약 된 종료를 지연 시켰습니다. 자세한 내용은 2020 년 4 월 14 일의 [지원 종료 및 서비스 날짜 항목의 수명 주기 변경을](https://support.microsoft.com/en-us/help/4557164/lifecycle-changes-to-end-of-support-and-servicing-dates) 참조 하세요.
 
 Windows 컨테이너 기본 이미지는 Windows Server의 반기 채널 릴리스 또는 장기 서비스 채널 릴리스를 기반으로 합니다. 이 문서에서는 두 채널의 기본 이미지에 대 한 다양 한 버전에 대 한 지원이 얼마나 지속 될 지를 알려 줍니다.
 
@@ -30,7 +33,7 @@ Server Core 이미지의 경우 고객은 Windows Server의 새로운 주 버전
 |Server Core, Nano Server, Windows|반기      |1909   |18363   |2019/11/12  |2021/05/11                 |N/A                  |
 |Server Core, Nano Server, Windows|반기      |1903   |18362   |05/21/2019  |2020/12/08                 |N/A                  |
 |Server Core                      |장기        |2019   |17763   |2018/11/13  |2024/01/09                 |2029/01/09           |
-|Server Core, Nano Server, Windows|반기      |1809   |17763   |2018/11/13  |05/12/2020                 |N/A                  |
+|Server Core, Nano Server, Windows|반기      |1809   |17763   |2018/11/13  |11/10/2020                 |N/A                  |
 |Server Core, Nano Server         |반기      |1803   |17134   |2018/04/30  |2019/11/12                 |N/A                  |
 |Server Core, Nano Server         |반기      |1709   |16299   |2017/10/17  |2019/04/09                 |N/A                  |
 |Server Core                      |장기        |1607   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
