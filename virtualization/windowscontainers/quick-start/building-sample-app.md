@@ -8,16 +8,16 @@ ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 587e8de5f0d593f92f6301c87bf68e08a8bbd839
-ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
+ms.openlocfilehash: d81c6cb99b1d12b1df87e83220b39eef80f066c0
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854007"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81395766"
 ---
 # <a name="containerize-a-net-core-app"></a>.NET Core 앱 컨테이너 화
 
-이 항목에서는 [시작: 컨테이너를 위해 Windows 준비](set-up-environment.md)에 설명된 대로 환경을 설정하고 [첫 번째 Windows 컨테이너 실행](run-your-first-container.md)에 설명된 대로 첫 번째 컨테이너를 실행한 후 배포용 기존 샘플 .NET 앱을 Windows 컨테이너로 패키징하는 방법에 대해 설명합니다.
+이 문서에서는 [시작: 컨테이너에 맞게 Windows 준비](set-up-environment.md)에 설명된 대로 환경을 설정하고, [첫 번째 Windows 컨테이너 실행](run-your-first-container.md)에 설명된 대로 첫 번째 컨테이너를 실행한 후 기존 샘플 .NET 앱을 Windows 컨테이너로 배포하기 위해 패키징하는 방법을 설명합니다.
 
 또한 컴퓨터에 Git 소스 제어 시스템이 설치되어 있어야 합니다. 설치하려면 [Git](https://git-scm.com/download)를 방문하세요.
 
