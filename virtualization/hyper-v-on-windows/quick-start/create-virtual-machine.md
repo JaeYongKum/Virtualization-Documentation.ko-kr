@@ -8,10 +8,10 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: 66723f33-b12c-49d1-82cf-71ba9d6087e9
 ms.openlocfilehash: 94ac197f5bc660e52d215fa132eae78f521e1c30
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "74911653"
 ---
 # <a name="create-virtual-machine-with-hyper-v-on-windows-10"></a>Windows 10에서 Hyper-V를 사용하여 가상 컴퓨터 만들기
@@ -97,10 +97,10 @@ ms.locfileid: "74911653"
 
 2. VMConnect에서 녹색 시작 단추를 클릭합니다. 이는 실제 컴퓨터에서 전원 단추를 누르는 것과 같습니다. 'CD 또는 DVD에서 부팅하려면 아무 키나 누르십시오.'라는 메시지가 표시되면 아무 키나 눌러 진행합니다.
 
-  > **참고:** 키 입력이 가상 머신으로 전송되도록 하려면 VMConnect 창 내부를 클릭해야 할 수도 있습니다.
+  > **참고:** 키 입력이 가상 컴퓨터로 전송되도록 하려면 VMConnect 창 내부를 클릭해야 할 수 있습니다.
 
 3. 가상 컴퓨터가 설치를 부팅하고 물리적 컴퓨터에서와 마찬가지로 설치를 진행할 수 있습니다.
 
   ![](media/OSDeploy_upd.png) 
 
-  > **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 머신 내에서 실행 중인 Windows의 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.
+  > **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 컴퓨터 내에서 실행 중인 Windows에 대한 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.

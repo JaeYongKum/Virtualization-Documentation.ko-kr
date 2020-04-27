@@ -18,7 +18,7 @@
 ## [Hyper-V WMI 이식](user-guide/refactor-wmiv1-to-wmiv2.md)
 ## [Azure 가상 네트워크의 중첩된 VM](user-guide/nested-virtualization-azure-virtual-network.md) 
 
-# 참조
+# 참고자료
 ## [Hyper-V 요구 사항](reference/hyper-v-requirements.md)
 ## [지원되는 게스트 운영 체제](about/supported-guest-os.md)
 ## [Hyper-V PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index?view=win10-ps)

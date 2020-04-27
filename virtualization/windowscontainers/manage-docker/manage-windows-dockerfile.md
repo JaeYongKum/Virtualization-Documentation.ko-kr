@@ -9,10 +9,10 @@ ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
 ms.openlocfilehash: 9fef74c029dc3efc220b1f9924d2695cdbaa61be
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "74909663"
 ---
 # <a name="dockerfile-on-windows"></a>Windows의 Dockerfile
@@ -211,7 +211,7 @@ COPY config* c:/temp/
 
 `COPY` 명령에 대한 자세한 내용은 [COPY 참조](https://docs.docker.com/engine/reference/builder/#copy)에서 확인할 수 있습니다.
 
-### <a name="add"></a>ADD
+### <a name="add"></a>추가
 
 ADD 명령은 COPY 명령과 비슷하지만 훨씬 많은 기능이 있습니다. `ADD` 명령은 호스트에서 컨테이너 이미지로 파일을 복사할 뿐만 아니라 URL이 지정된 원격 위치에서 파일을 복사할 수도 있습니다.
 

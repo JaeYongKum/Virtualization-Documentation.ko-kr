@@ -9,10 +9,10 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 426c87cc-fa50-4b8d-934e-0b653d7dea7d
 ms.openlocfilehash: 725466f657ae8fc4f14813822e90657e12d26fa6
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77439560"
 ---
 # <a name="try-pre-release-features-for-hyper-v"></a>Hyper-V의 시험판 기능 체험
@@ -34,7 +34,7 @@ Windows Server 2016 Technical Preview에서 Hyper-V의 시험판 기능에 미�
 
 Windows Server 2016 Technical Preview가 실행되는 Hyper-V 호스트에 시험판 가상 컴퓨터를 만들 수 있습니다.
 
-1. Windows 바탕 화면에서 시작 단추를 클릭 하 고 이름의 일부를 입력 **Windows PowerShell**합니다.
+1. Windows 데스크톱에서 시작 단추를 클릭하고 **Windows PowerShell** 이름의 일부를 입력합니다.
 2. **Windows PowerShell**을 마우스 오른쪽 단추로 클릭하고 **관리자 권한으로 실행**을 선택합니다.
 3. -Prerelease 플래그와 함께 [NEW-VM](https://docs.microsoft.com/powershell/module/hyper-v/new-vm?view=win10-ps) cmdlet을 사용하여 시험판 가상 컴퓨터를 만듭니다. 예를 들어 다음 명령을 실행합니다. 여기서 VM Name은 만들려는 가상 컴퓨터의 이름입니다.
 

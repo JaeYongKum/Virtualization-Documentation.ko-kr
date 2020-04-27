@@ -9,10 +9,10 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: d9c398c4-ee72-45c6-9ce8-4f06569dae6c
 ms.openlocfilehash: 8cdbd7b9881c973b6b5d269f986a03bdb21e276a
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "74911233"
 ---
 # <a name="using-checkpoints-to-revert-virtual-machines-to-a-previous-state"></a>검사점을 사용하여 가상 컴퓨터를 이정 상태로 되돌리기
@@ -96,7 +96,7 @@ Get-VMCheckpoint -VMName <VMName>
 1. **Hyper-V 관리자**의 **Virtual Machines**에서 Virtual Machines를 선택합니다.
 2. 검사점 섹션에서 사용할 검사점을 마우스 오른쪽 단추로 클릭하고 **적용**을 클릭합니다.
 3. 다음 옵션이 있는 대화 상자가 표시됩니다.  
-  * **검사점 만들기 및 적용**: 이전 검사점을 적용하기 전에 가상 머신의 새로운 검사점을 만듭니다. 
+  * **검사점을 만든 후 적용**: 이전 검사점을 적용하기 전에 가상 컴퓨터의 새로운 검사점을 만듭니다. 
   * **적용**: 선택한 검사점만 적용합니다. 이 작업은 취소할 수 없습니다.
   * **취소**: 작업을 수행하지 않고 대화 상자를 닫습니다.
   
@@ -176,7 +176,7 @@ Export-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -Path
 2. **관리** 섹션에서 **검사점**을 선택합니다.
 3. 이 가상 컴퓨터에서 검사점을 지정하려면 검사점 사용을 선택해야 합니다(기본 동작).  
 검사점을 사용하지 않으려면 **검사점 사용** 확인란을 선택 취소합니다.
-4. 클릭 **적용** 변경 내용을 적용 하도록 합니다. 완료 되 면 클릭 **확인** 대화 상자를 닫습니다.
+4. 변경을 적용하려면 **적용**을 클릭합니다. 마치면 **확인**을 클릭하여 대화 상자를 닫습니다.
 
 ## <a name="configure-checkpoint-location"></a>검사점 위치 구성
 
@@ -185,7 +185,7 @@ Export-VMCheckpoint -VMName <virtual machine name> -Name <checkpoint name> -Path
 1. **Hyper-V 관리자**에서 가상 컴퓨터의 이름을 마우스 오른쪽 단추로 클릭하고 **설정**을 클릭합니다.
 2. **관리** 섹션에서 **검사점** 또는 **검사점 파일 위치**를 선택합니다.
 4. **검사점 파일 위치**에서 파일을 저장하려는 폴더의 경로를 입력합니다.
-5. 클릭 **적용** 변경 내용을 적용 하도록 합니다. 완료 되 면 클릭 **확인** 대화 상자를 닫습니다.
+5. 변경을 적용하려면 **적용**을 클릭합니다. 마치면 **확인**을 클릭하여 대화 상자를 닫습니다.
 
 검사점 구성 파일이 저장되는 기본 위치는 `%systemroot%\ProgramData\Microsoft\Windows\Hyper-V\Snapshots`입니다.
 

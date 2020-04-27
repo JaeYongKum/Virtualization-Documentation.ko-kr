@@ -8,10 +8,10 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: ae4a18ed-996b-4104-90c5-539c90798e4c
 ms.openlocfilehash: 25c72b910af15fc0b498a5b2abce72d32e6d1efd
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77439600"
 ---
 # <a name="supported-windows-guests"></a>지원되는 Windows 게스트
@@ -35,7 +35,7 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 | 게스트 운영 체제 |  최대 가상 프로세서 수 | 참고 |
 |:-----|:-----|:-----|
 | Windows 10 | 32 |고급 세션 모드는 Windows 10 Home 버전에서 작동하지 않음 |
-| Windows 8.1 | 32 | |
+| Windows 8.1 | 32 | |
 | Windows 8 | 32 ||
 | Windows 7 SP 1(서비스 팩 1) | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
 | Windows 7 | 4 | Ultimate/Enterprise/Professional Edition(32비트/64비트) |
@@ -44,7 +44,7 @@ Microsoft는 다음과 같은 방식으로 지원을 제공합니다.
 | [Windows Server 반기 채널](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview) | 64 | |
 | 시작 | 64 | |
 | Windows Server 2016 | 64 | |
-| Windows Server 2012 R2 | 64 | |
+| Windows Server 2012 R2 | 64 | |
 | Windows Server 2012 | 64 | |
 | Windows Server 2008 R2 SP 1(서비스 팩 1) | 64 | Datacenter/Enterprise/Standard/Web Edition. |
 | Windows Server 2008 SP 2(서비스 팩 2) | 4 | Datacenter/Enterprise/Standard/Web Edition(32비트/64비트). |

@@ -9,10 +9,10 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: fb228e06-e284-45c0-b6e6-e7b0217c3a49
 ms.openlocfilehash: ed96c7ba30c83906cd3245a279ab078229400d8d
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77439550"
 ---
 # <a name="virtual-machine-automation-and-management-using-powershell"></a>PowerShell을 사용하여 가상 컴퓨터 자동화 및 관리
@@ -75,7 +75,7 @@ PowerShell Direct를 사용하여 네트워크 구성 또는 원격 관리 설�
    Exit-PSSession 
    ``` 
 
-> 참고:  세션이 연결되지 않으면 [문제 해결](#troubleshooting)에서 잠재적 원인을 확인하세요. 
+> 참고: 세션이 연결되지 않으면 [문제 해결](#troubleshooting)에서 잠재적 원인을 확인하세요. 
 
 이러한 cmdlet에 대한 자세한 내용은 [Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession?view=powershell-5.1) 및 [Exit-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession?view=powershell-5.1)을 참조하세요. 
 
@@ -194,7 +194,7 @@ $PSVersionTable.PSVersion
 ```
 
 
-### <a name="error-a-remote-session-might-have-ended"></a>오류: 원격 세션이 종료된 것일 수 있습니다.
+### <a name="error-a-remote-session-might-have-ended"></a>오류: 원격 세션이 종료됐을 수 있습니다.
 > **참고:**  
 호스트 빌드 10240과 12400 사이의 Enter-PSSession에 대해 아래의 모든 오류가 " 원격 세션이 종료되었을 수 있습니다."로 보고되었습니다.
 
@@ -228,7 +228,7 @@ New-PSSession : An error has occurred which Windows PowerShell cannot handle. A 
 Restart-Service -Name vmicvmsession
 ```
 
-### <a name="error-parameter-set-cannot-be-resolved"></a>오류: 매개 변수 세트를 확인할 수 없습니다.
+### <a name="error-parameter-set-cannot-be-resolved"></a>오류: 매개 변수 집합을 확인할 수 없습니다.
 **오류 메시지:**  
 ``` 
 Enter-PSSession : Parameter set cannot be resolved using the specified named parameters.
@@ -253,9 +253,9 @@ Enter-PSSession : The credential is invalid.
 * 게스트 자격 증명의 유효성을 검사할 수 없습니다.
   * 제공된 자격 증명이 잘못되었습니다.
   * 게스트에 사용자 계정이 없습니다.(OS가 이전에 부팅되지 않았습니다)
-  * 관리자로 연결하는 경우:  관리자가 활성 사용자로 설정되지 않았습니다.  [여기](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825104(v=win.10)>)에서 자세한 내용을 알아보세요.
+  * 관리자 권한으로 연결하는 경우: 관리자가 활성 사용자로 설정되지 않았습니다.  [여기](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825104(v=win.10)>)에서 자세한 내용을 알아보세요.
   
-### <a name="error-the-input-vmname-parameter-does-not-resolve-to-any-virtual-machine"></a>오류: 입력 VMName 매개 변수가 가상 머신으로 확인되지 않습니다.
+### <a name="error-the-input-vmname-parameter-does-not-resolve-to-any-virtual-machine"></a>오류: 입력 VMName 매개 변수가 가상 컴퓨터로 확인되지 않습니다.
 
 **오류 메시지:**  
 ```

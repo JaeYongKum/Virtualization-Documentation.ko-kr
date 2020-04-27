@@ -8,10 +8,10 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.assetid: f1e75efa-8745-4389-b8dc-91ca931fe5ae
 ms.openlocfilehash: 6035143bc1449bc4a8e9bb7a4484b4c5329e6d3c
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77439630"
 ---
 # <a name="create-a-virtual-machine-with-hyper-v"></a>Hyper-V를 사용하여 가상 컴퓨터 만들기
@@ -44,10 +44,10 @@ ms.locfileid: "77439630"
 
     1. 자체 이미지를 사용하여 가상 머신을 만들고 싶으면 **로컬 설치 원본**을 선택합니다.
     1. **설치 원본 변경**을 선택합니다.
-      ![로컬 설치 원본을 사용하는 단추](media/change-source.png)
+      ![로컬 설치 원본을 사용하기 위한 단추](media/change-source.png)
     1. 새 가상 머신으로 전환하고 싶은 .iso 또는 .vhdx를 선택합니다.
     1. 이미지가 Linux 이미지인 경우 보안 부팅 옵션을 선택 취소합니다.
-      ![로컬 설치 원본을 사용하는 단추](media/toggle-secure-boot.png)
+      ![로컬 설치 원본을 사용하기 위한 단추](media/toggle-secure-boot.png)
 
 1. "가상 머신 만들기"를 선택합니다.
 
@@ -79,7 +79,7 @@ ms.locfileid: "77439630"
 
 ![가상 머신 시작 화면](media/OSDeploy_upd.png)
 
-> **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 머신 내에서 실행 중인 Windows의 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.
+> **참고:** 볼륨 라이선스 버전의 Windows를 실행 중이 아닌 경우 가상 컴퓨터 내에서 실행 중인 Windows에 대한 별도 라이선스가 필요합니다. 가상 컴퓨터의 운영 체제는 별개의 호스트 운영 체제입니다.
 
 ## <a name="before-windows-10-creators-update-windows-10-version-1607-and-earlier"></a>Windows 10 크리에이터스 업데이트(Windows 10 버전 1607 이하) 이전
 

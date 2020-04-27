@@ -9,10 +9,10 @@ ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: 68c65445-ce13-40c9-b516-57ded76c1b15
 ms.openlocfilehash: f819ac04773188525af202d370ba271a2d93e259
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77439350"
 ---
 # <a name="run-hyper-v-in-a-virtual-machine-with-nested-virtualization"></a>가상 컴퓨터에서 중첩된 가상화를 사용하여 Hyper-V 실행
@@ -37,7 +37,7 @@ ms.locfileid: "77439350"
 ```
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
-3. 가상 머신을 시작합니다.
+3. 가상 컴퓨터를 시작합니다.
 4. 물리적 서버에서 하는 것처럼 가상 컴퓨터 내에 Hyper-V를 설치합니다. Hyper-V 설치에 대한 자세한 내용은 [Hyper-V 설치](../quick-start/enable-hyper-v.md)를 참조하세요.
 
 ## <a name="disable-nested-virtualization"></a>중첩된 가상화 사용 안 함
