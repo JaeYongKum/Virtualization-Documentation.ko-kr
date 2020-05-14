@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: 4fad299db2c897a6be860ef0cc71e80969c75357
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: 67ac6e39ca4b3c485d1bb376be1893e871317fac
+ms.sourcegitcommit: 85e257cfd543bf5a37680cde07e184cbdd573bd7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "74909413"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83368014"
 ---
 # <a name="windows-and-containers"></a>Windows 및 컨테이너
 
@@ -30,7 +30,7 @@ Microsoft는 컨테이너에서 앱을 개발하고 배포하는 데 도움이 �
 - 다른 사람이 사용할 수 있도록 퍼블릭 DockerHub에 <strong>앱을 컨테이너 이미지로 게시</strong>하거나, 조직의 자체 개발 및 배포를 위한 프라이빗 [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)에 게시하고 Visual Studio 및 Visual Studio Code에서 직접 내보내고 가져올 수 있습니다.
 - 다른 클라우드나 <strong>Azure에서 대규모로 컨테이너 배포</strong>:
 
-  - Azure Container Registry와 같은 컨테이너 레지스트리에서 앱(컨테이너 이미지)을 가져온 다음, [AKS(Azure Kubernetes Service)](https://docs.microsoft.com/azure/aks/intro-kubernetes)(Windows 기반 앱의 미리 보기) 또는 [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/)과 같은 오케스트레이터를 사용하여 대규모로 배포하고 관리합니다.
+  - Azure Container Registry와 같은 컨테이너 레지스트리에서 앱(컨테이너 이미지)을 가져온 다음, [AKS(Azure Kubernetes Service)](https://docs.microsoft.com/azure/aks/intro-kubernetes) 또는 [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/)과 같은 오케스트레이터를 사용하여 대규모로 배포하고 관리합니다.
   - Azure Kubernetes Service는 Azure 가상 머신에 컨테이너를 배포하고 수십, 수백 또는 수천 개의 대규모 컨테이너를 관리합니다. Azure 가상 머신은 사용자 지정된 Windows Server 이미지(Windows 기반 앱을 배포하는 경우) 또는 사용자 지정된 Ubuntu Linux 이미지(Linux 기반 앱을 배포하는 경우)를 실행합니다.
 - [AKS 엔진이 포함된 Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)(Linux 컨테이너의 경우 미리 보기 상태) 또는 [OpenShift가 포함된 Azure Stack](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-azure-stack)을 사용하여 <strong>온-프레미스에서 컨테이너를 배포합니다</strong>. Windows Server에서 직접 Kubernetes를 설정([Windows 기반 Kubernetes](../kubernetes/getting-started-kubernetes-windows.md) 참조)할 수도 있고, [RedHat OpenShift Container Platform에서 Windows 컨테이너](https://techcommunity.microsoft.com/t5/Networking-Blog/Managing-Windows-containers-with-Red-Hat-OpenShift-Container/ba-p/339821)를 실행하는 기능도 곧 지원될 예정입니다.
 
