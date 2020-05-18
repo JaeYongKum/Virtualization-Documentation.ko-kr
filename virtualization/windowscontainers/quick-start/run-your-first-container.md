@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 551d405d836cfb16b587ef78bc2d5f5abbd8648f
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: 859ef38380e536a79a3dcd63397af8fd841253ee
+ms.sourcegitcommit: 62f4bcca4e07f2a34a927e5c4d786e505821d559
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "78853817"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82784412"
 ---
 # <a name="get-started-run-your-first-windows-container"></a>시작: 첫 번째 Windows 컨테이너 실행
 
@@ -89,8 +89,7 @@ ms.locfileid: "78853817"
    ```console
    docker run --rm helloworld cmd.exe /s /c type Hello.txt
    ```
-
-   결과적으로 'HelloWorld' 이미지에서 컨테이너가 만들어지고, 파일을 읽고 파일 콘텐츠를 셸에 출력하는 cmd.exe 인스턴스가 컨테이너에서 시작된 다음, 컨테이너가 중지되고 제거되었습니다.
+   그 결과, Docker는 'HelloWorld' 이미지에서 컨테이너를 만들었고, Docker는 컨테이너에서 cmd.exe 인스턴스를 시작했으며, cmd.exe는 파일을 읽고 콘텐츠를 셸에 출력했습니다. 마지막 단계로 Docker는 컨테이너를 중지하고 제거했습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

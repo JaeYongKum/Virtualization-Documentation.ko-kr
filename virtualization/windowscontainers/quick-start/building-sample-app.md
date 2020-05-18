@@ -8,12 +8,12 @@ ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: d81c6cb99b1d12b1df87e83220b39eef80f066c0
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: c9e175a7ced0f328e342f3cdd4f99adc717d5700
+ms.sourcegitcommit: 62f4bcca4e07f2a34a927e5c4d786e505821d559
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "81395766"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82784402"
 ---
 # <a name="containerize-a-net-core-app"></a>.NET Core 앱 컨테이너 화
 
@@ -123,7 +123,7 @@ Dockerfile이 작성되면 Dockerfile에 Docker를 가리키고 이미지를 빌
 
    * `-d`는 Docker에 컨테이너를 '분리한 상태로' 실행하도록 지시합니다. 즉, 컨테이너 내 콘솔에 연결된 콘솔이 없습니다. 컨테이너가 백그라운드에서 실행됩니다. 
    * `-p 5000:80`은 호스트의 포트 5000을 컨테이너의 포트 80에 매핑하도록 Docker에 지시합니다. 각 컨테이너는 고유의 IP 주소를 가져옵니다. ASP.NET은 기본적으로 포트 80에서 수신 대기합니다. 포트 매핑을 사용하면 매핑된 포트에서 호스트의 IP 주소로 이동하고 Docker는 컨테이너 내의 대상 포트로 모든 트래픽을 전달합니다.
-   * `--name myapp`는 쿼리할 때 기준으로 사용하기 편리한 이름을 이 컨테이너에 지정하도록 Docker에 지시합니다(Docker에서 런타임에 할당한 컨테이너 ID를 조회할 필요가 없음).
+   * `--name myapp`은 쿼리할 때 기준으로 사용하기 편리한 이름을 이 컨테이너에 지정하도록 Docker에 지시합니다(Docker에서 런타임에 할당한 컨테이너 ID를 조회할 필요가 없음).
    * `my-asp-app`은 Docker에서 실행하도록 하려는 이미지입니다. `docker build` 프로세스의 완성작으로 생성된 컨테이너 이미지입니다.
 
 3. 다음 스크린샷에 표시된 것처럼 웹 브라우저를 열고 `http://localhost:5000`으로 이동하여 컨테이너화된 애플리케이션을 확인합니다.
