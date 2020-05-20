@@ -57,7 +57,7 @@ Windows Server 컨테이너는 속도가 중요한 상황에서 우수한 밀도
 
 ## <a name="can-i-run-windows-containers-in-process-isolated-mode-on-windows-10"></a>Windows 10에서 Windows 컨테이너를 프로세스 격리 모드로 실행할 수 있나요?
 
-Windows 10 2018년 10월 업데이트부터 Windows 컨테이너를 프로세스 격리 모드로 실행할 수 있지만, `--isolation=process`으로 컨테이너를 실행할 때 먼저 `docker run` 플래그를 사용하여 프로세스 격리를 직접 요청해야 합니다. 프로세스 격리는 Windows 10 Pro, Windows 10 Enterprise, Windows 10 IoT Core 및 Windows 10 IoT Enterprise에서 호환됩니다.
+Windows 10 2018년 10월 업데이트부터 Windows 컨테이너를 프로세스 격리 모드로 실행할 수 있지만, `docker run`으로 컨테이너를 실행할 때 먼저 `--isolation=process` 플래그를 사용하여 프로세스 격리를 직접 요청해야 합니다. 프로세스 격리는 Windows 10 Pro, Windows 10 Enterprise, Windows 10 IoT Core 및 Windows 10 IoT Enterprise에서 호환됩니다.
 
 이러한 방식으로 Windows 컨테이너를 실행하려면 호스트에서 Windows 10 빌드 17763 이상을 실행하고 있고 Docker 엔진 버전이 18.09 이상인지 확인해야 합니다.
 

@@ -96,7 +96,7 @@ PowerShell을 사용하여 검사점을 만들려면 `Get-VM` 명령을 사용�
 다음 예제는 PowerShell ISE(통합 스크립팅 환경)에서 새 가상 컴퓨터를 만드는 방법을 보여 줍니다. 이는 간단한 예이며 추가 PowerShell 기능 및 고급 VM 배포를 포함하도록 확장할 수 있습니다.
 
 1. 시작 시에 PowerShell ISE를 열려면 **PowerShell ISE**를 입력합니다.
-2. 다음 코드를 실행하여 가상 컴퓨터를 만듭니다. [ 명령에 대한 자세한 내용은 ](https://docs.microsoft.com/powershell/module/hyper-v/new-vm?view=win10-ps)New-VM`New-VM` 설명서를 참조하세요.
+2. 다음 코드를 실행하여 가상 컴퓨터를 만듭니다. `New-VM` 명령에 대한 자세한 내용은 [New-VM](https://docs.microsoft.com/powershell/module/hyper-v/new-vm?view=win10-ps) 설명서를 참조하세요.
 
  ```powershell
   $VMName = "VMNAME"
