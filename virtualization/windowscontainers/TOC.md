@@ -84,6 +84,7 @@
 ## [컨테이너 OS 이미지 EULA](Images_EULA.md)
 
 # 리소스
+## [알려진 문제](manage-containers/known-issues.md)
 ## [컨테이너 샘플](samples.md)
 ## [문제 해결](troubleshooting.md)
 ## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)
