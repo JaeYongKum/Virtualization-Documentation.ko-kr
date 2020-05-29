@@ -10,7 +10,7 @@ ms.service: windows-containers
 ms.assetid: 5ceb9626-7c48-4d42-81f8-9c936595ad85
 ms.openlocfilehash: 560e9ffc92728628268d7d557b8fa8428316c8ec
 ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 12/04/2019
 ms.locfileid: "74909683"
@@ -24,17 +24,17 @@ Swarm 모드는 Docker 호스트의 네이티브 클러스터링과 컨테이너
 Swarm은 *관리자 노드*와 *작업자 노드*라는 두 가지 유형의 컨테이너 호스트로 구성됩니다. 모든 Swarm은 관리자 노드를 통해 초기화되며, Swarm 제어 및 모니터링을 위한 모든 Docker CLI 명령은 해당 관리자 노드 중 하나에서 실행되어야 합니다. 관리자 노드는 Swarm 상태의 “보관자”에 해당합니다. 여러 관리자 노드가 함께 Swarm에서 실행 중인 서비스의 상태 인식을 관리하는 합의 그룹을 구성하며, Swarm의 실제 상태가 항상 개발자나 관리자가 정의한 의도 상태와 일치하는지 확인하는 일을 합니다. 
 
 >[!NOTE]
->지정 된 swarm에는 여러 개의 관리자 노드가 있을 수 있지만 항상 *하나*이상 있어야 합니다. 
+>Swarm에 관리자 노드가 여러 개 있어도 되지만, 항상 *적어도* 하나 이상의 관리자 노드가 있어야 합니다. 
 
 작업자 노드는 관리자 노드를 통해 Docker Swarm에 의해 오케스트레이션됩니다. 작업자 노드에 조인하려면 Swarm이 초기화될 때 작업자 노드가 관리자 노드에 의해 생성된 “조인 토큰”을 사용해야 합니다. 작업자 노드는 단순히 관리자 노드에서 작업을 받아서 실행하므로 Swarm 상태 인식을 필요로 하거나 소유하지 않습니다.
 
 ## <a name="swarm-mode-system-requirements"></a>Swarm 모드 시스템 요구 사항
 
-*모든 최신 업데이트가\** Windows **10 크리에이터 업데이트** 또는 windows **server 2016** (windows 10에서 Docker 컨테이너를 시작 하는 방법에 대 한 자세한 내용은 windows [10의 windows 컨테이너](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10) 또는 windows [server](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server) 의 Windows 컨테이너)를 실행 하 여 windows 10 크리에이터 업데이트 또는 windows server를 실행 하는 물리적 또는 가상 컴퓨터 시스템이 하나 이상 권장 됩니다.
+*최신 업데이트가 모두 설치된\** **Windows 10 크리에이터스 업데이트** 또는 **Windows Server 2016**을 실행 중이고 컨테이너 호스트로 설정된 하나 이상의(적어도 두 개 이상의 노드에서 Swarm의 전체 기능을 사용할 수 있도록) 실제 또는 가상 컴퓨터 시스템([Windows 10에서 Docker 컨테이너를 시작하는 방법에 대한 자세한 내용은 Windows 10의 Windows 컨테이너](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10) 또는 [Windows Server의 Windows 컨테이너](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server) 참조).
 
-\***참고**: Windows Server 2016의 Docker Swarm에는 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217) 가 필요 합니다.
+\***참고**: Windows Server 2016에서 Docker Swarm을 사용하려면 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217)이 필요
 
-**Docker 엔진 v 1.13.0 이상**
+**Docker 엔진 v1.13.0 이상**
 
 열린 포트: 각 호스트에서 다음 포트를 사용할 수 있어야 합니다. 일부 시스템에서는 이러한 포트가 기본적으로 열려 있습니다.
 - TCP 포트 2377: 클러스터 관리 통신용
@@ -53,7 +53,7 @@ C:\> docker swarm init --advertise-addr=<HOSTIPADDRESS> --listen-addr <HOSTIPADD
 
 ## <a name="adding-nodes-to-a-swarm"></a>Swarm에 노드 추가
 
-Swarm 모드 및 오버레이 네트워킹 모드 기능을 활용 하기 위해 여러 노드가 필요 *하지는 않습니다* . Swarm 모드에서 실행 중인 단일 호스트로 모든 Swarm/오버레이 기능을 사용할 수 있습니다(예: `docker swarm init` 명령을 사용하여 Swarm 모드로 설정된 관리자 노드).
+Swarm 모드와 오버레이 네트워킹 모드 기능을 사용하기 위해 여러 노드가 필요하지는 *않습니다*. Swarm 모드에서 실행 중인 단일 호스트로 모든 Swarm/오버레이 기능을 사용할 수 있습니다(예: `docker swarm init` 명령을 사용하여 Swarm 모드로 설정된 관리자 노드).
 
 ### <a name="adding-workers-to-a-swarm"></a>Swarm에 작업자 추가
 
@@ -109,10 +109,10 @@ C:\> docker network create --driver=overlay <NETWORKNAME>
 C:\> docker service create --name=<SERVICENAME> --endpoint-mode dnsrr --network=<NETWORKNAME> <CONTAINERIMAGE> [COMMAND] [ARGS…]
 ```
 
-여기에서 \<SERVICENAME\>은 서비스에 지정하려는 이름입니다. 이 이름은 Docker의 네이티브 DNS 서버를 사용하는 서비스 검색을 통해 서비스를 참조하는 데 사용됩니다. \<NETWORKNAME\>는이 서비스를 연결 하려는 네트워크의 이름입니다 (예: "myOverlayNet"). \<GET-CONTAINERIMAGE\>는 서비스를 정의 하는 컨테이너 이미지의 이름입니다.
+여기에서 \<SERVICENAME\>은 서비스에 지정하려는 이름입니다. 이 이름은 Docker의 네이티브 DNS 서버를 사용하는 서비스 검색을 통해 서비스를 참조하는 데 사용됩니다. \<NETWORKNAME\>은 이 서비스를 연결하려는 네트워크의 이름입니다(예: "myOverlayNet"). \<CONTAINERIMAGE\>는 서비스를 정의할 컨테이너 이미지의 이름입니다.
 
 >[!NOTE]
->이 명령에 대 한 두 번째 인수인 `--endpoint-mode dnsrr`는 DNS 라운드 로빈 정책이 서비스 컨테이너 끝점에서 네트워크 트래픽을 분산 하는 데 사용 되도록 Docker 엔진에 지정 해야 합니다. 현재 DNS 라운드 로빈은 Windows Server 2016에서 유일 하 게 지원 되는 부하 분산 전략입니다. Windows docker 호스트의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 는 windows server 2019 이상에서 지원 되지만 windows server 2016에서는 지원 되지 않습니다. 현재 Windows Server 2016에서 대체 부하 분산 전략을 검색 하는 사용자는 외부 부하 분산 장치 (예: NGINX)를 설정 하 고 Swarm의 [게시 포트 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish) 를 사용 하 여 트래픽 균형을 유지 하는 컨테이너 호스트 포트를 노출할 수 있습니다.
+>이 명령의 두 번째 인수인 `--endpoint-mode dnsrr`은 DNS 라운드 로빈 정책을 사용하여 서비스 컨테이너 엔드포인트 간에 네트워크 트래픽을 분산하도록 Docker 엔진을 지정하는 데 필요합니다. 현재 Windows Server 2016에서 지원되는 부하 분산 전략은 DNS 라운드 로빈이 유일합니다. Windows Docker 호스트에 대한 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/)는 Windows Server 2019 이상에서 지원되고 Windows Server 2016에서는 지원되지 않습니다. 현재 Windows Server 2016의 부하 분산 전략을 대체할 방법을 찾고 있는 사용자는 NGINX 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 트래픽을 분산할 컨테이너 호스트 포트를 노출하면 됩니다.
 
 ## <a name="scaling-a-service"></a>서비스 확장
 서비스가 Swarm 클러스터에 배포되면 해당 서비스를 구성하는 컨테이너 인스턴스가 클러스터 전체에 배포됩니다. 기본적으로 서비스를 지원하는 컨테이너 인스턴스 수(서비스의 “복제본” 또는 “작업” 수)는 1개입니다. 그러나 `docker service create` 명령에 `--replicas` 옵션을 사용하거나 서비스를 만든 다음 확장하여 여러 작업을 포함하는 서비스를 만들 수 있습니다.
@@ -161,10 +161,10 @@ C:\> docker service ps <SERVICENAME>
 ```
 ## <a name="linuxwindows-mixed-os-clusters"></a>Linux+Windows 혼합 OS 클러스터
 
-최근에 저희 팀원 중 한 명이 Docker Swarm을 사용하여 Linux+Windows 혼합 OS 응용 프로그램을 설치하는 방법에 대한 짧은 3부작 데모를 게시했습니다. Docker Swarm을 처음 접하거나 혼합 OS 응용 프로그램을 실행하는 데 사용하려는 분들이 처음 시작할 때 많은 도움이 될 것입니다. 지금 확인하세요.
-- [Docker Swarm를 사용 하 여 Windows + Linux 컨테이너 화 된 응용 프로그램 실행 (1/3 부분)](https://www.youtube.com/watch?v=ZfMV5JmkWCY&t=170s)
-- [Docker Swarm를 사용 하 여 Windows + Linux 컨테이너 화 된 응용 프로그램 실행 (2/3 부분)](https://www.youtube.com/watch?v=VbzwKbcC_Mg&t=406s)
-- [Docker Swarm를 사용 하 여 Windows + Linux 컨테이너 화 된 응용 프로그램 실행 (3/3 부분)](https://www.youtube.com/watch?v=I9oDD78E_1E&t=354s)
+최근에 저희 팀원 중 한 명이 Docker Swarm을 사용하여 Linux+Windows 혼합 OS 애플리케이션을 설치하는 방법에 대한 짧은 3부작 데모를 게시했습니다. Docker Swarm을 처음 접하거나 혼합 OS 애플리케이션을 실행하는 데 사용하려는 분들이 처음 시작할 때 많은 도움이 될 것입니다. 지금 확인하세요.
+- [Docker Swarm을 사용하여 Windows+Linux 컨테이너화 애플리케이션 실행(1/3)](https://www.youtube.com/watch?v=ZfMV5JmkWCY&t=170s)
+- [Docker Swarm을 사용하여 Windows+Linux 컨테이너화 애플리케이션 실행(2/3)](https://www.youtube.com/watch?v=VbzwKbcC_Mg&t=406s)
+- [Docker Swarm을 사용하여 Windows+Linux 컨테이너화 애플리케이션 실행(3/3)](https://www.youtube.com/watch?v=I9oDD78E_1E&t=354s)
 
 ### <a name="initializing-a-linuxwindows-mixed-os-cluster"></a>Linux + Windows 혼합 OS 클러스터 초기화
 방화벽 규칙이 적절하게 구성되어 있고 호스트 간 액세스가 가능하다면 간단하게 혼합 OS Swarm 클러스터를 초기화할 수 있으며, `docker swarm join` 명령만 있으면 Swarm에 Linux 호스트를 추가할 수 있습니다.
@@ -181,7 +181,7 @@ C:\> docker swarm init --advertise-addr=<HOSTIPADDRESS> --listen-addr <HOSTIPADD
 Docker Service를 혼합 OS Swarm 클러스터로 실행하려면 해당 서비스가 설계된 대상 OS를 실행하는 Swarm 노드와 그렇지 않은 Swarm 노드를 구별하는 방법이 있어야 합니다. [Docker 개체 레이블](https://docs.docker.com/engine/userguide/labels-custom-metadata/)은 대상 OS와 일치하는 노드에서만 실행되는 서비스를 만들고 구성할 수 있도록 노드에 레이블을 지정하는 유용한 방법을 제공합니다. 
 
 >[!NOTE]
->[Docker 개체 레이블은](https://docs.docker.com/engine/userguide/labels-custom-metadata/) 다양 한 docker 개체에 메타 데이터를 적용 하는 데 사용할 수 있습니다 (컨테이너 이미지 포함). 컨테이너, 볼륨 및 네트워크)를 비롯 하 여 다양 한 용도로 사용할 수 있습니다 (예: 레이블을 사용 하 여 응용 프로그램의 ' 프런트 엔드 ' 및 ' 백 엔드 ' 구성 요소를 구분 하는 데 사용할 수 있습니다. 예를 들어 레이블을 사용 하 여 ' 백 엔드 ' 레이블이 지정 된 노드 및 백 엔드 mircoservices의 ' 백 엔드 '에 대해서만 예약 되도록 프런트 엔드 마이크로 서비스를 여기서는 노드에 레이블을 사용하여 Windows OS 노드와 Linux OS 노드를 구별하겠습니다.
+>[Docker 개체 레이블](https://docs.docker.com/engine/userguide/labels-custom-metadata/)은 컨테이너 이미지, 컨테이너, 볼륨, 네트워크 등 다양한 Docker 개체에 메타데이터를 적용하는 데 사용할 수 있으며 그 외에도 다양한 목적으로 사용할 수 있습니다(예: 레이블을 사용하면 프런트 엔드 마이크로서비스는 '프런트 엔드' 레이블이 지정된 노드에서만 예약 가능하고 백 엔드 마이크로서비스는 '백 엔드' 레이블이 지정된 노드에서만 예약 가능하게 하여 애플리케이션의 '프런트 엔드' 구성 요소와 '백 엔드' 구성 요소를 분리할 수 있음). 여기서는 노드에 레이블을 사용하여 Windows OS 노드와 Linux OS 노드를 구별하겠습니다.
 
 기존 Swarm 노드에 레이블을 지정하려면 다음 구문을 사용합니다.
 
@@ -189,7 +189,7 @@ Docker Service를 혼합 OS Swarm 클러스터로 실행하려면 해당 서비�
 C:\> docker node update --label-add <LABELNAME>=<LABELVALUE> <NODENAME>
 ```
 
-여기서 `<LABELNAME>`은 만들려는 레이블의 이름입니다. 예를 들어 이 예에서는 OS를 통해 노드를 구분할 것이므로 레이블의 논리 이름으로 "os"를 사용할 수 있습니다. `<LABELVALUE>`은 레이블 값입니다 .이 경우 "windows" 및 "linux" 값을 사용 하도록 선택할 수 있습니다. 물론 일관성을 유지하는 범위 내에서 레이블 및 레이블 값에 대한 명명 규칙을 원하는 대로 선택할 수 있습니다. `<NODENAME>`은 레이블을 지정 하는 노드의 이름입니다. `docker node ls`를 실행 하 여 노드의 이름을 사용자에 게 알릴 수 있습니다. 
+여기서 `<LABELNAME>`은 만들려는 레이블의 이름입니다. 예를 들어 이 예에서는 OS를 통해 노드를 구분할 것이므로 레이블의 논리 이름으로 "os"를 사용할 수 있습니다. `<LABELVALUE>`는 레이블의 값이며, 여기서는 "windows" 및 "linux" 값을 선택할 수 있습니다. 물론 일관성을 유지하는 범위 내에서 레이블 및 레이블 값에 대한 명명 규칙을 원하는 대로 선택할 수 있습니다. `<NODENAME>`은 레이블을 지정할 노드의 이름이며 `docker node ls` 명령을 실행하여 노드 이름을 미리 알릴 수 있습니다. 
 
 **예를 들어** 클러스터에 Windows 노드 두 개, Linux 노드 두 개, 총 네 개의 Swarm 노드가 있는 경우 레이블 업데이트 명령은 다음과 같습니다.
 
@@ -224,13 +224,13 @@ C:\> docker service create --name=linux_s1 --endpoint-mode dnsrr --network testo
 ## <a name="limitations"></a>제한 사항
 현재 Windows의 Swarm 모드에는 다음과 같은 제한 사항이 있습니다.
 - 데이터 평면 암호화가 지원되지 않습니다(예: `--opt encrypted` 옵션을 사용하는 컨테이너 간 트래픽).
-- Windows docker 호스트의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 는 windows server 2016에서 지원 되지 않지만 windows server 2019 부터는 지원 되지 않습니다. 오늘날의 대체 부하 분산 전략을 찾고 있는 사용자는 NGINX와 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 부하를 분산할 컨테이너 호스트 포트를 노출할 수 있습니다. 여기에 대한 자세한 내용은 아래를 참조하세요.
+- Windows Docker 호스트용 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/)는 Windows Server 2016에서 지원되지 않고 Windows Server 2019 이상부터 지원됩니다. 오늘날의 대체 부하 분산 전략을 찾고 있는 사용자는 NGINX와 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 부하를 분산할 컨테이너 호스트 포트를 노출할 수 있습니다. 여기에 대한 자세한 내용은 아래를 참조하세요.
 
  >[!NOTE]
->Docker Swarm 라우팅 메시를 설정 하는 방법에 대 한 자세한 내용은이 [블로그 게시물](https://docs.microsoft.com/en-us/virtualization/community/team-blog/2017/20170926-docker-s-routing-mesh-available-with-windows-server-version-1709) 을 참조 하세요.
+>Docker Swarm 라우팅 메시를 설정하는 방법에 대한 자세한 내용은 이 [블로그 게시물](https://docs.microsoft.com/en-us/virtualization/community/team-blog/2017/20170926-docker-s-routing-mesh-available-with-windows-server-version-1709)을 참조하세요.
 
-## <a name="publish-ports-for-service-endpoints"></a>서비스 끝점에 대한 포트 게시
- 서비스 끝점에 대 한 포트 게시를 검색 하는 사용자는 현재 게시 포트 모드 또는 Docker Swarm의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 기능을 사용 하 여이 작업을 수행할 수 있습니다. 
+## <a name="publish-ports-for-service-endpoints"></a>서비스 엔드포인트에 대한 포트 게시
+ 서비스 엔드포인트용 포트를 게시하려는 사용자는 포트 게시 모드 또는 Docker Swarm의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 기능을 사용하면 됩니다. 
 
 서비스를 정의하는 각 작업/컨테이너 끝점에 대한 호스트 포트를 게시하려면 `--publish mode=host,target=<CONTAINERPORT>` 인수를 `docker service create` 명령에 사용합니다.
 
@@ -250,12 +250,12 @@ C:\ > docker service create --name=s1 --publish mode=host,target=80 --endpoint-m
 ```
 C:\ > docker service ps <SERVICENAME>
 ```
-위의 명령은 모든 Swarm 호스트에서 서비스에 대해 실행되는 모든 컨테이너 인스턴스에 대한 세부 정보를 반환합니다. 출력의 "ports" 열에는 각 호스트의 포트 정보가 포함 됩니다. \<HOSTPORT\>->\<CONTAINERPORT\>/tcp. 각 컨테이너가 자체 호스트 포트에 게시 되므로 \<HOSTPORT\>의 값은 각 컨테이너 인스턴스에 따라 달라 집니다.
+위의 명령은 모든 Swarm 호스트에서 서비스에 대해 실행되는 모든 컨테이너 인스턴스에 대한 세부 정보를 반환합니다. 출력의 열 중 하나인 “포트” 열에는 각 호스트의 포트 정보가 \<HOSTPORT\>->\<CONTAINERPORT\>/tcp 형태로 포함되어 있습니다. 각 컨테이너가 자체 호스트 포트에 게시되므로 \<HOSTPORT\> 값은 컨테이너 인스턴스마다 다릅니다.
 
 
 ## <a name="tips--insights"></a>팁과 고급 정보 
 
-#### <a name="existing-transparent-network-can-block-swarm-initializationoverlay-network-creation"></a>*기존 투명 네트워크는 swarm 초기화/오버레이 네트워크 생성을 차단할 수 있습니다.* 
+#### <a name="existing-transparent-network-can-block-swarm-initializationoverlay-network-creation"></a>*기존 투명 네트워크는 Swarm 초기화/오버레이 네트워크 생성을 차단할 수 있습니다.* 
 Windows에서 오버레이 네트워크 드라이버와 투명 네트워크 드라이버를 (가상) 호스트 네트워크 어댑터에 바인딩하려면 모두 외부 vSwitch가 필요합니다. 오버레이 네트워크가 만들어지면 새로운 스위치가 만들어지고 열린 네트워크 어댑터에 연결됩니다. 투명 네트워킹 모드도 호스트 네트워크 어댑터를 사용합니다. 이와 동시에, 모든 지정된 네트워크 어댑터는 한 번에 한 스위치에만 바인딩할 수 있습니다. 호스트에 네트워크 어댑터가 하나만 있는 경우 vSwitch가 오버레이 네트워크용인지 아니면 투명 네트워크용인지에 관계없이 한 번에 한 외부 vSwitch에만 연결할 수 있습니다. 
 
 그러므로 컨테이너 호스트에 네트워크 어댑터가 하나밖에 없으면 투명 네트워크가 오버레이 네트워크 생성을 차단하는(또는 그 반대) 문제가 발생할 수 있습니다. 현재 투명 네트워크가 호스트의 유일한 가상 네트워크 인터페이스를 점유하고 있기 때문입니다.

@@ -5,54 +5,54 @@ keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
 ms.openlocfilehash: 917c07e13d6a0ec5b5e73213da4dc4f04ec0d9bb
 ms.sourcegitcommit: 8eedfdc1fda9d0abb36e28dc2b5fb39891777364
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/10/2020
 ms.locfileid: "79027861"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
-Windows server 2016 및 Windows 10 기념일 업데이트 (두 버전 14393)는 Windows Server 컨테이너를 빌드하고 실행할 수 있는 최초의 Windows 릴리스입니다. 이러한 버전을 사용 하 여 빌드된 컨테이너는 새 릴리스에서 실행 될 수 있지만 시작 하기 전에 알아두어야 할 몇 가지 사항이 있습니다.
+Windows Server 2016 및 Windows 10 1주년 업데이트(두 버전 모두 14393 버전)는 Windows Server 컨테이너를 빌드하고 실행할 수 있는 최초의 Windows 릴리스였습니다. 이러한 버전을 사용하여 빌드된 컨테이너는 최신 릴리스에서 실행할 수 있지만, 시작하기 전에 알아야 할 몇 가지 사항이 있습니다.
 
-Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미칠 수 있는 사항을 몇 가지 변경해야만 했습니다. 이전 컨테이너는 [hyper-v 격리](../manage-containers/hyperv-container.md)를 사용 하는 최신 호스트에서 동일 하 게 실행 되며 동일한 (이전) 커널 버전을 사용 합니다. 그러나 최신 Windows 빌드를 기반으로 컨테이너를 실행 하려는 경우 최신 호스트 빌드 에서만 실행할 수 있습니다.
+Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미칠 수 있는 사항을 몇 가지 변경해야만 했습니다. 이전 컨테이너는 [Hyper-V 격리](../manage-containers/hyperv-container.md)를 통해 최신 호스트에서 동일하게 실행되고 동일한 (이전) 커널 버전이 사용됩니다. 그러나 최신 Windows 빌드를 기반으로 하는 컨테이너를 실행하려면 최신 호스트 빌드에서만 실행할 수 있습니다.
 
 ## <a name="windows-server-host-os-compatibility"></a>Windows Server 호스트 OS 호환성
 
 <!-- start tab view -->
-# <a name="windows-server-version-1909"></a>[Windows Server, 버전 1909](#tab/windows-server-1909)
+# <a name="windows-server-version-1909"></a>[Windows Server 버전 1909](#tab/windows-server-1909)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10004;|&#10004;|
+|Windows Server 버전 1909|&#10004;|&#10004;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
-|시작|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-server-version-1903"></a>[Windows Server, 버전 1903](#tab/windows-server-1903)
+# <a name="windows-server-version-1903"></a>[Windows Server 버전 1903](#tab/windows-server-1903)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10060;|&#10060;|
+|Windows Server 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10004;|
-|시작|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
 # <a name="windows-server-2019"></a>[Windows Server 2019](#tab/windows-server-2019)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10060;|&#10060;|
+|Windows Server 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
-|시작|&#10004;|&#10004;|
+|Windows Server 2019|&#10004;|&#10004;|
 |Windows Server 2016|&#10004;|&#10060;|
 
 # <a name="windows-server-2016"></a>[Windows Server 2016](#tab/windows-server-2016)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10060;|&#10060;|
+|Windows Server 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
-|시작|&#10060;|&#10060;|
+|Windows Server 2019|&#10060;|&#10060;|
 |Windows Server 2016|&#10004;|&#10004;|
 
 ---
@@ -62,68 +62,68 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 <!-- start tab view -->
 
-# <a name="windows-10-version-1909"></a>[Windows 10, 버전 1909](#tab/windows-10-1909)
+# <a name="windows-10-version-1909"></a>[Windows 10 버전 1909](#tab/windows-10-1909)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10004;|&#10060;|
+|Windows Server 버전 1909|&#10004;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
-|시작|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-10-version-1903"></a>[Windows 10, 버전 1903](#tab/windows-10-1903)
+# <a name="windows-10-version-1903"></a>[Windows 10 버전 1903](#tab/windows-10-1903)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10060;|&#10060;|
+|Windows Server 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
-|시작|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-10-version-1809"></a>[Windows 10, 버전 1809](#tab/windows-10-1809)
+# <a name="windows-10-version-1809"></a>[Windows 10 버전 1809](#tab/windows-10-1809)
 
-|컨테이너 기본 이미지 OS 버전|Hyper-v 격리 지원|프로세스 격리 지원|
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server, 버전 1909|&#10060;|&#10060;|
+|Windows Server 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
-|시작|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
 ---
 <!-- stop tab view -->
 
-## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 호스트 버전과 컨테이너 이미지 버전 일치
+## <a name="matching-container-host-version-with-container-image-versions"></a>컨테이너 호스트 버전 및 컨테이너 이미지 버전의 일치
 
 ### <a name="windows-server-containers"></a>Windows Server 컨테이너
 
-Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유 하므로 컨테이너의 기본 이미지 OS 버전이 호스트의 기본 이미지 OS 버전과 일치 해야 합니다. 버전이 다르면 컨테이너가 시작 될 수 있지만 전체 기능이 보장 되지는 않습니다. Windows 운영 체제에는 주 버전, 부 버전, 빌드 버전 및 수정 버전의 네 가지 수준이 있습니다. 예를 들어 버전 10.0.14393.103의 주 버전은 10이 고, 부 버전은 0이 고, 빌드 번호는 14393이 고, 수정 번호는 103입니다. 버전 1709, 1903 등과 같이 새 버전의 OS가 게시 되는 경우에만 빌드 번호가 변경 됩니다. 수정 번호는 Windows 업데이트가 적용되면 업데이트됩니다.
+Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유하므로 컨테이너의 기본 이미지는 호스트의 기본 이미지 OS 버전과 일치해야 합니다. 버전이 다르면 컨테이너가 시작될 수 있지만 기능이 완전히 보장되지 않습니다. Windows 운영 체제에는 네 가지 수준의 버전, 즉 주 버전, 부 버전, 빌드 버전 및 수정 버전이 있습니다. 예를 들어 10.0.14393.103 버전의 경우 주 버전은 10, 부 버전은 0, 빌드 번호는 14393 및 수정 번호는 103입니다. 빌드 번호는 새 버전의 OS(예: 1709, 1903 버전 등)가 게시되는 경우에만 변경됩니다. 수정 번호는 Windows 업데이트가 적용되면 업데이트됩니다.
 
-#### <a name="build-number-new-release-of-windows"></a>빌드 번호 (새로운 Windows 릴리스)
+#### <a name="build-number-new-release-of-windows"></a>빌드 번호(새 Windows 릴리스)
 
-컨테이너 호스트와 컨테이너 이미지 간의 빌드 번호가 다른 경우 Windows Server 컨테이너를 시작 하지 못하도록 차단 됩니다. 예를 들어 컨테이너 호스트가 버전 10.0.14393. * (Windows Server 2016)이 고 컨테이너 이미지가 버전 10.0.16299. * (Windows Server 버전 1709) 이면 컨테이너가 시작 되지 않습니다.  
+컨테이너 호스트와 컨테이너 이미지의 빌드 번호가 다르면 Windows Server 컨테이너가 시작하지 못하도록 차단됩니다. 예를 들어 컨테이너 호스트가 10.0.14393.*(Windows Server 2016) 버전이고 컨테이너 이미지가 10.0.16299.*(Windows Server 버전 1709) 버전인 경우 컨테이너가 시작되지 않습니다.  
 
-#### <a name="revision-number-patching"></a>수정 번호 (패치)
+#### <a name="revision-number-patching"></a>수정 번호(패치)
 
-Windows Server 컨테이너는 현재 Windows Server 2016 기반 컨테이너가 컨테이너 호스트와 컨테이너 이미지의 수정 번호가 다른 시스템에서 실행 되는 시나리오를 지원 하지 않습니다. 예를 들어 컨테이너 호스트가 버전 10.0.14393 인 경우입니다. **1914** (Windows Server 2016 with KB4051033 적용 됨) 및 컨테이너 이미지는 버전 10.0.14393입니다. **1944** (Windows Server 2016 with KB4053579 적용 됨) 이미지를 시작할 수 없습니다.
+Windows Server 컨테이너는 현재 컨테이너 호스트의 수정 번호와 컨테이너 이미지가 다른 시스템에서 Windows Server 2016 기반 컨테이너가 실행되는 시나리오를 지원하지 않습니다. 예를 들어 컨테이너 호스트가 10.0.14393.**1914** 버전(KB4051033이 적용된 Windows Server 2016)이고 컨테이너 이미지가 10.0.14393.**1944** 버전(KB4053579가 적용된 Windows Server 2016)이면 이미지가 시작되지 않을 수 있습니다.
 
-그러나 Windows Server 버전 1809 이상을 사용 하는 호스트 또는 이미지의 경우에는이 규칙이 적용 되지 않으며 호스트 및 컨테이너 이미지에 일치 하는 수정 버전이 필요 하지 않습니다.
+그러나 Windows Server 버전 1809 이상을 사용하는 호스트 또는 이미지의 경우 이 규칙이 적용되지 않으며 일치하는 수정 버전이 호스트와 컨테이너 이미지에 필요하지 않습니다.
 
-최신 패치와 업데이트를 사용 하 여 시스템 (호스트 및 컨테이너)을 최신 상태로 유지 하 고 보안을 유지 하는 것이 좋습니다.
+보안을 유지하기 위해 시스템(호스트 및 컨테이너)을 최신 패치 및 업데이트를 사용하여 최신 상태로 유지하는 것이 좋습니다.
 
 >[!NOTE]
->Windows Server 컨테이너를 사용 하는 경우 2020 보안 업데이트 릴리스 ("2B" 라고도 함) 또는 이후 월간 보안 업데이트 릴리스가 있는 경우 문제가 발생할 수 있습니다. 자세한 내용은 [이 문서](https://support.microsoft.com/help/4542617/you-might-encounter-issues-when-using-windows-server-containers-with-t) 를 참조 하세요.  
+>2020년 2월 11일 월간 보안 업데이트 릴리스("2B"라고도 함) 및 이후 릴리스에서 Windows Server 컨테이너를 사용할 때 문제가 발생할 수 있습니다. 자세한 내용은 [이 문서](https://support.microsoft.com/help/4542617/you-might-encounter-issues-when-using-windows-server-containers-with-t)를 참조하세요.  
 >
->보안 및 호환성을 유지 하기 위해 최신 패치와 업데이트를 사용 하 여 호스트와 컨테이너를 모두 업데이트 하는 것이 좋습니다. Windows 컨테이너를 업데이트 하는 방법에 대 한 중요 지침은 [Windows Server 컨테이너 업데이트](update-containers.md)를 참조 하세요.
+>보안 및 호환성을 유지하기 위해 호스트와 컨테이너를 최신 패치와 업데이트로 업데이트하는 것이 좋습니다. Windows 컨테이너 업데이트 방법에 대한 중요 지침은 [Windows Server 컨테이너 업데이트](update-containers.md)를 참조하세요.
 
-#### <a name="practical-application"></a>실용적인 응용 프로그램
+#### <a name="practical-application"></a>유용한 애플리케이션
 
-예 1: 컨테이너 호스트에서 KB4041691가 적용 된 Windows Server 2016를 실행 하 고 있습니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너는 버전 10.0.14393.1770 컨테이너 기본 이미지를 기반으로 해야 합니다. 호스트 컨테이너에 KB4053579를 적용 하는 경우 호스트 컨테이너가 해당 이미지를 지원 하는지 확인 하기 위해 이미지도 업데이트 해야 합니다.
+예제 1:  컨테이너 호스트에서 KB4041691이 적용된 Windows Server 2016을 실행합니다. 이 호스트에 배포된 모든 Windows Server 컨테이너는 10.0.14393.1770 버전 컨테이너 기본 이미지를 기반으로 해야 합니다. KB4053579를 호스트 컨테이너에 적용하는 경우 호스트 컨테이너에서 이를 지원하도록 이미지도 업데이트해야 합니다.
 
-예 2: 컨테이너 호스트에서 KB4534273가 적용 된 Windows Server 버전 1809을 실행 하 고 있습니다. 이 호스트에 배포 된 모든 Windows Server 컨테이너는 Windows Server 버전 1809 (10.0.17763) 컨테이너 기본 이미지를 기반으로 해야 하지만 호스트 KB와 일치할 필요는 없습니다. KB4534273이 호스트에 적용 되는 경우 컨테이너 이미지는 계속 지원 되지만 잠재적인 보안 문제를 해결 하기 위해 업데이트 하는 것이 좋습니다.
+예제 2: 컨테이너 호스트에서 KB4534273이 적용된 Windows Server 버전 1809를 실행합니다. 이 호스트에 배포된 모든 Windows Server 컨테이너는 Windows Server 버전 1809(10.0.17763) 컨테이너 기본 이미지를 기반으로 해야 하지만 호스트 KB와 일치할 필요가 없습니다. KB4534273이 호스트에 적용되는 경우 컨테이너 이미지는 계속 지원되지만 잠재적인 보안 문제를 해결하기 위해 업데이트하는 것이 좋습니다.
 
 #### <a name="querying-version"></a>버전 쿼리
 
-방법 1: 버전 1709에서 도입 된 cmd prompt 및 **ver** 명령은 이제 수정 세부 정보를 반환 합니다.
+방법 1: 1709 버전부터 cmd 프롬프트 및 **ver** 명령에서 이제 수정 버전 세부 정보를 반환합니다.
 
 ```batch
 Microsoft Windows [Version 10.0.16299.125]
@@ -134,9 +134,9 @@ C:\>ver
 Microsoft Windows [Version 10.0.16299.125]
 ```
 
-방법 2: 다음 레지스트리 키를 쿼리 합니다. HKEY_LOCAL_MACHINE \Software\Microsoft\Windows NT\CurrentVersion
+방법 2: 다음 레지스트리 키를 쿼리합니다. HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion
 
-예를 들어:
+예:
 
 ```batch
 C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
@@ -150,55 +150,55 @@ PS C:\Users\Administrator> (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows N
 14393.321.amd64fre.rs1_release_inmarket.161004-2338
 ```
 
-기본 이미지에서 사용 하는 버전을 확인 하려면 이미지 설명에 제공 된 Docker 허브 또는 이미지 해시 테이블의 태그를 검토 합니다. [Windows 10 업데이트 기록](https://support.microsoft.com/help/12387/windows-10-update-history) 페이지에는 각 빌드 및 수정 버전이 릴리스되면 나열 됩니다.
+기본 이미지에서 사용하는 버전을 확인하려면 Docker 허브의 태그 또는 이미지 설명에 제공된 이미지 해시 테이블을 검토합니다. [Windows 10 업데이트 기록](https://support.microsoft.com/help/12387/windows-10-update-history) 페이지에는 각 빌드 버전 및 수정 버전이 릴리스된 시기가 나와 있습니다.
 
-### <a name="hyper-v-isolation-for-containers"></a>컨테이너에 대 한 hyper-v 격리
+### <a name="hyper-v-isolation-for-containers"></a>컨테이너에 대한 Hyper-V 격리
 
-Hyper-v 격리를 사용 하거나 사용 하지 않고 Windows 컨테이너를 실행할 수 있습니다. Hyper-V 격리는 최적화된 VM을 사용하여 컨테이너 주위에 안전한 경계를 만듭니다. 컨테이너와 호스트 간에 커널을 공유 하는 표준 Windows 컨테이너와는 달리, 각 Hyper-v 격리 컨테이너에는 고유한 Windows 커널 인스턴스가 있습니다. 즉, 컨테이너 호스트와 이미지에서 다른 OS 버전을 사용할 수 있습니다. 자세한 내용은 다음 호환성 매트릭스를 참조 하세요.  
+Hyper-V 격리를 사용하는지 여부에 관계없이 Windows 컨테이너를 실행할 수 있습니다. Hyper-V 격리는 최적화된 VM을 사용하여 컨테이너 주위에 안전한 경계를 만듭니다. 컨테이너와 호스트 간에 커널을 공유하는 표준 Windows 컨테이너와 달리 격리된 각 Hyper-V 컨테이너에는 고유한 Windows 커널 인스턴스가 있습니다. 즉, 컨테이너 호스트와 이미지에서 서로 다른 OS 버전을 사용할 수 있습니다(자세한 내용은 다음 호환성 매트릭스 참조).  
 
 Hyper-V 격리를 사용하여 컨테이너를 실행하려면 간단하게 docker run 명령에 `--isolation=hyperv` 태그를 추가하기만 하면 됩니다.
 
 ## <a name="errors-from-mismatched-versions"></a>일치하지 않는 버전으로 인해 오류 발생
 
-지원 되지 않는 조합을 실행 하려고 하면 다음 오류가 발생 합니다.
+지원되지 않은 조합을 실행하려고 하면 다음과 같은 오류가 발생합니다.
 
 ```dockerfile
 docker: Error response from daemon: container b81ed896222eb87906ccab1c3dd2fc49324eafa798438f7979b87b210906f839 encountered an error during CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101) extra info: {"SystemType":"Container","Name":"b81ed896222eb87906ccab1c3dd2fc49324eafa798438f7979b87b210906f839","Owner":"docker","IsDummy":false,"VolumePath":"\\\\?\\Volume{2443d38a-1379-4bcf-a4b7-fc6ad4cd7b65}","IgnoreFlushesDuringBoot":true,"LayerFolderPath":"C:\\ProgramData\\docker\\windowsfilter\\b81ed896222eb87906ccab1c3dd2fc49324eafa798438f7979b87b210906f839","Layers":[{"ID":"1532b584-8431-5b5a-8735-5e1b4fe9c2a9","Path":"C:\\ProgramData\\docker\\windowsfilter\\b2b88bc2a47abcc682e422507abbba9c9b6d826d34e67b9e4e3144cc125a1f80"},{"ID":"a64b8da5-cd6e-5540-bc73-d81acae6da54","Path":"C:\\ProgramData\\docker\\windowsfilter\\5caaedbced1f546bccd01c9d31ea6eea4d30701ebba7b95ee8faa8c098a6845a"}],"HostName":"b81ed896222e","MappedDirectories":[],"HvPartition":false,"EndpointList":["002a0d9e-13b7-42c0-89b2-c1e80d9af243"],"Servicing":false,"AllowUnqualifiedDNSQuery":true}.
 ```
 
-다음 세 가지 방법으로이 오류를 해결할 수 있습니다.
+이 오류를 해결할 수 있는 세 가지 방법은 다음과 같습니다.
 
-- 올바른 버전의 `mcr.microsoft.com/windows/nanoserver` 또는 `mcr.microsoft.com/windows/servercore`를 기반으로 컨테이너를 다시 빌드합니다.
-- 호스트가 최신 버전이 면 **docker run--격리 = hyperv ...** 를 실행 합니다.
-- 동일한 Windows 버전을 사용 하 여 다른 호스트에서 컨테이너를 실행 해 보세요.
+- `mcr.microsoft.com/windows/nanoserver` 또는 `mcr.microsoft.com/windows/servercore`의 올바른 버전에 따라 컨테이너를 다시 빌드합니다.
+- 호스트가 최신 버전이면 **docker run --isolation=hyperv ...** 를 실행합니다.
+- 동일한 Windows 버전의 다른 호스트에서 컨테이너를 실행해 봅니다.
 
 ## <a name="choose-which-container-os-version-to-use"></a>사용할 컨테이너 OS 버전 선택
 
 >[!NOTE]
->2019 년 4 월 16 일을 [기준으로 Windows 기본 OS 컨테이너 이미지](https://hub.docker.com/_/microsoft-windows-base-os-images)에 대해 "최신" 태그가 더 이상 게시 되거나 유지 관리 되지 않습니다. 이러한 리포지토리에서 이미지를 끌어오거나 참조할 때 특정 태그를 선언 하세요.
+>2019년 4월 16일부터 [Windows 기본 OS 컨테이너 이미지](https://hub.docker.com/_/microsoft-windows-base-os-images)에 대해 더 이상 "latest" 태그가 게시되거나 유지 관리되지 않습니다. 이러한 리포지토리에서 이미지를 끌어오거나 참조할 때 특정 태그를 선언하세요.
 
-컨테이너에 사용 해야 하는 버전을 알아야 합니다. 예를 들어 Windows Server 버전 1809을 컨테이너 OS로 사용 하 고 최신 패치를 사용 하려는 경우 다음과 같이 원하는 기본 OS 컨테이너 이미지의 버전을 지정할 때 `1809` 태그를 사용 해야 합니다.
+컨테이너에 사용해야 하는 버전을 알아야 합니다. 예를 들어 Windows Server 버전 1809를 컨테이너 OS로 사용하고 최신 패치를 포함하려면 다음과 같이 원하는 기본 OS 컨테이너 이미지 버전을 지정할 때 `1809` 태그를 사용해야 합니다.
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809
 ...
 ```
 
-그러나 Windows Server 버전 1809의 특정 패치를 원하는 경우 태그에 KB 번호를 지정할 수 있습니다. 예를 들어 KB4493509가 적용 된 Windows Server 버전 1809에서 Nano Server 기본 OS 컨테이너 이미지를 가져오려면 다음과 같이 지정 합니다.
+그러나 Windows Server 버전 1809의 특정 패치를 원하는 경우 KB 번호를 태그에 지정할 수 있습니다. 예를 들어 KB4493509가 적용된 Windows Server 버전 1809에서 Nano Server 기본 OS 컨테이너 이미지를 가져오려면 다음과 같이 지정합니다.
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809-KB4493509
 ...
 ```
 
-태그에서 OS 버전을 지정 하 여 이전에 사용한 스키마로 필요한 정확한 패치를 지정할 수도 있습니다.
+OS 버전을 태그에 지정하여 이전에 사용한 스키마에 필요한 정확한 패치를 지정할 수도 있습니다.
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:10.0.17763.437
 ...
 ```
 
-Windows Server 2019 및 Windows Server 2016을 기반으로 하는 Server Core 기본 이미지는 [장기 서비스 채널 (LTSC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. 예를 들어 Windows Server 2019을 Server Core 이미지의 컨테이너 OS로 만들고 최신 패치를 포함 하려면 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
+Windows Server 2019 및 Windows Server 2016을 기반으로 하는 Server Core 기본 이미지는 [LTSC(장기 서비스 채널)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. 예를 들어 Windows Server 2019를 Server Core 이미지의 컨테이너 OS로 사용하고 최신 패치를 포함하려면 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
@@ -207,22 +207,22 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 ## <a name="matching-versions-using-docker-swarm"></a>Docker Swarm을 사용하여 버전 일치시키기
 
-Docker Swarm에는 현재 컨테이너가 사용 하는 Windows 버전을 동일한 버전의 호스트에 일치 시킬 수 있는 기본 제공 방법이 없습니다. 최신 컨테이너를 사용 하도록 서비스를 업데이트 하는 경우 성공적으로 실행 됩니다.
+Docker Swarm에는 현재 컨테이너에서 사용하는 Windows 버전을 동일한 버전의 호스트와 일치시키는 기본 제공 방법이 없습니다. 최신 컨테이너를 사용하도록 서비스를 업데이트하면 성공적으로 실행됩니다.
 
-오랜 기간 동안 여러 버전의 Windows를 실행 해야 하는 경우 두 가지 방법을 사용할 수 있습니다. 항상 Hyper-v 격리를 사용 하거나 레이블 제약 조건을 사용 하도록 Windows 호스트를 구성 합니다.
+여러 버전의 Windows를 장기간 실행해야 하는 경우 항상 Hyper-V 격리를 사용하도록 Windows 호스트를 구성하거나 레이블 제약 조건을 사용할 수 있는 두 가지 방법이 있습니다.
 
 ### <a name="finding-a-service-that-wont-start"></a>시작하지 않는 서비스 찾기
 
-서비스가 시작 되지 않으면 `MODE` `replicated` 되지만 `REPLICAS` 0에서 중단 됩니다. OS 버전이 문제 인지 확인 하려면 다음 명령을 실행 합니다.
+서비스가 시작되지 않으면 `MODE`가 `replicated`이지만 `REPLICAS`는 0에서 문제가 발생합니다. OS 버전 문제인지 확인하려면 다음 명령을 실행합니다.
 
-**Docker 서비스 ls** 를 실행 하 여 서비스 이름을 찾습니다.
+**docker service ls**를 실행하여 서비스 이름을 찾습니다.
 
 ```dockerfile
 ID                  NAME                MODE                REPLICAS            IMAGE                                             PORTS
 xh6mwbdq2uil        angry_liskov        replicated          0/1                 microsoft/iis:windowsservercore-10.0.14393.1715
 ```
 
-**Docker service ps (서비스 이름)** 를 실행 하 여 상태 및 최근 시도를 가져옵니다.
+**docker service ps(서비스 이름)** 를 실행하여 상태 및 최신 시도를 가져옵니다.
 
 ```dockerfile
 C:\Program Files\Docker>docker service ps angry_liskov
@@ -235,7 +235,7 @@ ytnnv80p03xx         \_ angry_liskov.1   microsoft/iis:windowsservercore-10.0.14
 xeqkxbsao57w         \_ angry_liskov.1   microsoft/iis:windowsservercore-10.0.14393.1715   WIN-BSTMQDRQC2E     Shutdown            Failed about a minute ago   "starting container failed: co…"
 ```
 
-`starting container failed: ...`표시 되는 경우 **docker 서비스 p--trunc (컨테이너 이름)** 에서 전체 오류를 볼 수 있습니다.
+`starting container failed: ...`가 표시되면 **docker service ps --no-trunc(컨테이너 이름)** 를 사용하여 전체 오류를 확인할 수 있습니다.
 
 ```dockerfile
 C:\Program Files\Docker>docker service ps --no-trunc angry_liskov
@@ -244,11 +244,11 @@ dwsd6sjlwsgic5vrglhtxu178   angry_liskov.1       microsoft/iis:windowsservercore
 y5blbdum70zoh1f6uhx5nxsfv    \_ angry_liskov.1   microsoft/iis:windowsservercore-10.0.14393.1715@sha256:868bca7e89e1743792e15f78edb5a73070ef44eae6807dc3f05f9b94c23943d5   WIN-BSTMQDRQC2E     Shutdown            Failed 39 seconds ago             "starting container failed: container e7b5d3adba7e510569c18d8e55f7c689d7cb92be40a516c91b363e27f84604d0 encountered an error during CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101) extra info: {"SystemType":"Container","Name":"e7b5d3adba7e510569c18d8e55f7c689d7cb92be40a516c91b363e27f84604d0","Owner":"docker","VolumePath":"\\\\?\\Volume{2443d38a-1379-4bcf-a4b7-fc6ad4cd7b65}","IgnoreFlushesDuringBoot":true,"LayerFolderPath":"C:\\ProgramData\\docker\\windowsfilter\\e7b5d3adba7e510569c18d8e55f7c689d7cb92be40a516c91b363e27f84604d0","Layers":[{"ID":"bcf2630f-ea95-529b-b33c-e5cdab0afdb4","Path":"C:\\ProgramData\\docker\\windowsfilter\\200235127f92416724ae1d53ed3fdc86d78767132d019bdda1e1192ee4cf3ae4"},{"ID":"e3ea10a8-4c2f-5b93-b2aa-720982f116f6","Path":"C:\\ProgramData\\docker\\windowsfilter\\0ccc9fa71a9f4c5f6f3bc8134fe3533e454e09f453de662cf99ab5d2106abbdc"},{"ID":"cff5391f-e481-593c-aff7-12e080c653ab","Path":"C:\\ProgramData\\docker\\windowsfilter\\a49576b24cd6ec4a26202871c36c0a2083d507394a3072186133131a72601a31"},{"ID":"499cb51e-b891-549a-b1f4-8a25a4665fbd","Path":"C:\\ProgramData\\docker\\windowsfilter\\fdf2f52c4323c62f7ff9b031c0bc3af42cf5fba91098d51089d039fb3e834c08"},{"ID":"1532b584-8431-5b5a-8735-5e1b4fe9c2a9","Path":"C:\\ProgramData\\docker\\windowsfilter\\b2b88bc2a47abcc682e422507abbba9c9b6d826d34e67b9e4e3144cc125a1f80"},{"ID":"a64b8da5-cd6e-5540-bc73-d81acae6da54","Path":"C:\\ProgramData\\docker\\windowsfilter\\5caaedbced1f546bccd01c9d31ea6eea4d30701ebba7b95ee8faa8c098a6845a"}],"HostName":"e7b5d3adba7e","HvPartition":false,"EndpointList":["298bb656-8800-4948-a41c-1b0500f3d94c"],"AllowUnqualifiedDNSQuery":true}"
 ```
 
-`CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101)`와 동일한 오류입니다.
+이는 `CreateContainer: failure in a Windows system call: The operating system of the container does not match the operating system of the host. (0xc0370101)`와 동일한 오류입니다.
 
 ### <a name="fix---update-the-service-to-use-a-matching-version"></a>수전 - 일치하는 버전을 사용하도록 서비스 업데이트
 
-Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 만들지 않은 이미지를 사용 하는 서비스를 포함 하는 작성 파일이 있는 경우 참조를 적절 하 게 업데이트 하는 것이 좋습니다. 예를 들어:
+Docker Swarm을 사용할 때는 다음과 같은 두 가지 사항을 고려해야 합니다. 만들지 않은 이미지를 사용하는 서비스가 있는 작성 파일이 있는 경우 이에 따라 참조를 적절히 업데이트하는 것이 좋습니다. 예:
 
 ``` yaml
 version: '3'
@@ -259,7 +259,7 @@ services:
 ...
 ```
 
-또 다른 고려 사항은 사용자가 직접 만든 이미지 (예: contoso/myimage)가 무엇 인지에 대 한 것입니다.
+또 다른 고려 사항은 가리키는 이미지가 직접 만든 이미지(예: contoso/myimage)인 경우입니다.
 
 ```yaml
 version: '3'
@@ -270,19 +270,19 @@ services:
 ...
 ```
 
-이 경우 [일치 하지 않는 버전의 오류](#errors-from-mismatched-versions) 에 설명 된 메서드를 사용 하 여 docker 작성 줄 대신 dockerfile을 수정 해야 합니다.
+이 경우 docker-compose 줄 대신 [일치하지 않는 버전으로 인해 오류 발생](#errors-from-mismatched-versions)에서 설명한 방법을 사용하여 해당 dockerfile을 수정해야 합니다.
 
 ### <a name="mitigation---use-hyper-v-isolation-with-docker-swarm"></a>마이그레이션 - Docker Swarm을 통해 Hyper-V 격리 사용
 
-컨테이너 단위로 Hyper-v 격리 사용을 지원 하기 위한 제안이 있지만 코드가 아직 수행 되지 않았습니다. [GitHub](https://github.com/moby/moby/issues/31616)에서 진행 상황을 확인할 수 있습니다. 코드가 완성될 때까지 호스트는 항상 Hyper-V 격리로 실행되도록 구성해야 합니다.
+Hyper-V 격리를 컨테이너 단위로 사용하도록 지원하는 제안이 있지만 코드가 아직 완성되지 않았습니다. [GitHub](https://github.com/moby/moby/issues/31616)에서 진행 상황을 확인할 수 있습니다. 코드가 완성될 때까지 호스트는 항상 Hyper-V 격리로 실행되도록 구성해야 합니다.
 
 이렇게 하려면 Docker 서비스 구성을 변경한 다음 Docker 엔진을 다시 시작해야 합니다.
 
-1. 편집 `C:\ProgramData\docker\config\daemon.json`
-2. `"exec-opts":["isolation=hyperv"]` 줄 추가
+1. `C:\ProgramData\docker\config\daemon.json`을 편집합니다.
+2. `"exec-opts":["isolation=hyperv"]` 줄을 추가합니다.
 
     >[!NOTE]
-    >디먼 파일은 기본적으로 존재 하지 않습니다. 디렉터리를 미리 보는 경우라면 파일을 만들어야 합니다. 그런 다음 다음과 같이 복사 합니다.
+    >daemon.json 파일은 기본적으로 존재하지 않습니다. 디렉터리를 미리 보는 경우라면 파일을 만들어야 합니다. 그런 다음, 다음을 복사합니다.
 
     ```JSON
     {
@@ -290,14 +290,14 @@ services:
     }
     ```
 
-3. PowerShell에서 다음 cmdlet을 실행 하 여 파일을 닫고 저장 한 후 docker 엔진을 다시 시작 합니다.
+3. 파일을 닫고 저장한 다음, PowerShell에서 다음 cmdlet을 실행하여 Docker 엔진을 다시 시작합니다.
 
     ```powershell
     Stop-Service docker
     Start-Service docker
     ```
 
-4. 서비스를 다시 시작한 후 컨테이너를 시작 합니다. 실행 되 고 있는 경우 다음 cmdlet을 사용 하 여 컨테이너를 검사 하 여 컨테이너의 격리 수준을 확인할 수 있습니다.
+4. 서비스가 다시 시작되었으면 컨테이너를 시작합니다. 실행되면 다음 cmdlet을 통해 컨테이너를 검사하여 컨테이너의 격리 수준을 확인할 수 있습니다.
 
     ```powershell
     docker inspect --format='{{json .HostConfig.Isolation}}' $instanceNameOrId
@@ -307,18 +307,18 @@ services:
 
 ### <a name="mitigation---use-labels-and-constraints"></a>완화 방법: 레이블 및 제약 조건 사용
 
-레이블 및 제약 조건을 사용 하 여 버전과 일치 하는 방법은 다음과 같습니다.
+레이블과 제약 조건을 사용하여 버전을 일치시키는 방법은 다음과 같습니다.
 
-1. 각 노드에 레이블을 추가 합니다.
+1. 레이블을 각 노드에 추가합니다.
 
-    각 노드에서 `OS`와 `OsVersion`라는 레이블을 추가 합니다. 로컬로 실행하고 있다고 가정하지만 원격 호스트에서 설정하도록 수정할 수 있습니다.
+    각 노드에서 두 개의 레이블(`OS` 및 `OsVersion`)을 추가합니다. 로컬로 실행하고 있다고 가정하지만 원격 호스트에서 설정하도록 수정할 수 있습니다.
 
     ```powershell
     docker node update --label-add OS="windows" $ENV:COMPUTERNAME
     docker node update --label-add OsVersion="$((Get-ComputerInfo).OsVersion)" $ENV:COMPUTERNAME
     ```
 
-    그런 다음, **docker 노드 검사** 명령을 실행 하 여이를 확인할 수 있습니다. 그러면 새로 추가 된 레이블이 표시 됩니다.
+    그런 다음, 새로 추가된 레이블을 표시하는 **docker node inspect** 명령을 실행하여 이러한 레이블을 확인할 수 있습니다.
 
     ```yaml
            "Spec": {
@@ -331,9 +331,9 @@ services:
             }
     ```
 
-2. 서비스 제약 조건을 추가 합니다.
+2. 서비스 제약 조건을 추가합니다.
 
-    이제 각 노드에 레이블을 지정 했으므로 서비스 배치를 결정 하는 제약 조건을 업데이트할 수 있습니다. 다음 예제에서는 "contoso_service"을 실제 서비스의 이름으로 바꿉니다.
+    이제 레이블을 각 노드에 지정했으므로 서비스 배치를 결정하는 제약 조건을 업데이트할 수 있습니다. 다음 예제에서 "contoso_service"를 실제 서비스 이름으로 바꿉니다.
 
     ```powershell
     docker service update \
@@ -344,21 +344,21 @@ services:
 
     이렇게 하면 노드가 실행될 수 있는 위치가 강제하고 제한됩니다.
 
-서비스 제약 조건을 사용 하는 방법에 대 한 자세한 내용은 [서비스 만들기 참조](https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-constraints-constraint)를 확인 하세요.
+서비스 제약 조건을 사용하는 방법에 대한 자세한 내용은 [서비스 만들기 참고 자료](https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-constraints-constraint)를 확인하세요.
 
 ## <a name="matching-versions-using-kubernetes"></a>Kubernetes를 통한 버전 일치
 
-Pod가 Kubernetes에서 예약 된 경우 [Docker Swarm를 사용 하 여 일치](#matching-versions-using-docker-swarm) 하는 버전에 설명 된 것과 동일한 문제가 발생할 수 있습니다. 이와 비슷한 전략을 사용 하면이 문제를 방지할 수 있습니다.
+Kubernetes에서 Pod가 예약되면 [Docker Swarm을 사용하여 버전 일치시키기](#matching-versions-using-docker-swarm)에서 설명한 것과 동일한 문제가 발생할 수 있습니다. 이 문제는 다음과 비슷한 전략을 사용하여 방지할 수 있습니다.
 
-- 개발 및 프로덕션에서 동일한 OS 버전을 기반으로 컨테이너를 다시 빌드합니다. 방법을 알아보려면 [사용할 컨테이너 OS 버전 선택](#choose-which-container-os-version-to-use)을 참조 하세요.
-- 노드 레이블 및 nodeSelectors를 사용 하 여 Windows Server 2016 및 Windows Server 버전 1709 노드가 동일한 클러스터에 있는 경우 호환 되는 노드에 pod가 예약 되어 있는지 확인 합니다.
+- 개발 및 프로덕션에서 동일한 OS 버전을 기반으로 하여 컨테이너를 다시 빌드합니다. 자세한 내용은 [사용할 컨테이너 OS 버전 선택](#choose-which-container-os-version-to-use)을 참조하세요.
+- Windows Server 2016 및 Windows Server 버전 1709 노드가 모두 동일한 클러스터에 있는 경우 노드 레이블 및 nodeSelector를 사용하여 Pod가 호환되는 노드에 예약되어 있는지 확인합니다.
 - OS 버전을 기반으로 별도의 클러스터를 사용합니다.
 
 ### <a name="finding-pods-failed-on-os-mismatch"></a>OS 불일치에서 실패한 포드 찾기
 
-이 경우 배포는 OS 버전이 일치 하지 않거나 Hyper-v 격리를 사용 하도록 설정 되지 않은 노드에서 예약 된 pod를 포함 합니다.
+이 경우 OS 버전이 일치하지 않고 Hyper-V 격리를 사용하도록 설정되지 않은 노드에서 예약된 Pod가 배포에 포함되었습니다.
 
-동일한 오류가 이벤트에 표시되며 `kubectl describe pod <podname>`와 함께 나열됩니다. 몇 번의 시도 후 pod 상태는 `CrashLoopBackOff`될 것입니다.
+동일한 오류가 이벤트에 표시되며 `kubectl describe pod <podname>`와 함께 나열됩니다. 여러 번 시도한 후에 Pod 상태는 `CrashLoopBackOff`가 될 것입니다.
 
 ```
 $ kubectl -n plang describe pod fabrikamfiber.web-789699744-rqv6p
@@ -420,11 +420,11 @@ Events:
   32m           11s             139     kubelet, 38519acs9011   spec.containers{fabrikamfiberweb}       Warning         BackOff                 Back-off restarting failed container
 ```
 
-### <a name="mitigation---using-node-labels-and-nodeselector"></a>완화-노드 레이블 및 nodeSelector 사용
+### <a name="mitigation---using-node-labels-and-nodeselector"></a>완화 - 노드 레이블 및 nodeSelector 사용
 
-**Kubectl 가져오기 노드** 를 실행 하 여 모든 노드의 목록을 가져옵니다. 그런 다음 **kubectl 설명 노드 (노드 이름)** 를 실행 하 여 자세한 정보를 볼 수 있습니다.
+**kubectl get node**를 실행하여 모든 노드 목록을 가져옵니다. 그런 다음, **kubectl describe node(노드 이름)** 를 실행하여 자세한 정보를 가져올 수 있습니다.
 
-다음 예에서는 두 개의 Windows 노드가 서로 다른 버전을 실행 하 고 있습니다.
+다음 예제에서는 두 개의 Windows 노드에서 서로 다른 버전을 실행합니다.
 
 ```
 $ kubectl get node
@@ -490,20 +490,20 @@ System Info:
 
 ```
 
-다음 예제를 사용 하 여 버전과 일치 하는 방법을 보여 드리겠습니다.
+이 예제를 사용하여 버전을 일치시키는 방법을 보여 드리겠습니다.
 
-1. 각 노드 이름을 적어 두고 시스템 정보에서 `Kernel Version` 합니다.
+1. 각 노드 이름 및 시스템 정보의 `Kernel Version`을 적어 둡니다.
 
     이 예제에서 정보는 다음과 같습니다.
 
-    이름         | 버전
+    이름         | Version
     -------------|--------------------------------------------------------
     38519acs9010 | 14393.1715.amd64fre.rs1_release_inmarket.170906-1810
     38519acs9011 | 16299.0.amd64fre.rs3_release.170922-1354
 
-2. 레이블을 `beta.kubernetes.io/osbuild`라는 각 노드에 추가합니다. Hyper-v 격리 없이 지원 되려면 Windows Server 2016에 주 버전 및 부 버전 (이 예에서는 14393.1715)이 모두 필요 합니다. Windows Server 버전 1709에서는 일치 하는 주 버전 (이 예제에서는 16299)만 필요 합니다.
+2. 레이블을 `beta.kubernetes.io/osbuild`라는 각 노드에 추가합니다. Hyper-V 격리 없이 지원하기 위해 Windows Server 2016에는 주 버전 및 부 버전(이 예제에서는 14393.1715)이 모두 필요합니다. Windows Server 버전 1709에는 일치하는 주 버전(이 예제에서는 16299)만 필요합니다.
 
-    이 예제에서 레이블을 추가 하는 명령은 다음과 같습니다.
+    이 예제에서 레이블을 추가하는 명령은 다음과 같습니다.
 
     ```
     $ kubectl label node 38519acs9010 beta.kubernetes.io/osbuild=14393.1715
@@ -516,7 +516,7 @@ System Info:
 
     ```
 
-3. **Kubectl 가져오기 노드--레이블 표시**를 실행 하 여 레이블이 있는지 확인 합니다.
+3. **kubectl get nodes --show-labels**를 실행하여 레이블이 있는지 확인합니다.
 
     이 예제에서 출력은 다음과 같습니다.
 
@@ -530,7 +530,7 @@ System Info:
     k8s-master-38519084-0       Ready                      3d        v1.7.7                     beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=Standard_D2_v2,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=westus2,failure-domain.beta.kubernetes.io/zone=0,kubernetes.io/hostname=k8s-master-38519084-0,kubernetes.io/role=master
     ```
 
-4. 배포에 노드 선택기를 추가 합니다. 이 예제에서는 컨테이너에 사용 되는 기본 OS와 일치 하는 `beta.kubernetes.io/os` = windows 및 `beta.kubernetes.io/osbuild` = 14393. * 또는 16299를 사용 하 여 컨테이너 사양에 `nodeSelector`를 추가 합니다.
+4. 노드 선택기를 배포에 추가합니다. 이 예제에서는 컨테이너에서 사용하는 기본 OS와 일치하도록 `beta.kubernetes.io/os` = windows 및 `beta.kubernetes.io/osbuild` = 14393.* 또는 16299를 사용하여 `nodeSelector`를 컨테이너 사양에 추가합니다.
 
     Windows Server 2016용으로 만들어진 컨테이너를 실행하는 전체 샘플 코드는 다음과 같습니다.
 
@@ -567,9 +567,9 @@ System Info:
     status: {}
     ```
 
-    이제 포드는 업데이트된 배포에서 시작할 수 있습니다. 노드 선택기는 `kubectl describe pod <podname>`에도 표시 되므로 해당 명령을 실행 하 여 추가 되었는지 확인할 수 있습니다.
+    이제 포드는 업데이트된 배포에서 시작할 수 있습니다. 노드 선택기는 `kubectl describe pod <podname>`에도 표시되므로 해당 명령을 실행하여 노드 선택기가 추가되었는지 확인할 수 있습니다.
 
-    예제에 대 한 출력은 다음과 같습니다.
+    예제의 출력은 다음과 같습니다.
 
     ```
     $ kubectl -n plang describe po fa
