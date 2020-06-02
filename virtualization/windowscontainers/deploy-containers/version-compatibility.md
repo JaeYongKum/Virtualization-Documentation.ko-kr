@@ -3,12 +3,12 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
-ms.openlocfilehash: 917c07e13d6a0ec5b5e73213da4dc4f04ec0d9bb
-ms.sourcegitcommit: 8eedfdc1fda9d0abb36e28dc2b5fb39891777364
+ms.openlocfilehash: 4a219fe614500e06dbeeb82f20e0b3f32eda0ccf
+ms.sourcegitcommit: dd80813679df2de89fe523a26600cfe58a2d39a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79027861"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84023158"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -19,20 +19,32 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 ## <a name="windows-server-host-os-compatibility"></a>Windows Server 호스트 OS 호환성
 
 <!-- start tab view -->
-# <a name="windows-server-version-1909"></a>[Windows Server 버전 1909](#tab/windows-server-1909)
+# <a name="windows-server-version-2004"></a>[Windows Server, 버전 2004](#tab/windows-server-2004)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10004;|&#10004;|
+|Windows Server, 버전 2004|&#10004;|&#10004;|
+|Windows Server, 버전 1909|&#10004;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
 |Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-server-version-1903"></a>[Windows Server 버전 1903](#tab/windows-server-1903)
+# <a name="windows-server-version-1909"></a>[Windows Server, 버전 1909](#tab/windows-server-1909)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10060;|&#10060;|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10004;|&#10004;|
+|Windows Server, 버전 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
+
+# <a name="windows-server-version-1903"></a>[Windows Server, 버전 1903](#tab/windows-server-1903)
+
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10004;|
 |Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
@@ -41,7 +53,8 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10060;|&#10060;|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
 |Windows Server 2019|&#10004;|&#10004;|
 |Windows Server 2016|&#10004;|&#10060;|
@@ -50,7 +63,8 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10060;|&#10060;|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
 |Windows Server 2019|&#10060;|&#10060;|
 |Windows Server 2016|&#10004;|&#10004;|
@@ -62,20 +76,32 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 <!-- start tab view -->
 
-# <a name="windows-10-version-1909"></a>[Windows 10 버전 1909](#tab/windows-10-1909)
+# <a name="windows-10-version-2004"></a>[Windows 10, 버전 2004](#tab/windows-10-2004)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10004;|&#10060;|
+|Windows Server, 버전 2004|&#10004;|&#10004;|
+|Windows Server, 버전 1909|&#10004;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
 |Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
 
-# <a name="windows-10-version-1903"></a>[Windows 10 버전 1903](#tab/windows-10-1903)
+# <a name="windows-10-version-1909"></a>[Windows 10, 버전 1909](#tab/windows-10-1909)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10060;|&#10060;|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10004;|&#10060;|
+|Windows Server, 버전 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
+
+# <a name="windows-10-version-1903"></a>[Windows 10, 버전 1903](#tab/windows-10-1903)
+
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
 |Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|
@@ -84,7 +110,8 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
-|Windows Server 버전 1909|&#10060;|&#10060;|
+|Windows Server, 버전 2004|&#10060;|&#10060;|
+|Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
 |Windows Server 2019|&#10004;|&#10060;|
 |Windows Server 2016|&#10004;|&#10060;|

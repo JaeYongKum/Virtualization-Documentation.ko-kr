@@ -4,16 +4,16 @@ description: Windows 컨테이너 기본 이미지 수명 주기에 대한 정�
 keywords: windows 컨테이너, 컨테이너, 수명 주기, 릴리스 정보, 기본 이미지, 컨테이너 기본 이미지
 author: Heidilohr
 ms.author: helohr
-ms.date: 06/17/2019
+ms.date: 05/12/2020
 ms.topic: article
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: 2dcd228af0984b55162894555fa21f9e02dd1934
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: c6276db89f093b62a01cadc095f5357d2e5a8eba
+ms.sourcegitcommit: dd80813679df2de89fe523a26600cfe58a2d39a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81395746"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84023148"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
 
@@ -30,13 +30,14 @@ Server Core 이미지의 경우 고객은 2~3년마다 Windows Server의 새로�
 
 |Base image                       |서비스 채널|Version|OS 빌드|가용성|일반 지원 종료 날짜|연장 지원 날짜|
 |---------------------------------|-----------------|-------|--------|------------|---------------------------|---------------------|
+|Server Core, Nano Server, Windows|반기      |2004   |19041   |2020/05/27  |2021/12/14                 |해당 없음                  |
 |Server Core, Nano Server, Windows|반기      |1909   |18363   |2019/11/12  |2021/05/11                 |해당 없음                  |
 |Server Core, Nano Server, Windows|반기      |1903   |18362   |2019/05/21  |2020/12/08                 |해당 없음                  |
 |Server Core                      |장기        |2019   |17763   |2018/11/13  |2024/01/09                 |2029/01/09           |
 |Server Core, Nano Server, Windows|반기      |1809   |17763   |2018/11/13  |2020/11/10                 |해당 없음                  |
 |Server Core, Nano Server         |반기      |1803   |17134   |2018/04/30  |2019/11/12                 |해당 없음                  |
 |Server Core, Nano Server         |반기      |1709   |16299   |2017/10/17  |2019/04/09                 |해당 없음                  |
-|Server Core                      |장기        |1607   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
+|Server Core                      |장기        |2016   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
 |Nano 서버                      |반기      |1607   |14393   |2016/10/15  |2018/10/09                 |해당 없음                  |
 
-서비스 요구 사항 및 기타 추가 정보는  [Windows 수명 주기 FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products), [Windows Server 릴리스 정보](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info) 및 [Windows 기본 OS 이미지 Docker 허브 리포지토리](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조하세요.
+서비스 요구 사항 및 기타 추가 정보는 [Windows 수명 주기 FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products), [Windows Server 릴리스 정보](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info) 및 [Windows 기본 OS 이미지 Docker 허브 리포지토리](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조하세요.
