@@ -3,12 +3,12 @@ title: 컨테이너의 영구 스토리지
 description: Windows 컨테이너에서 스토리지를 보존하는 방법
 keywords: 컨테이너, 볼륨, 스토리지, 마운트, 바인딩 마운트
 author: cwilhit
-ms.openlocfilehash: 945a78d4ecb9c96da4de8f7246f84b6b444dd5b5
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 8bdf45a46f2e88a2206894f7d412cb93d4491cac
+ms.sourcegitcommit: 57b1c0931a464ad040a7af81b749c7d66c0bc899
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909673"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421009"
 ---
 # <a name="persistent-storage-in-containers"></a>컨테이너의 영구 스토리지
 
@@ -16,7 +16,7 @@ ms.locfileid: "74909673"
 
 앱이 컨테이너의 데이터를 유지할 수 있어야 하거나 컨테이너를 빌드할 때 포함되지 않은 파일을 컨테이너에 표시하려는 경우가 있을 수 있습니다. 다음과 같은 몇 가지 방법으로 컨테이너에 영구 스토리지를 제공할 수 있습니다.
 
-- 마운트 바인딩
+- 바인딩 마운트
 - 명명된 볼륨
 
 Docker에는 [볼륨을 사용하는](https://docs.docker.com/engine/admin/volumes/volumes/) 방법에 대한 훌륭한 개요가 들어 있으니 먼저 읽는 것이 좋습니다. 이 페이지의 나머지 부분에서는 Linux와 Windows의 차이점에 초점을 맞추며 Windows의 예를 제공합니다.
@@ -64,9 +64,9 @@ Windows Server 버전 1709 이상에서 "SMB 글로벌 매핑"이라는 새로�
     > [!NOTE]
     > 컨테이너에 SMB 글로벌 매핑을 사용하면 컨테이너 호스트의 모든 사용자가 원격 공유에 액세스할 수 있습니다. 컨테이너 호스트에서 실행되는 모든 애플리케이션 또한 매핑된 원격 공유에 액세스할 수 있습니다.
 
-2. 글로벌 마운트된 SMB 공유에 매핑된 데이터 볼륨이 있는 컨테이너 만들기 docker run -it --name demo -v g:\ContainerData:G:\AppData1 microsoft/windowsservercore:1709 cmd.exe
+2. 전역적으로 마운트된 SMB 공유 도커 실행에 매핑된 데이터 볼륨이 있는 컨테이너 만들기 -it --name demo -v g:\ContainerData:c:\AppData1 mcr.microsoft.com/windows/servercore:ltsc2019 cmd.exe
 
-    컨테이너 내에서 G:\AppData1은 원격 공유의 "ContainerData" 디렉터리에 매핑됩니다. 글로벌 매핑된 원격 공유에 저장된 모든 데이터는 컨테이너 내에 있는 애플리케이션에서 사용할 수 있습니다. 여러 컨테이너가 동일한 명령을 사용하여 이 공유된 데이터에 대한 읽기/쓰기 액세스를 가져올 수 있습니다.
+    컨테이너 내에서 c:\AppData1은 원격 공유의 "ContainerData" 디렉터리에 매핑됩니다. 전연적으로 매핑된 원격 공유에 저장된 모든 데이터는 컨테이너 내에 있는 애플리케이션에서 사용할 수 있습니다. 여러 컨테이너가 동일한 명령을 사용하여 이 공유된 데이터에 대한 읽기/쓰기 액세스를 가져올 수 있습니다.
 
 이 SMB 글로벌 매핑 지원은 다음을 포함하여 호환되는 모든 SMB 서버 위에서 작업할 수 있는 SMB 클라이언트 측 기능입니다.
 
