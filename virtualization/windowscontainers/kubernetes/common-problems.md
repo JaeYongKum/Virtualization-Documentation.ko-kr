@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.prod: containers
 description: Kubernetes를 배포 하 고 Windows 노드를 조인할 때 발생 하는 일반적인 문제에 대 한 솔루션입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: dfb9be5bb5a5dd3507ee7266346634579df503c0
-ms.sourcegitcommit: 7f3d98da46c73e428565268683691f383c72221f
+ms.openlocfilehash: eb8162a55eb1a639cde40faed7b01a48f0c50ad3
+ms.sourcegitcommit: fed735dafbe40179b1e1c46840655248b52617b0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84461611"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84614866"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포와 관련 된 몇 가지 일반적인 문제를 안내 합니다.
@@ -57,7 +57,7 @@ Policy creation failed: hcnCreateLoadBalancer failed in Win32: The specified por
 이 문제를 해결 하려면 몇 가지 단계를 수행 하면 됩니다.
 1.  영구 솔루션의 경우 kube 부하 분산을 [DSR 모드로](https://techcommunity.microsoft.com/t5/Networking-Blog/Direct-Server-Return-DSR-in-a-nutshell/ba-p/693710)설정 해야 합니다. DSR 모드는 완전히 구현 되며 새로운 [Windows Server Insider build 18945](https://blogs.windows.com/windowsexperience/2019/07/30/announcing-windows-server-vnext-insider-preview-build-18945/#o1bs7T2DGPFpf7HM.97) 이상 에서만 사용할 수 있습니다.
 2. 해결 방법으로 사용자는와 같은 명령을 사용 하 여 사용 가능한 임시 포트의 기본 Windows 구성을 늘릴 수도 있습니다 `netsh int ipv4 set dynamicportrange TCP <start_port> <port_count>` . *경고:* 기본 동적 포트 범위를 재정의 하면 임시 범위에서 사용 가능한 TCP 포트를 사용 하는 호스트의 다른 프로세스/서비스에 영향을 미칠 수 있으므로이 범위는 신중 하 게 선택 해야 합니다.
-3. Q 2020의 누적 업데이트를 통해 출시 되도록 예약 된 인텔리전트 포트 풀 공유를 사용 하는 비-DSR 모드 부하 분산 장치에 대 한 확장성이 향상 되었습니다.
+3. 누적 업데이트 [KB4551853](https://support.microsoft.com/en-us/help/4551853) (및 모든 최신 누적 업데이트)에 포함 된 지능적인 포트 풀 공유를 사용 하는 비 DSR 모드 부하 분산 장치에 대 한 확장성이 향상 되었습니다.
 
 ### <a name="hostport-publishing-is-not-working"></a>HostPort 게시가 작동 하지 않습니다. ###
 HostPort 기능을 사용 하려면 CNI 플러그 인이 [v 0.8.6](https://github.com/containernetworking/plugins/releases/tag/v0.8.6) release 이상 인지 확인 하 고 cni 구성 파일에는 `portMappings` 다음과 같은 기능이 설정 되어 있는지 확인 하세요.
