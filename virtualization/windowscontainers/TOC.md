@@ -26,7 +26,7 @@
 ### [Windows 컨테이너 및 Azure App Service로 ASP.NET 앱 마이그레이션](/azure/app-service/app-service-web-tutorial-windows-containers-custom-fonts)
 ## Windows의 Linux 컨테이너
 ### [개요](deploy-containers/linux-containers.md)
-### [첫 번째 LCOW 컨테이너 실행](quick-start/quick-start-windows-10-linux.md)
+### [첫 번째 Linux 컨테이너 실행](quick-start/quick-start-windows-10-linux.md)
 ## Windows 참가자 프로그램에서 컨테이너 사용
 ### [개요](deploy-containers/insider-overview.md)
 
