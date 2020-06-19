@@ -1,0 +1,107 @@
+### YamlMime:Hub
+title: 가상화 설명서
+summary: VM(가상 머신) 및 컨테이너를 실행하는 방법을 비롯하여 Windows 10 및 Windows Server의 가상화에 대한 정보를 찾습니다.
+brand: windows
+metadata:
+  title: 가상화 설명서
+  description: VM(가상 머신) 및 컨테이너를 실행하는 방법을 비롯하여 Windows 10 및 Windows Server의 가상화에 대한 정보를 찾습니다.
+  services: virtual-machines-windows
+  ms.service: virtual-machines-windows
+  ms.topic: hub-page
+  author: scooley
+  ms.prod: virtualization
+  ms.date: 03/31/2017
+  ms.assetid: addcfda8-1522-4137-bc02-14cbb1ff838f
+  ms.openlocfilehash: aaa36adcd6be5b54143ec038ae70abeaf29b5772
+  ms.sourcegitcommit: 87962cedf7a9e3425042255718cab9277f41532f
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 06/19/2020
+  ms.locfileid: "85092361"
+highlightedContent:
+  items:
+  - title: Windows 10의 Hyper-V
+    itemType: overview
+    url: /virtualization/hyper-v-on-windows/about/
+  - title: Windows 10에 Hyper-V 설치
+    itemType: how-to-guide
+    url: /virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+  - title: Windows Server의 Hyper-V
+    itemType: overview
+    url: /windows-server/virtualization/hyper-v/hyper-v-technology-overview
+  - title: Windows 및 컨테이너
+    itemType: overview
+    url: /virtualization/windowscontainers/about/
+  - title: Windows에서 컨테이너 사용 시작
+    itemType: how-to-guide
+    url: /virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client
+conceptualContent:
+  items:
+  - title: Windows 10에서 가상 머신 실행
+    links:
+    - url: /virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine
+      itemType: quickstart
+      text: 가상 머신 만들기
+    - url: /virtualization/hyper-v-on-windows/reference/hyper-v-requirements
+      itemType: overview
+      text: 시스템 요구 사항
+  - title: Windows Server에서 가상 머신 실행
+    links:
+    - url: /windows-server/virtualization/hyper-v/system-requirements-for-hyper-v-on-windows
+      itemType: overview
+      text: 시스템 요구 사항
+    - url: /windows-server/virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server
+      itemType: get-started
+      text: Hyper-V 역할 설치
+    - url: /windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines
+      itemType: how-to-guide
+      text: 가상 네트워크 스위치 만들기
+  - title: Windows 또는 Azure에서 컨테이너 실행
+    links:
+    - url: https://www.docker.com/docker-windows
+      itemType: overview
+      text: Windows용 Docker Desktop 가져오기
+    - url: https://azure.microsoft.com/services/kubernetes-service/
+      itemType: overview
+      text: AKS(Azure Kubernetes Service)
+  - title: Hyper-V 관리 도구
+    links:
+    - url: /windows-server/manage/windows-admin-center/use/manage-virtual-machines
+      itemType: how-to-guide
+      text: Windows Admin Center
+    - url: https://docs.microsoft.com/system-center/vmm/overview
+      itemType: overview
+      text: System Center Virtual Machine Manager
+    - url: https://docs.microsoft.com/powershell/module/hyper-v/index?view=win10-ps
+      itemType: reference
+      text: PowerShell
+  - title: Hyper-V 내부
+    links:
+    - url: /virtualization/hyper-v-on-windows/reference/hyper-v-architecture
+      itemType: reference
+      text: Hyper-V 아키텍처
+    - url: /virtualization/api/index
+      itemType: reference
+      text: Windows 하이퍼바이저 플랫폼
+    - url: /virtualization/hyper-v-on-windows/reference/tlfs
+      itemType: reference
+      text: 하이퍼바이저 사양
+  - title: 커뮤니티
+    links:
+    - url: https://insider.windows.com
+      itemType: overview
+      text: Windows 참가자 프로그램에 참여
+    - url: https://social.technet.microsoft.com/Forums/en-US/home?forum=winserverhyperv
+      itemType: reference
+      text: Hyper-V 포럼
+  - title: Hyper-V 서버 및 설명서 보관
+    links:
+    - url: https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019
+      itemType: download
+      text: Hyper-V Server 2019 다운로드
+    - url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt169373(v=ws.11)
+      itemType: overview
+      text: Windows Server 2012 R2 및 2012
+    - url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753637(v=ws.10)
+      itemType: overview
+      text: Windows Server 2008 R2
