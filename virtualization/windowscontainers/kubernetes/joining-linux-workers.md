@@ -3,17 +3,17 @@ title: Linux 노드 조인
 author: daschott
 ms.author: daschott
 ms.date: 02/09/2018
-ms.topic: get-started-article
+ms.topic: how-to
 ms.prod: containers
 description: V 1.14를 사용 하 여 Linux 노드를 Kubernetes 클러스터에 조인 합니다.
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 88207939c82bfe8ffa0b088cfd61cf4ab22cb10a
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 88ad448796702b3cebe71bb9d0189ea86f72635e
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909953"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192780"
 ---
 # <a name="joining-linux-nodes-to-a-cluster"></a>클러스터에 Linux 노드 조인
 
@@ -40,7 +40,7 @@ apt-get update && apt-get upgrade
 
 ## <a name="install-docker"></a>Docker 설치
 
-컨테이너를 사용할 수 있으려면 Docker와 같은 컨테이너 엔진이 필요 합니다. 최신 버전을 얻으려면 Docker 설치에 [이러한 지침](https://docs.docker.com/install/linux/docker-ce/ubuntu/) 을 사용할 수 있습니다. `hello-world` 이미지를 실행 하 여 docker가 올바르게 설치 되었는지 확인할 수 있습니다.
+컨테이너를 사용할 수 있으려면 Docker와 같은 컨테이너 엔진이 필요 합니다. 최신 버전을 얻으려면 Docker 설치에 [이러한 지침](https://docs.docker.com/install/linux/docker-ce/ubuntu/) 을 사용할 수 있습니다. 이미지를 실행 하 여 docker가 올바르게 설치 되었는지 확인할 수 있습니다 `hello-world` .
 
 ```bash
 docker run hello-world
@@ -48,17 +48,17 @@ docker run hello-world
 
 ## <a name="install-kubeadm"></a>Kubeadm 설치
 
-Linux 배포에 대 한 `kubeadm` 이진 파일을 다운로드 하 고 클러스터를 초기화 합니다.
+`kubeadm`Linux 배포에 대 한 이진 파일을 다운로드 하 고 클러스터를 초기화 합니다.
 
-> [!Important]  
-> Linux 배포에 따라 아래 `kubernetes-xenial`을 올바른 [코드명](https://wiki.ubuntu.com/Releases)바꾸어야 할 수 있습니다.
+> [!Important]
+> Linux 배포에 따라 `kubernetes-xenial` 아래를 올바른 [코드명](https://wiki.ubuntu.com/Releases)로 바꾸어야 할 수 있습니다.
 
 ``` bash
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
-apt-get update && apt-get install -y kubelet kubeadm kubectl 
+apt-get update && apt-get install -y kubelet kubeadm kubectl
 ```
 
 ## <a name="disable-swap"></a>교환 사용 안 함
@@ -88,7 +88,7 @@ sudo sysctl net.bridge.bridge-nf-call-iptables=1
 mkdir -p $HOME/.kube
 ```
 
-2. [Master에서](./creating-a-linux-master.md#collect-cluster-information) Kubernetes certificate 파일 (`$HOME/.kube/config`)을 복사 하 고 작업자에 `$HOME/.kube/config`로 저장 합니다.
+2. Master에서 Kubernetes certificate 파일 ( `$HOME/.kube/config` ) [from master](./creating-a-linux-master.md#collect-cluster-information) 을 복사 하 고 작업자에 다른 이름으로 저장 `$HOME/.kube/config` 합니다.
 
 > [!tip]
 > [Winscp](https://winscp.net/eng/download.php) 와 같은 scp 기반 도구를 사용 하 여 노드 간에 구성 파일을 전송할 수 있습니다.
@@ -101,7 +101,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ## <a name="joining-node"></a>노드 조인
 
-마지막으로 클러스터를 조인 하려면 앞에서 설명한 `kubeadm join` 명령을 [](./creating-a-linux-master.md#initialize-master) **루트로**실행 합니다.
+마지막으로 클러스터를 조인 하려면 `kubeadm join` [이전에 언급](./creating-a-linux-master.md#initialize-master) 한 명령을 **root로**실행 합니다.
 
 ```bash
 kubeadm join <Master_IP>:6443 --token <some_token> --discovery-token-ca-cert-hash <some_hash>
