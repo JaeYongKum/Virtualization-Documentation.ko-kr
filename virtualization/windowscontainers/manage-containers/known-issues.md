@@ -6,12 +6,12 @@ author: weijuans
 ms. author: weijuans
 manager: taylob
 ms.date: 05/26/2020
-ms.openlocfilehash: e1c461a1f28954fb558f0629e0fafd4a7934ca14
-ms.sourcegitcommit: 564a9226064077998020bfae721a17a8e0d9142e
+ms.openlocfilehash: f53ff0c8c07e86b25358a3acba09622fdd3a6bbb
+ms.sourcegitcommit: 82f45088d8b39e2c1f3f2a33bf359d18a88f975a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84106893"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978335"
 ---
 # <a name="known-issues"></a>알려진 문제
 
@@ -24,8 +24,13 @@ Windows Server, 버전 2004 릴리스의 일반 공급을 준비하면서 2020�
 
 Server Core 컨테이너 이미지를 사용하여 자체 이미지를 빌드하고 Azure Container Registry와 같은 원격 컨테이너 레지스트리에 업로드한 다음, 레지스트리에서 해당 이미지를 가져와서 실행하면 컨테이너의 성능이 저하됩니다. 그러나 이미지를 빌드하고 로컬로 이미지를 실행하는 경우 성능 차이를 알 수 없습니다.
 
-다음 단계: 가능한 근본 원인을 확인했으며 이를 해결하기 위해 적극적으로 검토하고 있습니다.  
+이 문제는 현재 근본 원인이며 수정 작업을 진행하고 있습니다. 이 문제를 추적하는 다음 링크를 찾을 수 있습니다. [microsoft/hcsshim#830](https://github.com/microsoft/hcsshim/issues/830);
 
+[moby/moby#41066](https://github.com/moby/moby/issues/41066);
+
+[containerd/containerd#4301](https://github.com/containerd/containerd/issues/4301).
+
+또한 파트너인 Mirantis와 함께 Docker EE에서 적극적으로 수정 방법을 구하고 있습니다.
 
 ## <a name="know-issues-of-windows-server-version-1909"></a>Windows Server, 버전 1909의 알려진 문제
 
