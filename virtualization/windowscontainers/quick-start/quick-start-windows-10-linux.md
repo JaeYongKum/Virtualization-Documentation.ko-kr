@@ -4,16 +4,16 @@ description: 컨테이너 배포 빠른 시작
 keywords: Docker, 컨테이너, LCOW
 author: taylorb-microsoft
 ms.date: 08/16/2019
-ms.topic: article
+ms.topic: tutorial
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 17186d868c0934c4af670e522b26f9205dd16f76
-ms.sourcegitcommit: 6a5c237bff2c953fec2ce1e09424375a7c615010
+ms.openlocfilehash: df02dada3e5cf759f003999b38270dd1bf3131fe
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632990"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192190"
 ---
 # <a name="linux-containers-on-windows-10"></a>Windows 10의 Linux 컨테이너
 
@@ -30,7 +30,7 @@ ms.locfileid: "84632990"
 
 다음 요구 사항을 충족하는지 확인하세요.
 - Windows 10 Professional, Windows 10 Enterprise 또는 Windows Server 2019 버전 1809 이상을 실행하는 물리적 컴퓨터 시스템 1대
-- [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)가 사용하도록 설정되었습니다. 
+- [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)가 사용하도록 설정되었습니다.
 
 ## <a name="install-docker-desktop"></a>Docker Desktop 설치
 
@@ -48,7 +48,7 @@ Linux 컨테이너를 실행하기 위해서는 Docker가 올바른 디먼을 �
 docker run --rm busybox echo hello_world
 ```
 
-컨테이너는 실행되어 "hello_world"를 인쇄한 다음, 종료합니다. 
+컨테이너는 실행되어 "hello_world"를 인쇄한 다음, 종료합니다.
 
 `docker images`를 쿼리하면 방금 실행한 Linux 컨테이너 이미지가 표시됩니다.
 

@@ -5,16 +5,16 @@ keywords: Docker, 컨테이너, LCOW
 author: cwilhit
 ms.author: crwilhit
 ms.date: 11/12/2019
-ms.topic: article
+ms.topic: quickstart
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 13d8f1ead90b2c2c86afe9f596717c1c09905895
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: 52cc32171ffdaf3e27476923ebdda3bc226ce4c9
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80929987"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192610"
 ---
 # <a name="get-started-prep-windows-for-containers"></a>시작: 컨테이너에 맞게 Windows 준비
 
@@ -41,8 +41,8 @@ Windows 10에서 컨테이너를 실행하려면 다음 항목이 필요합니�
 - [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)를 사용하도록 설정해야 합니다.
 
 > [!NOTE]
->  Windows 10 2018년 10월 업데이트부터 사용자가 개발/테스트 용도로 Windows 10 Enterprise 또는 Professional에서 Windows 컨테이너를 프로세스 격리 모드로 실행하는 것을 더 이상 허용하지 않습니다. 자세한 내용은 [FAQ](../about/faq.md)를 참조하세요. 
-> 
+>  Windows 10 2018년 10월 업데이트부터 사용자가 개발/테스트 용도로 Windows 10 Enterprise 또는 Professional에서 Windows 컨테이너를 프로세스 격리 모드로 실행하는 것을 더 이상 허용하지 않습니다. 자세한 내용은 [FAQ](../about/faq.md)를 참조하세요.
+>
 > 프로덕션에 사용되는 동일한 커널 버전 및 구성을 개발자에게 제공하기 위해 Windows Server 컨테이너는 기본적으로 Windows 10에서 Hyper-V 격리를 사용합니다. 설명서의 [개념](../manage-containers/hyperv-container.md) 영역에서 Hyper-V 격리에 대해 자세히 알아보세요.
 
 ---
@@ -88,7 +88,7 @@ Docker를 나중에 업데이트하려면 다음을 수행합니다.
 
 # <a name="windows-10"></a>[Windows 10](#tab/Windows-10-Client)
 
-다음 단계에 따라 Windows 10 Professional 및 Enterprise 버전에 Docker를 설치할 수 있습니다. 
+다음 단계에 따라 Windows 10 Professional 및 Enterprise 버전에 Docker를 설치할 수 있습니다.
 
 1. [Docker Desktop](https://store.docker.com/editions/community/docker-ce-desktop-windows)을 다운로드하여 설치하고, 아직 Docker 체험 계정이 없는 경우 하나 만듭니다. 자세한 내용은 [Docker 설명서](https://docs.docker.com/docker-for-windows/install)를 참조하세요.
 

@@ -4,16 +4,16 @@ description: Windows 컨테이너에 대한 gMSA(그룹 관리 서비스 계정)
 keywords: Docker, 컨테이너, Active Directory, 그룹 관리 서비스 계정, 그룹 관리 서비스 계정, 문제 해결, 문제 해결
 author: rpsqrd
 ms.date: 10/03/2019
-ms.topic: article
+ms.topic: troubleshooting
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 89f255e307c2a48fd743d5abd1a49bba7703aaf3
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: e7cf5685620d3cb50c93f48e5aa6917d9044b860
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910243"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192830"
 ---
 # <a name="troubleshoot-gmsas-for-windows-containers"></a>Windows 컨테이너에 대한 gMSA 문제 해결
 
@@ -170,7 +170,7 @@ Active Directory에서 사용하는 포트의 전체 목록은 [Active Directory
     Get-ADObject -Filter 'sAMAccountName -like "GMSANAMEHERE*"'
     ```
 
-4. gMSA 계정에서 제한 없는 위임을 사용하도록 설정된 경우 [UserAccountControl 특성](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties)에서 `WORKSTATION_TRUST_ACCOUNT` 플래그가 여전히 사용하도록 설정되어 있는지 확인합니다. 앱에서 이름을 SID로 확인하거나 그 반대로 해석해야 하는 경우와 마찬가지로 이 플래그는 컨테이너의 NETLOGON에서 도메인 컨트롤러와 통신하는 데 필요합니다. 다음 명령을 사용하여 플래그가 올바르게 구성되어 있는지 확인할 수 있습니다.
+4. gMSA 계정에서 제한 없는 위임을 사용하도록 설정된 경우 [UserAccountControl 특성](https://support.microsoft.com/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties)에서 `WORKSTATION_TRUST_ACCOUNT` 플래그가 여전히 사용하도록 설정되어 있는지 확인합니다. 앱에서 이름을 SID로 확인하거나 그 반대로 해석해야 하는 경우와 마찬가지로 이 플래그는 컨테이너의 NETLOGON에서 도메인 컨트롤러와 통신하는 데 필요합니다. 다음 명령을 사용하여 플래그가 올바르게 구성되어 있는지 확인할 수 있습니다.
 
     ```powershell
     $gMSA = Get-ADServiceAccount -Identity 'yourGmsaName' -Properties UserAccountControl

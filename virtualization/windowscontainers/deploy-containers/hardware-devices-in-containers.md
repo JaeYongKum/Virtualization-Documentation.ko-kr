@@ -3,12 +3,13 @@ title: Windows 컨테이너의 디바이스
 description: Windows 컨테이너를 지원하는 디바이스
 keywords: docker, 컨테이너, 디바이스, 하드웨어
 author: cwilhit
-ms.openlocfilehash: 1ad63c158a42f116882c949b242274dde8d893fc
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.topic: how-to
+ms.openlocfilehash: bef8e3236294588e38d7bff235ed1d3a98278375
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910603"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192179"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows 컨테이너의 디바이스
 
@@ -45,7 +46,7 @@ Windows에서는 모든 디바이스가 구현하는 인터페이스 클래스 �
 ## <a name="what-devices-are-supported"></a>지원되는 디바이스
 
 현재 지원되는 디바이스(및 디바이스 인터페이스 클래스 GUID)는 다음과 같습니다.
-  
+
 <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:75%" cellpadding="5" cellspacing="5">
 <thead>
 <tr valign="top">

@@ -4,16 +4,16 @@ description: Hyper-V 격리가 프로세스 격리 컨테이너와 어떻게 다
 keywords: Docker, 컨테이너
 author: crwilhit
 ms.date: 09/26/2019
-ms.topic: article
+ms.topic: conceptual
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 42154683-163b-47a1-add4-c7e7317f1c04
-ms.openlocfilehash: 362805fa230f461414ccc53643644f6c1b3474a8
-ms.sourcegitcommit: ac923217ee2f74f08df2b71c2a4c57b694f0d7c3
+ms.openlocfilehash: 3102def94d6565f162210ac53e3a80666ed5d485
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853957"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192800"
 ---
 # <a name="isolation-modes"></a>격리 모드
 
@@ -50,7 +50,7 @@ Windows Server에서 실행되는 Windows 컨테이너는 기본적으로 프로
 
 > [!WARNING]
 > Windows 10 Pro 및 Enterprise에서 프로세스 격리를 사용하여 실행하는 목적은 개발/테스트입니다. 호스트에서 Windows 10 빌드 17763 이상을 실행해야 하며, 엔진 18.09 이상을 사용하는 Docker 버전이 있어야 합니다.
-> 
+>
 > 프로덕션 배포를 위한 호스트로는 Windows Server를 계속 사용해야 합니다. Windows 10 Pro 및 Enterprise에서 이 기능을 사용하면 호스트와 컨테이너 버전 태그가 일치하는지도 확인해야 합니다. 일치하지 않으면 컨테이너가 시작되지 않거나 정의되지 않은 동작이 발생할 수 있습니다.
 
 ### <a name="isolation-explanation"></a>격리 설명

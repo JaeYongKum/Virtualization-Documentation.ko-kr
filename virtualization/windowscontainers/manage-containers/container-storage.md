@@ -3,12 +3,13 @@ title: 컨테이너 스토리지 개요
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
 keywords: 컨테이너, 볼륨, 스토리지, 마운트, 바인딩 마운트
 author: cwilhit
-ms.openlocfilehash: f758877f1131813fe4637a01c03b49d7a18a83c4
-ms.sourcegitcommit: db085db8a54664184a2f7cfa01d00598a1c66992
+ms.topic: overview
+ms.openlocfilehash: a2d5d3bd3a9682e0c85b0e8a660e1ec2161d68ee
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78288675"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192280"
 ---
 # <a name="container-storage-overview"></a>컨테이너 스토리지 개요
 

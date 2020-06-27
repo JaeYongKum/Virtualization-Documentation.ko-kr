@@ -3,12 +3,13 @@ title: 컨테이너의 영구 스토리지
 description: Windows 컨테이너에서 스토리지를 보존하는 방법
 keywords: 컨테이너, 볼륨, 스토리지, 마운트, 바인딩 마운트
 author: cwilhit
-ms.openlocfilehash: 8bdf45a46f2e88a2206894f7d412cb93d4491cac
-ms.sourcegitcommit: 57b1c0931a464ad040a7af81b749c7d66c0bc899
+ms.topic: conceptual
+ms.openlocfilehash: 0e4fcde4fcb0b02b7e1e1b96ad930703207f7b0c
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421009"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192770"
 ---
 # <a name="persistent-storage-in-containers"></a>컨테이너의 영구 스토리지
 

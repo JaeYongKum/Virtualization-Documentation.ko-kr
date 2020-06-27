@@ -4,16 +4,16 @@ description: Windows 컨테이너용 Dockerfile을 최적화합니다.
 keywords: Docker, 컨테이너
 author: cwilhit
 ms.date: 05/03/2019
-ms.topic: article
+ms.topic: tutorial
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb2848ca-683e-4361-a750-0d1d14ec8031
-ms.openlocfilehash: ae633c7ba5d9672335addcc582988fc47c13ed79
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: 25297432a3e515a130c9710431fd550f2efd8226
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "74910153"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192360"
 ---
 # <a name="optimize-windows-dockerfiles"></a>Windows Dockerfile 최적화
 
@@ -136,19 +136,19 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2019
 RUN powershell -Command \
 
   # Download software ; \
-    
+
   wget https://www.apachelounge.com/download/VC11/binaries/httpd-2.4.18-win32-VC11.zip -OutFile c:\apache.zip ; \
   wget "https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe" -OutFile c:\vcredist.exe ; \
   wget -Uri http://windows.php.net/downloads/releases/php-5.5.33-Win32-VC11-x86.zip -OutFile c:\php.zip ; \
 
   # Install Software ; \
-    
+
   Expand-Archive -Path c:\php.zip -DestinationPath c:\php ; \
   Expand-Archive -Path c:\apache.zip -DestinationPath c:\ ; \
   start-Process c:\vcredist.exe -ArgumentList '/quiet' -Wait ; \
-    
+
   # Remove unneeded files ; \
-     
+
   Remove-Item c:\apache.zip -Force; \
   Remove-Item c:\vcredist.exe -Force; \
   Remove-Item c:\php.zip
@@ -206,7 +206,7 @@ d43abb81204a        7 days ago          cmd /S /C powershell -Command  Sleep 2 ;
 
 Dockerfile은 위에서 아래로 처리되며, 각 명령은 캐시된 계층과 비교됩니다. 캐시된 계층이 없는 명령이 있으면 이 명령과 모든 후속 명령은 새 컨테이너 이미지 계층에서 처리됩니다. 따라서 명령이 배치되는 순서가 중요합니다. 일정하게 유지될 명령은 Dockerfile의 위쪽에 배치합니다. 변경될 수 있는 명령은 Dockerfile의 아래쪽에 배치합니다. 이렇게 하면 기존 캐시를 부정할 가능성이 줄어듭니다.
 
-다음 예제는 Dockerfile 명령 순서가 캐싱 효율성에 미치는 영향을 보여줍니다. 이 간단한 Dockerfile에는 번호가 매겨진 4개 폴더가 있습니다.  
+다음 예제는 Dockerfile 명령 순서가 캐싱 효율성에 미치는 영향을 보여줍니다. 이 간단한 Dockerfile에는 번호가 매겨진 4개 폴더가 있습니다.
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/servercore:ltsc2019

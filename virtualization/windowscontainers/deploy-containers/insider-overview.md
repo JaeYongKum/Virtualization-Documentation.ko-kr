@@ -3,12 +3,13 @@ title: Windows 참가자 프로그램에서 컨테이너 사용
 description: Windows 참가자 프로그램에서 컨테이너를 사용하는 방법 알아보기
 keywords: docker, 컨테이너, 참가자, windows
 author: cwilhit
-ms.openlocfilehash: 92fb359df1c207b848fb985caf7f46852f6b4f90
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.topic: how-to
+ms.openlocfilehash: fe657bb0c9456bda018c60cc8be9032b18d42989
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909893"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192160"
 ---
 # <a name="use-containers-with-the-windows-insider-program"></a>Windows 참가자 프로그램에서 컨테이너 사용
 

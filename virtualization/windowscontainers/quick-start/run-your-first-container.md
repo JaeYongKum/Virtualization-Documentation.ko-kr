@@ -5,16 +5,16 @@ keywords: Docker, 컨테이너, LCOW
 author: cwilhit
 ms.author: crwilhit
 ms.date: 11/12/2019
-ms.topic: article
+ms.topic: quickstart
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 859ef38380e536a79a3dcd63397af8fd841253ee
-ms.sourcegitcommit: 62f4bcca4e07f2a34a927e5c4d786e505821d559
+ms.openlocfilehash: 950097bae359ce717e1f4427aaec0b87198fef42
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82784412"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192900"
 ---
 # <a name="get-started-run-your-first-windows-container"></a>시작: 첫 번째 Windows 컨테이너 실행
 
@@ -56,7 +56,7 @@ ms.locfileid: "82784412"
    ```cmd
    echo "Hello World!" > Hello.txt
    exit
-   ```   
+   ```
 
 3. [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) 명령을 실행하여 방금 종료한 컨테이너의 컨테이너 ID를 가져옵니다.
 

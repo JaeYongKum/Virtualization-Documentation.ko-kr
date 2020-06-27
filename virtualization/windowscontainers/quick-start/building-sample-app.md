@@ -5,15 +5,15 @@ keywords: Docker, 컨테이너
 author: cwilhit
 ms.author: crwilhit
 ms.date: 11/12/2019
-ms.topic: article
+ms.topic: quickstart
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: c9e175a7ced0f328e342f3cdd4f99adc717d5700
-ms.sourcegitcommit: 62f4bcca4e07f2a34a927e5c4d786e505821d559
+ms.openlocfilehash: 79de3f520e6d22c338fc95473200286b77cb4467
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82784402"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192520"
 ---
 # <a name="containerize-a-net-core-app"></a>.NET Core 앱 컨테이너 화
 
@@ -87,7 +87,7 @@ RUN dotnet publish -c Release -o out
 
 .NET이 모든 종속성을 `build-env` 컨테이너로 끌어오면 다음 명령이 모든 프로젝트 소스 파일을 컨테이너에 복사합니다. 그런 다음 릴리스 구성을 통해 애플리케이션을 게시하라고 .NET에 알리고 출력 경로를 지정합니다.
 
-컴파일이 성공합니다. 이제 최종 이미지를 빌드해야 합니다. 
+컴파일이 성공합니다. 이제 최종 이미지를 빌드해야 합니다.
 
 > [!TIP]
 > 이 빠른 시작은 소스에서 .NET Core 프로젝트를 빌드합니다. 컨테이너 이미지를 빌드할 때 컨테이너 이미지에 프로덕션 페이로드 및 해당 _종속성만_ 포함하는 것이 좋습니다. .Net Core 런타임만 필요하기 때문에 .NET Core SDK는 최종 이미지에 포함하지 않아야 하므로 SDK와 함께 패키징된 `build-env`라는 임시 컨테이너를 사용하여 앱을 빌드하도록 Dockerfile이 작성됩니다.
@@ -121,7 +121,7 @@ Dockerfile이 작성되면 Dockerfile에 Docker를 가리키고 이미지를 빌
 
    다음 명령을 살펴보겠습니다.
 
-   * `-d`는 Docker에 컨테이너를 '분리한 상태로' 실행하도록 지시합니다. 즉, 컨테이너 내 콘솔에 연결된 콘솔이 없습니다. 컨테이너가 백그라운드에서 실행됩니다. 
+   * `-d`는 Docker에 컨테이너를 '분리한 상태로' 실행하도록 지시합니다. 즉, 컨테이너 내 콘솔에 연결된 콘솔이 없습니다. 컨테이너가 백그라운드에서 실행됩니다.
    * `-p 5000:80`은 호스트의 포트 5000을 컨테이너의 포트 80에 매핑하도록 Docker에 지시합니다. 각 컨테이너는 고유의 IP 주소를 가져옵니다. ASP.NET은 기본적으로 포트 80에서 수신 대기합니다. 포트 매핑을 사용하면 매핑된 포트에서 호스트의 IP 주소로 이동하고 Docker는 컨테이너 내의 대상 포트로 모든 트래픽을 전달합니다.
    * `--name myapp`은 쿼리할 때 기준으로 사용하기 편리한 이름을 이 컨테이너에 지정하도록 Docker에 지시합니다(Docker에서 런타임에 할당한 컨테이너 ID를 조회할 필요가 없음).
    * `my-asp-app`은 Docker에서 실행하도록 하려는 이미지입니다. `docker build` 프로세스의 완성작으로 생성된 컨테이너 이미지입니다.

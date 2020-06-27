@@ -4,16 +4,16 @@ description: Windows에서 사용할 수 있는 새 컨테이너 구성 요소�
 keywords: LCOW, linux 컨테이너, docker, 컨테이너, containerd, cri, runhcs, runc
 author: scooley
 ms.date: 11/19/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: 3107eb48dc9c75224b0c9dd9b436af6f0f451871
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.openlocfilehash: dd7ddbc3784eee67fd67bba20533d520e172ebd3
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77439280"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192261"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -63,7 +63,7 @@ runhcs run [ -b bundle ] <container-id>
 
 `<container-id>`는 여러분이 시작하려는 컨테이너 인스턴스의 이름입니다. 이 이름은 컨테이너 호스트에서 고유해야 합니다.
 
-번들 디렉터리(`-b bundle` 사용)는 선택 사항입니다.  
+번들 디렉터리(`-b bundle` 사용)는 선택 사항입니다.
 runc와 마찬가지로 컨테이너는 번들을 사용하여 구성됩니다. 컨테이너의 번들은 컨테이너의 OCI 사양 파일 "app.config"가 포함된 디렉터리입니다.  "번들"의 기본값은 현재 디렉터리입니다.
 
 OCI 사양 파일 "config.xml"에는 올바른 실행을 위한 다음 2개 필드가 있어야 합니다.
@@ -93,7 +93,7 @@ runhcs에서 사용할 수 있는 컨테이너 명령은 다음과 같습니다.
 
 ### <a name="hcs"></a>HCS
 
-GitHub에는 HCS와 상호 작용하는 데 사용할 수 있는 두 가지 래퍼가 있습니다. HCS는 C API이므로 래퍼를 사용하면 고급 언어에서 HCS를 쉽게 호출할 수 있습니다.  
+GitHub에는 HCS와 상호 작용하는 데 사용할 수 있는 두 가지 래퍼가 있습니다. HCS는 C API이므로 래퍼를 사용하면 고급 언어에서 HCS를 쉽게 호출할 수 있습니다.
 
 * [hcsshim](https://github.com/microsoft/hcsshim) - HCSShim은 Go로 작성되었으며 runhcs의 기반이 됩니다.
 AppVeyor에서 최신 버전을 다운로드하거나 직접 빌드할 수 있습니다.

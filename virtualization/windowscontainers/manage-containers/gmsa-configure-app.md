@@ -4,16 +4,16 @@ description: Windows 컨테이너에 gMSA(그룹 관리 서비스 계정)를 사
 keywords: docker, 컨테이너, active directory, gmsa, 앱, 애플리케이션, 그룹 관리 서비스 계정, 그룹관리서비스 계정, 구성
 author: rpsqrd
 ms.date: 09/10/2019
-ms.topic: article
+ms.topic: how-to
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 6635381d5f7ddbebf7bdea4624af241b9f6a6864
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 0c082e4b25bf6de53b5e2c31696bc74fe794fa92
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74909793"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192890"
 ---
 # <a name="configure-your-app-to-use-a-gmsa"></a>gMSA를 사용하도록 앱 구성
 

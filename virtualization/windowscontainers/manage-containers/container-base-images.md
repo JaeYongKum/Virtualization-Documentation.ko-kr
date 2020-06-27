@@ -4,16 +4,16 @@ description: Windows 컨테이너 기본 이미지 및 사용 시기에 대한 �
 keywords: Docker, 컨테이너, 해시
 author: patricklang
 ms.date: 09/25/2019
-ms.topic: article
+ms.topic: conceptual
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: 9884cc0ae2d2f398d2dc2fb1997a70493a6de6c0
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.openlocfilehash: 6fc7f2b01af84004fb87e708b0f792c06cb3a569
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76764175"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192310"
 ---
 # <a name="container-base-images"></a>컨테이너 기본 이미지
 
@@ -104,7 +104,7 @@ Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미�
 
 ## <a name="image-discovery"></a>이미지 검색
 
-모든 Windows 컨테이너 기본 이미지는 [Docker Hub](https://hub.docker.com/_/microsoft-windows-base-os-images)를 통해 검색할 수 있습니다. Windows 컨테이너 기본 이미지 자체는 MCR(Microsoft Container Registry)([mcr.microsoft.com](https://azure.microsoft.com/en-us/services/container-registry/))에 제공됩니다. 이러한 이유로 Windows 컨테이너 기본 이미지에 대한 pull 명령은 다음과 같은 형식입니다.
+모든 Windows 컨테이너 기본 이미지는 [Docker Hub](https://hub.docker.com/_/microsoft-windows-base-os-images)를 통해 검색할 수 있습니다. Windows 컨테이너 기본 이미지 자체는 MCR(Microsoft Container Registry)([mcr.microsoft.com](https://azure.microsoft.com/services/container-registry/))에 제공됩니다. 이러한 이유로 Windows 컨테이너 기본 이미지에 대한 pull 명령은 다음과 같은 형식입니다.
 
 ```code
 docker pull mcr.microsoft.com/windows/servercore:ltsc2019

@@ -5,20 +5,20 @@ keywords: windows 컨테이너, 컨테이너, 수명 주기, 릴리스 정보, �
 author: Heidilohr
 ms.author: helohr
 ms.date: 05/12/2020
-ms.topic: article
+ms.topic: reference
 ms.prod: windows-containers
 ms.service: windows-containers
-ms.openlocfilehash: c6276db89f093b62a01cadc095f5357d2e5a8eba
-ms.sourcegitcommit: dd80813679df2de89fe523a26600cfe58a2d39a2
+ms.openlocfilehash: b3c519ef3ed93a0c8e20f5b927c34f70cd1677f8
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84023148"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192080"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
 
-> [!Note]  
-> Microsoft는 사용자와 조직이 비즈니스 연속성을 유지하는 데 집중할 수 있도록 도와주기 위해 여러 제품의 예정된 지원 및 서비스 종료 날짜를 연기했습니다. 자세한 내용은 2020년 4월 14일부터 [지원 종료 및 서비스 날짜에 대한 수명 주기 변경](https://support.microsoft.com/en-us/help/4557164/lifecycle-changes-to-end-of-support-and-servicing-dates) 항목을 참조하세요.
+> [!Note]
+> Microsoft는 사용자와 조직이 비즈니스 연속성을 유지하는 데 집중할 수 있도록 도와주기 위해 여러 제품의 예정된 지원 및 서비스 종료 날짜를 연기했습니다. 자세한 내용은 2020년 4월 14일부터 [지원 종료 및 서비스 날짜에 대한 수명 주기 변경](https://support.microsoft.com/help/4557164/lifecycle-changes-to-end-of-support-and-servicing-dates) 항목을 참조하세요.
 
 Windows 컨테이너 기본 이미지는 Windows Server의 반기 채널 릴리스 또는 장기 서비스 채널 릴리스를 기반으로 합니다. 이 문서에서는 두 채널의 여러 기본 이미지 버전에 대한 지원이 얼마나 지속되는지 알려줍니다.
 

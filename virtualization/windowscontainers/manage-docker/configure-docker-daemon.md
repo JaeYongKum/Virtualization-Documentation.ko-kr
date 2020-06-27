@@ -4,16 +4,16 @@ description: Windows에서 Docker 구성
 keywords: Docker, 컨테이너
 author: PatrickLang
 ms.date: 05/03/2019
-ms.topic: article
+ms.topic: overview
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
-ms.openlocfilehash: c84a6652b5918238ee8ef6e1fa7a9b2aa596aefd
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: b0a89bfcae6a78c28603444a682cecf7c667e477
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "79402884"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192720"
 ---
 # <a name="docker-engine-on-windows"></a>Windows의 Docker 엔진
 
@@ -46,7 +46,7 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
     "storage-driver": "",
     "storage-opts": [],
     "labels": [],
-    "log-driver": "", 
+    "log-driver": "",
     "mtu": 0,
     "pidfile": "",
     "data-root": "",
@@ -81,7 +81,7 @@ Windows에서 Docker 엔진을 구성하는 기본 방법은 구성 파일을 �
 마찬가지로 다음 샘플에서는 대체 경로에 이미지 및 컨테이너를 유지하도록 Docker 디먼을 구성합니다. 지정되지 않은 경우 기본값은 `c:\programdata\docker`입니다.
 
 ```json
-{    
+{   
     "data-root": "d:\\docker"
 }
 ```

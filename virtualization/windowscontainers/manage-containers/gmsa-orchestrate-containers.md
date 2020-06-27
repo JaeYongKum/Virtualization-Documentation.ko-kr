@@ -4,16 +4,16 @@ description: gMSA(그룹 관리 서비스 계정)로 Windows 컨테이너를 오
 keywords: docker, 컨테이너, active directory, gmsa, 오케스트레이션, kubernetes, 그룹 관리 서비스 계정, 그룹관리서비스 계정
 author: rpsqrd
 ms.date: 09/10/2019
-ms.topic: article
+ms.topic: how-to
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 3d102aac45a1becf1879a718bb255d753b215006
-ms.sourcegitcommit: 1ca9d7562a877c47f227f1a8e6583cb024909749
+ms.openlocfilehash: 6c659a124a95393c173b15d9423491349ebe1462
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74910263"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192860"
 ---
 # <a name="orchestrate-containers-with-a-gmsa"></a>gMSA를 사용하여 컨테이너 오케스트레이션
 

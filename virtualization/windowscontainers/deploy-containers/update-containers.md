@@ -5,13 +5,14 @@ keywords: 메타데이터, 컨테이너, 버전
 author: heidilohr
 ms. author: helohr
 manager: lizross
+ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 84413f27bfce66e7d259c05795a280ed34b582ab
-ms.sourcegitcommit: 6f216408434a437da87a72d582500a4ca6c2679c
+ms.openlocfilehash: 829705e338667910e50578591ad2c065daecfa5f
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80112696"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192840"
 ---
 # <a name="update-windows-server-containers"></a>Windows Server 컨테이너 업데이트
 
@@ -30,14 +31,14 @@ Windows 서비스 주기에 맞춰 Windows Server 기본 OS 컨테이너 이미�
 - ltsc2019[(LTSC)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc): docker pull mcr.microsoft.com/windows/servercore:ltsc2019
 - 1909[(SAC)](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel): docker pull mcr.microsoft.com/windows/servercore:1909
 
-MCR보다 Docker Hub에 더 익숙한 경우 [이 블로그 게시물](https://azure.microsoft.com/blog/microsoft-syndicates-container-catalog/)에서 더 자세히 설명합니다.  
+MCR보다 Docker Hub에 더 익숙한 경우 [이 블로그 게시물](https://azure.microsoft.com/blog/microsoft-syndicates-container-catalog/)에서 더 자세히 설명합니다.
 
 각 릴리스에 대해 각 컨테이너 이미지는 특정 컨테이너 이미지 수정 버전을 대상으로 하는 수정 번호 및 KB 문서 번호에 대한 두 개의 추가 태그를 사용하여 게시됩니다. 예:
 
 - docker pull mcr.microsoft.com/windows/servercore:10.0.17763.1040
 - docker pull mcr.microsoft.com/windows/servercore:1809-KB4546852
 
-이러한 예제는 모두 2월 18일 보안 릴리스 업데이트를 통해 Windows Server 2019 Server Core 컨테이너 이미지를 끌어옵니다.  
+이러한 예제는 모두 2월 18일 보안 릴리스 업데이트를 통해 Windows Server 2019 Server Core 컨테이너 이미지를 끌어옵니다.
 
 Windows Server 기본 OS 컨테이너 이미지, 버전 및 해당 태그의 전체 목록은 Docker Hub에서 이 [Windows 기본 OS 컨테이너 이미지](https://hub.docker.com/_/microsoft-windows-base-os-images)를 참조하세요.
 
@@ -96,7 +97,7 @@ Windows 컨테이너에는 프로세스 격리 및 Hyper-V 격리라는 두 가�
 Microsoft Windows [Version 10.0.17763.1039]
 (c) 2018 Microsoft Corporation. All rights reserved.
 
-C:\>ver 
+C:\>ver
 
 Microsoft Windows [Version 10.0.17763.1039]
 ```
