@@ -4,22 +4,22 @@ description: Windows Server 컨테이너 FAQ
 keywords: Docker, 컨테이너
 author: PatrickLang
 ms.date: 10/25/2019
-ms.topic: article
+ms.topic: overview
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 25de368c-5a10-40a4-b4aa-ac8c9a9ca022
-ms.openlocfilehash: 405b2abc43a4ae2c546de351679deb755e4a9317
-ms.sourcegitcommit: 16ebc4f00773d809fae84845208bd1dcf08a889c
+ms.openlocfilehash: cd0b4e24cddb434d0a4051888afa3ae3a4a8e096
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "74910803"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192870"
 ---
 # <a name="frequently-asked-questions-about-containers"></a>컨테이너에 대한 질문과 대답
 
 ## <a name="whats-the-difference-between-linux-and-windows-server-containers"></a>Linux와 Windows Server 컨테이너 간의 차이는 무엇입니까?
 
-Linux와 Windows Server는 커널과 코어 운영 체제 내에서 비슷한 기술을 구현합니다. 차이는 컨테이너 안에서 실행되는 워크로드와 플랫폼에 있습니다.  
+Linux와 Windows Server는 커널과 코어 운영 체제 내에서 비슷한 기술을 구현합니다. 차이는 컨테이너 안에서 실행되는 워크로드와 플랫폼에 있습니다.
 
 고객이 Windows Server 컨테이너를 사용하는 경우 .NET, ASP.NET, PowerShell 등의 기존 Windows 기술과 통합할 수 있습니다.
 
