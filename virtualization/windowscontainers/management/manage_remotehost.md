@@ -4,16 +4,16 @@ description: Windows Server를 실행하는 원격 Docker 호스트를 안전하
 keywords: Docker, 컨테이너
 author: taylorb-microsoft
 ms.date: 02/14/2017
-ms.topic: article
+ms.topic: how-to
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 0cc1b621-1a92-4512-8716-956d7a8fe495
-ms.openlocfilehash: 2e1fec6aa7149c801b1c72a0f8a346ca879015c2
-ms.sourcegitcommit: 16744984ede5ec94cd265b6bff20aee2f782ca88
+ms.openlocfilehash: 8739b257dbd5f0681d990e5dc47235325740f849
+ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77439520"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85192380"
 ---
 # <a name="remote-management-of-a-windows-docker-host"></a>Windows Docker 호스트의 원격 관리
 
@@ -21,18 +21,18 @@ ms.locfileid: "77439520"
 
 단계는 매우 간단합니다.
 
-* [dockertls](https://hub.docker.com/r/stefanscherer/dockertls-windows/)를 사용하여 서버에 인증서를 만듭니다. IP 주소로 인증서를 만들 경우 IP 주소가 바뀔 때 인증서를 다시 만들 필요가 없도록 정적 IP 사용을 고려할 수 있습니다.
+* [dockertls](https://hub.docker.com/r/stefanscherer/dockertls-windows/)를 사용하여 서버에 인증서를 만듭니다.
+IP 주소로 인증서를 만들 경우 IP 주소가 바뀔 때 인증서를 다시 만들 필요가 없도록 정적 IP 사용을 고려할 수 있습니다.
 
 * `Restart-Service Docker`를 사용하여 docker 서비스를 다시 시작합니다.
-* 인바운드 트래픽을 허용하는 NSG 규칙을 만들어 포트 Docker의 TLS 포트 2375 및 2376을 사용할 수 있게 합니다. 보안 연결의 경우 2376만 허용해야 합니다.  
-  포털에 NSG 구성이 다음과 같이 표시되어야 합니다.  
-  ![NGS](media/nsg.png)  
-  
-* Windows 방화벽을 통해 인바운드 연결을 허용합니다. 
+* 인바운드 트래픽을 허용하는 NSG 규칙을 만들어 포트 Docker의 TLS 포트 2375 및 2376을 사용할 수 있게 합니다. 보안 연결의 경우 2376만 허용해야 합니다.
+  포털에 NSG 구성이 다음과 같이 표시되어야 합니다. ![NGS](media/nsg.png)
+
+* Windows 방화벽을 통해 인바운드 연결을 허용합니다.
 ```
 New-NetFirewallRule -DisplayName 'Docker SSL Inbound' -Profile @('Domain', 'Public', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort 2376
 ```
-* 컴퓨터에 있는 사용자의 Docker 폴더(예: `c:\users\chris\.docker`)에서 로컬 컴퓨터로 `ca.pem`, 'cert.pem' 및 'key.pem' 파일을 복사합니다. 예를 들어, RDP 세션에서 파일을 복사하여 붙여 넣을 수 있습니다(Ctrl+C, Ctrl+V). 
+* 컴퓨터에 있는 사용자의 Docker 폴더(예: `c:\users\chris\.docker`)에서 로컬 컴퓨터로 `ca.pem`, 'cert.pem' 및 'key.pem' 파일을 복사합니다. 예를 들어, RDP 세션에서 파일을 복사하여 붙여 넣을 수 있습니다(Ctrl+C, Ctrl+V).
 * 원격 Docker 호스트에 연결할 수 있는지 확인합니다. WMIMgmt.msc
 ```
 docker -D -H tcp://wsdockerhost.southcentralus.cloudapp.azure.com:2376 --tlsverify --tlscacert=c:\
@@ -48,7 +48,7 @@ ker\client\key.pem ps
 error during connect: Get https://wsdockerhost.southcentralus.cloudapp.azure.com:2376/v1.25/version: dial tcp 13.85.27.177:2376: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
 ```
 
-다음을 
+다음을
 ```
 {
     "tlsverify":  false,
@@ -69,7 +69,7 @@ error during connect: Get https://w.x.y.c.z:2376/v1.25/containers/json: x509: ce
 w.x.y.z가 호스트의 공용 IP에 대한 DNS 이름이고, DNS 이름이 인증서의 [일반 이름](https://www.ssl.com/faqs/common-name/)(`SERVER_NAME` 환경 변수) 또는 dockertls에 제공된 `IP_ADDRESSES` 변수의 IP 주소 중 하나와 일치하는지 확인합니다.
 
 ### <a name="cryptox509-warning"></a>crypto/x509 경고
-경고가 발생할 수 있습니다. 
+경고가 발생할 수 있습니다.
 ```
 level=warning msg="Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows"
 ```
