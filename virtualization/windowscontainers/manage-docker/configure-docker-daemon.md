@@ -8,12 +8,12 @@ ms.topic: overview
 ms.prod: windows-containers
 ms.service: windows-containers
 ms.assetid: 6885400c-5623-4cde-8012-f6a00019fafa
-ms.openlocfilehash: b0a89bfcae6a78c28603444a682cecf7c667e477
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: db794a0151b6554bd4f8a4a4e494bfab034d2da0
+ms.sourcegitcommit: c585bd8b70d0681d8deaf5fefd3f5f93c1ec4316
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192720"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85613435"
 ---
 # <a name="docker-engine-on-windows"></a>Windows의 Docker 엔진
 
@@ -206,6 +206,11 @@ Docker를 제거한 후 Docker의 기본 네트워크를 제거해야 Docker가 
 
 ```powershell
 Get-HNSNetwork | Remove-HNSNetwork
+```
+
+Windows Server 2016에서 Docker의 기본 네트워크를 제거하려면,
+```powershell
+Get-ContainerNetwork | Remove-ContainerNetwork
 ```
 
 다음 cmdlet을 실행하여 Docker의 프로그램 데이터를 시스템에서 제거:
