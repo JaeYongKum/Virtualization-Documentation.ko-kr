@@ -4,16 +4,15 @@ author: daschott
 ms.author: daschott
 ms.date: 11/02/2018
 ms.topic: how-to
-ms.prod: containers
 description: V 1.14를 사용 하 여 Windows 노드를 Kubernetes 클러스터에 조인 합니다.
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: f808428547a0134e6fea2d9165a4b5cee35b6cfb
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 3f37a3e19800d7121ac65b12efeb0f14a287140b
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192650"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985307"
 ---
 # <a name="joining-windows-server-nodes-to-a-cluster"></a>클러스터에 Windows Server 노드 조인 #
 [Kubernetes 마스터 노드를 설정](./creating-a-linux-master.md) 하 고 [원하는 네트워크 솔루션을 선택한](./network-topologies.md)후에는 Windows Server 노드를 조인 하 여 클러스터를 구성할 준비가 된 것입니다. 이렇게 하려면 조인 하기 전에 [Windows 노드에서](#preparing-a-windows-node) 몇 가지 준비가 필요 합니다.
@@ -78,7 +77,7 @@ docker tag mcr.microsoft.com/windows/nanoserver:1809 microsoft/nanoserver:latest
 docker run microsoft/nanoserver:latest
 ```
 
-다음과 유사한 결과가 표시됩니다.
+다음과 비슷한 결과가 표시됩니다.
 
 ![text](./media/docker-run-sample.png)
 

@@ -4,15 +4,14 @@ author: daschott
 ms.author: daschott
 ms.date: 02/09/2018
 ms.topic: how-to
-ms.prod: containers
 description: Kubernetes 클러스터 마스터 만들기
 keywords: kubernetes, 1.14, 마스터, linux
-ms.openlocfilehash: a46c8e996162891cc596946d8601bcb590b2b8eb
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 383163f29ab439ddd817640fca7203269810dd51
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985087"
 ---
 # <a name="creating-a-kubernetes-master"></a>Kubernetes 마스터 만들기 #
 > [!NOTE]

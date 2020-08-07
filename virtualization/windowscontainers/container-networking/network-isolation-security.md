@@ -5,15 +5,13 @@ keywords: Docker, 컨테이너
 author: jmesser81
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.prod: windows-containers
-ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 78f9240ccb184b182247617aba116d6ac5533a02
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 5c60406c0cc839a84e25ff12abf53439c6a208cb
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192090"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985387"
 ---
 # <a name="network-isolation-and-security"></a>네트워크 격리 및 보안
 
@@ -50,7 +48,7 @@ Hyper-v 격리에서 실행 되는 컨테이너에는 자체 격리 된 커널�
 
 ![text](media/windows-firewall-containers.png)
 
-### <a name="kubernetes-pods"></a>Kubernetes pod
+### <a name="kubernetes-pods"></a>Kubernetes Pod
 
 [Kubernetes pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/)에서는 끝점이 연결 된 인프라 컨테이너가 먼저 생성 됩니다. 인프라 및 작업자 컨테이너를 포함 하 여 동일한 pod에 속한 컨테이너는 공통 네트워크 네임 스페이스 (동일한 IP 및 포트 공간)를 공유 합니다.
 

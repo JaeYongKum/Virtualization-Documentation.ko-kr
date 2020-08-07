@@ -4,15 +4,14 @@ author: gkudra-msft
 ms.author: gekudray
 ms.date: 11/02/2018
 ms.topic: how-to
-ms.prod: containers
 description: Kubernetes 이진 파일을 소스에서 컴파일하고 크로스 컴파일합니다.
 keywords: kubernetes, 1.12, linux, 컴파일
-ms.openlocfilehash: a0c9ed6ef0872e19de49fa97f4727b6e0e09ed43
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 3e8a5b593cbf02eb5a90a444b117c55b30562e7b
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192350"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985347"
 ---
 # <a name="compiling-kubernetes-binaries"></a>Kubernetes 이진 파일 컴파일 #
 Kubernetes을 컴파일하려면 작동 중인 Go 환경이 필요 합니다. 이 페이지에서는 Linux 이진 파일을 컴파일하고 Windows 바이너리를 크로스 컴파일하는 여러 가지 방법을 살펴봅니다.

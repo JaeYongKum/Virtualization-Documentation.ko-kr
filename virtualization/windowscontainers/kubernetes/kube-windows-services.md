@@ -4,16 +4,15 @@ author: daschott
 ms.author: daschott
 ms.date: 02/12/2019
 ms.topic: how-to
-ms.prod: containers
 description: Windows 서비스로 Kubernetes 구성 요소를 실행 하는 방법
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5c18
-ms.openlocfilehash: 470538ad796773252c08c7295c5086d0002a55ce
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: a4f29626ce51714e9313d56cc6558677506e75e5
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192490"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985277"
 ---
 # <a name="kubernetes-components-as-windows-services"></a>Windows 서비스로 구성 요소 Kubernetes
 

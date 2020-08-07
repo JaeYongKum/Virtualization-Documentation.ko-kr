@@ -4,15 +4,14 @@ author: gkudra-msft
 ms.author: gekudray
 ms.date: 11/02/2018
 ms.topic: troubleshooting
-ms.prod: containers
 description: Kubernetes를 배포 하 고 Windows 노드를 조인할 때 발생 하는 일반적인 문제에 대 한 솔루션입니다.
 keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: 2e8074fa018b85a6628280a0dfdbce7c8cd553cb
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 0b87db08f027e91a2d5047ce4d6bbf41abd1916d
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192700"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985057"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포와 관련 된 몇 가지 일반적인 문제를 안내 합니다.
@@ -106,7 +105,7 @@ Windows pod에는 현재 ICMP 프로토콜에 대해 프로그래밍 된 아웃 
 
 여전히 문제가 발생 하는 경우에는 일반적으로 [cni](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf) 의 네트워크 구성으로 인해 몇 가지 주의가 필요 합니다. 언제 든 지이 정적 파일을 편집할 수 있으며, 구성은 새로 만든 Kubernetes 리소스에 적용 됩니다.
 
-이유가 무엇일까요?
+이유
 Kubernetes 네트워킹 요구 사항 ( [Kubernetes 모델](https://kubernetes.io/docs/concepts/cluster-administration/networking/)참조) 중 하나는 내부적으로 NAT 없이 클러스터 통신을 수행 하는 것입니다. 이러한 요구 사항을 충족 하기 위해 아웃 바운드 NAT가 발생 하지 않도록 하는 모든 통신에 대 한 [예외](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf#L20) 를 발생 시킬 수 있습니다. 그러나이는 쿼리를 시도 하는 외부 IP를 제외 해야 한다는 의미 이기도 합니다. 그 다음에만 Windows pod에서 시작 된 트래픽이 외부 세계의 응답을 수신 하기 위해 올바르게 SNAT'ed 됩니다. 이와 관련 하 여의 예외는 다음과 같습니다 `cni.conf` .
 ```conf
 "ExceptionList": [
@@ -196,7 +195,7 @@ New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Paramet
 New-ItemPropery -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxNegativeCacheTtl -Value 0 -Type DWord
 ```
 
-### <a name="i-am-still-seeing-problems-what-should-i-do"></a>여전히 문제가 발생 하 고 있습니다. 어떻게 해야 하나요? ###
+### <a name="i-am-still-seeing-problems-what-should-i-do"></a>여전히 문제가 발생 하 고 있습니다.   어떻게 해야 합니까? ###
 네트워크 또는 호스트에는 노드 간 특정 유형의 통신을 방지 하는 추가 제한 사항이 있을 수 있습니다. 다음 사항을 확인합니다.
   - 선택한 [네트워크 토폴로지](./network-topologies.md) 를 적절 하 게 구성 했습니다.
   - pod에서 오는 것 처럼 보이는 트래픽이 허용 됩니다.

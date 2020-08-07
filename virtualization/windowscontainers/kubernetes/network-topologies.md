@@ -4,16 +4,15 @@ author: daschott
 ms.author: daschott
 ms.date: 02/09/2018
 ms.topic: how-to
-ms.prod: containers
 description: Windows 및 Linux에서 지원 되는 네트워크 토폴로지
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: c322edb6a5ead34d7988f83d8cb8fba7c99cec0d
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 5eeee17dc6dfc87357d80c8b8fd7a29f05fc4c35
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192540"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985297"
 ---
 # <a name="network-solutions"></a>Network Solutions #
 

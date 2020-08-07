@@ -5,15 +5,13 @@ keywords: Docker, 컨테이너
 author: jmesser81
 ms.date: 03/27/2018
 ms.topic: overview
-ms.prod: windows-containers
-ms.service: windows-containers
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 2235ae8b48828535facaa9b2be3dfc7fde450516
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 5f9d554a4fcedd9bd233a849c6480589be61abbd
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87984751"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
