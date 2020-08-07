@@ -1,0 +1,89 @@
+### YamlMime:Landing
+title: Windows 기반 컨테이너 설명서
+summary: 사용자는 Windows 컨테이너를 사용하여 애플리케이션을 해당 종속 항목과 함께 패키징하고 운영 체제 수준 가상화를 활용하여 단일 시스템에서 빠르고 완전히 격리된 환경을 제공할 수 있습니다. 빠른 시작 가이드, 배포 가이드 및 샘플을 통해 Windows 컨테이너를 사용하는 방법을 알아보세요.
+metadata:
+  title: Windows 기반 컨테이너 설명서
+  description: Windows에서 컨테이너를 실행하는 방법에 대한 설명서
+  ms.topic: landing-page
+  ms.prod: windows-containers
+  author: cwilhit
+  ms.date: 07/06/2020
+  ms.openlocfilehash: a1d573e1647f6a924d0933b172217d78d373d47c
+  ms.sourcegitcommit: ff0e60f4b34f6cc88f81ef2331e4b0575deb0171
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/05/2020
+  ms.locfileid: "87812437"
+landingContent:
+- title: 주요 내용
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: AKS에서 Windows 컨테이너를 사용해 보세요.
+      url: /azure/aks/windows-container-cli
+    - text: Docker 허브의 컨테이너 이미지를 확인하세요.
+      url: https://hub.docker.com/_/microsoft-windows-base-os-images
+    - text: 컨테이너 블로그를 읽어 보세요.
+      url: https://techcommunity.microsoft.com/t5/Containers/bg-p/Containers
+- title: 개요
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 컨테이너 정보
+      url: /virtualization/windowscontainers/about/
+    - text: 시스템 요구 사항
+      url: /virtualization/windowscontainers/deploy-containers/system-requirements
+    - text: FAQ
+      url: /virtualization/windowscontainers/about/faq
+- title: 시작
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 환경 설정
+      url: /virtualization/windowscontainers/quick-start/set-up-environment
+    - text: 첫 번째 컨테이너 실행
+      url: /virtualization/windowscontainers/quick-start/run-your-first-container
+    - text: 샘플 앱 컨테이너화
+      url: /virtualization/windowscontainers/quick-start/building-sample-app
+- title: 자습서
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Windows 컨테이너 빌드
+      url: /virtualization/windowscontainers/manage-docker/manage-windows-dockerfile
+    - text: AKS에서 실행
+      url: /azure/aks/windows-container-cli
+    - text: Service Fabric에서 실행
+      url: /azure/service-fabric/service-fabric-quickstart-containers
+    - text: Azure App Service에서 실행
+      url: /azure/app-service/app-service-web-get-started-windows-container
+- title: 개념
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Docker
+      url: /virtualization/windowscontainers/manage-docker/configure-docker-daemon
+    - text: 컨테이너 오케스트레이션
+      url: /virtualization/windowscontainers/about/overview-container-orchestrators
+    - text: Windows 컨테이너 기본 정보
+      url: /virtualization/windowscontainers/manage-containers/container-base-images
+- title: 참조
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 버전 호환성
+      url: /virtualization/windowscontainers/deploy-containers/version-compatibility
+    - text: 이미지 서비스 수명 주기
+      url: /virtualization/windowscontainers/deploy-containers/base-image-lifecycle
+    - text: 컨테이너 OS 이미지 EULA
+      url: /virtualization/windowscontainers/images-eula
+- title: 리소스
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 샘플
+      url: /virtualization/windowscontainers/samples
+    - text: 문제 해결
+      url: /virtualization/windowscontainers/troubleshooting
+    - text: 커뮤니티 동영상 및 블로그
+      url: /virtualization/windowscontainers/communitylinks
