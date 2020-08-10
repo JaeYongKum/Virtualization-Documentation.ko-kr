@@ -5,15 +5,13 @@ keywords: docker, 컨테이너, active directory, gmsa, 그룹 관리 서비스 
 author: rpsqrd
 ms.date: 09/10/2019
 ms.topic: how-to
-ms.prod: windows-containers
-ms.service: windows-containers
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 0cfa8d0f414e1566eb425598bffd29edd8b05b87
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 6168e882b8dffcfcec21648a637b04fe3478e4df
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192850"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985247"
 ---
 # <a name="run-a-container-with-a-gmsa"></a>gMSA를 사용하여 컨테이너 실행
 

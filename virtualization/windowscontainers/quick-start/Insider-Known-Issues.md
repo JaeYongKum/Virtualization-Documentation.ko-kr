@@ -3,14 +3,12 @@ title: 참가자 빌드에 대해 알려진 문제
 description: 참가자 빌드에 대해 알려진 문제입니다.
 keywords: Docker, 컨테이너
 ms.topic: quickstart
-ms.prod: windows-containers
-ms.service: windows-containers
-ms.openlocfilehash: 0a7b5a2c7f430babbc7a94f63b150f74b58c6843
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 13272f38af686533725693869553684abd135112
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192760"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87984697"
 ---
 # <a name="known-issues-for-insider-builds"></a>참가자 빌드에 대해 알려진 문제
 

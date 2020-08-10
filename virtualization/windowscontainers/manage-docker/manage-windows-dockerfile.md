@@ -5,15 +5,13 @@ keywords: Docker, 컨테이너
 author: PatrickLang
 ms.date: 05/03/2019
 ms.topic: tutorial
-ms.prod: windows-containers
-ms.service: windows-containers
 ms.assetid: 75fed138-9239-4da9-bce4-4f2e2ad469a1
-ms.openlocfilehash: cda05088f632cee1f5e902bf958fd85f4eddaeec
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 6c708eec39eba971bd33077dec2ec10c3f964454
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192560"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87984717"
 ---
 # <a name="dockerfile-on-windows"></a>Windows의 Dockerfile
 

@@ -5,15 +5,13 @@ keywords: Docker, 컨테이너, Swarm, 오케스트레이션
 author: kallie-b
 ms.date: 02/9/2017
 ms.topic: how-to
-ms.prod: windows-containers
-ms.service: windows-containers
 ms.assetid: 5ceb9626-7c48-4d42-81f8-9c936595ad85
-ms.openlocfilehash: 1576b7c102c0320fafbbe129d9937f2593432e3e
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: c1377818553d81f4f0230f076c3be3dcad90b9cd
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192000"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87984997"
 ---
 # <a name="getting-started-with-swarm-mode"></a>Swarm 모드 시작
 

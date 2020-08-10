@@ -5,15 +5,13 @@ keywords: Docker, 컨테이너, cpu, 메모리, 디스크, 리소스
 author: taylorb-microsoft
 ms.date: 11/21/2017
 ms.topic: conceptual
-ms.prod: windows-containers
-ms.service: windows-containers
 ms.assetid: 8ccd4192-4a58-42a5-8f74-2574d10de98e
-ms.openlocfilehash: c435f793371bc71c720784416a367e2c7483e9ff
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 5027c2289dd441d28333c859e691b27eea9862ab
+ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192580"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87985007"
 ---
 # <a name="implementing-resource-controls-for-windows-containers"></a>Windows 컨테이너용 리소스 컨트롤 구현
 컨테이너별 및 리소스별로 구현할 수 있는 몇 가지 리소스 컨트롤이 있습니다.  기본적으로 컨테이너 실행은 대개 공평한 공유를 기반으로 하지만 이러한 컨트롤의 구성을 기반으로 하는 일반적인 Windows 리소스 관리에 따라 적용되지만 개발자 또는 관리자는 리소스 사용을 제한하거나 이에 영향을 미칠 수 있습니다.  제어할 수 있는 리소스는 CPU/프로세서, 메모리/RAM, 디스크/스토리지 및 네트워킹/처리량입니다.
