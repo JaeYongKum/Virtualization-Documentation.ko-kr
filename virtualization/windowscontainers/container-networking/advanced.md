@@ -1,17 +1,17 @@
 ---
-title: Windows 컨테이너 네트워킹
+title: Windows의 고급 네트워크 옵션
 description: Windows 컨테이너에 대 한 고급 네트워킹.
 keywords: Docker, 컨테이너
 author: jmesser81
 ms.date: 03/27/2018
 ms.topic: how-to
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: aed798cf7444cc8ec67aeb663693911ce20247c6
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 7b533a90587c0853be1fe93090d23b3c34fa2386
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985377"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161732"
 ---
 # <a name="advanced-network-options-in-windows"></a>Windows의 고급 네트워크 옵션
 
@@ -97,9 +97,11 @@ C:\> docker network create -d transparent -o com.docker.network.windowsshim.dnss
 자세한 내용은 [이 문서](https://www.microsoft.com/research/project/azure-virtual-filtering-platform/)를 참조하세요.
 
 ## <a name="tips--insights"></a>팁과 고급 정보
+
 커뮤니티에서 제공 하는 Windows 컨테이너 네트워킹에 대 한 일반적인 질문에 따라 유용한 팁과 정보를 제공 하는 목록을 제공 합니다.
 
 #### <a name="hns-requires-that-ipv6-is-enabled-on-container-host-machines"></a>HNS를 사용 하려면 컨테이너 호스트 컴퓨터에서 i p v 6을 사용 하도록 설정 해야 합니다.
+
 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217) HNS의 일부로 Windows 컨테이너 호스트에서 i p v 6을 사용 하도록 설정 해야 합니다. 아래와 같은 오류가 발생 하는 경우 호스트 컴퓨터에서 i p v 6을 사용 하지 않도록 설정할 가능성이 있습니다.
 ```
 docker: Error response from daemon: container e15d99c06e312302f4d23747f2dfda4b11b92d488e8c5b53ab5e4331fd80636d encountered an error during CreateContainer: failure in a Windows system call: Element not found.

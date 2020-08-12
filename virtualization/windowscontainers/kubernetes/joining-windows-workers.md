@@ -1,5 +1,5 @@
 ---
-title: Windows 노드 조인
+title: Windows 노드 클러스터 조인
 author: daschott
 ms.author: daschott
 ms.date: 11/02/2018
@@ -7,21 +7,24 @@ ms.topic: how-to
 description: V 1.14를 사용 하 여 Windows 노드를 Kubernetes 클러스터에 조인 합니다.
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: 3f37a3e19800d7121ac65b12efeb0f14a287140b
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 8954e98eeadca648b3d48599a5174c28101a7ccc
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985307"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161902"
 ---
-# <a name="joining-windows-server-nodes-to-a-cluster"></a>클러스터에 Windows Server 노드 조인 #
+# <a name="joining-windows-server-nodes-to-a-cluster"></a>클러스터에 Windows Server 노드 조인
+
 [Kubernetes 마스터 노드를 설정](./creating-a-linux-master.md) 하 고 [원하는 네트워크 솔루션을 선택한](./network-topologies.md)후에는 Windows Server 노드를 조인 하 여 클러스터를 구성할 준비가 된 것입니다. 이렇게 하려면 조인 하기 전에 [Windows 노드에서](#preparing-a-windows-node) 몇 가지 준비가 필요 합니다.
 
-## <a name="preparing-a-windows-node"></a>Windows 노드 준비 ##
+## <a name="preparing-a-windows-node"></a>Windows 노드 준비
+
 > [!NOTE]
 > Windows 섹션의 모든 코드 조각은 _관리자 권한_ PowerShell에서 실행 됩니다.
 
-### <a name="install-docker-requires-reboot"></a>Docker 설치 (다시 부팅 필요) ###
+### <a name="install-docker-requires-reboot"></a>Docker 설치 (다시 부팅 필요)
+
 Kubernetes는 [Docker](https://www.docker.com/) 를 컨테이너 엔진으로 사용 하므로 설치 해야 합니다. [공식 문서 지침](../manage-docker/configure-docker-daemon.md#install-docker)과 [Docker 지침](https://store.docker.com/editions/enterprise/docker-ee-server-windows)을 따르거나 다음 단계를 수행해 볼 수 있습니다.
 
 ```powershell
@@ -38,7 +41,7 @@ Restart-Computer -Force
 
 다시 부팅 한 후 다음 오류가 표시 됩니다.
 
-![text](media/docker-svc-error.png)
+!["연결 하는 동안 오류가 발생 했습니다." 라는 svc 오류의 스크린샷](media/docker-svc-error.png)
 
 그런 다음 docker 서비스를 수동으로 시작 합니다.
 
@@ -46,8 +49,9 @@ Restart-Computer -Force
 Start-Service docker
 ```
 
-### <a name="create-the-pause-infrastructure-image"></a>"일시 중지" (인프라) 이미지 만들기 ###
-> [!Important]
+### <a name="create-the-pause-infrastructure-image"></a>"일시 중지" (인프라) 이미지 만들기
+
+> [!IMPORTANT]
 > 충돌 하는 컨테이너 이미지에 주의 해야 합니다. 필요한 태그가 없으면 `docker pull` 호환 되지 않는 컨테이너 이미지의가 발생 하 여 무한 상태와 같은 [배포 문제](./common-problems.md#when-deploying-docker-containers-keep-restarting) 를 일으킬 수 있습니다 `ContainerCreating` .
 
 이제를 `docker` 설치 했으므로 Kubernetes에서 인프라 pod을 준비 하는 데 사용 하는 "일시 중지" 이미지를 준비 해야 합니다. 이에 대 한 세 가지 단계가 있습니다.
@@ -55,15 +59,16 @@ Start-Service docker
   2. microsoft/nanoserver로 [태그](#tag-the-image) 지정: 최신
   3. 및 [실행](#run-the-container)
 
+#### <a name="pull-the-image"></a>이미지 끌어오기
 
-#### <a name="pull-the-image"></a>이미지 끌어오기 ####
- 특정 Windows 릴리스에 대 한 이미지를 끌어옵니다. 예를 들어 Windows Server 2019를 실행 하는 경우:
+특정 Windows 릴리스에 대 한 이미지를 끌어옵니다. 예를 들어 Windows Server 2019를 실행 하는 경우:
 
- ```powershell
+```powershell
 docker pull mcr.microsoft.com/windows/nanoserver:1809
- ```
+```
 
-#### <a name="tag-the-image"></a>이미지 태그 ####
+#### <a name="tag-the-image"></a>이미지 태그
+
 이 가이드의 뒷부분에서 사용 하는 Dockerfiles은 `:latest` 이미지 태그를 찾습니다. 다음과 같이 방금 끌어온 nanoserver 이미지에 태그를 표시 합니다.
 
 ```powershell
@@ -176,67 +181,55 @@ cd c:\k
 # <a name="managementip"></a>[ManagementIP](#tab/ManagementIP)
 Windows 노드에 할당 된 IP 주소입니다. 를 사용 하 여이를 찾을 수 있습니다 `ipconfig` .
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-ManagementIP`        |
-|기본값    | N.a. **필수**        |
+| 매개 변수 | 기본값|
+|---|---|
+| `-ManagementIP` | N.a. **필수** |
 
 # <a name="networkmode"></a>[NetworkMode](#tab/NetworkMode)
 네트워크 `l2bridge` 솔루션으로 선택 된 네트워크 모드 (flannel 호스트-gw) 또는 `overlay` (flannel vxlan [network solution](./network-topologies.md))입니다.
 
 > [!Important]
-> `overlay`네트워킹 모드 (flannel vxlan)에는 Kubernetes v 1.14 이진 (이상) 및 [KB4489899](https://support.microsoft.com/help/4489899)가 필요 합니다.
+> `overlay` 네트워킹 모드 (flannel vxlan)에는 Kubernetes v 1.14 이진 (이상) 및 [KB4489899](https://support.microsoft.com/help/4489899)가 필요 합니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-NetworkMode`        |
-|기본값    | `l2bridge`        |
+| 매개 변수 | 기본값 |
+|---|---|
+| `-NetworkMode` | `12bridge` |
 
 
 # <a name="clustercidr"></a>[ClusterCIDR](#tab/ClusterCIDR)
 [클러스터 서브넷 범위](./getting-started-kubernetes-windows.md#cluster-subnet-def)입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-ClusterCIDR`        |
-|기본값    | `10.244.0.0/16`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-ClusterCIDR` | `10.244.0.0/16` |
 
 # <a name="servicecidr"></a>[ServiceCIDR](#tab/ServiceCIDR)
 [서비스 서브넷 범위](./getting-started-kubernetes-windows.md#service-subnet-def)입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-ServiceCIDR`        |
-|기본값    | `10.96.0.0/12`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-ServiceCIDR` | `10.96.0.0/12` |
 
 # <a name="kubednsserviceip"></a>[KubeDnsServiceIP](#tab/KubeDnsServiceIP)
 [KUBERNETES DNS 서비스 IP](./getting-started-kubernetes-windows.md#plan-ip-addressing-for-your-cluster)입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-KubeDnsServiceIP`        |
-|기본값    | `10.96.0.10`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-KubeDnsServiceIP` | `10.96.0.10` |
 
 # <a name="interfacename"></a>[InterfaceName](#tab/InterfaceName)
 Windows 호스트의 네트워크 인터페이스 이름입니다. 를 사용 하 여이를 찾을 수 있습니다 `ipconfig` .
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-InterfaceName`        |
-|기본값    | `Ethernet`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-InterfaceName` | `Ethernet` |
 
 # <a name="logdir"></a>[LogDir](#tab/LogDir)
 Kubelet 및 kube 로그가 해당 출력 파일로 리디렉션되는 디렉터리입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-LogDir`        |
-|기본값    | `C:\k`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-LogDir` | `C:\k` |
 
 ---
 
@@ -244,7 +237,7 @@ Kubelet 및 kube 로그가 해당 출력 파일로 리디렉션되는 디렉터�
 > [이전](./creating-a-linux-master.md#collect-cluster-information) 에 Linux 마스터에서 클러스터 서브넷, 서비스 서브넷 및 kube IP를 이미 적어 둔 경우
 
 이 작업을 실행 한 후 다음을 수행할 수 있습니다.
-  * 을 사용 하 여 조인 된 Windows 노드 보기`kubectl get nodes`
+  * 을 사용 하 여 조인 된 Windows 노드 보기 `kubectl get nodes`
   * 3 개의 powershell 창이 열려 있고, 하나는에 대해, 다른 하나는에 대해 하나를 참조 하세요. `kubelet` `flanneld``kube-proxy`
   * `flanneld` `kubelet` 노드에서 실행 되는, 및에 대 한 호스트 에이전트 프로세스를 참조 하세요. `kube-proxy`
 

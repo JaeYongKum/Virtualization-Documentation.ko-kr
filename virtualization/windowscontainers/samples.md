@@ -6,20 +6,20 @@ author: cwilhit
 ms.date: 12/19/2016
 ms.topic: article
 ms.assetid: 5c6f6350-f8d6-4426-b53d-9fb09c2bf267
-ms.openlocfilehash: fd96865f903542418016b4f75216fd901b47fb57
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 087aecdae317a81338071def3046fb01511ca152
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985417"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161912"
 ---
 # <a name="windows-container-samples"></a>Windows 컨테이너 샘플
 
 샘플 및 예제는 Windows 팀 및 커뮤니티의 멤버를 통해 제출된 컬렉션입니다.  이러한 샘플은 있는 그대로 제공되고 어떤 명시적인 보증 또는 보장하지 않습니다.  추가 샘플을 제공하거나 현재 집합을 개선할 수 있습니다.
 
-# <a name="categories"></a>범주
+## <a name="categories"></a>범주
 
-## <a name="application-frameworks"></a>애플리케이션 프레임워크
+### <a name="application-frameworks"></a>애플리케이션 프레임워크
 
 [aspnet](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/aspnet)
 
@@ -39,7 +39,7 @@ ms.locfileid: "87985417"
 
 [nginx](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/nginx)
 
-## <a name="programing-languages"></a>프로그래밍 언어
+### <a name="programing-languages"></a>프로그래밍 언어
 
 [dotnet35](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/dotnet35)
 
@@ -57,7 +57,7 @@ ms.locfileid: "87985417"
 
 [server-jre-8u51-windows-x64](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/server-jre-8u51-windows-x64)
 
-## <a name="databases"></a>데이터베이스
+### <a name="databases"></a>데이터베이스
 
 [mongodb](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/mongodb)
 
@@ -69,14 +69,14 @@ ms.locfileid: "87985417"
 
 sqlserver-express- [Docker 허브 이미지](https://hub.docker.com/r/microsoft/mssql-server-windows-express/) 또는 [dockerfile](https://github.com/Microsoft/mssql-docker/blob/master/windows/mssql-server-windows-express/dockerfile)
 
-## <a name="infrastructure-and-ci-tools"></a>인프라와 CI 도구
+### <a name="infrastructure-and-ci-tools"></a>인프라와 CI 도구
 
 [PowerShellDSC_iis 10.0](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/PowerShellDSC_iis-10.0)
 
-## <a name="just-for-fun"></a>재미를 위한 내용
+### <a name="just-for-fun"></a>재미를 위한 내용
 
 [MineCraft](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/MineCraft)
 
-## <a name="other"></a>기타
+### <a name="other"></a>기타
 
 [DirectX](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/master/windows-container-samples/directx) (GPU 가속 포함)

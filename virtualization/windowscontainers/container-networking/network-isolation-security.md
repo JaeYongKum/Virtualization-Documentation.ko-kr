@@ -1,17 +1,17 @@
 ---
-title: Windows 컨테이너 네트워킹
+title: 네트워크 격리 및 보안
 description: Windows 컨테이너 내의 네트워크 격리 및 보안.
 keywords: Docker, 컨테이너
 author: jmesser81
 ms.date: 03/27/2018
 ms.topic: conceptual
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 5c60406c0cc839a84e25ff12abf53439c6a208cb
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: e629666a36c3e742a970a60adcf13c526c710eec
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985387"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161772"
 ---
 # <a name="network-isolation-and-security"></a>네트워크 격리 및 보안
 

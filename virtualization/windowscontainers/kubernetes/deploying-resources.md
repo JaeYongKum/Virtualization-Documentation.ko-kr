@@ -1,5 +1,5 @@
 ---
-title: Linux 노드 조인
+title: Kubernetes 리소스 배포
 author: daschott
 ms.author: daschott
 ms.date: 11/02/2018
@@ -7,29 +7,33 @@ ms.topic: how-to
 description: Kubernetes resoureces를 Kubernetes 클러스터에 배포 합니다.
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5b17
-ms.openlocfilehash: a342a03153564b2f76af45a9b792b58ae8afc18c
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: d1f0d836b6af9330acba5599b7f89a4c76baea10
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985337"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161882"
 ---
-# <a name="deploying-kubernetes-resources"></a>Kubernetes 리소스 배포 #
+# <a name="deploying-kubernetes-resources"></a>Kubernetes 리소스 배포
+
 마스터 1 개 이상으로 구성 된 Kubernetes 클러스터가 있다고 가정 하면 Kubernetes 리소스를 배포할 준비가 된 것입니다.
+
 > [!TIP]
 > Windows에서 현재 지원 되는 Kubernetes 리소스는 무엇 인가요? 자세한 내용은 [공식적으로 지원 되는 기능](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#supported-functionality-and-limitations) 및 [Windows 로드맵 Kubernetes](https://github.com/orgs/kubernetes/projects/8) 을 참조 하세요.
 
+## <a name="running-a-sample-service"></a>샘플 서비스 실행
 
-## <a name="running-a-sample-service"></a>샘플 서비스 실행 ##
 클러스터에 성공적으로 가입되고 네트워크가 적절히 구성되었는지 확인하기 위해 매우 간단한 [PowerShell 기반 웹 서비스](https://github.com/Microsoft/SDN/blob/master/Kubernetes/WebServer.yaml)를 배포할 것입니다.
 
 이렇게 하기 전에 모든 노드가 정상 인지 확인 하는 것이 좋습니다.
+
 ```bash
 kubectl get nodes
 ```
 
 모든 항목이 양호 하면 다음 서비스를 다운로드 하 여 실행할 수 있습니다.
-> [!Important]
+
+> [!IMPORTANT]
 > 이전 `kubectl apply` 에는 `microsoft/windowsservercore` 샘플 파일의 이미지를 [노드에서 실행할 수 있는 컨테이너 이미지로](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility#choosing-container-os-versions)두 번 확인/수정 해야 합니다.
 
 ```bash
@@ -51,10 +55,11 @@ watch kubectl get pods -o wide
   - `curl`Linux 마스터의 *Nodeport* 또는 클러스터 외부의 컴퓨터 인바운드 연결을 보여 줍니다.
   - `curl`pod 내부에서의 외부 Ip 아웃 바운드 연결을 보여 줍니다.
 
-> [!Note]
+> [!NOTE]
 > Windows *컨테이너 호스트* 는 예약 된 서비스에서 서비스 IP에 액세스할 수 **없습니다** . 이는 Windows Server에 대 한 이후 버전에서 향상 될 [알려진 플랫폼 제한](./common-problems.md#my-windows-node-cannot-access-my-services-using-the-service-ip) 입니다. 그러나 Windows *pod* **는** 서비스 IP에 액세스할 수 있습니다.
 
-## <a name="next-steps"></a>다음 단계 ##
+## <a name="next-steps"></a>다음 단계
+
 이 섹션에서는 Windows 노드에서 Kubernetes 리소스를 예약 하는 방법을 살펴보았습니다. 이 가이드를 마칩니다. 문제가 발생 하는 경우 문제 해결 섹션을 검토 하세요.
 
 > [!div class="nextstepaction"]

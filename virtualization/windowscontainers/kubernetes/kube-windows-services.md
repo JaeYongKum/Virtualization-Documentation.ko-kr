@@ -7,19 +7,19 @@ ms.topic: how-to
 description: Windows 서비스로 Kubernetes 구성 요소를 실행 하는 방법
 keywords: kubernetes, 1.14, windows, 시작
 ms.assetid: 3b05d2c2-4b9b-42b4-a61b-702df35f5c18
-ms.openlocfilehash: a4f29626ce51714e9313d56cc6558677506e75e5
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: caf364045064744a6c3175047ab5bb77b34b742a
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985277"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161783"
 ---
 # <a name="kubernetes-components-as-windows-services"></a>Windows 서비스로 구성 요소 Kubernetes
 
 일부 사용자는 flanneld.exe, kubelet.exe, kube-proxy.exe 등의 프로세스를 Windows 서비스로 실행 하도록 구성할 수 있습니다. 이로 인해 예기치 않은 프로세스나 노드 충돌 시 자동으로 다시 시작 하는 프로세스와 같은 추가적인 내결함성 이점이 있습니다.
 
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 1. [nssm.exe](https://nssm.cc/download) 를 디렉터리에 다운로드 했습니다. `c:\k`
 2. 클러스터에 노드를 조인 하 고 이전 노드에 [install.ps1](https://github.com/Microsoft/SDN/tree/master/Kubernetes/flannel/install.ps1) 또는 [start.ps1](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/start.ps1) 스크립트를 실행 했습니다.
 
@@ -33,10 +33,9 @@ C:\k\register-svc.ps1 -NetworkMode <Network mode> -ManagementIP <Windows Node IP
 # <a name="managementip"></a>[ManagementIP](#tab/ManagementIP)
 Windows 노드에 할당 된 IP 주소입니다. 를 사용 하 여이를 찾을 수 있습니다 `ipconfig` .
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-ManagementIP`        |
-|기본값    | N.a.        |
+| 매개 변수 | 기본값 |
+|---|---|
+| `-ManagementIP` | N.a. |
 
 
 # <a name="networkmode"></a>[NetworkMode](#tab/NetworkMode)
@@ -45,37 +44,30 @@ Windows 노드에 할당 된 IP 주소입니다. 를 사용 하 여이를 찾을
 > [!Important]
 > `overlay`네트워킹 모드 (flannel vxlan)에는 Kubernetes v 1.14 이진 이상이 필요 합니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-NetworkMode`        |
-|기본값    | `l2bridge`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-NetworkMode` | `12bridge` |
 
 # <a name="clustercidr"></a>[ClusterCIDR](#tab/ClusterCIDR)
 [클러스터 서브넷 범위](./getting-started-kubernetes-windows.md#cluster-subnet-def)입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-ClusterCIDR`        |
-|기본값    | `10.244.0.0/16`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-ClusterCIDR` | `10.244.0.0/16` |
 
 # <a name="kubednsserviceip"></a>[KubeDnsServiceIP](#tab/KubeDnsServiceIP)
-[KUBERNETES DNS 서비스 IP](./getting-started-kubernetes-windows.md#kube-dns-def)입니다.
+[KUBERNETES DNS 서비스 IP](./getting-started-kubernetes-windows.md#plan-ip-addressing-for-your-cluster)입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-KubeDnsServiceIP`        |
-|기본값    | `10.96.0.10`        |
-
+| 매개 변수 | 기본값 |
+|---|---|
+| `-KubeDnsServiceIP` | `10.96.0.10` |
 
 # <a name="logdir"></a>[LogDir](#tab/LogDir)
 Kubelet 및 kube 로그가 해당 출력 파일로 리디렉션되는 디렉터리입니다.
 
-|  |  |
-|---------|---------|
-|매개 변수     | `-LogDir`        |
-|기본값    | `C:\k`        |
+| 매개 변수 | 기본값 |
+|---|---|
+| `-LogDir` | `C:\k` |
 
 ---
 
