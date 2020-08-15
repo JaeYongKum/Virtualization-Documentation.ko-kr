@@ -1,17 +1,17 @@
 ---
 title: Kubernetes 이진 파일 컴파일
-author: gkudra-msft
-ms.author: gekudray
-ms.date: 11/02/2018
+author: daschott
+ms.author: daschott
+ms.date: 08/13/2020
 ms.topic: how-to
 description: Kubernetes 이진 파일을 소스에서 컴파일하고 크로스 컴파일합니다.
 keywords: kubernetes, 1.12, linux, 컴파일
-ms.openlocfilehash: 4b999613223c4d952c8d7186822d1a5cf95ae3dd
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: 21ccee749956abc2ffb02a7b2ec1394c1195fe09
+ms.sourcegitcommit: aa139e6e77a27b8afef903fee5c7ef338e1c79d4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161972"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88251596"
 ---
 # <a name="compiling-kubernetes-binaries"></a>Kubernetes 이진 파일 컴파일
 
@@ -80,7 +80,7 @@ KUBE_BUILD_PLATFORMS=windows/amd64 make WHAT=cmd/kube-proxy
 cp _output/local/bin/windows/amd64/kube*.exe ~/kube-win/
 ```
 
-Linux 이진 파일을 빌드하는 단계는 동일 합니다. `KUBE_BUILD_PLATFORMS=windows/amd64`명령에 대 한 접두사를 그냥 둡니다. 대신 출력 디렉터리를 사용할 수 `_output/.../linux/amd64` 있습니다.
+Linux 이진 파일을 빌드하는 단계는 동일 합니다. `KUBE_BUILD_PLATFORMS=windows/amd64` 명령에 대 한 접두사를 그냥 둡니다. 대신 출력 디렉터리를 사용할 수 `_output/.../linux/amd64` 있습니다.
 
 ## <a name="build-with-vagrant"></a>Vagrant를 사용 하 여 빌드
 

@@ -1,17 +1,17 @@
 ---
 title: Kubernetes 문제 해결
-author: gkudra-msft
-ms.author: gekudray
-ms.date: 11/02/2018
+author: daschott
+ms.author: daschott
+ms.date: 08/13/2020
 ms.topic: troubleshooting
 description: Kubernetes를 배포 하 고 Windows 노드를 조인할 때 발생 하는 일반적인 문제에 대 한 솔루션입니다.
-keywords: kubernetes, 1.14, linux, 컴파일
-ms.openlocfilehash: 0b87db08f027e91a2d5047ce4d6bbf41abd1916d
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+keywords: kubernetes, linux, 컴파일
+ms.openlocfilehash: f96d90f2ab4f7cdfea942badab8fb277c40cb621
+ms.sourcegitcommit: aa139e6e77a27b8afef903fee5c7ef338e1c79d4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985057"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88251606"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포와 관련 된 몇 가지 일반적인 문제를 안내 합니다.
@@ -27,19 +27,11 @@ ms.locfileid: "87985057"
 
 ## <a name="general-questions"></a>일반적인 질문 ##
 
-### <a name="how-do-i-know-startps1-on-windows-completed-successfully"></a>Windows에서 start.ps1가 성공적으로 완료 어떻게 할까요? 알고 있나요? ###
-Kubelet, kube 및 (Flannel를 네트워킹 솔루션으로 선택한 경우)에서 실행 중인 로그가 별도의 PoSh 창에 표시 되는 것을 확인 하 고 노드에서 실행 되는 호스트 에이전트 프로세스를 확인 해야 합니다. 이 외에도 Windows 노드가 Kubernetes 클러스터에 "Ready"로 표시 되어야 합니다.
+### <a name="how-do-i-know-kubernetes-on-windows-completed-successfully"></a>Windows에서 Kubernetes가 성공적으로 완료 어떻게 할까요?? ###
+Kubelet, kube 및 (Flannel를 네트워킹 솔루션으로 선택한 경우)에서 노드를 실행 하는 호스트 에이전트 프로세스가 표시 되어야 합니다. 이 외에도 Windows 노드가 Kubernetes 클러스터에 "Ready"로 표시 되어야 합니다.
 
-### <a name="can-i-configure-to-run-all-of-this-in-the-background-instead-of-posh-windows"></a>PoSh windows 대신 백그라운드에서이 모든 작업을 실행 하도록를 구성할 수 있나요? ###
-Kubernetes 버전 1.11부터 kubelet & kube를 네이티브 [Windows 서비스로](https://kubernetes.io/docs/getting-started-guides/windows/#kubelet-and-kube-proxy-can-now-run-as-windows-services)실행할 수 있습니다. 항상 [nssm.exe](https://nssm.cc/) 와 같은 대체 서비스 관리자를 사용 하 여 백그라운드에서 항상 이러한 프로세스 (flanneld, kubelet & kube)를 실행할 수 있습니다. 예제 단계는 [Kubernetes의 Windows 서비스](./kube-windows-services.md) 를 참조 하세요.
-
-### <a name="i-have-problems-running-kubernetes-processes-as-windows-services"></a>Windows 서비스로 Kubernetes 프로세스를 실행 하는 데 문제가 있음 ###
-초기 문제 해결을 위해 [nssm.exe](https://nssm.cc/) 에서 다음 플래그를 사용 하 여 stdout 및 stderr을 출력 파일로 리디렉션할 수 있습니다.
-```
-nssm set <Service Name> AppStdout C:\k\mysvc.log
-nssm set <Service Name> AppStderr C:\k\mysvc.log
-```
-자세한 내용은 공식 [nssm.exe 사용](https://nssm.cc/usage) 문서를 참조 하세요.
+### <a name="can-i-configure-to-run-all-of-this-in-the-background"></a>백그라운드에서이 모든 작업을 실행 하도록를 구성할 수 있나요? ###
+Kubernetes 버전 1.11부터 kubelet & kube를 네이티브 [Windows 서비스로](https://kubernetes.io/docs/getting-started-guides/windows/#kubelet-and-kube-proxy-can-now-run-as-windows-services)실행할 수 있습니다. 항상 [nssm.exe](https://nssm.cc/) 와 같은 대체 서비스 관리자를 사용 하 여 백그라운드에서 항상 이러한 프로세스 (flanneld, kubelet & kube)를 실행할 수 있습니다.
 
 ## <a name="common-networking-errors"></a>일반적인 네트워킹 오류 ##
 
@@ -98,14 +90,14 @@ az network route-table route create  --resource-group <my_resource_group> --add
 ```
 
 >[!TIP]
-> 다른 클라우드 공급자의 Azure 또는 IaaS Vm에 Kubernetes를 직접 배포 하는 경우 [오버레이 네트워킹](./network-topologies.md#flannel-in-vxlan-mode) 을 대신 사용할 수도 있습니다.
+> 다른 클라우드 공급자의 Azure 또는 IaaS Vm에 Kubernetes를 직접 배포 하는 경우를 대신 사용할 수도 있습니다 `overlay networking` .
 
 ### <a name="my-windows-pods-cannot-ping-external-resources"></a>Windows pod 외부 리소스를 ping 할 수 없음 ###
 Windows pod에는 현재 ICMP 프로토콜에 대해 프로그래밍 된 아웃 바운드 규칙이 없습니다. 그러나 TCP/UDP가 지원 됩니다. 클러스터 외부의 리소스에 대 한 연결을 시연 하려고 할 때 `ping <IP>` 해당 명령으로 대체 하세요 `curl <IP>` .
 
 여전히 문제가 발생 하는 경우에는 일반적으로 [cni](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf) 의 네트워크 구성으로 인해 몇 가지 주의가 필요 합니다. 언제 든 지이 정적 파일을 편집할 수 있으며, 구성은 새로 만든 Kubernetes 리소스에 적용 됩니다.
 
-이유
+그 이유는 무엇일까요?
 Kubernetes 네트워킹 요구 사항 ( [Kubernetes 모델](https://kubernetes.io/docs/concepts/cluster-administration/networking/)참조) 중 하나는 내부적으로 NAT 없이 클러스터 통신을 수행 하는 것입니다. 이러한 요구 사항을 충족 하기 위해 아웃 바운드 NAT가 발생 하지 않도록 하는 모든 통신에 대 한 [예외](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf#L20) 를 발생 시킬 수 있습니다. 그러나이는 쿼리를 시도 하는 외부 IP를 제외 해야 한다는 의미 이기도 합니다. 그 다음에만 Windows pod에서 시작 된 트래픽이 외부 세계의 응답을 수신 하기 위해 올바르게 SNAT'ed 됩니다. 이와 관련 하 여의 예외는 다음과 같습니다 `cni.conf` .
 ```conf
 "ExceptionList": [
@@ -116,7 +108,7 @@ Kubernetes 네트워킹 요구 사항 ( [Kubernetes 모델](https://kubernetes.i
 ```
 
 ### <a name="my-windows-node-cannot-access-a-nodeport-service"></a>Windows 노드가 NodePort 서비스에 액세스할 수 없습니다. ###
-Windows Server 2019에 대 한 디자인 제한으로 인해 노드 자체의 로컬 NodePort 액세스는 실패 합니다. NodePort 액세스는 다른 노드나 외부 클라이언트에서 작동 합니다.
+노드 자체에서 로컬 NodePort 액세스가 실패할 수 있습니다. 이는 KB4571748 누적 업데이트를 사용 하 여 해결 되는 알려진 기능 차이입니다. NodePort 액세스는 다른 노드나 외부 클라이언트에서 작동 합니다.
 
 ### <a name="my-windows-node-stops-routing-thourgh-nodeports-after-i-scaled-down-my-pods"></a>내 Windows 노드가 pod을 확장 한 후 thourgh NodePorts 라우팅을 중지 합니다. ###
 디자인 제한으로 인해 NodePort 전달이 작동 하려면 Windows 노드에서 하나 이상의 pod를 실행 해야 합니다.
@@ -134,15 +126,12 @@ Remove-Item C:\k\SourceVip.json
 Remove-Item C:\k\SourceVipRequest.json
 ```
 
-### <a name="after-launching-startps1-flanneld-is-stuck-in-waiting-for-the-network-to-be-created"></a>start.ps1를 시작한 후에는 "네트워크를 만들 때까지 기다리는 중입니다." Flanneld ###
-조사 중인이 문제에 대 한 다양 한 보고서가 있습니다. flannel 네트워크의 관리 IP가 설정 된 경우에는 타이밍 문제가 있을 가능성이 높습니다. 해결 방법은 start.ps1을 다시 실행할 수 있습니다. 또는 다음과 같이 수동으로 다시 실행할 수 있습니다.
+### <a name="after-launching-kubernetes-flanneld-is-stuck-in-waiting-for-the-network-to-be-created"></a>Kubernetes를 시작한 후에는 Flanneld가 "네트워크를 만들 때까지 기다리는 중" 상태로 유지 됩니다. ###
+이 문제는 [Flannel v 0.12.0](https://github.com/coreos/flannel/releases/tag/v0.12.0) (이상)를 사용 하 여 해결 해야 합니다. 이전 버전의 Flanneld를 사용 하는 경우 flannel 네트워크의 관리 IP가 설정 되지 않도록 알려진 경합 상태가 발생할 수 있습니다. 문제를 해결 하려면 FlannelD를 수동으로 다시 실행할 수 있습니다.
 ```
 PS C:> [Environment]::SetEnvironmentVariable("NODE_NAME", "<Windows_Worker_Hostname>")
 PS C:> C:\flannel\flanneld.exe --kubeconfig-file=c:\k\config --iface=<Windows_Worker_Node_IP> --ip-masq=1 --kube-subnet-mgr=1
 ```
-
-현재 검토에서이 문제를 해결 하는 [PR](https://github.com/coreos/flannel/pull/1042) 도 있습니다.
-
 
 ### <a name="my-windows-pods-cannot-launch-because-of-missing-runflannelsubnetenv"></a>/Run/flannel/subnet.env가 없어서 Windows pod을 시작할 수 없습니다. ###
 이는 Flannel이 올바르게 실행 되지 않았음을 나타냅니다. flanneld.exe를 다시 시작 하거나, Kubernetes 마스터의에서 수동으로 Windows 작업자 노드에 파일을 복사 하 `/run/flannel/subnet.env` `C:\run\flannel\subnet.env` 고 할당 된 서브넷으로 행을 수정할 수 있습니다 `FLANNEL_SUBNET` . 예를 들어 노드 서브넷 10.244.4.1/24가 할당 된 경우:
@@ -152,7 +141,7 @@ FLANNEL_SUBNET=10.244.4.1/24
 FLANNEL_MTU=1500
 FLANNEL_IPMASQ=true
 ```
-이 파일을 flanneld.exe 생성할 수 있도록 하는 것이 더 안전 합니다.
+그렇지 않으면 먼저 조사 해야 하는이 오류를 일으킬 수 있는 다른 문제가 있습니다. 이 파일을 자동으로 생성 하도록 하는 것이 좋습니다 `flanneld.exe` .
 
 
 ### <a name="pod-to-pod-connectivity-between-hosts-is-broken-on-my-kubernetes-cluster-running-on-vsphere"></a>VSphere 실행 중인 Kubernetes 클러스터에서 호스트 간의 pod 간 연결이 끊어졌습니다.
@@ -163,6 +152,7 @@ VSphere Flannel는 오버레이 네트워킹에 대해 포트 4789 (기본 VXLAN
 현재 알려진 문제가 있어 끝점이 누출 될 수 있습니다.
 1.  첫 번째 [알려진 문제](https://github.com/kubernetes/kubernetes/issues/68511) 는 Kubernetes 버전 1.11의 문제입니다. Kubernetes 버전 1.11.0-1.11.2를 사용 하지 마세요.
 2. 끝점을 누출 시킬 수 있는 두 번째 [알려진 문제](https://github.com/docker/libnetwork/issues/1950) 는 끝점 저장소의 동시성 문제입니다. 수정을 받으려면 Docker EE 18.09 이상을 사용 해야 합니다.
+
 
 ### <a name="my-pods-cannot-launch-due-to-network-failed-to-allocate-for-range-errors"></a>"네트워크: 범위를 할당 하지 못했습니다." 오류 때문에 pod를 시작할 수 없습니다. ###
 이는 노드의 IP 주소 공간이 사용 됨을 나타냅니다. [누수 된 끝점](#my-endpointsips-are-leaking)을 정리 하려면 영향을 받는 노드의 모든 리소스를 마이그레이션하고 다음 명령을 실행 & 합니다.
@@ -176,34 +166,26 @@ Remove-Item -Recurse c:\var
 이는 Windows의 현재 네트워킹 스택에 대 한 알려진 제한 사항입니다. 그러나 Windows *pod* **는** 서비스 IP에 액세스할 수 있습니다.
 
 ### <a name="no-network-adapter-is-found-when-starting-kubelet"></a>Kubelet를 시작할 때 네트워크 어댑터를 찾을 수 없습니다. ###
-Windows 네트워킹 스택은 Kubernetes 네트워킹이 작동 하려면 가상 어댑터가 필요 합니다. 다음 명령에서 결과를 반환 하지 않는 경우 (관리자 셸에서) &mdash; Kubelet to work에 필요한 필수 구성 요소를 만듭니다 &mdash; .
+Windows 네트워킹 스택은 Kubernetes 네트워킹이 작동 하려면 가상 어댑터가 필요 합니다. 다음 명령에서 결과를 반환 하지 않는 경우 (관리자 셸에서) &mdash; Kubelet의 작업에 필요한 필수 구성 요소가 생성 됩니다 &mdash; .
 
 ```powershell
 Get-HnsNetwork | ? Name -ieq "cbr0"
+Get-HnsNetwork | ? Name -ieq "vxlan0"
 Get-NetAdapter | ? Name -Like "vEthernet (Ethernet*"
 ```
 
 호스트의 네트워크 어댑터가 "이더넷"이 아닌 경우 start.ps1 스크립트의 [InterfaceName](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/start.ps1#L6) 매개 변수를 수정 하는 것이 유용한 경우가 종종 있습니다. 그렇지 않으면 스크립트의 출력을 참조 `start-kubelet.ps1` 하 여 가상 네트워크를 만드는 동안 오류가 발생 하는지 확인 합니다.
 
-### <a name="pods-stop-resolving-dns-queries-successfully-after-some-time-alive"></a>일정 시간 후에 DNS 쿼리 확인이 성공적으로 중지 pod ###
-Windows Server의 네트워킹 stack, 버전 1803의 알려진 DNS 캐싱 문제로 인해 DNS 요청이 실패할 수 있습니다. 이 문제를 해결 하려면 다음 레지스트리 키를 사용 하 여 최대 TTL 캐시 값을 0으로 설정 하면 됩니다.
-
-```Dockerfile
-FROM microsoft/windowsservercore:<your-build>
-SHELL ["powershell', "-Command", "$ErrorActionPreference = 'Stop';"]
-New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxCacheTtl -Value 0 -Type DWord
-New-ItemPropery -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxNegativeCacheTtl -Value 0 -Type DWord
-```
 
 ### <a name="i-am-still-seeing-problems-what-should-i-do"></a>여전히 문제가 발생 하 고 있습니다.   어떻게 해야 합니까? ###
 네트워크 또는 호스트에는 노드 간 특정 유형의 통신을 방지 하는 추가 제한 사항이 있을 수 있습니다. 다음 사항을 확인합니다.
-  - 선택한 [네트워크 토폴로지](./network-topologies.md) 를 적절 하 게 구성 했습니다.
+  - 선택한 네트워크 토폴로지 ( `l2bridge` 또는)를 적절히 구성 했습니다 `overlay` .
   - pod에서 오는 것 처럼 보이는 트래픽이 허용 됩니다.
   - 웹 서비스를 배포 하는 경우 HTTP 트래픽이 허용 됩니다.
   - 다른 프로토콜 (ie ICMP 및 TCP/UDP)의 패킷이 삭제 되지 않습니다.
 
 >[!TIP]
-> 추가 자가 진단 리소스에 대 한 자세한 내용은 [여기에 제공](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshooting-Kubernetes-Networking-on-Windows-Part-1/ba-p/508648)되는 Windows에 대 한 Kubernetes 문제 해결 가이드도 있습니다.
+> 추가 자가 진단 리소스에 대 한 자세한 내용은 [여기에서 제공](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshooting-Kubernetes-Networking-on-Windows-Part-1/ba-p/508648)되는 Windows에 대 한 Kubernetes 네트워킹 문제 해결 가이드도 있습니다.
 
 ## <a name="common-windows-errors"></a>일반적인 Windows 오류 ##
 
@@ -212,7 +194,7 @@ New-ItemPropery -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Paramete
 
 
 ### <a name="when-deploying-docker-containers-keep-restarting"></a>배포할 때 Docker 컨테이너는 계속 다시 시작 됩니다. ###
-일시 중지 이미지가 OS 버전과 호환 되는지 확인 합니다. 이 [지침](./deploying-resources.md) 에서는 OS와 컨테이너 모두 버전 1803 이라고 가정 합니다. 이후 버전의 Windows (예: Insider build)가 있는 경우 이미지를 적절 하 게 조정 해야 합니다. 이미지에 대 한 Microsoft의 [Docker 리포지토리](https://hub.docker.com/u/microsoft/) 를 참조 하세요. 상관 없이 일시 중지 이미지 Dockerfile과 샘플 서비스는 모두 이미지를로 태그를 지정 합니다 `:latest` .
+일시 중지 이미지가 OS 버전과 호환 되는지 확인 합니다. Kubernetes는 OS와 컨테이너가 일치 하는 OS 버전 번호를 포함 하 고 있다고 가정 합니다. Insider build와 같은 Windows의 실험적 빌드를 사용 하는 경우 이미지를 적절 하 게 조정 해야 합니다. 이미지에 대 한 Microsoft의 [Docker 리포지토리](https://hub.docker.com/u/microsoft/) 를 참조 하세요.
 
 
 ## <a name="common-kubernetes-master-errors"></a>일반적인 Kubernetes 마스터 오류 ##
@@ -225,10 +207,10 @@ Kubernetes 마스터 디버깅은 다음과 같은 세 가지 주요 범주로 �
 `kubectl get pods -n kube-system`을 실행 하 여 Kubernetes에 의해 생성 되는 pod를 확인 합니다 .이를 통해 특정 충돌 또는 올바르게 시작 되지 않는 특정 항목을 파악할 수 있습니다. 그런 다음를 실행 `docker ps -a` 하 여 이러한 pod를 다시 실행 하는 모든 원시 컨테이너를 확인 합니다. 마지막으로, `docker logs [ID]` 문제의 원인이 되는 것으로 의심 되는 컨테이너에서를 실행 하 여 프로세스의 원시 출력을 표시 합니다.
 
 
-### <a name="cannot-connect-to-the-api-server-at-httpsaddressport"></a>에서 API 서버에 연결할 수 없습니다.`https://[address]:[port]` ###
+### <a name="cannot-connect-to-the-api-server-at-httpsaddressport"></a>에서 API 서버에 연결할 수 없습니다. `https://[address]:[port]` ###
 그렇지 않으면이 오류는 인증서 문제를 나타냅니다. 구성 파일을 올바르게 생성 했는지 확인 하 고, 해당 IP 주소가 호스트의 IP 주소와 일치 하 고, API 서버에서 탑재 된 디렉터리에 해당 파일을 복사 했는지 확인 합니다.
 
-[지침](./creating-a-linux-master.md)을 따르면 다음과 같은 것이 좋습니다.
+이 구성 파일을 찾을 수 있는 좋은 위치는 다음과 같습니다.
 * `~/kube/kubelet/`
 * `$HOME/.kube/config`
 *  `/etc/kubernetes/admin.conf`

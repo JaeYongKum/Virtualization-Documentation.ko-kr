@@ -2,21 +2,21 @@
 title: Windows 컨테이너 네트워킹
 description: Gentle는 Windows 컨테이너 네트워크의 아키텍처를 소개 합니다.
 keywords: Docker, 컨테이너
-author: jmesser81
-ms.date: 03/27/2018
+author: daschott
+ms.date: 08/13/2020
 ms.topic: overview
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 5f9d554a4fcedd9bd233a849c6480589be61abbd
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: a243cda27ec7eb27ee1458585c49448991a94893
+ms.sourcegitcommit: aa139e6e77a27b8afef903fee5c7ef338e1c79d4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984751"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88251626"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
 >[!IMPORTANT]
->일반 docker 네트워킹 명령, 옵션 및 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. * * * [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에 설명 된 경우를 제외 하 고 모든 docker 네트워킹 명령은 Linux의 구문과 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르며 Windows에서 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 알 수 있습니다.
+>일반 docker 네트워킹 명령, 옵션 및 구문에 대 한 [Docker 컨테이너 네트워킹](https://docs.docker.com/engine/userguide/networking/) 을 참조 하세요. [지원 되지 않는 기능 및 네트워크 옵션](#unsupported-features-and-network-options)에 설명 된 경우를 제외 하 고 모든 Docker 네트워킹 명령은 Linux의 구문과 동일한 구문을 사용 하 여 Windows에서 지원 됩니다. 그러나 Windows 및 Linux 네트워크 스택은 서로 다르며 Windows에서 일부 Linux 네트워크 명령 (예: ifconfig)이 지원 되지 않는 것을 알 수 있습니다.
 
 ## <a name="basic-networking-architecture"></a>기본 네트워킹 아키텍처
 
