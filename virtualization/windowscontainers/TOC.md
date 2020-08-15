@@ -44,13 +44,7 @@
 ### [개요](about/overview-container-orchestrators.md)
 ### Windows의 Kubernetes
 #### [Windows의 Kubernetes](kubernetes/getting-started-kubernetes-windows.md)
-#### [Kubernetes 마스터 만들기](kubernetes/creating-a-linux-master.md)
-#### [네트워크 솔루션 선택](kubernetes/network-topologies.md)
-#### [Windows 작업자 조인](kubernetes/joining-windows-workers.md)
-#### [Linux 작업자 조인](kubernetes/joining-linux-workers.md)
-#### [Kubernetes 리소스 배포](kubernetes/deploying-resources.md)
 #### [문제 해결](kubernetes/common-problems.md)
-#### [Windows 서비스형 Kubernetes](kubernetes/kube-windows-services.md)
 #### [Kubernetes 이진 파일 컴파일](kubernetes/compiling-kubernetes-binaries.md)
 ### Service Fabric
 #### [Service Fabric 및 컨테이너](/azure/service-fabric/service-fabric-containers-overview)
