@@ -3,12 +3,13 @@ title: .NET Core 2.0 또는 PowerShell Core 6를 사용하여 또는 사용하�
 description: .NET Core 2.0 또는 PowerShell Core 6을 사용하여 또는 사용하지 않고 애플리케이션을 빌드하고 실행합니다.
 keywords: Docker, 컨테이너
 ms.topic: quickstart
-ms.openlocfilehash: 78100a3eee25a139752ec7781ffc36f87b62eee0
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+author: cwilhit
+ms.openlocfilehash: 77c3843faa091ece289992c4af02dbf050cfca55
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984897"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161682"
 ---
 # <a name="build-and-run-an-application-with-or-without-net-core-20-or-powershell-core-6"></a>.NET Core 2.0 또는 PowerShell Core 6를 사용하여 또는 사용하지 않고 애플리케이션 빌드 및 실행
 
