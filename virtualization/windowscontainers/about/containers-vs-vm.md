@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 10/21/2019
 ms.topic: overview
-ms.openlocfilehash: d8f3efe28ec0303fed1cfaa8da116c14141fb21d
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 0683cf0908b5cec5984622a6d4c87b3c0db543bd
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984867"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161942"
 ---
 # <a name="containers-vs-virtual-machines"></a>컨테이너와 가상 머신 비교
 
@@ -35,7 +35,7 @@ ms.locfileid: "87984867"
 
 다음 표에서는 이러한 보완 기술의 유사성 및 차이점을 보여줍니다.
 
-|                 | 가상 머신  | 컨테이너  |
+|기능    | 가상 머신  | 컨테이너  |
 | --------------  | ---------------- | ---------- |
 | 격리       | 호스트 운영 체제와 기타 VM으로부터 완벽하게 격리합니다. 동일한 서버 또는 클러스터에 있는 경쟁 회사의 호스팅 앱처럼 강력한 보안 경계가 필요할 때 유용합니다. | 일반적으로 호스트 및 기타 컨테이너로부터 어느 정도 격리하지만, VM처럼 강력한 보안 경계를 제공하지는 않습니다. [Hyper-V 격리 모드](../manage-containers/hyperv-container.md)를 사용하여 경량 VM의 각 컨테이너를 분리하는 방식으로 보안을 높일 수 있습니다. |
 | 운영 체제 | 커널을 포함하여 완전한 운영 체제를 실행하므로 더 많은 시스템 리소스(CPU, 메모리 및 스토리지)가 필요합니다. | 운영 체제의 사용자 모드 부분을 실행하며, 앱에 필요한 서비스만 포함하도록 조정하여 시스템 리소스 사용을 줄일 수 있습니다. |
