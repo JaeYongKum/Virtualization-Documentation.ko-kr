@@ -6,12 +6,12 @@ author: PatrickLang
 ms.date: 05/22/2019
 ms.topic: overview
 ms.assetid: 29fbe13a-228a-4eaa-9d4d-90ae60da5965
-ms.openlocfilehash: 383d3a15f7849e8b8122919bd27e697425107d1a
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: c9ea0e346f2b3be23c25d7152b7bbf49b6e709e5
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984877"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161922"
 ---
 # <a name="about-building-container-ecosystems"></a>컨테이너 생태계 구축 정보
 
@@ -23,7 +23,7 @@ Windows 컨테이너는 대규모 컨테이너 생태계의 핵심 구성 요소
 
 컨테이너 생태계는 컨테이너에서 실행되는 앱을 관리, 공유, 개발하는 방법을 제공합니다.
 
-![](media/containerEcosystem.png)
+![컨테이너 에코시스템의 다이어그램입니다. 다양한 Microsoft 제품이 개발 환경, 컨테이너 관리, 컨테이너 기술 및 Microsoft 클라우드의 네 가지 범주로 분류되는 것을 보여줍니다.](media/containerEcosystem.png)
 
 Microsoft는 개발자들이 차세대 앱을 개발하는 데 있어 선택의 폭을 넓히고 생산성을 증대하고자 합니다. Microsoft의 목표는 개발자의 생산성을 높이는 것, 즉, 코드 수정, 재작성 또는 재구성 없이 모든 Microsoft 클라우드에 부합하는 애플리케이션을 만들 수 있게 도와주는 것입니다.
 

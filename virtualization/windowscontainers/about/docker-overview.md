@@ -6,18 +6,18 @@ author: Heidilohr
 ms.author: helohr
 ms.date: 05/22/2019
 ms.topic: overview
-ms.openlocfilehash: 85f533d065e647083c916bf26fa4ba601579c02b
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 2e3a69524bc0477321d839eb329311ac5c792c86
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984847"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161932"
 ---
 # <a name="about-docker"></a>Docker 정보
 
 컨테이너에 대해 공부하다 보면 Docker에 대한 이야기가 반드시 나오게 됩니다. Docker 엔진은 컨테이너 이미지를 패키징하고 전달하는 컨테이너 관리 도구 세트입니다. 그 결과로 얻는 이미지는 온-프레미스, 클라우드, 개인용 머신 등 어디에서 컨테이너로 실행할 수 있습니다.
 
-![](media/docker.png)
+![사용자가 컨테이너를 빌드한 후 클라우드에서 실행하는 일반적인 Docker 워크플로를 보여 주는 그래픽입니다.](media/docker.png)
 
 다른 컨테이너와 마찬가지로 [Docker](https://www.docker.com)를 사용하여 Windows Server 컨테이너를 관리할 수 있습니다.
 

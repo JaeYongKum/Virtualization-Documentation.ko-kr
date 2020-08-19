@@ -1,19 +1,19 @@
 ---
-title: Windows 10의 Windows 및 Linux 컨테이너
+title: Windows 10에서 Linux 컨테이너 설정
 description: 컨테이너 배포 빠른 시작
 keywords: Docker, 컨테이너, LCOW
 author: taylorb-microsoft
 ms.date: 08/16/2019
 ms.topic: tutorial
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: b94f71949ad2e6c7d0164e3afdfc479fde4262b8
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 0e29a8645e34845895fedcc8dc03c01ea12d07f2
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984737"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161712"
 ---
-# <a name="linux-containers-on-windows-10"></a>Windows 10의 Linux 컨테이너
+# <a name="get-started-set-up-linux-containers-on-windows-10"></a>시작: Windows 10에서 Linux 컨테이너 설정
 
 이 연습에서는 Windows 10에서 Linux 컨테이너를 만들고 실행하는 방법을 안내합니다.
 

@@ -1,5 +1,5 @@
 ---
-title: Windows 10의 Windows 및 Linux 컨테이너
+title: Windows 운영 체제 컨테이너 준비
 description: 컨테이너에 대해 Windows 10 또는 Windows Server를 설정한 다음, 첫 번째 컨테이너 이미지를 실행합니다.
 keywords: Docker, 컨테이너, LCOW
 author: cwilhit
@@ -7,12 +7,12 @@ ms.author: crwilhit
 ms.date: 11/12/2019
 ms.topic: quickstart
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 1f65b74f423802c5bbcb818cd6f226df9342b787
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 3efd5594afbcf1a9123ea13e046193f18bfa29bc
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984727"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161832"
 ---
 # <a name="get-started-prep-windows-for-containers"></a>시작: 컨테이너에 맞게 Windows 준비
 

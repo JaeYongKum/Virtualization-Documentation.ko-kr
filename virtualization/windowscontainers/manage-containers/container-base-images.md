@@ -6,12 +6,12 @@ author: patricklang
 ms.date: 09/25/2019
 ms.topic: conceptual
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: 1a2b364ca61f9a53b0c26f7a39f3a10d6084997c
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 7fa5b50506fd9a2d7cd1c5fc84cc867dba412867
+ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985287"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161962"
 ---
 # <a name="container-base-images"></a>컨테이너 기본 이미지
 
@@ -24,7 +24,7 @@ Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미�
             <article class="card has-outline-hover is-relative is-full-height has-padding-none">
                     <div class="cardImageOuter bgdAccent1 has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
                         <div class="cardImage centered has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
-                            <img src="media/Microsoft_logo.svg" alt="" data-linktype="relative-path">
+                            <img src="media/Microsoft_logo.svg" alt="Microsoft logo" data-linktype="relative-path">
                         </div>
                     </div>
                 <div class="card-content has-text-overflow-ellipsis has-padding-top-small">
@@ -44,7 +44,7 @@ Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미�
             <article class="card has-outline-hover is-relative is-full-height has-padding-none">
                     <div class="cardImageOuter bgdAccent1 has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
                         <div class="cardImage centered has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
-                            <img src="media/Microsoft_logo.svg" alt="" data-linktype="relative-path">
+                            <img src="media/Microsoft_logo.svg" alt="Microsoft logo." data-linktype="relative-path">
                         </div>
                     </div>
                 <div class="card-content has-text-overflow-ellipsis has-padding-top-small">
@@ -64,7 +64,7 @@ Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미�
             <article class="card has-outline-hover is-relative is-full-height has-padding-none">
                     <div class="cardImageOuter bgdAccent1 has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
                         <div class="cardImage centered has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
-                            <img src="media/Microsoft_logo.svg" alt="" data-linktype="relative-path">
+                            <img src="media/Microsoft_logo.svg" alt="Microsoft logo." data-linktype="relative-path">
                         </div>
                     </div>
                 <div class="card-content has-text-overflow-ellipsis has-padding-top-small">
@@ -84,7 +84,7 @@ Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미�
             <article class="card has-outline-hover is-relative is-full-height has-padding-none">
                     <div class="cardImageOuter bgdAccent1 has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
                         <div class="cardImage centered has-padding-top-large has-padding-bottom-large has-padding-left-large has-padding-right-large">
-                            <img src="media/Microsoft_logo.svg" alt="" data-linktype="relative-path">
+                            <img src="media/Microsoft_logo.svg" alt="Microsoft logo." data-linktype="relative-path">
                         </div>
                     </div>
                 <div class="card-content has-text-overflow-ellipsis has-padding-top-small">
@@ -142,4 +142,4 @@ Microsoft에서는 각 컨테이너 기본 이미지의 "참가자" 버전을 �
 
 `Windows Server Core` 및 `Nanoserver`는 대상으로 지정되는 가장 일반적인 기본 이미지입니다. 두 이미지의 주요 차이점은 Nanoserver의 API 화면이 훨씬 작다는 점입니다. PowerShell, WMI 및 Windows 서비스 스택은 Nanoserver 이미지에 없습니다.
 
-Nanoserver는 .NET 코어 또는 다른 최신 오픈 소스 프레임워크에 종속된 앱을 실행하기에 부족하지 않은 API 화면을 제공하는 용도로 빌드되었습니다. API 화면이 더 작은 대신, Nanoserver 이미지는 나머지 Windows 기반 이미지보다 디스크 공간이 훨씬 더 작습니다. 적합하다고 판단될 경우 언제든지 Nano 서버 위에 계층을 추가할 수 있다는 점을 기억하세요. 관련 예제는 [NET Core Nano 서버 Dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/2.1/sdk/nanoserver-1909/amd64/Dockerfile)을 참조하세요.
+Nanoserver는 .NET 코어 또는 다른 최신 오픈 소스 프레임워크에 종속된 앱을 실행하기에 부족하지 않은 API 화면을 제공하는 용도로 빌드되었습니다. API 화면이 더 작은 대신, Nanoserver 이미지는 나머지 Windows 기반 이미지보다 디스크 공간이 훨씬 더 작습니다. 적합하다고 판단될 경우 언제든지 Nano 서버 위에 계층을 추가할 수 있다는 점을 기억하세요. 관련 예제는 [NET Core Nano 서버 Dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/src/sdk/2.1/nanoserver-1909/amd64/Dockerfile)을 참조하세요.
