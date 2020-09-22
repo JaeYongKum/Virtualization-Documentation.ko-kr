@@ -7,12 +7,12 @@ ms.author: crwilhit
 ms.date: 11/12/2019
 ms.topic: quickstart
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 3efd5594afbcf1a9123ea13e046193f18bfa29bc
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: b081984fe364b68db3b5f32b6e008e7bdb9f8b09
+ms.sourcegitcommit: 94901df98f58c9ffdf1b9e91379ca13daa239166
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161832"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738903"
 ---
 # <a name="get-started-prep-windows-for-containers"></a>시작: 컨테이너에 맞게 Windows 준비
 
@@ -80,9 +80,22 @@ Windows Server에 Docker를 설치하려면 Microsoft에서 게시한 [DockerMic
 
 Docker를 나중에 업데이트하려면 다음을 수행합니다.
 
-- `Get-Package -Name Docker -ProviderName DockerMsftProvider`를 사용하여 설치된 버전을 확인
-- `Find-Package -Name Docker -ProviderName DockerMsftProvider`를 사용하여 현재 버전을 확인
-- 준비를 마쳤으면 `Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force`, `Start-Service Docker`를 차례로 사용하여 업그레이드
+- 다음을 사용하여 설치된 버전을 확인
+```powershell
+Get-Package -Name Docker -ProviderName DockerMsftProvider
+```
+- 다음을 사용하여 현재 버전을 검색
+```powershell
+Find-Package -Name Docker -ProviderName DockerMsftProvider
+```
+- 준비를 마쳤으면 다음을 사용하여 업그레이드
+```powershell
+Install-Package -Name Docker -ProviderName DockerMsftProvider -Update -Force
+```
+그런 후 다음을 실행 
+```powershell
+Start-Service Docker
+```
 
 # <a name="windows-10"></a>[Windows 10](#tab/Windows-10-Client)
 
