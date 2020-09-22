@@ -3,15 +3,16 @@ title: Windows 컨테이너 네트워킹
 description: Gentle는 Windows 컨테이너 네트워크의 아키텍처를 소개 합니다.
 keywords: Docker, 컨테이너
 author: daschott
+ms.author: jgerend
 ms.date: 08/13/2020
 ms.topic: overview
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: a243cda27ec7eb27ee1458585c49448991a94893
-ms.sourcegitcommit: aa139e6e77a27b8afef903fee5c7ef338e1c79d4
+ms.openlocfilehash: 71228abea66084f9de1ee29daaff1d3d3f1ffc40
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88251626"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990876"
 ---
 # <a name="windows-container-networking"></a>Windows 컨테이너 네트워킹
 
@@ -56,7 +57,7 @@ HNS (호스트 네트워킹 서비스)와 HCS (호스트 계산 서비스)는 �
 - 기본 NAT 네트워크: HNS는 해당 Windows 방화벽 허용 규칙을 사용 하 여 WinNAT 포트 전달 규칙/매핑을 만듭니다.
 - 다른 모든 네트워크: HNS는 VFP (가상 필터링 플랫폼)를 활용 하 여 정책 만들기
     - 여기에는 부하 분산, Acl, 캡슐화 등이 포함 됩니다.
-    - [여기](https://docs.microsoft.com/windows-server/networking/technologies/hcn/hcn-top) 에 게시 된 HNS api 및 스키마를 찾습니다.
+    - [여기](/windows-server/networking/technologies/hcn/hcn-top) 에 게시 된 HNS api 및 스키마를 찾습니다.
 
 ![text](media/HNS-Management-Stack.png)
 

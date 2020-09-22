@@ -6,12 +6,12 @@ ms.date: 08/13/2020
 ms.topic: troubleshooting
 description: Kubernetes를 배포 하 고 Windows 노드를 조인할 때 발생 하는 일반적인 문제에 대 한 솔루션입니다.
 keywords: kubernetes, linux, 컴파일
-ms.openlocfilehash: f96d90f2ab4f7cdfea942badab8fb277c40cb621
-ms.sourcegitcommit: aa139e6e77a27b8afef903fee5c7ef338e1c79d4
+ms.openlocfilehash: 2853386acb564fca768c4f9d8f3b12922670ba18
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88251606"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990736"
 ---
 # <a name="troubleshooting-kubernetes"></a>Kubernetes 문제 해결 #
 이 페이지에서는 Kubernetes 설정, 네트워킹 및 배포와 관련 된 몇 가지 일반적인 문제를 안내 합니다.
@@ -83,7 +83,7 @@ Windows Server, 버전 1903의 사용자는 다음 레지스트리 위치로 이
 ```
 
 ### <a name="containers-on-my-flannel-host-gw-deployment-on-azure-cannot-reach-the-internet"></a>Azure에서 내 Flannel 호스트-gw 배포의 컨테이너가 인터넷에 연결할 수 없음 ###
-Azure에서 Flannel를 gw 모드로 배포할 때 패킷은 Azure 실제 호스트 vSwitch를 통해 이동 해야 합니다. 사용자는 노드에 할당 된 각 서브넷에 대해 "가상 어플라이언스" 유형의 [사용자 정의 경로](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#user-defined) 를 프로그래밍 해야 합니다. 이 작업은 Azure Portal ( [여기](https://docs.microsoft.com/azure/virtual-network/tutorial-create-route-table-portal)예제 참조) 또는 Azure CLI를 통해 수행할 수 있습니다 `az` . 다음은 IP 10.0.0.4 및 해당 pod 서브넷 10.244.0.0/24가 있는 노드에 az commands를 사용 하는 이름이 "MyRoute" 인 UDR의 예입니다.
+Azure에서 Flannel를 gw 모드로 배포할 때 패킷은 Azure 실제 호스트 vSwitch를 통해 이동 해야 합니다. 사용자는 노드에 할당 된 각 서브넷에 대해 "가상 어플라이언스" 유형의 [사용자 정의 경로](/azure/virtual-network/virtual-networks-udr-overview#user-defined) 를 프로그래밍 해야 합니다. 이 작업은 Azure Portal ( [여기](/azure/virtual-network/tutorial-create-route-table-portal)예제 참조) 또는 Azure CLI를 통해 수행할 수 있습니다 `az` . 다음은 IP 10.0.0.4 및 해당 pod 서브넷 10.244.0.0/24가 있는 노드에 az commands를 사용 하는 이름이 "MyRoute" 인 UDR의 예입니다.
 ```
 az network route-table create --resource-group <my_resource_group> --name BridgeRoute 
 az network route-table route create  --resource-group <my_resource_group> --address-prefix 10.244.0.0/24 --route-table-name BridgeRoute  --name MyRoute --next-hop-type VirtualAppliance --next-hop-ip-address 10.0.0.4 
@@ -97,7 +97,7 @@ Windows pod에는 현재 ICMP 프로토콜에 대해 프로그래밍 된 아웃 
 
 여전히 문제가 발생 하는 경우에는 일반적으로 [cni](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf) 의 네트워크 구성으로 인해 몇 가지 주의가 필요 합니다. 언제 든 지이 정적 파일을 편집할 수 있으며, 구성은 새로 만든 Kubernetes 리소스에 적용 됩니다.
 
-그 이유는 무엇일까요?
+그 이유는
 Kubernetes 네트워킹 요구 사항 ( [Kubernetes 모델](https://kubernetes.io/docs/concepts/cluster-administration/networking/)참조) 중 하나는 내부적으로 NAT 없이 클러스터 통신을 수행 하는 것입니다. 이러한 요구 사항을 충족 하기 위해 아웃 바운드 NAT가 발생 하지 않도록 하는 모든 통신에 대 한 [예외](https://github.com/Microsoft/SDN/blob/master/Kubernetes/flannel/l2bridge/cni/config/cni.conf#L20) 를 발생 시킬 수 있습니다. 그러나이는 쿼리를 시도 하는 외부 IP를 제외 해야 한다는 의미 이기도 합니다. 그 다음에만 Windows pod에서 시작 된 트래픽이 외부 세계의 응답을 수신 하기 위해 올바르게 SNAT'ed 됩니다. 이와 관련 하 여의 예외는 다음과 같습니다 `cni.conf` .
 ```conf
 "ExceptionList": [

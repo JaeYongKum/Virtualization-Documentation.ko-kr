@@ -3,15 +3,16 @@ title: Windows의 고급 네트워크 옵션
 description: Windows 컨테이너에 대 한 고급 네트워킹.
 keywords: Docker, 컨테이너
 author: jmesser81
+ms.author: jgerend
 ms.date: 03/27/2018
 ms.topic: how-to
 ms.assetid: 538871ba-d02e-47d3-a3bf-25cda4a40965
-ms.openlocfilehash: 7b533a90587c0853be1fe93090d23b3c34fa2386
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: cd56e5d8b0865af4cbb56835e603d9d21d67a981
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161732"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990836"
 ---
 # <a name="advanced-network-options-in-windows"></a>Windows의 고급 네트워크 옵션
 
@@ -21,7 +22,7 @@ Windows 관련 기능과 기능을 활용 하기 위해 몇 가지 네트워크 
 
 > 모든 네트워크 드라이버에 적용 됩니다.
 
-옵션으로 여러 네트워크 어댑터 (쉼표로 구분)를 지정 하 여 Docker에서 사용할 컨테이너 호스트 네트워크를 만들 때 [스위치 포함 팀](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming#a-namebkmksswitchembeddedaswitch-embedded-teaming-set) 을 활용할 수 있습니다 `-o com.docker.network.windowsshim.interface` .
+옵션으로 여러 네트워크 어댑터 (쉼표로 구분)를 지정 하 여 Docker에서 사용할 컨테이너 호스트 네트워크를 만들 때 [스위치 포함 팀](/windows-server/virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming#a-namebkmksswitchembeddedaswitch-embedded-teaming-set) 을 활용할 수 있습니다 `-o com.docker.network.windowsshim.interface` .
 
 ```
 C:\> docker network create -d transparent -o com.docker.network.windowsshim.interface="Ethernet 2", "Ethernet 3" TeamedNet
@@ -115,7 +116,7 @@ C:\> reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Para
 
 #### <a name="linux-containers-on-windows"></a>Windows의 Linux 컨테이너
 
-**새로 만들기:** Microsoft는 _Moby LINUX VM 없이_Linux 및 Windows 컨테이너를 나란히 실행할 수 있도록 노력 하 고 있습니다. 자세한 내용은 [Windows의 Linux 컨테이너에 대 한 블로그 게시물 (LCOW)](https://blog.docker.com/2017/11/docker-for-windows-17-11/) 을 참조 하세요. [시작](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10-linux)하는 방법은 다음과 같습니다.
+**새로 만들기:** Microsoft는 _Moby LINUX VM 없이_Linux 및 Windows 컨테이너를 나란히 실행할 수 있도록 노력 하 고 있습니다. 자세한 내용은 [Windows의 Linux 컨테이너에 대 한 블로그 게시물 (LCOW)](https://blog.docker.com/2017/11/docker-for-windows-17-11/) 을 참조 하세요. [시작](../quick-start/quick-start-windows-10-linux.md)하는 방법은 다음과 같습니다.
 > 참고: LCOW는 Moby Linux VM을 사용 중단 기본 HNS "nat" 내부 vSwitch를 활용 합니다.
 
 #### <a name="moby-linux-vms-use-dockernat-switch-with-docker-for-windows-a-product-of-docker-ce"></a>Moby Linux Vm은 Windows용 Docker ( [DOCKER CE](https://www.docker.com/community-edition)제품)와 함께 DockerNAT 스위치를 사용 합니다.
