@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   author: cwilhit
   ms.date: 07/06/2020
-  ms.openlocfilehash: 89aaf7c237b3e860cd099027779f185e931d1671
-  ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+  ms.openlocfilehash: 51660b31763a3c5b8c3bcae0d0ca03fb8925c5a8
+  ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87985067"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90990696"
 landingContent:
 - title: 주요 내용
   linkLists:
@@ -29,27 +29,27 @@ landingContent:
   - linkListType: overview
     links:
     - text: Windows 컨테이너 정보
-      url: /virtualization/windowscontainers/about/
+      url: ./about/index.md
     - text: 시스템 요구 사항
-      url: /virtualization/windowscontainers/deploy-containers/system-requirements
+      url: ./deploy-containers/system-requirements.md
     - text: FAQ
-      url: /virtualization/windowscontainers/about/faq
+      url: ./about/faq.md
 - title: 시작
   linkLists:
   - linkListType: get-started
     links:
     - text: 환경 설정
-      url: /virtualization/windowscontainers/quick-start/set-up-environment
+      url: ./quick-start/set-up-environment.md
     - text: 첫 번째 컨테이너 실행
-      url: /virtualization/windowscontainers/quick-start/run-your-first-container
+      url: ./quick-start/run-your-first-container.md
     - text: 샘플 앱 컨테이너화
-      url: /virtualization/windowscontainers/quick-start/building-sample-app
+      url: ./quick-start/building-sample-app.md
 - title: 자습서
   linkLists:
   - linkListType: tutorial
     links:
     - text: Windows 컨테이너 빌드
-      url: /virtualization/windowscontainers/manage-docker/manage-windows-dockerfile
+      url: ./manage-docker/manage-windows-dockerfile.md
     - text: AKS에서 실행
       url: /azure/aks/windows-container-cli
     - text: Service Fabric에서 실행
@@ -61,28 +61,28 @@ landingContent:
   - linkListType: concept
     links:
     - text: Docker
-      url: /virtualization/windowscontainers/manage-docker/configure-docker-daemon
+      url: ./manage-docker/configure-docker-daemon.md
     - text: 컨테이너 오케스트레이션
-      url: /virtualization/windowscontainers/about/overview-container-orchestrators
+      url: ./about/overview-container-orchestrators.md
     - text: Windows 컨테이너 기본 정보
-      url: /virtualization/windowscontainers/manage-containers/container-base-images
+      url: ./manage-containers/container-base-images.md
 - title: 참조
   linkLists:
   - linkListType: reference
     links:
     - text: 버전 호환성
-      url: /virtualization/windowscontainers/deploy-containers/version-compatibility
+      url: ./deploy-containers/version-compatibility.md
     - text: 이미지 서비스 수명 주기
-      url: /virtualization/windowscontainers/deploy-containers/base-image-lifecycle
+      url: ./deploy-containers/base-image-lifecycle.md
     - text: 컨테이너 OS 이미지 EULA
-      url: /virtualization/windowscontainers/images-eula
+      url: ./images-eula.md
 - title: 리소스
   linkLists:
   - linkListType: reference
     links:
     - text: 샘플
-      url: /virtualization/windowscontainers/samples
+      url: ./samples.md
     - text: 문제 해결
-      url: /virtualization/windowscontainers/troubleshooting
+      url: ./troubleshooting.md
     - text: 커뮤니티 동영상 및 블로그
-      url: /virtualization/windowscontainers/communitylinks
+      url: ./communitylinks.md

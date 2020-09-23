@@ -3,15 +3,16 @@ title: Windows 컨테이너 정보
 description: 컨테이너는 온-프레미스 및 클라우드의 다양한 환경에서 Windows 앱을 포함한 앱을 패키징하고 실행하는 기술입니다. 이 항목에서는 Docker 및 Azure Kubernetes Service를 사용하는 방법을 포함하여 컨테이너에서 앱을 개발하고 배포하는 데 Microsoft, Windows 및 Azure가 어떤 도움이 되는지 설명합니다.
 keywords: Docker, 컨테이너
 author: taylorb-microsoft
+ms.author: jgerend
 ms.date: 10/22/2019
 ms.topic: overview
 ms.assetid: 8e273856-3620-4e58-9d1a-d1e06550448
-ms.openlocfilehash: 0759eef043ed347622f81c7b54a86c673144465d
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 25221fdfac5507d169adcaf95d050bcb06c7baeb
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984756"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990866"
 ---
 # <a name="windows-and-containers"></a>Windows 및 컨테이너
 
@@ -24,13 +25,13 @@ ms.locfileid: "87984756"
 Microsoft는 컨테이너에서 앱을 개발하고 배포하는 데 도움이 되는 다양한 도구와 플랫폼을 제공합니다.
 
 - Windows에 기본 제공되는 컨테이너 기능을 사용하는 [Docker Desktop](https://store.docker.com/editions/community/docker-ce-desktop-windows)으로 개발하고 테스트하려면 <strong>Windows 10에서 Windows 기반 또는 Linux 기반 컨테이너를 실행합니다</strong>. 또한 [Windows Server에서 컨테이너를 기본적으로 실행](../quick-start/set-up-environment.md?tabs=Windows-Server)할 수도 있습니다.
-- Docker, Docker Compose, Kubernetes, Helm 및 기타 유용한 기술에 대한 지원을 포함하는 [Visual Studio](https://docs.microsoft.com/visualstudio/containers/overview) 및 [Visual Studio Code의 강력한 컨테이너 지원 기능](https://code.visualstudio.com/docs/azure/docker)을 사용하여 <strong>Windows 기반 컨테이너를 개발, 테스트, 게시 및 배포합니다</strong>.
+- Docker, Docker Compose, Kubernetes, Helm 및 기타 유용한 기술에 대한 지원을 포함하는 [Visual Studio](/visualstudio/containers/overview) 및 [Visual Studio Code의 강력한 컨테이너 지원 기능](https://code.visualstudio.com/docs/azure/docker)을 사용하여 <strong>Windows 기반 컨테이너를 개발, 테스트, 게시 및 배포합니다</strong>.
 - 다른 사람이 사용할 수 있도록 퍼블릭 DockerHub에 <strong>앱을 컨테이너 이미지로 게시</strong>하거나, 조직의 자체 개발 및 배포를 위한 프라이빗 [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)에 게시하고 Visual Studio 및 Visual Studio Code에서 직접 내보내고 가져올 수 있습니다.
 - 다른 클라우드나 <strong>Azure에서 대규모로 컨테이너 배포</strong>:
 
-  - Azure Container Registry와 같은 컨테이너 레지스트리에서 앱(컨테이너 이미지)을 가져온 다음, [AKS(Azure Kubernetes Service)](https://docs.microsoft.com/azure/aks/intro-kubernetes) 또는 [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/)과 같은 오케스트레이터를 사용하여 대규모로 배포하고 관리합니다.
+  - Azure Container Registry와 같은 컨테이너 레지스트리에서 앱(컨테이너 이미지)을 가져온 다음, [AKS(Azure Kubernetes Service)](/azure/aks/intro-kubernetes) 또는 [Azure Service Fabric](/azure/service-fabric/)과 같은 오케스트레이터를 사용하여 대규모로 배포하고 관리합니다.
   - Azure Kubernetes Service는 Azure 가상 머신에 컨테이너를 배포하고 수십, 수백 또는 수천 개의 대규모 컨테이너를 관리합니다. Azure 가상 머신은 사용자 지정된 Windows Server 이미지(Windows 기반 앱을 배포하는 경우) 또는 사용자 지정된 Ubuntu Linux 이미지(Linux 기반 앱을 배포하는 경우)를 실행합니다.
-- [AKS 엔진이 포함된 Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)(Linux 컨테이너의 경우 미리 보기 상태) 또는 [OpenShift가 포함된 Azure Stack](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-azure-stack)을 사용하여 <strong>온-프레미스에서 컨테이너를 배포합니다</strong>. Windows Server에서 직접 Kubernetes를 설정([Windows 기반 Kubernetes](../kubernetes/getting-started-kubernetes-windows.md) 참조)할 수도 있고, [RedHat OpenShift Container Platform에서 Windows 컨테이너](https://techcommunity.microsoft.com/t5/Networking-Blog/Managing-Windows-containers-with-Red-Hat-OpenShift-Container/ba-p/339821)를 실행하는 기능도 곧 지원될 예정입니다.
+- [AKS 엔진이 포함된 Azure Stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)(Linux 컨테이너의 경우 미리 보기 상태) 또는 [OpenShift가 포함된 Azure Stack](/azure/virtual-machines/linux/openshift-azure-stack)을 사용하여 <strong>온-프레미스에서 컨테이너를 배포합니다</strong>. Windows Server에서 직접 Kubernetes를 설정([Windows 기반 Kubernetes](../kubernetes/getting-started-kubernetes-windows.md) 참조)할 수도 있고, [RedHat OpenShift Container Platform에서 Windows 컨테이너](https://techcommunity.microsoft.com/t5/Networking-Blog/Managing-Windows-containers-with-Red-Hat-OpenShift-Container/ba-p/339821)를 실행하는 기능도 곧 지원될 예정입니다.
 
 ## <a name="how-containers-work"></a>컨테이너 작동 방법
 
@@ -96,9 +97,9 @@ Microsoft는 사용자 고유의 컨테이너 이미지를 빌드하기 위한 �
 - 클러스터 노드 선호도
 
 Windows 컨테이너에서 사용할 수 있는 다양한 오케스트레이터가 있습니다. Microsoft에서 제공하는 옵션은 다음과 같습니다.
-- [AKS(Azure Kubernetes Service)](https://docs.microsoft.com/azure/aks/intro-kubernetes) - 관리형 Azure Kubernetes 서비스 사용
-- [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/) - 관리형 서비스 사용
-- [AKS Engine을 사용하는 Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) - 온-프레미스의 Azure Kubernetes Service 사용
+- [AKS(Azure Kubernetes Service)](/azure/aks/intro-kubernetes) - 관리형 Azure Kubernetes 서비스 사용
+- [Azure Service Fabric](/azure/service-fabric/) - 관리형 서비스 사용
+- [AKS Engine을 사용하는 Azure Stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) - 온-프레미스의 Azure Kubernetes Service 사용
 - [Windows 기반 Kubernetes](../kubernetes/getting-started-kubernetes-windows.md) - Windows에 Kubernetes 직접 설정
 
 ## <a name="try-containers-on-windows"></a>Windows에서 컨테이너 사용해 보기
@@ -107,4 +108,4 @@ Windows Server 또는 Windows 10에서 컨테이너를 시작하려면 다음을
 > [!div class="nextstepaction"]
 > [시작: 컨테이너를 위한 환경 구성](../quick-start/set-up-environment.md)
 
-자신의 시나리오에 적합한 Azure 서비스를 결정하는 데 도움이 필요한 경우 [Azure 컨테이너 서비스](https://azure.microsoft.com/product-categories/containers/) 및 [애플리케이션을 호스트하는 데 사용할 Azure 서비스 선택](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree)을 참조하세요.
+자신의 시나리오에 적합한 Azure 서비스를 결정하는 데 도움이 필요한 경우 [Azure 컨테이너 서비스](https://azure.microsoft.com/product-categories/containers/) 및 [애플리케이션을 호스트하는 데 사용할 Azure 서비스 선택](/azure/architecture/guide/technology-choices/compute-decision-tree)을 참조하세요.

@@ -73,9 +73,9 @@
 
 # 참조
 ## [기본 이미지 서비스 수명 주기](deploy-containers/base-image-lifecycle.md)
-## [바이러스 백신 최적화](https://docs.microsoft.com/windows-hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
+## [바이러스 백신 최적화](/windows-hardware/drivers/ifs/anti-virus-optimization-for-windows-containers)
 ## [컨테이너 플랫폼 도구](deploy-containers/containerd.md)
-## [컨테이너 OS 이미지 EULA](Images_EULA.md)
+## [컨테이너 OS 이미지 EULA](./images-eula.md)
 
 # 리소스
 ## [알려진 문제](manage-containers/known-issues.md)
