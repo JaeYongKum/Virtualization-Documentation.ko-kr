@@ -6,12 +6,12 @@ author: cwilhit
 ms.author: crwilhit
 ms.date: 11/12/2019
 ms.topic: quickstart
-ms.openlocfilehash: 956c90b5975f7b290395953fed04a3ed99bf6960
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: e04e4ee4c38409dfd20e4426d586839e1741651e
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984907"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990656"
 ---
 # <a name="containerize-a-net-core-app"></a>.NET Core 앱 컨테이너 화
 
@@ -133,9 +133,9 @@ Dockerfile이 작성되면 Dockerfile에 Docker를 가리키고 이미지를 빌
 1. 다음 단계는 Azure Container Registry를 사용하여 프라이빗 레지스트리에 컨테이너화된 ASP.NET 웹앱을 게시하는 것입니다. 이렇게 하면 조직에 배포할 수 있습니다.
 
    > [!div class="nextstepaction"]
-   > [프라이빗 컨테이너 레지스트리 만들기](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-powershell)
+   > [프라이빗 컨테이너 레지스트리 만들기](/azure/container-registry/container-registry-get-started-powershell)
 
-   [컨테이너 이미지를 레지스트리로 푸시](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-powershell#push-image-to-registry)한 섹션으로 이동하는 경우 컨테이너 레지스트리(예: `contoso-container-registry`)와 함께 방금 패키징한 ASP.NET 앱의 이름(`my-asp-app`)을 지정합니다.
+   [컨테이너 이미지를 레지스트리로 푸시](/azure/container-registry/container-registry-get-started-powershell#push-image-to-registry)한 섹션으로 이동하는 경우 컨테이너 레지스트리(예: `contoso-container-registry`)와 함께 방금 패키징한 ASP.NET 앱의 이름(`my-asp-app`)을 지정합니다.
 
    ```PowerShell
    docker tag my-asp-app contoso-container-registry.azurecr.io/my-asp-app:v1
@@ -146,4 +146,4 @@ Dockerfile이 작성되면 Dockerfile에 Docker를 가리키고 이미지를 빌
 2. 컨테이너 레지스트리에 앱을 게시한 후 다음 단계는 Azure Kubernetes Service를 사용하여 만든 Kubernetes 클러스터에 앱을 배포하는 것입니다.
 
    > [!div class="nextstepaction"]
-   > [Kubernetes 클러스터 만들기](https://docs.microsoft.com/azure/aks/windows-container-cli)
+   > [Kubernetes 클러스터 만들기](/azure/aks/windows-container-cli)

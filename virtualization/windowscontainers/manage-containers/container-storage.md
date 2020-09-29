@@ -3,13 +3,14 @@ title: 컨테이너 스토리지 개요
 description: Windows Server 컨테이너가 호스트 및 기타 저장소 유형을 사용하는 방법
 keywords: 컨테이너, 볼륨, 스토리지, 마운트, 바인딩 마운트
 author: cwilhit
+ms.author: jgerend
 ms.topic: overview
-ms.openlocfilehash: a2d5d3bd3a9682e0c85b0e8a660e1ec2161d68ee
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: e5cc4770cfa014ca307db1bb7ec4a3bb81c2dd32
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192280"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990926"
 ---
 # <a name="container-storage-overview"></a>컨테이너 스토리지 개요
 
@@ -61,10 +62,10 @@ Windows 애플리케이션의 일반적인 패턴은 새 파일을 설치하거�
 또는 다음과 같이 docker 구성 파일을 직접 변경할 수도 있습니다.
 
 ```Docker Configuration File
-"storage-opt": [
+"storage-opts": [
     "size=50GB"
   ]
 ```
 
 > [!TIP]
-> 이 방법은 docker 빌드에도 작동합니다. Docker 구성 파일을 수정하는 것에 대한 자세한 내용은 [Docker 구성](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon#configure-docker-with-configuration-file) 설명서를 참조하세요.
+> 이 방법은 docker 빌드에도 작동합니다. Docker 구성 파일을 수정하는 것에 대한 자세한 내용은 [Docker 구성](../manage-docker/configure-docker-daemon.md#configure-docker-with-a-configuration-file) 설명서를 참조하세요.

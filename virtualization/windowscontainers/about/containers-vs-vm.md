@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 10/21/2019
 ms.topic: overview
-ms.openlocfilehash: 0683cf0908b5cec5984622a6d4c87b3c0db543bd
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: 04f5e73b590585d99662b9472a1762ecb9443de9
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161942"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990936"
 ---
 # <a name="containers-vs-virtual-machines"></a>컨테이너와 가상 머신 비교
 
@@ -41,7 +41,7 @@ ms.locfileid: "88161942"
 | 운영 체제 | 커널을 포함하여 완전한 운영 체제를 실행하므로 더 많은 시스템 리소스(CPU, 메모리 및 스토리지)가 필요합니다. | 운영 체제의 사용자 모드 부분을 실행하며, 앱에 필요한 서비스만 포함하도록 조정하여 시스템 리소스 사용을 줄일 수 있습니다. |
 | 게스트 호환성 | 가상 머신 내의 운영 체제에 대해서만 실행됩니다. | [호스트와 동일한 운영 체제 버전](../deploy-containers/version-compatibility.md)에서 실행됩니다(Hyper-V 격리를 사용하면 경량 VM 환경에서 동일한 OS의 이전 버전을 실행할 수 있음).
 | 배포     | Windows Admin Center 또는 Hyper-V 관리자를 사용하여 개별 VM을 배포합니다. PowerShell 또는 System Center Virtual Machine Manager를 사용하여 여러 VM을 배포합니다. | 명령줄을 통해 Docker를 사용하여 개별 컨테이너를 배포합니다. Azure Kubernetes Service 같은 오케스트레이터를 사용하여 여러 컨테이너를 배포합니다. |
-| 운영 체제 업데이트 및 업그레이드 | 각 VM에 운영 체제 업데이트를 다운로드하여 설치합니다. 새 운영 체제 버전을 설치하려면 업그레이드가 필요하거나 경우에 따라 완전히 새로운 VM을 만들어야 합니다. 이렇게 하면 시간이 오래 걸리며, 특히 VM 수가 많으면 매우 긴 시간이 걸립니다. | 컨테이너 내의 운영 체제 파일을 업데이트 또는 업그레이드하는 방법은 다음과 같이 동일합니다. <br><ol><li>최신 버전의 Windows 기본 이미지를 가리키도록 컨테이너 이미지의 빌드 파일(Dockerfile이라고도 함)을 편집합니다. </li><li>이 새로운 기본 이미지를 사용하여 컨테이너 이미지를 다시 빌드합니다.</li><li>컨테이너 레지스트리에 컨테이너 이미지를 푸시합니다.</li> <li>오케스트레이터를 사용하여 다시 배포합니다.<br>오케스트레이터는 이 작업을 대규모로 수행할 수 있는 강력한 자동화 기능을 제공합니다. 자세한 내용은 [자습서: Azure Kubernetes Service에서 애플리케이션 업데이트](https://docs.microsoft.com/azure/aks/tutorial-kubernetes-app-update)를 참조하세요.</li></ol> |
+| 운영 체제 업데이트 및 업그레이드 | 각 VM에 운영 체제 업데이트를 다운로드하여 설치합니다. 새 운영 체제 버전을 설치하려면 업그레이드가 필요하거나 경우에 따라 완전히 새로운 VM을 만들어야 합니다. 이렇게 하면 시간이 오래 걸리며, 특히 VM 수가 많으면 매우 긴 시간이 걸립니다. | 컨테이너 내의 운영 체제 파일을 업데이트 또는 업그레이드하는 방법은 다음과 같이 동일합니다. <br><ol><li>최신 버전의 Windows 기본 이미지를 가리키도록 컨테이너 이미지의 빌드 파일(Dockerfile이라고도 함)을 편집합니다. </li><li>이 새로운 기본 이미지를 사용하여 컨테이너 이미지를 다시 빌드합니다.</li><li>컨테이너 레지스트리에 컨테이너 이미지를 푸시합니다.</li> <li>오케스트레이터를 사용하여 다시 배포합니다.<br>오케스트레이터는 이 작업을 대규모로 수행할 수 있는 강력한 자동화 기능을 제공합니다. 자세한 내용은 [자습서: Azure Kubernetes Service에서 애플리케이션 업데이트](/azure/aks/tutorial-kubernetes-app-update)를 참조하세요.</li></ol> |
 | 영구 스토리지 | 단일 VM의 경우 로컬 스토리지에 VHD(가상 하드 디스크)를 사용하고, 여러 서버에서 공유하는 스토리지에는 SMB 파일 공유를 사용합니다. | 단일 노드에는 로컬 스토리지용 Azure 디스크를 사용하고, 여러 노드나 서버에서 공유하는 스토리지에는 Azure Files(SMB 공유)를 사용합니다. |
 | 부하 분산 | 가상 머신 부하 분산은 실행 중인 VM을 장애 조치(failover) 클러스터의 다른 서버로 이동합니다. | 컨테이너 자체는 이동하지 않습니다. 대신 오케스트레이터는 클러스터 노드의 컨테이너를 자동으로 시작하거나 중지하여 부하 및 가용성의 변화를 관리할 수 있습니다. |
 | 내결함성 | VM은 클러스터의 다른 서버로 장애 조치할 수 있으며, 새 서버에서 VM의 운영 체제가 다시 시작됩니다.  | 클러스터 노드에서 오류가 발생하면 오케스트레이터는 해당 노드에서 실행되는 모든 컨테이너를 신속하게 다른 클러스터 노드에 다시 만듭니다. |

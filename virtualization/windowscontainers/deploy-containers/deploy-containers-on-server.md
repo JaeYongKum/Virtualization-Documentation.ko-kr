@@ -3,15 +3,16 @@ title: Windows Server에 Windows 컨테이너 배포
 description: Windows Server에 Windows 컨테이너 배포
 keywords: Docker, 컨테이너
 author: taylorb-microsoft
+ms.author: jgerend
 ms.date: 09/09/2019
 ms.topic: article
 ms.assetid: ba4eb594-0cdb-4148-81ac-a83b4bc337bc
-ms.openlocfilehash: 9bc8071ed5a6a5c8aff385f66299d903ee821070
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: fc2bd93e2582d2cb1a5e77f13babe8a417bb33eb
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985097"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990956"
 ---
 # <a name="container-host-deployment-windows-server"></a>컨테이너 호스트 배포: Windows Server
 
@@ -109,7 +110,7 @@ docker pull mcr.microsoft.com/windows/nanoserver:1803
 
 ## <a name="hyper-v-isolation-host"></a>Hyper-V 격리 호스트
 
-Hyper-V 격리를 실행하려면 Hyper-V 역할이 있어야 합니다. Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 Hyper-V 역할을 설치하기 전에 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)를 참조하세요.
+Hyper-V 격리를 실행하려면 Hyper-V 역할이 있어야 합니다. Windows 컨테이너 호스트 자체가 Hyper-V 가상 컴퓨터인 경우 Hyper-V 역할을 설치하기 전에 중첩된 가상화를 사용하도록 설정해야 합니다. 중첩된 가상화에 대한 자세한 내용은 [중첩된 가상화](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)를 참조하세요.
 
 ### <a name="nested-virtualization"></a>중첩된 가상화
 

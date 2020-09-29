@@ -7,12 +7,12 @@ ms.author: taylorb
 ms.date: 10/22/2019
 ms.topic: deployment-article
 ms.assetid: 3c3d4c69-503d-40e8-973b-ecc4e1f523ed
-ms.openlocfilehash: 14147ac71b5c10b3d633b2ccf205fe66489e417d
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: ac6012bc5042d7883dc6a1769e292c2f6ace0997
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985077"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990766"
 ---
 # <a name="windows-container-requirements"></a>Windows의 컨테이너 요구 사항
 
@@ -35,7 +35,7 @@ Windows 컨테이너 호스트가 Hyper-V 가상 머신에서 실행되고 또�
 
 ### <a name="memory-requirements"></a>메모리 요구 사항
 
-컨테이너에 대해 사용 가능한 메모리에 대한 제한은 [리소스 컨트롤](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/resource-controls)을 통해 또는 컨테이너 호스트를 오버로드하여 구성할 수 있습니다.  컨테이너를 시작하고 기본 명령(ipconfig, dir 등)을 실행하는 데 필요한 최소 메모리 용량은 다음과 같습니다.
+컨테이너에 대해 사용 가능한 메모리에 대한 제한은 [리소스 컨트롤](../manage-containers/resource-controls.md)을 통해 또는 컨테이너 호스트를 오버로드하여 구성할 수 있습니다.  컨테이너를 시작하고 기본 명령(ipconfig, dir 등)을 실행하는 데 필요한 최소 메모리 용량은 다음과 같습니다.
 
 >[!NOTE]
 >이러한 값은 컨테이너 간 리소스 공유 또는 컨테이너에서 실행되는 애플리케이션의 요구 사항을 고려하지 않습니다.  예를 들어 512MB의 사용 가능한 메모리가 있는 호스트는 Server Core 컨테이너가 리소스를 공유하므로 Hyper-V에서 여러 개의 Server Core 컨테이너를 실행할 수 있습니다.

@@ -3,15 +3,16 @@ title: Windows 컨테이너에 대한 gMSA 문제 해결
 description: Windows 컨테이너에 대한 gMSA(그룹 관리 서비스 계정) 문제를 해결하는 방법입니다.
 keywords: Docker, 컨테이너, Active Directory, 그룹 관리 서비스 계정, 그룹 관리 서비스 계정, 문제 해결, 문제 해결
 author: rpsqrd
+ms.author: jgerend
 ms.date: 10/03/2019
 ms.topic: troubleshooting
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 771c72ac7b21bf347192ebf88aa86a6cf2c7cddc
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: bffbf326c9a5a7d83625dc4421f8814425a8c680
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985173"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990906"
 ---
 # <a name="troubleshoot-gmsas-for-windows-containers"></a>Windows 컨테이너에 대한 gMSA 문제 해결
 
@@ -44,7 +45,7 @@ gMSA를 사용하여 컨테이너를 실행할 때 오류가 발생하면 다음
 ### <a name="make-sure-the-host-can-use-the-gmsa"></a>호스트에서 gMSA를 사용할 수 있는지 확인
 
 1. 호스트가 도메인에 조인되어 있고 도메인 컨트롤러에 연결할 수 있는지 확인합니다.
-2. RSAT에서 AD PowerShell 도구를 설치하고 [Test-ADServiceAccount](https://docs.microsoft.com/powershell/module/activedirectory/test-adserviceaccount)를 실행하여 gMSA를 검색할 수 있는 액세스 권한이 컴퓨터에 있는지 확인합니다. cmdlet에서 **False**를 반환하는 경우 컴퓨터에서 gMSA 암호에 액세스할 수 없습니다.
+2. RSAT에서 AD PowerShell 도구를 설치하고 [Test-ADServiceAccount](/powershell/module/activedirectory/test-adserviceaccount)를 실행하여 gMSA를 검색할 수 있는 액세스 권한이 컴퓨터에 있는지 확인합니다. cmdlet에서 **False**를 반환하는 경우 컴퓨터에서 gMSA 암호에 액세스할 수 없습니다.
 
     ```powershell
     # To install the AD module on Windows Server, run Install-WindowsFeature RSAT-AD-PowerShell
@@ -124,7 +125,7 @@ gMSA를 사용하여 컨테이너를 실행할 때 오류가 발생하면 다음
 | TCP 636 | LDAP SSL |
 
 컨테이너에서 도메인 컨트롤러에 보내는 트래픽 유형에 따라 추가 포트에 대한 액세스를 허용해야 할 수도 있습니다.
-Active Directory에서 사용하는 포트의 전체 목록은 [Active Directory 및 Active Directory Domain Services 포트 요구 사항](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers)을 참조하세요.
+Active Directory에서 사용하는 포트의 전체 목록은 [Active Directory 및 Active Directory Domain Services 포트 요구 사항](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers)을 참조하세요.
 
 ### <a name="check-the-container"></a>컨테이너 확인
 

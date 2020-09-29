@@ -3,13 +3,14 @@ title: Windows 컨테이너 버전 호환성
 description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
+ms.author: jgerend
 ms.topic: conceptual
-ms.openlocfilehash: 23319cba426dccba555956f0a8f1204d3669d6bf
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 05b63a12554b5ba8c7dd665def5166116a1ee0db
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192150"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990726"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -226,7 +227,7 @@ FROM mcr.microsoft.com/windows/nanoserver:10.0.17763.437
 ...
 ```
 
-Windows Server 2019 및 Windows Server 2016을 기반으로 하는 Server Core 기본 이미지는 [LTSC(장기 서비스 채널)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. 예를 들어 Windows Server 2019를 Server Core 이미지의 컨테이너 OS로 사용하고 최신 패치를 포함하려면 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
+Windows Server 2019 및 Windows Server 2016을 기반으로 하는 Server Core 기본 이미지는 [LTSC(장기 서비스 채널)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) 릴리스입니다. 예를 들어 Windows Server 2019를 Server Core 이미지의 컨테이너 OS로 사용하고 최신 패치를 포함하려면 다음과 같이 LTSC 릴리스를 지정할 수 있습니다.
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/servercore:ltsc2019

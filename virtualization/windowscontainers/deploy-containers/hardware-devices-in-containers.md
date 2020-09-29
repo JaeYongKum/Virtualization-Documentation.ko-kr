@@ -3,13 +3,14 @@ title: Windows 컨테이너의 디바이스
 description: Windows 컨테이너를 지원하는 디바이스
 keywords: docker, 컨테이너, 디바이스, 하드웨어
 author: cwilhit
+ms.author: jgerend
 ms.topic: how-to
-ms.openlocfilehash: bef8e3236294588e38d7bff235ed1d3a98278375
-ms.sourcegitcommit: 1bafb5de322763e7f8b0e840b96774e813c39749
+ms.openlocfilehash: 8ada973b6e79837374c5f3d918fb4c60da031b49
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85192179"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990946"
 ---
 # <a name="devices-in-containers-on-windows"></a>Windows 컨테이너의 디바이스
 
@@ -31,7 +32,7 @@ ms.locfileid: "85192179"
 docker run --isolation=process --device="class/{interface class GUID}" mcr.microsoft.com/windows/servercore:1809
 ```
 
-`{interface class guid}`를 아래 섹션에서 찾을 수 있는 적절한 [디바이스 인터페이스 클래스 GUID](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)로 바꿔야 합니다.
+`{interface class guid}`를 아래 섹션에서 찾을 수 있는 적절한 [디바이스 인터페이스 클래스 GUID](/windows-hardware/drivers/install/overview-of-device-interface-classes)로 바꿔야 합니다.
 
 여러 디바이스에서 컨테이너를 시작하려면 다음 명령과 문자열을 여러 `--device` 인수와 함께 사용합니다.
 
@@ -73,7 +74,7 @@ Windows에서는 모든 디바이스가 구현하는 인터페이스 클래스 �
 </tr>
 <tr valign="top">
 <td><center>DirectX GPU 가속화</center></td>
-<td><center><a href="https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/gpu-acceleration">GPU 가속화</a> 문서 참조</center></td>
+<td><center><a href="/virtualization/windowscontainers/deploy-containers/gpu-acceleration">GPU 가속화</a> 문서 참조</center></td>
 </tr>
 </tbody>
 </table>

@@ -3,15 +3,16 @@ title: Windows 컨테이너에 대한 gMSA 만들기
 description: Windows 컨테이너에 대한 gMSA(그룹 관리 서비스 계정)를 만드는 방법입니다.
 keywords: Docker, 컨테이너, Active Directory, gMSA, 그룹 관리 서비스 계정, 그룹 관리 서비스 계정
 author: rpsqrd
+ms.author: jgerend
 ms.date: 01/03/2019
 ms.topic: how-to
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: d8faf3d16a7cd07016df334a2299ce4f0eca46f2
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: b8a224a34d5cb666c55190e30b7002e2483cf89c
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985137"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990916"
 ---
 # <a name="create-gmsas-for-windows-containers"></a>Windows 컨테이너에 대한 gMSA 만들기
 
@@ -19,7 +20,7 @@ Windows 기반 네트워크는 일반적으로 AD(Active Directory)를 사용하
 
 Windows 컨테이너는 도메인에 조인할 수 없지만 Active Directory 도메인 ID를 계속 사용하여 다양한 인증 시나리오를 지원할 수 있습니다.
 
-이를 위해 Windows 컨테이너가 [gMSA(그룹 관리 서비스 계정)](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)로 실행되도록 구성할 수 있습니다. 이는 여러 컴퓨터에서 암호를 인식할 필요 없이 ID를 공유할 수 있도록 설계된 Windows Server 2012에 도입된 특수한 유형의 서비스 계정입니다.
+이를 위해 Windows 컨테이너가 [gMSA(그룹 관리 서비스 계정)](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)로 실행되도록 구성할 수 있습니다. 이는 여러 컴퓨터에서 암호를 인식할 필요 없이 ID를 공유할 수 있도록 설계된 Windows Server 2012에 도입된 특수한 유형의 서비스 계정입니다.
 
 gMSA를 사용하여 컨테이너를 실행하는 경우 컨테이너 호스트에서 Active Directory 도메인 컨트롤러로부터 gMSA 암호를 검색하여 컨테이너 인스턴스에 제공합니다. 컨테이너는 컴퓨터 계정(SYSTEM)에서 네트워크 리소스에 액세스해야 할 때마다 gMSA 자격 증명을 사용합니다.
 
@@ -29,9 +30,9 @@ gMSA를 사용하여 컨테이너를 실행하는 경우 컨테이너 호스트�
 
 그룹 관리 서비스 계정으로 Windows 컨테이너를 실행하는 데 필요한 항목은 다음과 같습니다.
 
-- Windows Server 2012 이상을 실행하는 하나 이상의 도메인 컨트롤러가 있는 Active Directory 도메인. gMSA를 사용하기 위한 포리스트 또는 도메인 기능 수준 요구 사항은 없지만, gMSA 암호는 Windows Server 2012 이상을 실행하는 도메인 컨트롤러에서만 배포할 수 있습니다. 자세한 내용은 [gMSA용 Active Directory 요구 사항](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts#BKMK_gMSA_Req)을 참조하세요.
+- Windows Server 2012 이상을 실행하는 하나 이상의 도메인 컨트롤러가 있는 Active Directory 도메인. gMSA를 사용하기 위한 포리스트 또는 도메인 기능 수준 요구 사항은 없지만, gMSA 암호는 Windows Server 2012 이상을 실행하는 도메인 컨트롤러에서만 배포할 수 있습니다. 자세한 내용은 [gMSA용 Active Directory 요구 사항](/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts#BKMK_gMSA_Req)을 참조하세요.
 - gMSA 계정을 만들 수 있는 권한. gMSA 계정을 만들려면 도메인 관리자이거나 *msDS-GroupManagedServiceAccount 개체 만들기* 권한이 위임된 계정을 사용해야 합니다.
-- 인터넷에 액세스하여 CredentialSpec PowerShell 모듈을 다운로드할 수 있는 권한. 연결이 끊긴 환경에서 작업하는 경우 인터넷 액세스 권한이 있는 컴퓨터에서 [모듈을 저장](https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-5.1)하고 개발 머신 또는 컨테이너 호스트에 복사할 수 있습니다.
+- 인터넷에 액세스하여 CredentialSpec PowerShell 모듈을 다운로드할 수 있는 권한. 연결이 끊긴 환경에서 작업하는 경우 인터넷 액세스 권한이 있는 컴퓨터에서 [모듈을 저장](/powershell/module/powershellget/save-module?view=powershell-5.1)하고 개발 머신 또는 컨테이너 호스트에 복사할 수 있습니다.
 
 ## <a name="one-time-preparation-of-active-directory"></a>일회성 Active Directory 준비
 
@@ -91,7 +92,7 @@ gMSA 이름이 결정되었으면 PowerShell에서 다음 cmdlet을 실행하여
 
 > [!TIP]
 > 다음 명령을 실행하려면 **도메인 관리자** 보안 그룹에 속하거나 **msDS-GroupManagedServiceAccount 개체 만들기** 권한이 위임된 계정을 사용해야 합니다.
-> [New-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps) cmdlet은 [원격 서버 관리 도구](https://aka.ms/rsat)에 있는 AD PowerShell 도구의 일부입니다.
+> [New-ADServiceAccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps) cmdlet은 [원격 서버 관리 도구](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools)에 있는 AD PowerShell 도구의 일부입니다.
 
 ```powershell
 # Replace 'WebApp01' and 'contoso.com' with your own gMSA and domain names, respectively
@@ -120,7 +121,7 @@ gMSA를 사용하여 Windows 컨테이너를 실행할 각 컨테이너 호스�
 2. 호스트가 gMSA 암호에 대한 액세스를 제어하는 보안 그룹에 속하는지 확인합니다.
 3. 컴퓨터를 다시 시작하여 새 그룹 멤버 자격을 가져옵니다.
 4. [Windows 10용 Docker 데스크톱](https://docs.docker.com/docker-for-windows/install/) 또는 [Windows Server용 Docker](https://docs.docker.com/install/windows/docker-ee/)를 설치합니다.
-5. (추천) [Test-ADServiceAccount](https://docs.microsoft.com/powershell/module/activedirectory/test-adserviceaccount)를 실행하여 호스트에서 gMSA 계정을 사용할 수 있는지 확인합니다. 명령에서 **False**를 반환하면 [문제 해결 지침](gmsa-troubleshooting.md#make-sure-the-host-can-use-the-gmsa)을 따르세요.
+5. (추천) [Test-ADServiceAccount](/powershell/module/activedirectory/test-adserviceaccount)를 실행하여 호스트에서 gMSA 계정을 사용할 수 있는지 확인합니다. 명령에서 **False**를 반환하면 [문제 해결 지침](gmsa-troubleshooting.md#make-sure-the-host-can-use-the-gmsa)을 따르세요.
 
     ```powershell
     # To install the AD module on Windows Server, run Install-WindowsFeature RSAT-AD-PowerShell
@@ -194,5 +195,5 @@ Docker는 Docker 데이터 디렉터리의 **CredentialSpecs** 디렉터리 아�
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- gMSA에 대한 자세한 내용은 [그룹 관리 서비스 계정 개요](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)를 참조하세요.
+- gMSA에 대한 자세한 내용은 [그룹 관리 서비스 계정 개요](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)를 참조하세요.
 - 비디오 데모를 보려면 Ignite 2016의 [녹화 데모](https://youtu.be/cZHPz80I-3s?t=2672)를 시청하세요.

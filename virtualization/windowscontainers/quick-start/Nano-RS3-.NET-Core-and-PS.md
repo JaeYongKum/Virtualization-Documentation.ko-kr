@@ -4,18 +4,19 @@ description: .NET Core 2.0 또는 PowerShell Core 6을 사용하여 또는 사�
 keywords: Docker, 컨테이너
 ms.topic: quickstart
 author: cwilhit
-ms.openlocfilehash: 77c3843faa091ece289992c4af02dbf050cfca55
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.author: jgerend
+ms.openlocfilehash: a438666c75671e935ce8e8999e92b9c828043d94
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161682"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990636"
 ---
 # <a name="build-and-run-an-application-with-or-without-net-core-20-or-powershell-core-6"></a>.NET Core 2.0 또는 PowerShell Core 6를 사용하여 또는 사용하지 않고 애플리케이션 빌드 및 실행
 
 .NET Core와 PowerShell이 기본 Nano 서버 컨테이너 위에 추가 기능 계층형 컨테이너로 지원되기는 하지만 이 릴리스의 Nano 서버 기본 OS 컨테이너 이미지에서는 .NET Core와 PowerShell이 제거되었습니다.
 
-컨테이너에서 Node.js, Python, Ruby 등의 원시 코드 또는 개방형 프레임워크를 실행하는 경우 기본 Nano 서버 컨테이너면 충분합니다.  이번 릴리스는 Windows Server 2016 릴리스에 비해 [사용 공간이 축소](https://docs.microsoft.com/windows-server/get-started/nano-in-semi-annual-channel)되었으며 그로 인해 특정 원시 코드가 실행되지 않을 수 있습니다. 성능 저하 문제가 발견되면 [포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)을 통해 알려주세요.
+컨테이너에서 Node.js, Python, Ruby 등의 원시 코드 또는 개방형 프레임워크를 실행하는 경우 기본 Nano 서버 컨테이너면 충분합니다.  이번 릴리스는 Windows Server 2016 릴리스에 비해 [사용 공간이 축소](/windows-server/get-started/nano-in-semi-annual-channel)되었으며 그로 인해 특정 원시 코드가 실행되지 않을 수 있습니다. 성능 저하 문제가 발견되면 [포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)을 통해 알려주세요.
 
 Dockerfile에서 컨테이너를 빌드하려면 docker build를 사용하고, 실행하려면 docker run을 사용합니다.  다음 명령은 Nano 서버 컨테이너 기본 OS 이미지를 다운로드하고(몇 분 정도 걸릴 수 있음) 호스트 콘솔에서 “Hello World!”라는 메시지를 인쇄합니다.
 
@@ -23,7 +24,7 @@ Dockerfile에서 컨테이너를 빌드하려면 docker build를 사용하고, �
 docker run microsoft/nanoserver-insider cmd /c echo Hello World!
 ```
 
-[Windows의 Dockerfile](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)과 FROM, RUN, COPY, ADD, CMD 등의 Dockerfile 구문을 사용하여 보다 복잡한 애플리케이션을 빌드할 수 있습니다.  이 기본 이미지에서 바로 특정 명령을 실행할 수는 없지만, 이제 애플리케이션이 작동하는 데 필요한 것들만 포함하는 컨테이너 이미지를 만들 수 있습니다.
+[Windows의 Dockerfile](../manage-docker/manage-windows-dockerfile.md)과 FROM, RUN, COPY, ADD, CMD 등의 Dockerfile 구문을 사용하여 보다 복잡한 애플리케이션을 빌드할 수 있습니다.  이 기본 이미지에서 바로 특정 명령을 실행할 수는 없지만, 이제 애플리케이션이 작동하는 데 필요한 것들만 포함하는 컨테이너 이미지를 만들 수 있습니다.
 
 기본 Nano 서버 컨테이너 OS 이미지에서 .NET Core와 PowerShell을 사용할 수 없게 되면서, 압축된 zip 형식의 콘텐츠가 포함된 컨테이너를 어떻게 빌드할 것인지에 대한 과제가 생겼습니다. Docker 17.05에 제공되는 [다단계 빌드](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) 기능을 사용하면 다른 컨테이너에서 PowerShell을 활용하여 콘텐츠 압축을 풀고 Nano 컨테이너에 복사할 수 있습니다. 이 방법을 사용하여 .NET Core 컨테이너와 PowerShell 컨테이너를 만들 수 있습니다.
 

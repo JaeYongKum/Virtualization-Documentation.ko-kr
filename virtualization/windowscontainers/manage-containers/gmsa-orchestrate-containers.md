@@ -3,15 +3,16 @@ title: gMSA를 사용하여 컨테이너 오케스트레이션
 description: gMSA(그룹 관리 서비스 계정)로 Windows 컨테이너를 오케스트레이션하는 방법을 설명합니다.
 keywords: docker, 컨테이너, active directory, gmsa, 오케스트레이션, kubernetes, 그룹 관리 서비스 계정, 그룹관리서비스 계정
 author: rpsqrd
+ms.author: jgerend
 ms.date: 09/10/2019
 ms.topic: how-to
 ms.assetid: 9e06ad3a-0783-476b-b85c-faff7234809c
-ms.openlocfilehash: 00bc05d3d96407d19b96620b3b26059f4ac9e313
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 64a5e5c010922bcc5e61f41c047ac965c4f31415
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985257"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990896"
 ---
 # <a name="orchestrate-containers-with-a-gmsa"></a>gMSA를 사용하여 컨테이너 오케스트레이션
 
@@ -29,7 +30,7 @@ gMSA(그룹 관리 서비스 계정)를 사용하여 컨테이너를 오케스�
 
 애플리케이션 매니페스트에서 자격 증명 사양 위치를 지정할 때 Service Fabric은 gMSA로 Windows 컨테이너를 실행하는 것을 지원합니다. 자격 증명 사양 파일을 만들고 각 호스트 Docker 데이터 디렉터리의 하위 디렉터리 **CredentialSpecs**에 배치해야 합니다. 그래야만 Service Fabric이 파일을 찾을 수 있습니다. [CredentialSpec PowerShell 모듈](https://aka.ms/credspec)에 포함된 **Get-CredentialSpec** cmdlet을 실행하여 자격 증명 사양이 올바른 위치에 있는지 확인할 수 있습니다.
 
-[빠른 시작: Service Fabric에 Windows 컨테이너 배포](https://docs.microsoft.com/azure/service-fabric/service-fabric-quickstart-containers) 및 [Service Fabric에서 실행되는 Windows 컨테이너에 대한 gMSA 설정](https://docs.microsoft.com/azure/service-fabric/service-fabric-setup-gmsa-for-windows-containers)에서 애플리케이션을 구성하는 방법에 대해 자세히 알아보세요.
+[빠른 시작: Service Fabric에 Windows 컨테이너 배포](/azure/service-fabric/service-fabric-quickstart-containers) 및 [Service Fabric에서 실행되는 Windows 컨테이너에 대한 gMSA 설정](/azure/service-fabric/service-fabric-setup-gmsa-for-windows-containers)에서 애플리케이션을 구성하는 방법에 대해 자세히 알아보세요.
 
 ## <a name="how-to-use-gmsa-with-docker-swarm"></a>Docker Swarm에서 gMSA를 사용하는 방법
 

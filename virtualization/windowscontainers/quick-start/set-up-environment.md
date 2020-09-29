@@ -7,12 +7,12 @@ ms.author: crwilhit
 ms.date: 11/12/2019
 ms.topic: quickstart
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: b081984fe364b68db3b5f32b6e008e7bdb9f8b09
-ms.sourcegitcommit: 94901df98f58c9ffdf1b9e91379ca13daa239166
+ms.openlocfilehash: 65860acf545f51a8ba86afcef1872191eda86624
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738903"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990606"
 ---
 # <a name="get-started-prep-windows-for-containers"></a>시작: 컨테이너에 맞게 Windows 준비
 
@@ -36,7 +36,7 @@ Windows Server에서 컨테이너를 실행하려면 Windows Server(반기 채�
 Windows 10에서 컨테이너를 실행하려면 다음 항목이 필요합니다.
 
 - 1주년 업데이트(버전 1607) 이상이 적용된 Windows 10 Professional 또는 Enterprise를 실행하는 물리적 컴퓨터 시스템 1대.
-- [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)를 사용하도록 설정해야 합니다.
+- [Hyper-V](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)를 사용하도록 설정해야 합니다.
 
 > [!NOTE]
 >  Windows 10 2018년 10월 업데이트부터 사용자가 개발/테스트 용도로 Windows 10 Enterprise 또는 Professional에서 Windows 컨테이너를 프로세스 격리 모드로 실행하는 것을 더 이상 허용하지 않습니다. 자세한 내용은 [FAQ](../about/faq.md)를 참조하세요.

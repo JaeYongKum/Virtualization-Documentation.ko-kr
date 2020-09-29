@@ -3,15 +3,16 @@ title: Swarm 모드 시작
 description: Swarm 클러스터 초기화, 오버레이 네트워크 만들기 및 네트워크에 서비스 연결
 keywords: Docker, 컨테이너, Swarm, 오케스트레이션
 author: kallie-b
+ms.author: jgerend
 ms.date: 02/9/2017
 ms.topic: how-to
 ms.assetid: 5ceb9626-7c48-4d42-81f8-9c936595ad85
-ms.openlocfilehash: c1377818553d81f4f0230f076c3be3dcad90b9cd
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 741a04ee9f6b0a079583c1ff800a154457a1e4c2
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87984997"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990646"
 ---
 # <a name="getting-started-with-swarm-mode"></a>Swarm 모드 시작
 
@@ -28,7 +29,7 @@ Swarm은 *관리자 노드*와 *작업자 노드*라는 두 가지 유형의 컨
 
 ## <a name="swarm-mode-system-requirements"></a>Swarm 모드 시스템 요구 사항
 
-*최신 업데이트가 모두 설치된\** **Windows 10 크리에이터스 업데이트** 또는 **Windows Server 2016**을 실행 중이고 컨테이너 호스트로 설정된 하나 이상의(적어도 두 개 이상의 노드에서 Swarm의 전체 기능을 사용할 수 있도록) 실제 또는 가상 컴퓨터 시스템([Windows 10에서 Docker 컨테이너를 시작하는 방법에 대한 자세한 내용은 Windows 10의 Windows 컨테이너](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10) 또는 [Windows Server의 Windows 컨테이너](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server) 참조).
+*최신 업데이트가 모두 설치된\** **Windows 10 크리에이터스 업데이트** 또는 **Windows Server 2016**을 실행 중이고 컨테이너 호스트로 설정된 하나 이상의(적어도 두 개 이상의 노드에서 Swarm의 전체 기능을 사용할 수 있도록) 실제 또는 가상 컴퓨터 시스템([Windows 10에서 Docker 컨테이너를 시작하는 방법에 대한 자세한 내용은 Windows 10의 Windows 컨테이너](/virtualization/windowscontainers/quick-start/quick-start-windows-10) 또는 [Windows Server의 Windows 컨테이너](/virtualization/windowscontainers/quick-start/quick-start-windows-server) 참조).
 
 \***참고**: Windows Server 2016에서 Docker Swarm을 사용하려면 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217)이 필요
 
@@ -225,7 +226,7 @@ C:\> docker service create --name=linux_s1 --endpoint-mode dnsrr --network testo
 - Windows Docker 호스트용 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/)는 Windows Server 2016에서 지원되지 않고 Windows Server 2019 이상부터 지원됩니다. 오늘날의 대체 부하 분산 전략을 찾고 있는 사용자는 NGINX와 같은 외부 부하 분산 장치를 설치하고 Swarm의 [포트 게시 모드](https://docs.docker.com/engine/reference/commandline/service_create/#/publish-service-ports-externally-to-the-swarm--p---publish)를 사용하여 부하를 분산할 컨테이너 호스트 포트를 노출할 수 있습니다. 여기에 대한 자세한 내용은 아래를 참조하세요.
 
  >[!NOTE]
->Docker Swarm 라우팅 메시를 설정하는 방법에 대한 자세한 내용은 이 [블로그 게시물](https://docs.microsoft.com/virtualization/community/team-blog/2017/20170926-docker-s-routing-mesh-available-with-windows-server-version-1709)을 참조하세요.
+>Docker Swarm 라우팅 메시를 설정하는 방법에 대한 자세한 내용은 이 [블로그 게시물](/virtualization/community/team-blog/2017/20170926-docker-s-routing-mesh-available-with-windows-server-version-1709)을 참조하세요.
 
 ## <a name="publish-ports-for-service-endpoints"></a>서비스 엔드포인트에 대한 포트 게시
  서비스 엔드포인트용 포트를 게시하려는 사용자는 포트 게시 모드 또는 Docker Swarm의 [라우팅 메시](https://docs.docker.com/engine/swarm/ingress/) 기능을 사용하면 됩니다.
@@ -261,6 +262,3 @@ Windows에서 오버레이 네트워크 드라이버와 투명 네트워크 드�
 이 문제를 해결하는 두 가지 방법이 있습니다.
 - *옵션 1 - 기존 투명 네트워크 삭제:* Swarm을 초기화하기 전에 컨테이너 호스트에 기존 투명 네트워크가 없는지 확인합니다. 투명 네트워크를 삭제하여 호스트에서 오버레이 네트워크 생성에 사용할 가상 네트워크 어댑터를 확보합니다.
 - *옵션 2 - 호스트에 추가 (가상) 네트워크 어댑터 만들기:* 호스트에 있는 투명 네트워크를 제거하는 대신 호스트에 추가 네트워크 어댑터를 만들어서 오버레이 네트워크 생성에 사용할 수 있습니다. 이렇게 하려면 간단하게 PowerShell Hyper-V 관리자를 사용하여 새 외부 네트워크 어댑터를 만들면 됩니다. 새 인터페이스가 준비된 상태에서 Swarm이 초기화되면 HNS(호스트 네트워크 서비스)가 자동으로 호스트에서 새 외부 네트워크 어댑터를 인식하고 외부 vSwitch를 바인딩에 사용하여 오버레이 네트워크를 만듭니다.
-
-
-

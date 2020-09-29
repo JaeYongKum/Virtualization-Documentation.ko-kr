@@ -3,15 +3,16 @@ title: Windows 10에서 Linux 컨테이너 설정
 description: 컨테이너 배포 빠른 시작
 keywords: Docker, 컨테이너, LCOW
 author: taylorb-microsoft
+ms.author: jgerend
 ms.date: 08/16/2019
 ms.topic: tutorial
 ms.assetid: bb9bfbe0-5bdc-4984-912f-9c93ea67105f
-ms.openlocfilehash: 0e29a8645e34845895fedcc8dc03c01ea12d07f2
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: cec311f86dfafb122c5aad388872555a636f836e
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161712"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990666"
 ---
 # <a name="get-started-set-up-linux-containers-on-windows-10"></a>시작: Windows 10에서 Linux 컨테이너 설정
 
@@ -28,7 +29,7 @@ ms.locfileid: "88161712"
 
 다음 요구 사항을 충족하는지 확인하세요.
 - Windows 10 Professional, Windows 10 Enterprise 또는 Windows Server 2019 버전 1809 이상을 실행하는 물리적 컴퓨터 시스템 1대
-- [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)가 사용하도록 설정되었습니다.
+- [Hyper-V](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)가 사용하도록 설정되었습니다.
 
 ## <a name="install-docker-desktop"></a>Docker Desktop 설치
 

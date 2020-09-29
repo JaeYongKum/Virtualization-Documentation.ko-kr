@@ -3,15 +3,16 @@ title: Windows 컨테이너 플랫폼
 description: Windows에서 사용할 수 있는 새 컨테이너 구성 요소에 대해 자세히 알아보세요.
 keywords: LCOW, linux 컨테이너, docker, 컨테이너, containerd, cri, runhcs, runc
 author: scooley
+ms.author: jgerend
 ms.date: 11/19/2018
 ms.topic: conceptual
 ms.assetid: a0e62b32-0c4c-4dd4-9956-8056e9abd9e5
-ms.openlocfilehash: 10f6a453b4c9352763c1e83b126576f250614af4
-ms.sourcegitcommit: 186ebcd006eeafb2b51a19787d59914332aad361
+ms.openlocfilehash: 55c404252dc9243070631e2012326d4b0cca886f
+ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985367"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990976"
 ---
 # <a name="container-platform-tools-on-windows"></a>Windows의 컨테이너 플랫폼 도구
 
@@ -19,7 +20,7 @@ Windows 컨테이너 플랫폼이 확장되고 있습니다. Docker는 첫 번�
 
 * [containerd/cri](https://github.com/containerd/cri) - Windows Server 2019/Windows 10 1809의 새 기능입니다.
 * [runhcs](https://github.com/Microsoft/hcsshim/tree/master/cmd/runhcs) - runc에 해당하는 Windows 컨테이너 호스트입니다.
-* [hcs](https://docs.microsoft.com/virtualization/api/) - 호스트 컴퓨팅 서비스와 편리한 shim을 통합하여 더 쉽게 사용할 수 있습니다.
+* [hcs](/virtualization/api/) - 호스트 컴퓨팅 서비스와 편리한 shim을 통합하여 더 쉽게 사용할 수 있습니다.
   * [hcsshim](https://github.com/microsoft/hcsshim)
   * [dotnet-computevirtualization](https://github.com/microsoft/dotnet-computevirtualization)
 
