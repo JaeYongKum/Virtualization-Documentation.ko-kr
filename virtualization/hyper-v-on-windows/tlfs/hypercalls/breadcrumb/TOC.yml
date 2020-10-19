@@ -1,0 +1,7 @@
+- name: 하이퍼바이저 사양
+  tocHref: /virtualization/hyper-v-on-windows/tlfs/hypercalls/
+  topicHref: /virtualization/hyper-v-on-windows/tlfs/tlfs
+  items:
+    - name: Hypercall 참조
+      tocHref: /virtualization/hyper-v-on-windows/tlfs/hypercalls/
+      topicHref: /virtualization/hyper-v-on-windows/tlfs/hypercalls/overview

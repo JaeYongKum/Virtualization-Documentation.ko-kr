@@ -1,0 +1,7 @@
+- name: 하이퍼바이저 사양
+  tocHref: /virtualization/hyper-v-on-windows/tlfs/datatypes/
+  topicHref: /virtualization/hyper-v-on-windows/tlfs/tlfs
+  items:
+    - name: 데이터 형식
+      tocHref: /virtualization/hyper-v-on-windows/tlfs/datatypes/
+      topicHref: /virtualization/hyper-v-on-windows/tlfs/datatypes/overview

@@ -1,0 +1,52 @@
+- name: Hyper-V 소개
+  href: ./about/index.md
+- name: Hyper-V 설치
+  href: quick-start/enable-hyper-v.md
+- name: Virtual Machine 만들기
+  href: quick-start/quick-create-virtual-machine.md
+- name: Hyper-V가 설치된 가상 컴퓨터 관리
+  items:
+    - name: Hyper-V 및 PowerShell
+      href: quick-start/try-hyper-v-powershell.md
+    - name: VM과 디바이스 공유
+      href: user-guide/enhanced-session-mode.md
+    - name: 검사점 사용
+      href: user-guide/checkpoints.md
+    - name: PowerShell Direct를 사용하여 연결
+      href: user-guide/powershell-direct.md
+    - name: 시험판 VM 만들기
+      href: user-guide/create-pre-release-vm.md
+- name: Hyper-V 호스트 관리
+  items:
+    - name: 중첩된 가상화 활성화
+      href: user-guide/nested-virtualization.md
+    - name: 사용자 지정 VM 갤러리 빌드
+      href: user-guide/custom-gallery.md
+    - name: NAT 네트워크 설정
+      href: user-guide/setup-nat-network.md
+    - name: 가상 스위치 만들기
+      href: quick-start/connect-to-network.md
+    - name: 통합 서비스 빌드
+      href: user-guide/make-integration-service.md
+    - name: Hyper-V WMI 이식
+      href: user-guide/refactor-wmiv1-to-wmiv2.md
+- name: 참조
+  items:
+    - name: Hyper-V 요구 사항
+      href: reference/hyper-v-requirements.md
+    - name: 지원되는 게스트 운영 체제
+      href: about/supported-guest-os.md
+    - name: Hyper-V PowerShell
+      href: 'https://docs.microsoft.com/powershell/module/hyper-v/index?view=win10-ps'
+    - name: Hyper-V 통합 서비스
+      href: reference/integration-services.md
+    - name: Hyper-V 아키텍처
+      href: reference/hyper-v-architecture.md
+    - name: 하이퍼바이저 사양
+      href: tlfs/TOC.yml
+    - name: Hyper-V 백업 방법
+      href: reference/HyperVBackupApproaches.md
+- name: 커뮤니티 및 지원
+  items:
+    - name: Hyper-V 포럼
+      href: 'https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverhyperv'

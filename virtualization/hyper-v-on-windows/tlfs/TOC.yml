@@ -1,0 +1,28 @@
+- name: 개요
+  href: tlfs.md
+- name: 데이터 형식
+  href: datatypes/overview.md
+- name: 기능 검색
+  href: feature-discovery.md
+- name: Hypercall
+  items:
+    - name: 인터페이스
+      href: hypercall-interface.md
+    - name: Hypercall 참조
+      href: hypercalls/overview.md
+- name: 파티션
+  href: partition-properties.md
+- name: 가상 프로세서
+  href: vp-properties.md
+- name: 가상 MMU
+  href: virtual-mmu.md
+- name: 가상 인터럽트 컨트롤러
+  href: virtual-interrupts.md
+- name: 파티션 간 통신
+  href: inter-partition-communication.md
+- name: 타이머
+  href: timers.md
+- name: 가상 보안 모드
+  href: vsm.md
+- name: 중첩된 가상화
+  href: nested-virtualization.md
