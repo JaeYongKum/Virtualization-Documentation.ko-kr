@@ -6,12 +6,12 @@ author: Heidilohr
 ms.author: helohr
 ms.date: 05/12/2020
 ms.topic: reference
-ms.openlocfilehash: 11dbe56b2cd7f2c88d18560d888f520765748c1e
-ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
+ms.openlocfilehash: 2e5396dcec67724b850d45cb29010191bba9a732
+ms.sourcegitcommit: 91652cc3ec171e8655bb1a8bc06d433fce457e53
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90990966"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156497"
 ---
 # <a name="base-image-servicing-lifecycles"></a>기본 이미지 서비스 수명 주기
 
@@ -32,7 +32,8 @@ Server Core 이미지의 경우 고객은 2~3년마다 Windows Server의 새로�
 |Server Core, Nano Server, Windows|반기      |1909   |18363   |2019/11/12  |2021/05/11                 |해당 없음                  |
 |Server Core, Nano Server, Windows|반기      |1903   |18362   |2019/05/21  |2020/12/08                 |해당 없음                  |
 |Server Core                      |장기        |2019   |17763   |2018/11/13  |2024/01/09                 |2029/01/09           |
-|Server Core, Nano Server, Windows|반기      |1809   |17763   |2018/11/13  |2020/11/10                 |해당 없음                  |
+|Nano 서버                      |반기      |1809   |17763   |2018/11/13  |2024/01/09                 |해당 없음                  |
+|Server Core, Windows             |반기      |1809   |17763   |2018/11/13  |2020/11/10                 |해당 없음                  |
 |Server Core, Nano Server         |반기      |1803   |17134   |2018/04/30  |2019/11/12                 |해당 없음                  |
 |Server Core, Nano Server         |반기      |1709   |16299   |2017/10/17  |2019/04/09                 |해당 없음                  |
 |Server Core                      |장기        |2016   |14393   |2016/10/15  |2022/01/11                 |2027/01/11           |
