@@ -1,16 +1,16 @@
 ---
 title: Windows 컨테이너 버전 호환성
-description: Windows에서 빌드를 실행하고 다양한 버전 간에 컨테이너를 실행할 수 있는 방법
+description: 서로 다른 버전의 Windows Server 및 Windows에서 빌드된 컨테이너에 대한 버전 호환성.
 keywords: 메타데이터, 컨테이너, 버전
 author: taylorb-microsoft
 ms.author: jgerend
 ms.topic: conceptual
-ms.openlocfilehash: 05b63a12554b5ba8c7dd665def5166116a1ee0db
-ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
+ms.openlocfilehash: 0f0f2a3215629cf833e8c6491dfe2c1d38fb1801
+ms.sourcegitcommit: 530c146a8e43b5cd5ce96b272facb7dd9d3c42da
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90990726"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92238852"
 ---
 # <a name="windows-container-version-compatibility"></a>Windows 컨테이너 버전 호환성
 
@@ -21,10 +21,22 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 ## <a name="windows-server-host-os-compatibility"></a>Windows Server 호스트 OS 호환성
 
 <!-- start tab view -->
+# <a name="windows-server-version-20h2"></a>[Windows Server 버전 20H2](#tab/windows-server-20H2)
+
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server 버전 20H2|&#10004;|&#10004;|
+|Windows Server, 버전 2004|&#10004;|&#10060;|
+|Windows Server, 버전 1909|&#10004;|&#10060;|
+|Windows Server, 버전 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
+
 # <a name="windows-server-version-2004"></a>[Windows Server, 버전 2004](#tab/windows-server-2004)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10004;|&#10004;|
 |Windows Server, 버전 1909|&#10004;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
@@ -35,6 +47,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10004;|&#10004;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
@@ -45,6 +58,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10004;|
@@ -55,6 +69,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
@@ -65,6 +80,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
@@ -78,10 +94,22 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 <!-- start tab view -->
 
+# <a name="windows-10-version-20h2"></a>[Windows 10 버전 20H2](#tab/windows-10-20H2)
+
+|컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
+|---|:---:|:---:|
+|Windows Server 버전 20H2|&#10004;|&#10004;|
+|Windows Server, 버전 2004|&#10004;|&#10060;|
+|Windows Server, 버전 1909|&#10004;|&#10060;|
+|Windows Server, 버전 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
+
 # <a name="windows-10-version-2004"></a>[Windows 10, 버전 2004](#tab/windows-10-2004)
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10004;|&#10004;|
 |Windows Server, 버전 1909|&#10004;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
@@ -92,6 +120,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10004;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
@@ -102,6 +131,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10004;|&#10060;|
@@ -112,6 +142,7 @@ Windows 컨테이너 기능을 발전시켜오면서 호환성에 영향을 미�
 
 |컨테이너 기본 이미지 OS 버전|Hyper-V 격리 지원|프로세스 격리 지원|
 |---|:---:|:---:|
+|Windows Server 버전 20H2|&#10060;|&#10060;|
 |Windows Server, 버전 2004|&#10060;|&#10060;|
 |Windows Server, 버전 1909|&#10060;|&#10060;|
 |Windows Server, 버전 1903|&#10060;|&#10060;|
@@ -133,7 +164,7 @@ Windows Server 컨테이너와 기본 호스트는 단일 커널을 공유하므
 
 #### <a name="revision-number-patching"></a>수정 번호(패치)
 
-Windows Server 컨테이너는 현재 컨테이너 호스트의 수정 번호와 컨테이너 이미지가 다른 시스템에서 Windows Server 2016 기반 컨테이너가 실행되는 시나리오를 지원하지 않습니다. 예를 들어 컨테이너 호스트가 10.0.14393.**1914** 버전(KB4051033이 적용된 Windows Server 2016)이고 컨테이너 이미지가 10.0.14393.**1944** 버전(KB4053579가 적용된 Windows Server 2016)이면 이미지가 시작되지 않을 수 있습니다.
+Windows Server 컨테이너는 현재 컨테이너 호스트의 수정 번호와 컨테이너 이미지가 다른 시스템에서 Windows Server 2016 기반 컨테이너가 실행되는 시나리오를 지원하지 않습니다. 예를 들어 컨테이너 호스트가 10.0.14393. **1914** 버전(KB4051033이 적용된 Windows Server 2016)이고 컨테이너 이미지가 10.0.14393. **1944** 버전(KB4053579가 적용된 Windows Server 2016)이면 이미지가 시작되지 않을 수 있습니다.
 
 그러나 Windows Server 버전 1809 이상을 사용하는 호스트 또는 이미지의 경우 이 규칙이 적용되지 않으며 일치하는 수정 버전이 호스트와 컨테이너 이미지에 필요하지 않습니다.
 
@@ -244,7 +275,7 @@ Docker Swarm에는 현재 컨테이너에서 사용하는 Windows 버전을 동�
 
 서비스가 시작되지 않으면 `MODE`가 `replicated`이지만 `REPLICAS`는 0에서 문제가 발생합니다. OS 버전 문제인지 확인하려면 다음 명령을 실행합니다.
 
-**docker service ls**를 실행하여 서비스 이름을 찾습니다.
+**docker service ls** 를 실행하여 서비스 이름을 찾습니다.
 
 ```dockerfile
 ID                  NAME                MODE                REPLICAS            IMAGE                                             PORTS
@@ -451,7 +482,7 @@ Events:
 
 ### <a name="mitigation---using-node-labels-and-nodeselector"></a>완화 - 노드 레이블 및 nodeSelector 사용
 
-**kubectl get node**를 실행하여 모든 노드 목록을 가져옵니다. 그런 다음, **kubectl describe node(노드 이름)** 를 실행하여 자세한 정보를 가져올 수 있습니다.
+**kubectl get node** 를 실행하여 모든 노드 목록을 가져옵니다. 그런 다음, **kubectl describe node(노드 이름)** 를 실행하여 자세한 정보를 가져올 수 있습니다.
 
 다음 예제에서는 두 개의 Windows 노드에서 서로 다른 버전을 실행합니다.
 
@@ -545,7 +576,7 @@ System Info:
 
     ```
 
-3. **kubectl get nodes --show-labels**를 실행하여 레이블이 있는지 확인합니다.
+3. **kubectl get nodes --show-labels** 를 실행하여 레이블이 있는지 확인합니다.
 
     이 예제에서 출력은 다음과 같습니다.
 
