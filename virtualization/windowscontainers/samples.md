@@ -6,12 +6,12 @@ author: cwilhit
 ms.date: 12/19/2016
 ms.topic: article
 ms.assetid: 5c6f6350-f8d6-4426-b53d-9fb09c2bf267
-ms.openlocfilehash: 087aecdae317a81338071def3046fb01511ca152
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: cf8a02158f5c9840291e5ad74f8801da46d3fa20
+ms.sourcegitcommit: 607413572dce012c2e09263c7b6dd984086cd9ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161912"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93074848"
 ---
 # <a name="windows-container-samples"></a>Windows 컨테이너 샘플
 
@@ -67,7 +67,7 @@ ms.locfileid: "88161912"
 
 [sqlite](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/sqlite)
 
-sqlserver-express- [Docker 허브 이미지](https://hub.docker.com/r/microsoft/mssql-server-windows-express/) 또는 [dockerfile](https://github.com/Microsoft/mssql-docker/blob/master/windows/mssql-server-windows-express/dockerfile)
+[sqlserver-express](https://github.com/microsoft/mssql-docker/tree/master/windows)
 
 ### <a name="infrastructure-and-ci-tools"></a>인프라와 CI 도구
 
