@@ -7,12 +7,12 @@ ms.author: jgerend
 ms.date: 02/9/2017
 ms.topic: how-to
 ms.assetid: 5ceb9626-7c48-4d42-81f8-9c936595ad85
-ms.openlocfilehash: 741a04ee9f6b0a079583c1ff800a154457a1e4c2
-ms.sourcegitcommit: 160405a16d127892b6e2897efa95680f29f0496a
+ms.openlocfilehash: 775de3b2a1b7d0379689ba7f813b662a0ab3959b
+ms.sourcegitcommit: a5cd6c4477a5aee8d2a66c588ac5f799f6e8b035
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90990646"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93044306"
 ---
 # <a name="getting-started-with-swarm-mode"></a>Swarm 모드 시작
 
@@ -20,7 +20,7 @@ ms.locfileid: "90990646"
 Swarm 모드는 Docker 호스트의 네이티브 클러스터링과 컨테이너 워크로드 예약 등의 기본 제공 컨테이너 오케스트레이션 기능을 제공하는 Docker 기능입니다. 해당 Docker 엔진이 “Swarm 모드”에서 함께 실행될 때 Docker 호스트 그룹이 “Swarm” 클러스터를 구성합니다. Swarm 모드에 대한 추가 컨텍스트는 [Docker의 주요 설명서 사이트](https://docs.docker.com/engine/swarm/)를 참조하세요.
 
 ## <a name="manager-nodes-and-worker-nodes"></a>관리자 노드 및 작업자 노드
-Swarm은 *관리자 노드*와 *작업자 노드*라는 두 가지 유형의 컨테이너 호스트로 구성됩니다. 모든 Swarm은 관리자 노드를 통해 초기화되며, Swarm 제어 및 모니터링을 위한 모든 Docker CLI 명령은 해당 관리자 노드 중 하나에서 실행되어야 합니다. 관리자 노드는 Swarm 상태의 “보관자”에 해당합니다. 여러 관리자 노드가 함께 Swarm에서 실행 중인 서비스의 상태 인식을 관리하는 합의 그룹을 구성하며, Swarm의 실제 상태가 항상 개발자나 관리자가 정의한 의도 상태와 일치하는지 확인하는 일을 합니다.
+Swarm은 *관리자 노드* 와 *작업자 노드* 라는 두 가지 유형의 컨테이너 호스트로 구성됩니다. 모든 Swarm은 관리자 노드를 통해 초기화되며, Swarm 제어 및 모니터링을 위한 모든 Docker CLI 명령은 해당 관리자 노드 중 하나에서 실행되어야 합니다. 관리자 노드는 Swarm 상태의 “보관자”에 해당합니다. 여러 관리자 노드가 함께 Swarm에서 실행 중인 서비스의 상태 인식을 관리하는 합의 그룹을 구성하며, Swarm의 실제 상태가 항상 개발자나 관리자가 정의한 의도 상태와 일치하는지 확인하는 일을 합니다.
 
 >[!NOTE]
 >Swarm에 관리자 노드가 여러 개 있어도 되지만, 항상 *적어도* 하나 이상의 관리자 노드가 있어야 합니다.
@@ -29,9 +29,9 @@ Swarm은 *관리자 노드*와 *작업자 노드*라는 두 가지 유형의 컨
 
 ## <a name="swarm-mode-system-requirements"></a>Swarm 모드 시스템 요구 사항
 
-*최신 업데이트가 모두 설치된\** **Windows 10 크리에이터스 업데이트** 또는 **Windows Server 2016**을 실행 중이고 컨테이너 호스트로 설정된 하나 이상의(적어도 두 개 이상의 노드에서 Swarm의 전체 기능을 사용할 수 있도록) 실제 또는 가상 컴퓨터 시스템([Windows 10에서 Docker 컨테이너를 시작하는 방법에 대한 자세한 내용은 Windows 10의 Windows 컨테이너](/virtualization/windowscontainers/quick-start/quick-start-windows-10) 또는 [Windows Server의 Windows 컨테이너](/virtualization/windowscontainers/quick-start/quick-start-windows-server) 참조).
+*최신 업데이트가 모두 설치된\** **Windows 10 크리에이터스 업데이트** 또는 **Windows Server 2016** 을 실행 중이고 컨테이너 호스트로 설정된 하나 이상의(적어도 두 개 이상의 노드에서 Swarm의 전체 기능을 사용할 수 있도록) 실제 또는 가상 컴퓨터 시스템( [Windows 10에서 Docker 컨테이너를 시작하는 방법에 대한 자세한 내용은 Windows 10의 Windows 컨테이너](../quick-start/set-up-environment.md) 또는 [Windows Server의 Windows 컨테이너](../quick-start/set-up-environment.md) 참조).
 
-\***참고**: Windows Server 2016에서 Docker Swarm을 사용하려면 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217)이 필요
+\**_참고_* : Windows Server 2016에서 Docker Swarm을 사용하려면 [KB4015217](https://support.microsoft.com/help/4015217/windows-10-update-kb4015217)이 필요
 
 **Docker 엔진 v1.13.0 이상**
 
@@ -52,7 +52,7 @@ C:\> docker swarm init --advertise-addr=<HOSTIPADDRESS> --listen-addr <HOSTIPADD
 
 ## <a name="adding-nodes-to-a-swarm"></a>Swarm에 노드 추가
 
-Swarm 모드와 오버레이 네트워킹 모드 기능을 사용하기 위해 여러 노드가 필요하지는 *않습니다*. Swarm 모드에서 실행 중인 단일 호스트로 모든 Swarm/오버레이 기능을 사용할 수 있습니다(예: `docker swarm init` 명령을 사용하여 Swarm 모드로 설정된 관리자 노드).
+Swarm 모드와 오버레이 네트워킹 모드 기능을 사용하기 위해 여러 노드가 필요하지는 *않습니다* . Swarm 모드에서 실행 중인 단일 호스트로 모든 Swarm/오버레이 기능을 사용할 수 있습니다(예: `docker swarm init` 명령을 사용하여 Swarm 모드로 설정된 관리자 노드).
 
 ### <a name="adding-workers-to-a-swarm"></a>Swarm에 작업자 추가
 
@@ -130,7 +130,7 @@ C:\> docker service scale <SERVICENAME>=<REPLICAS>
 Swarm에서 실행 중인 서비스와 Swarm의 상태를 보는 몇 가지 유용한 명령이 있습니다.
 
 ### <a name="list-swarm-nodes"></a>Swarm 노드 나열
-다음 명령을 사용하여 Swarm에 현재 조인되어 있는 노드의 목록을 봅니다. 각 노드의 상태에 대한 정보도 확인할 수 있습니다. 이 명령은 **관리자 노드**에서 실행해야 합니다.
+다음 명령을 사용하여 Swarm에 현재 조인되어 있는 노드의 목록을 봅니다. 각 노드의 상태에 대한 정보도 확인할 수 있습니다. 이 명령은 **관리자 노드** 에서 실행해야 합니다.
 
 ```
 C:\> docker node ls
@@ -139,7 +139,7 @@ C:\> docker node ls
 이 명령의 출력에서 노드 중 하나에 별표(*)가 표시되어 있음을 확인할 수 있습니다. 별표는 단순히 현재 노드 즉, `docker node ls` 명령이 실행된 노드를 나타냅니다.
 
 ### <a name="list-networks"></a>네트워크 나열
-다음 명령을 사용하여 지정된 노드에 있는 네트워크의 목록을 봅니다. 오버레이 네트워크를 보려면 Swarm 모드로 실행 중인 **관리자 모드**에서 이 명령을 실행해야 합니다.
+다음 명령을 사용하여 지정된 노드에 있는 네트워크의 목록을 봅니다. 오버레이 네트워크를 보려면 Swarm 모드로 실행 중인 **관리자 모드** 에서 이 명령을 실행해야 합니다.
 
 ```
 C:\> docker network ls
