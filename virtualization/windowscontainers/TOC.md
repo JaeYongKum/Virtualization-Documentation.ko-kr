@@ -15,6 +15,8 @@
 ## Windows 컨테이너 빌드
 ### [Dockerfile 작성](manage-docker/manage-windows-dockerfile.md)
 ### [Dockerfile 최적화](manage-docker/optimize-windows-dockerfile.md)
+## Azure Stack HCI의 Azure Kubernetes Service에서 실행
+### [Azure Stack HCI에서 Kubernetes 클러스터 만들기](/azure-stack/aks-hci/create-kubernetes-cluster) 
 ## Azure Kubernetes Service에서 실행
 ### [AKS에서 Windows 컨테이너 클러스터 만들기](/azure/aks/windows-container-cli)
 ### [현재 제한 사항](/azure/aks/windows-node-limitations)
@@ -52,13 +54,14 @@
 ### Docker Swarm
 #### [Swarm 모드](manage-containers/swarm-mode.md)
 ## 작업
+### [프린터 서비스](deploy-containers/print-spooler.md)
+## 보안
 ### Group Managed Service Accounts
 #### [gMSA 만들기](manage-containers/manage-serviceaccounts.md)
 #### [gMSA를 사용하도록 앱 구성](manage-containers/gmsa-configure-app.md)
 #### [gMSA를 사용하여 컨테이너 실행](manage-containers/gmsa-run-container.md)
 #### [gMSA를 사용하여 컨테이너 오케스트레이션](manage-containers/gmsa-orchestrate-containers.md)
 #### [gMSA 문제 해결](manage-containers/gmsa-troubleshooting.md)
-### [프린터 서비스](deploy-containers/print-spooler.md)
 ## 네트워킹
 ### [개요](container-networking/architecture.md)
 ### [네트워크 토폴로지 및 드라이버](container-networking/network-drivers-topologies.md)
@@ -80,6 +83,7 @@
 # 리소스
 ## [알려진 문제](manage-containers/known-issues.md)
 ## [컨테이너 샘플](samples.md)
+## [Windows Server 컨테이너 로드맵](https://github.com/microsoft/Windows-Containers/projects/1)
 ## [문제 해결](troubleshooting.md)
 ## [컨테이너 포럼](https://social.msdn.microsoft.com/Forums/home?forum=windowscontainers)
 ## [커뮤니티 동영상 및 블로그](communitylinks.md)
