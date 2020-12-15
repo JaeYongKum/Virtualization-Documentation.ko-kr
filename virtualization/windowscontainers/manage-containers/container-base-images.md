@@ -6,16 +6,16 @@ author: patricklang
 ms.date: 09/25/2019
 ms.topic: conceptual
 ms.assetid: 88e6e080-cf8f-41d8-a301-035959dc5ce0
-ms.openlocfilehash: 7fa5b50506fd9a2d7cd1c5fc84cc867dba412867
-ms.sourcegitcommit: bb18e6568393da748a6d511d41c3acbe38c62668
+ms.openlocfilehash: 375dbecece5f5166ce0d44c7317739658d42983f
+ms.sourcegitcommit: dc5d955689dfb51d43809b4dcf38468737d89c21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161962"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97345716"
 ---
 # <a name="container-base-images"></a>컨테이너 기본 이미지
 
-Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미지를 제공합니다. 각 기본 이미지는 서로 다른 Windows OS용으로 제공되며, 차지하는 디스크 공간도 다르고 제공하는 Windows API 세트의 양도 다릅니다.
+Windows는 사용자가 빌드할 수 있는 4가지 컨테이너 기본 이미지를 제공합니다. 각 기본 이미지는 Windows 운영 체제가 다르고, 차지하는 디스크 공간이 다르며, Windows API 집합이 다릅니다.
 
 <ul class="columns is-multiline has-margin-left-none has-margin-bottom-none has-padding-top-medium">
     <li class="column is-one-quarter has-padding-top-small-mobile has-padding-bottom-small">
